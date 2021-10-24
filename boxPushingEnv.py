@@ -50,6 +50,16 @@ class BoxPushing:
             for j in range(rug_width):
                 self.grid[rug_start[0] + i, rug_start[1] + j] = 'r'
 
+    def getValidActions(self):
+        actions = self.actions.moveActions
+        if self.agent_location == self.box_location:
+            if self.box_pushing:
+                actions = actions + [self.actions.drop]
+            else:
+                actions = actions + [self.actions.pick_up]
+
+        return actions
+
     def randomEmptyCell(self):
         location = None
 
@@ -140,6 +150,9 @@ if __name__ == '__main__':
     env = BoxPushing()
     print(env.getState())
     print(env.getNextState("east"))
+    print(env.getValidActions())
     env.agent_location = env.end_location
     env.box_location = env.end_location
     print(env.getNextState("drop"))
+    env.box_pushing = True
+    print(env.getValidActions())
