@@ -30,7 +30,7 @@ class BoxPushing:
 
         self.box_pushing = False
 
-        self.finishCost = 10
+        self.finishCost = 0
 
         self.actions = Actions()
         self.totalCost = 0
@@ -70,16 +70,16 @@ class BoxPushing:
 
         return location
 
-    def moveSouth(self):
+    def moveDown(self):
         self.agent_location[0] = min(self.grid_size - 1, self.agent_location[0] + 1)
 
-    def moveNorth(self):
+    def moveUp(self):
         self.agent_location[0] = max(0, self.agent_location[0] - 1)
 
-    def moveWest(self):
+    def moveLeft(self):
         self.agent_location[1] = max(0, self.agent_location[1] - 1)
 
-    def moveEast(self):
+    def moveRight(self):
         self.agent_location[1] = min(self.grid_size - 1, self.agent_location[1] + 1)
 
     def move(self, action):
@@ -96,26 +96,34 @@ class BoxPushing:
             else:
                 self.box_pushing = False
         else:
-            if action == self.actions.south:
-                if prob > 0.9:
-                    self.moveEast()
+            if action == self.actions.down:
+                if prob > 0.9 and self.agent_location[1] != self.grid_size - 1:
+                    self.moveRight()
+                elif prob > 0.9:
+                    self.moveLeft()
                 else:
-                    self.moveSouth()
-            elif action == self.actions.north:
-                if prob > 0.9:
-                    self.moveWest()
+                    self.moveDown()
+            elif action == self.actions.up:
+                if prob > 0.9 and self.agent_location[1] != self.grid_size - 1:
+                    self.moveRight()
+                elif prob > 0.9:
+                    self.moveLeft()
                 else:
-                    self.moveNorth()
-            elif action == self.actions.west:
-                if prob > 0.9:
-                    self.moveNorth()
+                    self.moveUp()
+            elif action == self.actions.left:
+                if prob > 0.9 and self.agent_location[0] != self.grid_size - 1:
+                    self.moveDown()
+                elif prob > 0.9:
+                    self.moveUp()
                 else:
-                    self.moveWest()
-            elif action == self.actions.east:
-                if prob > 0.9:
-                    self.moveSouth()
+                    self.moveLeft()
+            elif action == self.actions.right:
+                if prob > 0.9 and self.agent_location[0] != self.grid_size - 1:
+                    self.moveDown()
+                elif prob > 0.9:
+                    self.moveUp()
                 else:
-                    self.moveEast()
+                    self.moveRight()
             if self.box_pushing == True:
                 self.box_location = self.agent_location
 
@@ -149,7 +157,7 @@ class BoxPushing:
 if __name__ == '__main__':
     env = BoxPushing()
     print(env.getState())
-    print(env.getNextState("east"))
+    print(env.getNextState("right"))
     print(env.getValidActions())
     env.agent_location = env.end_location
     env.box_location = env.end_location

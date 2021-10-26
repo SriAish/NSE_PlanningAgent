@@ -1,13 +1,14 @@
 class Actions:
     def __init__(self):
-        self.south = "south"
-        self.north = "north"
-        self.east = "east"
-        self.west = "west"
+        self.down = "down"
+        self.up = "up"
+        self.right = "right"
+        self.left = "left"
         self.pick_up = "pick_up"
         self.drop = "drop"
-        self.allActions = [self.south, self.north, self.east, self.west, self.pick_up, self.drop]
+        self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.drop]
         self.boxActions = [self.pick_up, self.drop]
+        self.moveActions = [self.down, self.up, self.right, self.left]
 
         self.moveActionCost = 1
         self.boxActionCost = 2
@@ -28,4 +29,4 @@ class Actions:
 
 if __name__ == '__main__':
     action = Actions()
-    print(action.isAction("df"), action.actionCost("east"), action.actionCost("drop"))
+    print(action.isAction("df"), action.actionCost("right"), action.actionCost("drop"))

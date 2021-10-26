@@ -6,10 +6,10 @@ class RandomAgent:
         self.endState = endState
         print(self.endState)
         self.numberToActions = {
-            1 : "north",
-            2 : "south",
-            3 : "east",
-            4 : "west",
+            1 : "up",
+            2 : "doen",
+            3 : "right",
+            4 : "left",
             5 : "pick_up",
             6 : "drop"
         }
