@@ -19,17 +19,15 @@ class BoxPushing:
             initial_location = [0, 0]
         self.agent_location = initial_location
 
-        self.end_location = None
         if end_location == None:
-            end_location = self.randomEmptyCell()
+            end_location = [7, 14]
         self.end_location = end_location
 
         if box_location == None:
-            box_location = self.randomEmptyCell()
+            box_location = self.placeBox()
         self.box_location = box_location
 
         self.box_pushing = False
-
         self.finishCost = 0
 
         self.actions = Actions()
@@ -60,15 +58,9 @@ class BoxPushing:
 
         return actions
 
-    def randomEmptyCell(self):
-        location = None
-
-        while location == None or location == self.agent_location or location == self.end_location:
-            x = random.randint(0, self.grid_size - 1)
-            y = random.randint(0, self.grid_size - 1)
-            location = [x, y]
-
-        return location
+    def placeBox(self):
+        locations = [[7, 0], [9, 2], [12, 7], [2, 7], [7, 12], [3, 11], [12, 14], [6, 3], [5, 6], [9, 8]]
+        return random.choice(locations)
 
     def moveDown(self):
         self.agent_location[0] = min(self.grid_size - 1, self.agent_location[0] + 1)
@@ -164,3 +156,5 @@ if __name__ == '__main__':
     print(env.getNextState("drop"))
     env.box_pushing = True
     print(env.getValidActions())
+    env = BoxPushing()
+    print(env.getState())
