@@ -162,6 +162,17 @@ class VIAgent:
 
         return policy
 
+class VIPolicy:
+    def __init__(self, name):
+        self.loadPolicy(name)
+
+    def loadPolicy(self, name):
+        file_to_read = open(name, "rb")
+        self.policy = pickle.load(file_to_read)
+
+    def getAction(self, state):
+        return self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])]
+
 if __name__ == '__main__':
     agent = VIAgent(((7, 14), (7, 14), False, 'p'))
     policy = agent.generatePolicy()
