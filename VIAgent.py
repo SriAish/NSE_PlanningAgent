@@ -106,7 +106,7 @@ class BoxPushingConstants:
             return states, self.actions.actionCost(action)
 
 class VIAgent:
-    def __init__(self, endState, gamma = 0.9, delta = 0.001):
+    def __init__(self, endState, gamma = 0.9, delta = 0.1):
         self.BP = BoxPushingConstants()
         self.endState = endState
         self.stateValues = {}
@@ -116,7 +116,7 @@ class VIAgent:
 
     def initializeStateValues(self):
         for i in self.BP.states:
-            self.stateValues[i] = 999999
+            self.stateValues[i] = 999
         self.stateValues[self.endState] = 0
 
     def update(self):
