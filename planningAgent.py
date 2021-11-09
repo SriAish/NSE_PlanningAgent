@@ -1,7 +1,7 @@
 import numpy as np
 import cvxpy as cp
 from misc import BoxPushingConstants
-from math import exp
+from math import e
 
 
 class PlanningAgent:
@@ -14,10 +14,15 @@ class PlanningAgent:
         self.a2 = a2
         self.VIb = VIb
         self.init_belief()
+        print("initial belief setup")
         self.init_var()
+        print("variables setup")
         self.init_para()
+        print("parameters setup")
         self.get_event_traj()
+        print("event trajectories setup")
         self.make_prob()
+        print("problem setup")
 
     def init_belief(self):
         locations = [(7, 0), (9, 2), (12, 7), (2, 7), (7, 12), (3, 11), (12, 14), (6, 3), (5, 6), (9, 8)]
@@ -54,7 +59,7 @@ class PlanningAgent:
         obj = 0
         for i in self.BP.states:
             for j in self.pi[i]:
-                obj += exp(self.x[i])*exp(self.pi[i][j])*self.BP.get_cost(i, j)
+                obj += (e**self.x[i])*(e**self.pi[i][j])*self.BP.get_cost(i, j)
 
         self.obj = cp.Minimize(obj)
         obj -= self.VIb 
@@ -66,11 +71,11 @@ class PlanningAgent:
             c = 0
             for s in self.BP.states:
                 for a in self.pi[s]:
-                    c += (exp(self.x[s])*exp(self.pi[s][a])*self.BP.T(s, a, s_))
+                    c += ((e**self.x[s])*(e**self.pi[s][a])*self.BP.T(s, a, s_))
             c = self.gamma*c
             if s_ in self.belief_state:
                 c += 1/len(self.belief_state)
-            c -= (exp(self.x_para[s_])(1 + self.x[s_] - self.x_para[s_]))
+            c -= ((e**self.x_para[s_])(1 + self.x[s_] - self.x_para[s_]))
             self.constraints.append(c <= 0)
 
     def make_constraints_eqn2(self):
@@ -78,11 +83,11 @@ class PlanningAgent:
             c = 0
             for s in self.BP.states:
                 for a in self.pi[s]:
-                    c += (exp(self.x[s])*exp(self.pi[s][a])*self.BP.T(s, a, s_)*(1 + self.x[s] + self.pi[s][a] - self.x_para[s] - self.pi_para[s][a]))
+                    c += ((e**self.x[s])*(e**self.pi[s][a])*self.BP.T(s, a, s_)*(1 + self.x[s] + self.pi[s][a] - self.x_para[s] - self.pi_para[s][a]))
             c = -self.gamma*c
             if s_ in self.belief_state:
                 c -= 1/len(self.belief_state)
-            c += exp(self.x_para[s_])
+            c += (e**self.x_para[s_])
             self.constraints.append(c <= 0) 
 
     def make_constraints_eqn3(self):
@@ -91,18 +96,27 @@ class PlanningAgent:
     def make_prob(self):
         self.constraints = []
         self.set_obj()
+        print("objective setup")
         self.make_constraints_eqn1()
+        print("eq1")
         self.make_constraints_eqn2()
+        print("eq2")
         self.make_constraints_eqn3()
+        print("eq3")
+        self.prob = cp.prob(self.obj, self.constraints)
 
     def solve_prob(self):
-        self.prob = cp.prob(self.obj, self.constraints)
+        try:
+            self.prob.solve()
+        except Exception as e:
+            print(e)
 
     def solve_DCP(self):
         pass
 
 if __name__ == '__main__':
     agent = PlanningAgent()
+    agent.solve_prob()
     print(agent.pi)
 
 
