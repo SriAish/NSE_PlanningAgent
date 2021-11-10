@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 import cvxpy as cp
 from misc import BoxPushingConstants
 from cvxpy import exp
@@ -15,14 +16,19 @@ class PlanningAgent:
         self.VIb = VIb
         self.init_belief()
         print("initial belief setup")
+        sys.stdout.flush()
         self.init_var()
         print("variables setup")
+        sys.stdout.flush()
         self.init_para()
         print("parameters setup")
+        sys.stdout.flush()
         self.get_event_traj()
         print("event trajectories setup")
+        sys.stdout.flush()
         self.make_prob()
         print("problem setup")
+        sys.stdout.flush()
 
     def init_belief(self):
         locations = [(7, 0), (9, 2), (12, 7), (2, 7), (7, 12), (3, 11), (12, 14), (6, 3), (5, 6), (9, 8)]
@@ -97,12 +103,16 @@ class PlanningAgent:
         self.constraints = []
         self.set_obj()
         print("objective setup")
+        sys.stdout.flush()
         self.make_constraints_eqn1()
         print("eq1")
+        sys.stdout.flush()
         self.make_constraints_eqn2()
         print("eq2")
+        sys.stdout.flush()
         self.make_constraints_eqn3()
         print("eq3")
+        sys.stdout.flush()
         self.prob = cp.prob(self.obj, self.constraints)
 
     def solve_prob(self):
