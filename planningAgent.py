@@ -62,6 +62,8 @@ class PlanningAgent:
         self.severe = []
 
     def set_obj(self):
+        print("starting to make objective")
+        sys.stdout.flush()
         obj = 0
         for i in self.BP.states:
             for j in self.pi[i]:
@@ -73,7 +75,10 @@ class PlanningAgent:
         self.constraints = [obj < 0]
 
     def make_constraints_eqn1(self):
+        i = 0
         for s_ in self.BP.states:
+            print(i)
+            sys.stdout.flush()
             c = 0
             for s in self.BP.states:
                 for a in self.pi[s]:
