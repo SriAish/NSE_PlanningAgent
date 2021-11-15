@@ -1,0 +1,13 @@
+==========================================
+SLURM_JOB_ID = 529083
+SLURM_NODELIST = gnode90
+SLURM_JOB_GPUS = 0
+==========================================
+/var/spool/slurmd/job529083/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+initial belief setup
+variables setup
+parameters setup
+event trajectories setup
+starting to make objective
+/var/spool/slurmd/job529083/slurm_script: line 11: 10674 Killed                  python3.7 planningAgent.py
+slurmstepd: error: Detected 1 oom-kill event(s) in step 529083.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
