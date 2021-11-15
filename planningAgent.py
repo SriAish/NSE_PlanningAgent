@@ -2,6 +2,7 @@ import numpy as np
 import sys
 import cvxpy as cp
 from misc import BoxPushingConstants
+import random
 
 
 class PlanningAgent:
@@ -51,11 +52,11 @@ class PlanningAgent:
         self.x_para = {}
         self.pi_para = {}
         for i in self.BP.states:
-            self.x_para[i] = cp.Parameter(nonpos=True)
+            self.x_para[i] = random.uniform(0, 1)
             actions = self.BP.getValidActions(i)
             self.pi_para[i] = {}
             for j in actions:
-                self.pi_para[i][j] = cp.Parameter(nonpos=True)
+                self.pi_para[i][j] = random.uniform(0, 1)
     
     def get_event_traj(self):
         self.mild = []
