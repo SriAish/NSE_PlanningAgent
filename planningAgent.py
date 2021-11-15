@@ -73,7 +73,7 @@ class PlanningAgent:
         self.obj = cp.Minimize(obj)
         obj -= self.VIb 
         obj -= self.delta
-        self.constraints = [obj < 0]
+        self.constraints = [obj <= 0]
 
     def make_constraints_eqn1(self):
         i = 0

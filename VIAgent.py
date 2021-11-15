@@ -76,3 +76,4 @@ if __name__ == '__main__':
     
     # print(agent.stateValues)
     with open('policy/'+ 'ValueFunction_3_3' + '.pkl', 'wb') as f:
+        pickle.dump(agent.stateValues, f, pickle.HIGHEST_PROTOCOL)
