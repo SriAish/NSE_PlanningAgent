@@ -2,22 +2,21 @@ import numpy as np
 from actions import Actions
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 15):
+    def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4)):
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
-
+        self.rug_height = rug_height
+        self.rug_width = rug_width
+        self.rug_start = rug_start
         self.putRug()
         self.generateStates()
 
         self.actions = Actions()
     
     def putRug(self):
-        rug_height = 3
-        rug_width = 7
-        rug_start = (6, 4)
-        for i in range(rug_height):
-            for j in range(rug_width):
-                self.grid[rug_start[0] + i, rug_start[1] + j] = 'r'
+        for i in range(self.rug_height):
+            for j in range(self.rug_width):
+                self.grid[self.rug_start[0] + i, self.rug_start[1] + j] = 'r'
 
     def getType(self, location):
         return self.grid[tuple(location)]

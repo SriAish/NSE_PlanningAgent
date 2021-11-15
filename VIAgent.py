@@ -2,8 +2,8 @@ from misc import BoxPushingConstants
 import pickle
 
 class VIAgent:
-    def __init__(self, endState, gamma = 0.9, delta = 0.1):
-        self.BP = BoxPushingConstants()
+    def __init__(self, endState, gamma = 0.9, delta = 0.001):
+        self.BP = BoxPushingConstants(3, 0, 0)
         self.endState = endState
         self.stateValues = {}
         self.initializeStateValues()
@@ -35,11 +35,9 @@ class VIAgent:
     def generatePolicy(self):
         x = 999999
         k = 0
-        print(len(self.stateValues))
         while x > self.delta:
             x = self.update()
             k += 1
-            print(k, x)
         
         policy = {}
         for state in self.stateValues:
@@ -73,8 +71,8 @@ if __name__ == '__main__':
     agent = VIAgent(((7, 14), (7, 14), False, 'p'))
     policy = agent.generatePolicy()
     print(policy)
-    with open('policy/'+ 'VIPolicy' + '.pkl', 'wb') as f:
+    with open('policy/'+ 'VIPolicy_3_3_2' + '.pkl', 'wb') as f:
         pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
 
-    with open('policy/'+ 'ValueFunction' + '.pkl', 'wb') as f:
+    with open('policy/'+ 'ValueFunction_3_3_2' + '.pkl', 'wb') as f:
         pickle.dump(agent.stateValues, f, pickle.HIGHEST_PROTOCOL)
