@@ -95,7 +95,7 @@ class PlanningAgent:
             c = 0
             for s in self.BP.states:
                 for a in self.pi[s]:
-                    c += (cp.exp(self.x[s] + self.pi[s][a])*self.BP.T(s, a, s_)*(1 + self.x[s] + self.pi[s][a] - self.x_para[s] - self.pi_para[s][a]))
+                    c += (cp.exp(self.x_para[s] + self.pi_para[s][a])*self.BP.T(s, a, s_)*(1 + self.x[s] + self.pi[s][a] - self.x_para[s] - self.pi_para[s][a]))
             c = -self.gamma*c
             if s_ in self.belief_state:
                 c -= 1/len(self.belief_state)
