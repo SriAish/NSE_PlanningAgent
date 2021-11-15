@@ -118,7 +118,7 @@ class PlanningAgent:
         self.make_constraints_eqn3()
         print("eq3")
         sys.stdout.flush()
-        self.prob = cp.prob(self.obj, self.constraints)
+        self.prob = cp.Problem(self.obj, self.constraints)
 
     def solve_prob(self):
         try:
