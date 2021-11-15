@@ -6,8 +6,8 @@ from cvxpy import exp
 
 
 class PlanningAgent:
-    def __init__(self, VIb = 35, gamma = 0.9, delta = 10, a1 = 1, a2 = 1):
-        self.BP = BoxPushingConstants()
+    def __init__(self, VIb = 6.4, gamma = 0.9, delta = 10, a1 = 1, a2 = 1):
+        self.BP = BoxPushingConstants(3, 0, 0)
         self.no_states = len(self.BP.states)
         self.gamma = gamma
         self.delta = delta
@@ -31,7 +31,8 @@ class PlanningAgent:
         sys.stdout.flush()
 
     def init_belief(self):
-        locations = [(7, 0), (9, 2), (12, 7), (2, 7), (7, 12), (3, 11), (12, 14), (6, 3), (5, 6), (9, 8)]
+        # locations = [(7, 0), (9, 2), (12, 7), (2, 7), (7, 12), (3, 11), (12, 14), (6, 3), (5, 6), (9, 8)]
+        locations = [(1, 1)]
         init_loc = (0, 0)
         self.belief_state = []
         for i in locations:
