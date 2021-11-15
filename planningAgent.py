@@ -67,7 +67,7 @@ class PlanningAgent:
         obj = 0
         for i in self.BP.states:
             for j in self.pi[i]:
-                obj += exp(self.x[i])*exp(self.pi[i][j])*self.BP.get_cost(i, j)
+                obj += cp.exp(self.x[i])*cp.exp(self.pi[i][j])*self.BP.get_cost(i, j)
 
         self.obj = cp.Minimize(obj)
         obj -= self.VIb 
@@ -82,11 +82,11 @@ class PlanningAgent:
             c = 0
             for s in self.BP.states:
                 for a in self.pi[s]:
-                    c += (exp(self.x[s])*exp(self.pi[s][a])*self.BP.T(s, a, s_))
+                    c += (cp.exp(self.x[s])*cp.exp(self.pi[s][a])*self.BP.T(s, a, s_))
             c = self.gamma*c
             if s_ in self.belief_state:
                 c += 1/len(self.belief_state)
-            c -= (exp(self.x_para[s_])(1 + self.x[s_] - self.x_para[s_]))
+            c -= (cp.exp(self.x_para[s_])(1 + self.x[s_] - self.x_para[s_]))
             self.constraints.append(c <= 0)
 
     def make_constraints_eqn2(self):
@@ -94,11 +94,11 @@ class PlanningAgent:
             c = 0
             for s in self.BP.states:
                 for a in self.pi[s]:
-                    c += (exp(self.x[s])*exp(self.pi[s][a])*self.BP.T(s, a, s_)*(1 + self.x[s] + self.pi[s][a] - self.x_para[s] - self.pi_para[s][a]))
+                    c += (cp.exp(self.x[s])*cp.exp(self.pi[s][a])*self.BP.T(s, a, s_)*(1 + self.x[s] + self.pi[s][a] - self.x_para[s] - self.pi_para[s][a]))
             c = -self.gamma*c
             if s_ in self.belief_state:
                 c -= 1/len(self.belief_state)
-            c += exp(self.x_para[s_])
+            c += cp.exp(self.x_para[s_])
             self.constraints.append(c <= 0) 
 
     def make_constraints_eqn3(self):
