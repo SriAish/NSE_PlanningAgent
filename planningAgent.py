@@ -2,7 +2,6 @@ import numpy as np
 import sys
 import cvxpy as cp
 from misc import BoxPushingConstants
-from cvxpy import exp
 
 
 class PlanningAgent:
