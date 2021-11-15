@@ -131,7 +131,7 @@ class PlanningAgent:
 
     def solve_prob(self):
         try:
-            self.prob.solve()
+            self.prob.solve(verbose=True)
         except Exception as e:
             print(e)
 
