@@ -129,10 +129,17 @@ class PlanningAgent:
     def solve_DCP(self):
         pass
 
+    def print_policy(self):
+        for i in self.pi:
+            print(i)
+            for j in self.pi[i]:
+                print(j, self.pi[i][j].value)
+
 if __name__ == '__main__':
     agent = PlanningAgent()
     agent.solve_prob()
-    print(agent.pi)
+    agent.print_policy()
+    
 
 
 
