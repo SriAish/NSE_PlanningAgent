@@ -10,6 +10,8 @@ class BoxPushingConstants:
         self.rug_width = rug_width
         self.rug_start = rug_start
         self.end_state = end_state
+        self.prev_end = (end_state[0], end_state[1], True, end_state[3])
+        print(self.prev_end)
         self.putRug()
         self.generateStates()
 
@@ -32,7 +34,6 @@ class BoxPushingConstants:
                 act.append(self.actions.drop)
             else:
                 act.append(self.actions.pick_up)
-        print(act)
         return act
 
     def generateStates(self):
@@ -58,6 +59,10 @@ class BoxPushingConstants:
         return (location[0], min(self.grid_size - 1, location[1] + 1))
 
     def get_cost(self, state, action):
+        if state == self.prev_end and action == self.actions.drop:
+            print("before final")
+            print(state)
+            return self.actions.actionCost(action) - 10
         return self.actions.actionCost(action)
 
     def transition(self, state, action):
