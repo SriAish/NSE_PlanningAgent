@@ -62,7 +62,7 @@ class BoxPushingConstants:
         if state == self.prev_end and action == self.actions.drop:
             print("before final")
             print(state)
-            return self.actions.actionCost(action) - 10
+            return self.actions.actionCost(action) - 2
         return self.actions.actionCost(action)
 
     def transition(self, state, action):
