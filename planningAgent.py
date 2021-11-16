@@ -3,6 +3,7 @@ import sys
 import cvxpy as cp
 from misc import BoxPushingConstants
 import random
+import pickle
 
 
 class PlanningAgent:
@@ -137,10 +138,21 @@ class PlanningAgent:
         pass
 
     def print_policy(self):
+        policy = {}
         for i in self.pi:
             print(i)
+            max_ac = None
+            max_val = 0
             for j in self.pi[i]:
-                print(j, np.exp(self.pi[i][j].value))
+                v = np.exp(self.pi[i][j].value)
+                print(j, v)
+                if v > max_val :
+                    max_val = v
+                    max_ac = j
+            policy[i] = max_ac
+        print(policy)
+        with open('policy/'+ 'Planning_Agent_Policy_3_3' + '.pkl', 'wb') as f:
+            pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
     agent = PlanningAgent()
