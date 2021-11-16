@@ -22,14 +22,14 @@ class BoxPushingConstants:
         return self.grid[tuple(location)]
 
     def getValidActions(self, state):
-        actions = self.actions.moveActions
+        act = self.actions.moveActions
         if state[0] == state[1]:
             if state[2]:
-                actions.append(self.actions.drop)
+                act.append(self.actions.drop)
             else:
-                actions.append(self.actions.pick_up)
-
-        return actions
+                act.append(self.actions.pick_up)
+        print(act)
+        return act
 
     def generateStates(self):
         self.states = []
