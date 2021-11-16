@@ -106,12 +106,10 @@ class PlanningAgent:
     def make_constraints_eqn3(self):
         for i in self.x:
             self.constraints.append(cp.exp(self.x[i]) <= 1)
-            self.constraints.append(cp.exp(self.x[i]) >= 0)
 
         for i in self.pi:
             for j in self.pi[i]:
                 self.constraints.append(cp.exp(self.pi[i][j]) <= 1)
-                self.constraints.append(cp.exp(self.pi[i][j]) >= 0)
 
     def make_prob(self):
         self.constraints = []
