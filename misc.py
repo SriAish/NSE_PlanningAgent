@@ -3,12 +3,13 @@ import numpy as np
 from actions import Actions
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4)):
+    def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_state=None):
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
         self.rug_height = rug_height
         self.rug_width = rug_width
         self.rug_start = rug_start
+        self.end_state = end_state
         self.putRug()
         self.generateStates()
 
@@ -23,6 +24,8 @@ class BoxPushingConstants:
         return self.grid[tuple(location)]
 
     def getValidActions(self, state):
+        if state == self.end_state:
+            return {}
         act = copy.deepcopy(self.actions.moveActions)
         if state[0] == state[1]:
             if state[2]:

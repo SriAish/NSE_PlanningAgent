@@ -7,7 +7,7 @@ import random
 
 class PlanningAgent:
     def __init__(self, VIb = 6.4, gamma = 0.9, delta = 10, a1 = 1, a2 = 1):
-        self.BP = BoxPushingConstants(3, 0, 0)
+        self.BP = BoxPushingConstants(3, 0, 0, end_state=((2, 2), (2, 2), False, 'p'))
         self.no_states = len(self.BP.states)
         self.gamma = gamma
         self.delta = delta
