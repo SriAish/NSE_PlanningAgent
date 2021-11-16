@@ -1,3 +1,4 @@
+import copy
 import numpy as np
 from actions import Actions
 
@@ -22,7 +23,7 @@ class BoxPushingConstants:
         return self.grid[tuple(location)]
 
     def getValidActions(self, state):
-        act = self.actions.moveActions
+        act = copy.deepcopy(self.actions.moveActions)
         if state[0] == state[1]:
             if state[2]:
                 act.append(self.actions.drop)
