@@ -73,7 +73,7 @@ class PlanningAgent:
             for j in self.pi[i]:
                 obj += cp.exp(self.x[i] + self.pi[i][j])*self.BP.get_cost(i, j)
 
-        self.obj = cp.Minimize(obj + self.s1 + self.s2 + self.s3)
+        self.obj = cp.Minimize(obj + self.s1 + self.s2)
         obj -= self.VIb 
         obj -= self.delta
         self.constraints = [obj <= 0]
@@ -105,13 +105,13 @@ class PlanningAgent:
 
     def make_constraints_eqn3(self):
         for i in self.x:
-            self.constraints.append(self.x[i] <= 1 + self.s3)
-            self.constraints.append(self.x[i] >= 0 - self.s3)
+            self.constraints.append(self.x[i] <= 1)
+            self.constraints.append(self.x[i] >= 0)
 
         for i in self.pi:
             for j in self.pi[i]:
-                self.constraints.append(self.pi[i][j] <= 1 + self.s3)
-                self.constraints.append(self.pi[i][j] >= 0 - self.s3)
+                self.constraints.append(self.pi[i][j] <= 1)
+                self.constraints.append(self.pi[i][j] >= 0)
 
     def make_prob(self):
         self.constraints = []
@@ -131,7 +131,7 @@ class PlanningAgent:
 
     def solve_prob(self):
         try:
-            self.prob.solve(solver=cp.MOSEK, verbose=True)
+            self.prob.solve(solver=cp.SCS, verbose=True)
         except Exception as e:
             print(e)
 
