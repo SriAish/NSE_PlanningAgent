@@ -74,10 +74,10 @@ class PlanningAgent:
             for j in self.pi[i]:
                 obj += cp.exp(self.x[i] + self.pi[i][j])*self.BP.get_cost(i, j)
 
-        self.obj = cp.Minimize(obj + self.s1 + self.s2 + self.s3)
+        self.obj = cp.Minimize(obj + self.s1 + self.s2)
         obj -= self.VIb 
         obj -= self.delta
-        self.constraints = [obj <= self.s3]
+        self.constraints = [obj <= 0]
 
     def make_constraints_eqn1(self):
         for s_ in self.BP.states:

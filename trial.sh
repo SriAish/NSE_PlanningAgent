@@ -4,9 +4,10 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem-per-cpu=115G
 #SBATCH -t 2-00:00:00
-#SBATCH --output=try_SCS_tight_reward.txt
+#SBATCH --output=try_SCS_without_s3.txt
 module add cuda/9.0
 module add cudnn/7-cuda-9.0
 source ~/keras/bin/activate
 echo "SCS"
+echo "relaxed 3rd slack"
 python3.7 planningAgent.py
