@@ -1,0 +1,655 @@
+==========================================
+SLURM_JOB_ID = 531943
+SLURM_NODELIST = gnode44
+SLURM_JOB_GPUS = 0
+==========================================
+/var/spool/slurmd/job531943/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+MOSEK
+initial belief setup
+variables setup
+parameters setup
+event trajectories setup
+starting to make objective
+objective setup
+eq1
+eq2
+eq3
+problem setup
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 17 02:18:17 AM: Your problem has 632 variables, 1439 constraints, and 0 parameters.
+(CVXPY) Nov 17 02:18:24 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 17 02:18:24 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Nov 17 02:18:24 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+The solver MOSEK is not installed.
+((0, 0), (0, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+((0, 0), (0, 0), True, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 0), (0, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 0), (0, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 0), (1, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 0), (1, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 0), (1, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 0), (2, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 0), (2, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 0), (2, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (0, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (0, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (0, 1), True, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (0, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (1, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (1, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (1, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (2, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (2, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 1), (2, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (0, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (0, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (0, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (0, 2), True, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (1, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (1, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (1, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (2, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (2, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((0, 2), (2, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (0, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (0, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (0, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (1, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (1, 0), True, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (1, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (1, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (2, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (2, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 0), (2, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (0, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (0, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (0, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (1, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (1, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (1, 1), True, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (1, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (2, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (2, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 1), (2, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (0, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (0, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (0, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (1, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (1, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (1, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (1, 2), True, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (2, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (2, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((1, 2), (2, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (0, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (0, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (0, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (1, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (1, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (1, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (2, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (2, 0), True, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (2, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 0), (2, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (0, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (0, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (0, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (1, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (1, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (1, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (2, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (2, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (2, 1), True, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 1), (2, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (0, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (0, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (0, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (1, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (1, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (1, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (2, 0), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (2, 1), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (2, 2), False, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
+((2, 2), (2, 2), True, 'p')
+down None
+up None
+right None
+left None
+pick_up None
+drop None
