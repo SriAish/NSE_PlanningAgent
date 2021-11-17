@@ -27,7 +27,7 @@ def checkDamage(t):
     return (np.count_nonzero(rug)/21) * 100
 
 def generate_trajectory(agent):
-    env = BoxPushing()
+    env = BoxPushing(7, [0, 0], [3, 6])
     done = False
     t = []
     ac = 0
@@ -41,7 +41,7 @@ def generate_trajectory(agent):
 
         ac += 1
 
-        s, c, done = env.getNextState(a)
+        s, _, done = env.getNextState(a)
 
         # print(s, a, done)        
     # env.display()
