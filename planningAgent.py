@@ -67,13 +67,13 @@ class PlanningAgent:
             self.pi_para[i] = {}
             for j in actions:
                 self.pi_para[i][j] = cp.Parameter()
-                self.pi_para.value = random.uniform(-10, 0)
+                self.pi_para[i][j].value = random.uniform(-10, 0)
 
     def change_para(self):
         for i in self.BP.states:
-            self.x_para[i] = self.x[i].value
+            self.x_para[i].value = self.x[i].value
             for j in self.pi[i]:
-                self.pi_para[i][j] = self.pi[i][j].value
+                self.pi_para[i][j].value = self.pi[i][j].value
     
     def get_event_traj(self):
         self.mild = []
@@ -87,12 +87,13 @@ class PlanningAgent:
             for j in self.pi[i]:
                 obj += cp.exp(self.x[i] + self.pi[i][j])*self.BP.get_cost(i, j)
 
-        self.obj = cp.Minimize(obj)
+        self.obj = cp.Minimize(obj + self.tao*(cp.sum(self.s1) + cp.sum(self.s2)))
         obj -= self.VIb 
         obj -= self.delta
         self.constraints = [obj <= 0]
 
     def make_constraints_eqn1(self):
+        i = 0
         for s_ in self.BP.states:
             sys.stdout.flush()
             c = 0
@@ -103,9 +104,11 @@ class PlanningAgent:
             if s_ in self.belief_state:
                 c += 1/len(self.belief_state)
             c -= (cp.exp(self.x_para[s_])*(1 + self.x[s_] - self.x_para[s_]))
-            self.constraints.append(c <= 0)
+            self.constraints.append(c <= self.s1[i])
+            i += 1
 
     def make_constraints_eqn2(self):
+        i = 0
         for s_ in self.BP.states:
             c = 0
             for s in self.BP.states:
@@ -115,7 +118,8 @@ class PlanningAgent:
             if s_ in self.belief_state:
                 c -= 1/len(self.belief_state)
             c += cp.exp(self.x_para[s_])
-            self.constraints.append(c <= 0) 
+            self.constraints.append(c <= self.s2[i])
+            i += 1 
 
     def make_constraints_eqn3(self):
         for i in self.x:
@@ -167,7 +171,7 @@ class PlanningAgent:
                     max_ac = j
             policy[i] = max_ac
         print(policy)
-        with open('policy/'+ 'Planning_Agent_Policy_3_3' + '.pkl', 'wb') as f:
+        with open('policy/'+ 'Planning_Agent_Policy_3_3_DCP' + '.pkl', 'wb') as f:
             pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
