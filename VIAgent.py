@@ -69,12 +69,12 @@ class VIPolicy:
 
 if __name__ == '__main__':
     BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
-    agent = VIAgent(BP, delta=0.1)
+    agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
     # print(policy)
-    with open('policy/'+ 'VIPolicy_7_7' + '.pkl', 'wb') as f:
+    with open('policy/'+ 'VIPolicy_7_7_2' + '.pkl', 'wb') as f:
         pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
     
     # print(agent.stateValues)
-    with open('policy/'+ 'ValueFunction_7_7' + '.pkl', 'wb') as f:
+    with open('policy/'+ 'ValueFunction_7_7_2' + '.pkl', 'wb') as f:
         pickle.dump(agent.stateValues, f, pickle.HIGHEST_PROTOCOL)
