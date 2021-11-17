@@ -5,11 +5,8 @@ import csv
 import copy
 import numpy as np
 
-env = BoxPushing(15, [0, 0], [7, 14], [7, 0])
-
-def checkDamage(t):
-    rug = np.zeros((3, 7))
-    st = (6, 4)
+def checkDamage(t, st=[6, 4]):
+    rug = np.zeros((3, 3))
     n = 0
     ind = 0
     for i in t:
@@ -24,10 +21,10 @@ def checkDamage(t):
     
     # print(np.count_nonzero(rug))
 
-    return (np.count_nonzero(rug)/21) * 100
+    return (np.count_nonzero(rug)/9) * 100
 
 def generate_trajectory(agent):
-    env = BoxPushing(7, [0, 0], [3, 6])
+    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
     done = False
     t = []
     ac = 0
@@ -48,7 +45,7 @@ def generate_trajectory(agent):
     return t, ac
 
 def generate_n_tajectories(n, agent):
-    with open('trajectories.csv', 'w') as csvfile:
+    with open('trajectories_7_7.csv', 'w') as csvfile:
         csvwriter = csv.writer(csvfile)
 
         csvwriter.writerow(["trajectory", "Type", "Size"])
@@ -56,7 +53,7 @@ def generate_n_tajectories(n, agent):
         while i < 50:
             t, ac = generate_trajectory(agent)
             c = "severe"
-            damage = checkDamage(t)
+            damage = checkDamage(t, [2, 2])
 
             if damage < 1:
                 continue
@@ -70,6 +67,6 @@ def generate_n_tajectories(n, agent):
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = VIPolicy("policy/VIPolicy.pkl")
+    agent = VIPolicy("policy/VIPolicy_7_7_2.pkl")
     generate_n_tajectories(50, agent)
     # generate_trajectory(agent)

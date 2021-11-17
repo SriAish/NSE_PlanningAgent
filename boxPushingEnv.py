@@ -7,7 +7,7 @@ from actions import Actions
 np.set_printoptions(infstr="(infinity)")
 
 class BoxPushing:
-    def __init__(self, grid_size=None, initial_location=None, end_location=None, box_location=None, rug_width=None, rug_height=None, rug_start=None):
+    def __init__(self, grid_size=None, initial_location=None, end_location=None, box_location=None, rug_width=None, rug_height=None, rug_start=None, locations=None):
         if grid_size == None:
             grid_size = 15
         self.grid_size = grid_size
@@ -24,6 +24,7 @@ class BoxPushing:
         self.end_location = end_location
 
         if box_location == None:
+            self.locations = locations
             box_location = self.placeBox()
         self.box_location = box_location
 
@@ -59,8 +60,9 @@ class BoxPushing:
         return actions
 
     def placeBox(self):
-        locations = [[7, 0], [9, 2], [12, 7], [2, 7], [7, 12], [3, 11], [12, 14], [6, 3], [5, 6], [9, 8]]
-        return random.choice(locations)
+        if self.locations == None:
+            self.locations = [[7, 0], [9, 2], [12, 7], [2, 7], [7, 12], [3, 11], [12, 14], [6, 3], [5, 6], [9, 8]]
+        return random.choice(self.locations)
 
     def moveDown(self):
         self.agent_location[0] = min(self.grid_size - 1, self.agent_location[0] + 1)
