@@ -16,3 +16,28 @@ before final
 ((2, 2), (2, 2), True, 'p')
 objective setup
 eq1
+eq2
+eq3
+problem setup
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:07:26 AM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:07:31 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:07:31 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:07:33 AM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:07:33 AM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:07:33 AM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:07:44 AM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:07:58 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:07:59 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:08:30 AM: Applying reduction SCS
+(CVXPY) Nov 18 03:09:29 AM: Finished problem compilation (took 1.174e+02 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:09:29 AM: Invoking solver SCS  to obtain a solution.
