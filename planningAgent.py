@@ -15,9 +15,12 @@ class PlanningAgent:
         self.a1 = a1
         self.a2 = a2
         self.VIb = VIb
-        self.s1 = cp.Variable()
-        self.s2 = cp.Variable()
-        self.s3 = cp.Variable()
+        self.s1 = cp.Variable(self.no_states)
+        self.s2 = cp.Variable(self.no_states)
+        self.tao = cp.Parameter()
+        self.tao.value = 1
+        self.mu = 1.5
+        self.tao_max = 20
         self.locations = locations
         self.init_belief()
         print("initial belief setup")
@@ -58,11 +61,19 @@ class PlanningAgent:
         self.x_para = {}
         self.pi_para = {}
         for i in self.BP.states:
-            self.x_para[i] = random.uniform(0, 1)
+            self.x_para[i] = cp.Parameter()
+            self.x_para[i].value = random.uniform(-10, 0)
             actions = self.BP.getValidActions(i)
             self.pi_para[i] = {}
             for j in actions:
-                self.pi_para[i][j] = random.uniform(0, 1)
+                self.pi_para[i][j] = cp.Parameter()
+                self.pi_para.value = random.uniform(-10, 0)
+
+    def change_para(self):
+        for i in self.BP.states:
+            self.x_para[i] = self.x[i].value
+            for j in self.pi[i]:
+                self.pi_para[i][j] = self.pi[i][j].value
     
     def get_event_traj(self):
         self.mild = []
@@ -137,7 +148,10 @@ class PlanningAgent:
             print(e)
 
     def solve_DCP(self):
-        pass
+        for _ in range(10):
+            self.tao.value = min(self.mu*self.tao.value, self.tao_max)
+            self.solve_prob()
+            self.change_para()
 
     def print_policy(self):
         policy = {}
@@ -159,7 +173,7 @@ class PlanningAgent:
 if __name__ == '__main__':
     BP = BoxPushingConstants(3, 0, 0, end_state=((2, 2), (2, 2), False, 'p'))
     agent = PlanningAgent(BP)
-    agent.solve_prob()
+    agent.solve_DCP()
     agent.print_policy()
     
 
