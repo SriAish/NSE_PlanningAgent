@@ -1,0 +1,19 @@
+==========================================
+SLURM_JOB_ID = 532612
+SLURM_NODELIST = gnode23
+SLURM_JOB_GPUS = 0
+==========================================
+/var/spool/slurmd/job532612/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+SCS
+full DCP
+((2, 2), (2, 2), True, 'p')
+initial belief setup
+variables setup
+Traceback (most recent call last):
+  File "planningAgent.py", line 175, in <module>
+    agent = PlanningAgent(BP)
+  File "planningAgent.py", line 31, in __init__
+    self.init_para()
+  File "planningAgent.py", line 70, in init_para
+    self.pi_para.value = random.uniform(-10, 0)
+AttributeError: 'dict' object has no attribute 'value'
