@@ -7,8 +7,8 @@ import pickle
 
 
 class PlanningAgent:
-    def __init__(self, VIb = 6.4, gamma = 0.9, delta = 10, a1 = 1, a2 = 1):
-        self.BP = BoxPushingConstants(3, 0, 0, end_state=((2, 2), (2, 2), False, 'p'))
+    def __init__(self, BP, VIb = 6.4, gamma = 0.9, delta = 10, a1 = 1, a2 = 1, locations = None):
+        self.BP = BP
         self.no_states = len(self.BP.states)
         self.gamma = gamma
         self.delta = delta
@@ -18,6 +18,7 @@ class PlanningAgent:
         self.s1 = cp.Variable()
         self.s2 = cp.Variable()
         self.s3 = cp.Variable()
+        self.locations = locations
         self.init_belief()
         print("initial belief setup")
         sys.stdout.flush()
@@ -36,10 +37,11 @@ class PlanningAgent:
 
     def init_belief(self):
         # locations = [(7, 0), (9, 2), (12, 7), (2, 7), (7, 12), (3, 11), (12, 14), (6, 3), (5, 6), (9, 8)]
-        locations = [(1, 1)]
+        if self.locations == None:
+            self.locations = [(1, 1)]
         init_loc = (0, 0)
         self.belief_state = []
-        for i in locations:
+        for i in self.locations:
             self.belief_state.append((init_loc, i, False, 'p'))
 
     def init_var(self):
@@ -155,7 +157,8 @@ class PlanningAgent:
             pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
-    agent = PlanningAgent()
+    BP = BoxPushingConstants(3, 0, 0, end_state=((2, 2), (2, 2), False, 'p'))
+    agent = PlanningAgent(BP)
     agent.solve_prob()
     agent.print_policy()
     

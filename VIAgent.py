@@ -2,9 +2,9 @@ from misc import BoxPushingConstants
 import pickle
 
 class VIAgent:
-    def __init__(self, endState, gamma = 0.9, delta = 0.1):
-        self.BP = BoxPushingConstants(3, 0, 0)
-        self.endState = endState
+    def __init__(self, BP, gamma = 0.9, delta = 0.1):
+        self.BP = BP
+        self.end_state = self.BP.end_state
         self.stateValues = {}
         self.initializeStateValues()
         self.gamma = gamma  
@@ -13,12 +13,12 @@ class VIAgent:
     def initializeStateValues(self):
         for i in self.BP.states:
             self.stateValues[i] = 999
-        self.stateValues[self.endState] = 0
+        self.stateValues[self.end_state] = 0
 
     def update(self):
         delta = 0
         for state in self.stateValues:
-            if state == self.endState:
+            if state == self.end_state:
                 continue
             actions = self.BP.getValidActions(state)
             cost = 999999
@@ -41,7 +41,7 @@ class VIAgent:
         
         policy = {}
         for state in self.stateValues:
-            if state == self.endState:
+            if state == self.end_state:
                 continue
             actions = self.BP.getValidActions(state)
             cost = 999999
@@ -68,12 +68,13 @@ class VIPolicy:
         return self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])]
 
 if __name__ == '__main__':
-    agent = VIAgent(((2, 2), (2, 2), False, 'p'))
+    BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 3), (3, 3), False, 'p'))
+    agent = VIAgent(BP)
     policy = agent.generatePolicy()
     # print(policy)
-    with open('policy/'+ 'VIPolicy_3_3' + '.pkl', 'wb') as f:
+    with open('policy/'+ 'VIPolicy_7_7' + '.pkl', 'wb') as f:
         pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
     
     # print(agent.stateValues)
-    with open('policy/'+ 'ValueFunction_3_3' + '.pkl', 'wb') as f:
+    with open('policy/'+ 'ValueFunction_7_7' + '.pkl', 'wb') as f:
         pickle.dump(agent.stateValues, f, pickle.HIGHEST_PROTOCOL)
