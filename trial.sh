@@ -8,6 +8,10 @@
 module add cuda/9.0
 module add cudnn/7-cuda-9.0
 source ~/keras/bin/activate
+start=`date +%s`
 echo "SCS"
 echo "full DCP"
 python3.7 planningAgent.py
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime

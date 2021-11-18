@@ -4,6 +4,7 @@ import cvxpy as cp
 from misc import BoxPushingConstants
 import random
 import pickle
+import csv
 
 
 class PlanningAgent:
@@ -154,10 +155,14 @@ class PlanningAgent:
             print(e)
 
     def solve_DCP(self):
-        for _ in range(10):
-            self.tao.value = min(self.mu*self.tao.value, self.tao_max)
-            self.solve_prob()
-            self.change_para()
+        with open('output.csv', 'w') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(["iteration", "V", "para", "tao"])
+            for i in range(10):
+                self.tao.value = min(self.mu*self.tao.value, self.tao_max)
+                self.solve_prob()
+                csvwriter.writerow([i, self.prob.value, self.x_para[0].value, self.tao.value])
+                self.change_para()
 
     def print_policy(self):
         policy = {}
