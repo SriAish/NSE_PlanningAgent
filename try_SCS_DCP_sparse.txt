@@ -1,0 +1,1153 @@
+==========================================
+SLURM_JOB_ID = 532928
+SLURM_NODELIST = gnode66
+SLURM_JOB_GPUS = 0
+==========================================
+/var/spool/slurmd/job532928/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+SCS
+full DCP
+((2, 2), (2, 2), True, 'p')
+initial belief setup
+variables setup
+parameters setup
+event trajectories setup
+starting to make objective
+before final
+((2, 2), (2, 2), True, 'p')
+objective setup
+eq1
+eq2
+eq3
+problem setup
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:42:36 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:42:36 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:42:36 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:42:36 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:42:36 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:42:36 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:42:36 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:42:37 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:42:37 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:42:38 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:42:41 PM: Finished problem compilation (took 5.289e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:42:41 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 4.12e-03s
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 4.58e+20  1.12e+21  1.00e+00 -4.92e+23  4.81e+23  6.08e+23  2.02e-02 
+   100| 3.73e-03  9.57e-03  4.47e-02 -1.02e+01 -9.26e+00  1.92e-14  1.59e+00 
+   200| 4.17e-03  6.37e-03  1.38e-02 -1.12e+01 -1.16e+01  8.32e-14  2.97e+00 
+   300| 9.57e-04  1.57e-03  5.79e-03 -1.13e+01 -1.11e+01  6.70e-14  4.40e+00 
+   400| 4.66e-04  1.15e-03  3.59e-03 -1.14e+01 -1.13e+01  8.20e-14  7.96e+00 
+   500| 3.39e-04  1.05e-03  3.39e-03 -1.14e+01 -1.13e+01  8.19e-14  1.35e+01 
+   600| 7.38e-04  9.38e-04  2.73e-03 -1.14e+01 -1.14e+01  2.01e-13  1.94e+01 
+   700| 7.71e-04  9.05e-04  2.79e-03 -1.15e+01 -1.16e+01  1.28e-13  2.62e+01 
+   800| 4.18e-04  1.04e-03  8.91e-04 -1.15e+01 -1.15e+01  2.42e-14  3.35e+01 
+   900| 1.99e-04  3.38e-04  6.21e-04 -1.15e+01 -1.15e+01  1.26e-14  4.10e+01 
+  1000| 1.83e-02  3.79e-02  1.84e-02 -1.15e+01 -1.11e+01  9.56e-15  4.87e+01 
+  1100| 6.76e-03  1.17e-02  1.34e-02 -1.15e+01 -1.11e+01  6.40e-14  5.61e+01 
+  1200| 1.21e-03  2.64e-03  2.31e-03 -1.15e+01 -1.16e+01  1.95e-13  6.37e+01 
+  1300| 1.21e-04  1.94e-04  4.70e-05 -1.15e+01 -1.15e+01  6.12e-14  7.11e+01 
+  1400| 1.97e-04  4.47e-04  3.00e-04 -1.15e+01 -1.15e+01  1.40e-13  7.86e+01 
+  1500| 5.34e-04  8.94e-04  1.95e-05 -1.15e+01 -1.15e+01  4.42e-15  8.61e+01 
+  1600| 1.06e-04  2.85e-04  6.71e-04 -1.15e+01 -1.16e+01  1.97e-13  9.37e+01 
+  1700| 8.46e-05  1.71e-04  2.11e-04 -1.15e+01 -1.15e+01  1.12e-13  1.01e+02 
+  1800| 1.96e-04  1.82e-04  1.99e-04 -1.15e+01 -1.15e+01  8.79e-14  1.09e+02 
+  1900| 1.06e-04  1.99e-04  2.31e-04 -1.15e+01 -1.15e+01  1.30e-13  1.16e+02 
+  1920| 4.48e-05  9.28e-05  4.15e-05 -1.15e+01 -1.15e+01  2.55e-14  1.18e+02 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 1.18e+02s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.31e-04s
+	Cones: avg projection time: 5.93e-02s
+	Acceleration: avg step time: 1.53e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.0651e-16, dist(y, K*) = 9.0211e-08, s'y/|s||y| = 6.9913e-12
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 4.4770e-05
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 9.2821e-05
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 4.1469e-05
+----------------------------------------------------------------------------
+c'x = -11.5378, -b'y = -11.5368
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:44:39 PM: Problem status: optimal
+(CVXPY) Nov 18 03:44:39 PM: Optimal value: -1.154e+01
+(CVXPY) Nov 18 03:44:39 PM: Compilation took 5.289e+00 seconds
+(CVXPY) Nov 18 03:44:39 PM: Solver (including time spent in interface) took 1.175e+02 seconds
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:44:39 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:44:39 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:44:39 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:44:39 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:44:39 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:44:39 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:44:39 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:44:40 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:44:40 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:44:40 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:44:43 PM: Finished problem compilation (took 4.656e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:44:43 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 3.34e-03s
+SCS using variable warm-starting
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 2.08e-01  5.14e-01  9.77e-01 -5.03e+02 -5.47e+00  0.00e+00  4.28e-02 
+   100| 1.49e-03  2.99e-03  1.22e-02 -4.06e+00 -4.17e+00  1.34e-14  8.18e+00 
+   200| 5.56e-04  1.53e-03  3.02e-03 -4.09e+00 -4.06e+00  7.30e-14  1.59e+01 
+   300| 2.49e-04  7.53e-04  1.37e-02 -4.11e+00 -3.99e+00  3.16e-13  2.31e+01 
+   400| 3.21e-04  8.22e-04  4.86e-04 -4.23e+00 -4.23e+00  9.27e-15  3.08e+01 
+   500| 1.80e-01  3.12e-01  2.15e-01 -4.32e+00 -6.96e+00  7.74e-14  3.84e+01 
+   600| 1.22e-02  1.91e-02  8.02e-02 -4.24e+00 -3.53e+00  2.01e-13  4.59e+01 
+   700| 1.84e-04  2.71e-04  2.82e-03 -4.23e+00 -4.21e+00  1.34e-14  5.32e+01 
+   800| 5.10e-05  1.60e-04  1.21e-04 -4.25e+00 -4.25e+00  1.57e-13  6.07e+01 
+   860| 2.71e-05  8.21e-05  6.96e-05 -4.25e+00 -4.25e+00  1.24e-13  6.52e+01 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 6.52e+01s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.26e-04s
+	Cones: avg projection time: 7.38e-02s
+	Acceleration: avg step time: 1.60e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.2199e-16, dist(y, K*) = 9.1524e-08, s'y/|s||y| = 3.9186e-12
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 2.7051e-05
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 8.2056e-05
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 6.9551e-05
+----------------------------------------------------------------------------
+c'x = -4.2512, -b'y = -4.2505
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:45:49 PM: Problem status: optimal
+(CVXPY) Nov 18 03:45:49 PM: Optimal value: -4.251e+00
+(CVXPY) Nov 18 03:45:49 PM: Compilation took 4.656e+00 seconds
+(CVXPY) Nov 18 03:45:49 PM: Solver (including time spent in interface) took 6.519e+01 seconds
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:45:49 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:45:49 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:45:49 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:45:49 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:45:49 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:45:49 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:45:49 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:45:50 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:45:50 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:45:51 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:45:54 PM: Finished problem compilation (took 4.650e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:45:54 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 3.36e-03s
+SCS using variable warm-starting
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 2.11e-01  3.64e-01  9.55e-01 -7.85e+02 -1.76e+01  0.00e+00  4.48e-02 
+   100| 1.07e-04  4.40e-04  1.01e-02  1.33e+00  1.30e+00  1.97e-13  8.23e+00 
+   200| 2.98e-05  1.32e-04  6.58e-03  1.35e+00  1.37e+00  1.42e-14  1.62e+01 
+   300| 1.13e-05  4.96e-05  2.47e-03  1.40e+00  1.41e+00  2.23e-13  2.42e+01 
+   400| 1.42e-05  3.97e-05  2.67e-03  1.41e+00  1.40e+00  1.25e-13  3.19e+01 
+   500| 2.64e-06  1.42e-05  6.80e-05  1.40e+00  1.40e+00  6.11e-14  3.97e+01 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 3.97e+01s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.27e-04s
+	Cones: avg projection time: 7.73e-02s
+	Acceleration: avg step time: 1.63e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.2429e-16, dist(y, K*) = 9.6910e-08, s'y/|s||y| = -2.7274e-12
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 2.6409e-06
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 1.4202e-05
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 6.8007e-05
+----------------------------------------------------------------------------
+c'x = 1.4004, -b'y = 1.4002
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:46:33 PM: Problem status: optimal
+(CVXPY) Nov 18 03:46:33 PM: Optimal value: 1.400e+00
+(CVXPY) Nov 18 03:46:33 PM: Compilation took 4.650e+00 seconds
+(CVXPY) Nov 18 03:46:33 PM: Solver (including time spent in interface) took 3.973e+01 seconds
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:46:33 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:46:33 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:46:33 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:46:33 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:46:33 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:46:33 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:46:34 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:46:34 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:46:34 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:46:35 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:46:38 PM: Finished problem compilation (took 4.734e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:46:38 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 3.30e-03s
+SCS using variable warm-starting
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 2.14e-01  2.99e-01  9.42e-01 -1.22e+03 -3.56e+01  0.00e+00  4.49e-02 
+   100| 9.96e-05  3.24e-04  2.75e-02  1.02e+00  9.42e-01  2.12e-13  8.09e+00 
+   200| 2.50e-05  9.21e-05  5.82e-03  1.08e+00  1.06e+00  3.81e-13  1.60e+01 
+   300| 1.42e-05  4.28e-05  5.04e-03  1.12e+00  1.10e+00  2.68e-13  2.39e+01 
+   320| 7.37e-06  3.64e-05  5.88e-05  1.10e+00  1.10e+00  2.21e-14  2.54e+01 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 2.54e+01s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.26e-04s
+	Cones: avg projection time: 7.72e-02s
+	Acceleration: avg step time: 1.53e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.4484e-16, dist(y, K*) = 9.7192e-08, s'y/|s||y| = 7.6968e-13
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 7.3720e-06
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 3.6426e-05
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 5.8814e-05
+----------------------------------------------------------------------------
+c'x = 1.1032, -b'y = 1.1034
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:47:04 PM: Problem status: optimal
+(CVXPY) Nov 18 03:47:04 PM: Optimal value: 1.103e+00
+(CVXPY) Nov 18 03:47:04 PM: Compilation took 4.734e+00 seconds
+(CVXPY) Nov 18 03:47:04 PM: Solver (including time spent in interface) took 2.539e+01 seconds
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:47:04 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:47:04 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:47:04 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:47:04 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:47:04 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:47:04 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:47:04 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:47:04 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:47:04 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:47:05 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:47:08 PM: Finished problem compilation (took 4.702e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:47:08 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 3.43e-03s
+SCS using variable warm-starting
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 2.16e-01  3.06e-01  9.41e-01 -1.86e+03 -5.57e+01  0.00e+00  4.80e-02 
+   100| 3.99e-05  1.62e-04  4.07e-02  9.52e-01  8.38e-01  1.80e-15  7.92e+00 
+   200| 7.33e-06  3.61e-05  7.36e-03  9.51e-01  9.30e-01  1.67e-13  1.58e+01 
+   300| 3.15e-06  1.88e-05  2.80e-03  9.55e-01  9.47e-01  6.49e-15  2.35e+01 
+   400| 2.32e-06  1.20e-05  9.52e-04  9.50e-01  9.47e-01  2.43e-13  3.13e+01 
+   500| 2.15e-06  6.99e-06  1.64e-03  9.55e-01  9.50e-01  3.09e-15  3.91e+01 
+   600| 1.19e-06  5.27e-06  3.28e-04  9.48e-01  9.49e-01  5.97e-13  4.71e+01 
+   700| 1.53e-06  6.08e-06  1.23e-05  9.49e-01  9.49e-01  1.03e-12  5.49e+01 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 5.49e+01s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.25e-04s
+	Cones: avg projection time: 7.64e-02s
+	Acceleration: avg step time: 1.62e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.5128e-16, dist(y, K*) = 9.0106e-08, s'y/|s||y| = 2.3662e-12
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 1.5346e-06
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 6.0819e-06
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 1.2256e-05
+----------------------------------------------------------------------------
+c'x = 0.9495, -b'y = 0.9494
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:48:03 PM: Problem status: optimal
+(CVXPY) Nov 18 03:48:03 PM: Optimal value: 9.495e-01
+(CVXPY) Nov 18 03:48:03 PM: Compilation took 4.702e+00 seconds
+(CVXPY) Nov 18 03:48:03 PM: Solver (including time spent in interface) took 5.493e+01 seconds
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:48:04 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:48:04 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:48:04 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:48:04 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:48:04 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:48:04 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:48:04 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:48:04 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:48:04 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:48:05 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:48:08 PM: Finished problem compilation (took 4.652e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:48:08 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 3.29e-03s
+SCS using variable warm-starting
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 2.17e-01  3.11e-01  9.42e-01 -2.83e+03 -8.41e+01  0.00e+00  4.98e-02 
+   100| 2.57e-05  1.39e-04  3.30e-02  8.17e-01  7.33e-01  1.16e-13  8.00e+00 
+   200| 9.16e-06  3.13e-05  1.66e-03  8.31e-01  8.35e-01  5.45e-13  1.59e+01 
+   300| 3.51e-06  1.66e-05  3.39e-03  8.45e-01  8.36e-01  6.39e-14  2.36e+01 
+   400| 2.06e-06  8.07e-06  4.66e-04  8.36e-01  8.34e-01  3.35e-15  3.13e+01 
+   500| 1.70e-06  6.48e-06  9.03e-05  8.34e-01  8.33e-01  1.73e-13  3.91e+01 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 3.91e+01s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.26e-04s
+	Cones: avg projection time: 7.61e-02s
+	Acceleration: avg step time: 1.55e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.5079e-16, dist(y, K*) = 1.0071e-07, s'y/|s||y| = -1.5388e-12
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 1.6982e-06
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 6.4763e-06
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 9.0338e-05
+----------------------------------------------------------------------------
+c'x = 0.8335, -b'y = 0.8333
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:48:47 PM: Problem status: optimal
+(CVXPY) Nov 18 03:48:47 PM: Optimal value: 8.335e-01
+(CVXPY) Nov 18 03:48:47 PM: Compilation took 4.652e+00 seconds
+(CVXPY) Nov 18 03:48:47 PM: Solver (including time spent in interface) took 3.911e+01 seconds
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:48:48 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:48:48 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:48:48 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:48:48 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:48:48 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:48:48 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:48:48 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:48:48 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:48:48 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:48:49 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:48:52 PM: Finished problem compilation (took 4.759e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:48:52 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 3.47e-03s
+SCS using variable warm-starting
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 2.18e-01  3.12e-01  9.40e-01 -4.26e+03 -1.31e+02  7.14e-13  4.50e-02 
+   100| 5.78e-05  3.28e-04  1.47e-01  4.86e-01  2.33e-01  2.83e-13  8.28e+00 
+   200| 1.94e-05  7.66e-05  2.42e-02  7.63e-01  7.04e-01  4.42e-13  1.63e+01 
+   300| 7.50e-06  3.78e-05  1.44e-03  7.70e-01  7.67e-01  7.52e-13  2.44e+01 
+   400| 6.16e-06  2.50e-05  5.94e-03  7.54e-01  7.69e-01  7.46e-13  3.22e+01 
+   500| 2.24e-06  1.36e-05  6.90e-04  7.89e-01  7.91e-01  1.13e-13  3.99e+01 
+   600| 1.51e-06  8.75e-06  3.73e-04  7.81e-01  7.80e-01  5.83e-13  4.76e+01 
+   700| 1.22e-06  5.89e-06  7.39e-05  7.81e-01  7.80e-01  4.36e-13  5.53e+01 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 5.53e+01s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.26e-04s
+	Cones: avg projection time: 7.67e-02s
+	Acceleration: avg step time: 1.76e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.5702e-16, dist(y, K*) = 1.0230e-07, s'y/|s||y| = 2.5630e-12
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 1.2239e-06
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 5.8928e-06
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 7.3902e-05
+----------------------------------------------------------------------------
+c'x = 0.7805, -b'y = 0.7803
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:49:48 PM: Problem status: optimal
+(CVXPY) Nov 18 03:49:48 PM: Optimal value: 7.806e-01
+(CVXPY) Nov 18 03:49:48 PM: Compilation took 4.759e+00 seconds
+(CVXPY) Nov 18 03:49:48 PM: Solver (including time spent in interface) took 5.528e+01 seconds
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:49:48 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:49:48 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:49:48 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:49:48 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:49:48 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:49:48 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:49:48 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:49:48 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:49:48 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:49:49 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:49:53 PM: Finished problem compilation (took 4.775e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:49:53 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 3.51e-03s
+SCS using variable warm-starting
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 8.42e-02  1.20e-01  9.42e-01 -1.93e+03 -5.68e+01  0.00e+00  4.16e-02 
+   100| 4.11e-05  1.78e-04  1.27e-01  4.57e-01  7.36e-01  3.39e-13  7.79e+00 
+   200| 9.65e-06  3.46e-05  9.85e-03  6.77e-01  7.01e-01  3.68e-14  1.56e+01 
+   300| 3.27e-06  1.70e-05  1.71e-03  7.26e-01  7.30e-01  1.58e-13  2.34e+01 
+   320| 3.24e-06  1.37e-05  8.13e-05  7.33e-01  7.34e-01  4.75e-13  2.50e+01 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 2.50e+01s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.26e-04s
+	Cones: avg projection time: 7.58e-02s
+	Acceleration: avg step time: 1.64e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.5603e-16, dist(y, K*) = 9.6921e-08, s'y/|s||y| = 8.9428e-12
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 3.2446e-06
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 1.3712e-05
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 8.1256e-05
+----------------------------------------------------------------------------
+c'x = 0.7334, -b'y = 0.7336
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:50:18 PM: Problem status: optimal
+(CVXPY) Nov 18 03:50:18 PM: Optimal value: 7.334e-01
+(CVXPY) Nov 18 03:50:18 PM: Compilation took 4.775e+00 seconds
+(CVXPY) Nov 18 03:50:18 PM: Solver (including time spent in interface) took 2.497e+01 seconds
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:50:18 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:50:18 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:50:18 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:50:18 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:50:18 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:50:18 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:50:18 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:50:18 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:50:18 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:50:19 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:50:22 PM: Finished problem compilation (took 4.802e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:50:22 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 3.36e-03s
+SCS using variable warm-starting
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 9.22e-05  9.96e-04  2.45e-01  1.74e+00  3.20e+00  7.00e-13  3.93e-02 
+    80| 2.60e-06  1.10e-05  4.79e-05  7.04e-01  7.04e-01  4.44e-13  5.80e+00 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 5.80e+00s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.28e-04s
+	Cones: avg projection time: 6.97e-02s
+	Acceleration: avg step time: 1.57e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.6091e-16, dist(y, K*) = 1.0065e-07, s'y/|s||y| = -1.2219e-12
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 2.5972e-06
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 1.1003e-05
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 4.7905e-05
+----------------------------------------------------------------------------
+c'x = 0.7044, -b'y = 0.7043
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:50:28 PM: Problem status: optimal
+(CVXPY) Nov 18 03:50:28 PM: Optimal value: 7.046e-01
+(CVXPY) Nov 18 03:50:28 PM: Compilation took 4.802e+00 seconds
+(CVXPY) Nov 18 03:50:28 PM: Solver (including time spent in interface) took 5.822e+00 seconds
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 18 03:50:28 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
+(CVXPY) Nov 18 03:50:28 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 18 03:50:28 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:50:28 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 18 03:50:28 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 18 03:50:28 PM: Applying reduction EvalParams
+(CVXPY) Nov 18 03:50:29 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 18 03:50:29 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 18 03:50:29 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 18 03:50:30 PM: Applying reduction SCS
+(CVXPY) Nov 18 03:50:33 PM: Finished problem compilation (took 4.628e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:50:33 PM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 8248
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 2581, constraints m = 6458
+Cones:	linear vars: 644
+	exp vars: 5814, dual exp vars: 0
+Setup time: 3.39e-03s
+SCS using variable warm-starting
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 8.80e-05  9.48e-04  2.43e-01  1.67e+00  3.05e+00  0.00e+00  3.95e-02 
+   100| 1.94e-06  5.27e-06  3.76e-03  6.36e-01  6.45e-01  4.58e-13  7.41e+00 
+   200| 7.87e-07  3.12e-06  1.39e-03  6.42e-01  6.39e-01  4.61e-13  1.52e+01 
+   300| 4.49e-07  1.92e-06  1.17e-03  6.44e-01  6.47e-01  5.02e-13  2.35e+01 
+   360| 4.08e-07  1.42e-06  7.93e-05  6.44e-01  6.44e-01  3.09e-13  2.82e+01 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 2.82e+01s
+	Lin-sys: nnz in L factor: 18049, avg solve time: 1.26e-04s
+	Cones: avg projection time: 7.61e-02s
+	Acceleration: avg step time: 1.76e-03s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 2.5545e-16, dist(y, K*) = 1.0401e-07, s'y/|s||y| = 9.9935e-12
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 4.0806e-07
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 1.4250e-06
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 7.9303e-05
+----------------------------------------------------------------------------
+c'x = 0.6443, -b'y = 0.6445
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 18 03:51:01 PM: Problem status: optimal
+(CVXPY) Nov 18 03:51:01 PM: Optimal value: 6.443e-01
+(CVXPY) Nov 18 03:51:01 PM: Compilation took 4.628e+00 seconds
+(CVXPY) Nov 18 03:51:01 PM: Solver (including time spent in interface) took 2.826e+01 seconds
+/home/sriaish/.local/lib/python3.7/site-packages/cvxpy/reductions/solvers/solving_chain.py:167: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Discplined Parametrized Programming, at
+	https://www.cvxpy.org/tutorial/advanced/index.html#disciplined-parametrized-programming
+  warnings.warn(dpp_error_msg)
+((0, 0), (0, 0), False, 'p')
+down 1.3709670669415795e-05
+up 3.708199721480912e-07
+right 3.536682756108266e-07
+left 7.661669187098776e-05
+pick_up 1.540865359965936e-05
+((0, 0), (0, 0), True, 'p')
+down 0.005703696871397017
+up 0.0075803650267001555
+right 0.021244485543389067
+left 9.182487592454009e-07
+drop 0.00022870637670098013
+((0, 0), (0, 1), False, 'p')
+down 2.9817968274173962e-06
+up 4.109690832762088e-06
+right 6.768655678035917e-06
+left 5.081365487941046e-07
+((0, 0), (0, 2), False, 'p')
+down 4.6965442996731385e-07
+up 3.4585584456503745e-06
+right 1.075278022523255e-05
+left 4.6979527006017495e-07
+((0, 0), (1, 0), False, 'p')
+down 1.4613764104946663e-06
+up 5.0816690113370026e-06
+right 2.2666763501161056e-06
+left 1.459390493958543e-06
+((0, 0), (1, 1), False, 'p')
+down 8.936733014661496e-07
+up 7.099490597704452e-06
+right 1.2342959372605238e-06
+left 8.687920787719618e-07
+((0, 0), (1, 2), False, 'p')
+down 3.851975722197733e-07
+up 4.87068859173106e-05
+right 0.00010207931919781047
+left 3.328640317886119e-07
+((0, 0), (2, 0), False, 'p')
+down 1.22741787653674e-05
+up 0.00388029429947836
+right 8.649152862034004e-05
+left 0.0034944377453867705
+((0, 0), (2, 1), False, 'p')
+down 2.975355940900113e-05
+up 1.4264227156145554e-06
+right 1.3980144037908573e-06
+left 1.718662471831555e-06
+((0, 0), (2, 2), False, 'p')
+down 0.005420249589877101
+up 0.00022986064522582754
+right 6.827239518758314e-06
+left 0.035120500391496993
+((0, 1), (0, 0), False, 'p')
+down 5.625187956317845e-07
+up 2.7965987980781296e-06
+right 3.1269277836960235e-07
+left 6.71956838848404e-07
+((0, 1), (0, 1), False, 'p')
+down 1.6043074577534275e-05
+up 0.0001024818626146672
+right 9.631249457097499e-06
+left 4.1458510769255695e-07
+pick_up 1.3975306007216563e-05
+((0, 1), (0, 1), True, 'p')
+down 1.44146410098978e-06
+up 1.4494777725852378e-06
+right 1.6752195363483647e-06
+left 1.586776062725084e-06
+drop 1.3850157032800771e-06
+((0, 1), (0, 2), False, 'p')
+down 0.0243642976783745
+up 2.609154418963186e-05
+right 1.5270235313634488e-06
+left 0.0007642096079669138
+((0, 1), (1, 0), False, 'p')
+down 5.2669487023324704e-05
+up 9.321201088378053e-07
+right 6.047782032658648e-05
+left 0.0002892478308112991
+((0, 1), (1, 1), False, 'p')
+down 5.39480713648883e-05
+up 0.0004955244890609109
+right 0.00018822881452243247
+left 4.630866489751275e-05
+((0, 1), (1, 2), False, 'p')
+down 2.4888012591663934e-05
+up 5.600295525080748e-06
+right 5.884416973307513e-05
+left 4.4416725385832493e-07
+((0, 1), (2, 0), False, 'p')
+down 3.865554241645068e-07
+up 1.7962723203822552e-06
+right 4.811955712422856e-05
+left 3.806220586442632e-07
+((0, 1), (2, 1), False, 'p')
+down 3.1478178195279117e-07
+up 0.00017004548326904332
+right 0.0002468022123944087
+left 1.0691921028543478e-05
+((0, 1), (2, 2), False, 'p')
+down 7.234701355580984e-05
+up 0.01031519790835483
+right 0.028565230067753154
+left 0.024870202057569242
+((0, 2), (0, 0), False, 'p')
+down 1.0011600615377824e-06
+up 9.26978263932583e-07
+right 9.32403296097906e-07
+left 9.34525049987256e-07
+((0, 2), (0, 1), False, 'p')
+down 4.940308233090983e-07
+up 0.024301968616567717
+right 8.087136316792461e-05
+left 0.00020567537545451549
+((0, 2), (0, 2), False, 'p')
+down 3.8037303661183324e-07
+up 1.775920746107831e-05
+right 3.40042341517054e-07
+left 3.6842124646756344e-07
+pick_up 2.757596871152767e-07
+((0, 2), (0, 2), True, 'p')
+down 7.150217830542217e-07
+up 6.802870719821557e-07
+right 6.834808129837168e-07
+left 7.96628600622386e-07
+drop 1.0928626857735356e-05
+((0, 2), (1, 0), False, 'p')
+down 2.3447750590074884e-06
+up 2.523175565630359e-06
+right 1.804543923253937e-06
+left 1.8379219331723236e-06
+((0, 2), (1, 1), False, 'p')
+down 4.856868516336139e-07
+up 4.83033191618435e-07
+right 4.968573193256145e-07
+left 4.838643421090934e-07
+((0, 2), (1, 2), False, 'p')
+down 3.3559807586025616e-07
+up 3.124352303073091e-07
+right 9.221206169592479e-07
+left 3.556228197788006e-07
+((0, 2), (2, 0), False, 'p')
+down 4.271577304774655e-06
+up 2.2899720038834263e-05
+right 1.539850386321533e-05
+left 6.566016008211714e-06
+((0, 2), (2, 1), False, 'p')
+down 3.7774034088213663e-06
+up 1.3454619985308632e-06
+right 3.41352011740167e-06
+left 1.3456852885497073e-06
+((0, 2), (2, 2), False, 'p')
+down 0.00010165836740289098
+up 6.687884709808158e-07
+right 2.0921917750691505e-06
+left 0.0006511491341147116
+((1, 0), (0, 0), False, 'p')
+down 6.294592972351532e-07
+up 0.07091986907465048
+right 2.7022761414600927e-06
+left 0.004312730907764045
+((1, 0), (0, 1), False, 'p')
+down 0.00012844314080944226
+up 0.016687906383161685
+right 0.011956600229475605
+left 0.003090727107699055
+((1, 0), (0, 2), False, 'p')
+down 0.08435825624511682
+up 0.00365792800765732
+right 4.192695699032972e-06
+left 0.0022618897487678784
+((1, 0), (1, 0), False, 'p')
+down 0.006680778489792889
+up 6.00153521378228e-05
+right 0.007284943335717801
+left 6.083970585771638e-05
+pick_up 9.29300095836328e-05
+((1, 0), (1, 0), True, 'p')
+down 3.4837709414148254e-06
+up 4.098433112492531e-06
+right 7.264248951533286e-05
+left 4.286214502848074e-05
+drop 6.707832222528195e-06
+((1, 0), (1, 1), False, 'p')
+down 6.31383173900331e-05
+up 7.020536434083367e-07
+right 0.00034648020437129796
+left 1.235797030805463e-06
+((1, 0), (1, 2), False, 'p')
+down 6.386857020081384e-07
+up 0.0018426233314698833
+right 0.0051796496345965495
+left 0.00021311087657335586
+((1, 0), (2, 0), False, 'p')
+down 1.7762541529154459e-06
+up 1.0248671298281068e-06
+right 4.652847313427157e-06
+left 0.0007723428525300137
+((1, 0), (2, 1), False, 'p')
+down 0.0009101707459967713
+up 6.446446847626869e-07
+right 1.2765678232509836e-05
+left 0.0002412958499848595
+((1, 0), (2, 2), False, 'p')
+down 5.828224935127963e-07
+up 7.924229864608778e-06
+right 0.00047910744335099046
+left 5.826932462551876e-07
+((1, 1), (0, 0), False, 'p')
+down 0.002315665329337056
+up 4.845210907300489e-07
+right 3.371167049407552e-07
+left 0.0003490960263257532
+((1, 1), (0, 1), False, 'p')
+down 0.0004763045649763485
+up 1.3391408524522387e-05
+right 0.0007866895933930711
+left 3.0949478354533764e-07
+((1, 1), (0, 2), False, 'p')
+down 7.257809254988198e-07
+up 7.01743280634977e-07
+right 4.182861499701123e-07
+left 4.3303662371259103e-07
+((1, 1), (1, 0), False, 'p')
+down 8.41075100500908e-07
+up 8.341953488316959e-07
+right 8.213046954328281e-06
+left 8.403551267087477e-07
+((1, 1), (1, 1), False, 'p')
+down 1.5802088418932146e-06
+up 1.8285397565953917e-06
+right 1.2799553163628456e-05
+left 1.585056199135982e-06
+pick_up 2.7968463798193606e-06
+((1, 1), (1, 1), True, 'p')
+down 1.4184996059495712e-06
+up 1.4732856246399303e-06
+right 4.884926892806033e-05
+left 1.985760735512993e-06
+drop 1.0197148566886063e-06
+((1, 1), (1, 2), False, 'p')
+down 0.00326535853954013
+up 0.0001510730407560173
+right 0.0011726545477504593
+left 9.530887853436765e-07
+((1, 1), (2, 0), False, 'p')
+down 5.6404171801615e-06
+up 1.0422444936995095e-06
+right 1.3406067820404172e-06
+left 9.68385775106427e-07
+((1, 1), (2, 1), False, 'p')
+down 3.096406980881319e-06
+up 1.7844219858552435e-06
+right 1.6439264585356066e-06
+left 1.6436663961131912e-06
+((1, 1), (2, 2), False, 'p')
+down 2.764214372935233e-06
+up 1.743164308207912e-06
+right 1.9794754189638844e-06
+left 6.172667240497721e-06
+((1, 2), (0, 0), False, 'p')
+down 3.951643225313675e-07
+up 7.681587258750668e-07
+right 0.001483579437170758
+left 3.4371080748951777e-07
+((1, 2), (0, 1), False, 'p')
+down 8.081708542177775e-07
+up 7.630216421561554e-05
+right 3.3427408332600676e-07
+left 9.010212427220504e-07
+((1, 2), (0, 2), False, 'p')
+down 5.216127109748322e-07
+up 7.350079637515069e-05
+right 7.220028880215891e-07
+left 2.2202253228584087e-06
+((1, 2), (1, 0), False, 'p')
+down 1.6739685549013143e-05
+up 8.921295618409922e-07
+right 8.51939512568633e-07
+left 1.0021602509549891e-06
+((1, 2), (1, 1), False, 'p')
+down 0.0005747457749568083
+up 6.976518037831633e-07
+right 7.091068193457027e-05
+left 0.0006992298932734064
+((1, 2), (1, 2), False, 'p')
+down 0.0002200178926244894
+up 0.00016494312819291575
+right 2.088903206873891e-06
+left 3.146888016574936e-07
+pick_up 3.429631584839556e-07
+((1, 2), (1, 2), True, 'p')
+down 2.2550991281013433e-05
+up 3.171244062753253e-05
+right 1.3213062921955832e-06
+left 2.0211179561805542e-05
+drop 8.066540593351e-07
+((1, 2), (2, 0), False, 'p')
+down 3.1757721839711534e-07
+up 1.9217559703548387e-06
+right 0.00014408168351478056
+left 7.789355235767947e-05
+((1, 2), (2, 1), False, 'p')
+down 4.1756281154083903e-07
+up 4.689880952001354e-07
+right 7.269499564653952e-07
+left 5.267150991580077e-05
+((1, 2), (2, 2), False, 'p')
+down 0.004761234633888841
+up 0.0004350244598962529
+right 3.793625381994451e-05
+left 1.5455343622105141e-06
+((2, 0), (0, 0), False, 'p')
+down 1.278792953169552e-06
+up 1.2731239321982554e-06
+right 1.2789474540303896e-06
+left 2.6351795531903864e-06
+((2, 0), (0, 1), False, 'p')
+down 4.418390063135491e-07
+up 0.004219729595007714
+right 2.7898797866080356e-05
+left 0.003449414253689903
+((2, 0), (0, 2), False, 'p')
+down 0.024521217949759304
+up 0.057571805256691956
+right 0.0006098645602822656
+left 0.03894599228006061
+((2, 0), (1, 0), False, 'p')
+down 0.0014631189365962788
+up 0.0003001665396121228
+right 0.037727090635452466
+left 0.0018245175267028633
+((2, 0), (1, 1), False, 'p')
+down 3.926281173694113e-07
+up 4.955570559412185e-07
+right 4.033577916296138e-07
+left 1.011025397839628e-05
+((2, 0), (1, 2), False, 'p')
+down 1.7935078819731241e-06
+up 1.5841416797523106e-06
+right 1.5076107086901792e-06
+left 1.6335422976071508e-06
+((2, 0), (2, 0), False, 'p')
+down 0.0003758144697465796
+up 3.5933624589122025e-07
+right 5.825475060409123e-06
+left 1.4114343407506592e-06
+pick_up 9.159167468934179e-06
+((2, 0), (2, 0), True, 'p')
+down 0.0002321847039607555
+up 3.569906500917705e-07
+right 0.00013326945281889944
+left 3.5715401402821895e-07
+drop 2.6447391779838097e-07
+((2, 0), (2, 1), False, 'p')
+down 0.008638760865360045
+up 0.00020505181220306114
+right 6.348616806532669e-05
+left 0.0003102955399051974
+((2, 0), (2, 2), False, 'p')
+down 1.9007543287441953e-06
+up 1.7829408271286007e-06
+right 2.446621413418371e-06
+left 4.587955547776655e-06
+((2, 1), (0, 0), False, 'p')
+down 0.00012661947465501897
+up 0.00023140536330719074
+right 6.790040403749157e-05
+left 0.0021973976436145074
+((2, 1), (0, 1), False, 'p')
+down 7.535745396107458e-06
+up 0.0019780172468280926
+right 4.0134860257176745e-07
+left 0.00036852301096305023
+((2, 1), (0, 2), False, 'p')
+down 4.408498834416702e-07
+up 6.207527131194445e-07
+right 3.3169840785980364e-07
+left 3.6980481511270264e-07
+((2, 1), (1, 0), False, 'p')
+down 0.0003321803977234104
+up 9.660197630676188e-07
+right 0.0008246379360091606
+left 3.9255249473374684e-07
+((2, 1), (1, 1), False, 'p')
+down 1.3093943599015898e-06
+up 1.5917242196297334e-06
+right 1.3094465490671192e-06
+left 1.9946511572485113e-06
+((2, 1), (1, 2), False, 'p')
+down 1.4783659009232008e-06
+up 1.4932366176259238e-06
+right 1.5036786769843487e-06
+left 1.966076110156856e-06
+((2, 1), (2, 0), False, 'p')
+down 7.797521268229346e-07
+up 6.615334975167872e-07
+right 6.563098793772897e-07
+left 8.710625334609824e-07
+((2, 1), (2, 1), False, 'p')
+down 3.492764967724167e-07
+up 4.5747723480200136e-07
+right 2.6159878593942196e-05
+left 6.777727674485783e-07
+pick_up 2.5805659819679547e-07
+((2, 1), (2, 1), True, 'p')
+down 0.0003245381456697466
+up 3.3352365125914226e-05
+right 3.763902347081815e-07
+left 3.883691310754302e-07
+drop 2.5211059156830465e-05
+((2, 1), (2, 2), False, 'p')
+down 9.121344771329778e-07
+up 1.823407713704097e-05
+right 5.519250259577538e-07
+left 5.529016107312917e-07
+((2, 2), (0, 0), False, 'p')
+down 0.0017419363747548685
+up 0.0038208606297784387
+right 0.0005411031346189819
+left 0.0002812568588104278
+((2, 2), (0, 1), False, 'p')
+down 3.539214881304538e-07
+up 4.915603279280439e-07
+right 0.00020434728117600087
+left 0.00034011192663500314
+((2, 2), (0, 2), False, 'p')
+down 1.5832990959046964e-06
+up 1.4214740065309264e-06
+right 1.5852855419173827e-06
+left 1.4348501868273946e-06
+((2, 2), (1, 0), False, 'p')
+down 0.0001997850926093768
+up 0.0001471829877379352
+right 5.081545706697785e-07
+left 0.00021956691136040162
+((2, 2), (1, 1), False, 'p')
+down 0.00016118695531422138
+up 7.190624849846623e-05
+right 0.0008347855090103409
+left 3.147723033867975e-07
+((2, 2), (1, 2), False, 'p')
+down 2.0565833369529955e-06
+up 5.877673327900111e-05
+right 6.10697002074821e-05
+left 7.984164642954258e-07
+((2, 2), (2, 0), False, 'p')
+down 5.763779247503859e-05
+up 4.847149475113514e-07
+right 0.0029677114728011524
+left 1.620503718129522e-06
+((2, 2), (2, 1), False, 'p')
+down 5.0901897728598605e-05
+up 3.2302033693426426e-07
+right 1.5186742201547544e-05
+left 5.331796328541429e-07
+((2, 2), (2, 2), False, 'p')
+((2, 2), (2, 2), True, 'p')
+down 3.226789800352028e-06
+up 1.5566631606448625e-06
+right 1.5855097607048688e-06
+left 1.5056030124146745e-06
+drop 4.813980035119119e-06
+{((0, 0), (0, 0), False, 'p'): 'left', ((0, 0), (0, 0), True, 'p'): 'right', ((0, 0), (0, 1), False, 'p'): 'right', ((0, 0), (0, 2), False, 'p'): 'right', ((0, 0), (1, 0), False, 'p'): 'up', ((0, 0), (1, 1), False, 'p'): 'up', ((0, 0), (1, 2), False, 'p'): 'right', ((0, 0), (2, 0), False, 'p'): 'up', ((0, 0), (2, 1), False, 'p'): 'down', ((0, 0), (2, 2), False, 'p'): 'left', ((0, 1), (0, 0), False, 'p'): 'up', ((0, 1), (0, 1), False, 'p'): 'up', ((0, 1), (0, 1), True, 'p'): 'right', ((0, 1), (0, 2), False, 'p'): 'down', ((0, 1), (1, 0), False, 'p'): 'left', ((0, 1), (1, 1), False, 'p'): 'up', ((0, 1), (1, 2), False, 'p'): 'right', ((0, 1), (2, 0), False, 'p'): 'right', ((0, 1), (2, 1), False, 'p'): 'right', ((0, 1), (2, 2), False, 'p'): 'right', ((0, 2), (0, 0), False, 'p'): 'down', ((0, 2), (0, 1), False, 'p'): 'up', ((0, 2), (0, 2), False, 'p'): 'up', ((0, 2), (0, 2), True, 'p'): 'drop', ((0, 2), (1, 0), False, 'p'): 'up', ((0, 2), (1, 1), False, 'p'): 'right', ((0, 2), (1, 2), False, 'p'): 'right', ((0, 2), (2, 0), False, 'p'): 'up', ((0, 2), (2, 1), False, 'p'): 'down', ((0, 2), (2, 2), False, 'p'): 'left', ((1, 0), (0, 0), False, 'p'): 'up', ((1, 0), (0, 1), False, 'p'): 'up', ((1, 0), (0, 2), False, 'p'): 'down', ((1, 0), (1, 0), False, 'p'): 'right', ((1, 0), (1, 0), True, 'p'): 'right', ((1, 0), (1, 1), False, 'p'): 'right', ((1, 0), (1, 2), False, 'p'): 'right', ((1, 0), (2, 0), False, 'p'): 'left', ((1, 0), (2, 1), False, 'p'): 'down', ((1, 0), (2, 2), False, 'p'): 'right', ((1, 1), (0, 0), False, 'p'): 'down', ((1, 1), (0, 1), False, 'p'): 'right', ((1, 1), (0, 2), False, 'p'): 'down', ((1, 1), (1, 0), False, 'p'): 'right', ((1, 1), (1, 1), False, 'p'): 'right', ((1, 1), (1, 1), True, 'p'): 'right', ((1, 1), (1, 2), False, 'p'): 'down', ((1, 1), (2, 0), False, 'p'): 'down', ((1, 1), (2, 1), False, 'p'): 'down', ((1, 1), (2, 2), False, 'p'): 'left', ((1, 2), (0, 0), False, 'p'): 'right', ((1, 2), (0, 1), False, 'p'): 'up', ((1, 2), (0, 2), False, 'p'): 'up', ((1, 2), (1, 0), False, 'p'): 'down', ((1, 2), (1, 1), False, 'p'): 'left', ((1, 2), (1, 2), False, 'p'): 'down', ((1, 2), (1, 2), True, 'p'): 'up', ((1, 2), (2, 0), False, 'p'): 'right', ((1, 2), (2, 1), False, 'p'): 'left', ((1, 2), (2, 2), False, 'p'): 'down', ((2, 0), (0, 0), False, 'p'): 'left', ((2, 0), (0, 1), False, 'p'): 'up', ((2, 0), (0, 2), False, 'p'): 'up', ((2, 0), (1, 0), False, 'p'): 'right', ((2, 0), (1, 1), False, 'p'): 'left', ((2, 0), (1, 2), False, 'p'): 'down', ((2, 0), (2, 0), False, 'p'): 'down', ((2, 0), (2, 0), True, 'p'): 'down', ((2, 0), (2, 1), False, 'p'): 'down', ((2, 0), (2, 2), False, 'p'): 'left', ((2, 1), (0, 0), False, 'p'): 'left', ((2, 1), (0, 1), False, 'p'): 'up', ((2, 1), (0, 2), False, 'p'): 'up', ((2, 1), (1, 0), False, 'p'): 'right', ((2, 1), (1, 1), False, 'p'): 'left', ((2, 1), (1, 2), False, 'p'): 'left', ((2, 1), (2, 0), False, 'p'): 'left', ((2, 1), (2, 1), False, 'p'): 'right', ((2, 1), (2, 1), True, 'p'): 'down', ((2, 1), (2, 2), False, 'p'): 'up', ((2, 2), (0, 0), False, 'p'): 'up', ((2, 2), (0, 1), False, 'p'): 'left', ((2, 2), (0, 2), False, 'p'): 'right', ((2, 2), (1, 0), False, 'p'): 'left', ((2, 2), (1, 1), False, 'p'): 'right', ((2, 2), (1, 2), False, 'p'): 'right', ((2, 2), (2, 0), False, 'p'): 'right', ((2, 2), (2, 1), False, 'p'): 'down', ((2, 2), (2, 2), False, 'p'): None, ((2, 2), (2, 2), True, 'p'): 'drop'}
