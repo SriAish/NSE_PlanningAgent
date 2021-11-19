@@ -1,3 +1,4 @@
+from ctypes import sizeof
 import numpy as np
 import sys
 import cvxpy as cp
@@ -23,6 +24,10 @@ class PlanningAgent:
         self.mu = 1.5
         self.tao_max = 20
         self.locations = locations
+        with open('mild_trajectories', 'rb') as f:
+            self.mild = pickle.load(f)
+        with open('severe_trajectories', 'rb') as f:
+            self.severe = pickle.load(f)
         self.init_belief()
         print("initial belief setup")
         sys.stdout.flush()
@@ -132,6 +137,40 @@ class PlanningAgent:
             for j in self.pi[i]:
                 self.constraints.append(cp.exp(self.pi[i][j]) <= 1)
 
+    def make_constraints_eqn4(self):
+        c = 0
+        while i in self.severe:
+            n = len(i)
+            j = 0
+            es = self.x[i[j]]
+            j = 1
+            m = 1
+            while i < n:
+                es = es + self.pi[i[j-1]][i[j]]
+                m = m*self.BP.T(i[j-1], i[j], i[j+1])
+                i += 2
+
+            c = c + m*cp.exp(es)
+            
+        self.constraints.append(c <= self.a1)
+                
+
+        c = 0
+        while i in self.mild:
+            n = len(i)
+            j = 0
+            es = self.x[i[j]]
+            j = 1
+            m = 1
+            while i < n:
+                es = es + self.pi[i[j-1]][i[j]]
+                m = m*self.BP.T(i[j-1], i[j], i[j+1])
+                i += 2
+
+            c = c + m*cp.exp(es)
+            
+        self.constraints.append(c <= self.a2)
+
     def make_prob(self):
         self.constraints = []
         self.set_obj()
@@ -145,6 +184,8 @@ class PlanningAgent:
         sys.stdout.flush()
         self.make_constraints_eqn3()
         print("eq3")
+        self.make_constraints_eqn4()
+        print("eq4")
         sys.stdout.flush()
         self.prob = cp.Problem(self.obj, self.constraints)
 
@@ -155,7 +196,7 @@ class PlanningAgent:
             print(e)
 
     def solve_DCP(self):
-        with open('output.csv', 'w') as csvfile:
+        with open('output_7_7.csv', 'w') as csvfile:
             csvwriter = csv.writer(csvfile)
             csvwriter.writerow(["iteration", "V", "para", "tao"])
             for i in range(10):
@@ -178,11 +219,11 @@ class PlanningAgent:
                     max_ac = j
             policy[i] = max_ac
         print(policy)
-        with open('policy/'+ 'Planning_Agent_Policy_3_3_DCP' + '.pkl', 'wb') as f:
+        with open('policy/'+ 'Planning_Agent_Policy_7_7_DCP' + '.pkl', 'wb') as f:
             pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
-    BP = BoxPushingConstants(3, 0, 0, end_state=((2, 2), (2, 2), False, 'p'))
+    BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
     agent = PlanningAgent(BP)
     agent.solve_DCP()
     agent.print_policy()
