@@ -2,7 +2,7 @@
 #SBATCH -A research
 #SBATCH --cpus-per-gpu=2
 #SBATCH --gres=gpu:1
-#SBATCH --mem-per-cpu=15G
+#SBATCH --mem-per-cpu=10G
 #SBATCH -t 2-00:00:00
 #SBATCH --output=try_SCS_7_7.txt
 module add cuda/9.0
