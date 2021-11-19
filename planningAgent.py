@@ -227,8 +227,8 @@ class PlanningAgent:
 if __name__ == '__main__':
     BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
     agent = PlanningAgent(BP)
-    agent.solve_DCP()
-    agent.print_policy()
+    # agent.solve_DCP()
+    # agent.print_policy()
     
 
 
