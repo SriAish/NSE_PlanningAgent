@@ -60,8 +60,8 @@ class BoxPushingConstants:
 
     def get_cost(self, state, action):
         if state == self.prev_end and action == self.actions.drop:
-            print("before final")
-            print(state)
+            # print("before final")
+            # print(state)
             return self.actions.actionCost(action) - 2
         return self.actions.actionCost(action)
 

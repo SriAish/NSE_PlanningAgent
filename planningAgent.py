@@ -28,7 +28,6 @@ class PlanningAgent:
             self.mild = pickle.load(f)
         with open('severe_trajectories', 'rb') as f:
             self.severe = pickle.load(f)
-        print(self.BP.states)
         self.init_belief()
         print("initial belief setup")
         sys.stdout.flush()
@@ -37,7 +36,6 @@ class PlanningAgent:
         sys.stdout.flush()
         self.init_para()
         print("parameters setup")
-        print(self.pi[self.BP.prev_end])
         sys.stdout.flush()
         self.get_event_traj()
         print("event trajectories setup")
@@ -89,10 +87,13 @@ class PlanningAgent:
 
     def set_obj(self):
         print("starting to make objective")
+        print(self.BP.states)
         sys.stdout.flush()
         obj = 0
         for i in self.BP.states:
+            print(i)
             for j in self.pi[i]:
+                print(j)
                 obj += cp.exp(self.x[i] + self.pi[i][j])*self.BP.get_cost(i, j)
 
         self.obj = cp.Minimize(obj + self.tao*(cp.sum(self.s1) + cp.sum(self.s2)))
