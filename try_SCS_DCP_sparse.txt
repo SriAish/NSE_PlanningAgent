@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 533128
-SLURM_NODELIST = gnode75
+SLURM_JOB_ID = 533354
+SLURM_NODELIST = gnode35
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job533128/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job533354/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 SCS
 full DCP
 ((2, 2), (2, 2), True, 'p')
@@ -15,101 +15,18 @@ starting to make objective
 before final
 ((2, 2), (2, 2), True, 'p')
 objective setup
-eq1
-eq2
-eq3
-problem setup
-===============================================================================
-                                     CVXPY                                     
-                                    v1.1.17                                    
-===============================================================================
-(CVXPY) Nov 18 10:41:48 PM: Your problem has 643 variables, 644 constraints, and 464 parameters.
-(CVXPY) Nov 18 10:41:48 PM: It is compliant with the following grammars: DCP, DQCP
-(CVXPY) Nov 18 10:41:48 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
--------------------------------------------------------------------------------
-                                  Compilation                                  
--------------------------------------------------------------------------------
-(CVXPY) Nov 18 10:41:48 PM: Compiling problem (target solver=SCS).
-(CVXPY) Nov 18 10:41:48 PM: Reduction chain: EvalParams -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
-(CVXPY) Nov 18 10:41:48 PM: Applying reduction EvalParams
-(CVXPY) Nov 18 10:41:48 PM: Applying reduction Dcp2Cone
-(CVXPY) Nov 18 10:41:49 PM: Applying reduction CvxAttr2Constr
-(CVXPY) Nov 18 10:41:49 PM: Applying reduction ConeMatrixStuffing
-(CVXPY) Nov 18 10:41:50 PM: Applying reduction SCS
-(CVXPY) Nov 18 10:41:53 PM: Finished problem compilation (took 5.053e+00 seconds).
--------------------------------------------------------------------------------
-                                Numerical solver                               
--------------------------------------------------------------------------------
-(CVXPY) Nov 18 10:41:53 PM: Invoking solver SCS  to obtain a solution.
-----------------------------------------------------------------------------
-	SCS v2.1.4 - Splitting Conic Solver
-	(c) Brendan O'Donoghue, Stanford University, 2012
-----------------------------------------------------------------------------
-Lin-sys: sparse-direct, nnz in A = 8248
-eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
-acceleration_lookback = 10, rho_x = 1.00e-03
-Variables n = 2581, constraints m = 6458
-Cones:	linear vars: 644
-	exp vars: 5814, dual exp vars: 0
-Setup time: 4.01e-03s
-----------------------------------------------------------------------------
- Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
-----------------------------------------------------------------------------
-     0| 4.57e+20  1.12e+21  1.00e+00 -4.90e+23  4.82e+23  6.08e+23  2.03e-02 
-   100| 4.18e-03  8.51e-03  5.48e-02 -9.06e+00 -8.06e+00  2.87e-14  1.67e+00 
-   200| 1.37e-03  2.70e-03  9.63e-03 -1.03e+01 -1.05e+01  6.85e-14  3.55e+00 
-   300| 8.86e-04  2.40e-03  7.28e-03 -1.04e+01 -1.02e+01  1.12e-13  5.68e+00 
-   400| 6.43e-04  1.42e-03  2.05e-03 -1.06e+01 -1.06e+01  5.09e-14  8.73e+00 
-   500| 6.17e-04  1.46e-03  9.96e-04 -1.06e+01 -1.06e+01  1.54e-13  1.38e+01 
-   600| 9.60e-04  1.78e-03  1.36e-03 -1.07e+01 -1.07e+01  5.14e-14  2.03e+01 
-   700| 1.19e-03  1.40e-03  2.53e-03 -1.06e+01 -1.06e+01  4.67e-14  2.80e+01 
-   800| 3.71e-04  1.01e-03  6.05e-06 -1.07e+01 -1.07e+01  1.88e-13  3.59e+01 
-   900| 1.84e-04  4.83e-04  2.31e-04 -1.07e+01 -1.07e+01  2.37e-15  4.39e+01 
-  1000| 3.38e-04  7.89e-04  5.67e-04 -1.07e+01 -1.07e+01  4.65e-14  5.19e+01 
-  1100| 1.92e-04  4.47e-04  9.98e-04 -1.07e+01 -1.07e+01  1.77e-13  5.99e+01 
-  1200| 2.23e-04  4.31e-04  9.87e-04 -1.07e+01 -1.07e+01  8.07e-14  6.78e+01 
-  1300| 2.23e-04  4.87e-04  8.22e-04 -1.07e+01 -1.07e+01  1.67e-13  7.58e+01 
-  1400| 1.53e-04  3.02e-04  1.28e-03 -1.07e+01 -1.07e+01  9.36e-15  8.36e+01 
-  1500| 1.40e-04  2.17e-04  4.00e-04 -1.07e+01 -1.07e+01  1.48e-13  9.14e+01 
-  1600| 7.27e-05  1.55e-04  1.83e-05 -1.07e+01 -1.07e+01  6.47e-14  9.90e+01 
-  1700| 5.50e-05  1.50e-04  2.98e-04 -1.07e+01 -1.07e+01  9.54e-14  1.07e+02 
-  1800| 1.33e-04  3.48e-04  2.64e-05 -1.07e+01 -1.07e+01  1.37e-13  1.14e+02 
-  1900| 2.17e-04  5.20e-04  7.88e-04 -1.07e+01 -1.07e+01  1.13e-14  1.22e+02 
-  2000| 1.09e-04  3.33e-04  3.50e-04 -1.07e+01 -1.07e+01  1.03e-13  1.29e+02 
-  2100| 2.91e-04  5.12e-04  4.95e-04 -1.07e+01 -1.07e+01  4.19e-14  1.37e+02 
-  2200| 6.66e-05  1.61e-04  2.00e-04 -1.07e+01 -1.07e+01  2.03e-15  1.44e+02 
-  2300| 6.36e-05  1.97e-04  1.97e-04 -1.07e+01 -1.07e+01  1.18e-13  1.52e+02 
-  2400| 4.70e-03  7.43e-03  3.84e-03 -1.07e+01 -1.06e+01  7.92e-14  1.59e+02 
-  2480| 3.63e-05  7.73e-05  8.58e-05 -1.07e+01 -1.07e+01  1.93e-13  1.65e+02 
-----------------------------------------------------------------------------
-Status: Solved
-Timing: Solve time: 1.65e+02s
-	Lin-sys: nnz in L factor: 18049, avg solve time: 1.30e-04s
-	Cones: avg projection time: 6.46e-02s
-	Acceleration: avg step time: 1.66e-03s
-----------------------------------------------------------------------------
-Error metrics:
-dist(s, K) = 2.2623e-16, dist(y, K*) = 9.3340e-08, s'y/|s||y| = -1.2554e-12
-primal res: |Ax + s - b|_2 / (1 + |b|_2) = 3.6269e-05
-dual res:   |A'y + c|_2 / (1 + |c|_2) = 7.7303e-05
-rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 8.5753e-05
-----------------------------------------------------------------------------
-c'x = -10.7142, -b'y = -10.7123
-============================================================================
--------------------------------------------------------------------------------
-                                    Summary                                    
--------------------------------------------------------------------------------
-(CVXPY) Nov 18 10:44:38 PM: Problem status: optimal
-(CVXPY) Nov 18 10:44:38 PM: Optimal value: -1.071e+01
-(CVXPY) Nov 18 10:44:38 PM: Compilation took 5.053e+00 seconds
-(CVXPY) Nov 18 10:44:38 PM: Solver (including time spent in interface) took 1.652e+02 seconds
-/home/sriaish/.local/lib/python3.7/site-packages/cvxpy/reductions/solvers/solving_chain.py:167: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Discplined Parametrized Programming, at
-	https://www.cvxpy.org/tutorial/advanced/index.html#disciplined-parametrized-programming
-  warnings.warn(dpp_error_msg)
 Traceback (most recent call last):
-  File "planningAgent.py", line 187, in <module>
-    agent.solve_DCP()
-  File "planningAgent.py", line 164, in solve_DCP
-    csvwriter.writerow([i, self.prob.value, self.x_para[0].value, self.tao.value])
-KeyError: 0
-178
+  File "planningAgent.py", line 186, in <module>
+    agent = PlanningAgent(BP)
+  File "planningAgent.py", line 38, in __init__
+    self.make_prob()
+  File "planningAgent.py", line 140, in make_prob
+    self.make_constraints_eqn1()
+  File "planningAgent.py", line 103, in make_constraints_eqn1
+    if self.BP.T(s, a, s_) != 0:
+  File "/home/sriaish/NSE_PlanningAgent/misc.py", line 118, in T
+    trans, _ = self.transition(s, a)
+  File "/home/sriaish/NSE_PlanningAgent/misc.py", line 73, in transition
+    return [((state[0], state[1], True, state[3]), 1)], self.actions.get_cost(state, action)
+AttributeError: 'Actions' object has no attribute 'get_cost'
+5
