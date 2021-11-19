@@ -70,9 +70,9 @@ class BoxPushingConstants:
             if state[0] != state[1]:
                 return [(state, 1)], self.get_cost(state, action)
             if action == self.actions.pick_up:
-                return [((state[0], state[1], True, state[3]), 1)], self.actions.get_cost(state, action)
+                return [((state[0], state[1], True, state[3]), 1)], self.get_cost(state, action)
             else:
-                return [((state[0], state[1], False, state[3]), 1)], self.actions.get_cost(state, action)
+                return [((state[0], state[1], False, state[3]), 1)], self.get_cost(state, action)
         else:
             agent_locations_prob = []
             if action == self.actions.down:
