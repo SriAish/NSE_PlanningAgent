@@ -161,7 +161,7 @@ class PlanningAgent:
             for i in range(10):
                 self.tao.value = min(self.mu*self.tao.value, self.tao_max)
                 self.solve_prob()
-                csvwriter.writerow([i, self.prob.value, self.x_para[0].value, self.tao.value])
+                csvwriter.writerow([i, self.prob.value, self.x_para[self.belief_state[0]].value, self.tao.value])
                 self.change_para()
 
     def print_policy(self):

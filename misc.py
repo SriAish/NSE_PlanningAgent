@@ -68,11 +68,11 @@ class BoxPushingConstants:
     def transition(self, state, action):
         if self.actions.isBoxAction(action):
             if state[0] != state[1]:
-                return [(state, 1)], self.actions.actionCost(action)
+                return [(state, 1)], self.get_cost(state, action)
             if action == self.actions.pick_up:
-                return [((state[0], state[1], True, state[3]), 1)], self.actions.actionCost(action)
+                return [((state[0], state[1], True, state[3]), 1)], self.actions.get_cost(state, action)
             else:
-                return [((state[0], state[1], False, state[3]), 1)], self.actions.actionCost(action)
+                return [((state[0], state[1], False, state[3]), 1)], self.actions.get_cost(state, action)
         else:
             agent_locations_prob = []
             if action == self.actions.down:
@@ -112,7 +112,7 @@ class BoxPushingConstants:
                     box_location = state[1]
                 states.append(((i[0], box_location, state[2], self.getType(i[0])), i[1]))
 
-            return states, self.actions.actionCost(action)
+            return states, self.get_cost(state, action)
 
     def T(self, s, a, s_):
         trans, _ = self.transition(s, a)

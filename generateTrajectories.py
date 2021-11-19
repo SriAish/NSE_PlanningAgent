@@ -4,6 +4,7 @@ from VIAgent import VIPolicy
 import csv
 import copy
 import numpy as np
+import pickle
 
 def checkDamage(t, st=[6, 4]):
     rug = np.zeros((3, 3))
@@ -23,6 +24,9 @@ def checkDamage(t, st=[6, 4]):
 
     return (np.count_nonzero(rug)/9) * 100
 
+def wrap_state(s):
+    return (tuple(s[0]), tuple(s[1]), s[2], s[3])
+
 def generate_trajectory(agent):
     env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
     done = False
@@ -34,7 +38,7 @@ def generate_trajectory(agent):
         # print(ac, s)
         # env.display()
     
-        t = t + [copy.deepcopy(s), a]
+        t = t + [wrap_state(copy.deepcopy(s)), a]
 
         ac += 1
 
@@ -45,6 +49,8 @@ def generate_trajectory(agent):
     return t, ac
 
 def generate_n_tajectories(n, agent):
+    severe = []
+    mild = []
     with open('trajectories_7_7.csv', 'w') as csvfile:
         csvwriter = csv.writer(csvfile)
 
@@ -59,11 +65,20 @@ def generate_n_tajectories(n, agent):
                 continue
             if damage < 25:
                 c = "mild"
+                mild.append(t)
+            else:
+                severe.append(t)
 
             i += 1
 
             csvwriter.writerow([t, c, ac])
             print(t, damage, ac)
+
+    file_to_write = open("severe_trajectories", "wb")
+    pickle.dump(severe, file_to_write, pickle.HIGHEST_PROTOCOL)
+
+    file_to_write2 = open("mild_trajectories", "wb")
+    pickle.dump(mild, file_to_write2, pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
