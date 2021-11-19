@@ -75,10 +75,10 @@ def generate_n_tajectories(n, agent):
             print(t, damage, ac)
 
     file_to_write = open("severe_trajectories", "wb")
-    pickle.dump(severe, file_to_write, pickle.HIGHEST_PROTOCOL)
+    pickle.dump(severe, file_to_write)
 
     file_to_write2 = open("mild_trajectories", "wb")
-    pickle.dump(mild, file_to_write2, pickle.HIGHEST_PROTOCOL)
+    pickle.dump(mild, file_to_write2)
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
