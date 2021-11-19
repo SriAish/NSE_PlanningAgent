@@ -1,0 +1,16 @@
+==========================================
+SLURM_JOB_ID = 533374
+SLURM_NODELIST = gnode16
+SLURM_JOB_GPUS = 3
+==========================================
+/var/spool/slurmd/job533374/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+SCS
+full DCP
+((3, 6), (3, 6), True, 'p')
+Traceback (most recent call last):
+  File "planningAgent.py", line 227, in <module>
+    agent = PlanningAgent(BP)
+  File "planningAgent.py", line 28, in __init__
+    self.mild = pickle.load(f)
+ValueError: unsupported pickle protocol: 5
+12
