@@ -139,7 +139,7 @@ class PlanningAgent:
 
     def make_constraints_eqn4(self):
         c = 0
-        while i in self.severe:
+        for i in self.severe:
             n = len(i)
             j = 0
             es = self.x[i[j]]
@@ -156,7 +156,7 @@ class PlanningAgent:
                 
 
         c = 0
-        while i in self.mild:
+        for i in self.mild:
             n = len(i)
             j = 0
             es = self.x[i[j]]
