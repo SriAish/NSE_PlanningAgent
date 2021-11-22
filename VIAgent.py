@@ -1,4 +1,5 @@
 from misc import BoxPushingConstants
+import sys
 import pickle
 
 class VIAgent:
@@ -68,13 +69,15 @@ class VIPolicy:
         return self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])]
 
 if __name__ == '__main__':
-    BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
+    g_pos = (int(sys.argv[6]), int(sys.argv[7]))
+    e_state = (g_pos, g_pos, False, 'p')
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
     # print(policy)
-    with open('policy/'+ 'VIPolicy_7_7_2' + '.pkl', 'wb') as f:
+    with open('policy/'+ sys.argv[8] + '.pkl', 'wb') as f:
         pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
     
     # print(agent.stateValues)
-    with open('policy/'+ 'ValueFunction_7_7_2' + '.pkl', 'wb') as f:
+    with open('policy/'+ sys.argv[9] + '.pkl', 'wb') as f:
         pickle.dump(agent.stateValues, f, pickle.HIGHEST_PROTOCOL)
