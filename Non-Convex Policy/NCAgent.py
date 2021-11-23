@@ -101,8 +101,7 @@ class DLPAgent:
             self.pi_[s] = {}
             ma = 0
             for a in actions:
-                print(self.pi[s][a].value)
-                self.pi_[s][a] = self.pi[s][a].value
+                self.pi_[s][a] = self.pi[s][a].value[0]
                 if(self.pi_[s][a] > ma):
                     self.pi_max[s] = a
 
