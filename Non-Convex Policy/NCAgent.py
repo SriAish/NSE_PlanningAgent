@@ -52,7 +52,7 @@ class DLPAgent:
         for s_ in self.BP.states:
             # Calculate left hand side
             actions = self.BP.getValidActions(s_)
-            y = e**self.x[s]
+            y = e**self.x[s_]
 
             # Calculate right hand summation
             c = 0
