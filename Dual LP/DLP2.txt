@@ -1,0 +1,92 @@
+==========================================
+SLURM_JOB_ID = 535959
+SLURM_NODELIST = gnode36
+SLURM_JOB_GPUS = 1
+==========================================
+/var/spool/slurmd/job535959/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+((4, 8), (4, 8), True, 'p')
+initial belief setup
+variables setup
+objective setup
+eq1
+eq2
+problem setup
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.17                                    
+===============================================================================
+(CVXPY) Nov 24 01:24:53 AM: Your problem has 26725 variables, 33367 constraints, and 0 parameters.
+(CVXPY) Nov 24 01:24:56 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 24 01:24:56 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Nov 24 01:24:56 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Nov 24 01:25:00 AM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 24 01:25:00 AM: Reduction chain: Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 24 01:25:00 AM: Applying reduction Dcp2Cone
+(CVXPY) Nov 24 01:25:13 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 24 01:25:13 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 24 01:25:42 AM: Applying reduction SCS
+(CVXPY) Nov 24 01:26:00 AM: Finished problem compilation (took 6.351e+01 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Nov 24 01:26:00 AM: Invoking solver SCS  to obtain a solution.
+----------------------------------------------------------------------------
+	SCS v2.1.4 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+----------------------------------------------------------------------------
+Lin-sys: sparse-direct, nnz in A = 103788
+eps = 1.00e-04, alpha = 1.50, max_iters = 5000, normalize = 1, scale = 1.00
+acceleration_lookback = 10, rho_x = 1.00e-03
+Variables n = 26725, constraints m = 33367
+Cones:	primal zero / dual free vars: 6642
+	linear vars: 26725
+Setup time: 3.37e-02s
+----------------------------------------------------------------------------
+ Iter | pri res | dua res | rel gap | pri obj | dua obj | kap/tau | time (s)
+----------------------------------------------------------------------------
+     0| 5.71e+20  1.67e+21  1.00e+00 -1.33e+23  1.00e+23  8.67e+22  3.80e-03 
+   100| 8.45e-03  1.77e-02  2.36e-05  9.50e+00  9.50e+00  5.58e-15  1.75e+00 
+   200| 4.34e-03  9.48e-03  2.75e-03  1.00e+01  1.01e+01  9.92e-15  4.44e+00 
+   300| 4.01e-03  7.53e-03  6.83e-03  1.04e+01  1.02e+01  1.38e-15  7.34e+00 
+   400| 3.99e-08  1.29e-07  1.31e-07  1.00e+01  1.00e+01  1.90e-15  1.03e+01 
+----------------------------------------------------------------------------
+Status: Solved
+Timing: Solve time: 1.03e+01s
+	Lin-sys: nnz in L factor: 219011, avg solve time: 1.56e-03s
+	Cones: avg projection time: 5.72e-05s
+	Acceleration: avg step time: 2.27e-02s
+----------------------------------------------------------------------------
+Error metrics:
+dist(s, K) = 1.0567e-17, dist(y, K*) = 0.0000e+00, s'y/|s||y| = -1.2043e-18
+primal res: |Ax + s - b|_2 / (1 + |b|_2) = 3.9878e-08
+dual res:   |A'y + c|_2 / (1 + |c|_2) = 1.2867e-07
+rel gap:    |c'x + b'y| / (1 + |c'x| + |b'y|) = 1.3122e-07
+----------------------------------------------------------------------------
+c'x = 10.0000, -b'y = 10.0000
+============================================================================
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Nov 24 01:26:12 AM: Problem status: optimal
+(CVXPY) Nov 24 01:26:12 AM: Optimal value: 1.000e+01
+(CVXPY) Nov 24 01:26:12 AM: Compilation took 6.351e+01 seconds
+(CVXPY) Nov 24 01:26:12 AM: Solver (including time spent in interface) took 1.034e+01 seconds
+Saving policies
+1385
+--------------------
+((5, 10), (5, 10), True, 'p')
+initial belief setup
+variables setup
+objective setup
+/var/spool/slurmd/job535959/slurm_script: line 18: 11137 Killed                  python3.7 DLPAgent.py 11 5 3 4 3 5 10 11_11
+1333
+--------------------
+((6, 12), (6, 12), True, 'p')
+initial belief setup
+variables setup
+/var/spool/slurmd/job535959/slurm_script: line 24: 11536 Killed                  python3.7 DLPAgent.py 13 7 3 5 3 6 12 13_13
+234
+slurmstepd: error: Detected 2 oom-kill event(s) in step 535959.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
