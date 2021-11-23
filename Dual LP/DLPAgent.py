@@ -92,7 +92,7 @@ class DLPAgent:
         self.pi = {}
         self.pi_max = {}
         for s in self.BP.states:
-            actions = self.BP.getValidActions(i)
+            actions = self.BP.getValidActions(s)
             self.pi[s] = {}
             y = 0
             ma = 0
