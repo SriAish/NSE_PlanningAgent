@@ -17,6 +17,7 @@ class DLPAgent:
         self.init_var()
         print("variables setup")
         sys.stdout.flush()
+        self.init_intermediates()
         self.make_prob()
         print("problem setup")
         sys.stdout.flush()
@@ -39,23 +40,24 @@ class DLPAgent:
             for a in actions:
                 self.pi[s][a] = self.m.Var()
 
-    def set_obj(self):
-        obj = 0
-        for s in self.BP.states:
-            actions = self.BP.getValidActions(s)
-            for a in actions:
-                obj += (e**(self.x[s] + self.pi[s][a]))*self.BP.get_cost(s, a)
-
-        self.m.Minimize(obj)
-
-    def make_constraints_eqn1(self):
-        in_y = {}
+    def init_intermediates(self):
+        self.in_y = {}
         for s in self.BP.states:
             in_y[s] = {} 
             actions = self.BP.getValidActions(s)
             for a in actions:
                 in_y[s][a] = e**(self.x[s] + self.pi[s][a])
 
+    def set_obj(self):
+        obj = 0
+        for s in self.BP.states:
+            actions = self.BP.getValidActions(s)
+            for a in actions:
+                obj += self.in_y[s][a]*self.BP.get_cost(s, a)
+
+        self.m.Minimize(obj)
+
+    def make_constraints_eqn1(self):
         for s_ in self.BP.states:
             # Calculate left hand side
             actions = self.BP.getValidActions(s_)
@@ -67,7 +69,7 @@ class DLPAgent:
                 actions = self.BP.getValidActions(s)
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
-                        c += (self.BP.T(s, a, s_)*in_y[s][a])
+                        c += self.BP.T(s, a, s_)*self.in_y[s][a]
             
             c = self.gamma*c
 
