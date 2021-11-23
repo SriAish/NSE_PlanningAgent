@@ -49,6 +49,13 @@ class DLPAgent:
         self.m.Minimize(obj)
 
     def make_constraints_eqn1(self):
+        in_y = {}
+        for s in self.BP.states:
+            in_y[s] = {} 
+            actions = self.BP.getValidActions(s)
+            for a in actions:
+                in_y[s][a] = e**(self.x[s] + self.pi[s][a])
+
         for s_ in self.BP.states:
             # Calculate left hand side
             actions = self.BP.getValidActions(s_)
@@ -60,7 +67,7 @@ class DLPAgent:
                 actions = self.BP.getValidActions(s)
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
-                        c += (self.BP.T(s, a, s_)*(e**(self.x[s] + self.pi[s][a])))
+                        c += (self.BP.T(s, a, s_)*in_y[s][a])
             
             c = self.gamma*c
 
