@@ -44,7 +44,6 @@ class DLPAgent:
         self.obj = cp.Minimize(obj)
 
     def make_constraints_eqn1(self):
-        i = 0
         for s_ in self.BP.states:
             # Calculate left hand side
             actions = self.BP.getValidActions(s_)
@@ -89,22 +88,23 @@ class DLPAgent:
         self.prob = cp.Problem(self.obj, self.constraints)
 
     def calculate_pi(self):
-        self.pi = {}
-        self.pi_max = {}
+        self.pi.value = {}
+        self.pi_max.value = {}
+        self.y_ = {}
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
-            self.pi[s] = {}
+            self.pi[s].value = {}
             y = 0
             ma = 0
-
             for a in actions:
-                y += self.y[(s,a)]
-                if(self.y[(s,a)] > ma):
+                self.y_[(s, a)] = self.y[(s, a)].value
+                y += self.y_[(s,a)]
+                if(self.y_[(s,a)] > ma):
                     self.pi_max[s] = a
-                    ma = self.y[(s,a)]
+                    ma = self.y_[(s,a)]
 
             for a in actions:
-                self.pi[s][a] = self.y[(s,a)]/y
+                self.pi[s][a] = self.y_[(s,a)]/y
 
     def save_pi(self, file):
         with open('policy/'+ 'DLP_Agent_Policy_' + file + '.pkl', 'wb') as f:
@@ -114,11 +114,11 @@ class DLPAgent:
             pickle.dump(self.pi_max, f, pickle.HIGHEST_PROTOCOL)
 
         with open('policy/'+ 'DLP_Agent_Policy_' + file + 'y' + '.pkl', 'wb') as f:
-            pickle.dump(self.y, f, pickle.HIGHEST_PROTOCOL)
+            pickle.dump(self.y_, f, pickle.HIGHEST_PROTOCOL)
 
     def solve_prob(self, file):
         try:
-            self.prob.solve(verbose=True)
+            self.prob.solve(solver=cp.SCS, verbose=True)
             self.calculate_pi()
             self.save_pi(file)
         except Exception as e:
