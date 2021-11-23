@@ -102,7 +102,7 @@ class DLPAgent:
             ma = 0
             for a in actions:
                 self.pi_[s][a] = self.pi[s][a].value
-                if(self.pi_[(s,a)] > ma):
+                if(self.pi_[s][a] > ma):
                     self.pi_max[s] = a
 
     def save_pi(self, file):
