@@ -118,7 +118,7 @@ class DLPAgent:
 
     def solve_prob(self, file):
         try:
-            self.prob.solve(solver=cp.SCS, verbose=True)
+            self.prob.solve(verbose=True)
             self.calculate_pi()
             self.save_pi(file)
         except Exception as e:
