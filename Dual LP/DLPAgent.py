@@ -67,7 +67,7 @@ class DLPAgent:
                 c += 1/len(self.belief_state)
 
             # Adding constraint
-            self.constraints.append(y = c)
+            self.constraints.append(y == c)
     
     def make_constraints_eqn2(self):
         for s in self.BP.states:
