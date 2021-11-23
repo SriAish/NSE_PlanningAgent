@@ -43,7 +43,7 @@ class DLPAgent:
     def init_intermediates(self):
         self.in_y = {}
         for s in self.BP.states:
-            in_y[s] = {} 
+            self.in_y[s] = {} 
             actions = self.BP.getValidActions(s)
             for a in actions:
                 in_y[s][a] = e**(self.x[s] + self.pi[s][a])
