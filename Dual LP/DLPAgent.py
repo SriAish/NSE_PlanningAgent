@@ -117,11 +117,9 @@ class DLPAgent:
         with open('policy/'+ 'DLP_Agent_Policy_' + file + 'y' + '.pkl', 'wb') as f:
             pickle.dump(self.y_, f, pickle.HIGHEST_PROTOCOL)
 
-    def solve_prob(self, file):
+    def solve_prob(self):
         try:
             self.prob.solve(solver=cp.SCS, verbose=True)
-            self.calculate_pi()
-            self.save_pi(file)
         except Exception as e:
             print(e)
 
@@ -136,4 +134,6 @@ if __name__ == '__main__':
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
     # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
     agent = DLPAgent(BP, locations=locations)
-    agent.solve_prob(sys.argv[8])
+    agent.solve_prob()
+    agent.calculate_pi()
+    agent.save_pi(sys.argv[8])
