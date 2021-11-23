@@ -7,6 +7,7 @@ from math import e
 class DLPAgent:
     def __init__(self, BP, gamma = 0.9, locations = None):
         self.m = GEKKO()
+        self.m.options.IMODE = 3
         self.BP = BP
         self.no_states = len(self.BP.states)
         self.gamma = gamma
@@ -53,9 +54,7 @@ class DLPAgent:
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                obj += self.in_y[s][a]*self.BP.get_cost(s, a)
-
-        self.m.Minimize(obj)
+                self.m.Minimize(self.in_y[s][a]*self.BP.get_cost(s, a))
 
     def make_constraints_eqn1(self):
         for s_ in self.BP.states:
