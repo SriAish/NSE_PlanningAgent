@@ -93,7 +93,7 @@ class DLPAgent:
         self.y_ = {}
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
-            self.pi[s].value = {}
+            self.pi[s] = {}
             y = 0
             ma = 0
             for a in actions:
@@ -121,6 +121,7 @@ class DLPAgent:
         try:
             self.prob.solve(solver=cp.SCS, verbose=True)
         except Exception as e:
+            print("Exception Occured")
             print(e)
 
 if __name__ == '__main__':
