@@ -73,7 +73,7 @@ class DLPAgent:
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.constraints.append(cp.exp(self.y[(s, a)]) >= 0)
+                self.constraints.append(self.y[(s, a)] >= 0)
 
     def make_prob(self):
         self.constraints = []
