@@ -107,6 +107,7 @@ class DLPAgent:
                 self.pi[s][a] = self.y_[(s,a)]/y
 
     def save_pi(self, file):
+        print("Saving policies")
         with open('policy/'+ 'DLP_Agent_Policy_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi, f, pickle.HIGHEST_PROTOCOL)
 
