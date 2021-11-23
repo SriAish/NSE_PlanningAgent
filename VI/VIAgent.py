@@ -75,9 +75,9 @@ if __name__ == '__main__':
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
     # print(policy)
-    with open('policy/'+ sys.argv[8] + '.pkl', 'wb') as f:
+    with open('policy_values/'+ sys.argv[8] + '.pkl', 'wb') as f:
         pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
     
     # print(agent.stateValues)
-    with open('policy/'+ sys.argv[9] + '.pkl', 'wb') as f:
+    with open('policy_values/'+ sys.argv[9] + '.pkl', 'wb') as f:
         pickle.dump(agent.stateValues, f, pickle.HIGHEST_PROTOCOL)
