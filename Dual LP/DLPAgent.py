@@ -88,8 +88,8 @@ class DLPAgent:
         self.prob = cp.Problem(self.obj, self.constraints)
 
     def calculate_pi(self):
-        self.pi.value = {}
-        self.pi_max.value = {}
+        self.pi = {}
+        self.pi_max = {}
         self.y_ = {}
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
