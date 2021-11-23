@@ -2,7 +2,7 @@
 #SBATCH -A research
 #SBATCH --cpus-per-gpu=2
 #SBATCH --gres=gpu:1
-#SBATCH --mem-per-cpu=100G
+#SBATCH --mem-per-cpu=40G
 #SBATCH -t 2-00:00:00
 #SBATCH --output=DLP3.txt
 module add cuda/9.0
