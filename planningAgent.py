@@ -1,4 +1,3 @@
-from ctypes import sizeof
 import numpy as np
 import sys
 import cvxpy as cp

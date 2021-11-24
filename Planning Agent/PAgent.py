@@ -1,9 +1,9 @@
-from misc import BoxPushingConstants
 import sys
+import cvxpy as cp
+from misc import BoxPushingConstants
+import random
 import pickle
 import csv
-import cvxpy as cp
-from math import e
 
 class PlanningAgent:
     def __init__(self, BP, gamma = 0.9, locations = None):
