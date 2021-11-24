@@ -13,8 +13,8 @@ class PlanningAgent:
         self.locations = locations
         self.tao = cp.Parameter()
         self.tao.value = 1
-        self.mu = 1.5
-        self.tao_max = 20
+        self.mu = 10
+        self.tao_max = 100000
         self.init_belief()
         print("initial belief setup")
         sys.stdout.flush()
