@@ -111,10 +111,10 @@ class DLPAgent:
     def save_pi(self, file):
         print("Saving policies")
         with open('policy/'+ 'NC_Agent_Policy_' + file + '.pkl', 'wb') as f:
-            pickle.dump(self.pi_, f, pickle.HIGHEST_PROTOCOL)
+            pickle.dump(self.pi_, f)
 
         with open('policy/'+ 'NC_Agent_Policy_' + file + '_max' + '.pkl', 'wb') as f:
-            pickle.dump(self.pi_max, f, pickle.HIGHEST_PROTOCOL)
+            pickle.dump(self.pi_max, f)
 
     def solve_prob(self):
         try:
