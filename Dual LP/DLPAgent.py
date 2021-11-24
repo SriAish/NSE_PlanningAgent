@@ -88,6 +88,7 @@ class DLPAgent:
         self.prob = cp.Problem(self.obj, self.constraints)
 
     def calculate_pi(self):
+        print("Objective Value: ", self.prob.value)
         self.pi = {}
         self.pi_max = {}
         self.y_ = {}
@@ -119,7 +120,7 @@ class DLPAgent:
 
     def solve_prob(self):
         try:
-            self.prob.solve(solver=cp.SCS, verbose=True)
+            self.prob.solve(solver=cp.SCS)
         except Exception as e:
             print("Exception Occured")
             print(e)

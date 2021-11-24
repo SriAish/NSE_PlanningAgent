@@ -94,6 +94,7 @@ class DLPAgent:
         sys.stdout.flush()
 
     def calculate_pi(self):
+        print("Objective Value: ", m.options.OBJFCNVAL)
         self.pi_ = {}
         self.pi_max = {}
         for s in self.BP.states:
