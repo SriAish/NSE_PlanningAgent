@@ -67,6 +67,7 @@ class PlanningAgent:
         self.in_y_para = {}
         for s in self.BP.states:
             self.in_y[s] = {} 
+            self.in_y_para[s] = {}
             actions = self.BP.getValidActions(s)
             for a in actions:
                 self.in_y[s][a] = cp.exp(self.x[s] + self.pi[s][a])
