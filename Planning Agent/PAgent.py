@@ -62,6 +62,12 @@ class PlanningAgent:
                 self.pi_para[s][a] = cp.Parameter()
                 self.pi_para[s][a].value = random.uniform(-1, 0)
 
+    def change_para(self):
+        for i in self.BP.states:
+            self.x_para[i].value = self.x[i].value
+            for j in self.pi[i]:
+                self.pi_para[i][j].value = self.pi[i][j].value
+
     def init_intermediates(self):
         self.in_y = {}
         self.in_y_para = {}
