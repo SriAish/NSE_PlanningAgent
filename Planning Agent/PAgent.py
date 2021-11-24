@@ -136,6 +136,11 @@ class PlanningAgent:
             # Adding constraint
             self.constraints.append(y <= c + self.s2[s_])
 
+    def make_constraints_eqn1(self):
+        for s in self.BP.states:
+            self.constraints.append(self.s1[s] >= 0)
+            self.constraints.append(self.s2[s] >= 0)
+
     def make_prob(self):
         self.constraints = []
         self.set_obj()
