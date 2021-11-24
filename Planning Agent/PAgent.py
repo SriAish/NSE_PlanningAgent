@@ -136,7 +136,7 @@ class PlanningAgent:
             # Adding constraint
             self.constraints.append(y <= c + self.s2[s_])
 
-    def make_constraints_eqn1(self):
+    def make_constraints_eqn3(self):
         for s in self.BP.states:
             self.constraints.append(self.s1[s] >= 0)
             self.constraints.append(self.s2[s] >= 0)
@@ -150,6 +150,9 @@ class PlanningAgent:
         print("eq1")
         sys.stdout.flush()
         self.make_constraints_eqn2()
+        print("eq2")
+        sys.stdout.flush()
+        self.make_constraints_eqn3()
         print("eq2")
         sys.stdout.flush()
         self.prob = cp.Problem(self.obj, self.constraints)
