@@ -11,6 +11,7 @@ class BoxPushingConstants:
         self.rug_start = rug_start
         self.end_state = end_state
         self.prev_end = (end_state[0], end_state[1], True, end_state[3])
+        self.transition_probabilities = {}
         print(self.prev_end)
         self.putRug()
         self.generateStates()
@@ -59,10 +60,10 @@ class BoxPushingConstants:
         return (location[0], min(self.grid_size - 1, location[1] + 1))
 
     def get_cost(self, state, action):
-        if state == self.prev_end and action == self.actions.drop:
-            # print("before final")
-            # print(state)
-            return self.actions.actionCost(action) - 2
+        # if state == self.prev_end and action == self.actions.drop:
+        #     # print("before final")
+        #     # print(state)
+        #     return self.actions.actionCost(action) - 2
         return self.actions.actionCost(action)
 
     def transition(self, state, action):
@@ -115,11 +116,16 @@ class BoxPushingConstants:
             return states, self.get_cost(state, action)
 
     def T(self, s, a, s_):
+        if (s, a, s_) in self.transition_probabilities.keys():
+            return self.transition_probabilities[(s, a, s_)]
         trans, _ = self.transition(s, a)
         for i in trans:
             if s_ == i[0]:
+                self.transition_probabilities[(s, a, s_)] = i[1]
                 return i[1]
 
+        self.transition_probabilities[(s, a, s_)] = 0
+        
         return 0
 
 if __name__ == '__main__':

@@ -88,7 +88,9 @@ class DLPAgent:
         self.prob = cp.Problem(self.obj, self.constraints)
 
     def calculate_pi(self):
+        print("----------------------------------------")
         print("Objective Value: ", self.prob.value)
+        print("----------------------------------------")
         self.pi = {}
         self.pi_max = {}
         self.y_ = {}
