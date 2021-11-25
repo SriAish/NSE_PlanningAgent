@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 536952
+SLURM_JOB_ID = 536959
 SLURM_NODELIST = gnode56
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job536952/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job536959/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -29,12 +29,16 @@ Exception Occured
  STOPPING...
 
 ----------------------------------------
+Objective Value:  0.0
+----------------------------------------
 Traceback (most recent call last):
   File "NCAgent.py", line 142, in <module>
     agent.calculate_pi()
-  File "NCAgent.py", line 102, in calculate_pi
-    print("Objective Value: ", m.options.OBJFCNVAL)
-NameError: name 'm' is not defined
+  File "NCAgent.py", line 111, in calculate_pi
+    self.pi_[s][a] = self.pi[s][a].value[0]
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
 7
 --------------------
 ((5, 5), (5, 5), True, 'p')
@@ -761,8 +765,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 264
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 250
-Total CPU secs in IPOPT (w/o function evaluations)   =      6.537
-Total CPU secs in NLP function evaluations           =     32.585
+Total CPU secs in IPOPT (w/o function evaluations)   =      6.545
+Total CPU secs in NLP function evaluations           =     33.296
 
 EXIT: Maximum Number of Iterations Exceeded.
  
@@ -772,7 +776,7 @@ EXIT: Maximum Number of Iterations Exceeded.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    39.3508000000147      sec
+ Solution time  :    40.0773999999801      sec
  Objective      :    27500.4189349776     
  Unsuccessful with error code            0
  ---------------------------------------------------
@@ -784,12 +788,16 @@ Exception Occured
  @error: Solution Not Found
 
 ----------------------------------------
+Objective Value:  0.0
+----------------------------------------
 Traceback (most recent call last):
   File "NCAgent.py", line 142, in <module>
     agent.calculate_pi()
-  File "NCAgent.py", line 102, in calculate_pi
-    print("Objective Value: ", m.options.OBJFCNVAL)
-NameError: name 'm' is not defined
+  File "NCAgent.py", line 111, in calculate_pi
+    self.pi_[s][a] = self.pi[s][a].value[0]
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
 69
 --------------------
 ((3, 6), (3, 6), True, 'p')
@@ -817,10 +825,14 @@ Exception Occured
  STOPPING...
 
 ----------------------------------------
+Objective Value:  0.0
+----------------------------------------
 Traceback (most recent call last):
   File "NCAgent.py", line 142, in <module>
     agent.calculate_pi()
-  File "NCAgent.py", line 102, in calculate_pi
-    print("Objective Value: ", m.options.OBJFCNVAL)
-NameError: name 'm' is not defined
-180
+  File "NCAgent.py", line 111, in calculate_pi
+    self.pi_[s][a] = self.pi[s][a].value[0]
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+181
