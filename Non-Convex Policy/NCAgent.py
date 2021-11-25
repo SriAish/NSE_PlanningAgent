@@ -80,12 +80,13 @@ class DLPAgent:
             self.m.Equation(y == c)
     
     def make_constraints_eqn2(self):
+        su = 1
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             c = 0
             for a in actions:
-                c += e**(self.pi[s][a])
-            self.m.Equation(c == 1)
+                c += e**self.pi[s][a]
+            self.m.Equation(c == su)
 
     def make_prob(self):
         self.set_obj()
@@ -108,7 +109,7 @@ class DLPAgent:
             self.pi_[s] = {}
             ma = 0
             for a in actions:
-                self.pi_[s][a] = self.pi[s][a].value
+                self.pi_[s][a] = self.pi[s][a].value[0]
                 if(self.pi_[s][a] > ma):
                     self.pi_max[s] = a
 
