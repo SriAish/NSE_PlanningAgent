@@ -86,7 +86,7 @@ class DLPAgent:
             c = 0
             for a in actions:
                 c += e**self.pi[s][a]
-            if c != 0:
+            if actions:
                 self.m.Equation(c == su)
 
     def make_prob(self):
