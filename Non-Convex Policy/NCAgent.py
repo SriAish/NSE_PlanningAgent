@@ -99,7 +99,7 @@ class DLPAgent:
 
     def calculate_pi(self):
         print("----------------------------------------")
-        print("Objective Value: ", m.options.OBJFCNVAL)
+        print("Objective Value: ", self.m.options.OBJFCNVAL)
         print("----------------------------------------")
         self.pi_ = {}
         self.pi_max = {}
