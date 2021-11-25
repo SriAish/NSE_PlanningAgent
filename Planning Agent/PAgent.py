@@ -44,8 +44,8 @@ class PlanningAgent:
         for s in self.BP.states:
             self.pi[s] = {}
             self.x[s] = cp.Variable()
-            self.s1[s] = cp.Variable()
-            self.s2[s] = cp.Variable()
+            self.s1[s] = cp.Variable(nonneg=True)
+            self.s2[s] = cp.Variable(nonneg=True)
             actions = self.BP.getValidActions(s)
             for a in actions:
                 self.pi[s][a] = cp.Variable()
@@ -152,9 +152,9 @@ class PlanningAgent:
         self.make_constraints_eqn2()
         print("eq2")
         sys.stdout.flush()
-        self.make_constraints_eqn3()
-        print("eq3")
-        sys.stdout.flush()
+        # self.make_constraints_eqn3()
+        # print("eq3")
+        # sys.stdout.flush()
         self.prob = cp.Problem(self.obj, self.constraints)
 
     def solve_prob(self):
@@ -169,7 +169,7 @@ class PlanningAgent:
             csvwriter.writerow(["iteration", "V"])
             for i in range(30):
                 self.tao.value = min(self.mu*self.tao.value, self.tao_max)
-                self.solve_prob(reltol=1e-12)
+                self.solve_prob()
                 csvwriter.writerow([i, self.prob.value])
                 self.save_policy(name + '_' + str(i))
                 self.change_para()
