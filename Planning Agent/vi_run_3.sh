@@ -15,14 +15,14 @@ runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent.py 17 9 3 7 4 8 16 17_17
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 NCAgent.py 19 9 3 8 5 9 18 19_19
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
+# python3.7 NCAgent.py 17 9 3 7 4 8 16 17_17
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 NCAgent.py 19 9 3 8 5 9 18 19_19
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
