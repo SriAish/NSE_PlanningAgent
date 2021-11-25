@@ -153,7 +153,7 @@ class PlanningAgent:
         print("eq2")
         sys.stdout.flush()
         self.make_constraints_eqn3()
-        print("eq2")
+        print("eq3")
         sys.stdout.flush()
         self.prob = cp.Problem(self.obj, self.constraints)
 
