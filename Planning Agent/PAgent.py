@@ -169,7 +169,7 @@ class PlanningAgent:
             csvwriter.writerow(["iteration", "V"])
             for i in range(30):
                 self.tao.value = min(self.mu*self.tao.value, self.tao_max)
-                self.solve_prob()
+                self.solve_prob(reltol=1e-12)
                 csvwriter.writerow([i, self.prob.value])
                 self.save_policy(name + '_' + str(i))
                 self.change_para()
