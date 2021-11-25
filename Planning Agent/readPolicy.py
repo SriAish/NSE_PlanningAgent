@@ -23,10 +23,9 @@ class Policy:
                 # print(key)
                 # print(self.policy[key])
                 # print(s)
-        return self.policy[state][action]
 
 if __name__ == '__main__':
-    agent = Policy('policy/Planning_Agent_Policy_3_3_29.pkl')
+    agent = Policy('policy/Planning_Agent_Policy_3_3_8.pkl')
     a = Actions()
-    print(agent.getPi(((0, 0), (0, 0), False, 'p'), a.down))
+    agent.getPi(((0, 0), (0, 0), False, 'p'), a.down)
     # print(agent.policy)

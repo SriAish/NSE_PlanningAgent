@@ -177,9 +177,11 @@ class PlanningAgent:
     def save_policy(self, name):
         pi_ = {}
         pi_max = {}
+        x_ = {}
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             pi_[s] = {}
+            x_[s] = self.x[s].value
             ma = 0
             for a in actions:
                 pi_[s][a] = self.pi[s][a].value
@@ -192,6 +194,9 @@ class PlanningAgent:
 
         with open('policy/'+ 'Planning_Agent_Policy_' + name + '_max' + '.pkl', 'wb') as f:
             pickle.dump(pi_max, f)
+
+        with open('policy/'+ 'Planning_Agent_x_' + name + '.pkl', 'wb') as f:
+            pickle.dump(x_, f)
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
