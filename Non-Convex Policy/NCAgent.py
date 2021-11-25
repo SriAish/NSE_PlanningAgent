@@ -82,8 +82,10 @@ class DLPAgent:
     def make_constraints_eqn2(self):
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
+            c = 0
             for a in actions:
-                self.constraints.append(e**(self.x[s] + self.pi[s][a]) >= 0)
+                c += e**(self.pi[s][a])
+            self.m.Equation(c == 1)
 
     def make_prob(self):
         self.set_obj()
@@ -91,6 +93,8 @@ class DLPAgent:
         sys.stdout.flush()
         self.make_constraints_eqn1()
         print("eq1")
+        self.make_constraints_eqn2()
+        print("eq2")
         sys.stdout.flush()
 
     def calculate_pi(self):
