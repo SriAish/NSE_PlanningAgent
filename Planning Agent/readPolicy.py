@@ -27,7 +27,7 @@ class Policy:
             s = 0
             for a in self.policy[key]:
                 s += math.e**self.policy[key][a]
-            # print(s)
+            print(s)
         for key in self.x:
             if math.e**self.x[key] < 0:
                 print(math.e**self.x[key])
@@ -44,7 +44,7 @@ class Policy:
                 # print(s)
 
 if __name__ == '__main__':
-    agent = Policy('policy/Planning_Agent_Policy_3_3_9.pkl', 'policy/Planning_Agent_x_3_3_9.pkl', 'policy/Planning_Agent_s1_3_3_9.pkl', 'policy/Planning_Agent_s2_3_3_9.pkl')
+    agent = Policy('policy/Planning_Agent_Policy_3_3_8.pkl', 'policy/Planning_Agent_x_3_3_8.pkl', 'policy/Planning_Agent_s1_3_3_8.pkl', 'policy/Planning_Agent_s2_3_3_8.pkl')
     a = Actions()
     agent.getPi()
     # ((0, 0), (0, 0), False, 'p'), a.down
