@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 536959
-SLURM_NODELIST = gnode56
-SLURM_JOB_GPUS = 1
+SLURM_JOB_ID = 537130
+SLURM_NODELIST = gnode37
+SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job536959/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job537130/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -31,15 +31,8 @@ Exception Occured
 ----------------------------------------
 Objective Value:  0.0
 ----------------------------------------
-Traceback (most recent call last):
-  File "NCAgent.py", line 142, in <module>
-    agent.calculate_pi()
-  File "NCAgent.py", line 111, in calculate_pi
-    self.pi_[s][a] = self.pi[s][a].value[0]
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-7
+Saving policies
+9
 --------------------
 ((5, 5), (5, 5), True, 'p')
 initial belief setup
@@ -765,8 +758,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 264
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 250
-Total CPU secs in IPOPT (w/o function evaluations)   =      6.545
-Total CPU secs in NLP function evaluations           =     33.296
+Total CPU secs in IPOPT (w/o function evaluations)   =      6.518
+Total CPU secs in NLP function evaluations           =     32.519
 
 EXIT: Maximum Number of Iterations Exceeded.
  
@@ -776,7 +769,7 @@ EXIT: Maximum Number of Iterations Exceeded.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    40.0773999999801      sec
+ Solution time  :    39.2715000000026      sec
  Objective      :    27500.4189349776     
  Unsuccessful with error code            0
  ---------------------------------------------------
@@ -790,15 +783,8 @@ Exception Occured
 ----------------------------------------
 Objective Value:  0.0
 ----------------------------------------
-Traceback (most recent call last):
-  File "NCAgent.py", line 142, in <module>
-    agent.calculate_pi()
-  File "NCAgent.py", line 111, in calculate_pi
-    self.pi_[s][a] = self.pi[s][a].value[0]
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-69
+Saving policies
+68
 --------------------
 ((3, 6), (3, 6), True, 'p')
 initial belief setup
@@ -827,12 +813,5 @@ Exception Occured
 ----------------------------------------
 Objective Value:  0.0
 ----------------------------------------
-Traceback (most recent call last):
-  File "NCAgent.py", line 142, in <module>
-    agent.calculate_pi()
-  File "NCAgent.py", line 111, in calculate_pi
-    self.pi_[s][a] = self.pi[s][a].value[0]
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-181
+Saving policies
+175
