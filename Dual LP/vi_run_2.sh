@@ -8,12 +8,12 @@
 module add cuda/9.0
 module add cudnn/7-cuda-9.0
 source ~/keras/bin/activate
-# start=`date +%s`
-# python3.7 DLPAgent.py 9 5 3 3 2 4 8 9_9
-# end=`date +%s`
-# runtime=$((end-start))
-# echo $runtime
-# echo "--------------------"
+start=`date +%s`
+python3.7 DLPAgent.py 9 5 3 3 2 4 8 9_9
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
 start=`date +%s`
 python3.7 DLPAgent.py 11 5 3 4 3 5 10 11_11
 end=`date +%s`
