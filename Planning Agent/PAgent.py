@@ -138,8 +138,8 @@ class PlanningAgent:
 
     def make_constraints_eqn3(self):
         for s in self.BP.states:
-            self.constraints.append(self.s1[s] >= 0)
-            self.constraints.append(self.s2[s] >= 0)
+            self.constraints.append(self.s1[s] >= 0.00001)
+            self.constraints.append(self.s2[s] >= 0.00001)
 
     def make_prob(self):
         self.constraints = []
