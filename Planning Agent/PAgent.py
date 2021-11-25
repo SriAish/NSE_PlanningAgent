@@ -181,7 +181,6 @@ class PlanningAgent:
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             pi_[s] = {}
-            x_[s] = self.x[s].value
             ma = 0
             for a in actions:
                 pi_[s][a] = self.pi[s][a].value
@@ -195,7 +194,22 @@ class PlanningAgent:
         with open('policy/'+ 'Planning_Agent_Policy_' + name + '_max' + '.pkl', 'wb') as f:
             pickle.dump(pi_max, f)
 
+        for s in self.BP.states:
+            x_[s] = self.x[s].value
+
         with open('policy/'+ 'Planning_Agent_x_' + name + '.pkl', 'wb') as f:
+            pickle.dump(x_, f)
+
+        for s in self.BP.states:
+            x_[s] = self.s1[s].value
+            
+        with open('policy/'+ 'Planning_Agent_s1_' + name + '.pkl', 'wb') as f:
+            pickle.dump(x_, f)
+        
+        for s in self.BP.states:
+            x_[s] = self.s2[s].value
+            
+        with open('policy/'+ 'Planning_Agent_s2_' + name + '.pkl', 'wb') as f:
             pickle.dump(x_, f)
 
 if __name__ == '__main__':
