@@ -18,9 +18,9 @@ class Policy:
             s = 0
             for a in self.policy[key]:
                 s += math.e**self.policy[key][a]
-            if s < 0.9:
-                print(key)
-                print(self.policy[key])
+            if s != 1:
+                # print(key)
+                # print(self.policy[key])
                 print(s)
         return self.policy[state][action]
 
