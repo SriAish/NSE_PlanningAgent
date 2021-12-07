@@ -4,7 +4,7 @@ import pickle
 from gekko import GEKKO
 from math import e
 
-class DLPAgent:
+class NCAgent:
     def __init__(self, BP, gamma = 0.9, locations = None):
         self.m = GEKKO()
         self.m.options.IMODE = 3
@@ -144,7 +144,7 @@ if __name__ == '__main__':
     # if int(sys.argv[1]) == 7:
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
     # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
-    agent = DLPAgent(BP, locations=locations)
+    agent = NCAgent(BP, locations=locations)
     agent.solve_prob()
     agent.calculate_pi()
     agent.save_pi(sys.argv[8])
