@@ -38,8 +38,13 @@ class NCAgent:
             self.pi[s] = {}
             self.x[s] = self.m.Var(lb=0, ub=1)
             actions = self.BP.getValidActions(s)
+            i = 0
             for a in actions:
-                self.pi[s][a] = self.m.Var(lb=0, ub=1)
+                if(i == 0):
+                    self.pi[s][a] = self.m.Var(1, lb=0, ub=1)
+                    i = 1
+                else:
+                    self.pi[s][a] = self.m.Var(0, lb=0, ub=1)
 
     def init_intermediates(self):
         self.in_y = {}
@@ -62,7 +67,7 @@ class NCAgent:
             # y = self.x[s_]
             y = 0
             for a in actions:
-                y += self.in_y[s_][a]
+                y += self.x[s]*self.pi[s][a]
 
             # Calculate right hand summation
             c = 0
@@ -70,7 +75,7 @@ class NCAgent:
                 actions = self.BP.getValidActions(s)
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
-                        c += self.BP.T(s, a, s_)*self.in_y[s][a]
+                        c += self.BP.T(s, a, s_)*self.x[s]*self.pi[s][a]
             
             c = self.gamma*c
 
