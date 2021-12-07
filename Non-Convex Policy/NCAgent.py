@@ -59,9 +59,10 @@ class NCAgent:
         for s_ in self.BP.states:
             # Calculate left hand side
             actions = self.BP.getValidActions(s_)
-            y = self.x[s_]
-            # for a in actions:
-            #     y += self.in_y[s_][a]
+            # y = self.x[s_]
+            y = 0
+            for a in actions:
+                y += self.in_y[s_][a]
 
             # Calculate right hand summation
             c = 0
@@ -121,10 +122,10 @@ class NCAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'NC_Agent_Policy_s_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'NC_Agent_Policy_s_' + file + '_max' + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_' + file + '_max' + '.pkl', 'wb') as f:
             pickle.dump(self.pi_max, f)
 
     def solve_prob(self):
