@@ -17,7 +17,7 @@ class Policy:
         for key in self.policy:
             s = 0
             for a in self.policy[key]:
-                s += math.e**self.policy[key][a]
+                s += self.policy[key][a]
             if s != 1:
                 # print(key)
                 # print(self.policy[key])
