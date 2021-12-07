@@ -19,8 +19,8 @@ class Policy:
             for a in self.policy[key]:
                 s += self.policy[key][a]
             if s != 1:
-                # print(key)
-                # print(self.policy[key])
+                print(key)
+                print(self.policy[key])
                 print(s)
         return self.policy[state][action]
 

@@ -38,13 +38,8 @@ class NCAgent:
             self.pi[s] = {}
             self.x[s] = self.m.Var(lb=0, ub=1)
             actions = self.BP.getValidActions(s)
-            i = 0
             for a in actions:
-                if(i == 0):
-                    self.pi[s][a] = self.m.Var(1, lb=0, ub=1)
-                    i = 1
-                else:
-                    self.pi[s][a] = self.m.Var(0, lb=0, ub=1)
+                self.pi[s][a] = self.m.Var(1/len(actions), lb=0, ub=1)
 
     def init_intermediates(self):
         self.in_y = {}
@@ -55,10 +50,12 @@ class NCAgent:
                 self.in_y[s][a] = self.x[s]*self.pi[s][a]
 
     def set_obj(self):
+        obj = 0
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.m.Minimize(self.in_y[s][a]*self.BP.get_cost(s, a))
+                obj += self.in_y[s][a]*self.BP.get_cost(s, a)
+        self.m.Minimize(obj)
 
     def make_constraints_eqn1(self):
         for s_ in self.BP.states:
@@ -127,10 +124,10 @@ class NCAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'NC_Agent_Policy_def0_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_sum_obj_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'NC_Agent_Policy_def0_' + file + '_max' + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_sum_obj_' + file + '_max' + '.pkl', 'wb') as f:
             pickle.dump(self.pi_max, f)
 
     def solve_prob(self):
