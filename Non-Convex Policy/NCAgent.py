@@ -67,7 +67,7 @@ class NCAgent:
             # y = self.x[s_]
             y = 0
             for a in actions:
-                y += self.in_y[s][a]
+                y += self.in_y[s_][a]
 
             # Calculate right hand summation
             c = 0
