@@ -67,7 +67,7 @@ class NCAgent:
             # y = self.x[s_]
             y = 0
             for a in actions:
-                y += self.x[s]*self.pi[s][a]
+                y += self.in_y[s][a]
 
             # Calculate right hand summation
             c = 0
@@ -75,7 +75,7 @@ class NCAgent:
                 actions = self.BP.getValidActions(s)
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
-                        c += self.BP.T(s, a, s_)*self.x[s]*self.pi[s][a]
+                        c += self.BP.T(s, a, s_)*self.in_y[s][a]
             
             c = self.gamma*c
 
