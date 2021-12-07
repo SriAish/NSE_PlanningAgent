@@ -36,10 +36,10 @@ class NCAgent:
         self.pi = {}
         for s in self.BP.states:
             self.pi[s] = {}
-            self.x[s] = self.m.Var()
+            self.x[s] = self.m.Var(lb=0)
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.pi[s][a] = self.m.Var()
+                self.pi[s][a] = self.m.Var(lb=0)
 
     def init_intermediates(self):
         self.in_y = {}
