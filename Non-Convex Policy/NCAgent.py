@@ -47,10 +47,9 @@ class DLPAgent:
             self.in_y[s] = {} 
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.in_y[s][a] = e**(self.x[s] + self.pi[s][a])
+                self.in_y[s][a] = self.x[s]*self.pi[s][a]
 
     def set_obj(self):
-        obj = 0
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
@@ -60,9 +59,9 @@ class DLPAgent:
         for s_ in self.BP.states:
             # Calculate left hand side
             actions = self.BP.getValidActions(s_)
-            y = e**self.x[s_]
-            # for a in actions:
-            #     y += self.in_y[s_][a]
+            y = 0
+            for a in actions:
+                y += self.in_y[s_][a]
 
             # Calculate right hand summation
             c = 0
@@ -113,8 +112,12 @@ class DLPAgent:
             ma = 0
             for a in actions:
                 self.pi_[s][a] = self.pi[s][a].value[0]
-                if(self.pi_[s][a] > ma):
+                if(ma == 0):
+                    ma = self.pi_[s][a]
                     self.pi_max[s] = a
+                elif(self.pi_[s][a] > ma):
+                    self.pi_max[s] = a
+                    ma = self.pi_[s][a]
 
     def save_pi(self, file):
         print("Saving policies")
