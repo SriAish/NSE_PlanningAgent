@@ -107,7 +107,7 @@ class DLPAgent:
                     ma = self.y[s][a].value[0]
 
             for a in actions:
-                self.pi_ = self.y[s][a].value[0]/sas
+                self.pi_[s][a] = self.y[s][a].value[0]/sas
 
     def save_pi(self, file):
         print("Saving policies")
