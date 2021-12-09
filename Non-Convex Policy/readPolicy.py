@@ -19,13 +19,13 @@ class Policy:
             for a in self.policy[key]:
                 s += self.policy[key][a]
             if s != 1:
-                print(key)
-                print(self.policy[key])
+                # print(key)
+                # print(self.policy[key])
                 print(s)
         return self.policy[state][action]
 
 if __name__ == '__main__':
-    agent = Policy('policy/NC_Agent_Policy_3_3.pkl')
+    agent = Policy('policy/NC_Agent_Policy_sum_obj_3_3.pkl')
     a = Actions()
     print(agent.getPi(((0, 0), (0, 0), False, 'p'), a.down))
     # print(agent.policy)
