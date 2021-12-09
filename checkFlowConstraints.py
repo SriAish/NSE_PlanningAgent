@@ -1,5 +1,6 @@
 import pickle
 import math
+import sys
 from misc import BoxPushingConstants
 # from actions import Actions
 
@@ -9,7 +10,7 @@ class FlowConstraint:
         self.pi = self.loadPolicy(pi_name)
         self.gamma = gamma
         self.BP = BP
-        self.locations = [(int(grid_size/2), 1)]
+        self.locations = [(int(int(grid_size)/2), 1)]
         self.init_belief()
         
     def init_belief(self):
@@ -47,10 +48,11 @@ class FlowConstraint:
             if s_ in self.belief_state:
                 rhs += 1/len(self.belief_state)
 
-            if(lhs == rhs):
+            if abs(lhs - rhs) < 0.00001:
                 cf += 1
             else:
                 icf += 1
+                print(lhs, rhs)
 
         print(cf, icf)
             
@@ -59,8 +61,8 @@ if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-    agent = Policy('Dual LP/policy/DLP_Agent_Policy_3_3_max.pkl', 'VI/policy_values/VIp_3_3.pkl')
+    agent = FlowConstraint(BP, 'Non-Convex Policy/policy/NC_Agent_x_init_3_3.pkl', 'Non-Convex Policy/policy/NC_Agent_Policy_init_3_3.pkl', sys.argv[1])
     # a = Actions()
-    agent.getPi()
+    agent.checkFlow()
     # print(agent.getPi(((0, 0), (0, 0), False, 'p'), a.down))
     # print(agent.policy)
