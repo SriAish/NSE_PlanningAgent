@@ -39,10 +39,13 @@ class DLPAgent:
                 self.y[s][a] = self.m.Var(lb=0)
 
     def set_obj(self):
+        obj = 0
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.m.Minimize(self.y[s][a]*self.BP.get_cost(s, a))
+                obj += self.y[s][a]*self.BP.get_cost(s, a)
+
+        self.m.Minimize(obj)
 
     def make_constraints_eqn1(self):
         for s_ in self.BP.states:
