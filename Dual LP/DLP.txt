@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 536016
-SLURM_NODELIST = gnode19
-SLURM_JOB_GPUS = 2
+SLURM_JOB_ID = 548636
+SLURM_NODELIST = gnode22
+SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job536016/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job548636/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -12,33 +12,8 @@ eq1
 eq2
 problem setup
 ----------------------------------------
-Objective Value:  10.00000000094272
+Objective Value:  10.00000000035633
 ----------------------------------------
 Saving policies
-5
+6
 --------------------
-((5, 5), (5, 5), True, 'p')
-initial belief setup
-variables setup
-objective setup
-eq1
-eq2
-problem setup
-----------------------------------------
-Objective Value:  10.00000011253862
-----------------------------------------
-Saving policies
-20
---------------------
-((3, 6), (3, 6), True, 'p')
-initial belief setup
-variables setup
-objective setup
-eq1
-eq2
-problem setup
-----------------------------------------
-Objective Value:  10.000051169252593
-----------------------------------------
-Saving policies
-208
