@@ -32,7 +32,7 @@ class DLPAgent:
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.y[(s, a)] = cp.Variable()
+                self.y[(s, a)] = cp.Variable(nonneg=True)
 
     def set_obj(self):
         obj = 0

@@ -36,7 +36,7 @@ class DLPAgent:
             self.y[s] = {}
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.y[s][a] = self.m.Var(lb=0)
+                self.y[s][a] = self.m.Var(lb=0, ub=1/(1-self.gamma))
 
     def set_obj(self):
         obj = 0
