@@ -1,9 +1,145 @@
 ==========================================
-SLURM_JOB_ID = 548637
-SLURM_NODELIST = gnode22
-SLURM_JOB_GPUS = 1
+SLURM_JOB_ID = 549528
+SLURM_NODELIST = gnode21
+SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job548637/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job549528/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+((2, 2), (2, 2), True, 'p')
+initial belief setup
+variables setup
+objective setup
+eq1
+problem setup
+apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ Warning: there is insufficient data in CSV file 14.139.82.6_gk_model0.csv
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :          373
+   Intermediates:            0
+   Connections  :            0
+   Equations    :           91
+   Residuals    :           91
+ 
+ Number of state variables:            373
+ Number of total equations: -           90
+ Number of slack variables: -            0
+ ---------------------------------------
+ Degrees of freedom       :            283
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  1.02709E+01  1.00000E+00
+    1  1.00000E+01  3.72760E-10
+    2  1.00000E+01  1.00000E-10
+    3  1.00000E+01  2.22045E-16
+    4  1.00000E+01  2.22045E-16
+ Successful solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :   6.420000000002801E-002 sec
+ Objective      :   10.00000000000000     
+ Successful solution
+ ---------------------------------------------------
+ 
+----------------------------------------
+Objective Value:  10.0
+----------------------------------------
+Traceback (most recent call last):
+  File "DLPAgent.py", line 149, in <module>
+    agent.calculate_pi()
+  File "DLPAgent.py", line 117, in calculate_pi
+    self.pi_[s][a] = self.y[s][a].value[0]/sas
+ZeroDivisionError: float division by zero
+10
+--------------------
+((2, 2), (2, 2), True, 'p')
+initial belief setup
+variables setup
+objective setup
+eq1
+problem setup
+apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ Warning: there is insufficient data in CSV file 14.139.82.6_gk_model0.csv
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :          373
+   Intermediates:            0
+   Connections  :            0
+   Equations    :           91
+   Residuals    :           91
+ 
+ Number of state variables:            373
+ Number of total equations: -           90
+ Number of slack variables: -            0
+ ---------------------------------------
+ Degrees of freedom       :            283
+ 
+ ----------------------------------------------
+ Steady State Optimization with BPOPT Solver
+ ----------------------------------------------
+
+-----------------------------------------------------
+ BPOPT Solver v1.0.6
+-----------------------------------------------------
+ Adjusting variables to interior region of bounds
+ Iter    Objective  Convergence
+    0  1.39078E+01  1.41540E+00
+    1  1.88888E+01  1.01852E+00
+    2  4.50981E+01  2.36018E+00
+       1.89397E+01  2.82495E-01
+       2.16016E+01  1.18788E+00
+       2.37572E+01  1.77184E+00
+    3  2.50624E+01  2.06515E+00
+    4  1.94191E+01  1.86603E-01
+    5  1.88964E+01  2.56344E-02
+    6  1.90943E+01  5.35196E-03
+    7  1.91766E+01  4.78697E-03
+       1.19687E+01  1.65173E-04
+       1.19549E+01  2.39349E-03
+    8  1.19807E+01  3.59023E-03
+       1.19153E+01  1.52907E-04
+    9  1.19140E+01  1.79511E-03
+   10  1.17217E+01  1.03268E-04
+       1.18251E+01  3.97329E-02
+   11  1.15999E+01  5.55787E-05
+   12  1.16314E+01  2.68285E-05
+   13  1.00936E+01  7.70115E-07
+   14  1.00925E+01  2.66842E-07
+Successful solution
+ 
+ ---------------------------------------------------
+ Solver         :  BPOPT (v1.0)
+ Solution time  :   6.289999999989959E-002 sec
+ Objective      :    10.0095357821739     
+ Successful solution
+ ---------------------------------------------------
+ 
+----------------------------------------
+Objective Value:  10.009535782
+----------------------------------------
+Saving policies
+9
+--------------------
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -102,8 +238,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.028
-Total CPU secs in NLP function evaluations           =      0.161
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.026
+Total CPU secs in NLP function evaluations           =      0.155
 
 EXIT: Optimal Solution Found.
  
@@ -113,7 +249,7 @@ EXIT: Optimal Solution Found.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :   0.201100000005681      sec
+ Solution time  :   0.198399999999992      sec
  Objective      :    10.0000001567982     
  Successful solution
  ---------------------------------------------------
@@ -122,5 +258,5 @@ EXIT: Optimal Solution Found.
 Objective Value:  10.000000157
 ----------------------------------------
 Saving policies
-10
+9
 --------------------
