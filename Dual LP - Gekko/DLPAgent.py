@@ -37,7 +37,7 @@ class DLPAgent:
             self.y[s] = {}
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.y[s][a] = self.m.Var(lb=0, ub=1/(1-self.gamma))
+                self.y[s][a] = self.m.Var(1/len(actions), lb=0, ub=1/(1-self.gamma))
 
     def set_obj(self):
         obj = 0
@@ -114,7 +114,10 @@ class DLPAgent:
                     ma = self.y[s][a].value[0]
 
             for a in actions:
-                self.pi_[s][a] = self.y[s][a].value[0]/sas
+                if sas == 0:
+                    self.pi_[s][a] = 0
+                else:
+                    self.pi_[s][a] = self.y[s][a].value[0]/sas
 
     def save_pi(self, file):
         print("Saving policies")
