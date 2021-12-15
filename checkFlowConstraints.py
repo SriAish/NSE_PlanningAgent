@@ -5,8 +5,9 @@ from misc import BoxPushingConstants
 # from actions import Actions
 
 class FlowConstraint:
-    def __init__(self, BP, x_name, grid_size, gamma = 0.9):
-        self.y = self.loadPolicy(x_name)
+    def __init__(self, BP, x_name, pi_name, grid_size, gamma = 0.9):
+        self.x = self.loadPolicy(x_name)
+        self.pi = self.loadPolicy(pi_name)
         self.gamma = gamma
         self.BP = BP
         self.locations = [(int(int(grid_size)/2), 1)]
@@ -30,17 +31,17 @@ class FlowConstraint:
     def checkFlow(self):
         cf = 0
         icf = 0
-        for s_ in self.y:
+        for s_ in self.x:
             # LHS
             lhs = 0
-            for a in self.y[s_]:
-                lhs += self.y[s_][a]
+            for a in self.pi[s_]:
+                lhs += self.x[s_]*self.pi[s_][a]
 
             # RHS
             rhs = 0
-            for s in self.y:
-                for a in self.y[s]:
-                    rhs += self.BP.T(s, a, s_)*self.y[s][a]
+            for s in self.x:
+                for a in self.pi[s]:
+                    rhs += self.BP.T(s, a, s_)*self.x[s]*self.pi[s][a]
 
             rhs = self.gamma*rhs
 
@@ -60,7 +61,7 @@ if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-    agent = FlowConstraint(BP, 'Dual LP - Gekko/policy/NC_Agent_y_3_31.pkl', sys.argv[1])
+    agent = FlowConstraint(BP, 'VI/policy_values/V_3_3.pkl', 'Dual LP - Gekko/policy/NC_Agent_Policy_3_31.pkl', sys.argv[1])
     # a = Actions()
     agent.checkFlow()
     # print(agent.getPi(((0, 0), (0, 0), False, 'p'), a.down))

@@ -15,6 +15,7 @@ class VIAgent:
         self.action_to_index = self.loadPolicy(name3)
         self.locations = [(int(int(self.BP.grid_size)/2), 1)]
         self.init_belief()
+        self.pr = 0
 
     def loadPolicy(self, name):
         file_to_read = open(name, "rb")
@@ -40,14 +41,16 @@ class VIAgent:
                 continue
             st_val = 0
             actions = self.BP.getValidActions(state)
+            pr_sum = 0
             for action in actions:
-                if(self.pi[self.state_to_index[state] + self.action_to_index[action]] < 0):
-                    print(self.pi[self.state_to_index[state] + self.action_to_index[action]])
-                    continue
                 next_states, c = self.BP.transition(state, action)
                 for j in next_states:
                     c += self.gamma * j[1] * self.stateValues[j[0]]
+                # print(self.pi[self.state_to_index[state] + self.action_to_index[action]])
                 st_val += self.pi[self.state_to_index[state] + self.action_to_index[action]] * c
+                pr_sum += self.pi[self.state_to_index[state] + self.action_to_index[action]]
+            if self.pr == 0:
+                print(pr_sum)
             # print(st_val)
             delta = max(delta, abs(self.stateValues[state] - st_val))
             self.stateValues[state] = st_val
@@ -59,6 +62,7 @@ class VIAgent:
         k = 0
         while x > self.delta:
             x = self.update()
+            self.pr = 1
             k += 1
         # print(self.stateValues)
         return self.stateValues[self.belief_state[0]]
@@ -70,5 +74,5 @@ if __name__ == '__main__':
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_3_max.pkl')
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_33.pkl')
     # agent = VIAgent(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3.pkl')
-    agent = VIAgent(BP, 'policy/DLP_Agent_Policy_3_3.pkl', 'policy/DLP_Agent_state_ind_3_3.pkl', 'policy/DLP_Agent_action_ind_3_3.pkl')
+    agent = VIAgent(BP, 'policy/DLP_Agent_SLSQP_Policy_3_3.pkl', 'policy/DLP_Agent_SLSQP_state_ind_3_3.pkl', 'policy/DLP_Agent_SLSQP_action_ind_3_3.pkl')
     print(agent.getSV())

@@ -1,5 +1,5 @@
 import numpy as np
-# from scipy.optimize import minimize
+from scipy.optimize import minimize
 from misc import BoxPushingConstants
 import sys
 import pickle
@@ -75,10 +75,9 @@ def constraint_spec2(state, action):
 def obj(y):
     obj = 0
     for state in BP.states:
-        s = state_to_index[state]
         actions = BP.getValidActions(state)
         for action in actions:
-            obj += y[s + action_to_index[action]]*BP.get_cost(state, action)
+            obj += y[state_to_index[state] + action_to_index[action]]*BP.get_cost(state, action)
 
     return obj
 
