@@ -3,7 +3,7 @@ import sys
 import pickle
 
 class VIAgent:
-    def __init__(self, BP, name, gamma = 0.9, delta = 0.001):
+    def __init__(self, BP, name, name2, name3, gamma = 0.9, delta = 0.001):
         self.BP = BP
         self.end_state = self.BP.end_state
         self.stateValues = {}
@@ -11,6 +11,8 @@ class VIAgent:
         self.gamma = gamma  
         self.delta = delta
         self.pi = self.loadPolicy(name)
+        self.state_to_index = self.loadPolicy(name2)
+        self.action_to_index = self.loadPolicy(name3)
         self.locations = [(int(int(self.BP.grid_size)/2), 1)]
         self.init_belief()
 
@@ -37,16 +39,15 @@ class VIAgent:
             if state == self.end_state:
                 continue
             st_val = 0
-            for a in self.pi[state]:
-            # for a in [self.pi[state]]:
-                # print(a, self.pi[state][a])
-                # if(self.pi[state][a] < 0): 
-                #     continue
-                next_states, c = self.BP.transition(state, a)
+            actions = self.BP.getValidActions(state)
+            for action in actions:
+                if(self.pi[self.state_to_index[state] + self.action_to_index[action]] < 0):
+                    print(self.pi[self.state_to_index[state] + self.action_to_index[action]])
+                    continue
+                next_states, c = self.BP.transition(state, action)
                 for j in next_states:
                     c += self.gamma * j[1] * self.stateValues[j[0]]
-                st_val += c* self.pi[state][a]
-                # st_val += c
+                st_val += self.pi[self.state_to_index[state] + self.action_to_index[action]] * c
             # print(st_val)
             delta = max(delta, abs(self.stateValues[state] - st_val))
             self.stateValues[state] = st_val
@@ -67,7 +68,7 @@ if __name__ == '__main__':
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_3_max.pkl')
-    # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_31.pkl')
+    # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_33.pkl')
     # agent = VIAgent(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3.pkl')
-    # agent = VIAgent(BP, 'VI/policy_values/VIp_3_3.pkl')
+    agent = VIAgent(BP, 'policy/DLP_Agent_Policy_3_3.pkl', 'policy/DLP_Agent_state_ind_3_3.pkl', 'policy/DLP_Agent_action_ind_3_3.pkl')
     print(agent.getSV())

@@ -85,6 +85,10 @@ def obj(y):
 # initial guess
 x0 = np.zeros(no_of_states*no_of_actions)
 
+# bound
+b = (0, 1/(1-gamma))
+bnds = (b * (no_of_states*no_of_actions))
+
 # show initial objective
 print('Initial SSE Objective: ' + str(obj(x0)))
 
@@ -93,12 +97,12 @@ cons = []
 for state in BP.states:
     actions = BP.getValidActions(state)
     cons.append({'type': 'eq', 'fun': constraint_spec(state)})
-    for action in actions:
-        cons.append({'type': 'ineq', 'fun': constraint_spec2(state, action)})
+    # for action in actions:
+    #     cons.append({'type': 'ineq', 'fun': constraint_spec2(state, action)})
 
 cons = (cons)
 
-solution = minimize(obj, x0, method='SLSQP', constraints=cons)
+solution = minimize(obj, x0, method='SLSQP', bounds=bnds, constraints=cons)
 
 x = solution.x
 # show final objective

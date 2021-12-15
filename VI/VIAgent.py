@@ -13,7 +13,7 @@ class VIAgent:
 
     def initializeStateValues(self):
         for i in self.BP.states:
-            self.stateValues[i] = 999
+            self.stateValues[i] = sys.maxsize
         self.stateValues[self.end_state] = 0
 
     def update(self):
@@ -34,7 +34,7 @@ class VIAgent:
         return delta
 
     def generatePolicy(self):
-        x = 999999
+        x = sys.maxsize
         k = 0
         while x > self.delta:
             x = self.update()
@@ -43,9 +43,10 @@ class VIAgent:
         policy = {}
         for state in self.stateValues:
             if state == self.end_state:
+                policy[state] = None
                 continue
             actions = self.BP.getValidActions(state)
-            cost = 999999
+            cost = sys.maxsize
             for i in actions:
                 next_states, c = self.BP.transition(state, i)
                 for j in next_states:
