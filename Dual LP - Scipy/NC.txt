@@ -1,20 +1,16 @@
 ==========================================
-SLURM_JOB_ID = 549576
-SLURM_NODELIST = gnode12
+SLURM_JOB_ID = 549586
+SLURM_NODELIST = gnode21
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job549576/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/_minimize.py:539: RuntimeWarning: Method L-BFGS-B cannot handle constraints.
-  RuntimeWarning)
+/var/spool/slurmd/job549586/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 Initial SSE Objective: 0.0
-Traceback (most recent call last):
-  File "DLPAgent.py", line 105, in <module>
-    solution = minimize(obj, x0, method='L-BFGS-B', bounds=bnds, constraints=cons)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/_minimize.py", line 620, in minimize
-    callback=callback, **options)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/lbfgsb.py", line 284, in _minimize_lbfgsb
-    raise ValueError('length of x0 != length of bounds')
-ValueError: length of x0 != length of bounds
-2
+Final SSE Objective: 9.999999964694291
+127
+--------------------
+((2, 2), (2, 2), True, 'p')
+Initial SSE Objective: 0.0
+Final SSE Objective: 9.999999964694291
+127
 --------------------
