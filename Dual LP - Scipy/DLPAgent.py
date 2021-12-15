@@ -31,7 +31,7 @@ action_to_index = {}
 
 i = 0
 for state in BP.states:
-    state_to_index[state] = i
+    state_to_index[state] = i*no_of_actions
     i += 1
 
 i = 0
@@ -46,7 +46,7 @@ def constraint_spec(state_):
         lhs = 0
         actions = BP.getValidActions(state_)
         for action in actions:
-            lhs += y[s_, action_to_index[action]]
+            lhs += y[s_ + action_to_index[action]]
         
         # RHS
         rhs = 0
@@ -55,7 +55,7 @@ def constraint_spec(state_):
             actions = BP.getValidActions(state)
             for action in actions:
                 if BP.T(state, action, state_) != 0:
-                    rhs += y[s, action_to_index[action]]*BP.T(state, action, state_)
+                    rhs += y[s + action_to_index[action]]*BP.T(state, action, state_)
             
         rhs = gamma*rhs
         
@@ -68,22 +68,22 @@ def constraint_spec(state_):
 
 def constraint_spec2(state, action):
     def constraint(y):
-        return y[state_to_index[state], action_to_index[action]]
+        return y[state_to_index[state] + action_to_index[action]]
 
     return constraint
 
-def obj(x):
+def obj(y):
     obj = 0
     for state in BP.states:
         s = state_to_index[state]
         actions = BP.getValidActions(state)
         for action in actions:
-            obj += x[s, 0]*x[s, action_to_index[action]]*BP.get_cost(state, action)
+            obj += y[s + action_to_index[action]]*BP.get_cost(state, action)
 
     return obj
 
 # initial guess
-x0 = np.zeros((no_of_states, no_of_actions+1))
+x0 = np.zeros(no_of_states*no_of_actions)
 
 # show initial objective
 print('Initial SSE Objective: ' + str(obj(x0)))
