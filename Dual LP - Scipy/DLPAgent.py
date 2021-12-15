@@ -60,7 +60,7 @@ def constraint_spec(state_):
         rhs = gamma*rhs
         
         if state_ in belief_state:
-            rhs += 1/belief_state
+            rhs += 1/len(belief_state)
 
         return lhs - rhs
 
