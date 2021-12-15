@@ -1,20 +1,20 @@
 ==========================================
-SLURM_JOB_ID = 549571
+SLURM_JOB_ID = 549576
 SLURM_NODELIST = gnode12
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job549571/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job549576/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/_minimize.py:539: RuntimeWarning: Method L-BFGS-B cannot handle constraints.
+  RuntimeWarning)
 ((2, 2), (2, 2), True, 'p')
 Initial SSE Objective: 0.0
 Traceback (most recent call last):
   File "DLPAgent.py", line 105, in <module>
-    solution = minimize(obj, x0, method='SLSQP', bounds=bnds, constraints=cons)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/_minimize.py", line 628, in minimize
-    constraints, callback=callback, **options)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/slsqp.py", line 259, in _minimize_slsqp
-    new_bounds = old_bound_to_new(bounds)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/_constraints.py", line 323, in old_bound_to_new
-    lb, ub = zip(*bounds)
-TypeError: zip argument #1 must support iteration
+    solution = minimize(obj, x0, method='L-BFGS-B', bounds=bnds, constraints=cons)
+  File "/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/_minimize.py", line 620, in minimize
+    callback=callback, **options)
+  File "/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/lbfgsb.py", line 284, in _minimize_lbfgsb
+    raise ValueError('length of x0 != length of bounds')
+ValueError: length of x0 != length of bounds
 2
 --------------------
