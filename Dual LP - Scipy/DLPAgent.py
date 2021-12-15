@@ -102,7 +102,7 @@ for state in BP.states:
 
 cons = (cons)
 
-solution = minimize(obj, x0, method='SLSQP', bounds=bnds, constraints=cons)
+solution = minimize(obj, x0, bounds=bnds, constraints=cons)
 
 x = solution.x
 # show final objective
