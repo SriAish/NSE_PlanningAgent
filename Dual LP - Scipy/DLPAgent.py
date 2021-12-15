@@ -102,17 +102,17 @@ for state in BP.states:
 
 cons = (cons)
 
-solution = minimize(obj, x0, bounds=bnds, constraints=cons)
+solution = minimize(obj, x0, method='L-BFGS-B', bounds=bnds, constraints=cons)
 
 x = solution.x
 # show final objective
 print('Final SSE Objective: ' + str(obj(x)))
 
-with open('policy/'+ 'DLP_Agent_state_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
+with open('policy/'+ 'DLP_Agent_L-BFGS-B_state_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
     pickle.dump(state_to_index, f)
 
-with open('policy/'+ 'DLP_Agent_action_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
+with open('policy/'+ 'DLP_Agent_L-BFGS-B_action_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
     pickle.dump(action_to_index, f)
 
-with open('policy/'+ 'DLP_Agent_Policy_' + sys.argv[8] + '.pkl', 'wb') as f:
+with open('policy/'+ 'DLP_Agent_L-BFGS-B_Policy_' + sys.argv[8] + '.pkl', 'wb') as f:
     pickle.dump(x, f)
