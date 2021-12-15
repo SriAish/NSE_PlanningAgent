@@ -1,5 +1,5 @@
 import numpy as np
-# from scipy.optimize import minimize
+from scipy.optimize import minimize
 from misc import BoxPushingConstants
 import sys
 import pickle
