@@ -8,6 +8,7 @@ class DLPAgent:
     def __init__(self, BP, gamma = 0.9, locations = None):
         self.m = GEKKO()
         self.m.options.IMODE = 3
+        self.m.options.SOLVER = int(sys.argv[9])
         self.BP = BP
         self.no_states = len(self.BP.states)
         self.gamma = gamma
@@ -98,12 +99,15 @@ class DLPAgent:
         print("----------------------------------------")
         self.pi_ = {}
         self.pi_max = {}
+        self.y_ = {}
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             self.pi_[s] = {}
+            self.y_[s] = {}
             ma = 0
             sas = 0
             for a in actions:
+                self.y_[s][a] = self.y[s][a].value[0]
                 sas += self.y[s][a].value[0]
                 if(self.y[s][a].value[0] > ma):
                     self.pi_max[s] = a
@@ -114,11 +118,14 @@ class DLPAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'NC_Agent_Policy_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_' + file + sys.argv[9] + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'NC_Agent_Policy_' + file + '_max' + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_' + file + '_max' + sys.argv[9] + '.pkl', 'wb') as f:
             pickle.dump(self.pi_max, f)
+
+        with open('policy/'+ 'NC_Agent_y_' + file + sys.argv[9] + '.pkl', 'wb') as f:
+            pickle.dump(self.y_, f)
 
     def solve_prob(self):
         try:
