@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.optimize import minimize
+# from scipy.optimize import minimize
 from misc import BoxPushingConstants
 import sys
 import pickle
@@ -102,7 +102,7 @@ for state in BP.states:
     #     cons.append({'type': 'ineq', 'fun': constraint_spec2(state, action)})
 
 cons = (cons)
-if sys.argv[9] == 1:
+if int(sys.argv[9]) == 1:
     solution = minimize(obj, x0, method='L-BFGS-B', bounds=bnds, constraints=cons)
 
     x = solution.x
