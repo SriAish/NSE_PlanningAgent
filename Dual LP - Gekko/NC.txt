@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 549528
+SLURM_JOB_ID = 549533
 SLURM_NODELIST = gnode21
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job549528/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job549533/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -15,8 +15,6 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  APMonitor Optimization Suite
  ----------------------------------------------------------------
  
- 
- Warning: there is insufficient data in CSV file 14.139.82.6_gk_model0.csv
  
  --------- APM Model Size ------------
  Each time step contains
@@ -39,30 +37,25 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  ----------------------------------------------
  
  Iter    Objective  Convergence
-    0  1.02709E+01  1.00000E+00
-    1  1.00000E+01  3.72760E-10
-    2  1.00000E+01  1.00000E-10
+    0  1.02062E+01  8.10000E-01
+    1  1.00000E+01  2.85787E-10
+    2  1.00000E+01  1.64741E-10
     3  1.00000E+01  2.22045E-16
     4  1.00000E+01  2.22045E-16
  Successful solution
  
  ---------------------------------------------------
  Solver         :  APOPT (v1.0)
- Solution time  :   6.420000000002801E-002 sec
- Objective      :   10.00000000000000     
+ Solution time  :   9.009999999989304E-002 sec
+ Objective      :    10.0000000000000     
  Successful solution
  ---------------------------------------------------
  
 ----------------------------------------
 Objective Value:  10.0
 ----------------------------------------
-Traceback (most recent call last):
-  File "DLPAgent.py", line 149, in <module>
-    agent.calculate_pi()
-  File "DLPAgent.py", line 117, in calculate_pi
-    self.pi_[s][a] = self.y[s][a].value[0]/sas
-ZeroDivisionError: float division by zero
-10
+Saving policies
+12
 --------------------
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
@@ -75,8 +68,6 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  APMonitor Optimization Suite
  ----------------------------------------------------------------
  
- 
- Warning: there is insufficient data in CSV file 14.139.82.6_gk_model0.csv
  
  --------- APM Model Size ------------
  Each time step contains
@@ -101,44 +92,48 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
 -----------------------------------------------------
  BPOPT Solver v1.0.6
 -----------------------------------------------------
- Adjusting variables to interior region of bounds
  Iter    Objective  Convergence
-    0  1.39078E+01  1.41540E+00
-    1  1.88888E+01  1.01852E+00
-    2  4.50981E+01  2.36018E+00
-       1.89397E+01  2.82495E-01
-       2.16016E+01  1.18788E+00
-       2.37572E+01  1.77184E+00
-    3  2.50624E+01  2.06515E+00
-    4  1.94191E+01  1.86603E-01
-    5  1.88964E+01  2.56344E-02
-    6  1.90943E+01  5.35196E-03
-    7  1.91766E+01  4.78697E-03
-       1.19687E+01  1.65173E-04
-       1.19549E+01  2.39349E-03
-    8  1.19807E+01  3.59023E-03
-       1.19153E+01  1.52907E-04
-    9  1.19140E+01  1.79511E-03
-   10  1.17217E+01  1.03268E-04
-       1.18251E+01  3.97329E-02
-   11  1.15999E+01  5.55787E-05
-   12  1.16314E+01  2.68285E-05
-   13  1.00936E+01  7.70115E-07
-   14  1.00925E+01  2.66842E-07
+    0  1.00968E+02  1.17060E+01
+    1  1.10337E+02  8.00670E+00
+    2  3.49843E+01  1.17643E+00
+    3  1.14674E+02  3.85878E+00
+    4  2.12277E+01  1.18443E+00
+    5  4.00555E+01  2.07441E+00
+       2.16314E+01  6.58358E-01
+       2.05811E+01  1.21071E+00
+    6  2.08015E+01  1.56038E+00
+       1.95184E+01  2.88931E-01
+    7  1.96397E+01  7.78419E-01
+    8  1.96310E+01  4.11743E-03
+       1.19560E+01  5.23363E-04
+    9  1.19814E+01  2.05871E-03
+   10  1.18359E+01  3.07750E-04
+   11  1.54059E+01  1.98301E-01
+       1.15970E+01  3.34143E-04
+       1.25372E+01  9.91587E-02
+       1.31011E+01  1.48725E-01
+   12  1.34720E+01  1.73513E-01
+   13  1.16075E+01  2.51463E-05
+       1.18457E+01  2.02918E-05
+   14  1.17473E+01  1.40507E-05
+ Iter    Objective  Convergence
+   15  1.18471E+01  1.86452E-05
+   16  1.00930E+01  1.80407E-07
+   17  1.00923E+01  1.86332E-07
 Successful solution
  
  ---------------------------------------------------
  Solver         :  BPOPT (v1.0)
- Solution time  :   6.289999999989959E-002 sec
- Objective      :    10.0095357821739     
+ Solution time  :   7.119999999986248E-002 sec
+ Objective      :    10.0095266489583     
  Successful solution
  ---------------------------------------------------
  
 ----------------------------------------
-Objective Value:  10.009535782
+Objective Value:  10.009526649
 ----------------------------------------
 Saving policies
-9
+8
 --------------------
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
@@ -151,8 +146,6 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  APMonitor Optimization Suite
  ----------------------------------------------------------------
  
- 
- Warning: there is insufficient data in CSV file 14.139.82.6_gk_model0.csv
  
  --------- APM Model Size ------------
  Each time step contains
@@ -200,63 +193,62 @@ Total number of inequality constraints...............:        0
         inequality constraints with only upper bounds:        0
 
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
-   0  3.8999961e+00 9.92e-01 9.88e-01   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
-   1  4.1034336e+00 9.61e-01 7.02e+01  -0.4 3.85e-01    -  1.00e+00 3.16e-02f  1
-   2  6.1246487e+00 6.92e-01 6.21e+02   0.8 7.43e-01    -  1.00e+00 2.80e-01f  1
-   3  6.7977860e+00 6.04e-01 3.37e+04   1.8 4.84e-01    -  9.96e-01 1.27e-01f  1
-   4  8.3217633e+00 4.03e-01 8.63e+04   2.2 4.57e-01    -  1.00e+00 3.32e-01f  1
-   5  1.0331798e+01 1.39e-01 1.32e+05   2.3 3.00e-01    -  1.00e+00 6.56e-01f  1
-   6  1.1054849e+01 4.38e-02 1.19e+05   1.7 1.04e-01    -  1.00e+00 6.85e-01h  1
-   7  1.1382694e+01 6.78e-04 2.63e+03   0.4 3.26e-02    -  1.00e+00 9.85e-01h  1
-   8  1.1386025e+01 2.14e-05 8.77e+02  -1.5 3.56e-04    -  1.00e+00 9.68e-01h  1
-   9  1.1301641e+01 2.22e-16 1.61e-10  -2.3 1.52e-02    -  1.00e+00 1.00e+00h  1
+   0  9.2400000e+01 8.10e-01 9.88e-01   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  6.6342934e+01 5.61e-01 1.91e+00  -0.8 6.43e-01    -  9.42e-01 3.08e-01f  1
+   2  1.8571268e+01 6.85e-02 6.65e-01  -0.4 5.18e-01    -  9.82e-01 8.78e-01h  1
+   3  1.3164287e+01 1.78e-02 3.18e+00  -1.6 5.60e-02    -  9.46e-01 7.40e-01f  1
+   4  1.1679373e+01 3.83e-03 4.09e+00  -2.8 2.01e-02    -  1.00e+00 7.85e-01f  1
+   5  1.1184052e+01 5.26e-04 3.27e+00  -2.5 5.22e-02    -  1.00e+00 8.63e-01f  1
+   6  1.0928035e+01 2.66e-04 4.17e+01  -2.6 2.52e-01    -  1.00e+00 4.95e-01f  1
+   7  1.0634725e+01 5.38e-05 3.73e+01  -2.7 1.92e-01    -  1.00e+00 7.97e-01h  1
+   8  1.0487358e+01 2.73e-05 2.05e+02  -3.0 1.70e-01    -  1.00e+00 4.94e-01f  1
+   9  1.0124579e+01 1.99e-06 3.04e+01  -3.5 2.30e-01    -  1.00e+00 9.27e-01f  1
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
-  10  1.0968879e+01 2.22e-16 1.77e+04  -2.8 1.48e-01    -  5.28e-01 1.00e+00f  1
-  11  1.0521548e+01 2.22e-16 2.27e-10  -2.7 3.41e-01    -  1.00e+00 1.00e+00f  1
-  12  1.0106939e+01 2.22e-16 4.53e+05  -8.7 2.41e-01    -  6.43e-01 1.00e+00f  1
-  13  1.0015708e+01 4.44e-16 3.62e-11  -4.3 6.54e-02    -  1.00e+00 1.00e+00f  1
-  14  1.0000011e+01 6.66e-16 3.92e+02 -10.3 9.43e-03    -  9.86e-01 1.00e+00f  1
-  15  1.0000000e+01 6.66e-16 5.60e+00 -11.0 5.79e-05    -  9.86e-01 9.17e-01f  1
-  16  9.9999999e+00 4.44e-16 9.32e-01  -8.7 8.04e-01    -  8.73e-01 6.85e-01f  1
-  17  9.9999999e+00 4.44e-16 8.73e-01  -8.7 6.35e-01    -  1.00e+00 4.28e-01f  2
-  18  9.9999999e+00 4.44e-16 2.11e-15  -8.7 2.47e-01    -  1.00e+00 1.00e+00h  1
+  10  1.0037547e+01 4.54e-07 8.22e+01  -4.4 6.72e-02    -  1.00e+00 7.72e-01f  1
+  11  1.0000646e+01 3.33e-16 4.21e-13  -5.7 2.20e-02    -  1.00e+00 1.00e+00f  1
+  12  9.9999999e+00 4.44e-16 3.20e-01 -11.0 3.87e-04    -  9.99e-01 9.99e-01f  1
+  13  9.9999999e+00 2.22e-16 2.13e+00 -10.2 1.93e-03    -  1.00e+00 4.47e-02f  1
+  14  9.9999998e+00 2.22e-16 1.03e+00  -9.3 2.80e-01    -  1.00e+00 4.07e-01f  1
+  15  9.9999998e+00 2.22e-16 1.83e-01  -9.3 7.18e-02    -  9.20e-01 6.95e-01f  1
+  16  9.9999998e+00 3.33e-16 3.94e-02  -9.3 2.20e-02    -  1.00e+00 8.17e-01f  1
+  17  9.9999998e+00 4.44e-16 3.00e-15  -9.3 4.02e-03    -  1.00e+00 1.00e+00f  1
 
-Number of Iterations....: 18
+Number of Iterations....: 17
 
                                    (scaled)                 (unscaled)
-Objective...............:   9.9999999293186423e+00    9.9999999293186423e+00
-Dual infeasibility......:   2.1074927852063464e-15    2.1074927852063464e-15
+Objective...............:   9.9999998382045181e+00    9.9999998382045181e+00
+Dual infeasibility......:   3.0015382315616501e-15    3.0015382315616501e-15
 Constraint violation....:   4.4408920985006262e-16    4.4408920985006262e-16
-Complementarity.........:   2.5399021696466837e-09    2.5399021696466837e-09
-Overall NLP error.......:   2.5399021696466837e-09    2.5399021696466837e-09
+Complementarity.........:   6.5295800388755973e-10    6.5295800388755973e-10
+Overall NLP error.......:   6.5295800388755973e-10    6.5295800388755973e-10
 
 
-Number of objective function evaluations             = 20
-Number of objective gradient evaluations             = 19
-Number of equality constraint evaluations            = 20
+Number of objective function evaluations             = 18
+Number of objective gradient evaluations             = 18
+Number of equality constraint evaluations            = 18
 Number of inequality constraint evaluations          = 0
-Number of equality constraint Jacobian evaluations   = 19
+Number of equality constraint Jacobian evaluations   = 18
 Number of inequality constraint Jacobian evaluations = 0
-Number of Lagrangian Hessian evaluations             = 18
+Number of Lagrangian Hessian evaluations             = 17
 Total CPU secs in IPOPT (w/o function evaluations)   =      0.026
-Total CPU secs in NLP function evaluations           =      0.155
+Total CPU secs in NLP function evaluations           =      0.150
 
 EXIT: Optimal Solution Found.
  
  The solution was found.
  
- The final value of the objective function is    9.99999992931864     
+ The final value of the objective function is    9.99999983820452     
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :   0.198399999999992      sec
- Objective      :    10.0000001567982     
+ Solution time  :   0.189199999999801      sec
+ Objective      :    10.0000002543454     
  Successful solution
  ---------------------------------------------------
  
 ----------------------------------------
-Objective Value:  10.000000157
+Objective Value:  10.000000254
 ----------------------------------------
 Saving policies
-9
+10
 --------------------
