@@ -46,7 +46,7 @@ def constraint_spec(state_):
         lhs = 0
         actions = BP.getValidActions(state_)
         for action in actions:
-            lhs += y[s_][action_to_index[action]]
+            lhs += y[s_, action_to_index[action]]
         
         # RHS
         rhs = 0
