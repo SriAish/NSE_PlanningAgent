@@ -69,6 +69,7 @@ class DLPAgent:
             # Calculate right hand side
             if s_ in self.belief_state:
                 c += 1/len(self.belief_state)
+                print(s_, 1/len(self.belief_state))
 
             # Adding constraint
             self.m.Equation(y == c)

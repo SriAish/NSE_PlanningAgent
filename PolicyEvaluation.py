@@ -33,6 +33,7 @@ class VIAgent:
 
     def update(self):
         delta = 0
+        count = 0
         for state in self.stateValues:
             if state == self.end_state:
                 continue
@@ -51,17 +52,18 @@ class VIAgent:
                 # st_val += c
             # print(st_val)
             if pr_sum <= 0:
-                print(state)
+                count += 1
             delta = max(delta, abs(self.stateValues[state] - st_val))
             self.stateValues[state] = st_val
         # print(delta)
-        return delta
+        return delta, count
 
     def getSV(self):
         x = sys.maxsize
         k = 0
         while x > self.delta:
-            x = self.update()
+            x, count = self.update()
+            print(count)
             print("--------------")
             k += 1
         # print(self.stateValues)
@@ -72,7 +74,7 @@ if __name__ == '__main__':
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_3_max.pkl')
-    agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_no_upper_3_31.pkl')
+    agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_33.pkl')
     # agent = VIAgent(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3.pkl')
     # agent = VIAgent(BP, 'VI/policy_values/VIp_3_3.pkl')
     print(agent.getSV())

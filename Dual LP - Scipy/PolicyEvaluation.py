@@ -20,6 +20,7 @@ class VIAgent:
     def make_policy(self, name):
         y = self.loadPolicy(name)
         self.pi = {}
+        count = 0
         for state in self.stateValues:
             actions = self.BP.getValidActions(state)
             self.pi[state] = {}
@@ -29,13 +30,16 @@ class VIAgent:
                     sum_y += y[self.state_to_index[state] + self.action_to_index[action]]
 
             if sum_y == 0:
-                    print(state)
+                count += 1
+                print(state)
 
             for action in actions:
                 if(sum_y > 0):
                     self.pi[state][action] = y[self.state_to_index[state] + self.action_to_index[action]]/sum_y
                 else:
                     self.pi[state][action] = 0
+
+        print(count)
 
     def loadPolicy(self, name):
         file_to_read = open(name, "rb")

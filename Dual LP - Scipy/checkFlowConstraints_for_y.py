@@ -64,7 +64,7 @@ if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-    agent = FlowConstraint(BP, 'policy/DLP_Agent_SLSQP_Policy_3_3.pkl', 'policy/DLP_Agent_SLSQP_state_ind_3_3.pkl', 'policy/DLP_Agent_SLSQP_action_ind_3_3.pkl', sys.argv[1])
+    agent = FlowConstraint(BP, 'policy/DLP_Agent_SLSQP_with_upper_Policy_3_3.pkl', 'policy/DLP_Agent_SLSQP_with_upper_state_ind_3_3.pkl', 'policy/DLP_Agent_SLSQP_with_upper_action_ind_3_3.pkl', sys.argv[1])
     # a = Actions()
     agent.checkFlow()
     # print(agent.getPi(((0, 0), (0, 0), False, 'p'), a.down))

@@ -22,23 +22,21 @@ class VIAgent:
             if state == self.end_state:
                 continue
             actions = self.BP.getValidActions(state)
-            cost = 999999
-            for i in actions:
-                next_states, c = self.BP.transition(state, i)
-                for j in next_states:
-                    c += self.gamma * j[1] * self.stateValues[j[0]]
-                cost = min(cost, c)
-            delta = max(delta, abs(self.stateValues[state] - cost))
-            self.stateValues[state] = cost
+            state_cost = sys.maxsize
+            for action in actions:
+                next_states, state_action_cost = self.BP.transition(state, action)
+                for ns_prob in next_states:
+                    state_action_cost += self.gamma * ns_prob[1] * self.stateValues[ns_prob[0]]
+                state_cost = min(state_cost, state_action_cost)
+            delta = max(delta, abs(self.stateValues[state] - state_cost))
+            self.stateValues[state] = state_cost
 
         return delta
 
     def generatePolicy(self):
         x = sys.maxsize
-        k = 0
         while x > self.delta:
             x = self.update()
-            k += 1
         
         policy = {}
         for state in self.stateValues:
