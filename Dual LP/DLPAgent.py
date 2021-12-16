@@ -82,9 +82,9 @@ class DLPAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        self.make_constraints_eqn2()
-        print("eq2")
-        sys.stdout.flush()
+        # self.make_constraints_eqn2()
+        # print("eq2")
+        # sys.stdout.flush()
         self.prob = cp.Problem(self.obj, self.constraints)
 
     def calculate_pi(self):
