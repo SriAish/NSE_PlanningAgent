@@ -1,18 +1,11 @@
 ==========================================
-SLURM_JOB_ID = 550412
+SLURM_JOB_ID = 550424
 SLURM_NODELIST = gnode41
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job550412/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-/home/sriaish/.local/lib/python3.7/site-packages/scipy/optimize/_minimize.py:539: RuntimeWarning: Method L-BFGS-B cannot handle constraints.
-  RuntimeWarning)
+/var/spool/slurmd/job550424/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 Initial SSE Objective: 0.0
-Final SSE Objective: 0.0
-4
---------------------
-((2, 2), (2, 2), True, 'p')
-Initial SSE Objective: 0.0
-Final SSE Objective: 2.3800000004111905
-1030
+Final SSE Objective: 9.999999964694291
+128
 --------------------
