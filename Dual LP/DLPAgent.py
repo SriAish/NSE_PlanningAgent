@@ -101,7 +101,7 @@ class DLPAgent:
             ma = 0
             for a in actions:
                 self.y_[(s, a)] = self.y[(s, a)].value
-                y += self.y_[(s,a)]
+                y += self.y_[(s, a)]
                 if(self.y_[(s,a)] > ma):
                     self.pi_max[s] = a
                     ma = self.y_[(s,a)]

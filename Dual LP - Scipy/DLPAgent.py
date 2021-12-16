@@ -86,7 +86,7 @@ len_of_x = no_of_states*no_of_actions
 x0 = np.zeros(len_of_x)
 
 # bound
-b = (0, 1/1-gamma)
+b = (0, 1/(1-gamma))
 bnds = ((b, ) * len_of_x)
 
 # show initial objective
@@ -101,33 +101,17 @@ for state in BP.states:
     #     cons.append({'type': 'ineq', 'fun': constraint_spec2(state, action)})
 
 cons = (cons)
-if int(sys.argv[9]) == 1:
-    solution = minimize(obj, x0, method='L-BFGS-B', bounds=bnds, constraints=cons)
+solution = minimize(obj, x0, method='SLSQP', bounds=bnds, constraints=cons)
 
-    x = solution.x
-    # show final objective
-    print('Final SSE Objective: ' + str(obj(x)))
+x = solution.x
+# show final objective
+print('Final SSE Objective: ' + str(obj(x)))
 
-    with open('policy/'+ 'DLP_Agent_L-BFGS-B_state_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
-        pickle.dump(state_to_index, f)
+with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_state_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
+    pickle.dump(state_to_index, f)
 
-    with open('policy/'+ 'DLP_Agent_L-BFGS-B_action_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
-        pickle.dump(action_to_index, f)
+with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_action_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
+    pickle.dump(action_to_index, f)
 
-    with open('policy/'+ 'DLP_Agent_L-BFGS-B_Policy_' + sys.argv[8] + '.pkl', 'wb') as f:
-        pickle.dump(x, f)
-else:
-    solution = minimize(obj, x0, method='SLSQP', bounds=bnds, constraints=cons)
-
-    x = solution.x
-    # show final objective
-    print('Final SSE Objective: ' + str(obj(x)))
-
-    with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_state_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
-        pickle.dump(state_to_index, f)
-
-    with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_action_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
-        pickle.dump(action_to_index, f)
-
-    with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_Policy_' + sys.argv[8] + '.pkl', 'wb') as f:
-        pickle.dump(x, f)
+with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_Policy_' + sys.argv[8] + '.pkl', 'wb') as f:
+    pickle.dump(x, f)
