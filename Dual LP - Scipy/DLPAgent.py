@@ -66,7 +66,7 @@ def constraint_spec(state_):
 
     return contraint
 
-def constraint_spec2(state, action):
+def constraint_spec2(state):
     def constraint(y):
         return y[state_to_index[state] + action_to_index[action]]
 
@@ -86,7 +86,7 @@ len_of_x = no_of_states*no_of_actions
 x0 = np.zeros(len_of_x)
 
 # bound
-b = (0, 1/(1-gamma))
+b = (0, None)
 bnds = ((b, ) * len_of_x)
 
 # show initial objective

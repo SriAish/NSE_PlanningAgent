@@ -10,12 +10,32 @@ class VIAgent:
         self.initializeStateValues()
         self.gamma = gamma  
         self.delta = delta
-        self.pi = self.loadPolicy(name)
         self.state_to_index = self.loadPolicy(name2)
         self.action_to_index = self.loadPolicy(name3)
+        self.make_policy(name)
         self.locations = [(int(int(self.BP.grid_size)/2), 1)]
         self.init_belief()
         self.pr = 0
+
+    def make_policy(self, name):
+        y = self.loadPolicy(name)
+        self.pi = {}
+        for state in self.stateValues:
+            actions = self.BP.getValidActions(state)
+            self.pi[state] = {}
+            sum_y = 0
+            for action in actions:
+                if y[self.state_to_index[state] + self.action_to_index[action]] > 0:
+                    sum_y += y[self.state_to_index[state] + self.action_to_index[action]]
+
+            if sum_y == 0:
+                    print(state)
+
+            for action in actions:
+                if(sum_y > 0):
+                    self.pi[state][action] = y[self.state_to_index[state] + self.action_to_index[action]]/sum_y
+                else:
+                    self.pi[state][action] = 0
 
     def loadPolicy(self, name):
         file_to_read = open(name, "rb")
@@ -40,17 +60,14 @@ class VIAgent:
             if state == self.end_state:
                 continue
             st_val = 0
-            actions = self.BP.getValidActions(state)
-            pr_sum = 0
-            for action in actions:
-                next_states, c = self.BP.transition(state, action)
+            for a in self.pi[state]:
+                # print(a, self.pi[state][a])
+                # if(self.pi[state][a] < 0): 
+                #     continue
+                next_states, c = self.BP.transition(state, a)
                 for j in next_states:
                     c += self.gamma * j[1] * self.stateValues[j[0]]
-                # print(self.pi[self.state_to_index[state] + self.action_to_index[action]])
-                st_val += self.pi[self.state_to_index[state] + self.action_to_index[action]] * c
-                pr_sum += self.pi[self.state_to_index[state] + self.action_to_index[action]]
-            if self.pr == 0:
-                print(pr_sum)
+                st_val += c* self.pi[state][a]
             # print(st_val)
             delta = max(delta, abs(self.stateValues[state] - st_val))
             self.stateValues[state] = st_val
