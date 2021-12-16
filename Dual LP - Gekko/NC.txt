@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 549533
-SLURM_NODELIST = gnode21
-SLURM_JOB_GPUS = 0
+SLURM_JOB_ID = 550406
+SLURM_NODELIST = gnode57
+SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job549533/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job550406/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -46,7 +46,7 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  
  ---------------------------------------------------
  Solver         :  APOPT (v1.0)
- Solution time  :   9.009999999989304E-002 sec
+ Solution time  :   0.113799999991897      sec
  Objective      :    10.0000000000000     
  Successful solution
  ---------------------------------------------------
@@ -55,7 +55,7 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
 Objective Value:  10.0
 ----------------------------------------
 Saving policies
-12
+10
 --------------------
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
@@ -93,47 +93,83 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  BPOPT Solver v1.0.6
 -----------------------------------------------------
  Iter    Objective  Convergence
-    0  1.00968E+02  1.17060E+01
-    1  1.10337E+02  8.00670E+00
-    2  3.49843E+01  1.17643E+00
-    3  1.14674E+02  3.85878E+00
-    4  2.12277E+01  1.18443E+00
-    5  4.00555E+01  2.07441E+00
-       2.16314E+01  6.58358E-01
-       2.05811E+01  1.21071E+00
-    6  2.08015E+01  1.56038E+00
-       1.95184E+01  2.88931E-01
-    7  1.96397E+01  7.78419E-01
-    8  1.96310E+01  4.11743E-03
-       1.19560E+01  5.23363E-04
-    9  1.19814E+01  2.05871E-03
-   10  1.18359E+01  3.07750E-04
-   11  1.54059E+01  1.98301E-01
-       1.15970E+01  3.34143E-04
-       1.25372E+01  9.91587E-02
-       1.31011E+01  1.48725E-01
-   12  1.34720E+01  1.73513E-01
-   13  1.16075E+01  2.51463E-05
-       1.18457E+01  2.02918E-05
-   14  1.17473E+01  1.40507E-05
+    0 -6.30923E+01  1.17060E+01
+    1 -5.36914E+01  8.01050E+00
+    2 -1.28991E+02  1.17711E+00
+    3 -4.86777E+01  3.87213E+00
+    4 -1.42750E+02  1.18493E+00
+    5 -1.24632E+02  2.21270E+00
+    6 -1.41860E+02  7.07270E-01
+      -1.44656E+02  3.40149E-01
+      -1.44195E+02  4.55614E-01
+      -1.43842E+02  5.30452E-01
+      -1.43314E+02  6.18861E-01
+      -1.42863E+02  6.63065E-01
+    7 -1.42512E+02  6.85168E-01
+      -1.44628E+02  2.85608E-01
+      -1.44365E+02  4.26066E-01
+      -1.43906E+02  5.13876E-01
+      -1.43439E+02  5.99522E-01
+      -1.43083E+02  6.42345E-01
+    8 -1.42842E+02  6.63756E-01
+      -1.44633E+02  2.24784E-01
+      -1.44406E+02  3.91084E-01
+      -1.43975E+02  4.97817E-01
+      -1.43557E+02  5.80787E-01
+    9 -1.43260E+02  6.22271E-01
+   10 -1.44639E+02  1.07826E-01
+   11 -1.44632E+02  1.84638E-03
+      -4.41514E+00  1.04620E-04
+      -4.43046E+00  9.23188E-04
+   12 -4.40439E+00  1.38478E-03
+      -4.48012E+00  8.82783E-05
+   13 -4.47190E+00  6.92391E-04
+   14  1.01182E+01  3.73108E-06
  Iter    Objective  Convergence
-   15  1.18471E+01  1.86452E-05
-   16  1.00930E+01  1.80407E-07
-   17  1.00923E+01  1.86332E-07
+   15  1.74522E+01  4.15321E-01
+   16  1.31081E+01  2.13175E+00
+   17  9.82633E+00  1.21407E-01
+   18  9.57185E+00  1.32050E-06
+       9.57334E+00  6.61817E-08
+   19  9.57827E+00  6.40638E-07
+   20  9.57414E+00  1.30319E-07
+   21  9.57494E+00  3.14319E-08
+       9.57470E+00  4.13153E-08
+       9.57437E+00  1.74974E-08
+       9.57377E+00  2.05306E-08
+       9.57383E+00  2.75029E-08
+       9.57398E+00  2.94674E-08
+   22  9.57423E+00  3.04496E-08
+   23  9.57544E+00  2.05730E-08
+       9.57508E+00  6.36364E-09
+       9.57480E+00  1.15852E-08
+       9.57449E+00  1.54762E-08
+       9.57439E+00  1.80014E-08
+       9.57462E+00  1.92872E-08
+   24  9.57485E+00  1.99301E-08
+   25  9.57491E+00  1.36656E-08
+       9.57464E+00  8.04994E-09
+       9.57430E+00  9.32624E-09
+       9.57441E+00  1.12086E-08
+       9.57435E+00  1.20462E-08
+       9.57436E+00  1.28115E-08
+   26  9.57451E+00  1.32386E-08
+   27  9.57505E+00  6.18717E-09
+   28  9.57630E+00  3.42105E-09
 Successful solution
  
  ---------------------------------------------------
  Solver         :  BPOPT (v1.0)
- Solution time  :   7.119999999986248E-002 sec
- Objective      :    10.0095266489583     
+ Solution time  :   0.119800000000396      sec
+ Objective      :    10.0096062350309     
  Successful solution
  ---------------------------------------------------
  
 ----------------------------------------
-Objective Value:  10.009526649
+Objective Value:  10.009606235
 ----------------------------------------
 Saving policies
-8
+9
 --------------------
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
@@ -183,8 +219,8 @@ Number of nonzeros in inequality constraint Jacobian.:        0
 Number of nonzeros in Lagrangian Hessian.............:        0
 
 Total number of variables............................:      373
-                     variables with only lower bounds:        0
-                variables with lower and upper bounds:      373
+                     variables with only lower bounds:      373
+                variables with lower and upper bounds:        0
                      variables with only upper bounds:        0
 Total number of equality constraints.................:       90
 Total number of inequality constraints...............:        0
@@ -194,61 +230,54 @@ Total number of inequality constraints...............:        0
 
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
    0  9.2400000e+01 8.10e-01 9.88e-01   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
-   1  6.6342934e+01 5.61e-01 1.91e+00  -0.8 6.43e-01    -  9.42e-01 3.08e-01f  1
-   2  1.8571268e+01 6.85e-02 6.65e-01  -0.4 5.18e-01    -  9.82e-01 8.78e-01h  1
-   3  1.3164287e+01 1.78e-02 3.18e+00  -1.6 5.60e-02    -  9.46e-01 7.40e-01f  1
-   4  1.1679373e+01 3.83e-03 4.09e+00  -2.8 2.01e-02    -  1.00e+00 7.85e-01f  1
-   5  1.1184052e+01 5.26e-04 3.27e+00  -2.5 5.22e-02    -  1.00e+00 8.63e-01f  1
-   6  1.0928035e+01 2.66e-04 4.17e+01  -2.6 2.52e-01    -  1.00e+00 4.95e-01f  1
-   7  1.0634725e+01 5.38e-05 3.73e+01  -2.7 1.92e-01    -  1.00e+00 7.97e-01h  1
-   8  1.0487358e+01 2.73e-05 2.05e+02  -3.0 1.70e-01    -  1.00e+00 4.94e-01f  1
-   9  1.0124579e+01 1.99e-06 3.04e+01  -3.5 2.30e-01    -  1.00e+00 9.27e-01f  1
+   1  6.6969877e+01 5.68e-01 9.96e-01  -6.6 6.62e-01    -  6.33e-01 2.99e-01f  1
+   2  1.6679753e+01 5.55e-02 6.76e-01  -0.8 4.48e-01    -  6.30e-01 9.02e-01h  1
+   3  1.2619184e+01 1.53e-02 1.55e+00  -1.9 6.01e-02    -  9.50e-01 7.23e-01f  1
+   4  1.1352103e+01 2.89e-03 1.53e+00  -3.2 1.50e-02    -  9.97e-01 8.11e-01f  1
+   5  1.0779865e+01 6.28e-04 3.39e+00  -2.7 2.63e-01    -  1.00e+00 7.83e-01f  1
+   6  1.0576789e+01 2.86e-04 1.93e+01  -2.9 1.84e-01    -  1.00e+00 5.44e-01f  1
+   7  1.0254703e+01 4.37e-05 9.33e+00  -3.2 2.09e-01    -  1.00e+00 8.47e-01f  1
+   8  1.0122599e+01 1.46e-05 2.89e+01  -3.7 1.16e-01    -  1.00e+00 6.67e-01f  1
+   9  1.0011126e+01 6.14e-07 2.25e+00  -4.7 6.87e-02    -  1.00e+00 9.58e-01f  1
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
-  10  1.0037547e+01 4.54e-07 8.22e+01  -4.4 6.72e-02    -  1.00e+00 7.72e-01f  1
-  11  1.0000646e+01 3.33e-16 4.21e-13  -5.7 2.20e-02    -  1.00e+00 1.00e+00f  1
-  12  9.9999999e+00 4.44e-16 3.20e-01 -11.0 3.87e-04    -  9.99e-01 9.99e-01f  1
-  13  9.9999999e+00 2.22e-16 2.13e+00 -10.2 1.93e-03    -  1.00e+00 4.47e-02f  1
-  14  9.9999998e+00 2.22e-16 1.03e+00  -9.3 2.80e-01    -  1.00e+00 4.07e-01f  1
-  15  9.9999998e+00 2.22e-16 1.83e-01  -9.3 7.18e-02    -  9.20e-01 6.95e-01f  1
-  16  9.9999998e+00 3.33e-16 3.94e-02  -9.3 2.20e-02    -  1.00e+00 8.17e-01f  1
-  17  9.9999998e+00 4.44e-16 3.00e-15  -9.3 4.02e-03    -  1.00e+00 1.00e+00f  1
+  10  1.0000126e+01 3.33e-16 4.12e-12  -6.4 6.55e-03    -  1.00e+00 1.00e+00f  1
 
-Number of Iterations....: 17
+Number of Iterations....: 10
 
                                    (scaled)                 (unscaled)
-Objective...............:   9.9999998382045181e+00    9.9999998382045181e+00
-Dual infeasibility......:   3.0015382315616501e-15    3.0015382315616501e-15
-Constraint violation....:   4.4408920985006262e-16    4.4408920985006262e-16
-Complementarity.........:   6.5295800388755973e-10    6.5295800388755973e-10
-Overall NLP error.......:   6.5295800388755973e-10    6.5295800388755973e-10
+Objective...............:   1.0000125740689432e+01    1.0000125740689432e+01
+Dual infeasibility......:   4.1175951537297806e-12    4.1175951537297806e-12
+Constraint violation....:   3.3306690738754696e-16    3.3306690738754696e-16
+Complementarity.........:   4.4062818479425557e-07    4.4062818479425557e-07
+Overall NLP error.......:   4.4062818479425557e-07    4.4062818479425557e-07
 
 
-Number of objective function evaluations             = 18
-Number of objective gradient evaluations             = 18
-Number of equality constraint evaluations            = 18
+Number of objective function evaluations             = 11
+Number of objective gradient evaluations             = 11
+Number of equality constraint evaluations            = 11
 Number of inequality constraint evaluations          = 0
-Number of equality constraint Jacobian evaluations   = 18
+Number of equality constraint Jacobian evaluations   = 11
 Number of inequality constraint Jacobian evaluations = 0
-Number of Lagrangian Hessian evaluations             = 17
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.026
-Total CPU secs in NLP function evaluations           =      0.150
+Number of Lagrangian Hessian evaluations             = 10
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.017
+Total CPU secs in NLP function evaluations           =      0.091
 
 EXIT: Optimal Solution Found.
  
  The solution was found.
  
- The final value of the objective function is    9.99999983820452     
+ The final value of the objective function is    10.0001257406894     
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :   0.189199999999801      sec
- Objective      :    10.0000002543454     
+ Solution time  :   0.118699999991804      sec
+ Objective      :    10.0001257650419     
  Successful solution
  ---------------------------------------------------
  
 ----------------------------------------
-Objective Value:  10.000000254
+Objective Value:  10.000125765
 ----------------------------------------
 Saving policies
-10
+9
 --------------------
