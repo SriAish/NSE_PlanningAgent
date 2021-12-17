@@ -27,8 +27,8 @@ class BoxPushingConstants:
         return self.grid[tuple(location)]
 
     def getValidActions(self, state):
-        # if state == self.end_state:
-        #     return {}
+        if state == self.end_state:
+            return self.actions.moveActions
         act = copy.deepcopy(self.actions.moveActions)
         if state[0] == state[1]:
             if state[2]:
