@@ -68,7 +68,7 @@ class BoxPushingConstants:
 
     def transition(self, state, action):
         if state == self.end_state:
-            return [state, 1], 0
+            return [(state, 1)], 0
         if self.actions.isBoxAction(action):
             if state[0] != state[1]:
                 return [(state, 1)], self.get_cost(state, action)
