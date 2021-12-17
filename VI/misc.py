@@ -77,32 +77,32 @@ class BoxPushingConstants:
         else:
             agent_locations_prob = []
             if action == self.actions.down:
-                agent_locations_prob.append((self.moveDown(state[0]), 0.9))
+                agent_locations_prob.append((self.moveDown(state[0]), 1))
                 if state[0][1] != self.grid_size - 1:
-                    agent_locations_prob.append((self.moveRight(state[0]), 0.1))
+                    agent_locations_prob.append((self.moveRight(state[0]), 0))
                 else:
-                    agent_locations_prob.append((self.moveLeft(state[0]), 0.1))
+                    agent_locations_prob.append((self.moveLeft(state[0]), 0))
 
             elif action == self.actions.up:
-                agent_locations_prob.append((self.moveUp(state[0]), 0.9))
+                agent_locations_prob.append((self.moveUp(state[0]), 1))
                 if state[0][1] != self.grid_size - 1:
-                    agent_locations_prob.append((self.moveRight(state[0]), 0.1))
+                    agent_locations_prob.append((self.moveRight(state[0]), 0))
                 else:
-                    agent_locations_prob.append((self.moveLeft(state[0]), 0.1))
+                    agent_locations_prob.append((self.moveLeft(state[0]), 0))
 
             elif action == self.actions.left:
-                agent_locations_prob.append((self.moveLeft(state[0]), 0.9))
+                agent_locations_prob.append((self.moveLeft(state[0]), 1))
                 if state[0][0] != self.grid_size - 1:
-                    agent_locations_prob.append((self.moveDown(state[0]), 0.1))
+                    agent_locations_prob.append((self.moveDown(state[0]), 0))
                 else:
-                    agent_locations_prob.append((self.moveUp(state[0]), 0.1))
+                    agent_locations_prob.append((self.moveUp(state[0]), 0))
 
             elif action == self.actions.right:
-                agent_locations_prob.append((self.moveRight(state[0]), 0.9))
+                agent_locations_prob.append((self.moveRight(state[0]), 1))
                 if state[0][0] != self.grid_size - 1:
-                    agent_locations_prob.append((self.moveDown(state[0]), 0.1))
+                    agent_locations_prob.append((self.moveDown(state[0]), 0))
                 else:
-                    agent_locations_prob.append((self.moveUp(state[0]), 0.1))
+                    agent_locations_prob.append((self.moveUp(state[0]), 0))
 
             states = []
 
