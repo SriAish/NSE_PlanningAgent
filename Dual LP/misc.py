@@ -60,6 +60,8 @@ class BoxPushingConstants:
         return (location[0], min(self.grid_size - 1, location[1] + 1))
 
     def get_cost(self, state, action):
+        if state == self.end_state:
+            return 0
         # if state == self.prev_end and action == self.actions.drop:
         #     # print("before final")
         #     # print(state)

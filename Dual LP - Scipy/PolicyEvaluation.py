@@ -90,7 +90,7 @@ class VIAgent:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = (g_pos, g_pos, False, 'p')
+    e_state = (g_pos, g_pos, True, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_3_max.pkl')
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_33.pkl')

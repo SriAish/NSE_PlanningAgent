@@ -10,6 +10,7 @@ class DLPAgent:
         self.gamma = gamma
         self.locations = locations
         self.init_belief()
+        self.check_states()
         print("initial belief setup")
         sys.stdout.flush()
         self.init_var()
@@ -18,6 +19,16 @@ class DLPAgent:
         self.make_prob()
         print("problem setup")
         sys.stdout.flush()
+    
+    def check_states(self):
+        self.check_state = []
+        self.check_state.append(((0,0), (1,1), False, 'p'))
+        self.check_state.append(((0,1), (1,1), False, 'p'))
+        self.check_state.append(((1,1), (1,1), False, 'p'))
+        self.check_state.append(((1,1), (1,1), True, 'p'))
+        self.check_state.append(((2, 1), (2, 1), True, 'p'))
+        self.check_state.append(((2, 2), (2, 2), True, 'p'))
+        self.check_state.append(((2, 2), (2, 2), False, 'p'))
     
     def init_belief(self):
         if self.locations == None:
@@ -45,10 +56,15 @@ class DLPAgent:
 
     def make_constraints_eqn1(self):
         for s_ in self.BP.states:
+            if(s_ in self.check_state):
+                print("--------------------------")
+                print(s_)
             # Calculate left hand side
             actions = self.BP.getValidActions(s_)
             y = 0
             for a_ in actions:
+                if(s_ in self.check_state):
+                    print(a)
                 y += self.y[(s_, a_)]
 
             # Calculate right hand summation
@@ -57,6 +73,8 @@ class DLPAgent:
                 actions = self.BP.getValidActions(s)
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
+                        if(s_ in self.check_state):
+                            print(s, a, self.BP.T(s, a, s_))
                         c += (self.BP.T(s, a, s_)*(self.y[(s, a)]))
             
             c = self.gamma*c
@@ -64,7 +82,11 @@ class DLPAgent:
             # Calculate right hand side
             if s_ in self.belief_state:
                 c += 1/len(self.belief_state)
+                print(s_, 1/len(self.belief_state))
 
+
+            if(s_ in self.check_state):
+                print("--------------------------")
             # Adding constraint
             self.constraints.append(y == c)
     
@@ -129,7 +151,7 @@ class DLPAgent:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = (g_pos, g_pos, False, 'p')
+    e_state = (g_pos, g_pos, True, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
     locations = [(int(int(sys.argv[1])/2), 1)]
