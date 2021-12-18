@@ -64,7 +64,7 @@ class DLPAgent:
             y = 0
             for a_ in actions:
                 if(s_ in self.check_state):
-                    print(a)
+                    print(a_)
                 y += self.y[(s_, a_)]
 
             # Calculate right hand summation
