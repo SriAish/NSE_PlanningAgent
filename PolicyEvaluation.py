@@ -42,17 +42,17 @@ class VIAgent:
             for a in self.pi[state]:
             # for a in [self.pi[state]]:
                 # print(a, self.pi[state][a])
-                # if(self.pi[state][a] < 0): 
-                #     continue
+                if(self.pi[state][a] < 0.00001): 
+                    continue
                 next_states, c = self.BP.transition(state, a)
                 for j in next_states:
                     c += self.gamma * j[1] * self.stateValues[j[0]]
-                # pr_sum += self.pi[state][a]
+                pr_sum += self.pi[state][a]
                 st_val += c*self.pi[state][a]
                 # st_val += c
             # print(st_val)
-            # if pr_sum <= 0:
-            #     count += 1
+            if pr_sum <= 0:
+                count += 1
             delta = max(delta, abs(self.stateValues[state] - st_val))
             self.stateValues[state] = st_val
         # print(delta)
@@ -68,7 +68,7 @@ class VIAgent:
             k += 1
         # print(self.stateValues)
         for s in self.stateValues:
-            self.pi[s]
+            print(self.pi[s])
             print(s, self.stateValues[s])
         return self.stateValues[self.belief_state[0]]
 
@@ -77,7 +77,7 @@ if __name__ == '__main__':
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_3_max.pkl')
-    agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_31.pkl')
+    agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_32.pkl')
     # agent = VIAgent(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3.pkl')
     # agent = VIAgent(BP, 'VI/policy_values/VIp_3_3.pkl')
     print(agent.getSV())
