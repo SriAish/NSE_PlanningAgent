@@ -1,22 +1,59 @@
 ==========================================
-SLURM_JOB_ID = 551689
+SLURM_JOB_ID = 551691
 SLURM_NODELIST = gnode19
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job551689/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job551691/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
 objective setup
-Traceback (most recent call last):
-  File "DLPAgent.py", line 168, in <module>
-    agent = DLPAgent(BP, locations=locations)
-  File "DLPAgent.py", line 22, in __init__
-    self.make_prob()
-  File "DLPAgent.py", line 108, in make_prob
-    self.make_constraints_eqn1()
-  File "DLPAgent.py", line 63, in make_constraints_eqn1
-    if(s_ in self.check_state):
-TypeError: argument of type 'method' is not iterable
-2
+eq1
+problem setup
+apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :          377
+   Intermediates:            0
+   Connections  :            0
+   Equations    :           91
+   Residuals    :           91
+ 
+ Number of state variables:            377
+ Number of total equations: -           90
+ Number of slack variables: -            0
+ ---------------------------------------
+ Degrees of freedom       :            287
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  7.82246E+00  8.10000E-01
+    1  6.26265E+00  1.00001E-10
+    2  6.26265E+00  1.11056E-10
+    3  6.26265E+00  1.11022E-16
+    4  6.26265E+00  1.11022E-16
+ Successful solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :   8.720000000175787E-002 sec
+ Objective      :    6.26264509017111     
+ Successful solution
+ ---------------------------------------------------
+ 
+----------------------------------------
+Objective Value:  6.2626450902
+----------------------------------------
+Saving policies
+9
 --------------------
