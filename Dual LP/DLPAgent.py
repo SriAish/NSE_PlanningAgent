@@ -151,7 +151,7 @@ class DLPAgent:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = (g_pos, g_pos, True, 'p')
+    e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
     locations = [(int(int(sys.argv[1])/2), 1)]
