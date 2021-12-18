@@ -1,18 +1,138 @@
 ==========================================
-SLURM_JOB_ID = 548636
-SLURM_NODELIST = gnode22
-SLURM_JOB_GPUS = 1
+SLURM_JOB_ID = 551685
+SLURM_NODELIST = gnode19
+SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job548636/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job551685/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
 objective setup
+--------------------------
+((0, 0), (1, 1), False, 'p')
+left
+left
+left
+left
+((0, 0), (1, 1), False, 'p') up 0.9
+((0, 0), (1, 1), False, 'p') left 0.9
+((0, 1), (1, 1), False, 'p') left 0.9
+((1, 0), (1, 1), False, 'p') up 0.9
+((0, 0), (1, 1), False, 'p') 1.0
+--------------------------
+--------------------------
+((0, 1), (1, 1), False, 'p')
+left
+left
+left
+left
+((0, 0), (1, 1), False, 'p') down 0.1
+((0, 0), (1, 1), False, 'p') up 0.1
+((0, 0), (1, 1), False, 'p') right 0.9
+((0, 1), (1, 1), False, 'p') up 0.9
+((0, 2), (1, 1), False, 'p') down 0.1
+((0, 2), (1, 1), False, 'p') up 0.1
+((0, 2), (1, 1), False, 'p') left 0.9
+((1, 1), (1, 1), False, 'p') up 0.9
+--------------------------
+--------------------------
+((1, 1), (1, 1), False, 'p')
+left
+left
+left
+left
+left
+((0, 1), (1, 1), False, 'p') down 0.9
+((0, 1), (1, 1), False, 'p') right 0.1
+((0, 1), (1, 1), False, 'p') left 0.1
+((1, 0), (1, 1), False, 'p') down 0.1
+((1, 0), (1, 1), False, 'p') up 0.1
+((1, 0), (1, 1), False, 'p') right 0.9
+((1, 1), (1, 1), True, 'p') drop 1
+((1, 2), (1, 1), False, 'p') down 0.1
+((1, 2), (1, 1), False, 'p') up 0.1
+((1, 2), (1, 1), False, 'p') left 0.9
+((2, 1), (1, 1), False, 'p') up 0.9
+((2, 1), (1, 1), False, 'p') right 0.1
+((2, 1), (1, 1), False, 'p') left 0.1
+--------------------------
+--------------------------
+((1, 1), (1, 1), True, 'p')
+left
+left
+left
+left
+left
+((0, 1), (0, 1), True, 'p') down 0.9
+((0, 1), (0, 1), True, 'p') right 0.1
+((0, 1), (0, 1), True, 'p') left 0.1
+((1, 0), (1, 0), True, 'p') down 0.1
+((1, 0), (1, 0), True, 'p') up 0.1
+((1, 0), (1, 0), True, 'p') right 0.9
+((1, 1), (1, 1), False, 'p') pick_up 1
+((1, 2), (1, 2), True, 'p') down 0.1
+((1, 2), (1, 2), True, 'p') up 0.1
+((1, 2), (1, 2), True, 'p') left 0.9
+((2, 1), (2, 1), True, 'p') up 0.9
+((2, 1), (2, 1), True, 'p') right 0.1
+((2, 1), (2, 1), True, 'p') left 0.1
+--------------------------
+--------------------------
+((2, 1), (2, 1), True, 'p')
+left
+left
+left
+left
+left
+((1, 1), (1, 1), True, 'p') down 0.9
+((1, 1), (1, 1), True, 'p') right 0.1
+((1, 1), (1, 1), True, 'p') left 0.1
+((2, 0), (2, 0), True, 'p') down 0.1
+((2, 0), (2, 0), True, 'p') up 0.1
+((2, 0), (2, 0), True, 'p') right 0.9
+((2, 1), (2, 1), False, 'p') pick_up 1
+((2, 1), (2, 1), True, 'p') down 0.9
+--------------------------
+--------------------------
+((2, 2), (2, 2), False, 'p')
+left
+left
+left
+left
+left
+((1, 2), (2, 2), False, 'p') down 0.9
+((1, 2), (2, 2), False, 'p') right 0.1
+((1, 2), (2, 2), False, 'p') left 0.1
+((2, 1), (2, 2), False, 'p') down 0.1
+((2, 1), (2, 2), False, 'p') up 0.1
+((2, 1), (2, 2), False, 'p') right 0.9
+((2, 2), (2, 2), False, 'p') down 0.9
+((2, 2), (2, 2), False, 'p') right 0.9
+--------------------------
+--------------------------
+((2, 2), (2, 2), True, 'p')
+left
+left
+left
+left
+((1, 2), (1, 2), True, 'p') down 0.9
+((1, 2), (1, 2), True, 'p') right 0.1
+((1, 2), (1, 2), True, 'p') left 0.1
+((2, 1), (2, 1), True, 'p') down 0.1
+((2, 1), (2, 1), True, 'p') up 0.1
+((2, 1), (2, 1), True, 'p') right 0.9
+((2, 2), (2, 2), False, 'p') pick_up 1
+((2, 2), (2, 2), True, 'p') down 1
+((2, 2), (2, 2), True, 'p') up 1
+((2, 2), (2, 2), True, 'p') right 1
+((2, 2), (2, 2), True, 'p') left 1
+--------------------------
 eq1
-eq2
 problem setup
+DLPAgent.py:132: RuntimeWarning: invalid value encountered in double_scalars
+  self.pi[s][a] = self.y_[(s,a)]/y
 ----------------------------------------
-Objective Value:  10.00000000035633
+Objective Value:  5.129992763781065
 ----------------------------------------
 Saving policies
 6

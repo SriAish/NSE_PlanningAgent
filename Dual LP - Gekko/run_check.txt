@@ -1,0 +1,60 @@
+==========================================
+SLURM_JOB_ID = 550446
+SLURM_NODELIST = gnode25
+SLURM_JOB_GPUS = 2
+==========================================
+/var/spool/slurmd/job550446/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+((2, 2), (2, 2), True, 'p')
+initial belief setup
+variables setup
+objective setup
+((0, 0), (1, 1), False, 'p') 1.0
+eq1
+problem setup
+apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :          373
+   Intermediates:            0
+   Connections  :            0
+   Equations    :           91
+   Residuals    :           91
+ 
+ Number of state variables:            373
+ Number of total equations: -           90
+ Number of slack variables: -            0
+ ---------------------------------------
+ Degrees of freedom       :            283
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  1.02062E+01  8.10000E-01
+    1  1.00000E+01  2.85787E-10
+    2  1.00000E+01  1.64741E-10
+    3  1.00000E+01  2.22045E-16
+    4  1.00000E+01  2.22045E-16
+ Successful solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :   0.114999999990687      sec
+ Objective      :    10.0000000000000     
+ Successful solution
+ ---------------------------------------------------
+ 
+----------------------------------------
+Objective Value:  10.0
+----------------------------------------
+Saving policies
+10
+--------------------
