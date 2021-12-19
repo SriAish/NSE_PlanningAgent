@@ -61,7 +61,7 @@ if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-    agent = FlowConstraint(BP, 'VI/policy_values/V_3_3.pkl', 'Dual LP - Gekko/policy/NC_Agent_Policy_3_31.pkl', sys.argv[1])
+    agent = FlowConstraint(BP, 'Non-Convex Policy/policy/NC_Agent_x_nn_3_3_3.pkl', 'Non-Convex Policy/policy/NC_Agent_Policy_nn_3_3_3.pkl', sys.argv[1])
     # a = Actions()
     agent.checkFlow()
     # print(agent.getPi(((0, 0), (0, 0), False, 'p'), a.down))

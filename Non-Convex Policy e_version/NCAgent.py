@@ -2,7 +2,7 @@ from misc import BoxPushingConstants
 import sys
 import pickle
 from gekko import GEKKO
-from math import e
+from math import e, log
 
 class NCAgent:
     def __init__(self, BP, gamma = 0.9, locations = None):
@@ -39,8 +39,9 @@ class NCAgent:
             self.pi[s] = {}
             self.x[s] = self.m.Var()
             actions = self.BP.getValidActions(s)
+            val = log(1/len(actions))
             for a in actions:
-                self.pi[s][a] = self.m.Var()
+                self.pi[s][a] = self.m.Var(val)
 
     def init_intermediates(self):
         self.in_y = {}
@@ -125,10 +126,10 @@ class NCAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'NC_Agent_Policy_fc_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_ni_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'NC_Agent_x_fc_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_x_ni_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.x_, f)
 
     def solve_prob(self):
