@@ -1,0 +1,28 @@
+==========================================
+SLURM_JOB_ID = 536021
+SLURM_NODELIST = gnode19
+SLURM_JOB_GPUS = 1
+==========================================
+/var/spool/slurmd/job536021/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+((7, 14), (7, 14), True, 'p')
+initial belief setup
+variables setup
+objective setup
+/var/spool/slurmd/job536021/slurm_script: line 12: 21174 Killed                  python3.7 NCAgent.py 15 7 3 6 4 7 14 15_15
+5196
+--------------------
+((8, 16), (8, 16), True, 'p')
+initial belief setup
+variables setup
+objective setup
+/var/spool/slurmd/job536021/slurm_script: line 18: 21891 Killed                  python3.7 NCAgent.py 17 9 3 7 4 8 16 17_17
+5370
+--------------------
+((9, 18), (9, 18), True, 'p')
+initial belief setup
+variables setup
+objective setup
+/var/spool/slurmd/job536021/slurm_script: line 24: 22670 Killed                  python3.7 NCAgent.py 19 9 3 8 5 9 18 19_19
+5233
+--------------------
+slurmstepd: error: Detected 3 oom-kill event(s) in step 536021.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
