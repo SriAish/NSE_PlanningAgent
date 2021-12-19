@@ -100,8 +100,8 @@ class NCAgent:
         sys.stdout.flush()
         self.make_constraints_eqn1()
         print("eq1")
-        self.make_constraints_eqn2()
-        print("eq2")
+        # self.make_constraints_eqn2()
+        # print("eq2")
         sys.stdout.flush()
 
     def calculate_pi(self):
@@ -109,31 +109,20 @@ class NCAgent:
         print("Objective Value: ", self.m.options.OBJFCNVAL)
         print("----------------------------------------")
         self.pi_ = {}
-        self.pi_max = {}
         self.x_ = {}
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             self.pi_[s] = {}
             self.x_[s] = self.x[s].value[0]
-            ma = 0
             for a in actions:
                 self.pi_[s][a] = self.pi[s][a].value[0]
-                if(ma == 0):
-                    ma = self.pi_[s][a]
-                    self.pi_max[s] = a
-                elif(self.pi_[s][a] > ma):
-                    self.pi_max[s] = a
-                    ma = self.pi_[s][a]
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'NC_Agent_Policy_fc_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_nn_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'NC_Agent_Policy_init_fc_' + sys.argv[9] + '_' + file + '_max' + '.pkl', 'wb') as f:
-            pickle.dump(self.pi_max, f)
-
-        with open('policy/'+ 'NC_Agent_x_init_fc_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_x_nn_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.x_, f)
 
     def solve_prob(self):
