@@ -48,7 +48,7 @@ class NCAgent:
             self.in_y[s] = {} 
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.in_y[s][a] = (e**self.x[s])*(e**self.pi[s][a])
+                self.in_y[s][a] = e**self.x[s]*e**self.pi[s][a]
 
     def set_obj(self):
         obj = 0
