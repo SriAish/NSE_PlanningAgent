@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 552200
+SLURM_JOB_ID = 552205
 SLURM_NODELIST = gnode48
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job552200/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job552205/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -1343,5 +1343,5 @@ Traceback (most recent call last):
   File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
     return self.value[key]
 TypeError: 'int' object is not subscriptable
-8
+12
 --------------------
