@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 552218
+SLURM_JOB_ID = 552222
 SLURM_NODELIST = gnode48
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job552218/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job552222/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -70,7 +70,7 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  
  ---------------------------------------------------
  Solver         :  APOPT (v1.0)
- Solution time  :    6.87319999998726      sec
+ Solution time  :    6.88950000000477      sec
  Objective      :    6.26264509017111     
  Successful solution
  ---------------------------------------------------
@@ -79,13 +79,7 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
 Objective Value:  6.2626450902
 ----------------------------------------
 Saving policies
-Traceback (most recent call last):
-  File "NCAgent.py", line 148, in <module>
-    agent.save_pi(sys.argv[8])
-  File "NCAgent.py", line 122, in save_pi
-    with open('policy/'+ 'NC_Agent_Policy_nn_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'policy/NC_Agent_Policy_nn_1_3_3.pkl'
-19
+18
 --------------------
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
@@ -321,8 +315,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 144
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 143
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.245
-Total CPU secs in NLP function evaluations           =      2.230
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.253
+Total CPU secs in NLP function evaluations           =      2.223
 
 EXIT: Optimal Solution Found.
  
@@ -332,7 +326,7 @@ EXIT: Optimal Solution Found.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    2.52780000001076      sec
+ Solution time  :    2.51530000001367      sec
  Objective      :    6.26264636473655     
  Successful solution
  ---------------------------------------------------
@@ -341,11 +335,5 @@ EXIT: Optimal Solution Found.
 Objective Value:  6.2626463647
 ----------------------------------------
 Saving policies
-Traceback (most recent call last):
-  File "NCAgent.py", line 148, in <module>
-    agent.save_pi(sys.argv[8])
-  File "NCAgent.py", line 122, in save_pi
-    with open('policy/'+ 'NC_Agent_Policy_nn_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'policy/NC_Agent_Policy_nn_3_3_3.pkl'
 14
 --------------------
