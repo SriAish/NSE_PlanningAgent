@@ -51,12 +51,18 @@ class NCAgent:
                 self.in_y[s][a] = e**self.x[s]*e**self.pi[s][a]
 
     def set_obj(self):
+        for s in self.BP.states:
+            actions = self.BP.getValidActions(s)
+            for a in actions:
+                self.m.Minimize(self.in_y[s][a]*self.BP.get_cost(s, a))
+
+    def pr_obj(self):
         obj = 0
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                obj += self.in_y[s][a]*self.BP.get_cost(s, a)
-        self.m.Minimize(obj)
+                obj += (e**self.x[s].value[0])*(e**self.pi[s][a].value[0])*self.BP.get_cost(s, a)
+        return obj
 
     def make_constraints_eqn1(self):
         for s_ in self.BP.states:
@@ -106,7 +112,7 @@ class NCAgent:
 
     def calculate_pi(self):
         print("----------------------------------------")
-        print("Objective Value: ", self.m.options.OBJFCNVAL)
+        print("Objective Value: ", self.pr_obj())
         print("----------------------------------------")
         self.pi_ = {}
         self.x_ = {}
