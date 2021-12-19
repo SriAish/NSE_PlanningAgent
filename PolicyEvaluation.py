@@ -63,8 +63,8 @@ class VIAgent:
         k = 0
         while x > self.delta:
             x, count = self.update(k)
-            print(count)
-            print("--------------")
+            # print(count)
+            # print("--------------")
         #     k += 1
         # # print(self.stateValues)
         for s in self.stateValues:
@@ -77,8 +77,8 @@ if __name__ == '__main__':
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_3_max.pkl')
-    # agent = VIAgent(BP, 'Non-Convex Policy/policy/NC_Agent_Policy_fc_3_3_3.pkl')
-    agent = VIAgent(BP, 'Non-Convex Policy e_version/policy/NC_Agent_Policy_fc_3_3_3.pkl')
+    agent = VIAgent(BP, 'Non-Convex Policy/policy/NC_Agent_Policy_nn_1_3_3.pkl')
+    # agent = VIAgent(BP, 'Non-Convex Policy e_version/policy/NC_Agent_Policy_fc_3_3_3.pkl')
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_no_upper_3_31.pkl')
     # agent = VIAgent(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3.pkl')
     # agent = VIAgent(BP, 'VI/policy_values/VIp_3_3.pkl')

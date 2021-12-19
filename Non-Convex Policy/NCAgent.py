@@ -100,8 +100,8 @@ class NCAgent:
         sys.stdout.flush()
         self.make_constraints_eqn1()
         print("eq1")
-        # self.make_constraints_eqn2()
-        # print("eq2")
+        self.make_constraints_eqn2()
+        print("eq2")
         sys.stdout.flush()
 
     def calculate_pi(self):
@@ -119,10 +119,10 @@ class NCAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'NC_Agent_Policy_nn_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'NC_Agent_x_nn_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_x_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.x_, f)
 
     def solve_prob(self):
