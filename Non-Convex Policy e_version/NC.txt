@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 552210
+SLURM_JOB_ID = 552220
 SLURM_NODELIST = gnode48
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job552210/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job552220/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -344,7 +344,7 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  
  ---------------------------------------------------
  Solver         :  APOPT (v1.0)
- Solution time  :    19.0902999999962      sec
+ Solution time  :    19.0668000000005      sec
  Objective      :    6.30346298439029     
  Unsuccessful with error code            0
  ---------------------------------------------------
@@ -366,7 +366,7 @@ Traceback (most recent call last):
   File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
     return self.value[key]
 TypeError: 'int' object is not subscriptable
-29
+28
 --------------------
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
@@ -418,7 +418,7 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  
  ---------------------------------------------------
  Solver         :  BPOPT (v1.0)
- Solution time  :   2.830000000540167E-002 sec
+ Solution time  :   2.850000000034925E-002 sec
  Objective      :    133.046935621413     
  Unsuccessful with error code            0
  ---------------------------------------------------
@@ -569,7 +569,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 45
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 44
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.057
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.055
 Total CPU secs in NLP function evaluations           =      0.518
 
 EXIT: Optimal Solution Found.
@@ -580,7 +580,7 @@ EXIT: Optimal Solution Found.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :   0.587100000004284      sec
+ Solution time  :   0.587899999998626      sec
  Objective      :    6.26266898003162     
  Successful solution
  ---------------------------------------------------
@@ -589,11 +589,5 @@ EXIT: Optimal Solution Found.
 Objective Value:  6.262668980595629
 ----------------------------------------
 Saving policies
-Traceback (most recent call last):
-  File "NCAgent.py", line 154, in <module>
-    agent.save_pi(sys.argv[8])
-  File "NCAgent.py", line 128, in save_pi
-    with open('policy/'+ 'NC_Agent_Policy_fc_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'policy/NC_Agent_Policy_fc_3_3_3.pkl'
-17
+11
 --------------------
