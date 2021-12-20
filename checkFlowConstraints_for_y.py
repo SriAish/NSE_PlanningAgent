@@ -47,7 +47,7 @@ class FlowConstraint:
             if s_ in self.belief_state:
                 rhs += 1/len(self.belief_state)
 
-            if abs(lhs - rhs) <= 0:
+            if abs(lhs - rhs) <= 0.00001:
                 cf += 1
             else:
                 icf += 1

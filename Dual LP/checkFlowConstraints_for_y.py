@@ -49,7 +49,7 @@ class FlowConstraint:
             if s_ in self.belief_state:
                 rhs += 1/len(self.belief_state)
 
-            if abs(lhs - rhs) < 0.00001:
+            if abs(lhs - rhs) < 0.0:
                 cf += 1
             else:
                 icf += 1
@@ -62,7 +62,7 @@ if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-    agent = FlowConstraint(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3y_init.pkl', sys.argv[1])
+    agent = FlowConstraint(BP, 'policy/DLP_Agent_Policy_3_3y.pkl', sys.argv[1])
     # a = Actions()
     agent.checkFlow()
     # print(agent.getPi(((0, 0), (0, 0), False, 'p'), a.down))

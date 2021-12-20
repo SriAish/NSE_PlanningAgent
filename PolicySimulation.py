@@ -13,15 +13,17 @@ class Agent:
         policy = pickle.load(file_to_read)
         self.pi = {}
         self.prob = {}
-        print(policy)
+        # print(policy)
         for s in policy:
             self.pi[s] = []
             self.prob[s] = []
             for a in policy[s]:
                 self.pi[s].append(a)
                 self.prob[s].append(policy[s][a])
+                # self.prob[s].append(round(policy[s][a], 7))
 
     def getAction(self, state):
+        # print(np.sum(self.prob[state]))
         return np.random.choice(self.pi[state], p = self.prob[state])
         
 
@@ -60,6 +62,6 @@ if __name__ == '__main__':
     agent = Agent(sys.argv[1])
     print("--------------------")
     print(sys.argv[1])
-    print(avg_n_trajectories(50, agent))
+    print(avg_n_trajectories(1000, agent))
     print("--------------------")
     # generate_trajectory(agent)
