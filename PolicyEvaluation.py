@@ -79,7 +79,7 @@ if __name__ == '__main__':
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_3_max.pkl')
     # agent = VIAgent(BP, 'Non-Convex Policy/policy/NC_Agent_Policy_nor_1_3_3.pkl')
     # agent = VIAgent(BP, 'Non-Convex Policy e_version/policy/NC_Agent_Policy_ni_3_3_3.pkl')
-    agent = VIAgent(BP, 'Convex Policy e_version/policy/C_Agent_Policy_ni_3_3_3.pkl')
+    agent = VIAgent(BP, 'Convex Policy e_version/policy/C_Agent_Policy_ni_1_3_3.pkl')
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_no_upper_3_31.pkl')
     # agent = VIAgent(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3.pkl')
     # agent = VIAgent(BP, 'VI/policy_values/VIp_3_3.pkl')

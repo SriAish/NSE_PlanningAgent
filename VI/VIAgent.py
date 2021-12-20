@@ -3,7 +3,7 @@ import sys
 import pickle
 
 class VIAgent:
-    def __init__(self, BP, gamma = 0.95, delta = 0.1):
+    def __init__(self, BP, gamma = 0.9, delta = 0.1):
         self.BP = BP
         self.end_state = self.BP.end_state
         self.stateValues = {}
@@ -50,12 +50,14 @@ class VIAgent:
         
         policy = {}
         for state in self.stateValues:
+            policy[state] = {}
             if state == self.end_state:
-                policy[state] = None
+                policy[state] = []
                 continue
             actions = self.BP.getValidActions(state)
             cost = sys.maxsize
             for i in actions:
+                policy[state][i] = 0
                 next_states, c = self.BP.transition(state, i)
                 for j in next_states:
                     c += self.gamma * j[1] * self.stateValues[j[0]]
@@ -63,7 +65,7 @@ class VIAgent:
                     a = i
                 cost = min(cost, c)
             self.stateValues[state] = cost
-            policy[state] = a
+            policy[state][a] = 1
         print(self.stateValues[self.belief_state[0]])
         return policy
 
@@ -80,7 +82,7 @@ class VIPolicy:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = (g_pos, g_pos, True, 'p')
+    e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
