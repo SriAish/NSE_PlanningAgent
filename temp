@@ -10,3 +10,6 @@ Gekko ipopt
 CVXPY
 ((2, 2), (2, 2), True, 'p')
 6.262639889056022
+gekko no norm ipopt not initialize
+((2, 2), (2, 2), True, 'p')
+0.1055466693541808

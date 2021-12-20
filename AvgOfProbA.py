@@ -31,46 +31,17 @@ class VIAgent:
             self.stateValues[i] = sys.maxsize
         self.stateValues[self.end_state] = 0
 
-    def update(self, k):
-        delta = 0
-        count = 0
+    def avgProb(self):
+        print(self.pi)
+        nS = 0
+        avg = 0
         for state in self.stateValues:
             if state == self.end_state:
                 continue
-            st_val = 0
-            pr_sum = 0
+            nS += 1
             for a in self.pi[state]:
-            # for a in [self.pi[state]]:
-                # print(a, self.pi[state][a])
-                if(self.pi[state][a] < 0.00001): 
-                    continue
-                next_states, c = self.BP.transition(state, a)
-                for j in next_states:
-                    c += self.gamma * j[1] * self.stateValues[j[0]]
-                pr_sum += self.pi[state][a]
-                st_val += c*self.pi[state][a]
-                # st_val += c
-            # print(st_val)
-            if pr_sum <= 0:
-                count += 1
-            delta = max(delta, abs(self.stateValues[state] - st_val))
-            self.stateValues[state] = st_val
-        # print(delta)
-        return delta, count
-
-    def getSV(self):
-        x = sys.maxsize
-        k = 0
-        while x > self.delta:
-            x, count = self.update(k)
-            # print(count)
-            # print("--------------")
-        #     k += 1
-        # # print(self.stateValues)
-        # for s in self.stateValues:
-        #     print(self.pi[s])
-        #     print(s, self.stateValues[s])
-        return self.stateValues[self.belief_state[0]]
+                avg += self.pi[state][a]
+        return avg/nS
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
@@ -83,4 +54,4 @@ if __name__ == '__main__':
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_no_upper_3_31.pkl')
     # agent = VIAgent(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3.pkl')
     # agent = VIAgent(BP, 'VI/policy_values/VIp_3_3.pkl')
-    print(agent.getSV())
+    print(agent.avgProb())
