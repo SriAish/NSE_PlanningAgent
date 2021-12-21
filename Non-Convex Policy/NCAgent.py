@@ -40,7 +40,7 @@ class NCAgent:
             self.x[s] = self.m.Var(lb=0, ub=1/(1-self.gamma))
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.pi[s][a] = self.m.Var(1/len(actions),lb=0, ub=1)
+                self.pi[s][a] = self.m.Var(lb=0, ub=1)
 
     def init_intermediates(self):
         self.in_y = {}
@@ -100,8 +100,8 @@ class NCAgent:
         sys.stdout.flush()
         self.make_constraints_eqn1()
         print("eq1")
-        self.make_constraints_eqn2()
-        print("eq2")
+        # self.make_constraints_eqn2()
+        # print("eq2")
         sys.stdout.flush()
 
     def calculate_pi(self):
