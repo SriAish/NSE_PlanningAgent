@@ -40,7 +40,7 @@ class NCAgent:
             self.x[s] = self.m.Var(lb=0, ub=1/(1-self.gamma))
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.pi[s][a] = self.m.Var(lb=0, ub=1)
+                self.pi[s][a] = self.m.Var(1/len(actions),lb=0, ub=1)
 
     def init_intermediates(self):
         self.in_y = {}
@@ -119,10 +119,10 @@ class NCAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'NC_Agent_Policy_nor_ni_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_Policy_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'NC_Agent_x_nor_ni_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Agent_x_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.x_, f)
 
     def solve_prob(self):
