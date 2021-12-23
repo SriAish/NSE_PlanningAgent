@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 553134
-SLURM_NODELIST = gnode12
-SLURM_JOB_GPUS = 0
+SLURM_JOB_ID = 554618
+SLURM_NODELIST = gnode24
+SLURM_JOB_GPUS = 2
 ==========================================
-/var/spool/slurmd/job553134/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job554618/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -44,7 +44,7 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  
  ---------------------------------------------------
  Solver         :  APOPT (v1.0)
- Solution time  :   2.260000000023865E-002 sec
+ Solution time  :   2.179999999998472E-002 sec
  Objective      :   0.000000000000000E+000
  Unsuccessful with error code            0
  ---------------------------------------------------
@@ -66,7 +66,7 @@ Traceback (most recent call last):
   File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
     return self.value[key]
 TypeError: 'int' object is not subscriptable
-8
+9
 --------------------
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
@@ -276,8 +276,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 119
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 118
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.198
-Total CPU secs in NLP function evaluations           =      1.867
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.196
+Total CPU secs in NLP function evaluations           =      1.860
 
 EXIT: Optimal Solution Found.
  
@@ -287,7 +287,7 @@ EXIT: Optimal Solution Found.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    2.10509999999886      sec
+ Solution time  :    2.09710000000001      sec
  Objective      :    6.26264583555105     
  Successful solution
  ---------------------------------------------------
