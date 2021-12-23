@@ -40,3 +40,28 @@ Dual LP - Gekko/policy/NC_Agent_Policy_no_upper_3_33.pkl
 Non-Convex Policy/policy/NC_Agent_Policy_nor_3_3_3.pkl
 6.263598118095307
 --------------------
+
+--------------------
+Non-Convex Policy e_version/policy/NC_Agent_Policy_fc_3_3_3.pkl
+--------------------
+Non-Convex Policy/policy/NC_Agent_Policy_nor_1_3_3.pkl
+6.266510597290985
+--------------------
+--------------------
+Non-Convex Policy/policy/NC_Agent_Policy_nor_3_3_3.pkl
+--------------------
+Non-Convex Policy/policy/NC_Agent_Policy_nor_ni_1_3_3.pkl
+6.2616422561831495
+--------------------
+--------------------
+Non-Convex Policy/policy/NC_Agent_Policy_nor_ni_3_3_3.pkl
+--------------------
+
+Non-Convex Policy e_version/policy/NC_Agent_Policy_fc_3_3_3.pkl
+--------------------
+Non-Convex Policy/policy/NC_Agent_Policy_nor_3_3_3.pkl
+6.272616769026427
+--------------------
+--------------------
+Non-Convex Policy/policy/NC_Agent_Policy_nor_ni_3_3_3.pkl
+6.25645787686987
