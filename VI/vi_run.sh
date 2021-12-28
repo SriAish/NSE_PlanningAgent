@@ -15,7 +15,7 @@ runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 VIAgent.py 5 1 1 2 2 5 5 VIp_5_5 V_5_5
+python3.7 VIAgent.py 5 1 1 2 2 4 4 VIp_5_5 V_5_5
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
