@@ -39,9 +39,9 @@ class NCAgent:
             self.pi[s] = {}
             self.x[s] = self.m.Var()
             actions = self.BP.getValidActions(s)
-            # val = log(1/len(actions))
+            val = log(1/len(actions))
             for a in actions:
-                self.pi[s][a] = self.m.Var()
+                self.pi[s][a] = self.m.Var(val)
 
     def init_intermediates(self):
         self.in_y = {}

@@ -20,27 +20,27 @@ end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
-start=`date +%s`
-python3.7 NCAgent.py 11 5 3 4 3 5 10 11_11 1
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 NCAgent.py 11 5 3 4 3 5 10 11_11 3
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 NCAgent.py 13 7 3 5 3 6 12 13_13 1
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 NCAgent.py 13 7 3 5 3 6 12 13_13 3
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
+# start=`date +%s`
+# python3.7 NCAgent.py 11 5 3 4 3 5 10 11_11 1
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 NCAgent.py 11 5 3 4 3 5 10 11_11 3
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 NCAgent.py 13 7 3 5 3 6 12 13_13 1
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 NCAgent.py 13 7 3 5 3 6 12 13_13 3
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
