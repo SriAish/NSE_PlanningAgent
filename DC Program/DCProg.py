@@ -10,6 +10,10 @@ class DCProg:
         self.no_states = len(self.BP.states)
         self.gamma = gamma
         self.locations = locations
+        self.tao = cp.Parameter()
+        self.tao.value = 1
+        self.mu = 10
+        self.tao_max = 10000
         self.init_belief()
         print("initial belief setup")
         sys.stdout.flush()
@@ -39,9 +43,11 @@ class DCProg:
     def init_var(self):
         self.x = {}
         self.pi = {}
+        self.slack = {}
         for s in self.BP.states:
             self.x[s] = cp.Variable()
             self.pi[s] = {}
+            self.slack[s] = cp.Variable(4, nonneg=True)
             actions = self.BP.getValidActions(s)
             for a in actions:
                 self.pi[s][a] = cp.Variable()
@@ -87,8 +93,9 @@ class DCProg:
             actions = self.BP.getValidActions(s)
             for a in actions:
                 obj += self.y[s][a]*self.BP.get_cost(s, a)
+            slack += cp.sum(self.slack[s])
 
-        self.obj = cp.Minimize(obj)
+        self.obj = cp.Minimize(obj + (self.tao*slack))
 
 
     def make_constraints_eqn1(self):
@@ -114,7 +121,7 @@ class DCProg:
                 lhs += 1/len(self.belief_state)
 
             # Adding constraint
-            self.constraints.append(lhs <= rhs)
+            self.constraints.append(lhs <= rhs + self.slack[s_])
 
 
     def make_constraints_eqn2(self):
@@ -140,7 +147,7 @@ class DCProg:
                 rhs += 1/len(self.belief_state)
 
             # Adding constraint
-            self.constraints.append(lhs <= rhs)
+            self.constraints.append(lhs <= rhs + self.slack[s_])
 
 
     def make_constraints_eqn3(self):
@@ -150,7 +157,7 @@ class DCProg:
             for a in actions:
                 a_sum += cp.exp(self.pi_para[s][a])*(1 + self.pi[s][a] - self.pi_para[s][a])
 
-            self.constraints.append(1 <= a_sum)
+            self.constraints.append(1 <= a_sum + self.slack[s])
 
 
     def make_constraints_eqn4(self):
@@ -160,7 +167,7 @@ class DCProg:
             for a in actions:
                 a_sum += cp.exp(self.pi[s][a])
 
-            self.constraints.append(a_sum <= 1)
+            self.constraints.append(a_sum <= 1 + self.slack[s])
                 
 
     def make_prob(self):
