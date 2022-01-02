@@ -179,6 +179,7 @@ class DCProg:
         sys.stdout.flush()
         self.prob = cp.Problem(self.obj, self.constraints)
 
+
     def calculate_pi(self):
         print("----------------------------------------")
         print("Objective Value: ", self.prob.value)
@@ -201,6 +202,7 @@ class DCProg:
             for a in actions:
                 self.pi[s][a] = self.y_[(s,a)]/y
 
+
     def save_pi(self, file):
         print("Saving policies")
         with open('policy/'+ 'DLP_Agent_Policy_' + file + '.pkl', 'wb') as f:
@@ -211,6 +213,7 @@ class DCProg:
 
         with open('policy/'+ 'DLP_Agent_Policy_' + file + 'y' + '.pkl', 'wb') as f:
             pickle.dump(self.y_, f)
+
 
     def solve_prob(self):
         try:
@@ -245,6 +248,6 @@ if __name__ == '__main__':
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
     # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
     agent = DCProg(BP, locations=locations)
-    agent.solve_prob()
-    agent.calculate_pi()
-    agent.save_pi(sys.argv[8])
+    agent.solve_DCP()
+    # agent.calculate_pi()
+    # agent.save_pi(sys.argv[8])
