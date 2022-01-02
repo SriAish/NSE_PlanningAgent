@@ -11,3 +11,4 @@ objective setup
 eq1
 eq2
 problem setup
+slurmstepd: error: *** JOB 557839 ON gnode52 CANCELLED AT 2021-12-30T10:54:49 DUE TO TIME LIMIT ***
