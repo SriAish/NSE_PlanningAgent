@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 561146
+SLURM_JOB_ID = 561148
 SLURM_NODELIST = gnode22
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job561146/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job561148/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -20,6 +20,11 @@ problem setup
   warnings.warn(dpp_error_msg)
 0
 inf
--inf
+inf
+Exception Occured
+A Parameter (whose name is 'param467') does not have a value associated with it; all Parameter objects must have values before solving a problem.
+1
+inf
+nan
 11
 --------------------
