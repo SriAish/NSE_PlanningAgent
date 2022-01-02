@@ -227,12 +227,13 @@ class DCProg:
         while delta > 0.001:
             self.tao.value = min(self.mu*self.tao.value, self.tao_max)
             self.solve_prob()
-            self.calculate_pi()
+            # self.calculate_pi()
             # self.save(sys.argv[8])
             print(i)
             print(self.prob.value)
             delta = abs(self.prob.value - obj_val)
             print(delta)
+            sys.stdout.flush()
             obj_val = self.prob.value
             self.change_para()
             i += 1
