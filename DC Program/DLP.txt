@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 561144
+SLURM_JOB_ID = 561146
 SLURM_NODELIST = gnode22
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job561144/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job561146/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -18,14 +18,8 @@ problem setup
 /home/sriaish/.local/lib/python3.7/site-packages/cvxpy/reductions/solvers/solving_chain.py:167: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Discplined Parametrized Programming, at
 	https://www.cvxpy.org/tutorial/advanced/index.html#disciplined-parametrized-programming
   warnings.warn(dpp_error_msg)
-----------------------------------------
-Objective Value:  inf
-----------------------------------------
-Traceback (most recent call last):
-  File "DCProg.py", line 249, in <module>
-    agent.calculate_pi()
-  File "DCProg.py", line 195, in calculate_pi
-    self.y_[(s, a)] = self.y[(s, a)].value
-KeyError: (((0, 0), (0, 0), False, 'p'), 'down')
-13
+0
+inf
+-inf
+11
 --------------------
