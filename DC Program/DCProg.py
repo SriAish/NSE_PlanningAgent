@@ -189,30 +189,17 @@ class DCProg:
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             self.x_v = self.x.value
-            self.pi[s] = {}
-            y = 0
-            ma = 0
+            self.pi_v[s] = {}
             for a in actions:
-                self.y_[s][a] = self.y[(s, a)].value
-                y += self.y_[(s, a)]
-                if(self.y_[(s,a)] > ma):
-                    self.pi_max[s] = a
-                    ma = self.y_[(s,a)]
+                self.pi_v[s][a] = self.pi[s][a].value
 
-            for a in actions:
-                self.pi[s][a] = self.y_[(s,a)]/y
-
-
-    def save_pi(self, file):
+    def save(self, file):
         print("Saving policies")
-        with open('policy/'+ 'DLP_Agent_Policy_' + file + '.pkl', 'wb') as f:
-            pickle.dump(self.pi, f)
+        with open('policy/'+ 'DC_x_' + file + '.pkl', 'wb') as f:
+            pickle.dump(self.x_v, f)
 
-        with open('policy/'+ 'DLP_Agent_Policy_' + file + '_max' + '.pkl', 'wb') as f:
-            pickle.dump(self.pi_max, f)
-
-        with open('policy/'+ 'DLP_Agent_Policy_' + file + 'y' + '.pkl', 'wb') as f:
-            pickle.dump(self.y_, f)
+        with open('policy/'+ 'DC_pi_' + file + '_max' + '.pkl', 'wb') as f:
+            pickle.dump(self.pi_v, f)
 
 
     def solve_prob(self):
@@ -229,6 +216,8 @@ class DCProg:
         i = 0
         while delta > 0.001:
             self.solve_prob()
+            self.calculate_pi()
+            self.save(sys.argv[8])
             print(i)
             print(self.prob.value)
             delta = abs(self.prob.value - obj_val)
