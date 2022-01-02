@@ -13,7 +13,7 @@ class DCProg:
         self.tao = cp.Parameter()
         self.tao.value = 1
         self.mu = 10
-        self.tao_max = 1000000
+        self.tao_max = 100000
         self.init_belief()
         print("initial belief setup")
         sys.stdout.flush()
@@ -97,6 +97,13 @@ class DCProg:
 
         self.obj = cp.Minimize(obj + (self.tao*slack))
 
+    def pr_obj(self):
+        obj = 0
+        for s in self.BP.states:
+            actions = self.BP.getValidActions(s)
+            for a in actions:
+                obj += (e**self.x[s].value)*(e**self.pi[s][a].value)*self.BP.get_cost(s, a)
+        return obj
 
     def make_constraints_eqn1(self):
         for s_ in self.BP.states:
@@ -230,6 +237,7 @@ class DCProg:
             # self.calculate_pi()
             # self.save(sys.argv[8])
             print(i)
+            print("Objective Value without slack: ", self.pr_obj())
             print(self.prob.value)
             delta = abs(self.prob.value - obj_val)
             print(delta)
