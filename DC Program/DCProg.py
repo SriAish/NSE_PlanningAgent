@@ -121,7 +121,7 @@ class DCProg:
                 lhs += 1/len(self.belief_state)
 
             # Adding constraint
-            self.constraints.append(lhs <= rhs + self.slack[s_])
+            self.constraints.append(lhs <= rhs + self.slack[s_][0])
 
 
     def make_constraints_eqn2(self):
@@ -147,7 +147,7 @@ class DCProg:
                 rhs += 1/len(self.belief_state)
 
             # Adding constraint
-            self.constraints.append(lhs <= rhs + self.slack[s_])
+            self.constraints.append(lhs <= rhs + self.slack[s_][1])
 
 
     def make_constraints_eqn3(self):
@@ -157,7 +157,7 @@ class DCProg:
             for a in actions:
                 a_sum += cp.exp(self.pi_para[s][a])*(1 + self.pi[s][a] - self.pi_para[s][a])
 
-            self.constraints.append(1 <= a_sum + self.slack[s])
+            self.constraints.append(1 <= a_sum + self.slack[s][2])
 
 
     def make_constraints_eqn4(self):
@@ -167,7 +167,7 @@ class DCProg:
             for a in actions:
                 a_sum += cp.exp(self.pi[s][a])
 
-            self.constraints.append(a_sum <= 1 + self.slack[s])
+            self.constraints.append(a_sum <= 1 + self.slack[s][3])
                 
 
     def make_prob(self):
