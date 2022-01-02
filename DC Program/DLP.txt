@@ -1,9 +1,21 @@
 ==========================================
-SLURM_JOB_ID = 561138
+SLURM_JOB_ID = 561141
 SLURM_NODELIST = gnode22
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job561138/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-python3.7: can't open file 'DLPAgent.py': [Errno 2] No such file or directory
-1
+/var/spool/slurmd/job561141/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+((2, 2), (2, 2), True, 'p')
+initial belief setup
+variables setup
+Traceback (most recent call last):
+  File "DCProg.py", line 241, in <module>
+    agent = DCProg(BP, locations=locations)
+  File "DCProg.py", line 19, in __init__
+    self.make_prob()
+  File "DCProg.py", line 162, in make_prob
+    self.set_obj()
+  File "DCProg.py", line 83, in set_obj
+    obj += self.y[s][a]*self.BP.get_cost(s, a)
+AttributeError: 'DCProg' object has no attribute 'y'
+5
 --------------------
