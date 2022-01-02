@@ -184,16 +184,16 @@ class DCProg:
         print("----------------------------------------")
         print("Objective Value: ", self.prob.value)
         print("----------------------------------------")
-        self.pi = {}
-        self.pi_max = {}
-        self.y_ = {}
+        self.pi_v = {}
+        self.x_v = {}
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
+            self.x_v = self.x.value
             self.pi[s] = {}
             y = 0
             ma = 0
             for a in actions:
-                self.y_[(s, a)] = self.y[(s, a)].value
+                self.y_[s][a] = self.y[(s, a)].value
                 y += self.y_[(s, a)]
                 if(self.y_[(s,a)] > ma):
                     self.pi_max[s] = a
@@ -231,7 +231,7 @@ class DCProg:
             self.solve_prob()
             print(i)
             print(self.prob.value)
-            delta = obj_val - self.prob.value
+            delta = abs(self.prob.value - obj_val)
             print(delta)
             obj_val = self.prob.value
             self.change_para()
