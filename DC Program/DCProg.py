@@ -13,7 +13,7 @@ class DCProg:
         self.tao = cp.Parameter()
         self.tao.value = 1
         self.mu = 10
-        self.tao_max = 10000
+        self.tao_max = 1000000
         self.init_belief()
         print("initial belief setup")
         sys.stdout.flush()
