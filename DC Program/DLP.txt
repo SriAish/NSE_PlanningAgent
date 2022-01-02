@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 561148
+SLURM_JOB_ID = 561149
 SLURM_NODELIST = gnode22
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job561148/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job561149/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -18,13 +18,16 @@ problem setup
 /home/sriaish/.local/lib/python3.7/site-packages/cvxpy/reductions/solvers/solving_chain.py:167: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Discplined Parametrized Programming, at
 	https://www.cvxpy.org/tutorial/advanced/index.html#disciplined-parametrized-programming
   warnings.warn(dpp_error_msg)
-0
-inf
-inf
-Exception Occured
-A Parameter (whose name is 'param467') does not have a value associated with it; all Parameter objects must have values before solving a problem.
-1
-inf
-nan
+----------------------------------------
+Objective Value:  inf
+----------------------------------------
+Traceback (most recent call last):
+  File "DCProg.py", line 240, in <module>
+    agent.solve_DCP()
+  File "DCProg.py", line 219, in solve_DCP
+    self.calculate_pi()
+  File "DCProg.py", line 191, in calculate_pi
+    self.x_v = self.x.value
+AttributeError: 'dict' object has no attribute 'value'
 11
 --------------------
