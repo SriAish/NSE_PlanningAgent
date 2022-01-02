@@ -225,6 +225,7 @@ class DCProg:
         delta = sys.maxsize
         i = 0
         while delta > 0.001:
+            self.tao.value = min(self.mu*self.tao.value, self.tao_max)
             self.solve_prob()
             self.calculate_pi()
             # self.save(sys.argv[8])
