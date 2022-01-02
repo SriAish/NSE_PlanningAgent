@@ -2,7 +2,7 @@ from misc import BoxPushingConstants
 import sys
 import pickle
 import cvxpy as cp
-from math import log
+from math import e, log
 
 class DCProg:
     def __init__(self, BP, gamma = 0.9, locations = None):
@@ -194,13 +194,13 @@ class DCProg:
         self.pi_v = {}
         self.x_v = {}
         for s in self.BP.states:
-            print(s, " : ", self.x[s].value)
+            print(s, " : ", e**self.x[s].value)
             actions = self.BP.getValidActions(s)
             self.x_v[s] = self.x[s].value
             self.pi_v[s] = {}
             for a in actions:
-                self.pi_v[s][a] = self.pi[s][a].value
-            print(self.pi_v[s][a])
+                self.pi_v[s][a] = e**self.pi[s][a].value
+            print(self.pi_v[s])
             print("----------------------------------------")
 
     def save(self, file):
