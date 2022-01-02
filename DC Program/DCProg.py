@@ -181,17 +181,20 @@ class DCProg:
 
 
     def calculate_pi(self):
-        print("----------------------------------------")
-        print("Objective Value: ", self.prob.value)
-        print("----------------------------------------")
+        # print("----------------------------------------")
+        # print("Objective Value: ", self.prob.value)
+        # print("----------------------------------------")
         self.pi_v = {}
         self.x_v = {}
         for s in self.BP.states:
+            print(s, " : ", self.x[s].value)
             actions = self.BP.getValidActions(s)
-            self.x_v = self.x.value
+            self.x_v[s] = self.x[s].value
             self.pi_v[s] = {}
             for a in actions:
                 self.pi_v[s][a] = self.pi[s][a].value
+            print(self.pi_v[s][a])
+            print("----------------------------------------")
 
     def save(self, file):
         print("Saving policies")
@@ -217,7 +220,7 @@ class DCProg:
         while delta > 0.001:
             self.solve_prob()
             self.calculate_pi()
-            self.save(sys.argv[8])
+            # self.save(sys.argv[8])
             print(i)
             print(self.prob.value)
             delta = abs(self.prob.value - obj_val)
