@@ -12,7 +12,7 @@ class DCProg:
         self.locations = locations
         self.tao = cp.Parameter()
         self.tao.value = 1
-        self.mu = 10
+        self.mu = 2
         self.tao_max = 100000
         self.init_belief()
         print("initial belief setup")
@@ -128,7 +128,7 @@ class DCProg:
                 lhs += 1/len(self.belief_state)
 
             # Adding constraint
-            self.constraints.append(lhs <= rhs + self.slack[s_][0])
+            self.constraints.append(lhs - rhs <= self.slack[s_][0])
 
 
     def make_constraints_eqn2(self):
@@ -137,7 +137,7 @@ class DCProg:
             actions = self.BP.getValidActions(s_)
             lhs = 0
             for a_ in actions:
-                lhs += self.y[s_][a_]
+                lhs +=  self.y[s_][a_]
 
             # Calculate right hand summation
             rhs = 0
@@ -154,7 +154,7 @@ class DCProg:
                 rhs += 1/len(self.belief_state)
 
             # Adding constraint
-            self.constraints.append(lhs <= rhs + self.slack[s_][1])
+            self.constraints.append(lhs - rhs <= self.slack[s_][1])
 
 
     def make_constraints_eqn3(self):
@@ -164,7 +164,7 @@ class DCProg:
             for a in actions:
                 a_sum += cp.exp(self.pi_para[s][a])*(1 + self.pi[s][a] - self.pi_para[s][a])
 
-            self.constraints.append(1 <= a_sum + self.slack[s][2])
+            self.constraints.append(1 - a_sum <= self.slack[s][2])
 
 
     def make_constraints_eqn4(self):
@@ -174,7 +174,7 @@ class DCProg:
             for a in actions:
                 a_sum += cp.exp(self.pi[s][a])
 
-            self.constraints.append(a_sum <= 1 + self.slack[s][3])
+            self.constraints.append(a_sum - 1 <= self.slack[s][3])
                 
 
     def make_prob(self):
@@ -238,9 +238,9 @@ class DCProg:
             # self.save(sys.argv[8])
             print(i)
             print("Objective Value without slack: ", self.pr_obj())
-            print(self.prob.value)
+            print("Objective Value with slack: ",self.prob.value)
             delta = abs(self.prob.value - obj_val)
-            print(delta)
+            print("Change in objective Value: ", delta)
             sys.stdout.flush()
             obj_val = self.prob.value
             self.change_para()
