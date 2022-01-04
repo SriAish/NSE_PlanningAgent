@@ -232,20 +232,25 @@ class DCProg:
         obj_val = sys.maxsize
         delta = sys.maxsize
         i = 0
-        while delta > 0.001:
-            self.tao.value = min(self.mu*self.tao.value, self.tao_max)
-            self.solve_prob()
-            self.calculate_pi()
-            self.save(sys.argv[8], i)
-            print(i)
-            print("Objective Value without slack: ", self.pr_obj())
-            print("Objective Value with slack: ",self.prob.value)
-            delta = abs(self.prob.value - obj_val)
-            print("Change in objective Value: ", delta)
-            sys.stdout.flush()
-            obj_val = self.prob.value
-            self.change_para()
-            i += 1
+        with open('csv_results' + '.csv', 'w') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(["iteration", "obj", "obj with slack"])
+            while delta > 0.001:
+                self.tao.value = min(self.mu*self.tao.value, self.tao_max)
+                self.solve_prob()
+                self.calculate_pi()
+                self.save(sys.argv[8], i)
+                print(i)
+                obj = self.pr_obj()
+                print("Objective Value without slack: ", obj)
+                print("Objective Value with slack: ", self.prob.value)
+                csvwriter.writerow([i, obj, self.prob.value])
+                delta = abs(self.prob.value - obj_val)
+                print("Change in objective Value: ", delta)
+                sys.stdout.flush()
+                obj_val = self.prob.value
+                self.change_para()
+                i += 1
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
