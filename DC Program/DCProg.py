@@ -3,6 +3,7 @@ import sys
 import pickle
 import cvxpy as cp
 from math import e, log
+import csv
 
 class DCProg:
     def __init__(self, BP, gamma = 0.9, locations = None):
