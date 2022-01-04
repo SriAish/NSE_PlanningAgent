@@ -11,8 +11,8 @@ class DCProg:
         self.gamma = gamma
         self.locations = locations
         self.tao = cp.Parameter()
-        self.tao.value = 1
-        self.mu = 2
+        self.tao.value = 10
+        self.mu = 10
         self.tao_max = 100000
         self.init_belief()
         print("initial belief setup")
@@ -61,7 +61,8 @@ class DCProg:
             self.x_para[s].value = 0
             self.pi_para[s] = {}
             actions = self.BP.getValidActions(s)
-            val = log(1/len(actions))
+            # val = log(1/len(actions))
+            val = 0
             for a in actions:
                 self.pi_para[s][a] = cp.Parameter()
                 self.pi_para[s][a].value = val
