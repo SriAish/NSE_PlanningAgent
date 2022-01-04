@@ -1,33 +1,288 @@
 ==========================================
-SLURM_JOB_ID = 536017
-SLURM_NODELIST = gnode24
-SLURM_JOB_GPUS = 0
+SLURM_JOB_ID = 562358
+SLURM_NODELIST = gnode39
+SLURM_JOB_GPUS = 2
 ==========================================
-/var/spool/slurmd/job536017/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-((4, 8), (4, 8), True, 'p')
+/var/spool/slurmd/job562358/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
+parameters setup
+intermediates setup
 objective setup
 eq1
-eq2
+eq1
+eq1
+eq1
 problem setup
-----------------------------------------
-Objective Value:  9.999916316423509
-----------------------------------------
-Saving policies
-1336
+0
+Objective Value without slack:  62.9517890195571
+Objective Value with slack:  87.2110260656638
+Change in objective Value:  9.223372036854776e+18
+1
+Objective Value without slack:  46.26506066992657
+Objective Value with slack:  74.27631093822136
+Change in objective Value:  12.934715127442445
+2
+Objective Value without slack:  38.223142869787374
+Objective Value with slack:  71.47175905076713
+Change in objective Value:  2.804551887454224
+3
+Objective Value without slack:  33.993037549290136
+Objective Value with slack:  81.70889563527373
+Change in objective Value:  10.237136584506601
+4
+Objective Value without slack:  30.8427636954004
+Objective Value with slack:  104.57102274310245
+Change in objective Value:  22.862127107828712
+5
+Objective Value without slack:  28.12120124613216
+Objective Value with slack:  152.20476386326703
+Change in objective Value:  47.633741120164586
+6
+Objective Value without slack:  25.881996579610007
+Objective Value with slack:  240.6608188006769
+Change in objective Value:  88.45605493740987
+7
+Objective Value without slack:  23.96414623961455
+Objective Value with slack:  399.01092442867855
+Change in objective Value:  158.35010562800164
+8
+Objective Value without slack:  22.272638533911646
+Objective Value with slack:  675.7943976834646
+Change in objective Value:  276.78347325478603
+9
+Objective Value without slack:  20.80040444212904
+Objective Value with slack:  1163.96416394063
+Change in objective Value:  488.1697662571654
+10
+Objective Value without slack:  19.477691876827638
+Objective Value with slack:  2013.950203721302
+Change in objective Value:  849.986039780672
+11
+Objective Value without slack:  18.299231501641017
+Objective Value with slack:  3470.3827959244245
+Change in objective Value:  1456.4325922031226
+12
+Objective Value without slack:  17.243854870385597
+Objective Value with slack:  5973.9537438305115
+Change in objective Value:  2503.570947906087
+13
+Objective Value without slack:  16.257437475083705
+Objective Value with slack:  10150.253528927902
+Change in objective Value:  4176.299785097391
+14
+Objective Value without slack:  15.356883524983122
+Objective Value with slack:  16932.72202810099
+Change in objective Value:  6782.468499173088
+15
+Objective Value without slack:  14.573599869766603
+Objective Value with slack:  28332.179987068244
+Change in objective Value:  11399.457958967254
+16
+Objective Value without slack:  13.87818434008303
+Objective Value with slack:  35462.39402678471
+Change in objective Value:  7130.214039716462
+17
+Objective Value without slack:  13.30256433785894
+Objective Value with slack:  28993.684846699576
+Change in objective Value:  6468.70918008513
+18
+Objective Value without slack:  12.804431216285069
+Objective Value with slack:  24016.715711637502
+Change in objective Value:  4976.969135062074
+19
+Objective Value without slack:  12.37247125264779
+Objective Value with slack:  18635.66420601656
+Change in objective Value:  5381.051505620941
+20
+Objective Value without slack:  11.994269127503205
+Objective Value with slack:  14357.935461430578
+Change in objective Value:  4277.728744585984
+21
+Objective Value without slack:  11.676494196952943
+Objective Value with slack:  11214.101451135713
+Change in objective Value:  3143.834010294864
+22
+Objective Value without slack:  11.480533097152907
+Objective Value with slack:  8291.822933318846
+Change in objective Value:  2922.278517816867
+23
+Objective Value without slack:  11.30605521130975
+Objective Value with slack:  6716.358948763181
+Change in objective Value:  1575.4639845556658
+24
+Objective Value without slack:  11.192153183318773
+Objective Value with slack:  5061.0547661486025
+Change in objective Value:  1655.3041826145782
+25
+Objective Value without slack:  11.093761061500713
+Objective Value with slack:  3951.994841738454
+Change in objective Value:  1109.0599244101486
+26
+Objective Value without slack:  11.006786193493692
+Objective Value with slack:  2967.631634854116
+Change in objective Value:  984.3632068843381
+27
+Objective Value without slack:  10.930764487561646
+Objective Value with slack:  2166.024602869679
+Change in objective Value:  801.6070319844371
+28
+Objective Value without slack:  10.862602523506945
+Objective Value with slack:  1989.8057769910963
+Change in objective Value:  176.2188258785825
+29
+Objective Value without slack:  10.801280146251024
+Objective Value with slack:  1903.5407557811184
+Change in objective Value:  86.26502120997793
+30
+Objective Value without slack:  10.746607482833605
+Objective Value with slack:  1836.3316000986451
+Change in objective Value:  67.20915568247324
+31
+Objective Value without slack:  10.698503826321758
+Objective Value with slack:  1784.0492018349858
+Change in objective Value:  52.28239826365939
+32
+Objective Value without slack:  10.656627346556927
+Objective Value with slack:  1745.256031522307
+Change in objective Value:  38.79317031267874
+33
+Objective Value without slack:  10.746936746861419
+Objective Value with slack:  2835.5872308538414
+Change in objective Value:  1090.3311993315344
+34
+Objective Value without slack:  10.808970885545511
+Objective Value with slack:  1953.4895975734048
+Change in objective Value:  882.0976332804366
+35
+Objective Value without slack:  10.845245750545894
+Objective Value with slack:  1337.9361759519113
+Change in objective Value:  615.5534216214935
+36
+Objective Value without slack:  10.884081131516629
+Objective Value with slack:  908.027404551695
+Change in objective Value:  429.9087714002163
+37
+Objective Value without slack:  10.852166597301474
+Objective Value with slack:  885.6401212700123
+Change in objective Value:  22.3872832816827
+38
+Objective Value without slack:  10.824859019013166
+Objective Value with slack:  692.150145388337
+Change in objective Value:  193.48997588167526
+39
+Objective Value without slack:  10.821234397571509
+Objective Value with slack:  600.1906228343188
+Change in objective Value:  91.95952255401824
+40
+Objective Value without slack:  10.818932148893557
+Objective Value with slack:  540.3051877435837
+Change in objective Value:  59.885435090735086
+41
+Objective Value without slack:  10.813985969480152
+Objective Value with slack:  479.5063815750221
+Change in objective Value:  60.79880616856161
+42
+Objective Value without slack:  10.809179220258727
+Objective Value with slack:  417.1065337901419
+Change in objective Value:  62.399847784880194
+43
+Objective Value without slack:  10.804887484931465
+Objective Value with slack:  374.0673764470062
+Change in objective Value:  43.039157343135685
+44
+Objective Value without slack:  10.801461866533158
+Objective Value with slack:  349.0721795381314
+Change in objective Value:  24.99519690887479
+45
+Objective Value without slack:  10.79802265625188
+Objective Value with slack:  292.6550780877489
+Change in objective Value:  56.41710145038252
+46
+Objective Value without slack:  10.7955182229718
+Objective Value with slack:  300.51620445250296
+Change in objective Value:  7.861126364754057
+47
+Objective Value without slack:  10.793238115443552
+Objective Value with slack:  242.04494055854815
+Change in objective Value:  58.47126389395481
+48
+Objective Value without slack:  10.790831309726283
+Objective Value with slack:  230.02644584691856
+Change in objective Value:  12.018494711629586
+49
+Objective Value without slack:  10.789037184456465
+Objective Value with slack:  204.22746847646917
+Change in objective Value:  25.798977370449393
+50
+Objective Value without slack:  10.787135878319747
+Objective Value with slack:  171.36702509916896
+Change in objective Value:  32.860443377300214
+51
+Objective Value without slack:  10.785707281456965
+Objective Value with slack:  161.52609838350378
+Change in objective Value:  9.840926715665177
+52
+Objective Value without slack:  10.784709665106067
+Objective Value with slack:  156.82160591343035
+Change in objective Value:  4.704492470073433
+53
+Objective Value without slack:  10.784009792145504
+Objective Value with slack:  154.8436687408901
+Change in objective Value:  1.977937172540237
+54
+Objective Value without slack:  10.78351625375882
+Objective Value with slack:  153.74025879795695
+Change in objective Value:  1.1034099429331548
+55
+Objective Value without slack:  10.783164467665667
+Objective Value with slack:  153.23864737936057
+Change in objective Value:  0.5016114185963829
+56
+Objective Value without slack:  10.782905919221873
+Objective Value with slack:  153.0511015990439
+Change in objective Value:  0.18754578031666824
+57
+Objective Value without slack:  10.782710336350322
+Objective Value with slack:  152.91561423439038
+Change in objective Value:  0.13548736465352818
+58
+Objective Value without slack:  10.782557127643813
+Objective Value with slack:  152.87493147184392
+Change in objective Value:  0.04068276254645298
+59
+Objective Value without slack:  10.782432019729114
+Objective Value with slack:  152.82268237604572
+Change in objective Value:  0.052249095798202916
+60
+Objective Value without slack:  10.782325346269124
+Objective Value with slack:  152.80135520592063
+Change in objective Value:  0.021327170125090333
+61
+Objective Value without slack:  10.782230669246012
+Objective Value with slack:  152.77986477487133
+Change in objective Value:  0.02149043104930115
+62
+Objective Value without slack:  10.78214376537437
+Objective Value with slack:  152.74197500699964
+Change in objective Value:  0.03788976787168963
+63
+Objective Value without slack:  10.782061858717052
+Objective Value with slack:  152.7349748697084
+Change in objective Value:  0.007000137291242936
+64
+Objective Value without slack:  10.781983159211034
+Objective Value with slack:  152.70817864819236
+Change in objective Value:  0.026796221516036667
+65
+Objective Value without slack:  10.781906489804161
+Objective Value with slack:  152.70819551479707
+Change in objective Value:  1.6866604710230604e-05
+/home/sriaish/.local/lib/python3.7/site-packages/cvxpy/reductions/solvers/solving_chain.py:167: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Discplined Parametrized Programming, at
+	https://www.cvxpy.org/tutorial/advanced/index.html#disciplined-parametrized-programming
+  warnings.warn(dpp_error_msg)
+/home/sriaish/.local/lib/python3.7/site-packages/cvxpy/problems/problem.py:1295: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  "Solution may be inaccurate. Try another solver, "
+13259
 --------------------
-((5, 10), (5, 10), True, 'p')
-initial belief setup
-variables setup
-objective setup
-/var/spool/slurmd/job536017/slurm_script: line 18: 10230 Killed                  python3.7 DLPAgent.py 11 5 3 4 3 5 10 11_11
-4700
---------------------
-((6, 12), (6, 12), True, 'p')
-initial belief setup
-variables setup
-objective setup
-/var/spool/slurmd/job536017/slurm_script: line 24: 18130 Killed                  python3.7 DLPAgent.py 13 7 3 5 3 6 12 13_13
-2293
-slurmstepd: error: Detected 2 oom-kill event(s) in step 536017.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
