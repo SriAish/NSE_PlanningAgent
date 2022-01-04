@@ -202,21 +202,21 @@ class DCProg:
         self.pi_v = {}
         self.x_v = {}
         for s in self.BP.states:
-            print(s, " : ", e**self.x[s].value)
             actions = self.BP.getValidActions(s)
-            self.x_v[s] = self.x[s].value
+            self.x_v[s] = e**self.x[s].value
+            print(s, " : ", self.x_v[s])
             self.pi_v[s] = {}
             for a in actions:
                 self.pi_v[s][a] = e**self.pi[s][a].value
             print(self.pi_v[s])
             print("----------------------------------------")
 
-    def save(self, file):
+    def save(self, file, i):
         print("Saving policies")
-        with open('policy/'+ 'DC_x_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'DC_x_' + str(i) + file + '.pkl', 'wb') as f:
             pickle.dump(self.x_v, f)
 
-        with open('policy/'+ 'DC_pi_' + file + '_max' + '.pkl', 'wb') as f:
+        with open('policy/'+ 'DC_pi_' + str(i) + file + '_max' + '.pkl', 'wb') as f:
             pickle.dump(self.pi_v, f)
 
 
@@ -235,8 +235,8 @@ class DCProg:
         while delta > 0.001:
             self.tao.value = min(self.mu*self.tao.value, self.tao_max)
             self.solve_prob()
-            # self.calculate_pi()
-            # self.save(sys.argv[8])
+            self.calculate_pi()
+            self.save(sys.argv[8], i)
             print(i)
             print("Objective Value without slack: ", self.pr_obj())
             print("Objective Value with slack: ",self.prob.value)
