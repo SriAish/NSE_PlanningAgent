@@ -246,6 +246,7 @@ class DCProg:
                 print("Objective Value without slack: ", obj)
                 print("Objective Value with slack: ", self.prob.value)
                 csvwriter.writerow([i, obj, self.prob.value])
+                csvfile.flush()
                 print("wrote row")
                 delta = abs(self.prob.value - obj_val)
                 print("Change in objective Value: ", delta)
