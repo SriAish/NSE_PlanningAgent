@@ -61,8 +61,8 @@ class DCProg:
     def init_para(self):
         self.x_para = {}
         self.pi_para = {}
-        x = self.load('NC_Agent_x_ni_3_3_3.pkl')
-        pi = self.load('NC_Agent_Policy_ni_3_3_3.pkl')
+        x = self.load('policy/NC_Agent_x_ni_3_3_3.pkl')
+        pi = self.load('policy/NC_Agent_Policy_ni_3_3_3.pkl')
         for s in self.BP.states:
             self.x_para[s] = cp.Parameter()
             self.x_para[s].value = log(x[s])
