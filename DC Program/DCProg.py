@@ -32,6 +32,10 @@ class DCProg:
         sys.stdout.flush()
 
 
+    def load(self, name):
+        file_to_read = open(name, "rb")
+        return pickle.load(file_to_read)
+    
     def init_belief(self):
         if self.locations == None:
             self.locations = [(1, 1)]
@@ -57,16 +61,18 @@ class DCProg:
     def init_para(self):
         self.x_para = {}
         self.pi_para = {}
+        x = self.load('NC_Agent_x_ni_3_3_3.pkl')
+        pi = self.load('NC_Agent_Policy_ni_3_3_3.pkl')
         for s in self.BP.states:
             self.x_para[s] = cp.Parameter()
-            self.x_para[s].value = 0
+            self.x_para[s].value = log(x[s])
             self.pi_para[s] = {}
             actions = self.BP.getValidActions(s)
             # val = log(1/len(actions))
             val = 0
             for a in actions:
                 self.pi_para[s][a] = cp.Parameter()
-                self.pi_para[s][a].value = val
+                self.pi_para[s][a].value = log(pi[s][a])
 
 
     def init_intermediates(self):
