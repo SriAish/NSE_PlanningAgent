@@ -238,7 +238,7 @@ class DCProg:
         with open('csv_results' + '.csv', 'w') as csvfile:
             csvwriter = csv.writer(csvfile)
             csvwriter.writerow(["iteration", "obj", "obj with slack"])
-            while delta > 0.00001:
+            while delta > 0.0001:
                 self.tao.value = min(self.mu*self.tao.value, self.tao_max)
                 self.solve_prob()
                 self.calculate_pi()
