@@ -48,11 +48,9 @@ class DCProg:
     def init_var(self):
         self.x = {}
         self.pi = {}
-        self.slack = {}
         for s in self.BP.states:
             self.x[s] = cp.Variable()
             self.pi[s] = {}
-            self.slack[s] = cp.Variable(4, nonneg=True)
             actions = self.BP.getValidActions(s)
             for a in actions:
                 self.pi[s][a] = cp.Variable()
@@ -96,14 +94,12 @@ class DCProg:
 
     def set_obj(self):
         obj = 0
-        slack = 0
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
                 obj += self.y[s][a]*self.BP.get_cost(s, a)
-            slack += cp.sum(self.slack[s])
 
-        self.obj = cp.Minimize(obj + (self.tao*slack))
+        self.obj = cp.Minimize(obj)
 
     def pr_obj(self):
         obj = 0
