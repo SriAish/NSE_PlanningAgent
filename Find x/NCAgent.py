@@ -113,7 +113,7 @@ class NCAgent:
 
     def calculate_pi(self):
         print("----------------------------------------")
-        print("Objective Value: ", self.pr_obj())
+        # print("Objective Value: ", self.pr_obj())
         print("----------------------------------------")
         self.x_ = {}
         for s in self.BP.states:
