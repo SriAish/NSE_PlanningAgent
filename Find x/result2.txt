@@ -1,0 +1,14 @@
+==========================================
+SLURM_JOB_ID = 557839
+SLURM_NODELIST = gnode52
+SLURM_JOB_GPUS = 0
+==========================================
+/var/spool/slurmd/job557839/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+((4, 8), (4, 8), True, 'p')
+initial belief setup
+variables setup
+objective setup
+eq1
+eq2
+problem setup
+slurmstepd: error: *** JOB 557839 ON gnode52 CANCELLED AT 2021-12-30T10:54:49 DUE TO TIME LIMIT ***

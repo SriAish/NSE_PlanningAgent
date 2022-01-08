@@ -2,7 +2,7 @@ from misc import BoxPushingConstants
 import sys
 import pickle
 from gekko import GEKKO
-from math import e
+from math import e, log
 
 class NCAgent:
     def __init__(self, BP, gamma = 0.9, locations = None):
@@ -37,10 +37,11 @@ class NCAgent:
         self.pi = {}
         for s in self.BP.states:
             self.pi[s] = {}
-            self.x[s] = self.m.Var(lb=0, ub=1/(1-self.gamma))
+            self.x[s] = self.m.Var()
             actions = self.BP.getValidActions(s)
+            val = log(1/len(actions))
             for a in actions:
-                self.pi[s][a] = 1/len(actions)
+                self.pi[s][a] = val
 
     def init_intermediates(self):
         self.in_y = {}
@@ -48,22 +49,21 @@ class NCAgent:
             self.in_y[s] = {} 
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.in_y[s][a] = self.x[s]*self.pi[s][a]
+                self.in_y[s][a] = e**self.x[s]*e**self.pi[s][a]
+
+    def set_obj(self):
+        for s in self.BP.states:
+            actions = self.BP.getValidActions(s)
+            for a in actions:
+                self.m.Minimize(self.in_y[s][a]*self.BP.get_cost(s, a))
 
     def pr_obj(self):
         obj = 0
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                obj += (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
+                obj += (e**self.x[s].value[0])*(e**self.pi[s][a].value[0])*self.BP.get_cost(s, a)
         return obj
-    
-    def set_obj(self):
-        obj = 0
-        for s in self.BP.states:
-            actions = self.BP.getValidActions(s)
-            for a in actions:
-                self.m.Minimize(self.in_y[s][a]*self.BP.get_cost(s, a))
 
     def make_constraints_eqn1(self):
         for s_ in self.BP.states:
@@ -97,7 +97,7 @@ class NCAgent:
             actions = self.BP.getValidActions(s)
             c = 0
             for a in actions:
-                c += self.pi[s][a]
+                c += e**self.pi[s][a]
             if actions:
                 self.m.Equation(c == su)
 
@@ -107,21 +107,21 @@ class NCAgent:
         sys.stdout.flush()
         self.make_constraints_eqn1()
         print("eq1")
-        # self.make_constraints_eqn2()
-        # print("eq2")
+        self.make_constraints_eqn2()
+        print("eq2")
         sys.stdout.flush()
 
     def calculate_pi(self):
-        print("----------------------------------------")
+        # print("----------------------------------------")
         # print("Objective Value: ", self.pr_obj())
-        print("----------------------------------------")
+        # print("----------------------------------------")
         self.x_ = {}
         for s in self.BP.states:
             self.x_[s] = self.x[s].value[0]
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'x_value' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'x_values' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.x_, f)
 
     def solve_prob(self):
