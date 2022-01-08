@@ -59,10 +59,10 @@ class DCProg:
     def init_para(self):
         self.x_para = {}
         self.pi_para = {}
-        x = self.load('policy/x_value3_3_3.pkl')
+        x = self.load('policy/x_values3_3_3.pkl')
         for s in self.BP.states:
             self.x_para[s] = cp.Parameter()
-            self.x_para[s].value = log(x[s])
+            self.x_para[s].value = x[s]
             self.pi_para[s] = {}
             actions = self.BP.getValidActions(s)
             val = log(1/len(actions))
