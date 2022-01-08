@@ -237,16 +237,14 @@ class DCProg:
         i = 0
         with open('csv_results' + '.csv', 'w') as csvfile:
             csvwriter = csv.writer(csvfile)
-            csvwriter.writerow(["iteration", "obj", "obj with slack"])
+            csvwriter.writerow(["iteration", "obj"])
             while delta > 0.0001:
                 self.tao.value = min(self.mu*self.tao.value, self.tao_max)
                 self.solve_prob()
                 self.calculate_pi()
                 print(i)
-                obj = self.pr_obj()
-                print("Objective Value without slack: ", obj)
-                print("Objective Value with slack: ", self.prob.value)
-                csvwriter.writerow([i, obj, self.prob.value])
+                print("Objective Value: ", self.prob.value)
+                csvwriter.writerow([i, self.prob.value])
                 csvfile.flush()
                 print("wrote row")
                 delta = abs(self.prob.value - obj_val)
