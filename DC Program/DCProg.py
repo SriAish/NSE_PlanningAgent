@@ -59,18 +59,16 @@ class DCProg:
     def init_para(self):
         self.x_para = {}
         self.pi_para = {}
-        x = self.load('policy/NC_Agent_x_ni_3_3_3.pkl')
-        pi = self.load('policy/NC_Agent_Policy_ni_3_3_3.pkl')
+        x = self.load('x_value3_3_3.pkl')
         for s in self.BP.states:
             self.x_para[s] = cp.Parameter()
             self.x_para[s].value = log(x[s])
             self.pi_para[s] = {}
             actions = self.BP.getValidActions(s)
-            # val = log(1/len(actions))
-            val = 0
+            val = log(1/len(actions))
             for a in actions:
                 self.pi_para[s][a] = cp.Parameter()
-                self.pi_para[s][a].value = log(pi[s][a])
+                self.pi_para[s][a].value = val
 
 
     def init_intermediates(self):
