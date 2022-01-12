@@ -1,6 +1,5 @@
 from boxPushingEnv import BoxPushing
 from randomAgent import RandomAgent
-from VIAgent import VIPolicy
 import csv
 import copy
 import numpy as np
@@ -28,7 +27,7 @@ def wrap_state(s):
     return (tuple(s[0]), tuple(s[1]), s[2], s[3])
 
 def generate_trajectory(agent):
-    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
+    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[int(7/2), 1]])
     done = False
     t = []
     ac = 0
@@ -41,7 +40,6 @@ def generate_trajectory(agent):
         t = t + [wrap_state(copy.deepcopy(s)), a]
 
         ac += 1
-
         s, _, done = env.getNextState(a)
 
         # print(s, a, done)        
@@ -80,8 +78,25 @@ def generate_n_tajectories(n, agent):
     file_to_write2 = open("mild_trajectories", "wb")
     pickle.dump(mild, file_to_write2)
 
+class VIPolicy:
+    def __init__(self, name):
+        self.loadPolicy(name)
+
+    def loadPolicy(self, name):
+        file_to_read = open(name, "rb")
+        self.policy = pickle.load(file_to_read)
+
+    def getAction(self, state):
+        action = 'down'
+        pr = 0
+        for key in self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])]:
+            if pr < self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])][key]:
+                pr = self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])][key]
+                action = key
+        return action
+
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = VIPolicy("policy/VIPolicy_7_7_2.pkl")
+    agent = VIPolicy("policy_values/VIp_7_7.pkl")
     generate_n_tajectories(50, agent)
     # generate_trajectory(agent)
