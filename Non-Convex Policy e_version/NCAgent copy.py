@@ -24,6 +24,10 @@ class NCAgent:
         print("problem setup")
         sys.stdout.flush()
     
+    def load(self, name):
+        file_to_read = open(name, "rb")
+        return pickle.load(file_to_read)
+
     def init_belief(self):
         if self.locations == None:
             self.locations = [(1, 1)]
@@ -101,6 +105,48 @@ class NCAgent:
             if actions:
                 self.m.Equation(c == su)
 
+
+    def make_constraints_eqn3(self):
+        trajs = self.load('severe_trajectories_7')
+        lhs = 0
+        for t in trajs:
+            e_pow = 0
+            tra = 1
+            ele = 0
+            for s, a in t:
+                e_pow += self.x[s] + self.pi[s][a]
+                if ele == 0:
+                    ele += 1
+                else:
+                    tra = tra*self.BP.T(s_prev, a_prev, s)
+                s_prev = s
+                a_prev = a
+
+            lhs += (e**e_pow)*tra
+
+        self.m.Equation(lhs <= 20)
+
+    def make_constraints_eqn4(self):
+        trajs = self.load('mild_trajectories_7')
+        lhs = 0
+        for t in trajs:
+            e_pow = 0
+            tra = 1
+            ele = 0
+            for s, a in t:
+                e_pow += self.x[s] + self.pi[s][a]
+                if ele == 0:
+                    ele += 1
+                else:
+                    tra = tra*self.BP.T(s_prev, a_prev, s)
+                s_prev = s
+                a_prev = a
+
+            lhs += (e**e_pow)*tra
+
+        self.m.Equation(lhs <= 15)
+
+
     def make_prob(self):
         self.set_obj()
         print("objective setup")
@@ -109,6 +155,10 @@ class NCAgent:
         print("eq1")
         self.make_constraints_eqn2()
         print("eq2")
+        # self.make_constraints_eqn3()
+        # print("eq3")
+        # self.make_constraints_eqn4()
+        # print("eq4")
         sys.stdout.flush()
 
     def calculate_pi(self):
@@ -123,6 +173,8 @@ class NCAgent:
             self.x_[s] = e**self.x[s].value[0]
             for a in actions:
                 self.pi_[s][a] = e**self.pi[s][a].value[0]
+            print(s, self.x_[s])
+            print(self.pi_[s])
 
     def save_pi(self, file):
         print("Saving policies")
