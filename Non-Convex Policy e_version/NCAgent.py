@@ -124,7 +124,7 @@ class NCAgent:
 
             lhs += (e**e_pow)*tra
 
-        self.m.Equation(lhs <= 3)
+        self.m.Equation(lhs <= 4)
 
 
     def make_prob(self):
