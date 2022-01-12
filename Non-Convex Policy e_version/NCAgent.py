@@ -151,6 +151,8 @@ class NCAgent:
             self.x_[s] = e**self.x[s].value[0]
             for a in actions:
                 self.pi_[s][a] = e**self.pi[s][a].value[0]
+            print(s, self.x_[s])
+            print(self.pi_[s])
 
     def save_pi(self, file):
         print("Saving policies")
