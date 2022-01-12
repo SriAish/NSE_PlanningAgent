@@ -9,7 +9,7 @@ def checkDamage(t, st=[6, 4]):
     rug = np.zeros((3, 3))
     n = 0
     ind = 0
-    for i in t:
+    for i, _ in t:
         # print("string: ", i)
         if type(i) is str:
             continue
@@ -27,7 +27,7 @@ def wrap_state(s):
     return (tuple(s[0]), tuple(s[1]), s[2], s[3])
 
 def generate_trajectory(agent):
-    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[int(7/2), 1]])
+    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
     done = False
     t = []
     ac = 0
@@ -37,7 +37,7 @@ def generate_trajectory(agent):
         # print(ac, s)
         # env.display()
     
-        t = t + [wrap_state(copy.deepcopy(s)), a]
+        t = t + [(wrap_state(copy.deepcopy(s)), a)]
 
         ac += 1
         s, _, done = env.getNextState(a)
@@ -72,6 +72,8 @@ def generate_n_tajectories(n, agent):
             csvwriter.writerow([t, c, ac])
             print(t, damage, ac)
 
+    print(len(severe), len(mild))
+
     file_to_write = open("severe_trajectories", "wb")
     pickle.dump(severe, file_to_write)
 
@@ -89,6 +91,7 @@ class VIPolicy:
     def getAction(self, state):
         action = 'down'
         pr = 0
+        print(state)
         for key in self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])]:
             if pr < self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])][key]:
                 pr = self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])][key]
