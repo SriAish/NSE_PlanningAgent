@@ -24,6 +24,10 @@ class NCAgent:
         print("problem setup")
         sys.stdout.flush()
     
+    def load(self, name):
+        file_to_read = open(name, "rb")
+        return pickle.load(file_to_read)
+
     def init_belief(self):
         if self.locations == None:
             self.locations = [(1, 1)]
