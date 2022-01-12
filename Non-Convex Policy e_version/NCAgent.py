@@ -155,10 +155,10 @@ class NCAgent:
         print("eq1")
         self.make_constraints_eqn2()
         print("eq2")
-        self.make_constraints_eqn3()
-        print("eq3")
-        self.make_constraints_eqn4()
-        print("eq4")
+        # self.make_constraints_eqn3()
+        # print("eq3")
+        # self.make_constraints_eqn4()
+        # print("eq4")
         sys.stdout.flush()
 
     def calculate_pi(self):
