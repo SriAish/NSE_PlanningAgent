@@ -83,43 +83,14 @@ class DLPAgent:
             if actions:
                 self.m.Equation(c == su)
 
-    
-    def load(self, name):
-        file_to_read = open(name, "rb")
-        return pickle.load(file_to_read)
-
-    def make_constraints_eqn3(self):
-        trajs = self.load('severe_trajectories')
-        lhs = 0
-        for t in trajs:
-            e_pow = 0
-            tra = 1
-            ele = 0
-            for s, a in t:
-                e_pow += self.x[s] + self.pi[s][a]
-                if ele == 0:
-                    ele += 1
-                else:
-                    tra = tra*self.BP.T(s_prev, a_prev, s)
-                s_prev = s
-                a_prev = a
-
-            lhs += (e**e_pow)*tra
-
-        self.m.Equation(lhs <= 0.15)
-
-
-
     def make_prob(self):
         self.set_obj()
         print("objective setup")
         sys.stdout.flush()
         self.make_constraints_eqn1()
         print("eq1")
-        self.make_constraints_eqn2()
-        print("eq2")
-        self.make_constraints_eqn3()
-        print("eq3")
+        # self.make_constraints_eqn2()
+        # print("eq2")
         sys.stdout.flush()
 
     def calculate_pi(self):
