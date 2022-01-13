@@ -10,7 +10,7 @@ class NCAgent:
         self.m.options.IMODE = 3
         self.m.options.SOLVER = int(sys.argv[9])
         print(self.m)
-        self.m.options.MAX_MEMORY = 5
+        self.m.options.MAX_MEMORY = 6
         self.BP = BP
         self.no_states = len(self.BP.states)
         self.gamma = gamma
