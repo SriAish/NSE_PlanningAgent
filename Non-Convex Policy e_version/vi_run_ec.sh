@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -A research
-#SBATCH --cpus-per-gpu=1
-#SBATCH --gres=gpu:4
-#SBATCH --mem-per-cpu=20G
+#SBATCH --cpus-per-gpu=2
+#SBATCH --gres=gpu:1
+#SBATCH --mem-per-cpu=40G
 #SBATCH -t 2-00:00:00
 #SBATCH --output=NC3.txt
 module add cuda/9.0
