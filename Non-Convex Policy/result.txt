@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 576830
+SLURM_JOB_ID = 576833
 SLURM_NODELIST = gnode59
 SLURM_JOB_GPUS = 2
 ==========================================
-/var/spool/slurmd/job576830/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job576833/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((3, 6), (3, 6), True, 'p')
 initial belief setup
 variables setup
@@ -25,9 +25,9 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
    Objects      :            0
    Constants    :            0
    Variables    :        12350
-   Intermediates:        12351
+   Intermediates:        12371
    Connections  :            0
-   Equations    :        27151
+   Equations    :        27171
    Residuals    :        14800
  
  @error: Insufficient Memory Allocated
@@ -55,4 +55,4 @@ Traceback (most recent call last):
   File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
     return self.value[key]
 TypeError: 'int' object is not subscriptable
-498
+506
