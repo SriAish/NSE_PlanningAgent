@@ -1,28 +1,82 @@
 ==========================================
-SLURM_JOB_ID = 536021
+SLURM_JOB_ID = 575912
 SLURM_NODELIST = gnode19
-SLURM_JOB_GPUS = 1
+SLURM_JOB_GPUS = 3
 ==========================================
-/var/spool/slurmd/job536021/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-((7, 14), (7, 14), True, 'p')
+/var/spool/slurmd/job575912/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+((3, 6), (3, 6), True, 'p')
 initial belief setup
 variables setup
 objective setup
-/var/spool/slurmd/job536021/slurm_script: line 12: 21174 Killed                  python3.7 NCAgent.py 15 7 3 6 4 7 14 15_15
-5196
+eq1
+eq2
+problem setup
+apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :        12347
+   Intermediates:            0
+   Connections  :            0
+   Equations    :        14797
+   Residuals    :        14797
+ 
+Exception Occured
+No solution or server unreachable.
+  Show errors with m.solve(disp=True).
+  Try local solve with m=GEKKO(remote=False).
+----------------------------------------
+Traceback (most recent call last):
+  File "NCAgent_2.py", line 206, in <module>
+    agent.calculate_pi()
+  File "NCAgent_2.py", line 166, in calculate_pi
+    print("Objective Value: ", self.pr_obj())
+  File "NCAgent_2.py", line 69, in pr_obj
+    obj += (e**self.x[s].value[0])*(e**self.pi[s][a].value[0])*self.BP.get_cost(s, a)
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+278
 --------------------
-((8, 16), (8, 16), True, 'p')
+((3, 6), (3, 6), True, 'p')
 initial belief setup
 variables setup
 objective setup
-/var/spool/slurmd/job536021/slurm_script: line 18: 21891 Killed                  python3.7 NCAgent.py 17 9 3 7 4 8 16 17_17
-5370
---------------------
-((9, 18), (9, 18), True, 'p')
-initial belief setup
-variables setup
-objective setup
-/var/spool/slurmd/job536021/slurm_script: line 24: 22670 Killed                  python3.7 NCAgent.py 19 9 3 8 5 9 18 19_19
-5233
---------------------
-slurmstepd: error: Detected 3 oom-kill event(s) in step 536021.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+eq1
+eq2
+problem setup
+apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ @error: Duplicate Names
+ error: duplicate variable declarations
+ variable:           1 v1
+ variable:       12348 v1
+ STOPPING. . .
+Exception Occured
+ @error: Duplicate Names
+ error: duplicate variable declarations
+ variable:           1 v1
+ variable:       12348 v1
+ STOPPING. . .
+
+----------------------------------------
+Traceback (most recent call last):
+  File "NCAgent_2.py", line 206, in <module>
+    agent.calculate_pi()
+  File "NCAgent_2.py", line 166, in calculate_pi
+    print("Objective Value: ", self.pr_obj())
+  File "NCAgent_2.py", line 69, in pr_obj
+    obj += (e**self.x[s].value[0])*(e**self.pi[s][a].value[0])*self.BP.get_cost(s, a)
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+210
