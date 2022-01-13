@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 575612
-SLURM_NODELIST = gnode24
+SLURM_JOB_ID = 575624
+SLURM_NODELIST = gnode34
 SLURM_JOB_GPUS = 2
 ==========================================
-/var/spool/slurmd/job575612/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job575624/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((3, 6), (3, 6), True, 'p')
 initial belief setup
 variables setup
@@ -374,8 +374,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 251
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 250
-Total CPU secs in IPOPT (w/o function evaluations)   =     12.711
-Total CPU secs in NLP function evaluations           =    110.410
+Total CPU secs in IPOPT (w/o function evaluations)   =     12.903
+Total CPU secs in NLP function evaluations           =    115.375
 
 EXIT: Maximum Number of Iterations Exceeded.
  
@@ -385,7 +385,7 @@ EXIT: Maximum Number of Iterations Exceeded.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    127.556100000002      sec
+ Solution time  :    134.164499999999      sec
  Objective      :    8.18958262456091     
  Unsuccessful with error code            0
  ---------------------------------------------------
@@ -398,13 +398,13 @@ Exception Occured
 
 ----------------------------------------
 Traceback (most recent call last):
-  File "NCAgent.py", line 206, in <module>
+  File "NCAgent.py", line 154, in <module>
     agent.calculate_pi()
-  File "NCAgent.py", line 166, in calculate_pi
+  File "NCAgent.py", line 116, in calculate_pi
     print("Objective Value: ", self.pr_obj())
-  File "NCAgent.py", line 69, in pr_obj
+  File "NCAgent.py", line 65, in pr_obj
     obj += (e**self.x[s].value[0])*(e**self.pi[s][a].value[0])*self.BP.get_cost(s, a)
   File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
     return self.value[key]
 TypeError: 'int' object is not subscriptable
-412
+415
