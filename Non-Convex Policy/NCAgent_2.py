@@ -188,8 +188,12 @@ class NCAgent:
 
     def make_constraints_eqn5(self):
         lhs = 0
+        i = 0
         for s in self.BP.states:
             lhs += self.cost_in_y[s]
+            i += 1
+            if i%500 == 0:
+                lhs = self.m.Intermediate(lhs)
 
         self.m.Equation(lhs - 8.2 <= 4)
 
