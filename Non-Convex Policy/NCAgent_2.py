@@ -148,6 +148,51 @@ class NCAgent:
 
         self.m.Equation(lhs <= 10)
 
+    def nse_sum(self):
+        trajs = self.load('severe_trajectories_7')
+        lhs = 0
+        for t in trajs:
+            tra = 1
+            ele = 0
+            for s, a in t:
+                tra = tra * self.x[s].value[0] * self.pi[s][a].value[0]
+                if ele == 0:
+                    ele += 1
+                else:
+                    tra = tra*self.BP.T(s_prev, a_prev, s)
+                s_prev = s
+                a_prev = a
+
+            lhs += tra
+
+        ans = lhs
+
+        trajs = self.load('mild_trajectories_7')
+        lhs = 0
+        for t in trajs:
+            tra = 1
+            ele = 0
+            for s, a in t:
+                tra = tra * self.x[s].value[0] * self.pi[s][a].value[0]
+                if ele == 0:
+                    ele += 1
+                else:
+                    tra = tra*self.BP.T(s_prev, a_prev, s)
+                s_prev = s
+                a_prev = a
+
+            lhs += tra
+
+        return ans, lhs
+
+
+    def make_constraints_eqn5(self):
+        lhs = 0
+        for s in self.BP.states:
+            lhs += self.cost_in_y[s]
+
+        self.m.Equation(lhs - 8.2 <= 4)
+
     def make_prob(self):
         self.set_obj()
         print("objective setup")
@@ -160,11 +205,14 @@ class NCAgent:
         print("eq3")
         self.make_constraints_eqn4()
         print("eq4")
+        self.make_constraints_eqn5()
+        print("eq5")
         sys.stdout.flush()
 
     def calculate_pi(self):
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
+        print("sums: ", self.nse_sum())
         print("----------------------------------------")
         self.pi_ = {}
         self.x_ = {}
