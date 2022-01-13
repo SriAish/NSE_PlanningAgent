@@ -34,7 +34,10 @@ class VIAgent:
     def update(self, k):
         delta = 0
         count = 0
+        k = 0
         for state in self.stateValues:
+            if state[3] == 'r':
+                k += 1
             if state == self.end_state:
                 continue
             st_val = 0
@@ -56,13 +59,15 @@ class VIAgent:
             delta = max(delta, abs(self.stateValues[state] - st_val))
             self.stateValues[state] = st_val
         # print(delta)
-        return delta, count
+        return delta, k
 
     def getSV(self):
         x = sys.maxsize
         k = 0
+        c = 0
         while x > self.delta:
             x, count = self.update(k)
+            c += count
             # print(count)
             # print("--------------")
         #     k += 1
@@ -70,7 +75,7 @@ class VIAgent:
         for s in self.pi:
             print(s, self.stateValues[s])
             print(self.pi[s])
-        return self.stateValues[self.belief_state[0]]
+        return self.stateValues[self.belief_state[0]], c
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
@@ -78,7 +83,7 @@ if __name__ == '__main__':
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_3_max.pkl')
     # agent = VIAgent(BP, 'Non-Convex Policy/policy/NC_Agent_Policy_nor_3_3_3.pkl')
-    agent = VIAgent(BP, 'Non-Convex Policy e_version/policy/NC_Agent_Policy_ni_1_3_3.pkl')
+    agent = VIAgent(BP, 'Non-Convex Policy e_version/policy/NC_Agent_Policy_fc_3_7_7_og.pkl')
     # agent = VIAgent(BP, 'Convex Policy e_version/policy/C_Agent_Policy_fc_1_3_3.pkl')
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_no_upper_3_31.pkl')
     # agent = VIAgent(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3.pkl')
