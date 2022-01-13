@@ -55,7 +55,7 @@ class NCAgent:
             actions = self.BP.getValidActions(s)
             lhs = 0
             for a in actions:
-                self.in_y[s][a] = self.x[s]*self.pi[s][a]
+                self.in_y[s][a] = self.m.Intermediate(self.x[s]*self.pi[s][a])
                 lhs += self.in_y[s][a]*self.BP.get_cost(s, a)
             self.cost_in_y[s] = self.m.Intermediate(lhs)
 
@@ -117,7 +117,7 @@ class NCAgent:
             tra = 1
             ele = 0
             for s, a in t:
-                tra = tra * self.x[s] * self.pi[s][a]
+                tra = tra * self.in_y[s][a]
                 if ele == 0:
                     ele += 1
                 else:
@@ -136,7 +136,7 @@ class NCAgent:
             tra = 1
             ele = 0
             for s, a in t:
-                tra = tra * self.x[s] * self.pi[s][a]
+                tra = tra * self.in_y[s][a]
                 if ele == 0:
                     ele += 1
                 else:
