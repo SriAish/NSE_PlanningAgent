@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -A research
-#SBATCH --cpus-per-gpu=2
-#SBATCH --gres=gpu:1
-#SBATCH --mem-per-cpu=40G
+#SBATCH --cpus-per-gpu=1
+#SBATCH --gres=gpu:4
+#SBATCH --mem-per-cpu=20G
 #SBATCH -t 2-00:00:00
 #SBATCH --output=NC3.txt
 module add cuda/9.0
@@ -32,11 +32,11 @@ source ~/keras/bin/activate
 # runtime=$((end-start))
 # echo $runtime
 # echo "--------------------"
-start=`date +%s`
-python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_nog 1
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
+# start=`date +%s`
+# python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_nog 1
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
 echo "--------------------"
 start=`date +%s`
 python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7 3
