@@ -6,7 +6,7 @@ from math import e, log
 
 class NCAgent:
     def __init__(self, BP, gamma = 0.9, locations = None):
-        self.m = GEKKO(remote=False)
+        self.m = GEKKO()
         self.m.options.IMODE = 3
         self.m.options.SOLVER = int(sys.argv[9])
         self.BP = BP
