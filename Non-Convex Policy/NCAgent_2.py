@@ -148,13 +148,6 @@ class NCAgent:
 
         self.m.Equation(lhs <= 1)
 
-    def make_constraints_eqn5(self):
-        lhs = 0
-        for s in self.BP.states:
-            lhs += self.cost_in_y[s]
-
-        self.m.Equation(lhs - 8.2 <= 2)
-
     def make_prob(self):
         self.set_obj()
         print("objective setup")
