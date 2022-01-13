@@ -127,7 +127,7 @@ class NCAgent:
 
             lhs += tra
 
-        self.m.Equation(lhs <= 1)
+        self.m.Equation(lhs <= 10)
 
     def make_constraints_eqn4(self):
         trajs = self.load('mild_trajectories_7')
@@ -146,7 +146,7 @@ class NCAgent:
 
             lhs += tra
 
-        self.m.Equation(lhs <= 1)
+        self.m.Equation(lhs <= 10)
 
     def make_prob(self):
         self.set_obj()
