@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 576031
+SLURM_JOB_ID = 576035
 SLURM_NODELIST = gnode12
 SLURM_JOB_GPUS = 3
 ==========================================
-/var/spool/slurmd/job576031/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job576035/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((2, 2), (2, 2), True, 'p')
 initial belief setup
 variables setup
@@ -246,7 +246,7 @@ problem setup
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    3.25400000000081      sec
+ Solution time  :    3.29349999999977      sec
  Objective      :    6.26264509117842     
  Successful solution
  ---------------------------------------------------
@@ -254,7 +254,7 @@ problem setup
 
 ----------------------------------------
 Objective Value:  6.262645091187112
-Objective Value:  3.7267412638812085e-17
+Objective Value:  3.726741263881219e-17
 ----------------------------------------
 ((0, 0), (0, 0), False, 'p') 4.388367802284038e-12
 {'down': 2.348162606946618e-08, 'up': 0.4048258868926351, 'right': 4.259156891746138e-07, 'left': 0.5951736623597157, 'pick_up': 1.3535007117709085e-09}
@@ -437,5 +437,5 @@ Objective Value:  3.7267412638812085e-17
 ((2, 2), (2, 2), True, 'p') 0.5663260557579457
 {'down': 2.0366244213938557e-10, 'up': 1.814516367233923e-21, 'right': 1.3322817487544104e-27, 'left': 2.7651287133229223e-30, 'drop': 0.9999999997963376}
 Saving policies
-5
+4
 --------------------
