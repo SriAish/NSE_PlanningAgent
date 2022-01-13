@@ -10,7 +10,7 @@ class NCAgent:
         self.m.options.IMODE = 3
         self.m.options.SOLVER = int(sys.argv[9])
         # print(self.m.MAX_MEMORY)
-        self.m.MAX_MEMORY = 1000000
+        self.m.MAX_MEMORY = 5
         self.BP = BP
         self.no_states = len(self.BP.states)
         self.gamma = gamma
@@ -239,6 +239,7 @@ class NCAgent:
 
     def solve_prob(self):
         try:
+            self.m.MAX_MEMORY = 5
             self.m.solve()
         except Exception as e:
             print("Exception Occured")
