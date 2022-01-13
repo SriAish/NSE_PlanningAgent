@@ -50,7 +50,7 @@ class NCAgent:
             self.in_y[s] = {} 
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.in_y[s][a] = e**self.x[s]*e**self.pi[s][a]
+                self.in_y[s][a] = e**(self.x[s]+self.pi[s][a])
 
     def pr_obj(self):
         obj = 0
@@ -109,8 +109,8 @@ class NCAgent:
         sys.stdout.flush()
         self.make_constraints_eqn1()
         print("eq1")
-        # self.make_constraints_eqn2()
-        # print("eq2")
+        self.make_constraints_eqn2()
+        print("eq2")
         sys.stdout.flush()
 
     def calculate_pi(self):
