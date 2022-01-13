@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 576835
-SLURM_NODELIST = gnode16
+SLURM_JOB_ID = 576842
+SLURM_NODELIST = gnode51
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job576835/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job576842/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((3, 6), (3, 6), True, 'p')
 initial belief setup
 variables setup
@@ -46,7 +46,7 @@ Exception Occured
 
 ----------------------------------------
 Traceback (most recent call last):
-  File "NCAgent_2.py", line 259, in <module>
+  File "NCAgent_2.py", line 260, in <module>
     agent.calculate_pi()
   File "NCAgent_2.py", line 220, in calculate_pi
     print("Objective Value: ", self.pr_obj())
@@ -55,4 +55,4 @@ Traceback (most recent call last):
   File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
     return self.value[key]
 TypeError: 'int' object is not subscriptable
-517
+483
