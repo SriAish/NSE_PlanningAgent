@@ -124,7 +124,7 @@ class NCAgent:
 
             lhs += (e**e_pow)*tra
 
-        self.m.Equation(lhs <= 20)
+        self.m.Equation(lhs <= 4)
 
     def make_constraints_eqn4(self):
         trajs = self.load('mild_trajectories_7')
