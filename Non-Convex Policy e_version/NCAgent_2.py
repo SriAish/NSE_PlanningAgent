@@ -187,6 +187,15 @@ class NCAgent:
         self.m.Equation(lhs <= 0.5)
 
 
+    def make_constraints_eqn5(self):
+        lhs = 0
+        for s in self.BP.states:
+            actions = self.BP.getValidActions(s)
+            for a in actions:
+                lhs += self.in_y[s][a]*self.BP.get_cost(s, a)
+
+        self.m.Equation(lhs - 8.2 <= 2)
+
     def make_prob(self):
         self.set_obj()
         print("objective setup")
@@ -227,7 +236,7 @@ class NCAgent:
 
     def solve_prob(self):
         try:
-            self.m.solve()
+            self.m.solve(debug=0)
         except Exception as e:
             print("Exception Occured")
             print(e)
