@@ -1,58 +1,13 @@
 ==========================================
-SLURM_JOB_ID = 576384
-SLURM_NODELIST = gnode90
-SLURM_JOB_GPUS = 0
+SLURM_JOB_ID = 576438
+SLURM_NODELIST = gnode32
+SLURM_JOB_GPUS = 2
 ==========================================
-/var/spool/slurmd/job576384/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job576438/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((3, 6), (3, 6), True, 'p')
 initial belief setup
 variables setup
 objective setup
 eq1
+eq2
 problem setup
-apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
- APMonitor, Version 1.0.1
- APMonitor Optimization Suite
- ----------------------------------------------------------------
- 
- 
- --------- APM Model Size ------------
- Each time step contains
-   Objects      :            0
-   Constants    :            0
-   Variables    :        12347
-   Intermediates:            0
-   Connections  :            0
-   Equations    :        12347
-   Residuals    :        12347
- 
- Number of state variables:          12347
- Number of total equations: -         2450
- Number of slack variables: -            0
- ---------------------------------------
- Degrees of freedom       :           9897
- 
- ----------------------------------------------
- Steady State Optimization with APOPT Solver
- ----------------------------------------------
- 
- Iter    Objective  Convergence
-    0  9.10925E+02  8.10000E-01
-    1  3.39943E+02  2.42763E-01
-Exception Occured
-No solution or server unreachable.
-  Show errors with m.solve(disp=True).
-  Try local solve with m=GEKKO(remote=False).
-----------------------------------------
-Traceback (most recent call last):
-  File "NCAgent_3.py", line 156, in <module>
-    agent.calculate_pi()
-  File "NCAgent_3.py", line 118, in calculate_pi
-    print("Objective Value: ", self.pr_obj())
-  File "NCAgent_3.py", line 60, in pr_obj
-    obj += (e**self.x[s].value[0])*(e**self.pi[s][a].value[0])*self.BP.get_cost(s, a)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-2270
---------------------
