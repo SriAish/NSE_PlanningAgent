@@ -126,6 +126,27 @@ class NCAgent:
 
         self.m.Equation(lhs <= 5.5)
 
+    
+    def nse_sum(self):
+        trajs = self.load('severe_trajectories_3')
+        lhs = 0
+        for t in trajs:
+            e_pow = 0
+            tra = 1
+            ele = 0
+            for s, a in t:
+                e_pow += self.x[s].value[0] + self.pi[s][a].value[0]
+                if ele == 0:
+                    ele += 1
+                else:
+                    tra = tra*self.BP.T(s_prev, a_prev, s)
+                s_prev = s
+                a_prev = a
+
+            lhs += (e**e_pow)*tra
+
+        return lhs
+
     def make_constraints_eqn4(self):
         trajs = self.load('mild_trajectories_7')
         lhs = 0
@@ -164,6 +185,7 @@ class NCAgent:
     def calculate_pi(self):
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
+        print("Objective Value: ", self.nse_sum())
         print("----------------------------------------")
         self.pi_ = {}
         self.x_ = {}
