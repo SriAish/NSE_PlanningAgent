@@ -131,11 +131,11 @@ class NCAgent:
         trajs = self.load('severe_trajectories_3')
         lhs = 0
         for t in trajs:
-            e_pow = 0
+            e_pow = 1
             tra = 1
             ele = 0
             for s, a in t:
-                e_pow += self.x[s].value[0] + self.pi[s][a].value[0]
+                e_pow *= e**self.x[s].value[0] * e**self.pi[s][a].value[0]
                 if ele == 0:
                     ele += 1
                 else:
@@ -143,7 +143,7 @@ class NCAgent:
                 s_prev = s
                 a_prev = a
 
-            lhs += (e**e_pow)*tra
+            lhs += e_pow*tra
 
         return lhs
 
