@@ -51,12 +51,14 @@ class NCAgent:
         self.in_y = {}
         self.cost_in_y = {}
         for s in self.BP.states:
-            self.in_y[s] = {} 
-            self.cost_in_y[s] = {} 
+            self.in_y[s] = {}  
             actions = self.BP.getValidActions(s)
+            s_sum = 0
             for a in actions:
                 self.in_y[s][a] = e**self.x[s]*e**self.pi[s][a]
-                self.cost_in_y[s][a] = self.m.Intermediate(self.in_y[s][a]*self.BP.get_cost(s, a))
+                s_sum += self.in_y[s][a]*self.BP.get_cost(s, a)
+            self.cost_in_y[s] = self.m.Intermediate(s_sum)
+            
 
     def set_obj(self):
         for s in self.BP.states:
@@ -193,9 +195,7 @@ class NCAgent:
     def make_constraints_eqn5(self):
         lhs = 0
         for s in self.BP.states:
-            actions = self.BP.getValidActions(s)
-            for a in actions:
-                lhs += self.cost_in_y[s][a]
+            lhs += self.cost_in_y[s]
 
         self.m.Equation(lhs - 8.2 <= 2)
 
