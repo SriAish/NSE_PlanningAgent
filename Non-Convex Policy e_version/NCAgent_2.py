@@ -208,7 +208,7 @@ class NCAgent:
         print("eq3")
         self.make_constraints_eqn4()
         print("eq4")
-        self.make_constraints_eqn4()
+        self.make_constraints_eqn5()
         print("eq5")
         sys.stdout.flush()
 
