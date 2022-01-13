@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 576807
-SLURM_NODELIST = gnode36
-SLURM_JOB_GPUS = 0
+SLURM_JOB_ID = 576826
+SLURM_NODELIST = gnode59
+SLURM_JOB_GPUS = 2
 ==========================================
-/var/spool/slurmd/job576807/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job576826/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((3, 6), (3, 6), True, 'p')
 initial belief setup
 variables setup
@@ -12,6 +12,7 @@ eq1
 eq2
 eq3
 eq4
+eq5
 problem setup
 apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
  APMonitor, Version 1.0.1
@@ -23,111 +24,35 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  Each time step contains
    Objects      :            0
    Constants    :            0
-   Variables    :        12349
-   Intermediates:        12347
+   Variables    :        12350
+   Intermediates:        12351
    Connections  :            0
-   Equations    :        27146
-   Residuals    :        14799
+   Equations    :        27151
+   Residuals    :        14800
  
- Number of state variables:          12349
- Number of total equations: -         4902
- Number of slack variables: -            2
- ---------------------------------------
- Degrees of freedom       :           7445
- 
- **********************************************
- Steady State Optimization with Interior Point Solver
- **********************************************
-  
-  
- Info: Exact Hessian
+ @error: Insufficient Memory Allocated
+ Error: Not enough memory to compile model 1st derivatives
+ Current limit:        10000
+ Requested sparse elements:        10002
+ Increase MAX_MEMORY 10^(2-10), Currently: 10^           4
+ Stopping...
+Exception Occured
+ @error: Insufficient Memory Allocated
+ Error: Not enough memory to compile model 1st derivatives
+ Current limit:        10000
+ Requested sparse elements:        10002
+ Increase MAX_MEMORY 10^(2-10), Currently: 10^           4
+ Stopping...
 
-******************************************************************************
-This program contains Ipopt, a library for large-scale nonlinear optimization.
- Ipopt is released as open source code under the Eclipse Public License (EPL).
-         For more information visit http://projects.coin-or.org/Ipopt
-******************************************************************************
-
-This is Ipopt version 3.12.10, running with linear solver ma57.
-
-Number of nonzeros in equality constraint Jacobian...:    49246
-Number of nonzeros in inequality constraint Jacobian.:        0
-Number of nonzeros in Lagrangian Hessian.............:    13475
-
-Total number of variables............................:    12349
-                     variables with only lower bounds:        2
-                variables with lower and upper bounds:    12347
-                     variables with only upper bounds:        0
-Total number of equality constraints.................:     4902
-Total number of inequality constraints...............:        0
-        inequality constraints with only lower bounds:        0
-   inequality constraints with lower and upper bounds:        0
-        inequality constraints with only upper bounds:        0
-
-iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
-   0  2.4683975e+01 9.99e+00 6.22e-02   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
-   1  1.7225804e+01 4.89e+00 5.10e+02  -5.9 9.99e+00    -  9.90e-04 5.11e-01f  1
-   2  1.5684882e+01 3.80e+00 5.05e+02  -0.3 4.89e+00   2.0 1.00e+00 2.22e-01h  1
-   3  1.3838389e+01 2.46e+00 3.72e+02  -6.3 3.80e+00   1.5 2.27e-01 3.52e-01f  1
-   4  1.1958393e+01 1.08e+00 2.86e+02  -2.1 2.46e+00   1.9 4.16e-01 5.61e-01h  1
-   5  1.0891720e+01 1.64e-01 7.06e+01  -6.7 1.08e+00   1.5 3.77e-01 8.49e-01h  1
-   6  1.0715365e+01 1.90e-03 3.58e+01  -6.9 1.64e-01   1.0 6.48e-01 9.88e-01h  1
-   7  1.0707603e+01 1.03e-05 1.86e+01  -3.4 8.22e-03   0.5 9.01e-01 9.95e-01h  1
-   8  1.0551964e+01 6.74e-03 6.25e+02  -4.4 1.13e-01    -  6.59e-01 1.00e+00f  1
-   9  1.0527496e+01 2.64e-04 8.17e+00  -3.7 3.71e-02   0.0 1.00e+00 1.00e+00h  1
-iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
-  10  1.0389059e+01 4.03e-03 2.28e+03  -3.9 1.28e-01  -0.4 7.26e-01 1.00e+00f  1
-  11  1.0309373e+01 1.63e-03 8.61e-01  -4.1 8.61e-02  -0.0 1.00e+00 1.00e+00h  1
-  12  1.0158923e+01 5.81e-03 4.89e+02  -4.3 2.10e-01  -0.5 8.47e-01 1.00e+00f  1
-  13  1.0090858e+01 2.99e-03 1.12e-01  -5.1 1.34e-01  -0.1 1.00e+00 1.00e+00h  1
-  14  1.0022911e+01 4.65e-03 1.08e-01  -4.8 2.08e-01  -0.5 1.00e+00 1.00e+00h  1
-  15  1.0007203e+01 3.28e-04 4.90e-02  -5.7 6.40e-02  -0.1 1.00e+00 1.00e+00h  1
-  16  1.0000112e+01 1.21e-04 8.91e+00  -6.1 2.53e-02  -0.6 1.00e+00 9.36e-01h  1
-  17  1.0000005e+01 4.30e-07 2.80e-01  -7.8 2.26e-04  -1.1 1.00e+00 9.97e-01h  1
-  18  1.0000000e+01 1.11e-07 1.68e+00  -8.5 1.36e-04  -1.5 1.00e+00 7.43e-01h  1
-  19  1.0000001e+01 1.99e-10 2.69e-05  -8.6 3.20e-04  -2.0 1.00e+00 1.00e+00h  1
-iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
-  20  1.0000000e+01 4.43e-11 5.10e-02  -8.9 2.21e-04  -2.5 1.00e+00 6.62e-01h  1
-  21  1.0000000e+01 8.74e-03 2.80e-02  -9.3 8.95e-02    -  9.95e-01 1.00e+00h  1
-  22  1.0000000e+01 2.32e-04 8.46e-04  -9.4 6.36e-03  -3.0 1.00e+00 9.75e-01h  1
-  23  1.0000000e+01 1.31e-08 4.34e-07  -9.4 2.27e-04  -3.5 1.00e+00 1.00e+00f  1
-
-Number of Iterations....: 23
-
-                                   (scaled)                 (unscaled)
-Objective...............:   9.9999999968185680e+00    9.9999999968185680e+00
-Dual infeasibility......:   4.3359140010573571e-07    4.3359140010573571e-07
-Constraint violation....:   1.3075325600020449e-08    1.3075325600020449e-08
-Complementarity.........:   3.9738744736969058e-10    3.9738744736969058e-10
-Overall NLP error.......:   4.3359140010573571e-07    4.3359140010573571e-07
-
-
-Number of objective function evaluations             = 24
-Number of objective gradient evaluations             = 24
-Number of equality constraint evaluations            = 24
-Number of inequality constraint evaluations          = 0
-Number of equality constraint Jacobian evaluations   = 24
-Number of inequality constraint Jacobian evaluations = 0
-Number of Lagrangian Hessian evaluations             = 23
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.174
-Total CPU secs in NLP function evaluations           =      7.338
-
-EXIT: Optimal Solution Found.
- 
- The solution was found.
- 
- The final value of the objective function is    9.99999999681857     
- 
- ---------------------------------------------------
- Solver         :  IPOPT (v3.12)
- Solution time  :    9.28269999998156      sec
- Objective      :    10.0000000268599     
- Successful solution
- ---------------------------------------------------
- 
 ----------------------------------------
-Objective Value:  10.000000026811747
-sums:  (0.0, 0.0)
-----------------------------------------
-Saving policies
-491
+Traceback (most recent call last):
+  File "NCAgent_2.py", line 257, in <module>
+    agent.calculate_pi()
+  File "NCAgent_2.py", line 218, in calculate_pi
+    print("Objective Value: ", self.pr_obj())
+  File "NCAgent_2.py", line 67, in pr_obj
+    obj += (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+468
