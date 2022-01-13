@@ -49,11 +49,14 @@ class NCAgent:
 
     def init_intermediates(self):
         self.in_y = {}
+        self.cost_in_y = {}
         for s in self.BP.states:
             self.in_y[s] = {} 
+            self.cost_in_y[s] = {} 
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.in_y[s][a] = self.m.Intermediate(e**self.x[s]*e**self.pi[s][a])
+                self.in_y[s][a] = e**self.x[s]*e**self.pi[s][a]
+                self.cost_in_y[s][a] = self.m.Intermediate(self.in_y[s][a]*self.BP.get_cost(s, a))
 
     def set_obj(self):
         for s in self.BP.states:
@@ -192,7 +195,7 @@ class NCAgent:
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                lhs += self.in_y[s][a]*self.BP.get_cost(s, a)
+                lhs += self.cost_in_y[s][a]
 
         self.m.Equation(lhs - 8.2 <= 2)
 
