@@ -107,7 +107,7 @@ class NCAgent:
 
 
     def make_constraints_eqn3(self):
-        trajs = self.load('severe_trajectories_7')
+        trajs = self.load('severe_trajectories_3')
         lhs = 0
         for t in trajs:
             e_pow = 0
@@ -155,8 +155,8 @@ class NCAgent:
         print("eq1")
         self.make_constraints_eqn2()
         print("eq2")
-        # self.make_constraints_eqn3()
-        # print("eq3")
+        self.make_constraints_eqn3()
+        print("eq3")
         # self.make_constraints_eqn4()
         # print("eq4")
         sys.stdout.flush()
