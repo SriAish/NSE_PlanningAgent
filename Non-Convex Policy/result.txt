@@ -1,10 +1,11 @@
 ==========================================
-SLURM_JOB_ID = 576842
+SLURM_JOB_ID = 576843
 SLURM_NODELIST = gnode51
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job576842/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job576843/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((3, 6), (3, 6), True, 'p')
+<gekko.gekko.GEKKO object at 0x14e718186150>
 initial belief setup
 variables setup
 objective setup
@@ -14,45 +15,3 @@ eq3
 eq4
 eq5
 problem setup
-apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
- APMonitor, Version 1.0.1
- APMonitor Optimization Suite
- ----------------------------------------------------------------
- 
- 
- --------- APM Model Size ------------
- Each time step contains
-   Objects      :            0
-   Constants    :            0
-   Variables    :        12350
-   Intermediates:        12371
-   Connections  :            0
-   Equations    :        27171
-   Residuals    :        14800
- 
- @error: Insufficient Memory Allocated
- Error: Not enough memory to compile model 1st derivatives
- Current limit:        10000
- Requested sparse elements:        10002
- Increase MAX_MEMORY 10^(2-10), Currently: 10^           4
- Stopping...
-Exception Occured
- @error: Insufficient Memory Allocated
- Error: Not enough memory to compile model 1st derivatives
- Current limit:        10000
- Requested sparse elements:        10002
- Increase MAX_MEMORY 10^(2-10), Currently: 10^           4
- Stopping...
-
-----------------------------------------
-Traceback (most recent call last):
-  File "NCAgent_2.py", line 260, in <module>
-    agent.calculate_pi()
-  File "NCAgent_2.py", line 220, in calculate_pi
-    print("Objective Value: ", self.pr_obj())
-  File "NCAgent_2.py", line 69, in pr_obj
-    obj += (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-483
