@@ -83,7 +83,7 @@ if __name__ == '__main__':
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_3_3_max.pkl')
     # agent = VIAgent(BP, 'Non-Convex Policy/policy/NC_Agent_Policy_nor_3_3_3.pkl')
-    agent = VIAgent(BP, 'Non-Convex Policy e_version/policy/NC_Agent_Policy_fc_3_3_3_2.pkl')
+    agent = VIAgent(BP, 'Non-Convex Policy e_version/policy/NC_Agent_Policy_fc_3_3_3_3.pkl')
     # agent = VIAgent(BP, 'Convex Policy e_version/policy/C_Agent_Policy_fc_1_3_3.pkl')
     # agent = VIAgent(BP, 'Dual LP - Gekko/policy/NC_Agent_Policy_no_upper_3_31.pkl')
     # agent = VIAgent(BP, 'Dual LP/policy/DLP_Agent_Policy_3_3.pkl')

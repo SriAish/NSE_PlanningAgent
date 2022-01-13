@@ -124,7 +124,7 @@ class NCAgent:
 
             lhs += (e**e_pow)*tra
 
-        self.m.Equation(lhs <= 0.5)
+        self.m.Equation(lhs <= 0.001)
 
     
     def nse_sum(self):
