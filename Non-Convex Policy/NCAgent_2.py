@@ -9,7 +9,8 @@ class NCAgent:
         self.m = GEKKO()
         self.m.options.IMODE = 3
         self.m.options.SOLVER = int(sys.argv[9])
-        self.m.MAX_MEMORY = 6
+        print(self.m.MAX_MEMORY)
+        self.m.MAX_MEMORY = 10
         self.BP = BP
         self.no_states = len(self.BP.states)
         self.gamma = gamma
