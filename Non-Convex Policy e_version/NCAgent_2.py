@@ -107,7 +107,7 @@ class NCAgent:
 
 
     def make_constraints_eqn3(self):
-        trajs = self.load('severe_trajectories_3')
+        trajs = self.load('severe_trajectories_7')
         lhs = 0
         for t in trajs:
             e_pow = 0
@@ -124,11 +124,11 @@ class NCAgent:
 
             lhs += (e**e_pow)*tra
 
-        self.m.Equation(lhs <= 0.001)
+        self.m.Equation(lhs <= 1)
 
     
     def nse_sum(self):
-        trajs = self.load('severe_trajectories_3')
+        trajs = self.load('severe_trajectories_7')
         lhs = 0
         for t in trajs:
             e_pow = 1
@@ -145,7 +145,26 @@ class NCAgent:
 
             lhs += e_pow*tra
 
-        return lhs
+        trajs = self.load('mild_trajectories_7')
+
+        ans = lhs
+        lhs = 0
+        for t in trajs:
+            e_pow = 1
+            tra = 1
+            ele = 0
+            for s, a in t:
+                e_pow *= e**self.x[s].value[0] * e**self.pi[s][a].value[0]
+                if ele == 0:
+                    ele += 1
+                else:
+                    tra = tra*self.BP.T(s_prev, a_prev, s)
+                s_prev = s
+                a_prev = a
+
+            lhs += e_pow*tra
+
+        return ans, lhs
 
     def make_constraints_eqn4(self):
         trajs = self.load('mild_trajectories_7')
@@ -165,7 +184,7 @@ class NCAgent:
 
             lhs += (e**e_pow)*tra
 
-        self.m.Equation(lhs <= 15)
+        self.m.Equation(lhs <= 0.5)
 
 
     def make_prob(self):
