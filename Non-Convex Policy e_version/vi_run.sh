@@ -15,7 +15,7 @@ source ~/keras/bin/activate
 # echo $runtime
 # echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent_2.py 3 1 1 1 0 2 2 3_3_2 3
+python3.7 NCAgent_2.py 3 1 1 1 0 2 2 3_3_3 3
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
