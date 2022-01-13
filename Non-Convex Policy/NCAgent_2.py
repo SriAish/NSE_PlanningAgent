@@ -49,11 +49,15 @@ class NCAgent:
 
     def init_intermediates(self):
         self.in_y = {}
+        self.cost_in_y = {}
         for s in self.BP.states:
             self.in_y[s] = {} 
             actions = self.BP.getValidActions(s)
+            lhs = 0
             for a in actions:
                 self.in_y[s][a] = self.x[s]*self.pi[s][a]
+                lhs += self.in_y[s][a]*self.BP.get_cost(s, a)
+            self.cost_in_y[s] = self.m.Intermediate(lhs)
 
     def pr_obj(self):
         obj = 0
@@ -123,9 +127,9 @@ class NCAgent:
 
             lhs += tra
 
-        self.m.Equation(lhs <= 1)
+        self.m.Equation(lhs <= 0.001)
 
-    def make_constraints_eqn3(self):
+    def make_constraints_eqn4(self):
         trajs = self.load('mild_trajectories_7')
         lhs = 0
         for t in trajs:
@@ -142,7 +146,14 @@ class NCAgent:
 
             lhs += tra
 
-        self.m.Equation(lhs <= 1)
+        self.m.Equation(lhs <= 0.003)
+
+    def make_constraints_eqn5(self):
+        lhs = 0
+        for s in self.BP.states:
+            lhs += self.cost_in_y[s]
+
+        self.m.Equation(lhs - 8.2 <= 2)
 
     def make_prob(self):
         self.set_obj()
@@ -152,6 +163,10 @@ class NCAgent:
         print("eq1")
         self.make_constraints_eqn2()
         print("eq2")
+        self.make_constraints_eqn3()
+        print("eq3")
+        self.make_constraints_eqn4()
+        print("eq4")
         sys.stdout.flush()
 
     def calculate_pi(self):
