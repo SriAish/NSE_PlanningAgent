@@ -130,7 +130,7 @@ class NCAgent:
 
             lhs += self.m.Intermediate(tra)
 
-        self.m.Equation(lhs*100000000 <= 0.8)
+        self.m.Equation(lhs*100000000 <= 0.3)
 
     def make_constraints_eqn4(self):
         trajs = self.load('mild_trajectories_7_200')
@@ -149,10 +149,10 @@ class NCAgent:
 
             lhs += self.m.Intermediate(tra)
 
-        self.m.Equation(lhs*1000000000 <= 0.05)
+        self.m.Equation(lhs*1000000000 <= 0.03)
 
     def nse_sum(self):
-        trajs = self.load('severe_trajectories_7_1000')
+        trajs = self.load('severe_trajectories_7_200')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -170,7 +170,7 @@ class NCAgent:
 
         ans = lhs
 
-        trajs = self.load('mild_trajectories_7_1000')
+        trajs = self.load('mild_trajectories_7_200')
         lhs = 0
         for t in trajs:
             tra = 1
