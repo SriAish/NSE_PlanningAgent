@@ -251,7 +251,7 @@ if __name__ == '__main__':
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
-    locations = [(int(int(sys.argv[1])/2), 1)]
+    locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
 
     # if int(sys.argv[1]) == 7:
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
