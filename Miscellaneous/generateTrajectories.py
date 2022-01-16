@@ -1,5 +1,4 @@
 from boxPushingEnv import BoxPushing
-from randomAgent import RandomAgent
 import csv
 import copy
 import numpy as np
@@ -98,8 +97,31 @@ class VIPolicy:
                 action = key
         return action
 
+class Agent:
+    def __init__(self, name):
+        self.loadPolicy(name)
+
+    def loadPolicy(self, name):
+        file_to_read = open(name, "rb")
+        policy = pickle.load(file_to_read)
+        self.pi = {}
+        self.prob = {}
+        # print(policy)
+        for s in policy:
+            self.pi[s] = []
+            self.prob[s] = []
+            for a in policy[s]:
+                self.pi[s].append(a)
+                # self.prob[s].append(policy[s][a])
+                self.prob[s].append(round(policy[s][a], 5))
+
+    def getAction(self, state):
+        state = (tuple(state[0]), tuple(state[1]), state[2], state[3])
+        print(np.sum(self.prob[state]))
+        return np.random.choice(self.pi[state], p = self.prob[state])
+
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = VIPolicy("policy_values/VIp_7_7.pkl")
-    generate_n_tajectories(200, agent)
+    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_4.pkl")
+    generate_n_tajectories(1000, agent)
     # generate_trajectory(agent)
