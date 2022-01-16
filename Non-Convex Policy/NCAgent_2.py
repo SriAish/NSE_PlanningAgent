@@ -128,7 +128,7 @@ class NCAgent:
                 s_prev = s
                 a_prev = a
 
-            lhs += tra
+            lhs += self.m.Intermediate(tra)
 
         self.m.Equation(lhs <= 1)
 
@@ -147,7 +147,7 @@ class NCAgent:
                 s_prev = s
                 a_prev = a
 
-            lhs += tra
+            lhs += self.m.Intermediate(tra)
 
         self.m.Equation(lhs <= 1)
 
