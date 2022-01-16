@@ -54,7 +54,7 @@ def generate_n_tajectories(n, agent):
 
         csvwriter.writerow(["trajectory", "Type", "Size"])
         i = 0
-        while i < 50:
+        while i < n:
             t, ac = generate_trajectory(agent)
             c = "severe"
             damage = checkDamage(t, [2, 2])
@@ -101,5 +101,5 @@ class VIPolicy:
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
     agent = VIPolicy("policy_values/VIp_7_7.pkl")
-    generate_n_tajectories(50, agent)
+    generate_n_tajectories(200, agent)
     # generate_trajectory(agent)
