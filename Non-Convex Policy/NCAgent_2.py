@@ -8,7 +8,7 @@ class NCAgent:
     def __init__(self, BP, gamma = 0.9, locations = None):
         self.m = GEKKO()
         self.m.options.IMODE = 3
-        self.m.options.MAX_ITER = 500
+        self.m.options.MAX_ITER = 1000
         self.m.options.SOLVER = int(sys.argv[9])
         print(self.m)
         self.m.options.MAX_MEMORY = 5
@@ -242,7 +242,7 @@ class NCAgent:
 
     def solve_prob(self):
         try:
-            self.m.solve()
+            self.m.solve(debug=0)
         except Exception as e:
             print("Exception Occured")
             print(e)
