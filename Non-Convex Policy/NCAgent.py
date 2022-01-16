@@ -25,6 +25,10 @@ class NCAgent:
         print("problem setup")
         sys.stdout.flush()
     
+    def load(self, name):
+        file_to_read = open(name, "rb")
+        return pickle.load(file_to_read)
+
     def init_belief(self):
         if self.locations == None:
             self.locations = [(1, 1)]
@@ -101,6 +105,43 @@ class NCAgent:
                 c += self.pi[s][a]
             if actions:
                 self.m.Equation(c == su)
+
+    def nse_sum(self):
+        trajs = self.load('severe_trajectories_7_200')
+        lhs = 0
+        for t in trajs:
+            tra = 1
+            ele = 0
+            for s, a in t:
+                tra = tra * self.x[s].value[0] * self.pi[s][a].value[0]
+                if ele == 0:
+                    ele += 1
+                else:
+                    tra = tra*self.BP.T(s_prev, a_prev, s)
+                s_prev = s
+                a_prev = a
+
+            lhs += tra
+
+        ans = lhs
+
+        trajs = self.load('mild_trajectories_7_200')
+        lhs = 0
+        for t in trajs:
+            tra = 1
+            ele = 0
+            for s, a in t:
+                tra = tra * self.x[s].value[0] * self.pi[s][a].value[0]
+                if ele == 0:
+                    ele += 1
+                else:
+                    tra = tra*self.BP.T(s_prev, a_prev, s)
+                s_prev = s
+                a_prev = a
+
+            lhs += tra
+
+        return ans, lhs
 
     def make_prob(self):
         self.set_obj()
