@@ -25,8 +25,8 @@ class Agent:
             self.prob[s] = []
             for a in policy[s]:
                 self.pi[s].append(a)
-                self.prob[s].append(policy[s][a])
-                # self.prob[s].append(round(policy[s][a], 5))
+                # self.prob[s].append(policy[s][a])
+                self.prob[s].append(round(policy[s][a], 5))
 
     def getAction(self, state):
         # print(np.sum(self.prob[state]))
