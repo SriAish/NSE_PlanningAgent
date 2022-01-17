@@ -2,6 +2,7 @@ from misc import BoxPushingConstants
 import sys
 import pickle
 from math import e
+import csv
 
 class NCAgent:
     def __init__(self, BP, gamma = 0.9, locations = None):
@@ -25,8 +26,8 @@ class NCAgent:
             self.belief_state.append((init_loc, i, False, 'p'))
 
     def init_var(self):
-        self.x = self.load('policy/NC_Agent_x_nor_3_7_7_NSE4.pkl')
-        self.pi = self.load('policy/NC_Agent_Policy_nor_3_7_7_NSE4.pkl')
+        self.x = self.load('policy/NC_Agent_x_nor_3_7_7_4.pkl')
+        self.pi = self.load('policy/NC_Agent_Policy_nor_3_7_7_4.pkl')
 
     def nse_sum(self):
         trajs = self.load('severe_trajectories_7_200')
@@ -35,14 +36,14 @@ class NCAgent:
             tra = 1
             ele = 0
             for s, a in t:
-                tra = tra * self.x[s] * self.pi[s][a]
                 if ele == 0:
+                    tra = tra * self.x[s]
                     ele += 1
                 else:
                     tra = tra*self.BP.T(s_prev, a_prev, s)
+                tra = tra * self.pi[s][a]
                 s_prev = s
                 a_prev = a
-
             lhs += (tra)
             # lhs += (tra*100000000)
 
@@ -54,8 +55,9 @@ class NCAgent:
             tra = 1
             ele = 0
             for s, a in t:
-                tra = tra * self.x[s] * self.pi[s][a]
+                tra = tra * self.pi[s][a]
                 if ele == 0:
+                    tra = tra * self.x[s]
                     ele += 1
                 else:
                     tra = tra*self.BP.T(s_prev, a_prev, s)

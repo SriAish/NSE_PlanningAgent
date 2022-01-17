@@ -10,7 +10,7 @@ class FlowConstraint:
         self.pi = self.loadPolicy(pi_name)
         self.gamma = gamma
         self.BP = BP
-        self.locations = [(int(int(grid_size)/2), 1)]
+        self.locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
         self.init_belief()
         
     def init_belief(self):
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = (g_pos, g_pos, False, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-    agent = FlowConstraint(BP, 'Non-Convex Policy e_version/policy/NC_Agent_x_fc_3_3_3.pkl', 'Non-Convex Policy e_version/policy/NC_Agent_Policy_fc_3_3_3.pkl', sys.argv[1])
+    agent = FlowConstraint(BP, 'policy/NC_Agent_x_nor_3_7_7_NSE4.pkl', 'policy/NC_Agent_Policy_nor_3_7_7_NSE4.pkl', sys.argv[1])
     # a = Actions()
     agent.checkFlow()
     # print(agent.getPi(((0, 0), (0, 0), False, 'p'), a.down))

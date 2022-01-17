@@ -23,7 +23,7 @@ class Agent:
                 self.prob[s].append(round(policy[s][a], 5))
 
     def getAction(self, state):
-        print(np.sum(self.prob[state]))
+        # print(np.sum(self.prob[state]))
         return np.random.choice(self.pi[state], p = self.prob[state])
         
 
@@ -31,13 +31,16 @@ def wrap_state(s):
     return (tuple(s[0]), tuple(s[1]), s[2], s[3])
 
 def generate_trajectory(agent):
-    env = env = BoxPushing(3, [0, 0], [2, 2], rug_width=0, rug_height=0, rug_start=[1, 1], locations=[[1,1]])
+    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
     done = False
     ac = 0
     su = 0
     gamma = 1
+    k = 0
     while not done and ac < 1000:
         s = env.getState()
+        if s[3] == 'r':
+                k += 1
         a = agent.getAction(wrap_state(s))
         # print(ac, s)
         # env.display()
@@ -47,15 +50,16 @@ def generate_trajectory(agent):
         ac+=1
         # print(s, a, done)        
     # env.display()
-    return su
+    return su, k
 
 def avg_n_trajectories(n, agent):
-    severe = []
-    mild = []
     s = 0    
+    co = 0
     for i in range(n):
-        s += generate_trajectory(agent)
-    return s/n
+        si, c = generate_trajectory(agent)
+        s += si
+        co += c
+    return s/n, co
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
