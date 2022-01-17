@@ -12,6 +12,7 @@ class BoxPushing:
             grid_size = 15
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
+        self.disp_grid = np.full([grid_size, grid_size], 1)
 
         self.putRug(rug_width, rug_height, rug_start)
 
@@ -48,6 +49,7 @@ class BoxPushing:
         for i in range(rug_height):
             for j in range(rug_width):
                 self.grid[rug_start[0] + i, rug_start[1] + j] = 'r'
+                self.disp_grid[rug_start[0] + i, rug_start[1] + j] = 0
 
     def getValidActions(self, state):
         if state == self.end_state:
@@ -138,16 +140,10 @@ class BoxPushing:
         return s, cost, self.done
 
     def display(self):
-        tempGrid = copy.deepcopy(self.grid)
-        rows = self.grid.shape[0]
-        cols = self.grid.shape[1]
-        tempGrid[tuple(self.box_location)] = 'b'
-        tempGrid[tuple(self.end_location)] = 'e'
-        tempGrid[tuple(self.agent_location)] = 'a'
-        _ = os.system('clear')
-        print(np.matrix(tempGrid))  
-        print("------------------------------------------")
-        time.sleep(1)
+        tempGrid = copy.deepcopy(self.disp_grid)
+        tempGrid[tuple(self.box_location)] = '2'
+        tempGrid[tuple(self.agent_location)] = '2'
+        return tempGrid
 
 if __name__ == '__main__':
     env = BoxPushing()

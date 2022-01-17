@@ -48,7 +48,7 @@ class NCAgent:
             # lhs += (tra*100000000)
 
         ans = lhs
-
+        print(lhs/len(trajs), len(trajs))
         trajs = self.load('mild_trajectories_7_200')
         lhs = 0
         for t in trajs:
@@ -66,7 +66,7 @@ class NCAgent:
 
             lhs += (tra)
             # lhs += (tra*1000000000)
-
+        print(lhs/len(trajs), len(trajs))
         return ans, lhs
 
     def calculate_pi(self):
