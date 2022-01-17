@@ -120,8 +120,9 @@ class NCAgent:
             tra = 1
             ele = 0
             for s, a in t:
-                tra = tra * self.in_y[s][a]
+                tra = tra * self.pi[s][a]
                 if ele == 0:
+                    tra = tra * self.x[s]
                     ele += 1
                 else:
                     tra = tra*self.BP.T(s_prev, a_prev, s)
@@ -159,9 +160,9 @@ class NCAgent:
             tra = 1
             ele = 0
             for s, a in t:
-                tra = tra * self.pi[s][a]
+                tra = tra * self.pi[s][a].value[0]
                 if ele == 0:
-                    tra = tra * self.x[s]
+                    tra = tra * self.x[s].value[0]
                     ele += 1
                 else:
                     tra = tra*self.BP.T(s_prev, a_prev, s)
@@ -178,8 +179,9 @@ class NCAgent:
             tra = 1
             ele = 0
             for s, a in t:
-                tra = tra * self.x[s].value[0] * self.pi[s][a].value[0]
+                tra = tra * self.pi[s][a].value[0]
                 if ele == 0:
+                    tra = tra * self.x[s].value[0]
                     ele += 1
                 else:
                     tra = tra*self.BP.T(s_prev, a_prev, s)
