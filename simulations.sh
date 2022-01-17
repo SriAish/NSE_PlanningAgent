@@ -4,7 +4,7 @@
 # python3 PolicySimulation.py 'Non-Convex Policy e_version/policy/NC_Agent_Policy_ni_1_3_3.pkl'
 # python3 PolicySimulation.py 'Non-Convex Policy e_version/policy/NC_Agent_Policy_ni_3_3_3.pkl'
 # python3 PolicySimulation.py 'Non-Convex Policy e_version/policy/NC_Agent_Policy_fc_3_3_3.pkl'
-python3 PolicySimulation.py 'Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_4.pkl'
+python3 PolicySimulation.py 'Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_NSE6.pkl'
 # python3 PolicySimulation.py 'Non-Convex Policy/policy/NC_Agent_Policy_nor_3_3_3.pkl'
 # python3 PolicySimulation.py 'Non-Convex Policy/policy/NC_Agent_Policy_nor_ni_1_3_3.pkl'
 # python3 PolicySimulation.py 'Non-Convex Policy/policy/NC_Agent_Policy_nor_ni_3_3_3.pkl'

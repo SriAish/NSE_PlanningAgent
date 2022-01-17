@@ -49,7 +49,7 @@ class BoxPushing:
         for i in range(rug_height):
             for j in range(rug_width):
                 self.grid[rug_start[0] + i, rug_start[1] + j] = 'r'
-                self.disp_grid[rug_start[0] + i, rug_start[1] + j] = 0
+                self.disp_grid[rug_start[1] + j, rug_start[0] + i] = 0
 
     def getValidActions(self, state):
         if state == self.end_state:
@@ -141,8 +141,8 @@ class BoxPushing:
 
     def display(self):
         tempGrid = copy.deepcopy(self.disp_grid)
-        tempGrid[tuple(self.box_location)] = '2'
-        tempGrid[tuple(self.agent_location)] = '2'
+        tempGrid[(self.box_location[1], self.box_location[0])] = '2'
+        tempGrid[(self.agent_location[1], self.agent_location[0])] = '2'
         return tempGrid
 
 if __name__ == '__main__':
