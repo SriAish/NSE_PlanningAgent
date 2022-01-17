@@ -223,7 +223,7 @@ class DCProg:
 
     def solve_prob(self):
         try:
-            self.prob.solve(solver=cp.SCS)
+            self.prob.solve(solver=cp.ECOS)
         except Exception as e:
             print("Exception Occured")
             print(e)

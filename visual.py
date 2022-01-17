@@ -37,7 +37,8 @@ class Agent:
 def wrap_state(s):
     return (tuple(s[0]), tuple(s[1]), s[2], s[3])
 
-agent = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_NSE7.pkl')
+# agent2 = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_4.pkl')
+agent = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_NSE_1000.pkl')
 env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0]])
 # env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
 done = False
