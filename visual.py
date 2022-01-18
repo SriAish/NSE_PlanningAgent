@@ -30,16 +30,16 @@ class Agent:
 
     def getAction(self, state):
         # print(np.sum(self.prob[state]))
-        print(state, self.pi[state], self.prob[state])
+        print(state, self.pi[state], self.prob[state], agent2.prob[state])
         return np.random.choice(self.pi[state], p = self.prob[state])
         
 
 def wrap_state(s):
     return (tuple(s[0]), tuple(s[1]), s[2], s[3])
 
-# agent2 = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_4.pkl')
-agent = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_NSE_1000.pkl')
-env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0]])
+agent = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_4.pkl')
+agent2 = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_NSE_1000.pkl')
+env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[5, 4]])
 # env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
 done = False
 ac = 0
@@ -63,13 +63,6 @@ while not done and ac < 1000:
     screen.blit(surface, (100, 100))
     pg.display.flip()
     clock.tick(1)
-
-
-
-
-gridarray = np.random.randint(3, size=(20, 20))
-surface = pg.surfarray.make_surface(colors[gridarray])
-surface = pg.transform.scale(surface, (200, 200))  # Scaled a bit.
 
 running = True
 while running:
