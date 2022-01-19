@@ -26,7 +26,8 @@ def wrap_state(s):
     return (tuple(s[0]), tuple(s[1]), s[2], s[3])
 
 def generate_trajectory(agent):
-    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
+    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[0, 0], [0, 1], [0, 5], [0, 6], [1, 0], [1, 1], [1, 5], [1, 6], [5, 0], [5, 1], [5, 5], [5, 6], [6, 0], [6, 1], [6, 5], [6, 6]])
+    # env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
     done = False
     t = []
     ac = 0
@@ -69,7 +70,7 @@ def generate_n_tajectories(n, agent):
             i += 1
 
             csvwriter.writerow([t, c, ac])
-            print(t, damage, ac)
+            # print(t, damage, ac)
 
     print(len(severe), len(mild))
 
@@ -90,7 +91,7 @@ class VIPolicy:
     def getAction(self, state):
         action = 'down'
         pr = 0
-        print(state)
+        # print(state)
         for key in self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])]:
             if pr < self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])][key]:
                 pr = self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])][key]
@@ -117,11 +118,14 @@ class Agent:
 
     def getAction(self, state):
         state = (tuple(state[0]), tuple(state[1]), state[2], state[3])
-        print(np.sum(self.prob[state]))
+        
+        if(np.sum(self.prob[state]) < 1):
+            print(np.sum(self.prob[state]))
+            self.prob[state][0] += 1 - np.sum(self.prob[state])
         return np.random.choice(self.pi[state], p = self.prob[state])
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_NSE4.pkl")
+    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_all.pkl")
     generate_n_tajectories(1000, agent)
     # generate_trajectory(agent)
