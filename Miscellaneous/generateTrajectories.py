@@ -113,15 +113,21 @@ class Agent:
             self.prob[s] = []
             for a in policy[s]:
                 self.pi[s].append(a)
-                # self.prob[s].append(policy[s][a])
-                self.prob[s].append(round(policy[s][a], 5))
+                self.prob[s].append(policy[s][a])
+                # self.prob[s].append(round(policy[s][a], 5))
 
     def getAction(self, state):
         state = (tuple(state[0]), tuple(state[1]), state[2], state[3])
+        # print(np.sum(self.prob[state]))
         
-        if(np.sum(self.prob[state]) < 1):
-            print(np.sum(self.prob[state]))
-            self.prob[state][0] += 1 - np.sum(self.prob[state])
+        # if(np.sum(self.prob[state]) < 1):
+            # print(np.sum(self.prob[state]))
+            # self.prob[state][0] += 1 - np.sum(self.prob[state])
+        if(np.sum(self.prob[state]) > 1):
+            re = np.sum(self.prob[state]) - 1
+            r = np.where(self.prob[state] == np.amax(self.prob[state]))
+            # print(r[0])
+            self.prob[state][r[0][0]] -= re
         return np.random.choice(self.pi[state], p = self.prob[state])
 
 if __name__ == '__main__':
