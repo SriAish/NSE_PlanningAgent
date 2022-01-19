@@ -26,8 +26,8 @@ class NCAgent:
             self.belief_state.append((init_loc, i, False, 'p'))
 
     def init_var(self):
-        self.x = self.load('policy/NC_Agent_x_nor_3_7_7_all.pkl')
-        self.pi = self.load('policy/NC_Agent_Policy_nor_3_7_7_all.pkl')
+        self.x = self.load('policy/NC_Agent_x_nor_3_7_7_NSE_all.pkl')
+        self.pi = self.load('policy/NC_Agent_Policy_nor_3_7_7_NSE_all.pkl')
 
     def nse_sum(self):
         trajs = self.load('severe_trajectories_7_1000_all')
