@@ -114,7 +114,7 @@ class NCAgent:
                 self.m.Equation(c == su)
 
     def make_constraints_eqn3(self):
-        trajs = self.load('severe_trajectories_7_1000_all')
+        trajs = self.load('severe_trajectories')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -131,7 +131,7 @@ class NCAgent:
 
             lhs += self.m.Intermediate(tra)
 
-        self.m.Equation(lhs <= 0.1)
+        self.m.Equation(lhs <= 0.01)
 
     def make_constraints_eqn4(self):
         trajs = self.load('mild_trajectories_7_1000_all')
@@ -154,7 +154,7 @@ class NCAgent:
         self.m.Equation(lhs <= 0.1)
 
     def nse_sum(self):
-        trajs = self.load('severe_trajectories_7_1000_all')
+        trajs = self.load('severe_trajectories')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -173,22 +173,22 @@ class NCAgent:
 
         ans = lhs
 
-        trajs = self.load('mild_trajectories_7_1000_all')
-        lhs = 0
-        for t in trajs:
-            tra = 1
-            ele = 0
-            for s, a in t:
-                tra = tra * self.pi[s][a].value[0]
-                if ele == 0:
-                    tra = tra * self.x[s].value[0]
-                    ele += 1
-                else:
-                    tra = tra*self.BP.T(s_prev, a_prev, s)
-                s_prev = s
-                a_prev = a
+        # trajs = self.load('mild_trajectories_7_1000_all')
+        # lhs = 0
+        # for t in trajs:
+        #     tra = 1
+        #     ele = 0
+        #     for s, a in t:
+        #         tra = tra * self.pi[s][a].value[0]
+        #         if ele == 0:
+        #             tra = tra * self.x[s].value[0]
+        #             ele += 1
+        #         else:
+        #             tra = tra*self.BP.T(s_prev, a_prev, s)
+        #         s_prev = s
+        #         a_prev = a
 
-            lhs += tra
+        #     lhs += tra
 
         return ans, lhs
 
@@ -214,8 +214,8 @@ class NCAgent:
         print("eq2")
         self.make_constraints_eqn3()
         print("eq3")
-        self.make_constraints_eqn4()
-        print("eq4")
+        # self.make_constraints_eqn4()
+        # print("eq4")
         self.make_constraints_eqn5()
         print("eq5")
         sys.stdout.flush()

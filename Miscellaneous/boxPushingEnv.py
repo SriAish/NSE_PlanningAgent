@@ -127,6 +127,11 @@ class BoxPushing:
     def getState(self):
         return (self.agent_location, self.box_location, self.box_pushing, self.getType())
 
+    def setState(self, state):
+        self.agent_location = [state[0][0], state[0][1]]
+        self.box_location = [state[1][0], state[1][1]]
+        self.box_pushing = state[2]
+
     def getNextState(self, action):
         self.move(action)
         cost = self.actions.actionCost(action)

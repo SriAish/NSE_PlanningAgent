@@ -26,11 +26,11 @@ class NCAgent:
             self.belief_state.append((init_loc, i, False, 'p'))
 
     def init_var(self):
-        self.x = self.load('policy/NC_Agent_x_nor_3_7_7_NSE_all.pkl')
-        self.pi = self.load('policy/NC_Agent_Policy_nor_3_7_7_NSE_all.pkl')
+        self.x = self.load('policy/NC_Agent_x_nor_3_7_7_4.pkl')
+        self.pi = self.load('policy/NC_Agent_Policy_nor_3_7_7_4.pkl')
 
     def nse_sum(self):
-        trajs = self.load('severe_trajectories_7_1000_all')
+        trajs = self.load('severe_trajectories')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -48,25 +48,25 @@ class NCAgent:
             # lhs += (tra*100000000)
 
         ans = lhs
-        print(lhs/len(trajs), len(trajs))
-        trajs = self.load('mild_trajectories_7_1000_all')
-        lhs = 0
-        for t in trajs:
-            tra = 1
-            ele = 0
-            for s, a in t:
-                tra = tra * self.pi[s][a]
-                if ele == 0:
-                    tra = tra * self.x[s]
-                    ele += 1
-                else:
-                    tra = tra*self.BP.T(s_prev, a_prev, s)
-                s_prev = s
-                a_prev = a
+        # print(lhs/len(trajs), len(trajs))
+        # trajs = self.load('mild_trajectories_7_1000_all')
+        # lhs = 0
+        # for t in trajs:
+        #     tra = 1
+        #     ele = 0
+        #     for s, a in t:
+        #         tra = tra * self.pi[s][a]
+        #         if ele == 0:
+        #             tra = tra * self.x[s]
+        #             ele += 1
+        #         else:
+        #             tra = tra*self.BP.T(s_prev, a_prev, s)
+        #         s_prev = s
+        #         a_prev = a
 
-            lhs += (tra)
-            # lhs += (tra*1000000000)
-        print(lhs/len(trajs), len(trajs))
+        #     lhs += (tra)
+        #     # lhs += (tra*1000000000)
+        # print(lhs/len(trajs), len(trajs))
         return ans, lhs
 
     def calculate_pi(self):
