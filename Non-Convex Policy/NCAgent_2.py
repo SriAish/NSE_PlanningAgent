@@ -151,7 +151,7 @@ class NCAgent:
 
             lhs += self.m.Intermediate(tra)
 
-        self.m.Equation(lhs <= 0.1)
+        self.m.Equation(lhs <= 0)
 
     def nse_sum(self):
         trajs = self.load('severe_trajectories')
