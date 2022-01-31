@@ -10,7 +10,7 @@ class FlowConstraint:
         self.pi = self.loadPolicy(pi_name)
         self.gamma = gamma
         self.BP = BP
-        self.locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
+        self.locations = [(5, 4)]
         self.init_belief()
         
     def init_belief(self):
