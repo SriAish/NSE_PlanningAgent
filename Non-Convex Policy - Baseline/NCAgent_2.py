@@ -122,7 +122,7 @@ class NCAgent:
                 if (s,a) in sa:
                     nse += self.in_y[s][a]*sa[(s,a)]
 
-        self.m.Equation(nse <= 0)
+        self.m.Equation(nse <= 1)
 
     def make_constraints_eqn5(self):
         lhs = 0
