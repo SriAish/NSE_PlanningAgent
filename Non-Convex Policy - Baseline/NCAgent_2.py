@@ -115,9 +115,9 @@ class NCAgent:
 
     def make_constraints_eqn3(self):
         sa = self.load('state_action_NSE')
+        nse = 0
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
-            nse = 0
             for a in actions:
                 if (s,a) in sa:
                     nse += self.in_y[s][a]*sa[(s,a)]
