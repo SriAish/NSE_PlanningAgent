@@ -66,7 +66,6 @@ class BoxPushingConstants:
 
     def transition(self, state, action):
         if state in self.end_states:
-            print("exit")
             return [(state, 1)], 0
         if self.actions.isWrapAction(action):
             if state[0] != state[1] or not state[2]:
