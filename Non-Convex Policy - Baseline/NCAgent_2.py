@@ -134,7 +134,7 @@ class NCAgent:
             if i%100 == 0:
                 lhs = self.m.Intermediate(lhs)
 
-        self.m.Equation(lhs - 8 <= 6)
+        self.m.Equation(lhs - 8 <= 5)
 
     def make_prob(self):
         self.set_obj()
@@ -146,8 +146,8 @@ class NCAgent:
         print("eq2")
         self.make_constraints_eqn3()
         print("eq3")
-        # self.make_constraints_eqn5()
-        # print("eq5")
+        self.make_constraints_eqn5()
+        print("eq5")
         sys.stdout.flush()
 
     def calculate_pi(self):
