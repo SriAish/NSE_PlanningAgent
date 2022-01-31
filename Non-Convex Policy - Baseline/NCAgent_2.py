@@ -120,9 +120,9 @@ class NCAgent:
             nse = 0
             for a in actions:
                 if (s,a) in sa:
-                    nse += self.x[s]*self.pi[s][a]*sa[(s,a)]
+                    nse += self.in_y[s][a]*sa[(s,a)]
 
-        print(nse)
+        print("nse lhs:", nse)
         self.m.Equation(nse <= 0.1)
 
     def make_constraints_eqn5(self):
@@ -153,7 +153,6 @@ class NCAgent:
     def calculate_pi(self):
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
-        print("sums: ", self.nse_sum())
         print("----------------------------------------")
         self.pi_ = {}
         self.x_ = {}
