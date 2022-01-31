@@ -25,21 +25,21 @@ class Agent:
             self.prob[s] = []
             for a in policy[s]:
                 self.pi[s].append(a)
-                # self.prob[s].append(policy[s][a])
-                self.prob[s].append(round(policy[s][a], 5))
+                self.prob[s].append(policy[s][a])
+                # self.prob[s].append(round(policy[s][a], 5))
 
     def getAction(self, state):
         print(np.sum(self.prob[state]))
-        print(state, self.pi[state], self.prob[state], agent2.prob[state])
+        print(state, self.pi[state], self.prob[state])
         return np.random.choice(self.pi[state], p = self.prob[state])
         
 
 def wrap_state(s):
     return (tuple(s[0]), tuple(s[1]), s[2], s[3])
 
-agent2 = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_4.pkl')
+# agent2 = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_5.pkl')
 agent = Agent('Non-Convex Policy/policy/NC_Agent_Policy_nor_3_7_7_NSE_all.pkl')
-env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[5, 4]])
+env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0]])
 # env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
 done = False
 ac = 0
