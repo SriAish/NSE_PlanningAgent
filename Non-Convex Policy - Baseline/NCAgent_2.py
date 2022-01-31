@@ -177,7 +177,7 @@ class NCAgent:
 
     def solve_prob(self):
         try:
-            self.m.solve(debug=0)
+            self.m.solve(debug=0, disp=True)
         except Exception as e:
             print("Exception Occured")
             print(e)
