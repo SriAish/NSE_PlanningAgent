@@ -122,8 +122,7 @@ class NCAgent:
                 if (s,a) in sa:
                     nse += self.in_y[s][a]*sa[(s,a)]
 
-        print("nse lhs:", nse)
-        self.m.Equation(nse <= 0.1)
+        self.m.Equation(nse <= 0)
 
     def make_constraints_eqn5(self):
         lhs = 0
@@ -134,7 +133,7 @@ class NCAgent:
             if i%100 == 0:
                 lhs = self.m.Intermediate(lhs)
 
-        self.m.Equation(lhs - 8 <= 5)
+        self.m.Equation(lhs - 8 <= 7)
 
     def make_prob(self):
         self.set_obj()
