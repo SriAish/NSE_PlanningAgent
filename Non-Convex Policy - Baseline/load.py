@@ -48,3 +48,4 @@ for s in BP.states:
     for a in actions:
         if (s,a) in sn:
             print("in")
+            print(sn[(s,a)])

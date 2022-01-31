@@ -120,9 +120,9 @@ class NCAgent:
             nse = 0
             for a in actions:
                 if (s,a) in sa:
-                    print("in")
                     nse += self.x[s]*self.pi[s][a]*sa[(s,a)]
 
+        print(nse)
         self.m.Equation(nse <= 0.1)
 
     def make_constraints_eqn5(self):
