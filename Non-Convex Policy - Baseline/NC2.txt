@@ -1,10 +1,10 @@
 ==========================================
-SLURM_JOB_ID = 591653
-SLURM_NODELIST = gnode45
-SLURM_JOB_GPUS = 1
+SLURM_JOB_ID = 591659
+SLURM_NODELIST = gnode23
+SLURM_JOB_GPUS = 2
 ==========================================
-/var/spool/slurmd/job591653/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-<gekko.gekko.GEKKO object at 0x14e3a8f8e790>
+/var/spool/slurmd/job591659/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+<gekko.gekko.GEKKO object at 0x152e774d1c90>
 initial belief setup
 variables setup
 objective setup
