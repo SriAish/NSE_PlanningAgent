@@ -1,10 +1,45 @@
 ==========================================
-SLURM_JOB_ID = 591691
-SLURM_NODELIST = gnode23
-SLURM_JOB_GPUS = 2
+SLURM_JOB_ID = 598702
+SLURM_NODELIST = gnode18
+SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job591691/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job598702/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+<gekko.gekko.GEKKO object at 0x14f068b7e910>
 initial belief setup
 variables setup
 objective setup
-slurmstepd: error: *** JOB 591691 ON gnode23 CANCELLED AT 2022-02-01T04:42:06 ***
+eq1
+eq2
+problem setup
+apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :        24598
+   Intermediates:        24598
+   Connections  :            0
+   Equations    :        54096
+   Residuals    :        29498
+ 
+Exception Occured
+No solution or server unreachable.
+  Show errors with m.solve(disp=True).
+  Try local solve with m=GEKKO(remote=False).
+----------------------------------------
+Traceback (most recent call last):
+  File "NCAgent_2.py", line 203, in <module>
+    agent.calculate_pi()
+  File "NCAgent_2.py", line 161, in calculate_pi
+    print("Objective Value: ", self.pr_obj())
+  File "NCAgent_2.py", line 70, in pr_obj
+    obj += (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+2019
