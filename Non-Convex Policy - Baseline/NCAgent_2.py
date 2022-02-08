@@ -143,10 +143,17 @@ class NCAgent:
         print("eq1")
         self.make_constraints_eqn2()
         print("eq2")
-        self.make_constraints_eqn3()
-        print("eq3")
-        self.make_constraints_eqn5()
-        print("eq5")
+        if(sys.argv[8]=='7_7_NSE'):
+            self.make_constraints_eqn3()
+            print("eq3")
+        if(sys.argv[8]=='7_7_NSE_full'):
+            self.make_constraints_eqn3()
+            print("eq3")
+            self.make_constraints_eqn5()
+            print("eq5")
+        if(sys.argv[8]=='7_7_NSE_last'):
+            self.make_constraints_eqn5()
+            print("eq5")
         sys.stdout.flush()
 
     def calculate_pi(self):
