@@ -10,6 +10,7 @@ class BoxPushingConstants:
         self.rug_width = rug_width
         self.rug_start = rug_start
         self.end_state = end_state
+        print(end_state)
         self.prev_end = (end_state[0], end_state[1], True, end_state[3])
         self.transition_probabilities = {}
         print(self.prev_end)
