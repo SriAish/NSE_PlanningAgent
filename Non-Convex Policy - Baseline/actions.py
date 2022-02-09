@@ -7,9 +7,9 @@ class Actions:
         self.pick_up = "pick_up"
         self.wrap = "wrap"
         self.drop = "drop"
-        self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.wrap]
+        # self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.wrap]
         # self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.drop, self.wrap]
-        # self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.drop]
+        self.allActions = [self.down, self.up, self.right, self.left, self.pick_up]
         self.boxActions = [self.pick_up]
         # self.boxActions = [self.pick_up, self.drop]
         self.wrapActions = [self.wrap]
