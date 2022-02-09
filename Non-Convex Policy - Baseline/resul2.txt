@@ -1,16 +1,14 @@
 ==========================================
-SLURM_JOB_ID = 598705
-SLURM_NODELIST = gnode18
-SLURM_JOB_GPUS = 0
+SLURM_JOB_ID = 598813
+SLURM_NODELIST = gnode85
+SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job598705/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-<gekko.gekko.GEKKO object at 0x14fa713c28d0>
+/var/spool/slurmd/job598813/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 initial belief setup
 variables setup
 objective setup
 eq1
 eq2
-eq5
 problem setup
 apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
  APMonitor, Version 1.0.1
@@ -18,29 +16,109 @@ apm 14.139.82.6_gk_model0 <br><pre> --------------------------------------------
  ----------------------------------------------------------------
  
  
+ Warning: there is insufficient data in CSV file 14.139.82.6_gk_model0.csv
+ 
  --------- APM Model Size ------------
  Each time step contains
    Objects      :            0
    Constants    :            0
-   Variables    :        24599
-   Intermediates:        24647
+   Variables    :        24598
+   Intermediates:            0
    Connections  :            0
-   Equations    :        54146
-   Residuals    :        29499
+   Equations    :        29498
+   Residuals    :        29498
  
-Exception Occured
-No solution or server unreachable.
-  Show errors with m.solve(disp=True).
-  Try local solve with m=GEKKO(remote=False).
+ Number of state variables:          24598
+ Number of total equations: -         9800
+ Number of slack variables: -            0
+ ---------------------------------------
+ Degrees of freedom       :          14798
+ 
+ **********************************************
+ Steady State Optimization with Interior Point Solver
+ **********************************************
+  
+  
+ Info: Exact Hessian
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.12.10, running with linear solver ma57.
+
+Number of nonzeros in equality constraint Jacobian...:    97672
+Number of nonzeros in inequality constraint Jacobian.:        0
+Number of nonzeros in Lagrangian Hessian.............:    19698
+
+Total number of variables............................:    24598
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:    24598
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:     9800
+Total number of inequality constraints...............:        0
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:        0
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  1.9787960e+00 9.60e-01 3.23e-02   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  2.0279033e-01 9.23e-01 4.78e+01  -0.6 2.60e-01    -  9.90e-01 3.81e-02h  1
+   2  7.0604918e-02 8.66e-01 3.44e+01  -0.7 4.16e-01    -  7.74e-02 6.17e-02f  1
+   3  5.2407153e-02 8.11e-01 3.39e+02  -0.8 4.67e-01    -  1.17e-01 6.35e-02f  1
+   4  2.3550681e-02 7.02e-01 1.48e+04  -0.4 3.90e-01    -  1.00e+00 1.35e-01f  1
+   5  7.2637406e-03 5.33e-01 7.47e+03  -0.7 2.67e-01    -  2.98e-01 2.40e-01f  1
+   6  6.6029150e-03 4.93e-01 1.04e+06   0.2 2.03e+00    -  1.00e+00 7.60e-02f  1
+   7  2.5079762e-03 3.13e-01 1.85e+06   0.4 3.03e-01    -  1.00e+00 3.65e-01h  1
+   8  8.1976581e-04 1.55e-01 4.95e+06   0.3 1.61e-01    -  1.00e+00 5.05e-01h  1
+   9  4.8867207e-04 9.69e-02 2.14e+07   0.5 1.94e-01    -  1.00e+00 3.74e-01h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  1.7374957e-05 1.22e-02 1.64e+06  -0.1 6.16e-02    -  1.00e+00 8.74e-01h  1
+  11 -2.2060206e-07 6.38e-10 1.95e+06  -0.9 5.42e-02    -  1.00e+00 1.00e+00h  1
+  12  8.0462990e-11 4.09e-11 1.54e+06  -1.4 5.40e-02    -  1.00e+00 1.00e+00f  1
+  13 -6.9128261e-12 1.93e-12 8.37e+05  -1.5 5.09e-02    -  1.00e+00 1.00e+00f  1
+  14 -1.3947850e-13 2.23e-14 7.46e+03  -1.5 1.39e-02    -  1.00e+00 1.00e+00f  1
+  15 -1.6538095e-20 2.22e-16 3.53e-02  -2.3 6.19e-06    -  1.00e+00 1.00e+00h  1
+  16 -4.8495908e-30 3.33e-16 4.83e+00  -8.3 2.92e-11    -  1.00e+00 1.00e+00h  1
+  17  8.4662983e-34 2.22e-16 8.81e-10  -7.4 2.34e-05    -  1.00e+00 1.00e+00h  1
+
+Number of Iterations....: 17
+
+                                   (scaled)                 (unscaled)
+Objective...............:   8.4662983257555083e-34    8.4662983257555083e-34
+Dual infeasibility......:   8.8078804744204075e-10    8.8078804744204075e-10
+Constraint violation....:   2.2204460492503131e-16    2.2204460492503131e-16
+Complementarity.........:   4.2956722195874618e-08    4.2956722195874618e-08
+Overall NLP error.......:   4.2956722195874618e-08    4.2956722195874618e-08
+
+
+Number of objective function evaluations             = 18
+Number of objective gradient evaluations             = 18
+Number of equality constraint evaluations            = 18
+Number of inequality constraint evaluations          = 0
+Number of equality constraint Jacobian evaluations   = 18
+Number of inequality constraint Jacobian evaluations = 0
+Number of Lagrangian Hessian evaluations             = 17
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.174
+Total CPU secs in NLP function evaluations           =      7.361
+
+EXIT: Optimal Solution Found.
+ 
+ The solution was found.
+ 
+ The final value of the objective function is   8.466298325755508E-034
+ 
+ ---------------------------------------------------
+ Solver         :  IPOPT (v3.12)
+ Solution time  :    9.87139999999999      sec
+ Objective      :   1.671494292908293E-033
+ Successful solution
+ ---------------------------------------------------
+ 
 ----------------------------------------
-Traceback (most recent call last):
-  File "NCAgent_2.py", line 203, in <module>
-    agent.calculate_pi()
-  File "NCAgent_2.py", line 161, in calculate_pi
-    print("Objective Value: ", self.pr_obj())
-  File "NCAgent_2.py", line 70, in pr_obj
-    obj += (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-2051
+Objective Value:  1.6714942929087295e-33
+----------------------------------------
+Saving policies
+1125
