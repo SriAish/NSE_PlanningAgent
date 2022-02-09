@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 600069
-SLURM_NODELIST = gnode47
-SLURM_JOB_GPUS = 2
+SLURM_JOB_ID = 600081
+SLURM_NODELIST = gnode16
+SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job600069/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job600081/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 ((3, 6), (3, 6), True, 'p')
 ((3, 6), (3, 6), True, 'p')
 initial belief setup
@@ -381,8 +381,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 268
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 267
-Total CPU secs in IPOPT (w/o function evaluations)   =     10.383
-Total CPU secs in NLP function evaluations           =     57.597
+Total CPU secs in IPOPT (w/o function evaluations)   =     10.358
+Total CPU secs in NLP function evaluations           =     57.331
 
 EXIT: Optimal Solution Found.
  
@@ -392,7 +392,7 @@ EXIT: Optimal Solution Found.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    68.6426000000065      sec
+ Solution time  :    68.3108999999968      sec
  Objective      :    8.22642852985422     
  Successful solution
  ---------------------------------------------------
@@ -401,4 +401,4 @@ EXIT: Optimal Solution Found.
 Objective Value:  8.226428529830583
 ----------------------------------------
 Saving policies
-340
+391
