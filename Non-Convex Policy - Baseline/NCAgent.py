@@ -126,9 +126,10 @@ class NCAgent:
             actions = self.BP.getValidActions(s)
             self.pi_[s] = {}
             self.x_[s] = self.x[s].value[0]
+            print(s)
             for a in actions:
                 self.pi_[s][a] = self.pi[s][a].value[0]
-
+            print(self.pi_[s])
     def save_pi(self, file):
         print("Saving policies")
         with open('policy/'+ 'NC_Agent_Policy_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
