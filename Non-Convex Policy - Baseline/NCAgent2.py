@@ -156,7 +156,6 @@ class NCAgent:
     def calculate_pi(self):
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
-        print("Trajectory Value: ", self.nse_sum())
         print("----------------------------------------")
         self.pi_ = {}
         self.x_ = {}
