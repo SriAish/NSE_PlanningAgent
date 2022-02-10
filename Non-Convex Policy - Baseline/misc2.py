@@ -1,6 +1,6 @@
 import copy
 import numpy as np
-from actions import Actions
+from actions2 import Actions
 
 class BoxPushingConstants:
     def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_state=None):
