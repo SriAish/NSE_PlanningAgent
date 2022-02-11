@@ -34,6 +34,7 @@ class BoxPushingConstants:
         if state[0] == state[1]:
             if state[2]:
                 act.append(self.actions.drop)
+                act.append(self.actions.wrap)
             else:
                 act.append(self.actions.pick_up)
         return act
