@@ -80,7 +80,7 @@ class BoxPushingConstants:
                 return [((state[0], state[1], True, state[3]), 1)], self.get_cost(state, action)
             else:
                 return [((state[0], state[1], False, state[3]), 1)], self.get_cost(state, action)
-        else:
+        elif self.actions.isMoveAction(action):
             agent_locations_prob = []
             if action == self.actions.down:
                 agent_locations_prob.append((self.moveDown(state[0]), 0.9))
