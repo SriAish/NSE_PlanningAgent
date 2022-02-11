@@ -6,12 +6,14 @@ class Actions:
         self.left = "left"
         self.pick_up = "pick_up"
         self.drop = "drop"
-        self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.drop]
+        self.wrap = "wrap"
+        self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.drop, self.wrap]
         self.boxActions = [self.pick_up, self.drop]
         self.moveActions = [self.down, self.up, self.right, self.left]
 
         self.moveActionCost = 1
         self.boxActionCost = 2
+        self.wrapActionCost = 5
 
     def isAction(self, action):
         return action in self.allActions
@@ -24,6 +26,8 @@ class Actions:
             return 0
         if self.isBoxAction(action):
             return self.boxActionCost
+        if action == self.wrap:
+            return self.wrapActionCost
         
         return self.moveActionCost
 
