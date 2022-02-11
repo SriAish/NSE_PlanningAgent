@@ -24,12 +24,15 @@ class Actions:
     def isMoveAction(self, action):
         return action in self.moveActions
 
+    def isWrapAction(self, action):
+        return action == self.wrap
+
     def actionCost(self, action):
         if not self.isAction(action):
             return 0
         if self.isBoxAction(action):
             return self.boxActionCost
-        if action == self.wrap:
+        if self.isWrapAction(action):
             return self.wrapActionCost
         
         return self.moveActionCost

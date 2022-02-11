@@ -120,8 +120,8 @@ class BoxPushingConstants:
                 states.append(((i[0], box_location, state[2], self.getType(i[0])), i[1]))
 
             return states, self.get_cost(state, action)
-        
-        return [(state, 1)], 5
+        elif self.actions.isWrapAction(action):
+            return [(state, 1)], 5
 
     def T(self, s, a, s_):
         if (s, a, s_) in self.transition_probabilities.keys():
