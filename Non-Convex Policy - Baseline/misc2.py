@@ -12,7 +12,6 @@ class BoxPushingConstants:
         self.end_state = end_state
         print(end_state)
         self.transition_probabilities = {}
-        print(self.prev_end)
         self.putRug()
         self.generateStates()
 
@@ -63,10 +62,6 @@ class BoxPushingConstants:
     def get_cost(self, state, action):
         if state in self.end_state:
             return 0
-        # if state == self.prev_end and action == self.actions.drop:
-        #     # print("before final")
-        #     # print(state)
-        #     return self.actions.actionCost(action) - 2
         return self.actions.actionCost(action)
 
     def transition(self, state, action):
