@@ -35,7 +35,7 @@ class NCAgent:
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            self.belief_state.append((init_loc, i, False, 'p'))
+            self.belief_state.append((init_loc, i, False, False, 'p'))
 
     def init_var(self):
         self.x = {}
