@@ -1,23 +1,10 @@
 ==========================================
-SLURM_JOB_ID = 605817
+SLURM_JOB_ID = 605826
 SLURM_NODELIST = gnode15
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job605817/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job605826/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 [((3, 6), (3, 6), True, False, 'p'), ((3, 6), (3, 6), True, True, 'p')]
 initial belief setup
 variables setup
 objective setup
-Traceback (most recent call last):
-  File "NCAgent2_2.py", line 190, in <module>
-    agent = NCAgent(BP, locations=locations)
-  File "NCAgent2_2.py", line 24, in __init__
-    self.make_prob()
-  File "NCAgent2_2.py", line 138, in make_prob
-    self.make_constraints_eqn1()
-  File "NCAgent2_2.py", line 90, in make_constraints_eqn1
-    if self.BP.T(s, a, s_) != 0:
-  File "/home/sriaish/NSE_PlanningAgent/Non-Convex Policy - Baseline/misc.py", line 122, in T
-    trans, _ = self.transition(s, a)
-TypeError: cannot unpack non-iterable NoneType object
-2
