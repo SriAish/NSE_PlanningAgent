@@ -3,7 +3,7 @@ import numpy as np
 from actions2 import Actions
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_state=None):
+    def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_state=[]):
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
         self.rug_height = rug_height
@@ -11,7 +11,6 @@ class BoxPushingConstants:
         self.rug_start = rug_start
         self.end_state = end_state
         print(end_state)
-        self.prev_end = (end_state[0], end_state[1], True, end_state[3])
         self.transition_probabilities = {}
         print(self.prev_end)
         self.putRug()
@@ -28,7 +27,7 @@ class BoxPushingConstants:
         return self.grid[tuple(location)]
 
     def getValidActions(self, state):
-        if state == self.end_state:
+        if state in self.end_state:
             return self.actions.moveActions
         act = copy.deepcopy(self.actions.moveActions)
         if state[0] == state[1]:
@@ -62,7 +61,7 @@ class BoxPushingConstants:
         return (location[0], min(self.grid_size - 1, location[1] + 1))
 
     def get_cost(self, state, action):
-        if state == self.end_state:
+        if state in self.end_state:
             return 0
         # if state == self.prev_end and action == self.actions.drop:
         #     # print("before final")
@@ -71,7 +70,7 @@ class BoxPushingConstants:
         return self.actions.actionCost(action)
 
     def transition(self, state, action):
-        if state == self.end_state:
+        if state in self.end_state:
             return [(state, 1)], 0
         if self.actions.isBoxAction(action):
             if state[0] != state[1]:
