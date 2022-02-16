@@ -145,10 +145,18 @@ class NCAgent:
         print("eq4")
         sys.stdout.flush()
 
+    def nse_sum(self):
+        sa = self.load('state_action_NSE')
+        nse = 0
+        for s in self.BP.states:
+            actions = self.BP.getValidActions(s)
+            for a in actions:
+                if (s,a) in sa:
+                    nse += self.x[s]*self.pi[s][a]*sa[(s,a)]
+
+        return nse
+
     def calculate_pi(self):
-        print("----------------------------------------")
-        print("Objective Value: ", self.pr_obj())
-        print("----------------------------------------")
         self.pi_ = {}
         self.x_ = {}
         for s in self.BP.states:
@@ -159,6 +167,11 @@ class NCAgent:
             for a in actions:
                 self.pi_[s][a] = self.pi[s][a].value[0]
             print(self.pi_[s])
+
+        print("----------------------------------------")
+        print("Objective Value: ", self.pr_obj())
+        print("Objective Value: ", self.nse_sum())
+        print("----------------------------------------")
 
     def save_pi(self, file):
         print("Saving policies")
