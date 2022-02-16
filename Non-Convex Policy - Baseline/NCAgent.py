@@ -35,7 +35,7 @@ class NCAgent:
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            self.belief_state.append((init_loc, i, False, 'p'))
+            self.belief_state.append((init_loc, i, False, False, 'p'))
 
     def init_var(self):
         self.x = {}
@@ -126,10 +126,11 @@ class NCAgent:
             actions = self.BP.getValidActions(s)
             self.pi_[s] = {}
             self.x_[s] = self.x[s].value[0]
-            print(s)
+            print(s, self.x_[s])
             for a in actions:
                 self.pi_[s][a] = self.pi[s][a].value[0]
             print(self.pi_[s])
+
     def save_pi(self, file):
         print("Saving policies")
         with open('policy/'+ 'NC_Agent_Policy_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
@@ -147,13 +148,12 @@ class NCAgent:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    # e_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
-    e_state = (g_pos, g_pos, True, 'p')
+    e_state = [(g_pos, g_pos, False, False, 'p'), (g_pos, g_pos, False, True, 'p')]
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
-    locations = [(5, 4)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
+    locations = [(5, 4)]
 
     # if int(sys.argv[1]) == 7:
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
