@@ -1,15 +1,16 @@
 import copy
 import numpy as np
-from actions import Actions
+from actions2 import Actions
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_states=[]):
+    def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_state=[]):
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
         self.rug_height = rug_height
         self.rug_width = rug_width
         self.rug_start = rug_start
-        self.end_states = end_states
+        self.end_state = end_state
+        print(end_state)
         self.transition_probabilities = {}
         self.putRug()
         self.generateStates()
@@ -25,15 +26,15 @@ class BoxPushingConstants:
         return self.grid[tuple(location)]
 
     def getValidActions(self, state):
-        if state in self.end_states:
+        if state in self.end_state:
             return self.actions.moveActions
         act = copy.deepcopy(self.actions.moveActions)
         if state[0] == state[1]:
-            if not state[2]:
+            if state[2]:
+                act.append(self.actions.drop)
+                act.append(self.actions.wrap)
+            else:
                 act.append(self.actions.pick_up)
-            # else:
-            #     act.append(self.actions.drop)
-                
         return act
 
     def generateStates(self):
@@ -43,7 +44,6 @@ class BoxPushingConstants:
                 for k in range(self.grid_size):
                     for l in range(self.grid_size):
                         self.states.append(((i, j), (k, l), False, False, self.getType([i, j])))
-                        self.states.append(((i, j), (k, l), False, True, self.getType([i, j])))
                         if [i, j] == [k, l]:
                             self.states.append(((i, j), (k, l), True, False, self.getType([i, j])))
                             self.states.append(((i, j), (k, l), True, True, self.getType([i, j])))
@@ -61,17 +61,13 @@ class BoxPushingConstants:
         return (location[0], min(self.grid_size - 1, location[1] + 1))
 
     def get_cost(self, state, action):
-        if state in self.end_states:
+        if state in self.end_state:
             return 0
         return self.actions.actionCost(action)
 
     def transition(self, state, action):
-        if state in self.end_states:
+        if state in self.end_state:
             return [(state, 1)], 0
-        if self.actions.isWrapAction(action):
-            if state[0] != state[1] or not state[2]:
-                return [(state, 1)], self.get_cost(state, action)
-            return [((state[0], state[1], state[2], True, state[4]), 1)], self.get_cost(state, action)
         if self.actions.isBoxAction(action):
             if state[0] != state[1]:
                 return [(state, 1)], self.get_cost(state, action)
@@ -79,7 +75,7 @@ class BoxPushingConstants:
                 return [((state[0], state[1], True, state[3], state[4]), 1)], self.get_cost(state, action)
             else:
                 return [((state[0], state[1], False, state[3], state[4]), 1)], self.get_cost(state, action)
-        else:
+        elif self.actions.isMoveAction(action):
             agent_locations_prob = []
             if action == self.actions.down:
                 agent_locations_prob.append((self.moveDown(state[0]), 0.9))
@@ -119,6 +115,8 @@ class BoxPushingConstants:
                 states.append(((i[0], box_location, state[2], state[3], self.getType(i[0])), i[1]))
 
             return states, self.get_cost(state, action)
+        elif self.actions.isWrapAction(action):
+            return [((state[0], state[1], state[2], True, state[4]), 1)], 5
 
     def T(self, s, a, s_):
         if (s, a, s_) in self.transition_probabilities.keys():
@@ -134,7 +132,7 @@ class BoxPushingConstants:
         return 0
 
 if __name__ == '__main__':
-    BP = BoxPushingConstants(end_states=[((3, 3), (3, 3), True, False, 'p'), ((3, 3), (3, 3), True, True, 'p')])
-    s = ((3, 3), (3,3), True, True, 'p')
-    s_ = ((14, 13), (3,3), False, False, 'p')
-    print(BP.transition(s, "wrap"))
+    BP = BoxPushingConstants()
+    s = ((13, 13), (3,3), False, 'p')
+    s_ = ((14, 13), (3,3), False, 'p')
+    print(BP.T(s, "right", s_))

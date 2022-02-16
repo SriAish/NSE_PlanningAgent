@@ -1,4 +1,4 @@
-from misc2 import BoxPushingConstants
+from misc import BoxPushingConstants
 import sys
 import pickle
 from gekko import GEKKO

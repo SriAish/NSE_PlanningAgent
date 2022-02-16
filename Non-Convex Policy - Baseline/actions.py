@@ -5,20 +5,15 @@ class Actions:
         self.right = "right"
         self.left = "left"
         self.pick_up = "pick_up"
-        self.wrap = "wrap"
         self.drop = "drop"
-        # self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.wrap]
-        # self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.drop, self.wrap]
-        self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.drop]
-        # self.boxActions = [self.pick_up]
-        self.boxActions = [self.pick_up, self.drop]
-        self.wrapActions = [self.wrap]
+        self.wrap = "wrap"
+        self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.wrap]
+        self.boxActions = [self.pick_up]
         self.moveActions = [self.down, self.up, self.right, self.left]
 
         self.moveActionCost = 1
         self.boxActionCost = 2
-        self.wrapCost = 5
-        self.numAction = {'0':self.up, '1':self.down, '2':self.left, '3':self.right, '4':self.pick_up, '5':self.wrap}
+        self.wrapActionCost = 5
 
     def isAction(self, action):
         return action in self.allActions
@@ -26,11 +21,11 @@ class Actions:
     def isBoxAction(self, action):
         return action in self.boxActions
 
-    def isWrapAction(self, action):
-        return action in self.wrapActions
+    def isMoveAction(self, action):
+        return action in self.moveActions
 
-    def numToAction(self, num):
-        return self.numAction[num]
+    def isWrapAction(self, action):
+        return action == self.wrap
 
     def actionCost(self, action):
         if not self.isAction(action):
@@ -38,7 +33,7 @@ class Actions:
         if self.isBoxAction(action):
             return self.boxActionCost
         if self.isWrapAction(action):
-            return self.wrapCost
+            return self.wrapActionCost
         
         return self.moveActionCost
 
