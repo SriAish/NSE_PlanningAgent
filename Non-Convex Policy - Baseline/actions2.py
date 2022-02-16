@@ -15,6 +15,8 @@ class Actions:
         self.boxActionCost = 2
         self.wrapActionCost = 5
 
+        self.numAction = {'0':self.up, '1':self.down, '2':self.left, '3':self.right, '4':self.pick_up, '5':self.wrap}
+
     def isAction(self, action):
         return action in self.allActions
 
