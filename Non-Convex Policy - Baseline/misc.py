@@ -1,6 +1,6 @@
 import copy
 import numpy as np
-from actions2 import Actions
+from actions import Actions
 
 class BoxPushingConstants:
     def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_state=[]):
@@ -73,8 +73,6 @@ class BoxPushingConstants:
                 return [(state, 1)], self.get_cost(state, action)
             if action == self.actions.pick_up:
                 return [((state[0], state[1], True, state[3], state[4]), 1)], self.get_cost(state, action)
-            else:
-                return [((state[0], state[1], False, state[3], state[4]), 1)], self.get_cost(state, action)
         elif self.actions.isMoveAction(action):
             agent_locations_prob = []
             if action == self.actions.down:
