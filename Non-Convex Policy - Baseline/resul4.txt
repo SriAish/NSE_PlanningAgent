@@ -5,3 +5,8 @@ SLURM_JOB_GPUS = 2
 ==========================================
 /var/spool/slurmd/job605764/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 --------------------
+[((3, 6), (3, 6), False, False, 'p'), ((3, 6), (3, 6), False, True, 'p')]
+initial belief setup
+variables setup
+objective setup
+slurmstepd: error: *** JOB 605764 ON gnode35 CANCELLED AT 2022-02-16T23:20:56 ***
