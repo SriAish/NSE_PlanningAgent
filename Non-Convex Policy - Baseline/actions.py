@@ -5,10 +5,9 @@ class Actions:
         self.right = "right"
         self.left = "left"
         self.pick_up = "pick_up"
-        self.drop = "drop"
         self.wrap = "wrap"
-        self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.drop, self.wrap]
-        self.boxActions = [self.pick_up, self.drop]
+        self.allActions = [self.down, self.up, self.right, self.left, self.pick_up, self.wrap]
+        self.boxActions = [self.pick_up]
         self.moveActions = [self.down, self.up, self.right, self.left]
 
         self.moveActionCost = 1
