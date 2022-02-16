@@ -26,8 +26,8 @@ class NCAgent:
             self.belief_state.append((init_loc, i, False, 'p'))
 
     def init_var(self):
-        self.x = self.load('policy/NC_Agent_x_nor_3_7_7_og.pkl')
-        self.pi = self.load('policy/NC_Agent_Policy_nor_3_7_7_og.pkl')
+        self.x = self.load('policy/NC_Agent_x_nor_3_7_7_ogt.pkl')
+        self.pi = self.load('policy/NC_Agent_Policy_nor_3_7_7_ogt.pkl')
 
     def nse_sum(self):
         sa = self.load('state_action_NSE')
