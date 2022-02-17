@@ -3,6 +3,7 @@ import csv
 import copy
 import numpy as np
 import pickle
+import random
 
 def checkDamage(t, st=[6, 4]):
     rug = np.zeros((3, 3))
@@ -26,7 +27,7 @@ def wrap_state(s):
     return (tuple(s[0]), tuple(s[1]), s[2], s[3])
 
 def generate_trajectory(agent):
-    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[0, 0], [0, 1], [0, 5], [0, 6], [1, 0], [1, 1], [1, 5], [1, 6], [5, 0], [5, 1], [5, 5], [5, 6], [6, 0], [6, 1], [6, 5], [6, 6]])
+    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[5, 4]])
     # env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
     done = False
     t = []
@@ -47,8 +48,8 @@ def generate_trajectory(agent):
     return t, ac
 
 def generate_n_tajectories(n, agent):
-    severe = []
-    mild = []
+    severe = set()
+    mild = set()
     with open('trajectories_7_7.csv', 'w') as csvfile:
         csvwriter = csv.writer(csvfile)
 
@@ -63,15 +64,15 @@ def generate_n_tajectories(n, agent):
                 continue
             if damage < 25:
                 c = "mild"
-                mild.append(t)
+                mild.add(tuple(t))
             else:
-                severe.append(t)
+                severe.add(tuple(t))
 
             i += 1
 
             csvwriter.writerow([t, c, ac])
             # print(t, damage, ac)
-
+    print(mild)
     print(len(severe), len(mild))
 
     file_to_write = open("severe_trajectories", "wb")
@@ -79,24 +80,6 @@ def generate_n_tajectories(n, agent):
 
     file_to_write2 = open("mild_trajectories", "wb")
     pickle.dump(mild, file_to_write2)
-
-class VIPolicy:
-    def __init__(self, name):
-        self.loadPolicy(name)
-
-    def loadPolicy(self, name):
-        file_to_read = open(name, "rb")
-        self.policy = pickle.load(file_to_read)
-
-    def getAction(self, state):
-        action = 'down'
-        pr = 0
-        # print(state)
-        for key in self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])]:
-            if pr < self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])][key]:
-                pr = self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])][key]
-                action = key
-        return action
 
 class Agent:
     def __init__(self, name):
@@ -118,20 +101,24 @@ class Agent:
 
     def getAction(self, state):
         state = (tuple(state[0]), tuple(state[1]), state[2], state[3])
+        v = random.uniform(0, 1)
         # print(np.sum(self.prob[state]))
         
         # if(np.sum(self.prob[state]) < 1):
             # print(np.sum(self.prob[state]))
             # self.prob[state][0] += 1 - np.sum(self.prob[state])
-        if(np.sum(self.prob[state]) > 1):
-            re = np.sum(self.prob[state]) - 1
-            r = np.where(self.prob[state] == np.amax(self.prob[state]))
-            # print(r[0])
-            self.prob[state][r[0][0]] -= re
-        return np.random.choice(self.pi[state], p = self.prob[state])
+        if v <= 0.9:
+            if(np.sum(self.prob[state]) > 1):
+                re = np.sum(self.prob[state]) - 1
+                r = np.where(self.prob[state] == np.amax(self.prob[state]))
+                # print(r[0])
+                self.prob[state][r[0][0]] -= re
+            return np.random.choice(self.pi[state], p = self.prob[state])
+        else:
+            return np.random.choice(self.pi[state])
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_all.pkl")
+    agent = Agent("policy_values/VIp_7_7.pkl")
     generate_n_tajectories(1000, agent)
     # generate_trajectory(agent)

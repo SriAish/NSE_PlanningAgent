@@ -1,6 +1,7 @@
 import copy
+from turtle import st
 import numpy as np
-from actions2 import Actions
+from actions import Actions
 
 class BoxPushingConstants:
     def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_state=[]):
@@ -29,10 +30,10 @@ class BoxPushingConstants:
         if state in self.end_state:
             return self.actions.moveActions
         act = copy.deepcopy(self.actions.moveActions)
+        act.append(self.actions.wrap)
         if state[0] == state[1]:
             if state[2]:
                 act.append(self.actions.drop)
-                act.append(self.actions.wrap)
             else:
                 act.append(self.actions.pick_up)
         return act
@@ -43,10 +44,12 @@ class BoxPushingConstants:
             for j in range(self.grid_size):
                 for k in range(self.grid_size):
                     for l in range(self.grid_size):
-                        self.states.append(((i, j), (k, l), False, False, self.getType([i, j])))
-                        if [i, j] == [k, l]:
-                            self.states.append(((i, j), (k, l), True, False, self.getType([i, j])))
-                            self.states.append(((i, j), (k, l), True, True, self.getType([i, j])))
+                        for m in range(10):
+                            self.states.append(((i, j), (k, l), False, False, self.getType([i, j]), m))
+                            self.states.append(((i, j), (k, l), False, True, self.getType([i, j]), m))
+                            if [i, j] == [k, l]:
+                                self.states.append(((i, j), (k, l), True, False, self.getType([i, j]), m))
+                                self.states.append(((i, j), (k, l), True, True, self.getType([i, j]), m))
 
     def moveDown(self, location):
         return (min(self.grid_size - 1, location[0] + 1), location[1])
@@ -72,9 +75,9 @@ class BoxPushingConstants:
             if state[0] != state[1]:
                 return [(state, 1)], self.get_cost(state, action)
             if action == self.actions.pick_up:
-                return [((state[0], state[1], True, state[3], state[4]), 1)], self.get_cost(state, action)
+                return [((state[0], state[1], True, state[3], state[4], state[5]), 1)], self.get_cost(state, action)
             else:
-                return [((state[0], state[1], False, state[3], state[4]), 1)], self.get_cost(state, action)
+                return [((state[0], state[1], False, state[3], state[4], state[5]), 1)], self.get_cost(state, action)
         elif self.actions.isMoveAction(action):
             agent_locations_prob = []
             if action == self.actions.down:
@@ -112,11 +115,14 @@ class BoxPushingConstants:
                     box_location = i[0]
                 else:
                     box_location = state[1]
-                states.append(((i[0], box_location, state[2], state[3], self.getType(i[0])), i[1]))
+                co = state[5]
+                if self.getType(i[0]) == 'r':
+                    co += 1
+                states.append(((i[0], box_location, state[2], state[3], self.getType(i[0]), co), i[1]))
 
             return states, self.get_cost(state, action)
         elif self.actions.isWrapAction(action):
-            return [((state[0], state[1], state[2], True, state[4]), 1)], 5
+            return [((state[0], state[1], state[2], True, state[4], state[5]), 1)], 5
 
     def T(self, s, a, s_):
         if (s, a, s_) in self.transition_probabilities.keys():
