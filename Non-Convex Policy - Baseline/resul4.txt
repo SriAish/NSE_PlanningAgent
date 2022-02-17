@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 607033
+SLURM_JOB_ID = 607040
 SLURM_NODELIST = gnode22
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job607033/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job607040/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 --------------------
 [((3, 6), (3, 6), True, False, 'p'), ((3, 6), (3, 6), True, True, 'p')]
 initial belief setup
@@ -12,39 +12,3 @@ objective setup
 eq1
 eq2
 problem setup
-apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
- APMonitor, Version 1.0.1
- APMonitor Optimization Suite
- ----------------------------------------------------------------
- 
- 
- --------- APM Model Size ------------
- Each time step contains
-   Objects      :            0
-   Constants    :            0
-   Variables    :            0
-   Intermediates:            0
-   Connections  :            0
-   Equations    :            0
-   Residuals    :            0
- 
- 
- @error: Insufficient Model
- Model must contain at least 1 variable and 1 equation
- STOPPING...
-Exception Occured
-No solution or server unreachable.
-  Show errors with m.solve(disp=True).
-  Try local solve with m=GEKKO(remote=False).
-----------------------------------------
-Traceback (most recent call last):
-  File "NCAgent4.py", line 165, in <module>
-    agent.calculate_pi()
-  File "NCAgent4.py", line 123, in calculate_pi
-    print("Objective Value: ", self.pr_obj())
-  File "NCAgent4.py", line 65, in pr_obj
-    obj += (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-824
