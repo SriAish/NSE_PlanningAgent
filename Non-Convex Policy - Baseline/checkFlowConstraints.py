@@ -10,7 +10,7 @@ class FlowConstraint:
         self.pi = self.loadPolicy(pi_name)
         self.gamma = gamma
         self.BP = BP
-        self.locations = [(5, 4)]
+        self.locations = [(1, 1)]
         self.init_belief()
         
     def init_belief(self):
@@ -19,7 +19,8 @@ class FlowConstraint:
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            self.belief_state.append((init_loc, i, False, 'p'))
+            self.belief_state.append((init_loc, i, False, False, 'p', 0))
+        print("belief:", self.belief_state)
 
     def loadPolicy(self, name):
         file_to_read = open(name, "rb")
@@ -46,6 +47,7 @@ class FlowConstraint:
             rhs = self.gamma*rhs
 
             if s_ in self.belief_state:
+                print("belief:", self.belief_state)
                 rhs += 1/len(self.belief_state)
 
             if abs(lhs - rhs) < 0.00001:
@@ -53,15 +55,18 @@ class FlowConstraint:
             else:
                 icf += 1
                 print(lhs, rhs)
+                print(s_)
+                print(self.belief_state)
+                print(s_ in self.belief_state)
 
         print(cf, icf)
             
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = (g_pos, g_pos, False, 'p')
+    e_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-    agent = FlowConstraint(BP, 'policy/NC_Agent_x_nor_3_7_7_NSE4.pkl', 'policy/NC_Agent_Policy_nor_3_7_7_NSE4.pkl', sys.argv[1])
+    agent = FlowConstraint(BP, 'policy/NC_Agent_x_nor_3_3_3_ogt.pkl', 'policy/NC_Agent_Policy_nor_3_3_3_ogt.pkl', sys.argv[1])
     # a = Actions()
     agent.checkFlow()
     # print(agent.getPi(((0, 0), (0, 0), False, 'p'), a.down))

@@ -117,6 +117,8 @@ class BoxPushingConstants:
                 co = state[5]
                 if self.getType(i[0]) == 'r':
                     co += 1
+                if co > 1:
+                    co = 1
                 states.append(((i[0], box_location, state[2], state[3], self.getType(i[0]), co), i[1]))
 
             return states, self.get_cost(state, action)
