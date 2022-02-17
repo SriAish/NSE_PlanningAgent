@@ -43,7 +43,7 @@ class BoxPushingConstants:
             for j in range(self.grid_size):
                 for k in range(self.grid_size):
                     for l in range(self.grid_size):
-                        for m in range(10):
+                        for m in range(self.rug_height*self.rug_width + 1):
                             self.states.append(((i, j), (k, l), False, False, self.getType([i, j]), m))
                             self.states.append(((i, j), (k, l), False, True, self.getType([i, j]), m))
                             if [i, j] == [k, l]:
