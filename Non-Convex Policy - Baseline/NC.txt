@@ -1,10 +1,14 @@
 ==========================================
-SLURM_JOB_ID = 606979
+SLURM_JOB_ID = 606991
 SLURM_NODELIST = gnode31
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job606979/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job606991/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 [((3, 6), (3, 6), True, False, 'p'), ((3, 6), (3, 6), True, True, 'p')]
-initial belief setup
-variables setup
-objective setup
+Traceback (most recent call last):
+  File "NCAgent2_2.py", line 205, in <module>
+    agent = NCAgent(BP, locations=locations)
+  File "NCAgent2_2.py", line 14, in __init__
+    self.m.option.RTOL = 1.0e-8
+AttributeError: 'GEKKO' object has no attribute 'option'
+1
