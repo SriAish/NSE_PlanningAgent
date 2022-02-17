@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 607027
+SLURM_JOB_ID = 607034
 SLURM_NODELIST = gnode31
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job607027/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job607034/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 [((2, 2), (2, 2), True, False, 'p'), ((2, 2), (2, 2), True, True, 'p')]
 initial belief setup
 variables setup
@@ -219,8 +219,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 124
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 123
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.517
-Total CPU secs in NLP function evaluations           =      2.135
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.516
+Total CPU secs in NLP function evaluations           =      2.138
 
 EXIT: Optimal Solution Found.
  
@@ -230,12 +230,29 @@ EXIT: Optimal Solution Found.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    2.71830000000773      sec
+ Solution time  :    2.71899999998277      sec
  Objective      :    5.12999308511014     
  Successful solution
  ---------------------------------------------------
  
 ----------------------------------------
+((0, 0), (1, 1), False, False, 'p') 0.99999997622 down 0.50000001107 1 0.49999999917999977
+((0, 0), (1, 1), False, False, 'p') 0.99999997622 right 0.50000001106 1 0.49999999916999976
+((0, 1), (1, 1), False, False, 'p') 0.47308573694 down 1.0 1 0.47308573694
+((0, 2), (1, 1), False, False, 'p') 0.042577712841 down 0.37194128115 1 0.015836409062518347
+((0, 2), (1, 1), False, False, 'p') 0.042577712841 left 0.62805874773 1 0.026741305008126003
+((1, 0), (1, 1), False, False, 'p') 0.47308573694 right 1.0 1 0.47308573694
+((1, 1), (1, 1), False, False, 'p') 0.79325353509 pick_up 1.0 2 1.58650707018
+((1, 1), (1, 1), True, False, 'p') 0.77685330005 down 0.50000002824 1 0.3884266719633372
+((1, 1), (1, 1), True, False, 'p') 0.77685330005 right 0.50000001058 1 0.3884266582441079
+((1, 2), (1, 1), False, False, 'p') 0.016576939567 left 1.0 1 0.016576939567
+((1, 2), (1, 2), True, False, 'p') 0.3495839946 down 1.0 1 0.3495839946
+((2, 0), (1, 1), False, False, 'p') 0.042577712841 up 0.62805874773 1 0.026741305008126003
+((2, 0), (1, 1), False, False, 'p') 0.042577712841 right 0.37194128115 1 0.015836409062518347
+((2, 1), (1, 1), False, False, 'p') 0.016576939567 up 1.0 1 0.016576939567
+((2, 1), (2, 1), True, False, 'p') 0.34958400438 right 1.0 1 0.34958400438
+((2, 2), (1, 1), False, False, 'p') 0.00298384897 up 0.50000000707 1 0.0014919245060958123
+((2, 2), (1, 1), False, False, 'p') 0.00298384897 left 0.50000000707 1 0.0014919245060958123
 Objective Value:  5.129993085123605
 ----------------------------------------
 ((0, 0), (1, 1), False, False, 'p') 0.99999997622
@@ -265,5 +282,5 @@ Objective Value:  5.129993085123605
 ((2, 2), (2, 2), True, False, 'p') 5.6632608482
 {'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
 Saving policies
-19
+16
 --------------------
