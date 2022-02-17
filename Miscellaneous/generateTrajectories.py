@@ -78,7 +78,7 @@ def generate_n_tajectories(n, agent):
 
             csvwriter.writerow([t, c, ac])
             # print(t, damage, ac)
-    print(mild)
+    print(severe)
     print(len(severe), len(mild))
 
     file_to_write = open("severe_trajectories", "wb")
