@@ -64,7 +64,7 @@ class NCAgent:
             for a in actions:
                 c = (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
                 if c > 0.00001:
-                    print(s, self.x[s].value[0], a, self.pi[s][a].value[0], self.BP.get_cost(s, a))
+                    print(s, self.x[s].value[0], a, self.pi[s][a].value[0], self.BP.get_cost(s, a), c)
                 obj += c
         return obj
     

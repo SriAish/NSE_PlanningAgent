@@ -60,7 +60,10 @@ class NCAgent:
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                obj += (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
+                c = (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
+                if c > 0.00001:
+                    print(s, self.x[s].value[0], a, self.pi[s][a].value[0], self.BP.get_cost(s, a), c)
+                obj += c
         return obj
     
     def set_obj(self):
