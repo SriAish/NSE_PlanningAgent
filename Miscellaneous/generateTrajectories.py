@@ -24,7 +24,7 @@ def checkDamage(t, st=[6, 4]):
     return (np.count_nonzero(rug)/9) * 100
 
 def wrap_state(s):
-    return (tuple(s[0]), tuple(s[1]), s[2], s[3])
+    return (tuple(s[0]), tuple(s[1]), s[2], s[3], s[4])
 
 def generate_trajectory(agent):
     env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[5, 4]])
@@ -32,13 +32,19 @@ def generate_trajectory(agent):
     done = False
     t = []
     ac = 0
+    i = 0
     while not done and ac < 1000:
         s = env.getState()
+        if s[3] == 'r':
+            i += 1
+        if i > 9:
+            i = 9
         a = agent.getAction(s)
         # print(ac, s)
         # env.display()
     
-        t = t + [(wrap_state(copy.deepcopy(s)), a)]
+        s_ = (s[0], s[1], s[2], s[3], i)
+        t = t + [(wrap_state(copy.deepcopy(s_)), a)]
 
         ac += 1
         s, _, done = env.getNextState(a)

@@ -1,18 +1,18 @@
 import copy
-from turtle import st
 import numpy as np
 from actions import Actions
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_state=[]):
+    def __init__(self, grid_size = 15, rug_width=7, rug_height=3, rug_start=(6, 4), end_state=None):
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
         self.rug_height = rug_height
         self.rug_width = rug_width
         self.rug_start = rug_start
         self.end_state = end_state
-        print(end_state)
+        self.prev_end = (end_state[0], end_state[1], True, end_state[3])
         self.transition_probabilities = {}
+        print(self.prev_end)
         self.putRug()
         self.generateStates()
 
@@ -27,10 +27,9 @@ class BoxPushingConstants:
         return self.grid[tuple(location)]
 
     def getValidActions(self, state):
-        if state in self.end_state:
+        if state == self.end_state:
             return self.actions.moveActions
         act = copy.deepcopy(self.actions.moveActions)
-        act.append(self.actions.wrap)
         if state[0] == state[1]:
             if state[2]:
                 act.append(self.actions.drop)
@@ -44,12 +43,10 @@ class BoxPushingConstants:
             for j in range(self.grid_size):
                 for k in range(self.grid_size):
                     for l in range(self.grid_size):
-                        for m in range(10):
-                            self.states.append(((i, j), (k, l), False, False, self.getType([i, j]), m))
-                            self.states.append(((i, j), (k, l), False, True, self.getType([i, j]), m))
+                        for m in range(self.rug_width * self.rug_height + 1):
+                            self.states.append(((i, j), (k, l), False, self.getType([i, j]), m))
                             if [i, j] == [k, l]:
-                                self.states.append(((i, j), (k, l), True, False, self.getType([i, j]), m))
-                                self.states.append(((i, j), (k, l), True, True, self.getType([i, j]), m))
+                                self.states.append(((i, j), (k, l), True, self.getType([i, j]), m))
 
     def moveDown(self, location):
         return (min(self.grid_size - 1, location[0] + 1), location[1])
@@ -64,21 +61,25 @@ class BoxPushingConstants:
         return (location[0], min(self.grid_size - 1, location[1] + 1))
 
     def get_cost(self, state, action):
-        if state in self.end_state:
+        if state == self.end_state:
             return 0
+        # if state == self.prev_end and action == self.actions.drop:
+        #     # print("before final")
+        #     # print(state)
+        #     return self.actions.actionCost(action) - 2
         return self.actions.actionCost(action)
 
     def transition(self, state, action):
-        if state in self.end_state:
+        if state == self.end_state:
             return [(state, 1)], 0
         if self.actions.isBoxAction(action):
             if state[0] != state[1]:
                 return [(state, 1)], self.get_cost(state, action)
             if action == self.actions.pick_up:
-                return [((state[0], state[1], True, state[3], state[4], state[5]), 1)], self.get_cost(state, action)
+                return [((state[0], state[1], True, state[3]), 1, state[4])], self.get_cost(state, action)
             else:
-                return [((state[0], state[1], False, state[3], state[4], state[5]), 1)], self.get_cost(state, action)
-        elif self.actions.isMoveAction(action):
+                return [((state[0], state[1], False, state[3]), 1, state[4])], self.get_cost(state, action)
+        else:
             agent_locations_prob = []
             if action == self.actions.down:
                 agent_locations_prob.append((self.moveDown(state[0]), 0.9))
@@ -115,14 +116,12 @@ class BoxPushingConstants:
                     box_location = i[0]
                 else:
                     box_location = state[1]
-                co = state[5]
+                rc = state[4]
                 if self.getType(i[0]) == 'r':
-                    co += 1
-                states.append(((i[0], box_location, state[2], state[3], self.getType(i[0]), co), i[1]))
+                    rc += 1
+                states.append(((i[0], box_location, state[2], self.getType(i[0]), rc), i[1]))
 
             return states, self.get_cost(state, action)
-        elif self.actions.isWrapAction(action):
-            return [((state[0], state[1], state[2], True, state[4], state[5]), 1)], 5
 
     def T(self, s, a, s_):
         if (s, a, s_) in self.transition_probabilities.keys():

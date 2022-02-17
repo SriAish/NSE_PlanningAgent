@@ -72,12 +72,12 @@ class FSA:
         if obs == "end":
             self.g = True
             return self.label[(self.r0, self.r25, self.g)]
-    
+
         obs = obs[0]
-        if obs[5] > 0 and obs[5] < 3:
+        if obs[4] > 0 and obs[4] < 3:
             self.r0 = False
             self.r25 = True
-        elif obs[5] >= 3:
+        elif obs[4] >= 3:
             self.r0 = False
             self.r25 = False
             
@@ -95,7 +95,7 @@ class FSA:
 
 if __name__ == '__main__':
     fsa = FSA()
-    trace = ((((0, 0), (5, 4), False, 'p'), 'down'), (((1, 0), (5, 4), False, 'p'), 'down'), (((2, 0), (5, 4), False, 'p'), 'down'), (((3, 0), (5, 4), False, 'p'), 'right'), (((4, 0), (5, 4), False, 'p'), 'right'), (((4, 1), (5, 4), False, 'p'), 'right'), (((5, 1), (5, 4), False, 'p'), 'right'), (((5, 2), (5, 4), False, 'p'), 'right'), (((5, 3), (5, 4), False, 'p'), 'right'), (((5, 4), (5, 4), False, 'p'), 'pick_up'), (((5, 4), (5, 4), True, 'p'), 'up'), (((4, 4), (4, 4), True, 'r'), 'up'), (((3, 4), (3, 4), True, 'r'), 'right'), (((4, 4), (4, 4), True, 'r'), 'up'), (((3, 4), (3, 4), True, 'r'), 'right'), (((3, 5), (3, 5), True, 'p'), 'right'), (((3, 6), (3, 6), True, 'p'), 'drop'), 'end')
+    trace = ((((0, 0), (5, 4), False, 'p', 0), 'down'), (((1, 0), (5, 4), False, 'p', 0), 'down'), (((2, 0), (5, 4), False, 'p', 0), 'left'), (((2, 0), (5, 4), False, 'p', 0), 'right'), (((2, 1), (5, 4), False, 'p', 0), 'down'), (((3, 1), (5, 4), False, 'p', 0), 'right'), (((4, 1), (5, 4), False, 'p', 0), 'right'), (((4, 2), (5, 4), False, 'r', 1), 'right'), (((4, 3), (5, 4), False, 'r', 2), 'down'), (((5, 3), (5, 4), False, 'p', 2), 'right'), (((5, 4), (5, 4), False, 'p', 2), 'pick_up'), (((5, 4), (5, 4), True, 'p', 2), 'up'), (((5, 5), (5, 5), True, 'p', 2), 'up'), (((4, 5), (4, 5), True, 'p', 2), 'up'), (((4, 6), (4, 6), True, 'p', 2), 'up'), (((3, 6), (3, 6), True, 'p', 2), 'drop'), 'end')
     s = fsa.state
     print(fsa.state)
     for i in trace:
