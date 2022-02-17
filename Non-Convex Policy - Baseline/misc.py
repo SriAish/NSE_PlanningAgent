@@ -29,10 +29,10 @@ class BoxPushingConstants:
         if state in self.end_state:
             return self.actions.moveActions
         act = copy.deepcopy(self.actions.moveActions)
+        act.append(self.actions.wrap)
         if state[0] == state[1]:
             if state[2]:
                 act.append(self.actions.drop)
-                act.append(self.actions.wrap)
             else:
                 act.append(self.actions.pick_up)
         return act

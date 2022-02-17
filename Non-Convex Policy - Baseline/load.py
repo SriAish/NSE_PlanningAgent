@@ -47,5 +47,4 @@ for s in BP.states:
     nse = 0
     for a in actions:
         if (s,a) in sn:
-            print("in")
-            print(sn[(s,a)])
+            print((s, a), sn[(s,a)])
