@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 607034
+SLURM_JOB_ID = 607036
 SLURM_NODELIST = gnode31
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job607034/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job607036/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 [((2, 2), (2, 2), True, False, 'p'), ((2, 2), (2, 2), True, True, 'p')]
 initial belief setup
 variables setup
@@ -219,8 +219,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 124
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 123
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.516
-Total CPU secs in NLP function evaluations           =      2.138
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.518
+Total CPU secs in NLP function evaluations           =      2.146
 
 EXIT: Optimal Solution Found.
  
@@ -230,7 +230,7 @@ EXIT: Optimal Solution Found.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    2.71899999998277      sec
+ Solution time  :    2.71689999999944      sec
  Objective      :    5.12999308511014     
  Successful solution
  ---------------------------------------------------
@@ -242,9 +242,9 @@ EXIT: Optimal Solution Found.
 ((0, 2), (1, 1), False, False, 'p') 0.042577712841 down 0.37194128115 1 0.015836409062518347
 ((0, 2), (1, 1), False, False, 'p') 0.042577712841 left 0.62805874773 1 0.026741305008126003
 ((1, 0), (1, 1), False, False, 'p') 0.47308573694 right 1.0 1 0.47308573694
-((1, 1), (1, 1), False, False, 'p') 0.79325353509 pick_up 1.0 2 1.58650707018
-((1, 1), (1, 1), True, False, 'p') 0.77685330005 down 0.50000002824 1 0.3884266719633372
-((1, 1), (1, 1), True, False, 'p') 0.77685330005 right 0.50000001058 1 0.3884266582441079
+((1, 1), (1, 1), False, False, 'r') 0.79325353509 pick_up 1.0 2 1.58650707018
+((1, 1), (1, 1), True, False, 'r') 0.77685330005 down 0.50000002824 1 0.3884266719633372
+((1, 1), (1, 1), True, False, 'r') 0.77685330005 right 0.50000001058 1 0.3884266582441079
 ((1, 2), (1, 1), False, False, 'p') 0.016576939567 left 1.0 1 0.016576939567
 ((1, 2), (1, 2), True, False, 'p') 0.3495839946 down 1.0 1 0.3495839946
 ((2, 0), (1, 1), False, False, 'p') 0.042577712841 up 0.62805874773 1 0.026741305008126003
@@ -263,9 +263,9 @@ Objective Value:  5.129993085123605
 {'down': 0.37194128115, 'up': 0.0, 'right': 0.0, 'left': 0.62805874773, 'wrap': 0.0}
 ((1, 0), (1, 1), False, False, 'p') 0.47308573694
 {'down': 0.0, 'up': 0.0, 'right': 1.0, 'left': 1.5525730945e-08, 'wrap': 0.0}
-((1, 1), (1, 1), False, False, 'p') 0.79325353509
+((1, 1), (1, 1), False, False, 'r') 0.79325353509
 {'down': 0.0, 'up': 0.0, 'right': 0.0, 'left': 0.0, 'wrap': 0.0, 'pick_up': 1.0}
-((1, 1), (1, 1), True, False, 'p') 0.77685330005
+((1, 1), (1, 1), True, False, 'r') 0.77685330005
 {'down': 0.50000002824, 'up': 0.0, 'right': 0.50000001058, 'left': 0.0, 'wrap': 0.0, 'drop': 0.0}
 ((1, 2), (1, 1), False, False, 'p') 0.016576939567
 {'down': 0.0, 'up': 0.0, 'right': 1.7223058531e-08, 'left': 1.0, 'wrap': 0.0}
@@ -282,5 +282,5 @@ Objective Value:  5.129993085123605
 ((2, 2), (2, 2), True, False, 'p') 5.6632608482
 {'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
 Saving policies
-16
+14
 --------------------
