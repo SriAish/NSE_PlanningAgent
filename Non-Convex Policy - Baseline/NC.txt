@@ -8,3 +8,8 @@ SLURM_JOB_GPUS = 1
 initial belief setup
 variables setup
 objective setup
+eq1
+eq2
+eq3
+eq4
+problem setup
