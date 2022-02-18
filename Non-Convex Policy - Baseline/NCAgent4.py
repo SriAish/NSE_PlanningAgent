@@ -10,8 +10,6 @@ class NCAgent:
         self.m.options.IMODE = 3
         self.m.options.MAX_ITER = 1000
         self.m.options.SOLVER = int(sys.argv[9])
-        self.m.options.RTOL = 1.0e-8
-        self.m.options.OTOL = 1.0e-8
         self.BP = BP
         self.no_states = len(self.BP.states)
         self.gamma = gamma
