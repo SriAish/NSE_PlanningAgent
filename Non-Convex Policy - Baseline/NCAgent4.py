@@ -1,4 +1,4 @@
-from misc import BoxPushingConstants
+from misc3 import BoxPushingConstants
 import sys
 import pickle
 from gekko import GEKKO
@@ -149,12 +149,15 @@ class NCAgent:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
+    e_state = (g_pos, g_pos, True, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
-    locations = [(5, 4)]
+
+    locations = [(int(sys.argv[1])/2, 1)]
+    if(len(sys.argv) > 10):
+        locations = [(sys.argv[10], sys.argv[11])]
 
     # if int(sys.argv[1]) == 7:
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
