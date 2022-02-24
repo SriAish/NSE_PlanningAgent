@@ -45,7 +45,6 @@ class NCAgent:
                 s_prev = s
                 a_prev = a
             lhs += (tra)
-            # lhs += (tra*100000000)
 
         ans = lhs
         # print(lhs/len(trajs), len(trajs))

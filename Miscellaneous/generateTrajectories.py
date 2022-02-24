@@ -24,10 +24,10 @@ def checkDamage(t, st=[6, 4]):
     return (np.count_nonzero(rug)/9) * 100
 
 def wrap_state(s):
-    return (tuple(s[0]), tuple(s[1]), s[2], s[3], s[4])
+    return (tuple(s[0]), tuple(s[1]), s[2], s[3])
 
 def generate_trajectory(agent):
-    env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[5, 4]])
+    env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[5, 4]])
     # env = env = BoxPushing(7, [0, 0], [3, 6], rug_width=3, rug_height=3, rug_start=[2, 2], locations=[[3, 0], [1, 2], [0, 3], [6, 3], [5, 4]])
     done = False
     t = []
@@ -43,8 +43,7 @@ def generate_trajectory(agent):
         # print(ac, s)
         # env.display()
     
-        s_ = (s[0], s[1], s[2], s[3], i)
-        t = t + [(wrap_state(copy.deepcopy(s_)), a)]
+        t = t + [(wrap_state(copy.deepcopy(s)), a)]
 
         ac += 1
         s, _, done = env.getNextState(a)
@@ -78,8 +77,9 @@ def generate_n_tajectories(n, agent):
 
             csvwriter.writerow([t, c, ac])
             # print(t, damage, ac)
-    print(severe)
     print(len(severe), len(mild))
+    for i in mild:
+        print(i)
 
     file_to_write = open("severe_trajectories", "wb")
     pickle.dump(severe, file_to_write)
@@ -113,18 +113,18 @@ class Agent:
         # if(np.sum(self.prob[state]) < 1):
             # print(np.sum(self.prob[state]))
             # self.prob[state][0] += 1 - np.sum(self.prob[state])
-        if v <= 0.9:
-            if(np.sum(self.prob[state]) > 1):
-                re = np.sum(self.prob[state]) - 1
-                r = np.where(self.prob[state] == np.amax(self.prob[state]))
-                # print(r[0])
-                self.prob[state][r[0][0]] -= re
-            return np.random.choice(self.pi[state], p = self.prob[state])
-        else:
-            return np.random.choice(self.pi[state])
+        # if v <= 0.99:
+        if(np.sum(self.prob[state]) > 1):
+            re = np.sum(self.prob[state]) - 1
+            r = np.where(self.prob[state] == np.amax(self.prob[state]))
+            # print(r[0])
+            self.prob[state][r[0][0]] -= re
+        return np.random.choice(self.pi[state], p = self.prob[state])
+        # else:
+        #     return np.random.choice(self.pi[state])
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = Agent("policy_values/VIp_7_7.pkl")
+    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_og.pkl")
     generate_n_tajectories(1000, agent)
     # generate_trajectory(agent)
