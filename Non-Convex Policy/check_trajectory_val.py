@@ -30,7 +30,7 @@ class NCAgent:
         self.pi = self.load('policy/NC_Agent_Policy_nor_3_7_7_og_54.pkl')
 
     def nse_sum(self):
-        trajs = self.load('severe_trajectories')
+        trajs = self.load('severe_trajectories_54')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -49,7 +49,7 @@ class NCAgent:
 
         ans = lhs
         print(lhs/len(trajs), len(trajs))
-        trajs = self.load('mild_trajectories')
+        trajs = self.load('mild_trajectories_54')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -60,7 +60,7 @@ class NCAgent:
                     ele += 1
                 else:
                     tra = tra*self.BP.T(s_prev, a_prev, s)
-                print(s, a)
+                # print(s, a)
                 tra = tra * self.pi[s][a]
                 s_prev = s
                 a_prev = a

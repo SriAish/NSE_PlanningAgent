@@ -84,10 +84,10 @@ def generate_n_tajectories(n, agent):
     # for i in mild:
     #     print(i)
 
-    file_to_write = open("severe_trajectories", "wb")
+    file_to_write = open("severe_trajectories_12", "wb")
     pickle.dump(severe, file_to_write)
 
-    file_to_write2 = open("mild_trajectories", "wb")
+    file_to_write2 = open("mild_trajectories_12", "wb")
     pickle.dump(mild, file_to_write2)
 
 class Agent:
@@ -128,6 +128,6 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_NSE.pkl")
+    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_NSE_1.pkl")
     generate_n_tajectories(1000, agent)
     # generate_trajectory(agent)
