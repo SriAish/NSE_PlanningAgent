@@ -10,7 +10,6 @@ class NCAgent:
         self.m.options.IMODE = 3
         self.m.options.MAX_ITER = 1000
         self.m.options.SOLVER = int(sys.argv[9])
-        print(self.m)
         self.m.options.MAX_MEMORY = 5
         self.BP = BP
         self.no_states = len(self.BP.states)
@@ -18,6 +17,7 @@ class NCAgent:
         self.locations = locations
         self.alpha = float(sys.argv[12])
         self.init_belief()
+        print("og obj: ", float(sys.argv[13]))
         print("initial belief setup")
         sys.stdout.flush()
         self.init_var()
