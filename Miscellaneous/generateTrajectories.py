@@ -64,7 +64,7 @@ def generate_n_tajectories(n, agent):
             t, ac = generate_trajectory(agent)
             c = "severe"
             damage = checkDamage(t, [2, 2])
-            t = t + ["end"]
+            # t = t + ["end"]
             if damage < 1:
                 continue
             if damage < 25:
