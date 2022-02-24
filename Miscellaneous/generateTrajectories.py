@@ -78,6 +78,7 @@ def generate_n_tajectories(n, agent):
             csvwriter.writerow([t, c, ac])
             # print(t, damage, ac)
     print(len(severe), len(mild))
+    print(mild)
     # for i in mild:
     #     print(i)
 
