@@ -57,3 +57,9 @@ TypeError: 'int' object is not subscriptable
 initial belief setup
 variables setup
 objective setup
+eq1
+eq2
+eq3
+eq5
+problem setup
+slurmstepd: error: *** JOB 614413 ON gnode45 CANCELLED AT 2022-02-25T03:13:39 ***
