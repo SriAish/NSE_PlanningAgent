@@ -10,37 +10,37 @@ module add cudnn/7-cuda-9.0
 source ~/keras/bin/activate
 echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_0 3 3 0 0
+python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_0 3 3 0 0 7.79
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_1 3 3 0 0.1
+python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_1 3 3 0 0.1 7.79
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_2 3 3 0 0.2
+python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_2 3 3 0 0.2 7.79
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_3 3 3 0 0.3
+python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_3 3 3 0 0.3 7.79
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_4 3 3 0 0.4
+python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_4 3 3 0 0.4 7.79
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_5 3 3 0 0.5
+python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_5 3 3 0 0.5 7.79
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
