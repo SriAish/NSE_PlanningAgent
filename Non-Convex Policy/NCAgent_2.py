@@ -134,7 +134,7 @@ class NCAgent:
         self.m.Equation(lhs <= 0)
 
     def make_constraints_eqn4(self):
-        trajs = self.load('mild_trajectories_7_1000_all')
+        trajs = self.load('mild_trajectories')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -151,7 +151,7 @@ class NCAgent:
 
             lhs += self.m.Intermediate(tra)
 
-        self.m.Equation(lhs <= 0.1)
+        self.m.Equation(lhs <= 0)
 
     def nse_sum(self):
         trajs = self.load('severe_trajectories')
@@ -257,7 +257,7 @@ if __name__ == '__main__':
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
     # locations = [(0, 0), (0, 1), (0, 5), (0, 6), (1, 0), (1, 1), (1, 5), (1, 6), (5, 0), (5, 1), (5, 5), (5, 6), (6, 0), (6, 1), (6, 5), (6, 6)]
-    locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
+    locations = [(5, 4)]
 
     # if int(sys.argv[1]) == 7:
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]

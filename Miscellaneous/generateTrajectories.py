@@ -78,8 +78,8 @@ def generate_n_tajectories(n, agent):
             csvwriter.writerow([t, c, ac])
             # print(t, damage, ac)
     print(len(severe), len(mild))
-    for i in mild:
-        print(i)
+    # for i in mild:
+    #     print(i)
 
     file_to_write = open("severe_trajectories", "wb")
     pickle.dump(severe, file_to_write)

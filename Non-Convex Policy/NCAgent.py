@@ -107,7 +107,7 @@ class NCAgent:
                 self.m.Equation(c == su)
 
     def nse_sum(self):
-        trajs = self.load('severe_trajectories_7_200')
+        trajs = self.load('severe_trajectories')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -125,7 +125,7 @@ class NCAgent:
 
         ans = lhs
 
-        trajs = self.load('mild_trajectories_7_200')
+        trajs = self.load('mild_trajectories')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -169,10 +169,10 @@ class NCAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'NC_Agent_Policy_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_Policy_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'NC_Agent_x_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'NC_x_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.x_, f)
 
     def solve_prob(self):
@@ -188,7 +188,7 @@ if __name__ == '__main__':
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
-    locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
+    locations = [(5, 4)]
 
     # if int(sys.argv[1]) == 7:
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]

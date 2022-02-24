@@ -36,7 +36,7 @@ class BoxPushing:
         self.done = False
 
     def checkDone(self):
-        if self.agent_location == self. box_location and self.box_location == self.end_location and not self.box_pushing:
+        if self.agent_location == self. box_location and self.box_location == self.end_location and self.box_pushing:
             self.done = True
         return self.done
 
