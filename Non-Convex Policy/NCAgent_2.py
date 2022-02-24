@@ -205,7 +205,7 @@ class NCAgent:
             if i%100 == 0:
                 lhs = self.m.Intermediate(lhs)
 
-        self.m.Equation(lhs - 8.23 <= 1)
+        self.m.Equation(lhs - float(sys.argv[13]) <= 1)
 
     def make_prob(self):
         self.set_obj()
