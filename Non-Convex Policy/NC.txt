@@ -1,13 +1,13 @@
 ==========================================
-SLURM_JOB_ID = 614442
-SLURM_NODELIST = gnode17
+SLURM_JOB_ID = 614450
+SLURM_NODELIST = gnode82
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job614442/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job614450/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 --------------------
 ((3, 6), (3, 6), True, 'p')
 [(0, 3)]
-<gekko.gekko.GEKKO object at 0x146ac9d45310>
+<gekko.gekko.GEKKO object at 0x1473b6c033d0>
 [((0, 0), (0, 3), False, 'p')]
 initial belief setup
 variables setup
@@ -17,30 +17,3 @@ eq2
 eq3
 eq5
 problem setup
-apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
- APMonitor, Version 1.0.1
- APMonitor Optimization Suite
- ----------------------------------------------------------------
- 
- @error: Duplicate Names
- error: duplicate variable declarations
- variable:           1 v1
- variable:       12350 v1
- STOPPING. . .
-Exception Occured
-No solution or server unreachable.
-  Show errors with m.solve(disp=True).
-  Try local solve with m=GEKKO(remote=False).
-----------------------------------------
-Traceback (most recent call last):
-  File "NCAgent_2.py", line 272, in <module>
-    agent.calculate_pi()
-  File "NCAgent_2.py", line 228, in calculate_pi
-    print("Objective Value: ", self.pr_obj())
-  File "NCAgent_2.py", line 72, in pr_obj
-    obj += (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-256
---------------------

@@ -12,3 +12,9 @@ SLURM_JOB_GPUS = 0
 initial belief setup
 variables setup
 objective setup
+slurmstepd: error: *** JOB 614443 ON gnode37 CANCELLED AT 2022-02-25T03:16:27 ***
+eq1
+eq2
+eq3
+eq5
+problem setup
