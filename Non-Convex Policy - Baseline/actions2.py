@@ -19,6 +19,9 @@ class Actions:
     def isBoxAction(self, action):
         return action in self.boxActions
 
+    def isMoveAction(self, action):
+        return action in self.moveActions
+
     def actionCost(self, action):
         if not self.isAction(action):
             return 0
