@@ -60,10 +60,12 @@ def generate_n_tajectories(n, agent):
 
         csvwriter.writerow(["trajectory", "Type", "Size"])
         i = 0
+        td = 0
         while i < n:
             t, ac = generate_trajectory(agent)
             c = "severe"
             damage = checkDamage(t, [2, 2])
+            td += damage
             # t = t + ["end"]
             if damage < 1:
                 continue
@@ -78,7 +80,7 @@ def generate_n_tajectories(n, agent):
             csvwriter.writerow([t, c, ac])
             # print(t, damage, ac)
     print(len(severe), len(mild))
-    print(mild)
+    print(td/n)
     # for i in mild:
     #     print(i)
 
@@ -126,6 +128,6 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_og.pkl")
+    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_NSE.pkl")
     generate_n_tajectories(1000, agent)
     # generate_trajectory(agent)

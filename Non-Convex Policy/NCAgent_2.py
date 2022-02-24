@@ -16,6 +16,7 @@ class NCAgent:
         self.no_states = len(self.BP.states)
         self.gamma = gamma
         self.locations = locations
+        self.alpha = float(sys.argv[12])
         self.init_belief()
         print("initial belief setup")
         sys.stdout.flush()
@@ -115,7 +116,7 @@ class NCAgent:
                 self.m.Equation(c == su)
 
     def make_constraints_eqn3(self):
-        trajs = self.load('severe_trajectories')
+        trajs = self.load('severe_trajectories_54')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -132,15 +133,16 @@ class NCAgent:
 
             lhs += self.m.Intermediate(tra)
 
-        self.m.Equation(lhs <= 0)
+        self.m.Equation(lhs <= self.alpha)
 
     def make_constraints_eqn4(self):
-        trajs = self.load('mild_trajectories')
+        trajs = self.load('mild_trajectories_54')
         lhs = 0
         for t in trajs:
             tra = 1
             ele = 0
             for s, a in t:
+
                 tra = tra * self.pi[s][a]
                 if ele == 0:
                     tra = tra * self.x[s]
@@ -152,10 +154,10 @@ class NCAgent:
 
             lhs += self.m.Intermediate(tra)
 
-        self.m.Equation(lhs <= 0)
+        self.m.Equation(lhs <= self.alpha)
 
     def nse_sum(self):
-        trajs = self.load('severe_trajectories')
+        trajs = self.load('severe_trajectories_54')
         lhs = 0
         for t in trajs:
             tra = 1
@@ -174,22 +176,22 @@ class NCAgent:
 
         ans = lhs
 
-        # trajs = self.load('mild_trajectories_7_1000_all')
-        # lhs = 0
-        # for t in trajs:
-        #     tra = 1
-        #     ele = 0
-        #     for s, a in t:
-        #         tra = tra * self.pi[s][a].value[0]
-        #         if ele == 0:
-        #             tra = tra * self.x[s].value[0]
-        #             ele += 1
-        #         else:
-        #             tra = tra*self.BP.T(s_prev, a_prev, s)
-        #         s_prev = s
-        #         a_prev = a
+        trajs = self.load('mild_trajectories_54')
+        lhs = 0
+        for t in trajs:
+            tra = 1
+            ele = 0
+            for s, a in t:
+                tra = tra * self.pi[s][a].value[0]
+                if ele == 0:
+                    tra = tra * self.x[s].value[0]
+                    ele += 1
+                else:
+                    tra = tra*self.BP.T(s_prev, a_prev, s)
+                s_prev = s
+                a_prev = a
 
-        #     lhs += tra
+            lhs += tra
 
         return ans, lhs
 
@@ -203,7 +205,7 @@ class NCAgent:
             if i%100 == 0:
                 lhs = self.m.Intermediate(lhs)
 
-        self.m.Equation(lhs - 8.2 <= 1)
+        self.m.Equation(lhs - 8.23 <= 1)
 
     def make_prob(self):
         self.set_obj()
