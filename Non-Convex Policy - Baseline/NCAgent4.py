@@ -156,7 +156,7 @@ if __name__ == '__main__':
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
 
-    locations = [(int(sys.argv[1])/2, 1)]
+    locations = [(int(int(sys.argv[1])/2), 1)]
     if(len(sys.argv) > 10):
         locations = [(sys.argv[10], sys.argv[11])]
 
