@@ -1,15 +1,15 @@
 ==========================================
-SLURM_JOB_ID = 614445
+SLURM_JOB_ID = 614461
 SLURM_NODELIST = gnode39
-SLURM_JOB_GPUS = 0
+SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job614445/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job614461/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 --------------------
 ((3, 6), (3, 6), True, 'p')
 [(6, 3)]
-<gekko.gekko.GEKKO object at 0x14c32b40e990>
 [((0, 0), (6, 3), False, 'p')]
+og obj:  8.62
 initial belief setup
 variables setup
 objective setup
-slurmstepd: error: *** JOB 614445 ON gnode39 CANCELLED AT 2022-02-25T03:16:38 ***
+slurmstepd: error: *** JOB 614461 ON gnode39 CANCELLED AT 2022-02-25T03:41:18 ***
