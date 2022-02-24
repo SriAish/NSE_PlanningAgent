@@ -113,8 +113,9 @@ class NCAgent:
             tra = 1
             ele = 0
             for s, a in t:
-                tra = tra * self.x[s].value[0] * self.pi[s][a].value[0]
+                tra = tra * self.pi[s][a].value[0]
                 if ele == 0:
+                    tra = tra * self.x[s].value[0]
                     ele += 1
                 else:
                     tra = tra*self.BP.T(s_prev, a_prev, s)
@@ -131,8 +132,9 @@ class NCAgent:
             tra = 1
             ele = 0
             for s, a in t:
-                tra = tra * self.x[s].value[0] * self.pi[s][a].value[0]
+                tra = tra * self.pi[s][a].value[0]
                 if ele == 0:
+                    tra = tra * self.x[s].value[0]
                     ele += 1
                 else:
                     tra = tra*self.BP.T(s_prev, a_prev, s)
@@ -189,6 +191,8 @@ if __name__ == '__main__':
     
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     locations = [(5, 4)]
+    if(len(sys.argv) > 10):
+        locations = [(int(sys.argv[10]), int(sys.argv[11]))]
 
     # if int(sys.argv[1]) == 7:
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
