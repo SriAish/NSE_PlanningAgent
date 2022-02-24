@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 614461
-SLURM_NODELIST = gnode39
-SLURM_JOB_GPUS = 1
+SLURM_JOB_ID = 614468
+SLURM_NODELIST = gnode17
+SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job614461/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job614468/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 --------------------
 ((3, 6), (3, 6), True, 'p')
 [(6, 3)]
@@ -12,4 +12,4 @@ og obj:  8.62
 initial belief setup
 variables setup
 objective setup
-slurmstepd: error: *** JOB 614461 ON gnode39 CANCELLED AT 2022-02-25T03:41:18 ***
+slurmstepd: error: *** JOB 614468 ON gnode17 CANCELLED AT 2022-02-25T03:58:32 ***
