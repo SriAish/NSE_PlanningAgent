@@ -38,8 +38,32 @@ source ~/keras/bin/activate
 # runtime=$((end-start))
 # echo $runtime
 # echo "--------------------"
+# start=`date +%s`
+# python3.7 NCAgent4.py 7 3 3 2 2 3 6 7_7_og 3 5 4
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent4.py 7 3 3 2 2 3 6 7_7_og 3 5 4
+python3.7 NCAgent4.py 7 3 3 2 2 3 6 7_7_og_63 3 6 3
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+python3.7 NCAgent4.py 7 3 3 2 2 3 6 7_7_og_03 3 0 3
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+python3.7 NCAgent4.py 7 3 3 2 2 3 6 7_7_og_12 3 1 2
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+python3.7 NCAgent4.py 7 3 3 2 2 3 6 7_7_og_30 3 3 0
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
