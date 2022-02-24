@@ -184,7 +184,7 @@ class NCAgent:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = (g_pos, g_pos, False, 'p')
+    e_state = (g_pos, g_pos, True, 'p')
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
