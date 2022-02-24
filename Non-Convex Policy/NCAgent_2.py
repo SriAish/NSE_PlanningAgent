@@ -116,7 +116,7 @@ class NCAgent:
                 self.m.Equation(c == su)
 
     def make_constraints_eqn3(self):
-        trajs = self.load('severe_trajectories_54')
+        trajs = self.load('severe_trajectories_' + sys.argv[14])
         lhs = 0
         for t in trajs:
             tra = 1
@@ -136,7 +136,7 @@ class NCAgent:
         self.m.Equation(lhs <= self.alpha)
 
     def make_constraints_eqn4(self):
-        trajs = self.load('mild_trajectories_54')
+        trajs = self.load('mild_trajectories_' + sys.argv[14])
         lhs = 0
         for t in trajs:
             tra = 1
@@ -157,7 +157,7 @@ class NCAgent:
         self.m.Equation(lhs <= self.alpha)
 
     def nse_sum(self):
-        trajs = self.load('severe_trajectories_54')
+        trajs = self.load('severe_trajectories_' + sys.argv[14])
         lhs = 0
         for t in trajs:
             tra = 1
@@ -176,7 +176,7 @@ class NCAgent:
 
         ans = lhs
 
-        trajs = self.load('mild_trajectories_54')
+        trajs = self.load('mild_trajectories_' + sys.argv[14])
         lhs = 0
         for t in trajs:
             tra = 1

@@ -34,13 +34,13 @@ runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_4 3 3 0 0.4 7.79
+python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_4 3 3 0 0.4 7.79 30
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_5 3 3 0 0.5 7.79
+python3.7 NCAgent_2.py 7 3 3 2 2 3 6 7_7_NSE_30_5 3 3 0 0.5 7.79 30
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
