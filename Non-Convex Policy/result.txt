@@ -10380,3 +10380,9 @@ og obj:  8.23
 initial belief setup
 variables setup
 objective setup
+eq1
+eq2
+eq3
+eq4
+eq5
+problem setup
