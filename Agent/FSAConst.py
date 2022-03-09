@@ -6,6 +6,8 @@
 # 4 : b, -r0, r>0,<=25, g
 # 5 : b, -r0, -r>0,<=25, g
 
+import sys
+
 class FSAConstants:
     def __init__(self, end_state = []):
         # Defining labels 
@@ -87,6 +89,7 @@ class FSAConstants:
 
     def getLabel(self, state):
         print(state, state[4])
+        sys.stdout.flush()
         r0 = True
         r25 = False
         g = False
