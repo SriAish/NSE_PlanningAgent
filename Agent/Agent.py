@@ -21,7 +21,6 @@ class FSAgent:
         self.init_var()
         print("variables setup")
         sys.stdout.flush()
-        self.init_intermediates()
         self.make_prob()
         print("problem setup")
         sys.stdout.flush()
