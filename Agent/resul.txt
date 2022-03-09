@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 624684
+SLURM_JOB_ID = 624685
 SLURM_NODELIST = gnode44
 SLURM_JOB_GPUS = 2
 ==========================================
-/var/spool/slurmd/job624684/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job624685/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 initial belief setup
 variables setup
 objective setup
@@ -17,9 +17,9 @@ Traceback (most recent call last):
     self.make_constraints_eqn1()
   File "Agent.py", line 80, in make_constraints_eqn1
     c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 125, in T
+  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 128, in T
     sig = self.getLabel(s)
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 96, in getLabel
+  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 99, in getLabel
     if state[4] > 0 and state[4] < 3:
 TypeError: '>' not supported between instances of 'numpy.str_' and 'int'
 2
