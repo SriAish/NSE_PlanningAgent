@@ -175,6 +175,6 @@ class BoxPushingConstants:
 
 if __name__ == '__main__':
     BP = BoxPushingConstants()
-    s = ((3, 3), (3,3), False, False, 'r', 1)
-    s_ = ((4, 3), (3,3), False, False, 'r', 2)
+    s = ((3, 3), (3,3), True, False, 'r', 1)
+    s_ = ((4, 3), (4,3), True, False, 'r', 2)
     print(BP.T(s, "down", s_))

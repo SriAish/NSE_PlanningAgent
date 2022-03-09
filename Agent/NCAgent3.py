@@ -88,6 +88,7 @@ class NCAgent:
             for s in self.BP.states:
                 actions = self.BP.getValidActions(s)
                 for a in actions:
+                    print(s, a, s_, self.BP.T(s, a, s_))
                     if self.BP.T(s, a, s_) != 0:
                         c += self.BP.T(s, a, s_)*self.in_y[s][a]
             
