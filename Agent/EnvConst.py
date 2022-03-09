@@ -136,7 +136,7 @@ class BoxPushingConstants:
 
     def pick_up(self, state, action):
         if state[0] == state[1]:
-            return [((state[0], state[1], True, state[3], state[4], state[5]), 1)], self.getCost(action)
+            return [((state[0], state[1], True, state[3], state[4], state[5]), 1)], self.getCost(state, action)
 
         return [(state, 1)], self.getCost(state, action)
 
