@@ -27,7 +27,6 @@ class BoxPushingConstants:
 
         # Hash table to maintain transition probabilities 
         self.transition_probabilities = {}
-
     
     def putRug(self):
         for i in range(self.rug_height):

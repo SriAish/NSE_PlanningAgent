@@ -88,7 +88,6 @@ class NCAgent:
             for s in self.BP.states:
                 actions = self.BP.getValidActions(s)
                 for a in actions:
-                    print(s, a, s_, self.BP.T(s, a, s_))
                     if self.BP.T(s, a, s_) != 0:
                         c += self.BP.T(s, a, s_)*self.in_y[s][a]
             
@@ -131,10 +130,12 @@ class NCAgent:
             actions = self.BP.getValidActions(s)
             self.pi_[s] = {}
             self.x_[s] = self.x[s].value[0]
-            print(s, self.x_[s])
+            if self.x_[s] > 0.00001:
+                print(s, self.x_[s])
             for a in actions:
                 self.pi_[s][a] = self.pi[s][a].value[0]
-            print(self.pi_[s])
+            if self.x_[s] > 0.00001:
+                print(self.pi_[s])
 
     def save_pi(self, file):
         print("Saving policies")
