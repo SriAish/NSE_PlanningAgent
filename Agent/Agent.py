@@ -50,11 +50,18 @@ class FSAgent:
                 self.x[(u, s)] = self.m.Var(lb=0, ub=1/(1-self.gamma))
     
     def set_obj(self):
-        for s in self.BP.states:
+        for u, s in itertools.product(self.FSA.states, self.BP.states):
             actions = self.BP.getValidActions(s)
-            for u in self.FSA.states:
-                for a in actions:
-                    self.m.Minimize(self.x[(u, s)]*self.pi[s][a]*self.BP.getCost(s, a))
+            for a in actions:
+                self.m.Minimize(self.x[(u, s)]*self.pi[s][a]*self.BP.getCost(s, a))
+
+    def pr_obj(self):
+        obj = 0
+        for u, s in itertools.product(self.FSA.states, self.BP.states):
+            actions = self.BP.getValidActions(s)
+            for a in actions:
+                obj += self.x_[(u, s)]*self.pi_[s][a]*self.BP.getCost(s, a)
+        return obj
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
@@ -103,21 +110,21 @@ class FSAgent:
         sys.stdout.flush()
 
     def calculate_pi(self):
+        self.pi_ = {}
+        self.x_ = {}
+        for u, s in itertools.product(self.FSA.states, self.BP.states):
+            actions = self.BP.getValidActions(s)
+            self.pi_[s] = {}
+            self.x_[(u, s)] = self.x[(u, s)].value[0]
+            for a in actions:
+                self.pi_[s][a] = self.pi[s][a].value[0]
+            if self.x_[(u, s)] > 0.00001:
+                print((u, s), self.x_[(u, s)])
+                print(self.pi_[s])
+
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
         print("----------------------------------------")
-        self.pi_ = {}
-        self.x_ = {}
-        for s in self.BP.states:
-            actions = self.BP.getValidActions(s)
-            self.pi_[s] = {}
-            self.x_[s] = self.x[s].value[0]
-            if self.x_[s] > 0.00001:
-                print(s, self.x_[s])
-            for a in actions:
-                self.pi_[s][a] = self.pi[s][a].value[0]
-            if self.x_[s] > 0.00001:
-                print(self.pi_[s])
 
     def save_pi(self, file):
         print("Saving policies")
@@ -138,7 +145,7 @@ if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = [(g_pos, g_pos, True, False, 'p', 0), (g_pos, g_pos, True, False, 'p', 1), (g_pos, g_pos, True, True, 'p', 0), (g_pos, g_pos, True, True, 'p', 1)]
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-    
+    FSA = FSAConstants(e_state)
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
     locations = [(1, 1)]
@@ -146,7 +153,7 @@ if __name__ == '__main__':
     # if int(sys.argv[1]) == 7:
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
     # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
-    agent = NCAgent(BP, locations=locations)
+    agent = FSAgent(BP, FSA, locations=locations)
     agent.solve_prob()
     agent.calculate_pi()
-    agent.save_pi(sys.argv[8])
+    # agent.save_pi(sys.argv[8])
