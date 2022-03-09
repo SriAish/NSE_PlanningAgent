@@ -1,0 +1,15 @@
+==========================================
+SLURM_JOB_ID = 624663
+SLURM_NODELIST = gnode52
+SLURM_JOB_GPUS = 0
+==========================================
+/var/spool/slurmd/job624663/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+initial belief setup
+variables setup
+Traceback (most recent call last):
+  File "Agent.py", line 156, in <module>
+    agent = FSAgent(BP, FSA, locations=locations)
+  File "Agent.py", line 24, in __init__
+    self.init_intermediates()
+AttributeError: 'FSAgent' object has no attribute 'init_intermediates'
+3

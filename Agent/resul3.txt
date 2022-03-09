@@ -1,9 +1,10 @@
 ==========================================
-SLURM_JOB_ID = 624602
-SLURM_NODELIST = gnode49
-SLURM_JOB_GPUS = 3
+SLURM_JOB_ID = 624659
+SLURM_NODELIST = gnode47
+SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job624602/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job624659/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 --------------------
-python3.7: can't open file 'NCAgent.py': [Errno 2] No such file or directory
-1
+initial belief setup
+variables setup
+objective setup
