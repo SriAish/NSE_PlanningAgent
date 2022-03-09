@@ -87,6 +87,13 @@ class FSAConstants:
         self.state_transitions["u4"][4] = "u4"
         self.state_transitions["u4"][5] = "u5"
 
+        self.state_transitions["u5"][0] = "u5"
+        self.state_transitions["u5"][1] = "u5"
+        self.state_transitions["u5"][2] = "u5"
+        self.state_transitions["u5"][3] = "u5"
+        self.state_transitions["u5"][4] = "u5"
+        self.state_transitions["u5"][5] = "u5"
+
     def getLabel(self, state):
         r0 = True
         r25 = False
