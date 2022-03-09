@@ -128,6 +128,6 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_NSE_30_0.pkl")
+    agent = Agent("policy_values/NC_Agent_Policy_nor_3_7_7_NSE_30_3.pkl")
     generate_n_tajectories(1000, agent)
     # generate_trajectory(agent)
