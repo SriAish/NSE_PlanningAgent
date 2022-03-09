@@ -1,6 +1,7 @@
 from actions import Actions 
 import copy
 import numpy as np
+import sys
 
 class BoxPushingConstants:
     def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), end_state = []):
@@ -174,7 +175,10 @@ class BoxPushingConstants:
         return 0
 
 if __name__ == '__main__':
-    BP = BoxPushingConstants()
-    s = ((3, 3), (3,3), True, False, 'r', 1)
-    s_ = ((4, 3), (4,3), True, False, 'r', 2)
+    g_pos = (int(sys.argv[6]), int(sys.argv[7]))
+    e_state = [(g_pos, g_pos, True, False, 'p', 0), (g_pos, g_pos, True, False, 'p', 1), (g_pos, g_pos, True, True, 'p', 0), (g_pos, g_pos, True, True, 'p', 1)]
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
+
+    s = ((1, 1), (1, 1), True, False, 'r', 1)
+    s_ = ((2, 1), (2, 1), True, False, 'p', 1) 
     print(BP.T(s, "down", s_))
