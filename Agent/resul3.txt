@@ -1,0 +1,12 @@
+==========================================
+SLURM_JOB_ID = 624409
+SLURM_NODELIST = gnode74
+SLURM_JOB_GPUS = 2
+==========================================
+/var/spool/slurmd/job624409/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+Traceback (most recent call last):
+  File "NCAgent3.py", line 1, in <module>
+    from misc2 import BoxPushingConstants
+ModuleNotFoundError: No module named 'misc2'
+0
+--------------------
