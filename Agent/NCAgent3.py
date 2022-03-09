@@ -62,18 +62,17 @@ class NCAgent:
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                c = (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.get_cost(s, a)
+                c = (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.getCost(s, a)
                 if c > 0.00001:
-                    print(s, self.x[s].value[0], a, self.pi[s][a].value[0], self.BP.get_cost(s, a), c)
+                    print(s, self.x[s].value[0], a, self.pi[s][a].value[0], self.BP.getCost(s, a), c)
                 obj += c
         return obj
     
     def set_obj(self):
-        obj = 0
         for s in self.BP.states:
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.m.Minimize(self.in_y[s][a]*self.BP.get_cost(s, a))
+                self.m.Minimize(self.in_y[s][a]*self.BP.getCost(s, a))
 
     def make_constraints_eqn1(self):
         for s_ in self.BP.states:
@@ -110,43 +109,6 @@ class NCAgent:
                 c += self.pi[s][a]
             if actions:
                 self.m.Equation(c == su)
-
-    def nse_sum(self):
-        trajs = self.load('severe_trajectories_7_200')
-        lhs = 0
-        for t in trajs:
-            tra = 1
-            ele = 0
-            for s, a in t:
-                tra = tra * self.x[s].value[0] * self.pi[s][a].value[0]
-                if ele == 0:
-                    ele += 1
-                else:
-                    tra = tra*self.BP.T(s_prev, a_prev, s)
-                s_prev = s
-                a_prev = a
-
-            lhs += tra
-
-        ans = lhs
-
-        trajs = self.load('mild_trajectories_7_200')
-        lhs = 0
-        for t in trajs:
-            tra = 1
-            ele = 0
-            for s, a in t:
-                tra = tra * self.x[s].value[0] * self.pi[s][a].value[0]
-                if ele == 0:
-                    ele += 1
-                else:
-                    tra = tra*self.BP.T(s_prev, a_prev, s)
-                s_prev = s
-                a_prev = a
-
-            lhs += tra
-
-        return ans, lhs
 
     def make_prob(self):
         self.set_obj()
