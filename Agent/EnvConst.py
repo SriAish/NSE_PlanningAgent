@@ -52,7 +52,7 @@ class BoxPushingConstants:
                                 self.states.append(((i, j), (k, l), True, True, self.getType((i, j)), m))
 
     def getValidActions(self, state):
-        actions = copy.deepcopy(self.actions.moveActions)
+        actions = copy.deepcopy(self.actions.move_actions)
 
         if self.isEndState(state):
             return actions
