@@ -48,7 +48,7 @@ class BoxPushingConstants:
                             self.states.append(((i, j), (k, l), False, False, self.getType((i, j)), m))
                             self.states.append(((i, j), (k, l), False, True, self.getType((i, j)), m))
 
-                            if i == k and j == k:
+                            if i == k and j == l:
                                 self.states.append(((i, j), (k, l), True, False, self.getType((i, j)), m))
                                 self.states.append(((i, j), (k, l), True, True, self.getType((i, j)), m))
 
@@ -178,7 +178,7 @@ if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = [(g_pos, g_pos, True, False, 'p', 0), (g_pos, g_pos, True, False, 'p', 1), (g_pos, g_pos, True, True, 'p', 0), (g_pos, g_pos, True, True, 'p', 1)]
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-
+    
     s = ((1, 1), (1, 1), True, False, 'r', 1)
     s_ = ((2, 1), (2, 1), True, False, 'p', 1) 
     print(BP.T(s, "down", s_))
