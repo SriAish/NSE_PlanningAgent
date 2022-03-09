@@ -14,8 +14,9 @@ class BoxPushingConstants:
         self.rug_start = rug_start
         self.putRug()
 
-        # Fixing the end stATE
+        # Fixing the end state and generating other states
         self.end_state = end_state
+        self.generateStates()
 
         # Sstting up the actions
         self.actions = Actions()
@@ -25,6 +26,7 @@ class BoxPushingConstants:
 
         # Hash table to maintain transition probabilities 
         self.transition_probabilities = {}
+
     
     def putRug(self):
         for i in range(self.rug_height):
