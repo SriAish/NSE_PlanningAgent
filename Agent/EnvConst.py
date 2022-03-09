@@ -132,21 +132,21 @@ class BoxPushingConstants:
         return states, self.getCost(state, action)
 
     def wrap(self, state, action):
-        return [((state[0], state[1], state[2], True, state[4], state[5]), 1)], self.getCost(action)
+        return [((state[0], state[1], state[2], True, state[4], state[5]), 1)], self.getCost(state, action)
 
     def pick_up(self, state, action):
         if state[0] == state[1]:
             return [((state[0], state[1], True, state[3], state[4], state[5]), 1)], self.getCost(action)
 
-        return [(state, 1)], self.getCost(action)
+        return [(state, 1)], self.getCost(state, action)
 
     def drop(self, state, action):
         if state[0] == state[1]:
-            return [((state[0], state[1], False, state[3], state[4], state[5]), 1)], self.getCost(action)
+            return [((state[0], state[1], False, state[3], state[4], state[5]), 1)], self.getCost(state, action)
 
     def transition(self, state, action):
         if self.isEndState(state):
-            return [(state, 1)], self.getCost(action)
+            return [(state, 1)], self.getCost(state, action)
 
         if self.actions.isMoveAction(action):
             return self.move(state, action)
