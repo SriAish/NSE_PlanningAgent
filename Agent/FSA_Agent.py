@@ -105,7 +105,7 @@ class FSAgent:
             if t != 0:
                 lhs += self.x[("u5", s)]*t
         
-        self.m.Equation(lhs <= 0.15)
+        self.m.Equation(lhs <= 0)
 
     def make_prob(self):
         self.set_obj()
