@@ -8,3 +8,6 @@ SLURM_JOB_GPUS = 1
 initial belief setup
 variables setup
 objective setup
+/var/spool/slurmd/job624659/slurm_script: line 19: 11879 Killed                  python3.7 NCAgent3.py 7 3 3 2 2 3 6 7_7_ogt 3
+2850
+slurmstepd: error: Detected 1 oom-kill event(s) in step 624659.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
