@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem-per-cpu=80G
 #SBATCH -t 2-00:00:00
-#SBATCH --output=resul2.txt
+#SBATCH --output=resul4.txt
 module add cuda/9.0
 module add cudnn/7-cuda-9.0
 source ~/keras/bin/activate
@@ -16,7 +16,7 @@ source ~/keras/bin/activate
 # echo $runtime
 # echo "----------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 3 1 1 0 1 2 2 3_3 3
+python3.7 FSA_Agent.py 3 1 1 1 1 2 2 3_3 3
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
