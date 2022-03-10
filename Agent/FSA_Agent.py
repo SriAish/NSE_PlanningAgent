@@ -105,7 +105,16 @@ class FSAgent:
             if t != 0:
                 lhs += self.x[("u5", s)]*t
         
-        self.m.Equation(lhs <= 0.1)
+        self.m.Equation(lhs <= 0.01)
+
+    def cal_mild(self):
+        lhs = 0
+        for s in self.BP.states:
+            t = self.FSA.symbolT("u5", s, self.FSA.symbols["mild"])
+            if t != 0:
+                lhs += self.x_[("u5", s)]*t
+        
+        return lhs
 
     def make_prob(self):
         self.set_obj()
@@ -136,6 +145,7 @@ class FSAgent:
 
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
+        print("mild: ", self.cal_mild())
         print("----------------------------------------")
 
     def save_pi(self, file):
