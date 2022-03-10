@@ -16,7 +16,7 @@ runtime=$((end-start))
 echo $runtime
 echo "----------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 3 1 1 0 1 2 2 3_3_ogt 3
+python3.7 FSA_Agent.py 3 1 1 0 1 2 2 3_3 3
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
