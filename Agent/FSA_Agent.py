@@ -101,11 +101,11 @@ class FSAgent:
     def make_constraints_eqn3(self):
         lhs = 0
         for s in self.BP.states:
-            t = self.FSA.symbolT("u5", s, self.FSA.symbols["severe"])
+            t = self.FSA.symbolT("u5", s, self.FSA.symbols["mild"])
             if t != 0:
                 lhs += self.x[("u5", s)]*t
         
-        self.m.Equation(lhs <= 0.1)
+        self.m.Equation(lhs <= 0)
 
     def make_prob(self):
         self.set_obj()
