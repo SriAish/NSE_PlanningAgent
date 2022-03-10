@@ -162,8 +162,9 @@ if __name__ == '__main__':
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
     locations = [(1, 2)]
 
-    # if int(sys.argv[1]) == 7:
-    #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
+    if int(sys.argv[1]) == 3:
+        locations = [(1, 1)]
+        # locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
     # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
     agent = FSAgent(BP, FSA, locations=locations)
     agent.solve_prob()
