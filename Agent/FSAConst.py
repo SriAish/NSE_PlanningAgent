@@ -127,8 +127,8 @@ class FSAConstants:
         return 0
 
     def T(self, u, s, u_):
-        if (u, s, u_) in self.transition_probabilities.keys():
-            return self.transition_probabilities[(u, s, u_)]
+        if (u, self.getLabel(s), u_) in self.transition_probabilities.keys():
+            return self.transition_probabilities[(u, self.getLabel(s), u_)]
 
         sig = self.getLabel(s)
         next_u = self.state_transitions[u][sig]
