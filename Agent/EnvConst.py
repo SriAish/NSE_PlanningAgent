@@ -123,7 +123,7 @@ class BoxPushingConstants:
             else:
                 box_location = state[1]
             rug = state[5]
-            if self.getType(i[0]) == 'r':
+            if not state[3] and self.getType(i[0]) == 'r':
                 rug += 1
             if rug > self.rug_height*self.rug_width:
                 rug = self.rug_height*self.rug_width
