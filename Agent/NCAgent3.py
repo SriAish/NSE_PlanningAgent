@@ -37,7 +37,7 @@ class NCAgent:
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            self.belief_state.append((init_loc, i, False, False, 'p', 0))
+            self.belief_state.append((init_loc, i, False, False, 'p'))
 
     def init_var(self):
         self.x = {}
@@ -163,7 +163,7 @@ if __name__ == '__main__':
 
     if int(sys.argv[1]) == 3:
         locations = [(1, 1)]
-        
+
     # if int(sys.argv[1]) == 7:
     #     locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
     # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
