@@ -5,7 +5,7 @@ from gekko import GEKKO
 from math import e
 
 class NCAgent:
-    def __init__(self, BP, gamma = 0.9, locations = None):
+    def __init__(self, BP, gamma = 0.999, locations = None):
         self.m = GEKKO()
         self.m.options.IMODE = 3
         self.m.options.MAX_ITER = 1000

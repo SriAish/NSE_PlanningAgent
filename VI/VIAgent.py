@@ -3,7 +3,7 @@ import sys
 import pickle
 
 class VIAgent:
-    def __init__(self, BP, gamma = 0.9, delta = 0.1):
+    def __init__(self, BP, gamma = 0.999, delta = 0.1):
         self.BP = BP
         self.end_state = self.BP.end_state
         self.stateValues = {}
@@ -15,7 +15,7 @@ class VIAgent:
 
     def init_belief(self):
         if self.locations == None:
-            self.locations = [(1, 1)]
+            self.locations = [(0, 3)]
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
