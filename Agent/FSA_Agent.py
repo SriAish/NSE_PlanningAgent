@@ -160,7 +160,7 @@ if __name__ == '__main__':
     FSA = FSAConstants(e_state)
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
-    locations = [(1, 2)]
+    locations = [(3, 0)]
 
     if int(sys.argv[1]) == 3:
         locations = [(1, 1)]
