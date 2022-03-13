@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 627433
+SLURM_JOB_ID = 627435
 SLURM_NODELIST = gnode24
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job627433/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job627435/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 [((0, 0), (1, 1), False, False, 'p')]
 initial belief setup
 variables setup
@@ -186,8 +186,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 94
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 93
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.099
-Total CPU secs in NLP function evaluations           =      0.194
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.102
+Total CPU secs in NLP function evaluations           =      0.195
 
 EXIT: Solved To Acceptable Level.
  
@@ -197,7 +197,7 @@ EXIT: Solved To Acceptable Level.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :   0.316399999996065      sec
+ Solution time  :   0.318799999993644      sec
  Objective      :    5.12999298885718     
  Unsuccessful with error code            0
  ---------------------------------------------------
@@ -227,57 +227,29 @@ Objective Value:  5.129992988858879
 ----------------------------------------
 ((0, 0), (1, 1), False, False, 'p') 0.99999997604
 {'down': 0.11654174547, 'up': 0.0, 'right': 0.88345827453, 'left': 0.0}
-((0, 0), (0, 0), True, False, 'p') 0.0
-{'down': 0.10708625895, 'up': 0.39291368584, 'right': 0.10708572989, 'left': 0.39291432532}
-((0, 0), (0, 0), True, True, 'p') 0.0
-{'down': 0.00016706966005, 'up': 0.49983293034, 'right': 0.00016706966005, 'left': 0.49983293034}
 ((0, 1), (1, 1), False, False, 'p') 0.77429009457
 {'down': 1.0, 'up': 9.997109821e-09, 'right': 0.0, 'left': 0.0}
-((0, 1), (0, 1), True, False, 'p') 0.0
-{'down': 0.77017612202, 'up': 0.0048157915058, 'right': 0.00063806987806, 'left': 0.22437001659}
-((0, 1), (0, 1), True, True, 'p') 0.0
-{'down': 1.8515148088e-05, 'up': 0.88236940277, 'right': 0.00016702104868, 'left': 0.11744506103}
 ((0, 2), (1, 1), False, False, 'p') 0.069686102384
 {'down': 0.16433992588, 'up': 0.0, 'right': 0.0, 'left': 0.83566009409}
-((0, 2), (0, 2), True, False, 'p') 0.0
-{'down': 7.9928713856e-05, 'up': 0.79763467094, 'right': 0.00064084213351, 'left': 0.20164455821}
-((0, 2), (0, 2), True, True, 'p') 0.0
-{'down': 0.2411039352, 'up': 0.29686043109, 'right': 0.34383730065, 'left': 0.11819833306}
 ((1, 0), (1, 1), False, False, 'p') 0.18418715106
 {'down': 0.0, 'up': 0.0, 'right': 1.0, 'left': 9.9878571349e-09}
-((1, 0), (1, 0), True, False, 'p') 0.0
-{'down': 0.00063806990823, 'up': 0.22436980835, 'right': 0.77017632892, 'left': 0.0048157928248}
-((1, 0), (1, 0), True, True, 'p') 0.0
-{'down': 0.00016702104868, 'up': 0.11744506103, 'right': 1.8515148088e-05, 'left': 0.88236940277}
 ((1, 1), (1, 1), False, False, 'r') 0.79325351481
 {'down': 0.0, 'up': 0.0, 'right': 0.0, 'left': 0.0, 'wrap': 3.0002294801e-08, 'pick_up': 1.0}
 ((1, 1), (1, 1), True, False, 'r') 0.77685326895
 {'down': 0.4999994486, 'up': 0.0, 'right': 0.5000005814, 'left': 0.0, 'wrap': 0.0}
-((1, 1), (1, 1), True, True, 'r') 0.0
-{'down': 0.2757342764, 'up': 0.11848844568, 'right': 0.2757342764, 'left': 0.11848844568, 'wrap': 0.21155455583}
 ((1, 2), (1, 1), False, False, 'p') 0.015388223133
 {'down': 0.0, 'up': 0.0, 'right': 9.8557208143e-09, 'left': 1.0}
 ((1, 2), (1, 2), True, False, 'p') 0.34958430027
 {'down': 1.0, 'up': 0.0, 'right': 9.9980816525e-09, 'left': 0.0}
-((1, 2), (1, 2), True, True, 'p') 0.0
-{'down': 1.8291910233e-05, 'up': 0.99936082896, 'right': 0.00058578407669, 'left': 3.5095051777e-05}
 ((2, 0), (1, 1), False, False, 'p') 0.016576842126
 {'down': 0.0, 'up': 0.73606590455, 'right': 0.26393411532, 'left': 0.0}
-((2, 0), (2, 0), True, False, 'p') 0.0
-{'down': 0.00064084213761, 'up': 0.20164394772, 'right': 7.9928713455e-05, 'left': 0.79763528143}
-((2, 0), (2, 0), True, True, 'p') 0.0
-{'down': 0.34383730065, 'up': 0.11819833306, 'right': 0.2411039352, 'left': 0.29686043109}
 ((2, 1), (1, 1), False, False, 'p') 0.0054598505482
 {'down': 9.599360092e-09, 'up': 1.0, 'right': 0.0, 'left': 0.0}
 ((2, 1), (2, 1), True, False, 'p') 0.34958366665
 {'down': 9.9980816549e-09, 'up': 0.0, 'right': 1.0, 'left': 0.0}
-((2, 1), (2, 1), True, True, 'p') 0.0
-{'down': 0.00058578407669, 'up': 3.5095051777e-05, 'right': 1.8291910233e-05, 'left': 0.99936082896}
 ((2, 2), (1, 1), False, False, 'p') 0.0018763264734
 {'down': 0.0, 'up': 0.51964849709, 'right': 0.0, 'left': 0.4803515217}
 ((2, 2), (2, 2), True, False, 'p') 5.6632605887
-{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
-((2, 2), (2, 2), True, True, 'p') 0.0
 {'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
 Saving policies
 8
