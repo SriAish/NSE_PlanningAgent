@@ -64,8 +64,6 @@ class NCAgent:
             actions = self.BP.getValidActions(s)
             for a in actions:
                 c = (self.x[s].value[0])*(self.pi[s][a].value[0])*self.BP.getCost(s, a)
-                if c > 0.00001:
-                    print(s, self.x[s].value[0], a, self.pi[s][a].value[0], self.BP.getCost(s, a), c)
                 obj += c
         return obj
     
@@ -156,7 +154,7 @@ class NCAgent:
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
-    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state, (1, 1))
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
