@@ -1,13 +1,125 @@
 ==========================================
-SLURM_JOB_ID = 625664
-SLURM_NODELIST = gnode16
-SLURM_JOB_GPUS = 1
+SLURM_JOB_ID = 627422
+SLURM_NODELIST = gnode24
+SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job625664/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
---------------------
+/var/spool/slurmd/job627422/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 initial belief setup
 variables setup
 objective setup
-/var/spool/slurmd/job625664/slurm_script: line 19: 37899 Killed                  python3.7 NCAgent3.py 7 3 3 2 2 3 6 7_7_ogt 3
-5715
-slurmstepd: error: Detected 1 oom-kill event(s) in step 625664.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+eq1
+eq2
+problem setup
+apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ Warning: there is insufficient data in CSV file 14.139.82.6_gk_model0.csv
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :          135
+   Intermediates:            0
+   Connections  :            0
+   Equations    :          162
+   Residuals    :          162
+ 
+ Number of state variables:            135
+ Number of total equations: -           54
+ Number of slack variables: -            0
+ ---------------------------------------
+ Degrees of freedom       :             81
+ 
+ **********************************************
+ Steady State Optimization with Interior Point Solver
+ **********************************************
+  
+  
+ Info: Exact Hessian
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.12.10, running with linear solver ma57.
+
+Number of nonzeros in equality constraint Jacobian...:      479
+Number of nonzeros in inequality constraint Jacobian.:        0
+Number of nonzeros in Lagrangian Hessian.............:      108
+
+Total number of variables............................:      135
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:      135
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:       54
+Total number of inequality constraints...............:        0
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:        0
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  9.9999800e-03 9.60e-01 2.65e-02   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  2.2081376e-04 9.22e-01 4.50e+01  -0.6 2.51e-01    -  9.89e-01 3.95e-02h  1
+   2  9.2426494e-05 8.65e-01 1.36e+03  -1.0 2.55e-01    -  1.00e+00 6.19e-02f  1
+   3  4.4123850e-05 8.13e-01 1.06e+05   0.2 5.60e-01    -  1.00e+00 6.00e-02h  1
+   4  3.5060220e-05 7.65e-01 2.25e+05  -0.9 5.30e-01    -  1.60e-01 5.86e-02h  1
+   5  1.2054165e-05 6.29e-01 3.95e+05   0.3 4.48e-01    -  4.82e-01 1.79e-01f  1
+   6  2.1271316e-06 4.23e-01 3.93e+05  -0.5 3.44e-01    -  3.59e-01 3.26e-01h  1
+   7  2.2464462e-07 1.89e-01 4.57e+05  -0.8 4.04e-01    -  7.66e-01 5.54e-01h  1
+   8 -7.6632887e-08 2.30e-03 1.85e+06  -1.3 1.06e-01    -  1.00e+00 9.88e-01h  1
+   9 -1.0628536e-08 6.91e-10 8.05e+05  -1.4 2.50e-01    -  1.00e+00 1.00e+00f  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  1.0063473e-11 1.58e-11 6.51e+04  -2.3 2.31e-02    -  1.00e+00 1.00e+00f  1
+  11 -9.2726427e-12 2.50e-12 1.17e+05  -2.4 1.20e-01    -  1.00e+00 1.00e+00f  1
+  12  1.1151922e-12 1.37e-13 6.11e+03  -2.4 3.76e-02    -  1.00e+00 1.00e+00f  1
+  13  7.7781591e-16 2.22e-16 1.41e+00  -2.4 2.31e-04    -  1.00e+00 1.00e+00h  1
+  14  7.2114710e-25 2.22e-16 1.62e-09  -4.5 9.63e-10    -  1.00e+00 1.00e+00h  1
+  15  6.2022600e-32 2.22e-16 8.86e-09  -4.6 9.49e-08    -  1.00e+00 1.00e+00h  1
+  16 -2.3840954e-36 2.22e-16 3.26e-12  -6.9 1.23e-10    -  1.00e+00 1.00e+00h  1
+  17 -1.6563909e-36 2.22e-16 1.77e-14 -10.3 8.78e-12    -  1.00e+00 1.00e+00h  1
+  18  1.0577080e-34 2.22e-16 1.41e-15 -12.3 2.29e-10    -  1.00e+00 1.00e+00s 22
+
+Number of Iterations....: 18
+
+                                   (scaled)                 (unscaled)
+Objective...............:   1.0577079801599711e-34    1.0577079801599711e-34
+Dual infeasibility......:   1.4093980723106619e-15    1.4093980723106619e-15
+Constraint violation....:   2.2204460492503131e-16    2.2204460492503131e-16
+Complementarity.........:   5.0000004672064642e-13    5.0000004672064642e-13
+Overall NLP error.......:   5.0000004672064642e-13    5.0000004672064642e-13
+
+
+Number of objective function evaluations             = 41
+Number of objective gradient evaluations             = 19
+Number of equality constraint evaluations            = 41
+Number of inequality constraint evaluations          = 0
+Number of equality constraint Jacobian evaluations   = 19
+Number of inequality constraint Jacobian evaluations = 0
+Number of Lagrangian Hessian evaluations             = 18
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.018
+Total CPU secs in NLP function evaluations           =      0.040
+
+EXIT: Optimal Solution Found.
+ 
+ The solution was found.
+ 
+ The final value of the objective function is   1.057707980159971E-034
+ 
+ ---------------------------------------------------
+ Solver         :  IPOPT (v3.12)
+ Solution time  :   6.699999999545980E-002 sec
+ Objective      :   1.061138954296434E-034
+ Successful solution
+ ---------------------------------------------------
+ 
+----------------------------------------
+Objective Value:  1.0611389542949998e-34
+----------------------------------------
+Saving policies
+9
