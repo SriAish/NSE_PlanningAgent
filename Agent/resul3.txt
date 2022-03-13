@@ -1,9 +1,10 @@
 ==========================================
-SLURM_JOB_ID = 627426
+SLURM_JOB_ID = 627430
 SLURM_NODELIST = gnode24
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job627426/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job627430/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+[((0, 0), (1, 1), False, False, 'p')]
 initial belief setup
 variables setup
 objective setup
@@ -102,8 +103,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.016
-Total CPU secs in NLP function evaluations           =      0.041
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.019
+Total CPU secs in NLP function evaluations           =      0.042
 
 EXIT: Optimal Solution Found.
  
@@ -113,7 +114,7 @@ EXIT: Optimal Solution Found.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :   6.729999999515712E-002 sec
+ Solution time  :   6.669999999576248E-002 sec
  Objective      :   1.061138954296434E-034
  Successful solution
  ---------------------------------------------------
@@ -121,5 +122,59 @@ EXIT: Optimal Solution Found.
 ----------------------------------------
 Objective Value:  1.0611389542949998e-34
 ----------------------------------------
+((0, 0), (3, 0), False, False, 'p') 0.0
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((0, 0), (0, 0), True, False, 'p') 4.0185376409e-36
+{'down': 0.25000000003, 'up': 0.24999999997, 'right': 0.25000000003, 'left': 0.24999999997}
+((0, 0), (0, 0), True, True, 'p') 3.1764979766e-36
+{'down': 0.25000000003, 'up': 0.24999999997, 'right': 0.25000000003, 'left': 0.24999999997}
+((0, 1), (3, 0), False, False, 'p') 0.0
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((0, 1), (0, 1), True, False, 'p') 3.7356843127e-36
+{'down': 0.25000000014, 'up': 0.24999999994, 'right': 0.25000000005, 'left': 0.24999999987}
+((0, 1), (0, 1), True, True, 'p') 3.0632648098e-36
+{'down': 0.25000000014, 'up': 0.24999999994, 'right': 0.25000000005, 'left': 0.24999999987}
+((0, 2), (3, 0), False, False, 'p') 0.0
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((0, 2), (0, 2), True, False, 'p') 2.438967107e-36
+{'down': 0.25000000019, 'up': 0.24999999994, 'right': 0.24999999997, 'left': 0.2499999999}
+((0, 2), (0, 2), True, True, 'p') 2.081520397e-36
+{'down': 0.25000000019, 'up': 0.24999999994, 'right': 0.24999999997, 'left': 0.2499999999}
+((1, 0), (3, 0), False, False, 'p') 0.0
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((1, 0), (1, 0), True, False, 'p') 7.529776001e-36
+{'down': 0.25000000005, 'up': 0.24999999987, 'right': 0.25000000014, 'left': 0.24999999994}
+((1, 0), (1, 0), True, True, 'p') 6.3259963173e-36
+{'down': 0.25000000005, 'up': 0.24999999987, 'right': 0.25000000014, 'left': 0.24999999994}
+((1, 1), (3, 0), False, False, 'r') 0.0
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((1, 1), (1, 1), True, False, 'r') 6.6095843295e-36
+{'down': 0.25000000051, 'up': 0.24999999949, 'right': 0.25000000051, 'left': 0.24999999949}
+((1, 1), (1, 1), True, True, 'r') 5.479227125e-36
+{'down': 0.25000000051, 'up': 0.24999999949, 'right': 0.25000000051, 'left': 0.24999999949}
+((1, 2), (3, 0), False, False, 'p') 0.0
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((1, 2), (1, 2), True, False, 'p') 2.8102121002e-36
+{'down': 0.25000002336, 'up': 0.24999999274, 'right': 0.25000000395, 'left': 0.24999997995}
+((1, 2), (1, 2), True, True, 'p') 2.3466953922e-36
+{'down': 0.25000002336, 'up': 0.24999999274, 'right': 0.25000000395, 'left': 0.24999997995}
+((2, 0), (3, 0), False, False, 'p') 0.0
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((2, 0), (2, 0), True, False, 'p') 1.7621395003e-36
+{'down': 0.24999999997, 'up': 0.2499999999, 'right': 0.25000000019, 'left': 0.24999999994}
+((2, 0), (2, 0), True, True, 'p') 3.1390474613e-35
+{'down': 0.24999999997, 'up': 0.2499999999, 'right': 0.25000000019, 'left': 0.24999999994}
+((2, 1), (3, 0), False, False, 'p') 0.0
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((2, 1), (2, 1), True, False, 'p') 1.3216964607e-35
+{'down': 0.25000000395, 'up': 0.24999997995, 'right': 0.25000002336, 'left': 0.24999999274}
+((2, 1), (2, 1), True, True, 'p') 1.01283532e-35
+{'down': 0.25000000395, 'up': 0.24999997995, 'right': 0.25000002336, 'left': 0.24999999274}
+((2, 2), (3, 0), False, False, 'p') 0.0
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((2, 2), (2, 2), True, False, 'p') 3.948779398e-35
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
+((2, 2), (2, 2), True, True, 'p') 3.0872338743e-35
+{'down': 0.25, 'up': 0.25, 'right': 0.25, 'left': 0.25}
 Saving policies
-8
+7
