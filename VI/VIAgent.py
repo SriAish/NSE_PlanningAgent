@@ -10,21 +10,23 @@ class VIAgent:
         self.initializeStateValues()
         self.gamma = gamma  
         self.delta = delta
-        self.locations = [(int(int(self.BP.grid_size)/2), 1)]
+        self.locations = [(3, 0)]
         self.init_belief()
 
     def init_belief(self):
         if self.locations == None:
-            self.locations = [(0, 3)]
+            self.locations = [(3, 0)]
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            self.belief_state.append((init_loc, i, False, 'p'))
+            self.belief_state.append((init_loc, i, False, False, 'p'))
+        print(self.belief_state)
 
     def initializeStateValues(self):
         for i in self.BP.states:
             self.stateValues[i] = sys.maxsize
-        self.stateValues[self.end_state] = 0
+        for e in self.end_state:
+            self.stateValues[e] = 0
 
     def update(self):
         delta = 0
@@ -82,7 +84,7 @@ class VIPolicy:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = (g_pos, g_pos, False, 'p')
+    e_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()

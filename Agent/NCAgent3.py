@@ -1,4 +1,4 @@
-from EnvConst import BoxPushingConstants
+from EnvConstRugCount import BoxPushingConstants
 import sys
 import pickle
 from gekko import GEKKO
@@ -37,7 +37,7 @@ class NCAgent:
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            self.belief_state.append((init_loc, i, False, False, 'p'))
+            self.belief_state.append((init_loc, i, False, False, 'p', 0))
         print(self.belief_state)
 
     def init_var(self):
@@ -153,8 +153,12 @@ class NCAgent:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
-    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
+    e_state = []
+    rug25 = int(0.25*int(sys.argv[3])*int(sys.argv[2]))
+    for i in range(rug25 + 1):
+        e_state.append((g_pos, g_pos, True, False, 'p', i))
+        e_state.append((g_pos, g_pos, True, True, 'p', i))
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state, (1, 1))
     
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
