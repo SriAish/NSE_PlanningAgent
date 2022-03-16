@@ -154,7 +154,7 @@ class NCAgent:
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = []
-    rug25 = int(0.25*int(sys.argv[3])*int(sys.argv[2]))
+    rug25 = int(0.25*int(sys.argv[3])*int(sys.argv[2])) + 1
     for i in range(rug25 + 1):
         e_state.append((g_pos, g_pos, True, False, 'p', i))
         e_state.append((g_pos, g_pos, True, True, 'p', i))
