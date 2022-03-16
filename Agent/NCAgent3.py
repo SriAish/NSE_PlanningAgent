@@ -129,12 +129,12 @@ class NCAgent:
             actions = self.BP.getValidActions(s)
             self.pi_[s] = {}
             self.x_[s] = self.x[s].value[0]
-            if self.x_[s] > 0.00001:
-                print(s, self.x_[s])
+            # if self.x_[s] > 0.00001:
+            print(s, self.x_[s])
             for a in actions:
                 self.pi_[s][a] = self.pi[s][a].value[0]
-            if self.x_[s] > 0.00001:
-                print(self.pi_[s])
+            # if self.x_[s] > 0.00001:
+            print(self.pi_[s])
 
     def save_pi(self, file):
         print("Saving policies")
@@ -158,6 +158,7 @@ if __name__ == '__main__':
     for i in range(rug25 + 1):
         e_state.append((g_pos, g_pos, True, False, 'p', i))
         e_state.append((g_pos, g_pos, True, True, 'p', i))
+    print(e_state)
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state, (1, 1))
     
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
