@@ -10,7 +10,7 @@ class VIAgent:
         self.initializeStateValues()
         self.gamma = gamma  
         self.delta = delta
-        self.locations = [(3, 0)]
+        self.locations = [(1, 1)]
         self.init_belief()
 
     def init_belief(self):
