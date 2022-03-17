@@ -14,6 +14,8 @@ class BoxPushingConstants:
         self.rug_width = rug_width
         self.rug_height = rug_height
         self.rug_start = rug_start
+        self.rug25 = int(0.25*self.rug_height*self.rug_width) + 1
+
         self.putRug()
 
         # Fixing the end state and generating other states
@@ -42,7 +44,7 @@ class BoxPushingConstants:
         self.states = []
         for i in range(self.grid_size):
             for j in range(self.grid_size):
-                for m in range(self.rug_height*self.rug_width + 1):
+                for m in range(self.rug25 + 1):
                     self.states.append(((i, j), self.box_loc, False, False, self.getType((i, j)), m))
                     self.states.append(((i, j), self.box_loc, False, True, self.getType((i, j)), m))
 
@@ -122,9 +124,9 @@ class BoxPushingConstants:
             else:
                 box_location = state[1]
             rug = state[5]
-            if not state[3] and self.getType(i[0]) == 'r':
+            if state[2] and not state[3] and self.getType(i[0]) == 'r':
                 rug += 1
-            if rug > self.rug_height*self.rug_width:
+            if rug > self.rug25:
                 rug = self.rug_height*self.rug_width
             states.append(((i[0], box_location, state[2], state[3], self.getType(i[0]), rug), i[1]))
 
