@@ -64,7 +64,7 @@ class BoxPushingConstants:
         return actions
   
     def isEndState(self, state):
-        return state in self.end_state or state == self.end_state
+        return state[0] == self.end_state and state[1] == self.end_state
 
     def getCost(self, state, action):
         if self.isEndState(state):
