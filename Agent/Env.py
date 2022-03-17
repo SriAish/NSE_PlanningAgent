@@ -4,7 +4,7 @@ import numpy as np
 import sys
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), end_state = [], init_box_loc=(1, 1)):
+    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), end_state = []):
         # Making the grrid
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
@@ -13,11 +13,11 @@ class BoxPushingConstants:
         self.rug_width = rug_width
         self.rug_height = rug_height
         self.rug_start = rug_start
+        self.rug25 = int(0.25*self.rug_height*self.rug_width) + 1
         self.putRug()
 
-        # Fixing the end state, initial location of box and generating other states
+        # Fixing the end state and generating other states
         self.end_state = end_state
-        self.init_box_loc = init_box_loc
         self.generateStates()
 
         # Sstting up the actions
@@ -42,10 +42,12 @@ class BoxPushingConstants:
         self.states = []
         for i in range(self.grid_size):
             for j in range(self.grid_size):
-                self.states.append(((i, j), self.init_box_loc, False, False, self.getType((i, j))))
-                self.states.append(((i, j), self.init_box_loc, False, True, self.getType((i, j))))
-                self.states.append(((i, j), (i, j), True, False, self.getType((i, j))))
-                self.states.append(((i, j), (i, j), True, True, self.getType((i, j))))
+                for m in range(self.rug25 + 1):
+                    self.states.append(((i, j), (3, 0), False, False, self.getType((i, j)), m))
+                    self.states.append(((i, j), (3, 0), False, True, self.getType((i, j)), m))
+
+                    self.states.append(((i, j), (i, j), True, False, self.getType((i, j)), m))
+                    self.states.append(((i, j), (i, j), True, True, self.getType((i, j)), m))
 
     def getValidActions(self, state):
         actions = copy.deepcopy(self.actions.move_actions)
@@ -53,8 +55,7 @@ class BoxPushingConstants:
         if self.isEndState(state):
             return actions
 
-        if state[0] == state[1] and state[1] == self.init_box_loc:
-            actions.append(self.actions.wrap)
+        actions.append(self.actions.wrap)
 
         if state[0] == state[1]:
             if not state[2]:
@@ -119,22 +120,27 @@ class BoxPushingConstants:
                 box_location = i[0]
             else:
                 box_location = state[1]
-            states.append(((i[0], box_location, state[2], state[3], self.getType(i[0])), i[1]))
+            rug = state[5]
+            if not state[3] and self.getType(i[0]) == 'r':
+                rug += 1
+            if rug > self.rug25:
+                rug = self.rug_height*self.rug_width
+            states.append(((i[0], box_location, state[2], state[3], self.getType(i[0]), rug), i[1]))
 
         return states, self.getCost(state, action)
 
     def wrap(self, state, action):
-        return [((state[0], state[1], state[2], True, state[4]), 1)], self.getCost(state, action)
+        return [((state[0], state[1], state[2], True, state[4], state[5]), 1)], self.getCost(state, action)
 
     def pick_up(self, state, action):
         if state[0] == state[1]:
-            return [((state[0], state[1], True, state[3], state[4]), 1)], self.getCost(state, action)
+            return [((state[0], state[1], True, state[3], state[4], state[5]), 1)], self.getCost(state, action)
 
         return [(state, 1)], self.getCost(state, action)
 
     def drop(self, state, action):
         if state[0] == state[1]:
-            return [((state[0], state[1], False, state[3], state[4]), 1)], self.getCost(state, action)
+            return [((state[0], state[1], False, state[3], state[4], state[5]), 1)], self.getCost(state, action)
 
     def transition(self, state, action):
         if self.isEndState(state):
@@ -167,9 +173,9 @@ class BoxPushingConstants:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
+    e_state = [(g_pos, g_pos, True, False, 'p', 0), (g_pos, g_pos, True, False, 'p', 1), (g_pos, g_pos, True, True, 'p', 0), (g_pos, g_pos, True, True, 'p', 1)]
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
     
-    s = ((1, 1), (1, 1), True, False, 'r')
-    s_ = ((1, 2), (1, 2), True, False, 'p') 
+    s = ((1, 1), (1, 1), True, False, 'r', 1)
+    s_ = ((2, 1), (2, 1), True, False, 'p', 1) 
     print(BP.T(s, "down", s_))
