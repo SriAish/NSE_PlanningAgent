@@ -36,6 +36,7 @@ class FSAgent:
         self.belief_state = []
         for i in self.locations:
             self.belief_state.append(("u2", (init_loc, i, False, False, 'p', 0)))
+        print(self.belief_state)
 
     def init_var(self):
         self.x = {}
