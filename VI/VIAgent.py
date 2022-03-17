@@ -5,12 +5,17 @@ import pickle
 class VIAgent:
     def __init__(self, BP, gamma = 0.999, delta = 0.1):
         self.BP = BP
-        self.end_state = self.BP.end_state
+        g_pos = (int(sys.argv[6]), int(sys.argv[7]))
+        e_state = []
+        for i in range(4):
+            e_state.append((g_pos, g_pos, True, False, 'p', i))
+            e_state.append((g_pos, g_pos, True, True, 'p', i))
+        self.end_state = e_state
         self.stateValues = {}
         self.initializeStateValues()
         self.gamma = gamma  
         self.delta = delta
-        self.locations = [(1, 1)]
+        self.locations = [(3, 0)]
         self.init_belief()
 
     def init_belief(self):
@@ -19,7 +24,7 @@ class VIAgent:
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            self.belief_state.append((init_loc, i, False, False, 'p'))
+            self.belief_state.append((init_loc, i, False, False, 'p', 0))
         print(self.belief_state)
 
     def initializeStateValues(self):
@@ -48,6 +53,7 @@ class VIAgent:
     def generatePolicy(self):
         x = sys.maxsize
         while x > self.delta:
+            print(x)
             x = self.update()
         
         policy = {}
@@ -84,8 +90,7 @@ class VIPolicy:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
-    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), g_pos)
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
     # print(policy)
