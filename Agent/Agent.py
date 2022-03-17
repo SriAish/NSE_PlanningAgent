@@ -117,9 +117,9 @@ class FSAgent:
             self.x_[(u, s)] = self.x[(u, s)].value[0]
             for a in actions:
                 self.pi_[s][a] = self.pi[s][a].value[0]
-            # if self.x_[(u, s)] > 0.00001:
-            print((u, s), self.x_[(u, s)])
-            print(self.pi_[s])
+            if self.x_[(u, s)] > 0.00001:
+                print((u, s), self.x_[(u, s)])
+                print(self.pi_[s])
 
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
