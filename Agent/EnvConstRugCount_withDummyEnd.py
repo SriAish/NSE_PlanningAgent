@@ -5,7 +5,7 @@ import numpy as np
 import sys
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), end_state = [], init_box_loc=(3, 0)):
+    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), goal = (), init_box_loc=(3, 0)):
         # Making the grrid
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
@@ -17,7 +17,7 @@ class BoxPushingConstants:
         self.putRug()
 
         # Fixing the end state, initial location of box and generating other states
-        self.end_state = end_state
+        self.goal = goal
         self.init_box_loc = init_box_loc
         self.generateStates()
 
@@ -73,7 +73,7 @@ class BoxPushingConstants:
         return state in self.end
 
     def isGoalState(self, state):
-        return state in self.end_state or state == self.end_state
+        return state[0] == self.goal or state[1] == self.goal
 
     def getCost(self, state, action):
         if self.isGoalState(state) or self.isEnd(state):

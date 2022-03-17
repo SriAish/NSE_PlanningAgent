@@ -11,7 +11,7 @@
 import sys
 
 class FSAConstants:
-    def __init__(self, end_state = []):
+    def __init__(self, goal = ()):
         # Defining labels 
         self.label = {}
         self.label[(True, False, False, False)] = 0
@@ -41,7 +41,7 @@ class FSAConstants:
         self.transition_probabilities = {}
 
         # MDP end state
-        self.end_state = end_state
+        self.goal = goal
 
 
         # Symbol Definition
@@ -53,7 +53,7 @@ class FSAConstants:
         self.symbols["empty"] = 'E'
 
     def isEnd(self, state):
-        return state in self.end_state or state == self.end_state
+        return state[0] == self.goal or state[1] == self.goal
 
     def stateTransition(self):
         self.state_transitions["u0"][0] = "u1"
@@ -112,22 +112,29 @@ class FSAConstants:
 
     def getLabel(self, state):
         r0 = True
-        r25 = False
+        r1 = False
+        r2 = False
         g = False
         if self.isEnd(state):
             g = True
 
-        if state[5] > 0 and state[5] < 3:
+        if state[5] == 1:
             r0 = False
-            r25 = True
-        elif state[5] >= 3:
+            r1 = True
+            r2 = False
+        elif state[5] == 2:
             r0 = False
-            r25 = False
+            r1 = False
+            r2 = True
+        elif state[5] == 3:
+            r0 = False
+            r1 = False
+            r2 = False
             
-        return self.label[(r0, r25, g)]
+        return self.label[(r0, r1, r2, g)]
 
-    def getSymbol(self, label):
-        if label < 3:
+    def getSymbol(self, state, label):
+        if label < 4:
             return self.symbols["empty"]
         if label == 3:
             return self.symbols["no_nse"]
