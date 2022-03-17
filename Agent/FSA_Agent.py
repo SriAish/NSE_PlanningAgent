@@ -7,7 +7,7 @@ from gekko import GEKKO
 from math import e
 
 class FSAgent:
-    def __init__(self, BP, FSA, gamma = 0.999, locations = None):
+    def __init__(self, BP, FSA, gamma = 0.9, locations = None):
         self.m = GEKKO()
         self.m.options.MAX_ITER = 1000
         self.m.options.SOLVER = int(sys.argv[9])
@@ -117,8 +117,8 @@ class FSAgent:
         self.make_constraints_eqn2()
         print("eq2")
         sys.stdout.flush()
-        # self.make_constraints_eqn3()
-        # print("eq3")
+        self.make_constraints_eqn3()
+        print("eq3")
         sys.stdout.flush()
 
     def calculate_pi(self):
