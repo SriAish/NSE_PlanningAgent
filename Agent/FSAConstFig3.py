@@ -57,7 +57,7 @@ class FSAConstants:
 
     def stateTransition(self):
         self.state_transitions["u0"][0] = "u1"
-        self.state_transitions["u0"][1] = "u2"
+        self.state_transitions["u0"][1] = "u0"
         self.state_transitions["u0"][2] = "u0"
         self.state_transitions["u0"][3] = "u0"
         self.state_transitions["u0"][4] = "u0"
