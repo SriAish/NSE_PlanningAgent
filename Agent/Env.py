@@ -13,7 +13,6 @@ class BoxPushingConstants:
         self.rug_width = rug_width
         self.rug_height = rug_height
         self.rug_start = rug_start
-        self.rug25 = int(0.25*self.rug_height*self.rug_width) + 1
         self.putRug()
 
         # Fixing the end state and generating other states
@@ -42,12 +41,15 @@ class BoxPushingConstants:
         self.states = []
         for i in range(self.grid_size):
             for j in range(self.grid_size):
-                for m in range(self.rug25 + 1):
-                    self.states.append(((i, j), (1, 1), False, False, self.getType((i, j)), m))
-                    self.states.append(((i, j), (1, 1), False, True, self.getType((i, j)), m))
+                for k in range(self.grid_size):
+                    for l in range(self.grid_size):
+                        for m in range(self.rug_height*self.rug_width + 1):
+                            self.states.append(((i, j), (k, l), False, False, self.getType((i, j)), m))
+                            self.states.append(((i, j), (k, l), False, True, self.getType((i, j)), m))
 
-                    self.states.append(((i, j), (i, j), True, False, self.getType((i, j)), m))
-                    self.states.append(((i, j), (i, j), True, True, self.getType((i, j)), m))
+                            if i == k and j == l:
+                                self.states.append(((i, j), (k, l), True, False, self.getType((i, j)), m))
+                                self.states.append(((i, j), (k, l), True, True, self.getType((i, j)), m))
 
     def getValidActions(self, state):
         actions = copy.deepcopy(self.actions.move_actions)
@@ -123,7 +125,7 @@ class BoxPushingConstants:
             rug = state[5]
             if not state[3] and self.getType(i[0]) == 'r':
                 rug += 1
-            if rug > self.rug25:
+            if rug > self.rug_height*self.rug_width:
                 rug = self.rug_height*self.rug_width
             states.append(((i[0], box_location, state[2], state[3], self.getType(i[0]), rug), i[1]))
 
