@@ -53,7 +53,7 @@ class FSAConstants:
         self.symbols["empty"] = 'E'
 
     def isEnd(self, state):
-        return state[0] == self.goal and state[1] == self.goal
+        return state in self.end_state or state == self.end_state
 
     def stateTransition(self):
         self.state_transitions["u0"][0] = "u1"
