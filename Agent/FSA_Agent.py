@@ -109,7 +109,7 @@ class FSAgent:
                         if self.BP.T(s, a, s_) != 0:
                             lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
         
-        self.m.Equation(lhs <= 1)
+        self.m.Equation(lhs <= 0)
 
     def make_prob(self):
         self.set_obj()
