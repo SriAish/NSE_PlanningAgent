@@ -41,15 +41,12 @@ class BoxPushingConstants:
         self.states = []
         for i in range(self.grid_size):
             for j in range(self.grid_size):
-                for k in range(self.grid_size):
-                    for l in range(self.grid_size):
-                        for m in range(self.rug_height*self.rug_width + 1):
-                            self.states.append(((i, j), (k, l), False, False, self.getType((i, j)), m))
-                            self.states.append(((i, j), (k, l), False, True, self.getType((i, j)), m))
+                for m in range(self.rug_height*self.rug_width + 1):
+                    self.states.append(((i, j), (1, 1), False, False, self.getType((i, j)), m))
+                    self.states.append(((i, j), (1, 1), False, True, self.getType((i, j)), m))
 
-                            if i == k and j == l:
-                                self.states.append(((i, j), (k, l), True, False, self.getType((i, j)), m))
-                                self.states.append(((i, j), (k, l), True, True, self.getType((i, j)), m))
+                    self.states.append(((i, j), (i, j), True, False, self.getType((i, j)), m))
+                    self.states.append(((i, j), (i, j), True, True, self.getType((i, j)), m))
 
     def getValidActions(self, state):
         actions = copy.deepcopy(self.actions.move_actions)
