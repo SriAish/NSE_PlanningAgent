@@ -4,11 +4,12 @@ import numpy as np
 import sys
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), end_state = []):
+    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), end_state = [], box_loc = (3, 0)):
         # Making the grrid
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
-        
+        self.box_loc = box_loc
+
         # Making the rug
         self.rug_width = rug_width
         self.rug_height = rug_height
@@ -42,8 +43,8 @@ class BoxPushingConstants:
         for i in range(self.grid_size):
             for j in range(self.grid_size):
                 for m in range(self.rug_height*self.rug_width + 1):
-                    self.states.append(((i, j), (1, 1), False, False, self.getType((i, j)), m))
-                    self.states.append(((i, j), (1, 1), False, True, self.getType((i, j)), m))
+                    self.states.append(((i, j), self.box_loc, False, False, self.getType((i, j)), m))
+                    self.states.append(((i, j), self.box_loc, False, True, self.getType((i, j)), m))
 
                     self.states.append(((i, j), (i, j), True, False, self.getType((i, j)), m))
                     self.states.append(((i, j), (i, j), True, True, self.getType((i, j)), m))
@@ -54,7 +55,7 @@ class BoxPushingConstants:
         if self.isEndState(state):
             return actions
 
-        if state[0] == state[1] and state[0] == (1, 1):
+        if state[0] == state[1] and state[0] == self.box_loc:
             actions.append(self.actions.wrap)
 
         if state[0] == state[1]:
