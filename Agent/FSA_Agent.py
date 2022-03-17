@@ -122,8 +122,8 @@ class FSAgent:
         self.make_constraints_eqn2()
         print("eq2")
         sys.stdout.flush()
-        self.make_constraints_eqn3()
-        print("eq3")
+        # self.make_constraints_eqn3()
+        # print("eq3")
         sys.stdout.flush()
 
     def calculate_pi(self):
