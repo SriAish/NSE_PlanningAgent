@@ -7,7 +7,7 @@ from gekko import GEKKO
 from math import e
 
 class FSAgent:
-    def __init__(self, BP, FSA, gamma = 0.999, locations = None):
+    def __init__(self, BP, FSA, gamma = 0.9, locations = None):
         self.m = GEKKO()
         self.m.options.MAX_ITER = 1000
         self.m.options.SOLVER = int(sys.argv[9])
@@ -35,7 +35,7 @@ class FSAgent:
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            self.belief_state.append(("u1", (init_loc, i, False, False, 'p', 0)))
+            self.belief_state.append(("u0", (init_loc, i, False, False, 'p', 0)))
 
     def init_var(self):
         self.x = {}
@@ -100,17 +100,12 @@ class FSAgent:
 
     def make_constraints_eqn3(self):
         lhs = 0
-        for s_ in self.BP.states:
-            for u, s in itertools.product(self.FSA.states, self.BP.states):
-                t = self.FSA.symbolT(u, s_, self.FSA.symbols["mild"])
-                if t != 0:
-                    actions = self.BP.getValidActions(s_)
-                    for a in actions:
-                        if self.BP.T(s, a, s_) != 0:
-                            print("mild: ", u, s, s_)
-                            lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
+        for s in self.BP.states:
+            t = self.FSA.symbolT("u5", s, self.FSA.symbols["mild"])
+            if t != 0:
+                lhs += self.x[("u5", s)]*t
         
-        self.m.Equation(lhs <= 0)
+        self.m.Equation(lhs <= 0.15)
 
     def make_prob(self):
         self.set_obj()
@@ -122,8 +117,8 @@ class FSAgent:
         self.make_constraints_eqn2()
         print("eq2")
         sys.stdout.flush()
-        # self.make_constraints_eqn3()
-        # print("eq3")
+        self.make_constraints_eqn3()
+        print("eq3")
         sys.stdout.flush()
 
     def calculate_pi(self):
@@ -160,11 +155,12 @@ class FSAgent:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), g_pos)
-    FSA = FSAConstants(g_pos)
+    e_state = [(g_pos, g_pos, True, False, 'p', 0), (g_pos, g_pos, True, False, 'p', 1), (g_pos, g_pos, True, True, 'p', 0), (g_pos, g_pos, True, True, 'p', 1)]
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
+    FSA = FSAConstants(e_state)
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
-    locations = [(3, 0)]
+    locations = [(1, 2)]
 
     if int(sys.argv[1]) == 3:
         locations = [(1, 1)]
