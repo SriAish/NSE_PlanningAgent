@@ -143,8 +143,8 @@ class FSAConstants:
             return self.symbols["mild"]
         return self.symbols["severe"]
 
-    def symbolT(self, _, s, sym):
-        symbol = self.getSymbol(self.getLabel(s))
+    def symbolT(self, u, s, sym):
+        symbol = self.getSymbol(u, self.getLabel(s))
 
         if sym == symbol:
             return 1
