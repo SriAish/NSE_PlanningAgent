@@ -107,6 +107,7 @@ class FSAgent:
                     actions = self.BP.getValidActions(s_)
                     for a in actions:
                         if self.BP.T(s, a, s_) != 0:
+                            print("mild: ", u, s, s_)
                             lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
         
         self.m.Equation(lhs <= 0)
