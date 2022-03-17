@@ -41,7 +41,7 @@ class FSAConstants:
         self.transition_probabilities = {}
 
         # MDP end state
-        self.goal = goal
+        self.end_state = goal
 
 
         # Symbol Definition
