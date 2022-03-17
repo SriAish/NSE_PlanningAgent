@@ -1,5 +1,5 @@
 from EnvConstRugCount import BoxPushingConstants
-from FSAConstFig7 import FSAConstants
+from FSAConst import FSAConstants
 import sys
 import pickle
 import itertools
