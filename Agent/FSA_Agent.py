@@ -1,4 +1,4 @@
-from EnvConst import BoxPushingConstants
+from EnvConstRugCount import BoxPushingConstants
 from FSAConstFig7 import FSAConstants
 import sys
 import pickle
