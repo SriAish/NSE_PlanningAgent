@@ -135,7 +135,7 @@ class FSAConstants:
         return self.label[(r0, r1, r2, g)]
 
     def getSymbol(self, state, label):
-        print(state)
+        print("state :", state)
         if state == "u5":
             return self.symbols["empty"]
         if label < 4:
@@ -147,6 +147,7 @@ class FSAConstants:
         return self.symbols["severe"]
 
     def symbolT(self, u, s, sym):
+        print("here")
         symbol = self.getSymbol(u, self.getLabel(s))
 
         if sym == symbol:
