@@ -138,9 +138,9 @@ class FSAConstants:
     def getSymbol(self, state, label):
         if label < 4:
             return self.symbols["empty"]
-        if label == 3:
-            return self.symbols["no_nse"]
         if label == 4:
+            return self.symbols["no_nse"]
+        if label == 5 or label == 6:
             return self.symbols["mild"]
         return self.symbols["severe"]
 
