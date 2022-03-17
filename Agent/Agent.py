@@ -1,4 +1,4 @@
-from EnvConst import BoxPushingConstants
+from EnvConstRugCount import BoxPushingConstants
 from FSAConst import FSAConstants
 import sys
 import pickle
@@ -143,11 +143,11 @@ class FSAgent:
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     e_state = [(g_pos, g_pos, True, False, 'p', 0), (g_pos, g_pos, True, False, 'p', 1), (g_pos, g_pos, True, True, 'p', 0), (g_pos, g_pos, True, True, 'p', 1)]
-    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), g_pos)
     FSA = FSAConstants(e_state)
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
-    locations = [(1, 2)]
+    locations = [(3, 0)]
 
     if int(sys.argv[1]) == 3:
         locations = [(1, 1)]
