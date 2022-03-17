@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 631078
-SLURM_NODELIST = gnode22
+SLURM_JOB_ID = 631083
+SLURM_NODELIST = gnode30
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job631078/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job631083/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 initial belief setup
 variables setup
 objective setup
@@ -249,8 +249,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 132
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 132
-Total CPU secs in IPOPT (w/o function evaluations)   =      2.091
-Total CPU secs in NLP function evaluations           =     23.446
+Total CPU secs in IPOPT (w/o function evaluations)   =      2.112
+Total CPU secs in NLP function evaluations           =     23.678
 
 EXIT: Restoration Failed!
  
@@ -260,7 +260,7 @@ EXIT: Restoration Failed!
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    25.8303000000014      sec
+ Solution time  :    26.1584000000148      sec
  Objective      :    5.59486438018130     
  Unsuccessful with error code            0
  ---------------------------------------------------
@@ -330,4 +330,4 @@ EXIT: Restoration Failed!
 Objective Value:  5.594864380192323
 ----------------------------------------
 Saving policies
-49
+46
