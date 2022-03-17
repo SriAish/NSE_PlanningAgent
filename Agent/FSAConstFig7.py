@@ -111,12 +111,13 @@ class FSAConstants:
         self.state_transitions["u5"][7] = "u5"
 
     def getLabel(self, state):
-        print(state)
+        # print(state)
         r0 = True
         r1 = False
         r2 = False
         g = False
         if self.isEnd(state):
+            print("end :", state)
             g = True
 
         if state[5] == 1:
