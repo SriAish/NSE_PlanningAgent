@@ -117,7 +117,6 @@ class FSAConstants:
         r2 = False
         g = False
         if self.isEnd(state):
-            print("end :", state)
             g = True
 
         if state[5] == 1:
