@@ -1,4 +1,4 @@
-from EnvConstRugCount import BoxPushingConstants
+from EnvConst import BoxPushingConstants
 import sys
 import pickle
 from gekko import GEKKO
