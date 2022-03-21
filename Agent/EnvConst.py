@@ -16,6 +16,7 @@ class BoxPushingConstants:
         self.putRug()
 
         # Fixing the end state, initial location of box and generating other states
+        print("goal: ", goal_state)
         self.goal_state = goal_state
         self.init_box_loc = init_box_loc
         self.generateStates()
