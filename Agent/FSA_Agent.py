@@ -110,7 +110,7 @@ class FSAgent:
                             print("severe: ", u, s, a, s_)
                             lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
         
-        self.m.Equation(lhs <= 0.5)
+        self.m.Equation(lhs <= 1)
 
     def NSE_val(self):
         lhs = 0
@@ -138,9 +138,9 @@ class FSAgent:
         self.make_constraints_eqn2()
         print("eq2")
         sys.stdout.flush()
-        # self.make_constraints_eqn3()
-        # print("eq3")
-        # sys.stdout.flush()
+        self.make_constraints_eqn3()
+        print("eq3")
+        sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
