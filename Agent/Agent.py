@@ -1,4 +1,4 @@
-from Env import BoxPushingConstants
+from EnvConst import BoxPushingConstants
 from FSAConst import FSAConstants
 import sys
 import pickle
@@ -35,8 +35,7 @@ class FSAgent:
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            self.belief_state.append(("u2", (init_loc, i, False, False, 'p', 0)))
-        print(self.belief_state)
+            self.belief_state.append(("u1", (init_loc, i, False, False, 'p')))
 
     def init_var(self):
         self.x = {}
@@ -143,12 +142,9 @@ class FSAgent:
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    e_state = []
-    for i in range(int(sys.argv[2])*int(sys.argv[3])+2):
-        e_state.append((g_pos, g_pos, True, False, 'p', i))
-        e_state.append((g_pos, g_pos, True, True, 'p', i))
-    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state)
-    FSA = FSAConstants(e_state)
+    g_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), g_state)
+    FSA = FSAConstants()
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
     locations = [(3, 0)]

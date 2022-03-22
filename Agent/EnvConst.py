@@ -143,10 +143,10 @@ class BoxPushingConstants:
             return [((state[0], state[1], False, state[3], state[4]), 1)], self.getCost(state, action)
 
     def transition(self, state, action):
-        if self.isGoalState(state):
+        if self.isEndState(state):
             return [(state, 1)], self.getCost(state, action)
 
-        if self.isEndState(state):
+        if self.isGoaltate(state):
             return [(self.end_state, 1)], self.getCost(state, action)
 
         if self.actions.isMoveAction(action):

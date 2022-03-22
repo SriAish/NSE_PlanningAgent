@@ -4,7 +4,7 @@ import numpy as np
 import sys
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), end_state = [], init_box_loc=(1, 1)):
+    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), goal_state = [], init_box_loc=(3, 0)):
         # Making the grrid
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
@@ -16,7 +16,8 @@ class BoxPushingConstants:
         self.putRug()
 
         # Fixing the end state, initial location of box and generating other states
-        self.end_state = end_state
+        print("goal: ", goal_state)
+        self.goal_state = goal_state
         self.init_box_loc = init_box_loc
         self.generateStates()
 
@@ -46,11 +47,13 @@ class BoxPushingConstants:
                 self.states.append(((i, j), self.init_box_loc, False, True, self.getType((i, j))))
                 self.states.append(((i, j), (i, j), True, False, self.getType((i, j))))
                 self.states.append(((i, j), (i, j), True, True, self.getType((i, j))))
+        self.end_state = ((-1, -1), (-1, -1), False, False, 'r')
+        self.states.append(self.end_state)
 
     def getValidActions(self, state):
         actions = copy.deepcopy(self.actions.move_actions)
 
-        if self.isEndState(state):
+        if self.isGoalState(state) or self.isEndState(state):
             return actions
 
         if state[0] == state[1] and state[1] == self.init_box_loc:
@@ -62,11 +65,14 @@ class BoxPushingConstants:
 
         return actions
   
+    def isGoalState(self, state):
+        return state in self.goal_state or state == self.goal_state
+
     def isEndState(self, state):
         return state in self.end_state or state == self.end_state
 
     def getCost(self, state, action):
-        if self.isEndState(state):
+        if self.isGoalState(state) or self.isEndState(state):
             return 0
         return self.actions.getActionCost(action)
 
@@ -139,6 +145,9 @@ class BoxPushingConstants:
     def transition(self, state, action):
         if self.isEndState(state):
             return [(state, 1)], self.getCost(state, action)
+
+        if self.isGoalState(state):
+            return [(self.end_state, 1)], self.getCost(state, action)
 
         if self.actions.isMoveAction(action):
             return self.move(state, action)

@@ -1,23 +1,17 @@
 # LABELS
-# 0 : b, r0, -r>0,<=25, -g
-# 1 : b, -r0, r>0,<=25, -g
-# 2 : b, -r0, -r>0,<=25, -g
-# 3 : b, r0, -r>0,<=25, g
-# 4 : b, -r0, r>0,<=25, g
-# 5 : b, -r0, -r>0,<=25, g
+# 0 : b, r, -g
+# 1 : b, -r, -g
+# 3 : b, -r, g
 
 import sys
 
 class FSAConstants:
-    def __init__(self, end_state = []):
+    def __init__(self):
         # Defining labels 
         self.label = {}
-        self.label[(True, False, False)] = 0
-        self.label[(False, True, False)] = 1
-        self.label[(False, False, False)] = 2
-        self.label[(True, False, True)] = 3
-        self.label[(False, True, True)] = 4
-        self.label[(False, False, True)] = 5
+        self.label[(True, False)] = 0
+        self.label[(False, False)] = 1
+        self.label[(False, True)] = 2
 
         # Defining states
         self.states = ["u0", "u1", "u2", "u3", "u4", "u5"]
@@ -36,10 +30,6 @@ class FSAConstants:
         # Storing transition probabilities
         self.transition_probabilities = {}
 
-        # MDP end state
-        self.end_state = end_state
-
-
         # Symbol Definition
         self.symbols = {}
 
@@ -48,76 +38,81 @@ class FSAConstants:
         self.symbols["no_nse"] = 'N'
         self.symbols["empty"] = 'E'
 
+        # Symbol transiyion
+        self.symbol = {}
+        self.symbol["u0"] = {}
+        self.symbol["u1"] = {}
+        self.symbol["u2"] = {}
+        self.symbol["u3"] = {}
+        self.symbol["u4"] = {}
+        self.symbol["u5"] = {}
+        self.symbolTransition()
+
     def isEnd(self, state):
-        return state in self.end_state or state == self.end_state
+        return state[0] == (-1, -1)
+
+    def symbolTransition(self):
+        self.symbol["u0"][0] = self.symbols["empty"]
+        self.symbol["u0"][1] = self.symbols["empty"]
+        self.symbol["u0"][2] = self.symbols["empty"]
+
+        self.symbol["u1"][0] = self.symbols["empty"]
+        self.symbol["u1"][1] = self.symbols["empty"]
+        self.symbol["u1"][2] = self.symbols["no_nse"]
+
+        self.symbol["u2"][0] = self.symbols["empty"]
+        self.symbol["u2"][1] = self.symbols["empty"]
+        self.symbol["u2"][2] = self.symbols["mild"]
+
+        self.symbol["u3"][0] = self.symbols["empty"]
+        self.symbol["u3"][1] = self.symbols["empty"]
+        self.symbol["u3"][2] = self.symbols["mild"]
+
+        self.symbol["u4"][0] = self.symbols["empty"]
+        self.symbol["u4"][1] = self.symbols["empty"]
+        self.symbol["u4"][2] = self.symbols["severe"]
+
+        self.symbol["u5"][0] = self.symbols["empty"]
+        self.symbol["u5"][1] = self.symbols["empty"]
+        self.symbol["u5"][2] = self.symbols["empty"]
 
     def stateTransition(self):
         self.state_transitions["u0"][0] = "u2"
         self.state_transitions["u0"][1] = "u1"
         self.state_transitions["u0"][2] = "u0"
-        self.state_transitions["u0"][3] = "u5"
-        self.state_transitions["u0"][4] = "u0"
-        self.state_transitions["u0"][5] = "u0"
 
-        self.state_transitions["u1"][0] = "u1"
+        self.state_transitions["u1"][0] = "u2"
         self.state_transitions["u1"][1] = "u1"
-        self.state_transitions["u1"][2] = "u4"
-        self.state_transitions["u1"][3] = "u1"
-        self.state_transitions["u1"][4] = "u5"
-        self.state_transitions["u1"][5] = "u1"
+        self.state_transitions["u1"][2] = "u5"
 
-        self.state_transitions["u2"][0] = "u2"
-        self.state_transitions["u2"][1] = "u3"
-        self.state_transitions["u2"][2] = "u2"
-        self.state_transitions["u2"][3] = "u5"
-        self.state_transitions["u2"][4] = "u2"
-        self.state_transitions["u2"][5] = "u2"
+        self.state_transitions["u2"][0] = "u3"
+        self.state_transitions["u2"][1] = "u2"
+        self.state_transitions["u2"][2] = "u5"
 
-        self.state_transitions["u3"][0] = "u3"
+        self.state_transitions["u3"][0] = "u4"
         self.state_transitions["u3"][1] = "u3"
-        self.state_transitions["u3"][2] = "u4"
-        self.state_transitions["u3"][3] = "u3"
-        self.state_transitions["u3"][4] = "u5"
-        self.state_transitions["u3"][5] = "u3"
+        self.state_transitions["u3"][2] = "u5"
 
         self.state_transitions["u4"][0] = "u4"
         self.state_transitions["u4"][1] = "u4"
-        self.state_transitions["u4"][2] = "u4"
-        self.state_transitions["u4"][3] = "u4"
-        self.state_transitions["u4"][4] = "u4"
-        self.state_transitions["u4"][5] = "u5"
+        self.state_transitions["u4"][2] = "u5"
 
         self.state_transitions["u5"][0] = "u5"
         self.state_transitions["u5"][1] = "u5"
         self.state_transitions["u5"][2] = "u5"
-        self.state_transitions["u5"][3] = "u5"
-        self.state_transitions["u5"][4] = "u5"
-        self.state_transitions["u5"][5] = "u5"
 
     def getLabel(self, state):
-        r0 = True
-        r25 = False
-        g = False
         if self.isEnd(state):
-            g = True
-
-        if state[5] > 0 and state[5] < 3:
-            r0 = False
-            r25 = True
-        elif state[5] >= 3:
-            r0 = False
-            r25 = False
+            return self.label[(False, True)]
+        
+        rug = False
+        if state[2] and not state[3] and state[4] == 'r':
+            rug = True
             
-        return self.label[(r0, r25, g)]
+        return self.label[(rug, False)]
 
-    def getSymbol(self, label):
-        if label < 3:
-            return self.symbols["empty"]
-        if label == 3:
-            return self.symbols["no_nse"]
-        if label == 4:
-            return self.symbols["mild"]
-        return self.symbols["severe"]
+    def getSymbol(self, state, label):
+        return self.symbol[state][label]
 
     def symbolT(self, _, s, sym):
         symbol = self.getSymbol(self.getLabel(s))
