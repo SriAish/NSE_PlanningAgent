@@ -112,6 +112,22 @@ class FSAgent:
         
         self.m.Equation(lhs <= 0.5)
 
+    def NSE_val(self):
+        lhs = 0
+        for s_ in self.BP.states:
+            for u, s in itertools.product(self.FSA.states, self.BP.states):
+                t = self.FSA.symbolT(u, s_, self.FSA.symbols["severe"])
+                if t != 0:
+                    actions = self.BP.getValidActions(s)
+                    for a in actions:
+                        if self.BP.T(s, a, s_) != 0:
+                            
+                            l = self.x_[(u, s)]*self.pi_[s][a]*self.BP.T(s, a, s_)*t
+                            lhs += l
+                            print("severe: ", u, s, a, s_, l)
+        
+        return lhs
+
     def make_prob(self):
         self.set_obj()
         print("objective setup")
@@ -122,9 +138,9 @@ class FSAgent:
         self.make_constraints_eqn2()
         print("eq2")
         sys.stdout.flush()
-        self.make_constraints_eqn3()
-        print("eq3")
-        sys.stdout.flush()
+        # self.make_constraints_eqn3()
+        # print("eq3")
+        # sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
@@ -141,6 +157,7 @@ class FSAgent:
 
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
+        print("Objective Value: ", self.NSE_val())
         print("----------------------------------------")
 
     def save_pi(self, file):
