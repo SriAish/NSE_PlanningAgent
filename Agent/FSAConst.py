@@ -112,11 +112,11 @@ class FSAConstants:
         return self.label[(rug, False)]
 
     def getSymbol(self, state, label):
-        print(state, label, self.symbol[state][label])
+        # print(state, label, self.symbol[state][label])
         return self.symbol[state][label]
 
     def symbolT(self, u, s, sym):
-        print("get symbol:", s)
+        # print("get symbol:", s)
         symbol = self.getSymbol(u, self.getLabel(s))
 
         if sym == symbol:
