@@ -114,8 +114,8 @@ class FSAConstants:
     def getSymbol(self, state, label):
         return self.symbol[state][label]
 
-    def symbolT(self, _, s, sym):
-        symbol = self.getSymbol(self.getLabel(s))
+    def symbolT(self, u, s, sym):
+        symbol = self.getSymbol(u, self.getLabel(s))
 
         if sym == symbol:
             return 1
