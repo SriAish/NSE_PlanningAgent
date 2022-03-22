@@ -146,7 +146,7 @@ class BoxPushingConstants:
         if self.isEndState(state):
             return [(state, 1)], self.getCost(state, action)
 
-        if self.isGoaltate(state):
+        if self.isGoalState(state):
             return [(self.end_state, 1)], self.getCost(state, action)
 
         if self.actions.isMoveAction(action):
