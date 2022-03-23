@@ -15,3 +15,23 @@ Traceback (most recent call last):
 TypeError: symbolT() missing 1 required positional argument: 'sym'
 155
 --------------------
+Traceback (most recent call last):
+  File "FSA_Agent.py", line 194, in <module>
+    agent.calculate_pi()
+  File "FSA_Agent.py", line 161, in calculate_pi
+    print("Objective Value: ", self.NSE_val())
+  File "FSA_Agent.py", line 120, in NSE_val
+    t = self.FSA.symbolT(u, s_, self.FSA.symbols["severe"])
+TypeError: symbolT() missing 1 required positional argument: 'sym'
+512
+--------------------
+Traceback (most recent call last):
+  File "FSA_Agent.py", line 194, in <module>
+    agent.calculate_pi()
+  File "FSA_Agent.py", line 161, in calculate_pi
+    print("Objective Value: ", self.NSE_val())
+  File "FSA_Agent.py", line 120, in NSE_val
+    
+TypeError: symbolT() missing 1 required positional argument: 'sym'
+165
+--------------------
