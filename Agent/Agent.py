@@ -77,7 +77,7 @@ class FSAgent:
                 actions = self.BP.getValidActions(s)
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
-                        c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
+                        c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[s][a]*self.x[(u, s)]
             
             c = self.gamma*c
 

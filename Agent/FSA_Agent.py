@@ -77,7 +77,7 @@ class FSAgent:
                 actions = self.BP.getValidActions(s)
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
-                        c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
+                        c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[s][a]*self.x[(u, s)]
             
             c = self.gamma*c
 
@@ -102,7 +102,7 @@ class FSAgent:
         lhs = 0
         for s_ in self.BP.states:
             for u, s in itertools.product(self.FSA.states, self.BP.states):
-                t = self.FSA.symbolT(u, s_, self.FSA.symbols["severe"])
+                t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
                 if t != 0:
                     actions = self.BP.getValidActions(s)
                     for a in actions:

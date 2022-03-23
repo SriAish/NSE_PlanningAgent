@@ -124,16 +124,16 @@ class FSAConstants:
         # print(state, label, self.symbol[state][label])
         return self.symbol[state][label]
 
-    def symbolT(self, u, s, sym):
+    def symbolT(self, u, s, a, sym):
         # print("get symbol:", s)
-        symbol = self.getSymbol(u, self.getLabel(s))
+        symbol = self.getSymbol(u, self.getLabel(s, a))
 
         if sym == symbol:
             return 1
         return 0
 
-    def T(self, u, s, u_):
-        if (u, self.getLabel(s), u_) in self.transition_probabilities.keys():
+    def T(self, u, s, a, u_):
+        if (u, self.getLabel(s, a), u_) in self.transition_probabilities.keys():
             return self.transition_probabilities[(u, self.getLabel(s), u_)]
 
         sig = self.getLabel(s)
