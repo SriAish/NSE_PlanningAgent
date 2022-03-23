@@ -56,7 +56,7 @@ class BoxPushingConstants:
         if self.isGoalState(state) or self.isEndState(state):
             return actions
 
-        if state[0] == state[1] and state[1] == self.init_box_loc:
+        if state[0] == state[1] and state[1] == self.init_box_loc and not state[3]:
             actions.append(self.actions.wrap)
 
         if state[0] == state[1]:
