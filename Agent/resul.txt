@@ -7,3 +7,4 @@ SLURM_JOB_GPUS = 0
 --------------------
 511
 --------------------
+slurmstepd: error: *** JOB 634332 ON gnode14 CANCELLED AT 2022-03-23T09:50:47 ***
