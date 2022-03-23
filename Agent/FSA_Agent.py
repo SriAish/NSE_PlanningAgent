@@ -102,11 +102,11 @@ class FSAgent:
         lhs = 0
         for s_ in self.BP.states:
             for u, s in itertools.product(self.FSA.states, self.BP.states):
-                t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
-                if t != 0:
-                    actions = self.BP.getValidActions(s)
-                    for a in actions:
-                        if self.BP.T(s, a, s_) != 0:
+                actions = self.BP.getValidActions(s)
+                for a in actions:
+                    if self.BP.T(s, a, s_) != 0:
+                        t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+                        if t != 0:
                             print("severe: ", u, s, a, s_)
                             lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
         
