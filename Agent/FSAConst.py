@@ -110,10 +110,10 @@ class FSAConstants:
 
         if state[4] == 'r':
             return self.label[(True, False)]
-
-        return self.label[(False, False)]
-            
         
+        if state[4] == 'p':
+            return self.label[(False, False)]
+
 
     def getSymbol(self, state, label):
         # print(state, label, self.symbol[state][label])
