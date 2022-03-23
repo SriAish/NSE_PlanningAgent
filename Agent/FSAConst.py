@@ -2,8 +2,7 @@
 # 0 : b, r, -g
 # 1 : b, -r, -g
 # 3 : b, -r, g
-
-import sys
+from actions import Actions 
 
 class FSAConstants:
     def __init__(self):
@@ -15,6 +14,9 @@ class FSAConstants:
 
         # Defining states
         self.states = ["u0", "u1", "u2", "u3", "u4", "u5"]
+
+         # Sstting up the actions
+        self.actions = Actions()
 
         # Defining state transitions
         self.state_transitions = {}
@@ -101,9 +103,12 @@ class FSAConstants:
         self.state_transitions["u5"][1] = "u5"
         self.state_transitions["u5"][2] = "u5"
 
-    def getLabel(self, state):
+    def getLabel(self, state, action):
         if self.isEnd(state):
             return self.label[(False, True)]
+
+        if not self.actions.isMoveAction(action):
+            return self.label[(False, False)]
         
         if state[3] or not state[2]:
             return self.label[(False, False)]
@@ -132,7 +137,6 @@ class FSAConstants:
             return self.transition_probabilities[(u, self.getLabel(s), u_)]
 
         sig = self.getLabel(s)
-        print("in FSA", s, u, sig)
         next_u = self.state_transitions[u][sig]
 
         if next_u == u_:
