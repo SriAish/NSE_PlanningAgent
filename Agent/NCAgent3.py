@@ -175,4 +175,4 @@ if __name__ == '__main__':
     agent = NCAgent(BP, locations=locations)
     agent.solve_prob()
     agent.calculate_pi()
-    agent.save_pi(sys.argv[8])
+    # agent.save_pi(sys.argv[8])
