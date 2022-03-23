@@ -136,7 +136,7 @@ class FSAConstants:
         if (u, self.getLabel(s, a), u_) in self.transition_probabilities.keys():
             return self.transition_probabilities[(u, self.getLabel(s), u_)]
 
-        sig = self.getLabel(s)
+        sig = self.getLabel(s, a)
         next_u = self.state_transitions[u][sig]
 
         if next_u == u_:
