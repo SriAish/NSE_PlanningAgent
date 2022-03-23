@@ -75,6 +75,7 @@ class FSAgent:
             c = 0
             for u, s in itertools.product(self.FSA.states, self.BP.states):
                 actions = self.BP.getValidActions(s)
+                print("seq: ", u, s_, u_)
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
                         c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]

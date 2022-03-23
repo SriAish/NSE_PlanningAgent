@@ -130,6 +130,7 @@ class FSAConstants:
             return self.transition_probabilities[(u, self.getLabel(s), u_)]
 
         sig = self.getLabel(s)
+        print("in FSA", s, u, sig)
         next_u = self.state_transitions[u][sig]
 
         if next_u == u_:
