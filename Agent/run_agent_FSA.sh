@@ -20,63 +20,63 @@ python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 1 > 7_10
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.9 > 7_9
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.8 > 7_8
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.7 > 7_7
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.6 > 7_6
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.5 > 7_5
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.4 > 7_4
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.3 > 7_3
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.2 > 7_2
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.1 > 7_1
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0 > 7_0
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.9 > 7_9
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.8 > 7_8
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.7 > 7_7
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.6 > 7_6
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.5 > 7_5
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.4 > 7_4
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.3 > 7_3
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.2 > 7_2
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.1 > 7_1
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0 > 7_0
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
