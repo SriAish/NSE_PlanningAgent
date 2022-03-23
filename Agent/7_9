@@ -2,20 +2,3 @@ goal:  [((3, 6), (3, 6), True, False, 'p'), ((3, 6), (3, 6), True, True, 'p')]
 initial belief setup
 variables setup
 objective setup
-eq1
-eq2
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') down ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') up ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') right ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') left ((-1, -1), (-1, -1), False, False, 'r')
-0.9
-eq3
-problem setup
