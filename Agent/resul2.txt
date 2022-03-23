@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 634652
+SLURM_JOB_ID = 634655
 SLURM_NODELIST = gnode40
 SLURM_JOB_GPUS = 0,1
 ==========================================
-/var/spool/slurmd/job634652/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job634655/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 goal:  [((3, 6), (3, 6), True, False, 'p'), ((3, 6), (3, 6), True, True, 'p')]
 initial belief setup
 variables setup
@@ -16,8 +16,8 @@ Traceback (most recent call last):
   File "Agent.py", line 105, in make_prob
     self.make_constraints_eqn1()
   File "Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 136, in T
-    if (u, self.getLabel(s), u_) in self.transition_probabilities.keys():
+    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[s][a]*self.x[(u, s)]
+  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 139, in T
+    sig = self.getLabel(s)
 TypeError: getLabel() missing 1 required positional argument: 'action'
-1
+2
