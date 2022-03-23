@@ -1,19 +1,7 @@
 ==========================================
-SLURM_JOB_ID = 634320
+SLURM_JOB_ID = 634332
 SLURM_NODELIST = gnode14
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job634320/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
---------------------
-387
---------------------
-283
---------------------
-105
---------------------
-95
---------------------
-123
---------------------
-142
+/var/spool/slurmd/job634332/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 --------------------
