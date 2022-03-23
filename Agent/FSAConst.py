@@ -110,6 +110,8 @@ class FSAConstants:
 
         if state[4] == 'r':
             return self.label[(True, False)]
+
+        return self.label[(False, False)]
             
         
 
