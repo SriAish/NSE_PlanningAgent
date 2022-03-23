@@ -56,7 +56,7 @@ class BoxPushingConstants:
         if self.isGoalState(state) or self.isEndState(state):
             return actions
 
-        if state[0] == state[1] and state[1] == self.init_box_loc and not state[3]:
+        if state[0] == state[1] and state[1] == self.init_box_loc and not state[2] and not state[3]:
             actions.append(self.actions.wrap)
 
         if state[0] == state[1]:
@@ -143,6 +143,9 @@ class BoxPushingConstants:
             return [((state[0], state[1], False, state[3], state[4]), 1)], self.getCost(state, action)
 
     def transition(self, state, action):
+        if self.actions.isWrapAction(action):
+            return self.wrap(state, action)
+            
         if self.isEndState(state):
             return [(state, 1)], self.getCost(state, action)
 
@@ -151,9 +154,6 @@ class BoxPushingConstants:
 
         if self.actions.isMoveAction(action):
             return self.move(state, action)
-
-        if self.actions.isWrapAction(action):
-            return self.wrap(state, action)
 
         if self.actions.isBoxAction(action):
             if action == self.actions.pick_up:

@@ -105,11 +105,13 @@ class FSAConstants:
         if self.isEnd(state):
             return self.label[(False, True)]
         
-        rug = False
-        if state[2] and not state[3] and state[4] == 'r':
-            rug = True
+        if state[3] or not state[2]:
+            return self.label[(False, False)]
+
+        if state[4] == 'r':
+            return self.label[(True, False)]
             
-        return self.label[(rug, False)]
+        
 
     def getSymbol(self, state, label):
         # print(state, label, self.symbol[state][label])
