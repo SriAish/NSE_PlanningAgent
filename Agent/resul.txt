@@ -1,174 +1,150 @@
 ==========================================
-SLURM_JOB_ID = 634469
-SLURM_NODELIST = gnode39
+SLURM_JOB_ID = 634679
+SLURM_NODELIST = gnode32
 SLURM_JOB_GPUS = 0
 ==========================================
-/var/spool/slurmd/job634469/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job634679/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-2
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+15
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+13
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+13
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+14
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+13
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+13
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+14
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+13
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-0
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+13
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+13
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+13
 --------------------
 Traceback (most recent call last):
   File "FSA_Agent.py", line 192, in <module>
     agent = FSAgent(BP, FSA, locations=locations)
   File "FSA_Agent.py", line 24, in __init__
     self.make_prob()
-  File "FSA_Agent.py", line 136, in make_prob
-    self.make_constraints_eqn1()
-  File "FSA_Agent.py", line 80, in make_constraints_eqn1
-    c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, u_)*self.pi[s][a]*self.x[(u, s)]
-  File "/home/sriaish/NSE_PlanningAgent/Agent/FSAConst.py", line 133, in T
-    next_u = self.state_transitions[u][sig]
-KeyError: None
-1
+  File "FSA_Agent.py", line 142, in make_prob
+    self.make_constraints_eqn3()
+  File "FSA_Agent.py", line 105, in make_constraints_eqn3
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
+UnboundLocalError: local variable 'a' referenced before assignment
+14
