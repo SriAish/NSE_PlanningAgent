@@ -110,7 +110,7 @@ class FSAgent:
                             print("severe: ", u, s, a, s_)
                             lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
         
-        self.m.Equation(lhs <= 1)
+        self.m.Equation(lhs <= float(sys.argv[10]))
 
     def NSE_val(self):
         lhs = 0
