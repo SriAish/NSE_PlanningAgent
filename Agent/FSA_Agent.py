@@ -113,6 +113,21 @@ class FSAgent:
         print(float(sys.argv[10]))
         self.m.Equation(lhs <= float(sys.argv[10]))
 
+    def make_constraints_eqn3(self):
+        lhs = 0
+        for s_ in self.BP.states:
+            for u, s in itertools.product(self.FSA.states, self.BP.states):
+                actions = self.BP.getValidActions(s)
+                for a in actions:
+                    if self.BP.T(s, a, s_) != 0:
+                        t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
+                        if t != 0:
+                            print("mild: ", u, s, a, s_)
+                            lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
+        
+        print(float(sys.argv[11]))
+        self.m.Equation(lhs <= float(sys.argv[11]))
+
     def NSE_val(self):
         lhs = 0
         for s_ in self.BP.states:

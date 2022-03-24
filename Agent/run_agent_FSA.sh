@@ -16,73 +16,73 @@ source ~/keras/bin/activate
 # echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 10 > 7_100.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 10 10 > sm_7_100.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 1 > 7_10.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 1 1 > sm_7_10.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.9 > 7_9.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.9 0.9 > sm_7_9.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.8 > 7_8.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.8 0.8 > sm_7_8.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.7 > 7_7.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.7 0.7 > sm_7_7.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.6 > 7_6.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.6 0.6 > sm_7_6.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.5 > 7_5.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.5 0.5 > sm_7_5.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.4 > 7_4.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.4 0.4 > sm_7_4.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.3 > 7_3.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.3 0.3 > sm_7_3.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.2 > 7_2.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.2 0.2 > sm_7_2.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.1 > 7_1.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.1 0.1 > sm_7_1.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0 > 7_0.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0 0 > sm_7_0.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
