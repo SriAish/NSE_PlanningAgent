@@ -113,7 +113,7 @@ class FSAgent:
         print(float(sys.argv[10]))
         self.m.Equation(lhs <= float(sys.argv[10]))
 
-    def make_constraints_eqn3(self):
+    def make_constraints_eqn4(self):
         lhs = 0
         for s_ in self.BP.states:
             for u, s in itertools.product(self.FSA.states, self.BP.states):
@@ -140,7 +140,21 @@ class FSAgent:
                         if t != 0:
                             l = self.x_[(u, s)]*self.pi_[s][a]*self.BP.T(s, a, s_)*t
                             lhs += l
-                            print("severe: ", u, s, a, s_, l)
+        
+        return lhs
+
+    def NSE_val_mild(self):
+        lhs = 0
+        for s_ in self.BP.states:
+            for u, s in itertools.product(self.FSA.states, self.BP.states):
+               
+                actions = self.BP.getValidActions(s)
+                for a in actions:
+                    if self.BP.T(s, a, s_) != 0:
+                        t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
+                        if t != 0:
+                            l = self.x_[(u, s)]*self.pi_[s][a]*self.BP.T(s, a, s_)*t
+                            lhs += l
         
         return lhs
 
@@ -155,6 +169,9 @@ class FSAgent:
         print("eq2")
         sys.stdout.flush()
         self.make_constraints_eqn3()
+        print("eq3")
+        sys.stdout.flush()
+        self.make_constraints_eqn4()
         print("eq3")
         sys.stdout.flush()
 
@@ -173,7 +190,8 @@ class FSAgent:
 
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
-        print("Objective Value: ", self.NSE_val())
+        print("Severe Value: ", self.NSE_val())
+        print("Mild Value: ", self.NSE_val_mild())
         print("----------------------------------------")
 
     def save_pi(self, file):
