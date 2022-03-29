@@ -70,19 +70,58 @@ source ~/keras/bin/activate
 # echo $runtime
 # echo "--------------------"
 # start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.2 0.2 > sm_7_2.txt
+start=`date +%s`
+python3.7 Agent.py 7 3 3 2 2 3 6 7_7_ogt 3
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 -1 0.4 > m_7_4.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 -1 0.3 > m_7_3.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.1 0.1 > sm_7_1.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 -1 0.1 > m_7_1.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0 0 > sm_7_0.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 -1 0 > m_7_0.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+python3.7 FSA_Agent_2.py 7 3 3 2 2 3 6 7_7 3 0.4 0.4 > nsm_7_4.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+python3.7 FSA_Agent_2.py 7 3 3 2 2 3 6 7_7 3 0.3 0.3 > nsm_7_3.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+python3.7 FSA_Agent_2.py 7 3 3 2 2 3 6 7_7 3 0.2 0.2 > nsm_7_2.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+python3.7 FSA_Agent_2.py 7 3 3 2 2 3 6 7_7 3 0.1 0.1 > nsm_7_1.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+python3.7 FSA_Agent_2.py 7 3 3 2 2 3 6 7_7 3 0 0 > nsm_7_0.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime

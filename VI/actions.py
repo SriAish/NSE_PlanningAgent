@@ -14,8 +14,8 @@ class Actions:
         self.box_actions = [self.pick_up]
 
         self.move_cost = 1
-        self.box_action_cost = 2
-        self.wrap_cost = 4
+        self.box_action_cost = 1
+        self.wrap_cost = 5
 
     def isMoveAction(self, action):
         return action in self.move_actions
