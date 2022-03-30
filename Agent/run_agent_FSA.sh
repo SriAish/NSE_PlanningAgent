@@ -9,18 +9,18 @@ module add cuda/9.0
 module add cudnn/7-cuda-9.0
 source ~/keras/bin/activate
 
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 -1 0.01 > m_7_01.txt
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
 # start=`date +%s`
-# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0 0 > sm_7_0.txt
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 -1 0.01 > m_7_01.txt
 # end=`date +%s`
 # runtime=$((end-start))
 # echo $runtime
 # echo "--------------------"
+start=`date +%s`
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0 0 > sm_7_0.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
 # start=`date +%s`
 # python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 0.1 0.1 > sm_7_1.txt
 # end=`date +%s`
