@@ -6,3 +6,5 @@ SLURM_JOB_GPUS = 1
 /var/spool/slurmd/job639797/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 131
 --------------------
+141
+--------------------
