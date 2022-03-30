@@ -4,19 +4,6 @@ variables setup
 objective setup
 eq1
 eq2
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') down ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') up ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') right ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') left ((-1, -1), (-1, -1), False, False, 'r')
-0.0
 eq3
 problem setup
 apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
@@ -424,8 +411,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 303
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 298
-Total CPU secs in IPOPT (w/o function evaluations)   =     10.482
-Total CPU secs in NLP function evaluations           =    121.844
+Total CPU secs in IPOPT (w/o function evaluations)   =     10.448
+Total CPU secs in NLP function evaluations           =    121.101
 
 EXIT: Restoration Failed!
  
@@ -435,7 +422,7 @@ EXIT: Restoration Failed!
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    133.400300000001      sec
+ Solution time  :    132.445000000000      sec
  Objective      :    896.787177736453     
  Unsuccessful with error code            0
  ---------------------------------------------------
