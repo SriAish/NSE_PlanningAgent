@@ -9,7 +9,7 @@ from math import e
 class FSAgent:
     def __init__(self, BP, FSA, gamma = 0.999, locations = None):
         self.m = GEKKO()
-        self.m.options.MAX_ITER = 1500
+        self.m.options.MAX_ITER = 3000
         self.m.options.SOLVER = int(sys.argv[9])
         self.BP = BP
         self.FSA = FSA
