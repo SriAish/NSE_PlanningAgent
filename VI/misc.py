@@ -4,7 +4,7 @@ import numpy as np
 import sys
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), goal_state = [], init_box_loc=(3, 3)):
+    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), goal_state = [], init_box_loc=(3, 0)):
         # Making the grrid
         self.grid_size = grid_size
         self.grid = np.full([grid_size, grid_size], 'p')
@@ -25,7 +25,7 @@ class BoxPushingConstants:
         self.actions = Actions()
 
         # Different action probability
-        self.prob = 0.1
+        self.prob = 0.05
 
         # Hash table to maintain transition probabilities 
         self.transition_probabilities = {}
@@ -56,7 +56,7 @@ class BoxPushingConstants:
         if self.isGoalState(state) or self.isEndState(state):
             return actions
 
-        if state[0] == state[1] and state[1] == self.init_box_loc:
+        if state[0] == state[1] and state[1] == self.init_box_loc and not state[3]:
             actions.append(self.actions.wrap)
 
         if state[0] == state[1]:
@@ -91,32 +91,24 @@ class BoxPushingConstants:
     def move(self, state, action):
         agent_locations_prob = []
         if action == self.actions.down:
-            agent_locations_prob.append((self.moveDown(state[0]), 1 - self.prob))
-            if state[0][1] != self.grid_size - 1:
-                agent_locations_prob.append((self.moveRight(state[0]), self.prob))
-            else:
-                agent_locations_prob.append((self.moveLeft(state[0]), self.prob))
+            agent_locations_prob.append((self.moveDown(state[0]), 1 - (2*self.prob)))
+            agent_locations_prob.append((self.moveRight(state[0]), self.prob))
+            agent_locations_prob.append((self.moveLeft(state[0]), self.prob))
 
         elif action == self.actions.up:
-            agent_locations_prob.append((self.moveUp(state[0]), 1 - self.prob))
-            if state[0][1] != self.grid_size - 1:
-                agent_locations_prob.append((self.moveRight(state[0]), self.prob))
-            else:
-                agent_locations_prob.append((self.moveLeft(state[0]), self.prob))
+            agent_locations_prob.append((self.moveUp(state[0]), 1 - (2*self.prob)))
+            agent_locations_prob.append((self.moveRight(state[0]), self.prob))
+            agent_locations_prob.append((self.moveLeft(state[0]), self.prob))
 
         elif action == self.actions.left:
-            agent_locations_prob.append((self.moveLeft(state[0]), 1 - self.prob))
-            if state[0][0] != self.grid_size - 1:
-                agent_locations_prob.append((self.moveDown(state[0]), self.prob))
-            else:
-                agent_locations_prob.append((self.moveUp(state[0]), self.prob))
+            agent_locations_prob.append((self.moveLeft(state[0]), 1 - (2*self.prob)))
+            agent_locations_prob.append((self.moveDown(state[0]), self.prob))
+            agent_locations_prob.append((self.moveUp(state[0]), self.prob))
 
         elif action == self.actions.right:
-            agent_locations_prob.append((self.moveRight(state[0]), 1 - self.prob))
-            if state[0][0] != self.grid_size - 1:
-                agent_locations_prob.append((self.moveDown(state[0]), self.prob))
-            else:
-                agent_locations_prob.append((self.moveUp(state[0]), self.prob))
+            agent_locations_prob.append((self.moveRight(state[0]), 1 - (2*self.prob)))
+            agent_locations_prob.append((self.moveDown(state[0]), self.prob))
+            agent_locations_prob.append((self.moveUp(state[0]), self.prob))
 
         states = []
 
