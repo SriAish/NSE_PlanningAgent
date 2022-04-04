@@ -157,14 +157,12 @@ class BoxPushingConstants:
         if (s, a, s_) in self.transition_probabilities.keys():
             return self.transition_probabilities[(s, a, s_)]
         trans, _ = self.transition(s, a)
+        self.transition_probabilities[(s, a, s_)] = 0
         for i in trans:
             if s_ == i[0]:
-                self.transition_probabilities[(s, a, s_)] = i[1]
-                return i[1]
-
-        self.transition_probabilities[(s, a, s_)] = 0
+                self.transition_probabilities[(s, a, s_)] += i[1]
         
-        return 0
+        return self.transition_probabilities[(s, a, s_)]
 
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
