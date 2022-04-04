@@ -64,7 +64,6 @@ class FSAgent:
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
-            print("state: ", u_, s_)
             # Calculate left hand side
             actions = self.BP.getValidActions(s_)
 
