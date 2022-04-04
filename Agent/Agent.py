@@ -79,7 +79,6 @@ class FSAgent:
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
                         if self.FSA.T(u, s_, a, u_) != 0:
-                            print("(", s, a, s_, "): ", )
                             print("(", u, s, a, u_, s_, ") T: ", self.BP.T(s, a, s_), "FSA T: ", self.FSA.T(u, s_, a, u_))
                             c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[s][a]*self.x[(u, s)]
             
