@@ -64,6 +64,7 @@ class FSAgent:
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
+            print("state: ", u_, s_)
             # Calculate left hand side
             actions = self.BP.getValidActions(s_)
 
@@ -76,13 +77,17 @@ class FSAgent:
             for u, s in itertools.product(self.FSA.states, self.BP.states):
                 actions = self.BP.getValidActions(s)
                 for a in actions:
+                    print("(", s, a, s_, "): ", self.BP.T(s, a, s_))
                     if self.BP.T(s, a, s_) != 0:
-                        c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[s][a]*self.x[(u, s)]
+                        print("(", u, s, a, u_, s_, "): ", self.FSA.T(u, s_, a, u_))
+                        if self.FSA.T(u, s_, a, u_) != 0:
+                            c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[s][a]*self.x[(u, s)]
             
             c = self.gamma*c
 
             # Calculate right hand side
             if (u_, s_) in self.belief_state:
+                print("Start: ", u_, s_)
                 c += 1/len(self.belief_state)
 
             # Adding constraint
