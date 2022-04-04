@@ -79,14 +79,12 @@ class FSAgent:
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
                         if self.FSA.T(u, s_, a, u_) != 0:
-                            print("(", u, s, a, u_, s_, ") T: ", self.BP.T(s, a, s_), "FSA T: ", self.FSA.T(u, s_, a, u_))
                             c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[s][a]*self.x[(u, s)]
             
             c = self.gamma*c
 
             # Calculate right hand side
             if (u_, s_) in self.belief_state:
-                print("Start: ", u_, s_)
                 c += 1/len(self.belief_state)
 
             # Adding constraint
