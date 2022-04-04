@@ -77,10 +77,10 @@ class FSAgent:
             for u, s in itertools.product(self.FSA.states, self.BP.states):
                 actions = self.BP.getValidActions(s)
                 for a in actions:
-                    print("(", s, a, s_, "): ", self.BP.T(s, a, s_))
                     if self.BP.T(s, a, s_) != 0:
-                        print("(", u, s, a, u_, s_, "): ", self.FSA.T(u, s_, a, u_))
                         if self.FSA.T(u, s_, a, u_) != 0:
+                            print("(", s, a, s_, "): ", )
+                            print("(", u, s, a, u_, s_, ") T: ", self.BP.T(s, a, s_), "FSA T: ", self.FSA.T(u, s_, a, u_))
                             c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[s][a]*self.x[(u, s)]
             
             c = self.gamma*c
