@@ -21,7 +21,7 @@ source ~/keras/bin/activate
 # runtime=$((end-start))
 # echo $runtime
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 3 -1 -1
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7 1 -1 -1
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
