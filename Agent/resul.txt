@@ -1,9 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 643225
-SLURM_NODELIST = gnode56
+SLURM_JOB_ID = 643741
+SLURM_NODELIST = gnode22
 SLURM_JOB_GPUS = 1
 ==========================================
-/var/spool/slurmd/job643225/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job643741/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Traceback (most recent call last):
   File "FSA_Agent.py", line 226, in <module>
     agent.calculate_pi()
@@ -12,21 +12,6 @@ Traceback (most recent call last):
   File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
     return self.value[key]
 TypeError: 'int' object is not subscriptable
-3536
+34
 --------------------
-75
---------------------
-Traceback (most recent call last):
-  File "FSA_Agent.py", line 226, in <module>
-    agent.calculate_pi()
-  File "FSA_Agent.py", line 183, in calculate_pi
-    self.x_[(u, s)] = self.x[(u, s)].value[0]
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-307
---------------------
-72
---------------------
-81
---------------------
+slurmstepd: error: *** JOB 643741 ON gnode22 CANCELLED AT 2022-04-05T15:39:19 ***
