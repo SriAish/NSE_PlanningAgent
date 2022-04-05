@@ -18,7 +18,7 @@ class VIAgent:
         self.initializeStateValues()
         self.gamma = gamma  
         self.delta = delta
-        self.locations = [(3, 0)]
+        self.locations = [(4, 1)]
         self.init_belief()
 
     def init_belief(self):
@@ -106,9 +106,9 @@ if __name__ == '__main__':
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
     # print(policy)
-    with open('policy_values/'+ sys.argv[8] + '.pkl', 'wb') as f:
-        pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
+    # with open('policy_values/'+ sys.argv[8] + '.pkl', 'wb') as f:
+    #     pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
     
-    # print(agent.stateValues)
-    with open('policy_values/'+ sys.argv[9] + '.pkl', 'wb') as f:
-        pickle.dump(agent.stateValues, f, pickle.HIGHEST_PROTOCOL)
+    # # print(agent.stateValues)
+    # with open('policy_values/'+ sys.argv[9] + '.pkl', 'wb') as f:
+    #     pickle.dump(agent.stateValues, f, pickle.HIGHEST_PROTOCOL)
