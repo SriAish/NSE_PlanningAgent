@@ -62,6 +62,21 @@ class FSAgent:
                 obj += self.x_[(u, s)]*self.pi_[s][a]*self.BP.getCost(s, a)
         return obj
 
+    def set_bound(self):
+        obj = 0
+        i = 0
+        o = 0
+        for u, s in itertools.product(self.FSA.states, self.BP.states):
+            actions = self.BP.getValidActions(s)
+            for a in actions:
+                i += 1
+                o += self.x[(u, s)]*self.pi[s][a]*self.BP.getCost(s, a)
+            if i%50 == 0:
+                obj += self.m.Intermediate(o)
+                o = 0
+        obj += self.m.Intermediate(o)
+        self.m.Equation(obj - 11.2813 <= 5)
+
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
             # Calculate left hand side
@@ -168,6 +183,9 @@ class FSAgent:
         sys.stdout.flush()
         self.make_constraints_eqn2()
         print("eq2")
+        sys.stdout.flush()
+        self.set_bound()
+        print("set bound")
         sys.stdout.flush()
         if float(sys.argv[10]) >= 0:
             self.make_constraints_eqn3()
