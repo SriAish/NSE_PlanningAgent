@@ -5,45 +5,7 @@ objective setup
 eq1
 eq2
 set bound
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, False, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((3, 6), (3, 6), True, True, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') down ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') up ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') right ((-1, -1), (-1, -1), False, False, 'r')
-severe:  u4 ((-1, -1), (-1, -1), False, False, 'r') left ((-1, -1), (-1, -1), False, False, 'r')
-0.1
 eq3
-mild:  u2 ((3, 6), (3, 6), True, False, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((3, 6), (3, 6), True, False, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((3, 6), (3, 6), True, False, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((3, 6), (3, 6), True, False, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((3, 6), (3, 6), True, True, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((3, 6), (3, 6), True, True, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((3, 6), (3, 6), True, True, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((3, 6), (3, 6), True, True, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((-1, -1), (-1, -1), False, False, 'r') down ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((-1, -1), (-1, -1), False, False, 'r') up ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((-1, -1), (-1, -1), False, False, 'r') right ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u2 ((-1, -1), (-1, -1), False, False, 'r') left ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((3, 6), (3, 6), True, False, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((3, 6), (3, 6), True, False, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((3, 6), (3, 6), True, False, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((3, 6), (3, 6), True, False, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((3, 6), (3, 6), True, True, 'p') down ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((3, 6), (3, 6), True, True, 'p') up ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((3, 6), (3, 6), True, True, 'p') right ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((3, 6), (3, 6), True, True, 'p') left ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((-1, -1), (-1, -1), False, False, 'r') down ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((-1, -1), (-1, -1), False, False, 'r') up ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((-1, -1), (-1, -1), False, False, 'r') right ((-1, -1), (-1, -1), False, False, 'r')
-mild:  u3 ((-1, -1), (-1, -1), False, False, 'r') left ((-1, -1), (-1, -1), False, False, 'r')
-0.1
 eq4
 problem setup
 apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
@@ -726,8 +688,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 552
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 546
-Total CPU secs in IPOPT (w/o function evaluations)   =     17.139
-Total CPU secs in NLP function evaluations           =     98.800
+Total CPU secs in IPOPT (w/o function evaluations)   =     17.059
+Total CPU secs in NLP function evaluations           =     96.563
 
 EXIT: Optimal Solution Found.
  
@@ -737,7 +699,7 @@ EXIT: Optimal Solution Found.
  
  ---------------------------------------------------
  Solver         :  IPOPT (v3.12)
- Solution time  :    116.480700000000      sec
+ Solution time  :    114.167200000000      sec
  Objective      :    15.4175244849176     
  Successful solution
  ---------------------------------------------------
