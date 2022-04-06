@@ -33,6 +33,11 @@ class BPEnv:
         self.picked = False
         self.wrapped = False
 
+    def onRug(self):
+        if 'r' == self.getType(self.agent_location):
+            return True
+        return False
+
     def state(self):
         return (self.agent_location, self.box_location, self.picked, self.wrapped, self.getType(self.agent_location))
 
