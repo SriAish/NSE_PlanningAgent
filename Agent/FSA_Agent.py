@@ -71,7 +71,7 @@ class FSAgent:
             for a in actions:
                 i += 1
                 o += self.x[(u, s)]*self.pi[s][a]*self.BP.getCost(s, a)
-            if i%100 == 0:
+            if i%50 == 0:
                 obj += self.m.Intermediate(o)
                 o = 0
         obj += self.m.Intermediate(o)
