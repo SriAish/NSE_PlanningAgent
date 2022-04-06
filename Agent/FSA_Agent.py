@@ -75,7 +75,7 @@ class FSAgent:
                 obj += self.m.Intermediate(o)
                 o = 0
         obj += self.m.Intermediate(o)
-        self.m.Equation(obj - 11.6795 <= 4.5)
+        self.m.Equation(obj - 11.6795 <= 4.163)
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
