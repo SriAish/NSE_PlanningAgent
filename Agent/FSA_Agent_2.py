@@ -123,10 +123,10 @@ class FSAgent:
                     if self.BP.T(s, a, s_) != 0:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
                         if t != 0:
-                            print("severe: ", u, s, a, s_)
+                            # print("severe: ", u, s, a, s_)
                             lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
         
-        print(float(sys.argv[10]))
+        # print(float(sys.argv[10]))
         self.m.Equation(lhs <= float(sys.argv[10]))
 
     def make_constraints_eqn4(self):
@@ -138,10 +138,10 @@ class FSAgent:
                     if self.BP.T(s, a, s_) != 0:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
                         if t != 0:
-                            print("mild: ", u, s, a, s_)
+                            # print("mild: ", u, s, a, s_)
                             lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
         
-        print(float(sys.argv[11]))
+        # print(float(sys.argv[11]))
         self.m.Equation(lhs <= float(sys.argv[11]))
 
     def NSE_val(self):
