@@ -75,7 +75,7 @@ class FSAgent:
                 obj += self.m.Intermediate(o)
                 o = 0
         obj += self.m.Intermediate(o)
-        self.m.Equation(obj - 11.6795 <= 4.163)
+        self.m.Equation(obj - 11.6795 <= 5)
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
@@ -212,10 +212,10 @@ class FSAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'NC_Agent_Policy_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'FSA' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'NC_Agent_x_nor_' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'FSA' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.x_, f)
 
     def solve_prob(self):
@@ -241,4 +241,4 @@ if __name__ == '__main__':
     agent = FSAgent(BP, FSA, locations=locations)
     agent.solve_prob()
     agent.calculate_pi()
-    # agent.save_pi(sys.argv[8])
+    agent.save_pi(sys.argv[8])
