@@ -64,10 +64,17 @@ class FSAgent:
 
     def set_bound(self):
         obj = 0
+        i = 0
+        o = 0
         for u, s in itertools.product(self.FSA.states, self.BP.states):
             actions = self.BP.getValidActions(s)
             for a in actions:
-                obj += self.x[(u, s)]*self.pi[s][a]*self.BP.getCost(s, a)
+                i += 1
+                o += self.x[(u, s)]*self.pi[s][a]*self.BP.getCost(s, a)
+            if i%100 == 0:
+                obj += self.m.Intermediate(o)
+                o = 0
+        obj += self.m.Intermediate(o)
         self.m.Equation(obj - 11.6795 <= 10)
 
     def make_constraints_eqn1(self):
