@@ -1,0 +1,58 @@
+goal:  [((3, 6), (3, 6), True, False, 'p'), ((3, 6), (3, 6), True, True, 'p')]
+initial belief setup
+variables setup
+objective setup
+eq1
+eq2
+setting bound
+eq3
+eq4
+problem setup
+apm 14.139.82.6_gk_model0 <br><pre> ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ Warning: there is insufficient data in CSV file 14.139.82.6_gk_model0.csv
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :         1977
+   Intermediates:           47
+   Connections  :            0
+   Equations    :         6181
+   Residuals    :         6134
+ 
+ Number of state variables:           1977
+ Number of total equations: -         1382
+ Number of slack variables: -            3
+ ---------------------------------------
+ Degrees of freedom       :            592
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  1.18578E+01  2.16795E+01
+    1  2.51687E+05  1.00000E+00
+    2  3.18609E+16  2.27190E-01
+    3  9.86192E+15  1.00000E+00
+    4  4.07715E+15  4.15597E-01
+    5  5.78139E+14  2.81624E-01
+    6  3.89847E+12  2.87552E-02
+    7  3.05128E+12  5.81602E-02
+    8  2.11854E+11  8.32365E-02
+    9  2.52593E+07  4.13437E-03
+ 
+ Iter    Objective  Convergence
+   10  1.25303E+04  3.91400E-03
+   11  2.14549E+01  1.38389E-04
+-bqp Fault: Inconsistent LA Vector.
+Exception Occured
+No solution or server unreachable.
+  Show errors with m.solve(disp=True).
+  Try local solve with m=GEKKO(remote=False).
