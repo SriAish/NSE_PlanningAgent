@@ -1,27 +1,32 @@
 from email import policy
 from Env import BPEnv
+from FSAEnv import FSAEnv
 import copy
 import numpy as np
 import pickle
 
 def generate_trajectory(agent):
     env = BPEnv(7, 3, 3, (2, 2), (3, 6), (3, 0))
+    fsa = FSAEnv()
     done = False
 
     rug_c = 0
     ac = 0
+    s = env.state()
+    a = "No action"
+    u, sym = fsa.transition(a, s)
 
     while not done and ac < 1000:
-        s = env.state()
         if env.picked and env.onRug() and not env.wrapped:
             rug_c += 1
-
-        a = agent.getAction(s)
+        # print(u, s)
+        a = agent.getAction((u, s))
 
         ac += 1
         s, _, done = env.transition(a)
-
-    return rug_c
+        u, sym = fsa.transition(a, s)
+    # print(u, s, sym)
+    return sym
 
 def generate_mean_std(n, agent):
     severe = []
@@ -29,11 +34,11 @@ def generate_mean_std(n, agent):
     i = 0
     while i < n:
         i += 1
-        rug_c = generate_trajectory(agent)
-        if rug_c < 1:
+        sym = generate_trajectory(agent)
+        if sym == 'N':
             severe.append(0)
             mild.append(0)
-        elif rug_c < 3:
+        elif sym == 'M':
             severe.append(0)
             mild.append(1)
         else:
@@ -42,7 +47,7 @@ def generate_mean_std(n, agent):
 
     print(len(severe), len(mild))
     print("severe : ", np.mean(severe), np.std(severe))
-    print("milde : ", np.mean(mild), np.std(mild))
+    print("mild : ", np.mean(mild), np.std(mild))
 
 class Agent:
     def __init__(self, name):
@@ -73,12 +78,12 @@ class Agent:
         try:
             return np.random.choice(self.pi[state], p = self.prob1[state])
         except:
-            print(state, np.sum(self.prob1[state]))
+            # print(state, np.sum(self.prob1[state]))
             return np.random.choice(self.pi[state], p = self.prob2[state])
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_LP_p3_7_7_10_3_0.pkl"
+    pol = "policy/FSA_LP_p3_7_7_1_3_0.pkl"
     agent = Agent(pol)
     print(pol)
     generate_mean_std(1000, agent)

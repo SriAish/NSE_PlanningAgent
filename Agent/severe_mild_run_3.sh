@@ -9,12 +9,12 @@ module add cuda/9.0
 module add cudnn/7-cuda-9.0
 source ~/keras/bin/activate
 
-start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7_0_3_0 3 0 0 > osm_3_7_0.txt
-end=`date +%s`
-runtime=$((end-start))
-echo $runtime
-echo "--------------------"
+# start=`date +%s`
+# python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7_0_3_0 3 0 0 > osm_3_7_0.txt
+# end=`date +%s`
+# runtime=$((end-start))
+# echo $runtime
+# echo "--------------------"
 # start=`date +%s`
 # python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7_1_3_0 3 0.1 0.1 > osm_3_7_1.txt
 # end=`date +%s`
@@ -75,9 +75,15 @@ echo "--------------------"
 # runtime=$((end-start))
 # echo $runtime
 # echo "--------------------"
-# start=`date +%s`
-# python3.7 FSA_Agent_2.py 7 3 3 2 2 3 6 7_7_10_3_3 3 10 10 > sm_3_7_10.txt
-# end=`date +%s`
-# runtime=$((end-start))
-# echo $runtime
-# echo "--------------------"
+start=`date +%s`
+python3.7 FSA_Agent_2.py 7 3 3 2 2 3 6 7_7_10_5_3 3 10 10 > sm_3_7_5_3_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7_10_3_5 3 10 10 > sm_3_7_3_5_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"

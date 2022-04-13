@@ -65,10 +65,14 @@ class BPEnv:
     def getType(self, location):
         return self.grid[location]
 
+    def checkGoal(self):
+        if self.agent_location == self.box_location and self.box_location == self.end_location:
+            return True
+        return False
+
     def checkDone(self):
-        if self.agent_location == self. box_location and self.box_location == self.end_location:
+        if self.agent_location == (-1, -1):
             self.done = True
-        return self.done
 
     def getCost(self, action):
         if self.done:
@@ -134,7 +138,13 @@ class BPEnv:
             return "Invalid Action" 
 
         if self.done:
-            self.state(), self.getCost(action)
+            return self.state(), self.getCost(action), self.done
+
+        if self.checkGoal():
+            self.agent_location = (-1, -1)
+            self.box_location = (-1, -1)
+            self.checkDone()
+            return self.state(), 0, self.done
 
         if self.actions.isMoveAction(action):
             self.move(action)
