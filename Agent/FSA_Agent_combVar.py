@@ -70,10 +70,10 @@ class FSAgent:
             for a in actions:
                 i += 1
                 o += self.x[(u, s, a)]*self.BP.getCost(s, a)
-            # if i%50 == 0:
-            #     obj += self.m.Intermediate(o)
-            #     o = 0
-        # obj += self.m.Intermediate(o)
+            if i%100 == 0:
+                obj += self.m.Intermediate(o)
+                o = 0
+        obj += self.m.Intermediate(o)
         self.m.Equation(o - 11.6795 <= 5)
 
     def make_constraints_eqn1(self):
