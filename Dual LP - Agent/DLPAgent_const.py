@@ -135,9 +135,11 @@ cons.append({'type': 'ineq', 'fun': constraint_spec3})
 cons.append({'type': 'ineq', 'fun': constraint_spec4})
 cons = (cons)
 
+print("--------------------- Start ---------------------")
 start_time = time.time()
 solution = minimize(obj, x0, method='SLSQP', bounds=bnds, constraints=cons)
 print("--- %s seconds ---" % (time.time() - start_time))
+print("--------------------- End ---------------------")
 
 x = solution.x
 # show final objective
