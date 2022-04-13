@@ -176,8 +176,6 @@ class FSAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        self.make_constraints_eqn2()
-        print("eq2")
         # self.set_bound()
         # print("setting bound")
         sys.stdout.flush()
