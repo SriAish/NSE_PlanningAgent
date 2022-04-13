@@ -109,7 +109,7 @@ class FSAgent:
             for u in self.FSA.states:
                 c = 0
                 for a in actions:
-                    c += self.pi[(u, s)][a]
+                    c += self.x[(u, s, a)]
                 if actions:
                     self.m.Equation(c == 1)
 
