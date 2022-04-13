@@ -116,8 +116,8 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_p3_7_7_10_0_3.pkl"
+    pol = "policy/FSA_p3_7_7_10_3_1.pkl"
     agent = Agent(pol)
     print(pol)
-    generate_mean_std(500, agent, False, (0, 3))
+    generate_mean_std(500, agent, False, (3, 1))
     # generate_trajectory(agent)
