@@ -41,9 +41,9 @@ class FSAgent:
         self.x = {}
         self.pi = {}
         for s in self.BP.states:
-            self.pi[s] = {}
             actions = self.BP.getValidActions(s)
             for u in self.FSA.states:
+                self.pi[(u, s)] = {}
                 for a in actions:
                     self.pi[(u, s)][a] = self.m.Var(lb=0, ub=1)
                 self.x[(u, s)] = self.m.Var(lb=0, ub=1/(1-self.gamma))
