@@ -70,11 +70,11 @@ class FSAgent:
             for a in actions:
                 i += 1
                 o += self.x[(u, s, a)]*self.BP.getCost(s, a)
-            if i%50 == 0:
-                obj += self.m.Intermediate(o)
-                o = 0
-        obj += self.m.Intermediate(o)
-        self.m.Equation(obj - 11.6795 <= 5)
+            # if i%50 == 0:
+            #     obj += self.m.Intermediate(o)
+            #     o = 0
+        # obj += self.m.Intermediate(o)
+        self.m.Equation(o - 11.6795 <= 5)
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
@@ -176,17 +176,17 @@ class FSAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        # self.set_bound()
-        # print("setting bound")
+        self.set_bound()
+        print("setting bound")
         sys.stdout.flush()
-        # if float(sys.argv[10]) >= 0:
-        #     self.make_constraints_eqn3()
-        #     print("eq3")
-        #     sys.stdout.flush()
-        # if float(sys.argv[11]) >= 0:
-        #     self.make_constraints_eqn4()
-        #     print("eq4")
-        #     sys.stdout.flush()
+        if float(sys.argv[10]) >= 0:
+            self.make_constraints_eqn3()
+            print("eq3")
+            sys.stdout.flush()
+        if float(sys.argv[11]) >= 0:
+            self.make_constraints_eqn4()
+            print("eq4")
+            sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
