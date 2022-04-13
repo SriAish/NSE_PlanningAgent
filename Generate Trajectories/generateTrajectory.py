@@ -51,7 +51,7 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-def generate_mean_std(n, agent, new):
+def generate_mean_std(n, agent, new, box_loc):
     if new: 
         severe = set()
         mild = set()
@@ -60,13 +60,14 @@ def generate_mean_std(n, agent, new):
         severe = load("severe_trajectories")
         mild = load("mild_trajectories")
         no_nse = load("no_nse_trajectories")
+    print(len(severe), len(mild), len(no_nse))
     i = 0
     while i < n:
         i += 1
-        rug_c, t = generate_trajectory(agent)
+        rug_c, t = generate_trajectory(agent, box_loc)
         if rug_c < 1:
             t += ["N"]
-            no_nse.add(tuple(t))
+            # no_nse.add(tuple(t))
             # print("No Nse")
         elif rug_c < 3:
             t += ["M"]
@@ -76,10 +77,10 @@ def generate_mean_std(n, agent, new):
             t += ["S"]
             # print("severe")
             severe.add(tuple(t))
-
+    print(t)
     print(len(severe), len(mild), len(no_nse))
-    # save("severe_trajectories", severe)
-    # save("mild_trajectories", mild)
+    save("severe_trajectories", severe)
+    save("mild_trajectories", mild)
     # save("no_nse_trajectories", no_nse)
 
 class Agent:
@@ -115,8 +116,8 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_p3_7_7_10_3_3.pkl"
+    pol = "policy/FSA_p3_7_7_10_0_3.pkl"
     agent = Agent(pol)
     print(pol)
-    generate_mean_std(500, agent, True)
+    generate_mean_std(500, agent, False, (0, 3))
     # generate_trajectory(agent)

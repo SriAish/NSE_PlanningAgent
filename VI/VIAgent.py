@@ -18,7 +18,7 @@ class VIAgent:
         self.initializeStateValues()
         self.gamma = gamma  
         self.delta = delta
-        self.locations = [(6, 3)]
+        self.locations = [(3, 1)]
         self.init_belief()
 
     def init_belief(self):
@@ -100,7 +100,7 @@ if __name__ == '__main__':
     e_state.append((g_pos, g_pos, True, False, 'p'))
     e_state.append((g_pos, g_pos, True, True, 'p'))
     print(e_state)
-    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state, (6, 3))
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state, (3, 1))
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
     # print(policy)
