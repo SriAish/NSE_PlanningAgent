@@ -5,6 +5,7 @@ from FSAConst import FSAConstants
 import sys
 import pickle
 import itertools
+import time
 
 # Declare environment variables
 g_pos = (int(sys.argv[6]), int(sys.argv[7]))
@@ -104,7 +105,10 @@ for u, state in itertools.product(FSA.states, BP.states):
     #     cons.append({'type': 'ineq', 'fun': constraint_spec2(state, action)})
 
 cons = (cons)
+
+start_time = time.time()
 solution = minimize(obj, x0, method='SLSQP', bounds=bnds, constraints=cons)
+print("--- %s seconds ---" % (time.time() - start_time))
 
 x = solution.x
 # show final objective
