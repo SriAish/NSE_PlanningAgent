@@ -76,13 +76,13 @@ source ~/keras/bin/activate
 # echo $runtime
 # echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent_2.py 7 3 3 2 2 3 6 7_7_10_2_4 3 10 10 > sm_3_7_2_4_10.txt
+python3.7 FSA_Agent_2.py 7 3 3 2 2 3 6 7_7_10_4_4 3 10 10 > sm_3_7_4_4_10.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
-python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7_10_2_2 3 10 10 > sm_3_7_2_2_10.txt
+python3.7 FSA_Agent.py 7 3 3 2 2 3 6 7_7_10_4_2 3 10 10 > sm_3_7_4_2_10.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime

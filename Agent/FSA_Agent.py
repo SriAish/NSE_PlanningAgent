@@ -6,7 +6,7 @@ import itertools
 from gekko import GEKKO
 from math import e
 
-l = (2, 2)
+l = (4, 2)
 
 class FSAgent:
     def __init__(self, BP, FSA, gamma = 0.999, locations = None):
@@ -77,7 +77,7 @@ class FSAgent:
                 obj += self.m.Intermediate(o)
                 o = 0
         obj += self.m.Intermediate(o)
-        self.m.Equation(obj - 11.1095 <= 0.01)
+        self.m.Equation(obj - 13.2 <= 0.01)
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
