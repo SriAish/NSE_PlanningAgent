@@ -114,11 +114,11 @@ x = solution.x
 # show final objective
 print('Final SSE Objective: ' + str(obj(x)))
 
-# with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_state_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
-#     pickle.dump(state_to_index, f)
+with open('policy/'+ 'DLP_Agent_si_' + sys.argv[8] + '.pkl', 'wb') as f:
+    pickle.dump(state_to_index, f)
 
-# with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_action_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
-#     pickle.dump(action_to_index, f)
+with open('policy/'+ 'DLP_Agent_ai_' + sys.argv[8] + '.pkl', 'wb') as f:
+    pickle.dump(action_to_index, f)
 
-# with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_Policy_' + sys.argv[8] + '.pkl', 'wb') as f:
-#     pickle.dump(x, f)
+with open('policy/'+ 'DLP_Agent_pol_' + sys.argv[8] + '.pkl', 'wb') as f:
+    pickle.dump(x, f)
