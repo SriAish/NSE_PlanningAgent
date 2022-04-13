@@ -52,14 +52,14 @@ class FSAgent:
         for u, s in itertools.product(self.FSA.states, self.BP.states):
             actions = self.BP.getValidActions(s)
             for a in actions:
-                self.m.Minimize(self.x[(u, s)]*self.pi[s][a]*self.BP.getCost(s, a))
+                self.m.Minimize(self.x[(u, s)]*self.pi[(u, s)][a]*self.BP.getCost(s, a))
 
     def pr_obj(self):
         obj = 0
         for u, s in itertools.product(self.FSA.states, self.BP.states):
             actions = self.BP.getValidActions(s)
             for a in actions:
-                obj += self.x_[(u, s)]*self.pi_[s][a]*self.BP.getCost(s, a)
+                obj += self.x_[(u, s)]*self.pi_[(u, s)][a]*self.BP.getCost(s, a)
         return obj
 
     def set_bound(self):
@@ -70,7 +70,7 @@ class FSAgent:
             actions = self.BP.getValidActions(s)
             for a in actions:
                 i += 1
-                o += self.x[(u, s)]*self.pi[s][a]*self.BP.getCost(s, a)
+                o += self.x[(u, s)]*self.pi[(u, s)][a]*self.BP.getCost(s, a)
             if i%50 == 0:
                 obj += self.m.Intermediate(o)
                 o = 0
@@ -84,7 +84,7 @@ class FSAgent:
 
             y = 0
             for a in actions:
-                y += self.x[(u_, s_)]*self.pi[s_][a]
+                y += self.x[(u_, s_)]*self.pi[(u_, s_)][a]
 
             # Calculate right hand summation
             c = 0
@@ -93,7 +93,7 @@ class FSAgent:
                 for a in actions:
                     if self.BP.T(s, a, s_) != 0:
                         if self.FSA.T(u, s_, a, u_) != 0:
-                            c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[s][a]*self.x[(u, s)]
+                            c += self.BP.T(s, a, s_)*self.FSA.T(u, s_, a, u_)*self.pi[(u, s)][a]*self.x[(u, s)]
             
             c = self.gamma*c
 
@@ -123,7 +123,7 @@ class FSAgent:
                     if self.BP.T(s, a, s_) != 0:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
                         if t != 0:
-                            lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
+                            lhs += self.x[(u, s)]*self.pi[(u, s)][a]*self.BP.T(s, a, s_)*t
         
         self.m.Equation(lhs <= float(sys.argv[10]))
 
@@ -136,7 +136,7 @@ class FSAgent:
                     if self.BP.T(s, a, s_) != 0:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
                         if t != 0:
-                            lhs += self.x[(u, s)]*self.pi[s][a]*self.BP.T(s, a, s_)*t
+                            lhs += self.x[(u, s)]*self.pi[(u, s)][a]*self.BP.T(s, a, s_)*t
         
         self.m.Equation(lhs <= float(sys.argv[11]))
 
@@ -150,7 +150,7 @@ class FSAgent:
                     if self.BP.T(s, a, s_) != 0:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
                         if t != 0:
-                            l = self.x_[(u, s)]*self.pi_[s][a]*self.BP.T(s, a, s_)*t
+                            l = self.x_[(u, s)]*self.pi_[(u, s)][a]*self.BP.T(s, a, s_)*t
                             lhs += l
         
         return lhs
@@ -165,7 +165,7 @@ class FSAgent:
                     if self.BP.T(s, a, s_) != 0:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
                         if t != 0:
-                            l = self.x_[(u, s)]*self.pi_[s][a]*self.BP.T(s, a, s_)*t
+                            l = self.x_[(u, s)]*self.pi_[(u, s)][a]*self.BP.T(s, a, s_)*t
                             lhs += l
         
         return lhs
@@ -196,13 +196,13 @@ class FSAgent:
         self.x_ = {}
         for u, s in itertools.product(self.FSA.states, self.BP.states):
             actions = self.BP.getValidActions(s)
-            self.pi_[s] = {}
+            self.pi_[(u, s)] = {}
             self.x_[(u, s)] = self.x[(u, s)].value[0]
             for a in actions:
-                self.pi_[s][a] = self.pi[s][a].value[0]
+                self.pi_[(u, s)][a] = self.pi[(u, s)][a].value[0]
             if self.x_[(u, s)] > 0.00001:
                 print((u, s), self.x_[(u, s)])
-                print(self.pi_[s])
+                print(self.pi_[(u, s)])
 
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
