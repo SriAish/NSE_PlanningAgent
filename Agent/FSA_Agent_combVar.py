@@ -201,7 +201,10 @@ class FSAgent:
                 self.x_[(u, s)] += self.x[(u, s, a)].value[0]
             
             for a in actions:
-                self.pi_[(u, s)][a] = self.x[(u, s, a)].value[0]/self.x_[(u, s)]
+                if self.x_[(u, s)] > 0:
+                    self.pi_[(u, s)][a] = self.x[(u, s, a)].value[0]/self.x_[(u, s)]
+                else:
+                    self.pi_[(u, s)][a] = 0
             if self.x_[(u, s)] > 0.00001:
                 print((u, s), self.x_[(u, s)])
                 print(self.pi_[(u, s)])
