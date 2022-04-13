@@ -1,3 +1,4 @@
+from email import policy
 from Env import BPEnv
 import copy
 import numpy as np
@@ -18,7 +19,7 @@ def generate_trajectory(agent):
         a = agent.getAction(s)
 
         ac += 1
-        s, _, done = env.getNextState(a)
+        s, _, done = env.transition(a)
 
     return rug_c
 
@@ -27,6 +28,7 @@ def generate_mean_std(n, agent):
     mild = []
     i = 0
     while i < n:
+        i += 1
         rug_c = generate_trajectory(agent)
         if rug_c < 1:
             severe.append(0)
@@ -57,20 +59,25 @@ class Agent:
             self.prob[s] = []
             for a in policy[s]:
                 self.pi[s].append(a)
-                self.prob[s].append(policy[s][a])
-                # self.prob[s].append(round(policy[s][a], 5))
+                # self.prob[s].append(policy[s][a])
+                self.prob[s].append(round(policy[s][a], 4))
 
     def getAction(self, state):
-        state = (tuple(state[0]), tuple(state[1]), state[2], state[3])
         # if(np.sum(self.prob[state]) > 1):
         #     re = np.sum(self.prob[state]) - 1
         #     r = np.where(self.prob[state] == np.amax(self.prob[state]))
         #     # print(r[0])
         #     self.prob[state][r[0][0]] -= re
-        return np.random.choice(self.pi[state], p = self.prob[state])
+        try:
+            return np.random.choice(self.pi[state], p = self.prob[state])
+        except:
+            print(state, np.sum(self.prob[state]))
+            return 
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    agent = Agent("policy/NC_Agent_Policy_nor_3_7_7_NSE_30_3.pkl")
-    generate_mean_std(100, agent)
+    pol = "policy/FSA_p3_7_7_0_3_0.pkl"
+    agent = Agent(pol)
+    print(pol)
+    generate_mean_std(1000, agent)
     # generate_trajectory(agent)

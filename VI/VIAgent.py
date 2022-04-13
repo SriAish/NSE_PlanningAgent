@@ -22,8 +22,6 @@ class VIAgent:
         self.init_belief()
 
     def init_belief(self):
-        if self.locations == None:
-            self.locations = [(3, 0)]
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
