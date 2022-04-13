@@ -45,10 +45,8 @@ def constraint_spec(state_):
     def contraint(y):
         # LHS
         s_ = state_to_index[state_]
-        u_ = state_[0]
-        state_ = state_[1]
         lhs = 0
-        actions = BP.getValidActions(state_)
+        actions = BP.getValidActions(state_[1])
         for action in actions:
             lhs += y[s_ + action_to_index[action]]
         
@@ -58,9 +56,9 @@ def constraint_spec(state_):
             s = state_to_index[(u, state)]
             actions = BP.getValidActions(state)
             for action in actions:
-                if BP.T(state, action, state_) != 0:
-                    if FSA.T(u, state_, action, u_) != 0:
-                        rhs += y[s + action_to_index[action]]*BP.T(state, action, state_)*FSA.T(u, state_, action, u_)
+                if BP.T(state, action, state_[1]) != 0:
+                    if FSA.T(u, state_[1], action, state_[0]) != 0:
+                        rhs += y[s + action_to_index[action]]*BP.T(state, action, state_[1])*FSA.T(u, state_[1], action, state_[0])
             
         rhs = gamma*rhs
         
