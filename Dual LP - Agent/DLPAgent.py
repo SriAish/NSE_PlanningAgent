@@ -82,7 +82,7 @@ def obj(y):
     for u, state in itertools.product(FSA.states, BP.states):
         actions = BP.getValidActions(state)
         for action in actions:
-            obj += y[state_to_index[(u, state)] + action_to_index[action]]*BP.get_cost(state, action)
+            obj += y[state_to_index[(u, state)] + action_to_index[action]]*BP.getCost(state, action)
 
     return obj
 
@@ -112,11 +112,11 @@ x = solution.x
 # show final objective
 print('Final SSE Objective: ' + str(obj(x)))
 
-with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_state_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
-    pickle.dump(state_to_index, f)
+# with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_state_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
+#     pickle.dump(state_to_index, f)
 
-with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_action_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
-    pickle.dump(action_to_index, f)
+# with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_action_ind_' + sys.argv[8] + '.pkl', 'wb') as f:
+#     pickle.dump(action_to_index, f)
 
-with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_Policy_' + sys.argv[8] + '.pkl', 'wb') as f:
-    pickle.dump(x, f)
+# with open('policy/'+ 'DLP_Agent_SLSQP_with_upper_Policy_' + sys.argv[8] + '.pkl', 'wb') as f:
+#     pickle.dump(x, f)
