@@ -102,16 +102,6 @@ class FSAgent:
 
             # Adding constraint
             self.m.Equation(y == c)
-    
-    def make_constraints_eqn2(self):
-        for s in self.BP.states:
-            actions = self.BP.getValidActions(s)
-            for u in self.FSA.states:
-                c = 0
-                for a in actions:
-                    c += self.x[(u, s, a)]
-                if actions:
-                    self.m.Equation(c == 1)
 
     def make_constraints_eqn3(self):
         lhs = 0
