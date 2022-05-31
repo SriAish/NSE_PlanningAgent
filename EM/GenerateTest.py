@@ -9,10 +9,10 @@ def get_sym(t = 0, b = False):
             return 'a'
         return 'b'
 
-    if b:
-        if v <= 0.5:
-            return 'b'
-        return 'e'
+    # if b:
+        # if v <= 0.5:
+        #     return 'b'
+        # return 'e'
 
     if v <= 0.4:
         return 'a'
