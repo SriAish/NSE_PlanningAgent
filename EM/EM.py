@@ -216,7 +216,7 @@ def cal_omega(fb, states, in_sym, out_sym):
 diff = 1
 itr = 0
 o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
-while diff > 0.0001:
+while diff > 0:
     n_delta = cal_delta(fb, states, in_sym)
     n_omega = cal_omega(fb, states, in_sym, out_sym)
 
