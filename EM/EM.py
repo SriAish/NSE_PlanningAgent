@@ -239,7 +239,7 @@ while diff > 0.0001:
     del n_omega
     n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
     diff = abs(o_obj - n_obj)
-    print(itr, diff)
+    print(itr, diff, o_obj, n_obj)
     o_obj = n_obj
     itr += 1
     
