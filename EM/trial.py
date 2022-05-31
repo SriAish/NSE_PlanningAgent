@@ -61,15 +61,22 @@ omega['2']['b'][2] = 0
 states = ['1', '2']
 
 fb = FB(delta, omega, states, R)
-tr = 1
+tr = 0
 ts = 0
 st = '2'
 
-gamma = fb.alpha(tr, ts, st)*fb.beta(tr, ts, st)
-den = 0
+# gamma = fb.alpha(tr, ts, st)*fb.beta(tr, ts, st)
+# den = 0
 
+# for s in states:
+#     den += fb.alpha(tr, ts, s)*fb.beta(tr, ts, s)
+
+pr = 0
 for s in states:
-    den += fb.alpha(tr, ts, s)*fb.beta(tr, ts, s)
+    print("state: ", s)
+    pr += fb.alpha(tr, len(R[tr]) - 3, s)*fb.beta(tr, len(R[tr]) - 3, s)
 
-print(gamma/den)
-print(fb.eta(tr, ts, st, st))
+print(pr)
+
+# print(gamma/den)
+# print(fb.eta(tr, ts, st, st))

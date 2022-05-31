@@ -48,7 +48,9 @@ class FB:
             self.backward_step[r][t] = {}
 
         if t == len(self.R[r]) - 3:
+            # print(self.delta[u][self.R[r][t+1]][self.end], self.omega[u][self.R[r][t+1]][self.R[r][t + 2]])
             self.backward_step[r][t][u] = self.delta[u][self.R[r][t+1]][self.end]*self.omega[u][self.R[r][t+1]][self.R[r][t + 2]]
+            # print(self.backward_step[r][t][u])
             return self.backward_step[r][t][u]
 
         if t > len(self.R[r]) - 3:
