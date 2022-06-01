@@ -8,7 +8,7 @@ import sys
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R4")
+R = load("R4_train")
 
 states = ['1', '2', '3']
 in_sym = ['a', 'b', 'e']
@@ -254,6 +254,6 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-save("obj", objective_val)
-save("delta", o_delta)
-save("omega", o_omega)
+save("obj_R4", objective_val)
+save("delta_R4", o_delta)
+save("omega_R4", o_omega)

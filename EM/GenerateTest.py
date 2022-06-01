@@ -71,4 +71,10 @@ def save(name, t):
 
 R = generate_trajectories(10000)
 print(random.sample(list(R), 10), len(R))
-save("R4", R)
+
+n = round(0.8*len(R))
+R_train = R[:n]
+R_test = R[n:]
+
+save("R4_train", R_train)
+save("R4_test", R_test)
