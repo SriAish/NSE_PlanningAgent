@@ -8,7 +8,7 @@ import sys
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R3")
+R = load("R3_old")
 
 states = ['1', '2', '3']
 in_sym = ['a', 'b', 'e']
