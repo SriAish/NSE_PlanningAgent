@@ -8,7 +8,7 @@ import sys
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R3_old")
+R = load("R3")
 
 states = ['1', '2', '3']
 in_sym = ['a', 'b', 'e']
@@ -220,20 +220,20 @@ o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
 
 objective_val = []
 objective_val.append(o_obj)
-while diff > 0.000001:
+while diff > 0.001:
     n_delta = cal_delta(fb, states, in_sym)
     n_omega = cal_omega(fb, states, in_sym, out_sym)
 
     diff = 0
-    # for i in n_delta:
-    #     for j in n_delta[i]:
-    #         for k in n_delta[i][j]:
-    #             diff += abs(n_delta[i][j][k]-o_delta[i][j][k])
+    for i in n_delta:
+        for j in n_delta[i]:
+            for k in n_delta[i][j]:
+                diff += abs(n_delta[i][j][k]-o_delta[i][j][k])
 
-    # for i in n_omega:
-    #     for j in n_omega[i]:
-    #         for k in n_omega[i][j]:
-    #             diff += abs(n_omega[i][j][k]-o_omega[i][j][k])
+    for i in n_omega:
+        for j in n_omega[i]:
+            for k in n_omega[i][j]:
+                diff += abs(n_omega[i][j][k]-o_omega[i][j][k])
 
     del fb
     fb = FB(n_delta, n_omega, states, R)
@@ -241,14 +241,9 @@ while diff > 0.000001:
     o_omega = n_omega
     del n_delta
     del n_omega
-    n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
-    diff = abs(o_obj - n_obj)
-    if diff < 0.1:
-        print(o_delta)
-        print(o_omega)
-    print(itr, diff, o_obj, n_obj)
+    o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
+    print(itr, diff)
     sys.stdout.flush()
-    o_obj = n_obj
     objective_val.append(o_obj)
     itr += 1
     
