@@ -217,6 +217,9 @@ def cal_omega(fb, states, in_sym, out_sym):
 diff = 1
 itr = 0
 o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
+
+objective_val = []
+objective_val.append(o_obj)
 while diff > 0.00000001:
     n_delta = cal_delta(fb, states, in_sym)
     n_omega = cal_omega(fb, states, in_sym, out_sym)
@@ -243,6 +246,7 @@ while diff > 0.00000001:
     print(itr, diff, o_obj, n_obj)
     sys.stdout.flush()
     o_obj = n_obj
+    objective_val.append(o_obj)
     itr += 1
     
 print(o_delta)
