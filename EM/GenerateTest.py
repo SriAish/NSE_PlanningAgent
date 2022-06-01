@@ -5,7 +5,7 @@ def get_sym(t = 0, b = False):
     v = random.random()
 
     if t==1:
-        if v <= 0.97:
+        if v <= 0.98:
             return 'a'
         return 'b'
 
@@ -14,9 +14,9 @@ def get_sym(t = 0, b = False):
         #     return 'b'
         # return 'e'
 
-    if v <= 0.87:
+    if v <= 0.92:
         return 'a'
-    if v <= 0.9:
+    if v <= 0.95:
         return 'b'
     return 'e'
 
