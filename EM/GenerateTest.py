@@ -58,7 +58,7 @@ def generate_trajectories(n):
         r0_ = random.sample(list(r0), len(r1))
         r1_ = r1
     R = r0_ + r1_
-    print(r0_, len(r0_))
+    # print(r0_, len(r0_))
     # R = r0+r1
     return R
 
@@ -66,6 +66,6 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-R = generate_trajectories(10000)
-# print(R, len(R))
+R = generate_trajectories(15000)
+print(random.sample(list(R), 100), len(R))
 save("R3", R)
