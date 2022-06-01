@@ -2,6 +2,7 @@ from FB import FB
 import pickle
 import random
 from math import log
+import sys
 
 # Initial Value
 def load(name):
@@ -216,7 +217,7 @@ def cal_omega(fb, states, in_sym, out_sym):
 diff = 1
 itr = 0
 o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
-while diff > 0:
+while diff > 0.00000001:
     n_delta = cal_delta(fb, states, in_sym)
     n_omega = cal_omega(fb, states, in_sym, out_sym)
 
@@ -240,6 +241,7 @@ while diff > 0:
     n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
     diff = abs(o_obj - n_obj)
     print(itr, diff, o_obj, n_obj)
+    sys.stdout.flush()
     o_obj = n_obj
     itr += 1
     
