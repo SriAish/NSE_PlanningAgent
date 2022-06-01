@@ -251,3 +251,11 @@ while diff > 0.00000001:
     
 print(o_delta)
 print(o_omega)
+
+def save(name, t):
+    file_to_write = open(name, "wb")
+    pickle.dump(t, file_to_write)
+
+save("obj", objective_val)
+save("delta", o_delta)
+save("omega", o_omega)
