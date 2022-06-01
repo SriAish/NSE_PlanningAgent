@@ -10,7 +10,7 @@ def load(name):
         return pickle.load(file_to_read)
 R = load("R3_train")
 
-states = ['1', '2', '3']
+states = ['1', '2', '3', '4']
 in_sym = ['a', 'b', 'e']
 out_sym = [0, 1, 2]
 
@@ -254,6 +254,6 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-save("obj_R3", objective_val)
-save("delta_R3", o_delta)
-save("omega_R3", o_omega)
+save("obj_R3_x", objective_val)
+save("delta_R3_x", o_delta)
+save("omega_R3_x", o_omega)

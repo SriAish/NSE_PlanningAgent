@@ -8,10 +8,10 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R4_test")
+R = load("R3_test")
 
-delta = load("delta_R4")
-omega = load("omega_R4")
+delta = load("delta_R3")
+omega = load("omega_R3")
 
 class FSA:
     def __init__(self, delta, omega):
@@ -19,7 +19,7 @@ class FSA:
         self.loadOmega(omega)
 
     def loadDelta(self, name):
-        policy = load(name)
+        policy = name
         self.delta = {}
         self.delta_val = {}
         for s in policy:
@@ -34,7 +34,7 @@ class FSA:
                     # self.delta_val[s][i].append(round(policy[s][i][s_], 5))
     
     def loadOmega(self, name):
-        policy = load(name)
+        policy = name
         self.omega = {}
         self.omega_val = {}
         for s in policy:
@@ -49,10 +49,10 @@ class FSA:
                     # self.delta_val[s][i].append(
 
     def getNextState(self, state, i):
-        return np.random.choice(self.delta[state][i], p = self.delta_val[state[i]])
+        return np.random.choice(self.delta[state][i], p = self.delta_val[state][i])
 
     def getOutSym(self, state, i):
-        return np.random.choice(self.omega[state][i], p = self.omega_val[state[i]])
+        return np.random.choice(self.omega[state][i], p = self.omega_val[state][i])
 
 def run_test(R, fsa):
     cor = 0
