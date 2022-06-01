@@ -243,6 +243,9 @@ while diff > 0.000001:
     del n_omega
     n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
     diff = abs(o_obj - n_obj)
+    if diff < 0.000005:
+        print(o_delta)
+        print(o_omega)
     print(itr, diff, o_obj, n_obj)
     sys.stdout.flush()
     o_obj = n_obj
