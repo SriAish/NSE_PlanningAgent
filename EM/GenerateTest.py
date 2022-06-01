@@ -5,7 +5,7 @@ def get_sym(t = 0, b = False):
     v = random.random()
 
     if t==1:
-        if v <= 0.95:
+        if v <= 0.97:
             return 'a'
         return 'b'
 
@@ -14,7 +14,7 @@ def get_sym(t = 0, b = False):
         #     return 'b'
         # return 'e'
 
-    if v <= 0.85:
+    if v <= 0.87:
         return 'a'
     if v <= 0.9:
         return 'b'
@@ -70,5 +70,5 @@ def save(name, t):
     pickle.dump(t, file_to_write)
 
 R = generate_trajectories(10000)
-print(random.sample(list(R), 100), len(R))
-save("R3", R)
+print(random.sample(list(R), 10), len(R))
+save("R4", R)

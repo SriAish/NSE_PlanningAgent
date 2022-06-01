@@ -220,7 +220,7 @@ o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
 
 objective_val = []
 objective_val.append(o_obj)
-while diff > 0.001:
+while diff > 0.000001:
     n_delta = cal_delta(fb, states, in_sym)
     n_omega = cal_omega(fb, states, in_sym, out_sym)
 
