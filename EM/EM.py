@@ -5,7 +5,7 @@ from misc import load, init_delta, init_omega, objective, cal_delta, cal_omega
 # Initial Value
 R = load("R7_train")
 
-states = ['1', '2', '3', '4', '5', '6', '7']
+states = ['1', '2', '3', '4', '5', '6', '7', '8']
 in_sym = ['a', 'b', 'e']
 out_sym = [0, 1, 2]
 
