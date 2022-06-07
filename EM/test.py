@@ -1,17 +1,13 @@
-from FB import FB
 import pickle
-import random
-from math import log
-import sys
 import numpy as np
 
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R4_test")
+R = load("R3_test_re")
 
-delta = load("delta_R1")
-omega = load("omega_R1")
+delta = load("delta_R3_x")
+omega = load("omega_R3_x")
 
 for s in delta:
     for i in delta[s]:
@@ -62,19 +58,34 @@ class FSA:
 def run_test(R, fsa):
     cor = 0
     in_cor = 0
+    tp = 0.0
+    tn = 0.0
+    fp = 0.0
+    fn = 0.0
     for r in R:
         st = '0'
         for t in range(len(r)-2):
             st = fsa.getNextState(st, r[t])
         out = fsa.getOutSym(st, r[len(r)-2])
         if out == r[len(r)-1]:
+            if out == 0:
+                tn += 1
+            else:
+                tp += 1
             cor += 1
         else:
+            if out == 0:
+                tn += 1
+            else:
+                tp += 1
             in_cor += 1
+            print(r)
 
     tot = cor + in_cor
+    prec = tp/(tp+fp)
+    rec = tp/(tp+fn)
 
-    return cor/tot, in_cor/tot
+    return cor/tot, in_cor/tot, "precision: ", prec, "recall: ", rec, "F1 Score", 2*(prec*rec)/(prec + rec)
 
-# fsa = FSA(delta, omega)
-# print(run_test(R, fsa))
+fsa = FSA(delta, omega)
+print(run_test(R, fsa))
