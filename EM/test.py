@@ -4,10 +4,10 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R3_test_re")
-
-delta = load("delta_R3_x")
-omega = load("omega_R3_x")
+R = load("R7_test")
+print(len(R))
+delta = load("delta_R7")
+omega = load("omega_R7")
 
 for s in delta:
     for i in delta[s]:
@@ -79,7 +79,7 @@ def run_test(R, fsa):
             else:
                 tp += 1
             in_cor += 1
-            print(r)
+            # print(r)
 
     tot = cor + in_cor
     prec = tp/(tp+fp)
