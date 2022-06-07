@@ -8,11 +8,16 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R3_test")
+R = load("R4_test")
 
-delta = load("delta_R3")
-omega = load("omega_R3")
+delta = load("delta_R1")
+omega = load("omega_R1")
 
+for s in delta:
+    for i in delta[s]:
+        print(s, i, delta[s][i])
+print()
+print(omega)
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
@@ -71,5 +76,5 @@ def run_test(R, fsa):
 
     return cor/tot, in_cor/tot
 
-fsa = FSA(delta, omega)
-print(run_test(R, fsa))
+# fsa = FSA(delta, omega)
+# print(run_test(R, fsa))
