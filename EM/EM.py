@@ -54,6 +54,6 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-save("obj_R1", objective_val)
-save("delta_R1", o_delta)
-save("omega_R1", o_omega)
+save("obj_R7", objective_val)
+save("delta_R7", o_delta)
+save("omega_R7", o_omega)
