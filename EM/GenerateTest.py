@@ -71,7 +71,7 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-R = generate_trajectories(10000)
+R = generate_trajectories(2000)
 print(random.sample(list(R), 10), len(R))
 random.shuffle(R)
 n = round(0.8*len(R))
@@ -87,7 +87,7 @@ for r in R_test:
         c1+=1
 
 
-save("R7_train_2", R_train)
-save("R7_test_2", R_test)
+save("R7_train_3", R_train)
+save("R7_test_3", R_test)
 
 print(c0, c1)

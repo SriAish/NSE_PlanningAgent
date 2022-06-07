@@ -3,7 +3,7 @@ import sys
 import pickle
 from misc import load, init_delta, init_omega, objective, cal_delta, cal_omega
 # Initial Value
-R = load("R7_train_2")
+R = load("R7_train_3")
 
 states = ['1', '2', '3', '4', '5', '6', '7', '8']
 in_sym = ['a', 'b', 'e']
@@ -54,6 +54,6 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-save("obj_R7_2", objective_val)
-save("delta_R7_2", o_delta)
-save("omega_R7_2", o_omega)
+save("obj_R7_3", objective_val)
+save("delta_R7_3", o_delta)
+save("omega_R7_3", o_omega)
