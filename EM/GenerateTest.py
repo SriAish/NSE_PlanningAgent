@@ -32,7 +32,7 @@ def get_traj():
             b += 1
         s = get_sym()
     traj += s
-    if b >= 7:
+    if b >= 9:
         traj += [1]
     else:
         traj += [0]
@@ -87,7 +87,7 @@ for r in R_test:
         c1+=1
 
 
-save("R7_train_3", R_train)
-save("R7_test_3", R_test)
+save("R9_train", R_train)
+save("R9_test", R_test)
 
 print(c0, c1)
