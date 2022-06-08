@@ -3,11 +3,18 @@ import sys
 import pickle
 from misc import load, init_delta, init_omega, objective, cal_delta, cal_omega
 # Initial Value
-R = load("R7_train_re")
+severe = load("severe_trajectories_lb")
+mild = load("mild_trajectories_lb")
+no_nse = load("no_nse_trajectories_lb")
+R_ = severe + mild + no_nse
+R = []
+for r in R_:
+    if len(r) < 999:
+        R += [r]
 
-states = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-in_sym = ['a', 'b', 'e']
-out_sym = [0, 1, 2]
+states = ['1', '2', '3', '4', '5']
+in_sym = [0, 1, 2]
+out_sym = ['N', 'M', 'S', 2]
 
 o_delta = init_delta(states, in_sym)
 o_omega = init_omega(states, in_sym, out_sym)
@@ -54,6 +61,6 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-save("obj_R9", objective_val)
-save("delta_R9", o_delta)
-save("omega_R9", o_omega)
+save("obj_R_bp", objective_val)
+save("delta_R_bp", o_delta)
+save("omega_R_bp", o_omega)
