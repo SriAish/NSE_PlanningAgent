@@ -6,14 +6,16 @@ def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
 
-severe = load("severe_trajectories_lb")
-mild = load("mild_trajectories_lb")
-no_nse = load("no_nse_trajectories_lb")
-R_ = severe + mild + no_nse
-R = []
-for r in R_:
-    if len(r) < 999:
-        R += [r]
+# severe = load("severe_trajectories_lb")
+# mild = load("mild_trajectories_lb")
+# no_nse = load("no_nse_trajectories_lb")
+# R_ = severe + mild + no_nse
+# R = []
+# for r in R_:
+#     if len(r) < 999:
+#         R += [r]
+
+R = load("R2_train")
 
 def init_delta(states, in_sym):
     delta = {}
