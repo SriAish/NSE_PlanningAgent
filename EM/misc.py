@@ -6,7 +6,7 @@ def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
 
-R = load("R9_train")
+R = load("R7_train_re")
 
 def init_delta(states, in_sym):
     delta = {}

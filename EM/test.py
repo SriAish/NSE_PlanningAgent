@@ -4,7 +4,7 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R7_train_re")
+R = load("R9_train")
 print(len(R))
 
 r0 = 0
@@ -16,8 +16,8 @@ for r in R:
         r1 +=1
 
 print(r0, r1)
-delta = load("delta_R7_re")
-omega = load("omega_R7_re")
+delta = load("delta_R9")
+omega = load("omega_R9")
 
 # for s in delta:
 #     for i in delta[s]:
