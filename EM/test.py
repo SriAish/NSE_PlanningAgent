@@ -4,16 +4,26 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R7_test")
+R = load("R7_train_re")
 print(len(R))
-delta = load("delta_R7")
-omega = load("omega_R7")
 
-for s in delta:
-    for i in delta[s]:
-        print(s, i, delta[s][i])
-print()
-print(omega)
+r0 = 0
+r1 =0
+for r in R:
+    if r[-1] == 0:
+        r0+=1
+    if r[-1] == 1:
+        r1 +=1
+
+print(r0, r1)
+delta = load("delta_R7_re")
+omega = load("omega_R7_re")
+
+# for s in delta:
+#     for i in delta[s]:
+#         print(s, i, delta[s][i])
+# print()
+# print(omega)
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
@@ -45,6 +55,7 @@ class FSA:
                 self.omega[s][i] = []
                 self.omega_val[s][i] = []
                 for s_ in policy[s][i]:
+                    # print(s, i, s_)
                     self.omega[s][i].append(s_)
                     self.omega_val[s][i].append(policy[s][i][s_])
                     # self.delta_val[s][i].append(
@@ -67,25 +78,27 @@ def run_test(R, fsa):
         for t in range(len(r)-2):
             st = fsa.getNextState(st, r[t])
         out = fsa.getOutSym(st, r[len(r)-2])
-        if out == r[len(r)-1]:
+        if out == r[-1]:
             if out == 0:
                 tn += 1
             else:
                 tp += 1
             cor += 1
         else:
+            # print(out)
             if out == 0:
-                tn += 1
+                fn += 1
             else:
-                tp += 1
+                fp += 1
             in_cor += 1
             # print(r)
 
     tot = cor + in_cor
+    print(cor, tp, fp, fn)
     prec = tp/(tp+fp)
     rec = tp/(tp+fn)
 
-    return cor/tot, in_cor/tot, "precision: ", prec, "recall: ", rec, "F1 Score", 2*(prec*rec)/(prec + rec)
+    return cor/tot, in_cor/tot, "precision: ", prec, "recall: ", rec, "F1 Score", ((2*prec*rec)/(prec + rec))
 
 fsa = FSA(delta, omega)
 print(run_test(R, fsa))

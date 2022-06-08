@@ -3,9 +3,9 @@ import sys
 import pickle
 from misc import load, init_delta, init_omega, objective, cal_delta, cal_omega
 # Initial Value
-R = load("R9_train")
+R = load("R7_train_re")
 
-states = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
+states = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 in_sym = ['a', 'b', 'e']
 out_sym = [0, 1, 2]
 
@@ -20,7 +20,7 @@ o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
 
 objective_val = []
 objective_val.append(o_obj)
-while diff > 0.0001:
+while diff > 0.001:
     n_delta = cal_delta(fb, states, in_sym)
     n_omega = cal_omega(fb, states, in_sym, out_sym)
 
