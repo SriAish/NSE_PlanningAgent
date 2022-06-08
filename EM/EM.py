@@ -12,7 +12,7 @@ for r in R_:
     if len(r) < 999:
         R += [r]
 
-states = ['1', '2', '3', '4', '5']
+states = ['1', '2', '3', '4']
 in_sym = [0, 1, 2]
 out_sym = ['N', 'M', 'S', 2]
 
@@ -61,6 +61,6 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-save("obj_R_bp", objective_val)
-save("delta_R_bp", o_delta)
-save("omega_R_bp", o_omega)
+save("obj_R_bp_l", objective_val)
+save("delta_R_bp_l", o_delta)
+save("omega_R_bp_l", o_omega)

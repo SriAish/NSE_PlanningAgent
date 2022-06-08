@@ -4,7 +4,13 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("R9_train")
+R1 = load("R9_train")
+R2 = load("R9_test")
+
+print(len(R1))
+
+R = R1 + R2
+
 print(len(R))
 
 r0 = 0
@@ -101,4 +107,5 @@ def run_test(R, fsa):
     return cor/tot, in_cor/tot, "precision: ", prec, "recall: ", rec, "F1 Score", ((2*prec*rec)/(prec + rec))
 
 fsa = FSA(delta, omega)
+
 print(run_test(R, fsa))
