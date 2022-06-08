@@ -122,5 +122,5 @@ if __name__ == '__main__':
     pol = "policy/FSA_p3_7_7_10_4_2.pkl"
     agent = Agent(pol)
     print(pol)
-    generate_mean_std(500, agent, True, (4, 2))
+    generate_mean_std(5000, agent, True, (4, 2))
     # generate_trajectory(agent)

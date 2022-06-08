@@ -4,12 +4,10 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R1 = load("R9_train")
-R2 = load("R9_test")
-
-print(len(R1))
-
-R = R1 + R2
+severe = load("severe_trajectories_lb")
+mild = load("mild_trajectories_lb")
+no_nse = load("no_nse_trajectories_lb")
+R = severe 
 
 print(len(R))
 
@@ -22,8 +20,8 @@ for r in R:
         r1 +=1
 
 print(r0, r1)
-delta = load("delta_R9")
-omega = load("omega_R9")
+delta = load("delta_R_bp_l")
+omega = load("omega_R_bp_l")
 
 # for s in delta:
 #     for i in delta[s]:
@@ -100,7 +98,7 @@ def run_test(R, fsa):
             # print(r)
 
     tot = cor + in_cor
-    print(cor, tp, fp, fn)
+    # print(cor, tp, fp, fn)
     prec = tp/(tp+fp)
     rec = tp/(tp+fn)
 
@@ -108,4 +106,5 @@ def run_test(R, fsa):
 
 fsa = FSA(delta, omega)
 
-print(run_test(R, fsa))
+for r in range(10):
+    print(run_test(R, fsa))

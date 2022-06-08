@@ -12,7 +12,7 @@ for r in R_:
     if len(r) < 999:
         R += [r]
 
-states = ['1', '2', '3', '4']
+states = ['1', '2', '3', '4', '5']
 in_sym = [0, 1, 2]
 out_sym = ['N', 'M', 'S', 2]
 
