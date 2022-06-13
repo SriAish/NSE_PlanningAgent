@@ -10,7 +10,7 @@ module add cudnn/8.4.0-cuda-11.6
 source ~/keras/bin/activate
 
 start=`date +%s`
-python3.7 EM.py
+python3.7 EM_run.py
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime

@@ -4,11 +4,11 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-# severe = load("severe_trajectories_lb")
-# mild = load("mild_trajectories_lb")
-# no_nse = load("no_nse_trajectories_lb")
-R = load("R3_test_re")
-
+severe = load("severe_trajectories_lb")
+mild = load("mild_trajectories_lb")
+no_nse = load("no_nse_trajectories_lb")
+# R = load("R3_test_re")
+R = severe + mild + no_nse
 print(len(R))
 
 r0 = 0
@@ -20,13 +20,13 @@ for r in R:
         r1 +=1
 
 print(r0, r1)
-delta = load("delta_R2")
-omega = load("omega_R2")
+delta = load("delta_R_bp_l")
+omega = load("omega_R_bp_l")
 
-# for s in delta:
-#     for i in delta[s]:
-#         print(s, i, delta[s][i])
-# print()
+for s in delta:
+    for i in delta[s]:
+        print(s, i, delta[s][i])
+print()
 print(omega)
 class FSA:
     def __init__(self, delta, omega):
@@ -65,9 +65,11 @@ class FSA:
                     # self.delta_val[s][i].append(
 
     def getNextState(self, state, i):
+        # print("state:", state, i)
         return np.random.choice(self.delta[state][i], p = self.delta_val[state][i])
 
     def getOutSym(self, state, i):
+        # print("out:", state, i, self.omega[state][i], self.omega_val[state][i])
         return np.random.choice(self.omega[state][i], p = self.omega_val[state][i])
 
 def run_test(R, fsa):
