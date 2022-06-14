@@ -4,6 +4,7 @@ import pickle
 import random
 from misc import load, save
 from math import log
+import numpy as np
 
 def init_delta(states, in_sym):
     delta = {}
@@ -207,7 +208,7 @@ out_sym = ['N', 'S', 'M', 2]
 
 for num_traj in range(10, 161, 10):
     R = load("BP_"+str(num_traj))
-    print(R[0])
+    # print(R[0])
     print("Running for: ", len(R), " trajectories")
     o_delta = init_delta(states, in_sym)
     o_omega = init_omega(states, in_sym, out_sym)
@@ -219,7 +220,7 @@ for num_traj in range(10, 161, 10):
 
     objective_val = []
     objective_val.append(o_obj)
-    while diff > 0.01:
+    while diff > 0.05:
         n_delta = cal_delta(fb, states, in_sym)
         n_omega = cal_omega(fb, states, in_sym, out_sym)
 
