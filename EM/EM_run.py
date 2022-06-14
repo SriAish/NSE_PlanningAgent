@@ -220,7 +220,7 @@ for num_traj in range(10, 161, 10):
 
     objective_val = []
     objective_val.append(o_obj)
-    while diff > 0.05:
+    while diff > 0.02:
         n_delta = cal_delta(fb, states, in_sym)
         n_omega = cal_omega(fb, states, in_sym, out_sym)
 
