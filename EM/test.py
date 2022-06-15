@@ -4,16 +4,12 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-# severe = load("severe_trajectories_lb")
-# mild = load("mild_trajectories_lb")
-# no_nse = load("no_nse_trajectories_lb")
-R = load("BP_test")
-# R = load("Test_Data")
+R = load("Test_Data")
 # R = load("severe_test")
 # R = load("mild_test")
 # R = load("no_nse_test")
 print(len(R))
-
+print(R[0])
 # rn = 0
 # rs =0
 # rm =0
@@ -26,14 +22,14 @@ print(len(R))
 #         rm +=1
 
 # print(rs, rn, rm)
-delta = load("delta_BP20_5")
-omega = load("omega_BP20_5")
+delta = load("delta_BP_rand_5")
+omega = load("omega_BP_rand_5")
 
-for s in delta:
-    for i in delta[s]:
-        print(s, i, delta[s][i])
-print()
-print(omega)
+# for s in delta:
+#     for i in delta[s]:
+#         print(s, i, delta[s][i])
+# print()
+# print(omega)
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
