@@ -7,7 +7,7 @@ from math import log
 import time
 start_time = time.time()
 
-R = load("BP_20")
+R = load("BP_wh_30")
 # R = random.sample(list(R_), 30)
 
 print(len(R))
@@ -254,8 +254,8 @@ while diff > 0.005:
 print(o_delta)
 print(o_omega)
 
-save("obj_BP20_5", objective_val)
-save("delta_BP20_5", o_delta)
-save("omega_BP20_5", o_omega)
+save("obj_BP_wh30_5", objective_val)
+save("delta_BP_wh30_5", o_delta)
+save("omega_BP_wh30_5", o_omega)
 
 print("--- %s seconds ---" % (time.time() - start_time))

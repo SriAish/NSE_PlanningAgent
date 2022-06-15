@@ -7,8 +7,11 @@ def load(name):
 # severe = load("severe_trajectories_lb")
 # mild = load("mild_trajectories_lb")
 # no_nse = load("no_nse_trajectories_lb")
-# R = load("BP_test")
-R = load("severe_test")
+R = load("BP_test")
+# R = load("Test_Data")
+# R = load("severe_test")
+# R = load("mild_test")
+# R = load("no_nse_test")
 print(len(R))
 
 # rn = 0
@@ -23,8 +26,8 @@ print(len(R))
 #         rm +=1
 
 # print(rs, rn, rm)
-delta = load("delta_BP10")
-omega = load("omega_BP10")
+delta = load("delta_BP20_5")
+omega = load("omega_BP20_5")
 
 for s in delta:
     for i in delta[s]:

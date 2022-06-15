@@ -1,6 +1,8 @@
 import random
 from misc import load, save
 
+
+
 severe = load("severe_train")
 mild = load("mild_train")
 no_nse = load("no_nse_train")
@@ -25,6 +27,6 @@ print(len(s), len(m), len(n))
 # save("BP_whole_set", R)
 
 # print(len(s), len(m), len(n))
-# for i in range(10, 221, 30):
-#     R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
-#     save("BP_wh_"+str(i), R)
+for i in range(10, 114, 20):
+    R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
+    save("BP_wh_"+str(i), R)
