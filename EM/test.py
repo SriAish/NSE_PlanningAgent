@@ -7,21 +7,24 @@ def load(name):
 severe = load("severe_trajectories_lb")
 mild = load("mild_trajectories_lb")
 no_nse = load("no_nse_trajectories_lb")
-# R = load("R3_test_re")
+# R = load("BP_test")
 R = severe + mild + no_nse
 print(len(R))
 
-r0 = 0
-r1 =0
-for r in R:
-    if r[-1] == 0:
-        r0+=1
-    if r[-1] == 1:
-        r1 +=1
+# rn = 0
+# rs =0
+# rm =0
+# for r in R:
+#     if r[-1] == 'N':
+#         rn+=1
+#     if r[-1] == 'S':
+#         rs +=1
+#     if r[-1] == 'M':
+#         rm +=1
 
-print(r0, r1)
-delta = load("delta_R_bp_l")
-omega = load("omega_R_bp_l")
+# print(rs, rn, rm)
+delta = load("delta_BP10")
+omega = load("omega_BP10")
 
 for s in delta:
     for i in delta[s]:
@@ -65,7 +68,7 @@ class FSA:
                     # self.delta_val[s][i].append(
 
     def getNextState(self, state, i):
-        # print("state:", state, i)
+        # print("state:", state, i, self.delta_val[state][i])
         return np.random.choice(self.delta[state][i], p = self.delta_val[state][i])
 
     def getOutSym(self, state, i):
@@ -108,5 +111,5 @@ def run_test(R, fsa):
 
 fsa = FSA(delta, omega)
 
-for r in range(10):
+for r in range(1):
     print(run_test(R, fsa))

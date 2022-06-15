@@ -19,6 +19,6 @@ for r in no_nse:
     if len(r) < 999:
         n += [r]
 
-for i in range(10, 161, 10):
+for i in range(10, 21, 10):
     R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
     save("BP_"+str(i), R)

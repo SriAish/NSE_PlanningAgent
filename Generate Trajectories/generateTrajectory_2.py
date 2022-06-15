@@ -40,6 +40,7 @@ def generate_trajectory(agent, box_loc = (3, 3)):
 
         ac += 1
         s, _, done = env.transition(a)
+        # print(s, a)
         t += [FSA.getLabel(s, a)]
 
     # t += [copy.deepcopy(s)]
@@ -60,31 +61,31 @@ def generate_mean_std(n, agent, new, box_loc):
         mild = set()
         no_nse = set()
     else:
-        severe = load("severe_trajectories_lb")
-        mild = load("mild_trajectories_lb")
-        no_nse = load("no_nse_trajectories_lb")
+        severe = set(load("severe_trajectories_lb_2"))
+        mild = set(load("mild_trajectories_lb_2"))
+        no_nse = set(load("no_nse_trajectories_lb_2"))
     print(len(severe), len(mild), len(no_nse))
     i = 0
     while i < n:
         i += 1
         rug_c, t = generate_trajectory(agent, box_loc)
         if rug_c < 1:
-            t += ["N"]
+            t += [0]
             no_nse.add(tuple(t))
             # print("No Nse")
         elif rug_c < 3:
-            t += ["M"]
+            t += [1]
             # print("mild")
             mild.add(tuple(t))
         else:
-            t += ["S"]
+            t += [2]
             # print("severe")
             severe.add(tuple(t))
     print(t)
     print(len(severe), len(mild), len(no_nse))
-    save("severe_trajectories_lb", list(severe))
-    save("mild_trajectories_lb", list(mild))
-    save("no_nse_trajectories_lb", list(no_nse))
+    save("severe_trajectories_lb_2", list(severe))
+    save("mild_trajectories_lb_2", list(mild))
+    save("no_nse_trajectories_lb_2", list(no_nse))
 
 class Agent:
     def __init__(self, name):
@@ -109,7 +110,7 @@ class Agent:
     def getAction(self, state):
         x = random.random()
         try:
-            if x < 0.85:
+            if x < 0.95:
                 return np.random.choice(self.pi[state], p = self.prob2[state])
             else:
                 return np.random.choice(self.pi[state])
@@ -119,8 +120,8 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_p3_7_7_10_4_2.pkl"
+    pol = "policy/FSA_p3_7_7_10_3_1.pkl"
     agent = Agent(pol)
     print(pol)
-    generate_mean_std(5000, agent, True, (4, 2))
+    generate_mean_std(1000, agent, False, (3, 1))
     # generate_trajectory(agent)

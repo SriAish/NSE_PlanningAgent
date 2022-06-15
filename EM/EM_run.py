@@ -203,11 +203,12 @@ def cal_omega(fb, states, in_sym, out_sym):
     return omega
 
 states = ['1', '2', '3', '4', '5']
-in_sym = [0, 1, 2]
-out_sym = ['N', 'S', 'M', 2]
+in_sym = ['a', 'b', 'e']
+out_sym = [0, 1, 2, 3]
 
 for num_traj in range(10, 161, 10):
-    R = load("BP_"+str(num_traj))
+    R_ = load("BP_train")
+    R = random.sample(list(R_), num_traj)
     # print(R[0])
     print("Running for: ", len(R), " trajectories")
     o_delta = init_delta(states, in_sym)
@@ -251,6 +252,6 @@ for num_traj in range(10, 161, 10):
     print(o_omega)
     print("===========================================================")
     print("===========================================================")
-    save("obj_BP_" + str(num_traj), objective_val)
-    save("delta_BP_" + str(num_traj), o_delta)
-    save("omega_BP_" + str(num_traj), o_omega)
+    save("obj_BP_test_" + str(num_traj), objective_val)
+    save("delta_BP_test_" + str(num_traj), o_delta)
+    save("omega_BP_test_" + str(num_traj), o_omega)

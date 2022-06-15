@@ -32,8 +32,10 @@ def get_traj():
             b += 1
         s = get_sym()
     traj += s
-    if b >= 2:
+    if b > 0 and b <= 2:
         traj += [1]
+    elif b > 2:
+        traj += [2]
     else:
         traj += [0]
 
@@ -42,52 +44,64 @@ def get_traj():
 def generate_trajectories(n):
     r0 = []
     r1 = []
+    r2 = []
     lr = 0
     while n:
         r = get_traj()
         if r[-1] == 0:
             r0 += [tuple(r)]
             # r0.add(tuple(r))
-        else:
+        elif r[-1] == 1:
             r1 += [tuple(r)]
             # r1.add(tuple(r))
-        if lr < len(r0) + len(r1):
-            lr = len(r0) + len(r1)
+        else:
+            r2 += [tuple(r)]
+        if lr < len(r0) + len(r1) + len(r2):
+            lr = len(r0) + len(r1) + len(r2)
             n -= 1
-    print(len(r0), len(r1))
+    print(len(r0), len(r1), len(r2))
 
-    if len(r1) > len(r0):
-        r1_ = random.sample(list(r1), len(r0))
+    if len(r1) > len(r0) and len(r2) > len(r0):
         r0_ = r0
-    else:
+        r1_ = random.sample(list(r1), len(r0))
+        r2_ = random.sample(list(r2), len(r0))
+    elif len(r0) > len(r1) and len(r2) > len(r1):
         r0_ = random.sample(list(r0), len(r1))
         r1_ = r1
-    R = list(r0_) + list(r1_)
-    print(len(r1_), len(r0_))
-    # R = list(r0)+list(r1)
+        r2_ = random.sample(list(r2), len(r1))
+    else:
+        r0_ = random.sample(list(r0), len(r2))
+        r1_ = random.sample(list(r1), len(r2))
+        r2_ = r2
+    R = list(r0_) + list(r1_) + list(r2_)
+    print(len(R))
     return R
 
 def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-R = generate_trajectories(300)
+R = generate_trajectories(1500)
 print(random.sample(list(R), 10), len(R))
 random.shuffle(R)
 n = round(0.8*len(R))
 R_train = R[:n]
 R_test = R[n:]
 
-c0 =0
+c0 = 0
 c1 = 0
+c2 = 0
 for r in R_test:
     if r[-1] == 0:
         c0+=1
+    elif r[-1] == 2:
+        c2+=1
     else:
         c1+=1
 
 
-save("R2_train", R_train)
-save("R2_test", R_test)
+save("BP_train", R_train)
+save("BP_test", R_test)
 
-print(c0, c1)
+print(len(R_train), len(R_test))
+print(c0, c1, c2)

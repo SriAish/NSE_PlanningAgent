@@ -1,3 +1,4 @@
+from tabnanny import check
 from actions import Actions 
 import copy
 import numpy as np
@@ -65,7 +66,7 @@ class BPEnv:
     def getType(self, location):
         return self.grid[location]
 
-    def checkDone(self):
+    def checkEnd(self):
         if self.agent_location == self. box_location and self.box_location == self.end_location:
             self.done = True
         return self.done
@@ -128,13 +129,16 @@ class BPEnv:
 
     def transition(self, action):
         a = self.getValidActions(self.state())
+        if self.checkEnd():
+            self.agent_location = (-1, -1)
+            return self.state(), 0, self.done
 
         if action not in a:
             print("Invalid Action")
             return "Invalid Action" 
 
         if self.done:
-            self.state(), self.getCost(action)
+            return self.state(), self.getCost(action), self.done
 
         if self.actions.isMoveAction(action):
             self.move(action)
@@ -145,8 +149,6 @@ class BPEnv:
         if self.actions.isBoxAction(action):
             if action == self.actions.pick_up:
                 self.pick_up()
-
-        self.checkDone()
 
         return self.state(), self.getCost(action), self.done
 
