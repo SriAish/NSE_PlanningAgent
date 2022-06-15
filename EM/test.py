@@ -8,7 +8,7 @@ def load(name):
 # mild = load("mild_trajectories_lb")
 # no_nse = load("no_nse_trajectories_lb")
 # R = load("BP_test")
-R = load("BP_wh_220")
+R = load("severe_test")
 print(len(R))
 
 # rn = 0
@@ -104,12 +104,16 @@ def run_test(R, fsa):
 
     tot = cor + in_cor
     # print(cor, tp, fp, fn)
-    prec = tp/(tp+fp)
-    rec = tp/(tp+fn)
+    # prec = tp/(tp+fp)
+    # rec = tp/(tp+fn)
 
-    return cor/tot, in_cor/tot, "precision: ", prec, "recall: ", rec, "F1 Score", ((2*prec*rec)/(prec + rec))
+    return cor/tot
 
 fsa = FSA(delta, omega)
 
-for r in range(1):
-    print(run_test(R, fsa))
+pr = 0
+
+for r in range(10):
+    pr += run_test(R, fsa)
+
+print(pr/10)

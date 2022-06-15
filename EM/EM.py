@@ -7,8 +7,8 @@ from math import log
 import time
 start_time = time.time()
 
-R_ = load("BP_10")
-R = random.sample(list(R_), 30)
+R = load("BP_10")
+# R = random.sample(list(R_), 30)
 
 print(len(R))
 def init_delta(states, in_sym):
@@ -207,7 +207,7 @@ def cal_omega(fb, states, in_sym, out_sym):
                     omega[s][i][o] = num[o]/den
     return omega
 
-states = ['1', '2', '3', '4', '5']
+states = ['1', '2', '3', '4']
 in_sym = ['a', 'b', 'e']
 out_sym = [0, 1, 2, 3]
 
@@ -254,8 +254,8 @@ while diff > 0.005:
 print(o_delta)
 print(o_omega)
 
-save("obj_BP10", objective_val)
-save("delta_BP10", o_delta)
-save("omega_BP10", o_omega)
+save("obj_BP10_4", objective_val)
+save("delta_BP10_4", o_delta)
+save("omega_BP10_4", o_omega)
 
 print("--- %s seconds ---" % (time.time() - start_time))
