@@ -1,9 +1,9 @@
 import random
 from misc import load, save
 
-severe = load("severe_trajectories_lb")
-mild = load("mild_trajectories_lb")
-no_nse = load("no_nse_trajectories_lb")
+severe = load("severe_trajectories_lb_2")
+mild = load("mild_trajectories_lb_2")
+no_nse = load("no_nse_trajectories_lb_2")
 s = []
 m = []
 n = []
@@ -19,6 +19,10 @@ for r in no_nse:
     if len(r) < 999:
         n += [r]
 
-for i in range(10, 21, 10):
+# R = list(s) + list(m) + list(n)
+# save("BP_whole_set", R)
+
+print(len(s), len(m), len(n))
+for i in range(10, 221, 30):
     R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
-    save("BP_"+str(i), R)
+    save("BP_wh_"+str(i), R)

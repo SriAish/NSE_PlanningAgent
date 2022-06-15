@@ -4,11 +4,11 @@ import numpy as np
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-severe = load("severe_trajectories_lb")
-mild = load("mild_trajectories_lb")
-no_nse = load("no_nse_trajectories_lb")
+# severe = load("severe_trajectories_lb")
+# mild = load("mild_trajectories_lb")
+# no_nse = load("no_nse_trajectories_lb")
 # R = load("BP_test")
-R = severe + mild + no_nse
+R = load("BP_wh_220")
 print(len(R))
 
 # rn = 0
