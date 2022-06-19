@@ -8,9 +8,9 @@ class FSAConstants:
     def __init__(self):
         # Defining labels 
         self.label = {}
-        self.label[(True, False)] = 'b'
-        self.label[(False, False)] = 'a'
-        self.label[(False, True)] = 'e'
+        self.label[(True, False)] = 0
+        self.label[(False, False)] = 1
+        self.label[(False, True)] = 2
 
         # Defining states
         self.states = ["u0", "u1", "u2", "u3", "u4", "u5"]

@@ -5,10 +5,10 @@ import random
 from misc import load, save
 from math import log
 import time
-start_time = time.time()
 
-R_ = load("BP_20")
-R = random.sample(list(R_), 30)
+R = load(sys.argv[1])
+# print(R)
+# R = random.sample(list(R_), 30)
 
 print(len(R))
 def init_delta(states, in_sym):
@@ -207,55 +207,62 @@ def cal_omega(fb, states, in_sym, out_sym):
                     omega[s][i][o] = num[o]/den
     return omega
 
-states = ['1', '2', '3', '4', '5']
-in_sym = ['a', 'b', 'e']
-out_sym = [0, 1, 2, 3]
+states = []
+for i in range(int(sys.argv[2])):
+ states += [str(i+1)]
+in_sym = [0, 1, 2]
+out_sym = ['N', 'S', 'M', 3]
 
-o_delta = init_delta(states, in_sym)
-o_omega = init_omega(states, in_sym, out_sym)
+file_name = sys.argv[1][sys.argv[1].index("/")+1:]
 
-fb = FB(o_delta, o_omega, states, R)
+for i_try in range(1):
+    start_time = time.time()
+    o_delta = init_delta(states, in_sym)
+    o_omega = init_omega(states, in_sym, out_sym)
 
-diff = 1
-itr = 0
-o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
+    fb = FB(o_delta, o_omega, states, R)
 
-objective_val = []
-objective_val.append(o_obj)
-while diff > 0.005:
-    n_delta = cal_delta(fb, states, in_sym)
-    n_omega = cal_omega(fb, states, in_sym, out_sym)
-
-    diff = 0
-    # for i in n_delta:
-    #     for j in n_delta[i]:
-    #         for k in n_delta[i][j]:
-    #             diff += abs(n_delta[i][j][k]-o_delta[i][j][k])
-
-    # for i in n_omega:
-    #     for j in n_omega[i]:
-    #         for k in n_omega[i][j]:
-    #             diff += abs(n_omega[i][j][k]-o_omega[i][j][k])
-
-    del fb
-    fb = FB(n_delta, n_omega, states, R)
-    o_delta = n_delta
-    o_omega = n_omega
-    del n_delta
-    del n_omega
-    n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
-    diff = abs(n_obj - o_obj)
-    print(itr, diff)
-    sys.stdout.flush()
-    o_obj = n_obj
+    diff = 1
+    itr = 0
+    o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
+    save("results/delta/init_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_delta)
+    save("results/omega/init_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_omega)
+    objective_val = []
     objective_val.append(o_obj)
-    itr += 1
-    
-print(o_delta)
-print(o_omega)
+    while diff > 0.005:
+        n_delta = cal_delta(fb, states, in_sym)
+        n_omega = cal_omega(fb, states, in_sym, out_sym)
 
-save("obj_BP_rand_5", objective_val)
-save("delta_BP_rand_5", o_delta)
-save("omega_BP_rand_5", o_omega)
+        diff = 0
+        # for i in n_delta:
+        #     for j in n_delta[i]:
+        #         for k in n_delta[i][j]:
+        #             diff += abs(n_delta[i][j][k]-o_delta[i][j][k])
 
-print("--- %s seconds ---" % (time.time() - start_time))
+        # for i in n_omega:
+        #     for j in n_omega[i]:
+        #         for k in n_omega[i][j]:
+        #             diff += abs(n_omega[i][j][k]-o_omega[i][j][k])
+
+        del fb
+        fb = FB(n_delta, n_omega, states, R)
+        o_delta = n_delta
+        o_omega = n_omega
+        del n_delta
+        del n_omega
+        n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
+        diff = abs(n_obj - o_obj)
+        # print(itr, diff)
+        sys.stdout.flush()
+        o_obj = n_obj
+        objective_val.append(o_obj)
+        itr += 1
+        
+    print(o_delta)
+    print(o_omega)
+
+    save("results/objective/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), objective_val)
+    save("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_delta)
+    save("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_omega)
+
+    print("--- %s seconds ---" % (time.time() - start_time))
