@@ -215,7 +215,8 @@ out_sym = ['N', 'S', 'M', 3]
 
 file_name = sys.argv[1][sys.argv[1].index("/")+1:]
 
-for i_try in range(1):
+all_start_time = time.time()
+for i_try in range(10):
     start_time = time.time()
     o_delta = init_delta(states, in_sym)
     o_omega = init_omega(states, in_sym, out_sym)
@@ -258,11 +259,12 @@ for i_try in range(1):
         objective_val.append(o_obj)
         itr += 1
         
-    print(o_delta)
-    print(o_omega)
+    print("done")
 
     save("results/objective/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), objective_val)
     save("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_delta)
     save("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_omega)
 
     print("--- %s seconds ---" % (time.time() - start_time))
+
+print("--- %s seconds for all trials---" % (time.time() - all_start_time))

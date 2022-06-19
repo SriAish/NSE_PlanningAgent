@@ -24,7 +24,7 @@ R = load("Test_Data")
 
 # print(rs, rn, rm)
 file_name = sys.argv[1][sys.argv[1].index("/")+1:]
-for i_try in range(1):
+for i_try in range(10):
     delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
     omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
 
@@ -118,4 +118,4 @@ for i_try in range(1):
     for r in range(10):
         pr += run_test(R, fsa)
 
-    print("accuracy: ", pr/10)
+    print("accuracy of:" + "new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try) + ": ", pr/10)
