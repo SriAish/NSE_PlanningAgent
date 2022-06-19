@@ -217,6 +217,8 @@ file_name = sys.argv[1][sys.argv[1].index("/")+1:]
 
 all_start_time = time.time()
 for i_try in range(10):
+    print(sys.argv[1])
+    print("states: ", sys.argv[2], "trial: ", i_try)
     start_time = time.time()
     o_delta = init_delta(states, in_sym)
     o_omega = init_omega(states, in_sym, out_sym)
@@ -268,3 +270,4 @@ for i_try in range(10):
     print("--- %s seconds ---" % (time.time() - start_time))
 
 print("--- %s seconds for all trials---" % (time.time() - all_start_time))
+print("========================================================")
