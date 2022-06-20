@@ -58,7 +58,7 @@ class VIAgent:
     def generatePolicy(self):
         x = sys.maxsize
         while x > self.delta:
-            # print(x) 
+            print(x) 
             x = self.update()
         
         policy = {}
@@ -100,13 +100,13 @@ if __name__ == '__main__':
     e_state.append((g_pos, g_pos, True, False, 'p'))
     e_state.append((g_pos, g_pos, True, True, 'p'))
     print(e_state)
-    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state, (4, 4))
+    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state, (sys.argv[10], sys.argv[11]))
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
-    # print(policy)
-    # with open('policy_values/'+ sys.argv[8] + '.pkl', 'wb') as f:
-    #     pickle.dump(policy, f, pickle.HIGHEST_PROTOCOL)
-    
+    print(policy)
+    with open('policy_values/'+ sys.argv[8] + sys.argv[10] + sys.argv[11] + '.pkl', 'wb') as f:
+        pickle.dump(policy, f)
+    print("done")
     # # print(agent.stateValues)
     # with open('policy_values/'+ sys.argv[9] + '.pkl', 'wb') as f:
     #     pickle.dump(agent.stateValues, f, pickle.HIGHEST_PROTOCOL)
