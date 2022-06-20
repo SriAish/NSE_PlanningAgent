@@ -9,3 +9,19 @@ ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-
 30
 data_set/BP_wh_10
 states:  4 trial:  0
+done
+--- 1110.3395445346832 seconds ---
+data_set/BP_wh_10
+states:  4 trial:  1
+done
+--- 2.725801706314087 seconds ---
+data_set/BP_wh_10
+states:  4 trial:  2
+done
+--- 1265.0790536403656 seconds ---
+data_set/BP_wh_10
+states:  4 trial:  3
+done
+--- 27.391690492630005 seconds ---
+data_set/BP_wh_10
+states:  4 trial:  4
