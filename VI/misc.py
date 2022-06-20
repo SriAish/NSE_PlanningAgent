@@ -19,6 +19,7 @@ class BoxPushingConstants:
         print("goal: ", goal_state)
         self.goal_state = goal_state
         self.init_box_loc = init_box_loc
+        print("box", self.init_box_loc)
         self.generateStates()
 
         # Sstting up the actions
