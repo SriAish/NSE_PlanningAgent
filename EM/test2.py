@@ -5,7 +5,7 @@ import sys
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("Test_Data")
+R = load("Test_Data2")
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
@@ -100,25 +100,24 @@ def run_test(R, fsa):
 #         rm +=1
 
 # print(rs, rn, rm)
-if __name__ == '__main__':
-    file_name = sys.argv[1][sys.argv[1].index("/")+1:]
-    for i_try in range(10):
-        print(sys.argv[1])
-        print("states: ", sys.argv[2], "trial: ", i_try)
-        delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-        omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
+file_name = sys.argv[1][sys.argv[1].index("/")+1:]
+for i_try in range(10):
+    print(sys.argv[1])
+    print("states: ", sys.argv[2], "trial: ", i_try)
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
+    omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
 
-        # for s in delta:
-        #     for i in delta[s]:
-        #         print(s, i, delta[s][i])
-        # print()
-        # print(omega)
+    # for s in delta:
+    #     for i in delta[s]:
+    #         print(s, i, delta[s][i])
+    # print()
+    # print(omega)
 
-        fsa = FSA(delta, omega)
+    fsa = FSA(delta, omega)
 
-        pr = 0
+    pr = 0
 
-        for r in range(10):
-            pr += run_test(R, fsa)
+    for r in range(10):
+        pr += run_test(R, fsa)
 
-        print("accuracy of:" + "new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try) + ": ", pr/10)
+    print("accuracy of:" + "new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try) + ": ", pr/10)
