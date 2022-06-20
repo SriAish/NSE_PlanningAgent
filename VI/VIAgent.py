@@ -58,7 +58,7 @@ class VIAgent:
     def generatePolicy(self):
         x = sys.maxsize
         while x > self.delta:
-            print(x) 
+            # print(x) 
             x = self.update()
         
         policy = {}
