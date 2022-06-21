@@ -236,7 +236,7 @@ for i_try in range(10):
     objective_val.append(o_obj)
     fsa = FSA(o_delta, o_omega)
     acc = run_test(R_val, fsa)
-    while diff > 0.005 and acc < 0.85:
+    while diff > 0.005:
         n_delta = cal_delta(fb, states, in_sym)
         n_omega = cal_omega(fb, states, in_sym, out_sym)
 
