@@ -1,0 +1,4 @@
+==========================================
+SLURM_JOB_ID = 701631
+SLURM_NODELIST = gnode032
+SLURM_JOB_GPUS = 0

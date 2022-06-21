@@ -21,7 +21,7 @@ def checkDamage(t, st=[6, 4]):
     return (ind/9)*100
 
 def generate_trajectory(agent, box_loc = (3, 3)):
-    env = BPEnv(7, 3, 3, (2, 2), (3, 6), box_loc)
+    env = BPEnv(15, 7, 3, (6, 4), (7, 14), box_loc)
     done = False
 
     t = []
@@ -61,9 +61,9 @@ def generate_mean_std(n, agent, new, box_loc):
         mild = set()
         no_nse = set()
     else:
-        severe = set(load("severe_trajectories_lb_4"))
-        mild = set(load("mild_trajectories_lb_4"))
-        no_nse = set(load("no_nse_trajectories_lb_4"))
+        severe = set(load("severe_trajectories_15_15"))
+        mild = set(load("mild_trajectories_15_15"))
+        no_nse = set(load("no_nse_trajectories_15_15_ran"))
     print(len(severe), len(mild), len(no_nse))
     i = 0
     while i < n:
@@ -73,7 +73,7 @@ def generate_mean_std(n, agent, new, box_loc):
             t += ['N']
             no_nse.add(tuple(t))
             # print("No Nse")
-        elif rug_c < 3:
+        elif rug_c < 6:
             t += ['M']
             # print("mild")
             mild.add(tuple(t))
@@ -83,9 +83,9 @@ def generate_mean_std(n, agent, new, box_loc):
             severe.add(tuple(t))
     print(t)
     print(len(severe), len(mild), len(no_nse))
-    save("severe_trajectories_lb_4", list(severe))
-    save("mild_trajectories_lb_4", list(mild))
-    save("no_nse_trajectories_lb_4", list(no_nse))
+    # save("severe_trajectories_15_15_ran", list(severe))
+    # save("mild_trajectories_15_15_ran", list(mild))
+    save("no_nse_trajectories_15_15_ran", list(no_nse))
 
 class Agent:
     def __init__(self, name):
@@ -120,8 +120,8 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_p3_7_7_10_0_3.pkl"
+    pol = "policy/VIp_15_15140.pkl"
     agent = Agent(pol)
     print(pol)
-    generate_mean_std(1000, agent, False, (0, 3))
+    generate_mean_std(1000, agent, False, (14, 0))
     # generate_trajectory(agent)

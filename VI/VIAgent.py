@@ -58,7 +58,7 @@ class VIAgent:
     def generatePolicy(self):
         x = sys.maxsize
         while x > self.delta:
-            print(x) 
+            # print(x) 
             x = self.update()
         
         policy = {}
@@ -78,7 +78,7 @@ class VIAgent:
                     a = i
                 cost = min(cost, c)
             self.stateValues[state] = cost
-            print(state, a, cost)
+            # print(state, a, cost)
             policy[state][a] = 1
         print(self.stateValues[self.belief_state[0]])
         return policy
@@ -103,7 +103,7 @@ if __name__ == '__main__':
     BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), e_state, (int(sys.argv[10]), int(sys.argv[11])))
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
-    print(policy)
+    # print(policy)
     with open('policy_values/'+ sys.argv[8] + sys.argv[10] + sys.argv[11] + '.pkl', 'wb') as f:
         pickle.dump(policy, f)
     print("done")
