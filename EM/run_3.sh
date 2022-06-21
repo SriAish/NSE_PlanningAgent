@@ -12,14 +12,14 @@ source ~/keras/bin/activate
 # python3 EM3.py data_set/BP_15_15_10 7
 # python3 test3.py data_set/BP_15_15_10 7
 # echo "--------------------"
-python3 EM3.py data_set/BP_15_15_10 8
-python3 test3.py data_set/BP_15_15_10 8
-echo "--------------------"
-python3 EM3.py data_set/BP_15_15_10 9
-python3 test3.py data_set/BP_15_15_10 9
-echo "--------------------"
-echo "--------------------"
-echo "--------------------"
+# python3 EM3.py data_set/BP_15_15_10 8
+# python3 test3.py data_set/BP_15_15_10 8
+# echo "--------------------"
+# python3 EM3.py data_set/BP_15_15_10 9
+# python3 test3.py data_set/BP_15_15_10 9
+# echo "--------------------"
+# echo "--------------------"
+# echo "--------------------"
 python3 EM3.py data_set/BP_15_15_20 7
 python3 test3.py data_set/BP_15_15_20 7
 echo "--------------------"
