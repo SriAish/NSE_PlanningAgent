@@ -218,7 +218,7 @@ out_sym = ['N', 'S', 'M', 3]
 file_name = sys.argv[1][sys.argv[1].index("/")+1:]
 
 all_start_time = time.time()
-for i_try in range(10):
+for i_try in range(20):
     print(sys.argv[1])
     print("states: ", sys.argv[2], "trial: ", i_try)
     start_time = time.time()
@@ -236,7 +236,7 @@ for i_try in range(10):
     objective_val.append(o_obj)
     fsa = FSA(o_delta, o_omega)
     acc = run_test(R_val, fsa)
-    while diff > 0.005:
+    while diff > 0.001:
         n_delta = cal_delta(fb, states, in_sym)
         n_omega = cal_omega(fb, states, in_sym, out_sym)
 
