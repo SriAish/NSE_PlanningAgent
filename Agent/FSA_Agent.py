@@ -38,7 +38,7 @@ class FSAgent:
         self.belief_state = []
         for i in self.locations:
             s = (init_loc, i, False, False, 'p')
-            self.belief_state.append((self.FSA.nextState(s), s))
+            self.belief_state.append((self.FSA.nextState(s, "emp"), s))
         print(self.belief_state)
 
     def init_var(self):
