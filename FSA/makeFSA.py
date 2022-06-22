@@ -1,12 +1,13 @@
 import pickle
+import numpy as np
 import sys
 
 
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-delta = load("delta")
-omega = load("omega")
+delta = load(sys.argv[1])
+omega = load(sys.argv[2])
 
 # LABELS
 # 0 : b, r, -g
@@ -43,45 +44,19 @@ class FSAConstants:
         self.symbols["severe"] = 'S'
         self.symbols["mild"] = 'M'
         self.symbols["no_nse"] = 'N'
-        self.symbols["empty"] = 'E'
+        self.symbols["empty"] = 3
 
         # Symbol transiyion
-        self.symbol = {}
-        self.symbol["u0"] = {}
-        self.symbol["u1"] = {}
-        self.symbol["u2"] = {}
-        self.symbol["u3"] = {}
-        self.symbol["u4"] = {}
-        self.symbol["u5"] = {}
-        self.symbolTransition()
+        self.symbol = omega
+        self.symbol['0'] = {}
+        for i in self.label:
+            self.symbol['0'][self.label[i]] = {}
+            for o in self.symbols:
+                self.symbol['0'][self.label[i]][self.symbols[o]] = 0
+        print(self.symbol)
 
     def isEnd(self, state):
         return state[0] == (-1, -1)
-
-    def symbolTransition(self):
-        self.symbol["u0"][0] = self.symbols["empty"]
-        self.symbol["u0"][1] = self.symbols["empty"]
-        self.symbol["u0"][2] = self.symbols["empty"]
-
-        self.symbol["u1"][0] = self.symbols["empty"]
-        self.symbol["u1"][1] = self.symbols["empty"]
-        self.symbol["u1"][2] = self.symbols["no_nse"]
-
-        self.symbol["u2"][0] = self.symbols["empty"]
-        self.symbol["u2"][1] = self.symbols["empty"]
-        self.symbol["u2"][2] = self.symbols["mild"]
-
-        self.symbol["u3"][0] = self.symbols["empty"]
-        self.symbol["u3"][1] = self.symbols["empty"]
-        self.symbol["u3"][2] = self.symbols["mild"]
-
-        self.symbol["u4"][0] = self.symbols["empty"]
-        self.symbol["u4"][1] = self.symbols["empty"]
-        self.symbol["u4"][2] = self.symbols["severe"]
-
-        self.symbol["u5"][0] = self.symbols["empty"]
-        self.symbol["u5"][1] = self.symbols["empty"]
-        self.symbol["u5"][2] = self.symbols["empty"]
 
     def getLabel(self, state, action):
         if self.isEnd(state):
@@ -99,18 +74,21 @@ class FSAConstants:
         if state[4] == 'p':
             return self.label[(False, False)]
 
+    def nextState(self, u, s, a):
+        sig = self.getLabel(s, a)
 
-    def getSymbol(self, state, label):
-        # print(state, label, self.symbol[state][label])
-        return self.symbol[state][label]
+        s = []
+        s_pro = []
+        for i in self.state_transitions[u][sig]:
+            s += [i]
+            s_pro += [self.state_transitions[u][sig][i]]
+
+        return np.random.choice(s, p = s_pro)
 
     def symbolT(self, u, s, a, sym):
         # print("get symbol:", s)
-        symbol = self.getSymbol(u, self.getLabel(s, a))
-
-        if sym == symbol:
-            return 1
-        return 0
+        sig = self.getLabel(s, a)
+        return self.symbol[u][sig][sym]
 
     def T(self, u, s, a, u_):
         sig = self.getLabel(s, a)
@@ -122,5 +100,5 @@ if __name__ == '__main__':
     # trace = ((((0, 0), (5, 4), False, 'p'), 'down'), (((1, 0), (5, 4), False, 'p', 0), 'down'), (((2, 0), (5, 4), False, 'p', 0), 'left'), (((2, 0), (5, 4), False, 'p', 0), 'right'), (((2, 1), (5, 4), False, 'p', 0), 'down'), (((3, 1), (5, 4), False, 'p', 0), 'right'), (((4, 1), (5, 4), False, 'p', 0), 'right'), (((4, 2), (5, 4), False, 'r', 1), 'right'), (((4, 3), (5, 4), False, 'r', 2), 'down'), (((5, 3), (5, 4), False, 'p', 2), 'right'), (((5, 4), (5, 4), False, 'p', 2), 'pick_up'), (((5, 4), (5, 4), True, 'p', 2), 'up'), (((5, 5), (5, 5), True, 'p', 2), 'up'), (((4, 5), (4, 5), True, 'p', 2), 'up'), (((4, 6), (4, 6), True, 'p', 2), 'up'), (((3, 6), (3, 6), True, 'p', 2), 'drop'))
     # trace = ((((0, 0), (5, 4), False, 'p', 0), 'down'), (((1, 0), (5, 4), False, 'p', 0), 'down'), (((2, 0), (5, 4), False, 'p', 0), 'right'), (((2, 1), (5, 4), False, 'p', 0), 'down'), (((3, 1), (5, 4), False, 'p', 0), 'down'), (((4, 1), (5, 4), False, 'p', 0), 'right'), (((4, 2), (5, 4), False, 'r', 1), 'right'), (((4, 3), (5, 4), False, 'r', 2), 'down'), (((4, 4), (5, 4), False, 'r', 3), 'down'), (((5, 4), (5, 4), False, 'p', 3), 'pick_up'), (((5, 4), (5, 4), True, 'p', 3), 'up'), (((4, 4), (4, 4), True, 'r', 4), 'up'), (((3, 4), (3, 4), True, 'r', 5), 'right'), (((3, 5), (3, 5), True, 'p', 5), 'right'), (((3, 6), (3, 6), True, 'p', 5), 'drop'), 'end')
 
-    u = ((1, 1), (1, 1), True, False, 'r')
-    print(fsa.T("u1", u, "u2"))
+    u = ((0, 0), (1, 1), False, False, 'p')
+    print(fsa.nextState('0', u, "down"))

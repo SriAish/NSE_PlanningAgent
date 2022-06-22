@@ -28,7 +28,7 @@ class FSAConstants:
         self.state_transitions["u5"] = {}
 
         self.stateTransition()
-        print(self.state_transitions)
+        # print(self.state_transitions)
         # Storing transition probabilities
         self.transition_probabilities = {}
 
@@ -49,6 +49,7 @@ class FSAConstants:
         self.symbol["u4"] = {}
         self.symbol["u5"] = {}
         self.symbolTransition()
+        print(self.symbol)
 
     def isEnd(self, state):
         return state[0] == (-1, -1)
