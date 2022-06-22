@@ -1,5 +1,5 @@
 from EnvConst import BoxPushingConstants
-from FSAConst2 import FSAConstants
+from FSAConst import FSAConstants
 import sys
 import pickle
 import itertools
@@ -35,9 +35,7 @@ class FSAgent:
         init_loc = (0, 0)
         self.belief_state = []
         for i in self.locations:
-            s = (init_loc, i, False, False, 'p')
-            self.belief_state.append((self.FSA.nextState(s), s))
-        print(self.belief_state)
+            self.belief_state.append(("u1", (init_loc, i, False, False, 'p')))
 
     def init_var(self):
         self.x = {}
