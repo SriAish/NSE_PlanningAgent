@@ -1,5 +1,5 @@
 from EnvConst import BoxPushingConstants
-from FSAConst import FSAConstants
+from FSAConst2 import FSAConstants
 import sys
 import pickle
 import itertools
