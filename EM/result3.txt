@@ -69,3 +69,123 @@ done
 --- 22.384846687316895 seconds ---
 data_set/BP_15_15_20
 states:  7 trial:  15
+done
+--- 8335.606598377228 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  16
+done
+--- 49.38839936256409 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  17
+done
+--- 22.409170150756836 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  18
+done
+--- 26.842825412750244 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  19
+done
+--- 22.492777347564697 seconds ---
+--- 86600.84691596031 seconds for all trials---
+========================================================
+data_set/BP_15_15_20
+states:  7 trial:  0
+accuracy of:new_BP_15_15_20_7_0:  0.33571428571428574
+data_set/BP_15_15_20
+states:  7 trial:  1
+accuracy of:new_BP_15_15_20_7_1:  0.3166666666666666
+data_set/BP_15_15_20
+states:  7 trial:  2
+accuracy of:new_BP_15_15_20_7_2:  0.31190476190476196
+data_set/BP_15_15_20
+states:  7 trial:  3
+accuracy of:new_BP_15_15_20_7_3:  0.3071428571428571
+data_set/BP_15_15_20
+states:  7 trial:  4
+accuracy of:new_BP_15_15_20_7_4:  0.3333333333333333
+data_set/BP_15_15_20
+states:  7 trial:  5
+accuracy of:new_BP_15_15_20_7_5:  0.6690476190476191
+data_set/BP_15_15_20
+states:  7 trial:  6
+accuracy of:new_BP_15_15_20_7_6:  0.27380952380952384
+data_set/BP_15_15_20
+states:  7 trial:  7
+accuracy of:new_BP_15_15_20_7_7:  0.28809523809523807
+data_set/BP_15_15_20
+states:  7 trial:  8
+accuracy of:new_BP_15_15_20_7_8:  0.31666666666666665
+data_set/BP_15_15_20
+states:  7 trial:  9
+accuracy of:new_BP_15_15_20_7_9:  0.2785714285714286
+data_set/BP_15_15_20
+states:  7 trial:  10
+accuracy of:new_BP_15_15_20_7_10:  0.3476190476190476
+data_set/BP_15_15_20
+states:  7 trial:  11
+accuracy of:new_BP_15_15_20_7_11:  0.3666666666666667
+data_set/BP_15_15_20
+states:  7 trial:  12
+accuracy of:new_BP_15_15_20_7_12:  0.3404761904761905
+data_set/BP_15_15_20
+states:  7 trial:  13
+accuracy of:new_BP_15_15_20_7_13:  0.29523809523809524
+data_set/BP_15_15_20
+states:  7 trial:  14
+accuracy of:new_BP_15_15_20_7_14:  0.3380952380952381
+data_set/BP_15_15_20
+states:  7 trial:  15
+accuracy of:new_BP_15_15_20_7_15:  0.32619047619047614
+data_set/BP_15_15_20
+states:  7 trial:  16
+accuracy of:new_BP_15_15_20_7_16:  0.3571428571428571
+data_set/BP_15_15_20
+states:  7 trial:  17
+accuracy of:new_BP_15_15_20_7_17:  0.3380952380952381
+data_set/BP_15_15_20
+states:  7 trial:  18
+accuracy of:new_BP_15_15_20_7_18:  0.3404761904761905
+data_set/BP_15_15_20
+states:  7 trial:  19
+accuracy of:new_BP_15_15_20_7_19:  0.32857142857142857
+--------------------
+60
+data_set/BP_15_15_20
+states:  8 trial:  0
+done
+--- 36.94109582901001 seconds ---
+data_set/BP_15_15_20
+states:  8 trial:  1
+done
+--- 36.73042678833008 seconds ---
+data_set/BP_15_15_20
+states:  8 trial:  2
+done
+--- 58.758185386657715 seconds ---
+data_set/BP_15_15_20
+states:  8 trial:  3
+done
+--- 43.69422626495361 seconds ---
+data_set/BP_15_15_20
+states:  8 trial:  4
+done
+--- 29.07939124107361 seconds ---
+data_set/BP_15_15_20
+states:  8 trial:  5
+done
+--- 37.012710094451904 seconds ---
+data_set/BP_15_15_20
+states:  8 trial:  6
+done
+--- 5873.507945537567 seconds ---
+data_set/BP_15_15_20
+states:  8 trial:  7
+done
+--- 36.49050688743591 seconds ---
+data_set/BP_15_15_20
+states:  8 trial:  8
+done
+--- 36.53940153121948 seconds ---
+data_set/BP_15_15_20
+states:  8 trial:  9

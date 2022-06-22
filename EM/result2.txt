@@ -759,3 +759,7 @@ done
 --- 14957.507320404053 seconds ---
 data_set/BP_wh_40
 states:  5 trial:  1
+done
+--- 1059.21928024292 seconds ---
+data_set/BP_wh_40
+states:  5 trial:  2
