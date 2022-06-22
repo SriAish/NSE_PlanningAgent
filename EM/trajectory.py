@@ -1,9 +1,9 @@
 import random
 from misc import load, save
 
-severe = load("severe_train_15_15")
-mild = load("mild_train_15_15")
-no_nse = load("no_nse_train_15_15")
+severe = load("Test_Data")
+mild = load("Test_Data2")
+no_nse = load("Test_Data_15_15")
 s = []
 m = []
 n = []
