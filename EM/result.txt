@@ -841,3 +841,4 @@ done
 --- 502.2452561855316 seconds ---
 data_set/BP_n_40
 states:  6 trial:  3
+slurmstepd: error: *** JOB 701253 ON gnode060 CANCELLED AT 2022-06-22T00:58:19 DUE TO TIME LIMIT ***
