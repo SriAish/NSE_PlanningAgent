@@ -681,3 +681,81 @@ accuracy of:new_BP_wh_30_6_9:  0.6690058479532165
 120
 data_set/BP_wh_40
 states:  4 trial:  0
+done
+--- 5071.247718572617 seconds ---
+data_set/BP_wh_40
+states:  4 trial:  1
+done
+--- 18.9174485206604 seconds ---
+data_set/BP_wh_40
+states:  4 trial:  2
+done
+--- 19507.180562019348 seconds ---
+data_set/BP_wh_40
+states:  4 trial:  3
+done
+--- 1153.4956049919128 seconds ---
+data_set/BP_wh_40
+states:  4 trial:  4
+done
+--- 203.6246542930603 seconds ---
+data_set/BP_wh_40
+states:  4 trial:  5
+done
+--- 36.196765661239624 seconds ---
+data_set/BP_wh_40
+states:  4 trial:  6
+done
+--- 1778.7031197547913 seconds ---
+data_set/BP_wh_40
+states:  4 trial:  7
+done
+--- 149.97642064094543 seconds ---
+data_set/BP_wh_40
+states:  4 trial:  8
+done
+--- 834.6984119415283 seconds ---
+data_set/BP_wh_40
+states:  4 trial:  9
+done
+--- 289.75815200805664 seconds ---
+--- 29043.79910135269 seconds for all trials---
+========================================================
+data_set/BP_wh_40
+states:  4 trial:  0
+accuracy of:new_BP_wh_40_4_0:  0.8128654970760234
+data_set/BP_wh_40
+states:  4 trial:  1
+accuracy of:new_BP_wh_40_4_1:  0.3298245614035088
+data_set/BP_wh_40
+states:  4 trial:  2
+accuracy of:new_BP_wh_40_4_2:  0.6748538011695906
+data_set/BP_wh_40
+states:  4 trial:  3
+accuracy of:new_BP_wh_40_4_3:  0.3368421052631579
+data_set/BP_wh_40
+states:  4 trial:  4
+accuracy of:new_BP_wh_40_4_4:  0.34502923976608185
+data_set/BP_wh_40
+states:  4 trial:  5
+accuracy of:new_BP_wh_40_4_5:  0.34152046783625734
+data_set/BP_wh_40
+states:  4 trial:  6
+accuracy of:new_BP_wh_40_4_6:  0.4988304093567251
+data_set/BP_wh_40
+states:  4 trial:  7
+accuracy of:new_BP_wh_40_4_7:  0.3257309941520467
+data_set/BP_wh_40
+states:  4 trial:  8
+accuracy of:new_BP_wh_40_4_8:  0.3210526315789473
+data_set/BP_wh_40
+states:  4 trial:  9
+accuracy of:new_BP_wh_40_4_9:  0.3491228070175439
+--------------------
+120
+data_set/BP_wh_40
+states:  5 trial:  0
+done
+--- 14957.507320404053 seconds ---
+data_set/BP_wh_40
+states:  5 trial:  1

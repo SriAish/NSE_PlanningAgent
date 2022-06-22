@@ -25,3 +25,47 @@ done
 --- 35.797438859939575 seconds ---
 data_set/BP_15_15_20
 states:  7 trial:  4
+done
+--- 47253.069851875305 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  5
+done
+--- 17934.20356798172 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  6
+done
+--- 3788.0140810012817 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  7
+done
+--- 26.783129930496216 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  8
+done
+--- 31.16475534439087 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  9
+done
+--- 1282.188462972641 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  10
+done
+--- 17.943653106689453 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  11
+done
+--- 7632.066096544266 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  12
+done
+--- 17.78885531425476 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  13
+done
+--- 26.81067705154419 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  14
+done
+--- 22.384846687316895 seconds ---
+data_set/BP_15_15_20
+states:  7 trial:  15
