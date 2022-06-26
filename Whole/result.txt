@@ -10,3 +10,102 @@ Start learning FSA
 30
 data_set/BP_n_10
 states:  5 trial:  0
+done
+--- 33.9439172744751 seconds ---
+data_set/BP_n_10
+states:  5 trial:  1
+done
+--- 1.3912076950073242 seconds ---
+data_set/BP_n_10
+states:  5 trial:  2
+done
+--- 7.254370927810669 seconds ---
+data_set/BP_n_10
+states:  5 trial:  3
+done
+--- 1.7583503723144531 seconds ---
+data_set/BP_n_10
+states:  5 trial:  4
+done
+--- 6.903954029083252 seconds ---
+data_set/BP_n_10
+states:  5 trial:  5
+done
+--- 2.46818208694458 seconds ---
+data_set/BP_n_10
+states:  5 trial:  6
+done
+--- 1.7187459468841553 seconds ---
+data_set/BP_n_10
+states:  5 trial:  7
+done
+--- 11.706764936447144 seconds ---
+data_set/BP_n_10
+states:  5 trial:  8
+done
+--- 125.68587923049927 seconds ---
+data_set/BP_n_10
+states:  5 trial:  9
+done
+--- 76.34212303161621 seconds ---
+--- 269.1736783981323 seconds for all trials---
+========================================================
+Checking Accuracy of learned FSAs
+data_set/BP_n_10
+states:  5 trial:  0
+accuracy of:new_BP_n_10_5_0:  0.33771929824561403
+data_set/BP_n_10
+states:  5 trial:  1
+accuracy of:new_BP_n_10_5_1:  0.3269005847953216
+data_set/BP_n_10
+states:  5 trial:  2
+accuracy of:new_BP_n_10_5_2:  0.33128654970760235
+data_set/BP_n_10
+states:  5 trial:  3
+accuracy of:new_BP_n_10_5_3:  0.33157894736842103
+data_set/BP_n_10
+states:  5 trial:  4
+accuracy of:new_BP_n_10_5_4:  0.33596491228070174
+data_set/BP_n_10
+states:  5 trial:  5
+accuracy of:new_BP_n_10_5_5:  0.3400584795321637
+data_set/BP_n_10
+states:  5 trial:  6
+accuracy of:new_BP_n_10_5_6:  0.3429824561403509
+data_set/BP_n_10
+states:  5 trial:  7
+accuracy of:new_BP_n_10_5_7:  0.33538011695906433
+data_set/BP_n_10
+states:  5 trial:  8
+accuracy of:new_BP_n_10_5_8:  0.85
+data_set/BP_n_10
+states:  5 trial:  9
+accuracy of:new_BP_n_10_5_9:  0.6570175438596492
+running agent
+--------------------
+--------------------
+--------------------
+Start learning FSA
+90
+data_set/BP_n_30
+states:  5 trial:  0
+done
+--- 29.148953199386597 seconds ---
+data_set/BP_n_30
+states:  5 trial:  1
+done
+--- 4.452868700027466 seconds ---
+data_set/BP_n_30
+states:  5 trial:  2
+done
+--- 3941.5216705799103 seconds ---
+data_set/BP_n_30
+states:  5 trial:  3
+done
+--- 209.54441857337952 seconds ---
+data_set/BP_n_30
+states:  5 trial:  4
+done
+--- 4.513103485107422 seconds ---
+data_set/BP_n_30
+states:  5 trial:  5
