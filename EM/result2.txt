@@ -763,3 +763,90 @@ done
 --- 1059.21928024292 seconds ---
 data_set/BP_wh_40
 states:  5 trial:  2
+done
+--- 7295.887088775635 seconds ---
+data_set/BP_wh_40
+states:  5 trial:  3
+done
+--- 550.9060261249542 seconds ---
+data_set/BP_wh_40
+states:  5 trial:  4
+done
+--- 6111.005188703537 seconds ---
+data_set/BP_wh_40
+states:  5 trial:  5
+done
+--- 8545.224535942078 seconds ---
+data_set/BP_wh_40
+states:  5 trial:  6
+done
+--- 17290.106810092926 seconds ---
+data_set/BP_wh_40
+states:  5 trial:  7
+done
+--- 4300.772431373596 seconds ---
+data_set/BP_wh_40
+states:  5 trial:  8
+done
+--- 7445.707832098007 seconds ---
+data_set/BP_wh_40
+states:  5 trial:  9
+done
+--- 2455.516110420227 seconds ---
+--- 70011.85289621353 seconds for all trials---
+========================================================
+data_set/BP_wh_40
+states:  5 trial:  0
+accuracy of:new_BP_wh_40_5_0:  0.6789473684210526
+data_set/BP_wh_40
+states:  5 trial:  1
+accuracy of:new_BP_wh_40_5_1:  0.33976608187134505
+data_set/BP_wh_40
+states:  5 trial:  2
+accuracy of:new_BP_wh_40_5_2:  0.804093567251462
+data_set/BP_wh_40
+states:  5 trial:  3
+accuracy of:new_BP_wh_40_5_3:  0.3087719298245614
+data_set/BP_wh_40
+states:  5 trial:  4
+accuracy of:new_BP_wh_40_5_4:  0.6543859649122806
+data_set/BP_wh_40
+states:  5 trial:  5
+accuracy of:new_BP_wh_40_5_5:  0.7748538011695906
+data_set/BP_wh_40
+states:  5 trial:  6
+accuracy of:new_BP_wh_40_5_6:  0.6450292397660818
+data_set/BP_wh_40
+states:  5 trial:  7
+accuracy of:new_BP_wh_40_5_7:  0.6690058479532164
+data_set/BP_wh_40
+states:  5 trial:  8
+accuracy of:new_BP_wh_40_5_8:  0.6467836257309942
+data_set/BP_wh_40
+states:  5 trial:  9
+accuracy of:new_BP_wh_40_5_9:  0.8631578947368419
+--------------------
+120
+data_set/BP_wh_40
+states:  6 trial:  0
+done
+--- 102.38617968559265 seconds ---
+data_set/BP_wh_40
+states:  6 trial:  1
+done
+--- 36641.690314531326 seconds ---
+data_set/BP_wh_40
+states:  6 trial:  2
+done
+--- 89.78416895866394 seconds ---
+data_set/BP_wh_40
+states:  6 trial:  3
+done
+--- 42484.12880349159 seconds ---
+data_set/BP_wh_40
+states:  6 trial:  4
+done
+--- 21348.68952202797 seconds ---
+data_set/BP_wh_40
+states:  6 trial:  5
+slurmstepd: error: *** JOB 701631 ON gnode032 CANCELLED AT 2022-06-24T20:21:14 DUE TO TIME LIMIT ***

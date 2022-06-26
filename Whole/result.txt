@@ -1,0 +1,12 @@
+==========================================
+SLURM_JOB_ID = 705366
+SLURM_NODELIST = gnode041
+SLURM_JOB_GPUS = 0
+==========================================
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
+/var/spool/slurmd/job705366/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+Start learning FSA
+30
+data_set/BP_n_10
+states:  5 trial:  0
