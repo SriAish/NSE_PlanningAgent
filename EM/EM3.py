@@ -1,11 +1,11 @@
 from FB import FB
 import sys
-import pickle
+# import pickle
 import random
 from misc import load, save
 from math import log
 import time
-from test import run_test, FSA
+# from test import run_test, FSA
 
 R = load(sys.argv[1])
 # R_val = load("Valid_Data_15_15")
@@ -259,7 +259,7 @@ for i_try in range(20):
         del n_omega
         n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
         diff = abs(n_obj - o_obj)
-        fsa = FSA(o_delta, o_omega)
+        # fsa = FSA(o_delta, o_omega)
         # acc = run_test(R_val, fsa)
         print(itr, diff)
         sys.stdout.flush()
