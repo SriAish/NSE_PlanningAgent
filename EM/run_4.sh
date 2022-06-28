@@ -10,46 +10,46 @@ module add cudnn/8.4.0-cuda-11.6
 source ~/keras/bin/activate
 
 python3 EM3.py data_set/BP_15_15_40_13 7
-python3 test3.py data_set/BP_15_15_40_13 7
+python3 test4.py data_set/BP_15_15_40_13 7
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_13 8
-python3 test3.py data_set/BP_15_15_40_13 8
+python3 test4.py data_set/BP_15_15_40_13 8
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_13 9
-python3 test3.py data_set/BP_15_15_40_13 9
+python3 test4.py data_set/BP_15_15_40_13 9
 echo "--------------------"
 echo "--------------------"
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_26 7
-python3 test3.py data_set/BP_15_15_40_26 7
+python3 test4.py data_set/BP_15_15_40_26 7
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_26 8
-python3 test3.py data_set/BP_15_15_40_26 8
+python3 test4.py data_set/BP_15_15_40_26 8
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_26 9
-python3 test3.py data_set/BP_15_15_40_26 9
+python3 test4.py data_set/BP_15_15_40_26 9
 echo "--------------------"
 echo "--------------------"
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_39 7
-python3 test3.py data_set/BP_15_15_40_39 7
+python3 test4.py data_set/BP_15_15_40_39 7
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_39 8
-python3 test3.py data_set/BP_15_15_40_39 8
+python3 test4.py data_set/BP_15_15_40_39 8
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_39 9
-python3 test3.py data_set/BP_15_15_40_39 9
+python3 test4.py data_set/BP_15_15_40_39 9
 echo "--------------------"
 echo "--------------------"
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_52 7
-python3 test3.py data_set/BP_15_15_40_52 7
+python3 test4.py data_set/BP_15_15_40_52 7
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_52 8
-python3 test3.py data_set/BP_15_15_40_52 8
+python3 test4.py data_set/BP_15_15_40_52 8
 echo "--------------------"
 python3 EM3.py data_set/BP_15_15_40_52 9
-python3 test3.py data_set/BP_15_15_40_52 9
+python3 test4.py data_set/BP_15_15_40_52 9
 echo "--------------------"
 echo "--------------------"
 echo "--------------------"
