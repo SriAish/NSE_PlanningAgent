@@ -61,14 +61,17 @@ def generate_mean_std(n, agent, new, box_loc):
         mild = set()
         no_nse = set()
     else:
-        severe = set(load("severe_trajectories_15_15"))
-        mild = set(load("mild_trajectories_15_15"))
-        no_nse = set(load("no_nse_trajectories_15_15_ran"))
+        severe = set(load("severe_trajectories_15_15_35"))
+        mild = set(load("mild_trajectories_15_15_35"))
+        no_nse = set(load("no_nse_trajectories_15_15_35"))
     print(len(severe), len(mild), len(no_nse))
     i = 0
     while i < n:
         i += 1
         rug_c, t = generate_trajectory(agent, box_loc)
+        if len(t) > 40:
+            i -= 1
+            continue
         if rug_c < 1:
             t += ['N']
             no_nse.add(tuple(t))
@@ -83,9 +86,9 @@ def generate_mean_std(n, agent, new, box_loc):
             severe.add(tuple(t))
     print(t)
     print(len(severe), len(mild), len(no_nse))
-    # save("severe_trajectories_15_15_ran", list(severe))
-    # save("mild_trajectories_15_15_ran", list(mild))
-    save("no_nse_trajectories_15_15_ran", list(no_nse))
+    save("severe_trajectories_15_15_35", list(severe))
+    save("mild_trajectories_15_15_35", list(mild))
+    save("no_nse_trajectories_15_15_35", list(no_nse))
 
 class Agent:
     def __init__(self, name):
@@ -120,8 +123,8 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/VIp_15_15140.pkl"
+    pol = "policy/VIp_15_1544.pkl"
     agent = Agent(pol)
     print(pol)
-    generate_mean_std(1000, agent, False, (14, 0))
+    generate_mean_std(10000, agent, False, (4, 4))
     # generate_trajectory(agent)
