@@ -218,7 +218,7 @@ out_sym = ['N', 'S', 'M', 3]
 file_name = sys.argv[1][sys.argv[1].index("/")+1:]
 
 all_start_time = time.time()
-for i_try in range(1):
+for i_try in range(20):
     print(sys.argv[1])
     print("states: ", sys.argv[2], "trial: ", i_try)
     start_time = time.time()
