@@ -234,7 +234,7 @@ for i_try in range(20):
     save("results/omega/init_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_omega)
     objective_val = []
     objective_val.append(o_obj)
-    fsa = FSA(o_delta, o_omega)
+    # fsa = FSA(o_delta, o_omega)
     # acc = run_test(R_val, fsa)
     while diff > 0.001:
         n_delta = cal_delta(fb, states, in_sym)
