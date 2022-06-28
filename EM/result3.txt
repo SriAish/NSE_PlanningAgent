@@ -16,3 +16,52 @@ done
 --- 31.848967790603638 seconds ---
 data_set/BP_15_15_28
 states:  7 trial:  1
+done
+--- 6006.475523948669 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  2
+done
+--- 50.00280475616455 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  3
+done
+--- 5698.563372135162 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  4
+done
+--- 30296.945697307587 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  5
+done
+--- 37.428465604782104 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  6
+done
+--- 36.9678168296814 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  7
+done
+--- 43.55679774284363 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  8
+done
+--- 24.855283498764038 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  9
+done
+--- 37.03353834152222 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  10
+done
+--- 56.296796560287476 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  11
+done
+--- 12308.9787607193 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  12
+done
+--- 4521.849885702133 seconds ---
+data_set/BP_15_15_28
+states:  7 trial:  13
+slurmstepd: error: *** JOB 705367 ON gnode042 CANCELLED AT 2022-06-28T22:24:23 DUE TO TIME LIMIT ***

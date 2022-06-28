@@ -109,3 +109,144 @@ done
 --- 4.513103485107422 seconds ---
 data_set/BP_n_30
 states:  5 trial:  5
+done
+--- 742.0066394805908 seconds ---
+data_set/BP_n_30
+states:  5 trial:  6
+done
+--- 197.49939227104187 seconds ---
+data_set/BP_n_30
+states:  5 trial:  7
+done
+--- 1005.7648644447327 seconds ---
+data_set/BP_n_30
+states:  5 trial:  8
+done
+--- 4.4863362312316895 seconds ---
+data_set/BP_n_30
+states:  5 trial:  9
+done
+--- 697.3582437038422 seconds ---
+--- 6836.296693563461 seconds for all trials---
+========================================================
+Checking Accuracy of learned FSAs
+data_set/BP_n_30
+states:  5 trial:  0
+accuracy of:new_BP_n_30_5_0:  0.34093567251461987
+data_set/BP_n_30
+states:  5 trial:  1
+accuracy of:new_BP_n_30_5_1:  0.3312865497076023
+data_set/BP_n_30
+states:  5 trial:  2
+accuracy of:new_BP_n_30_5_2:  1.0
+data_set/BP_n_30
+states:  5 trial:  3
+accuracy of:new_BP_n_30_5_3:  0.857017543859649
+data_set/BP_n_30
+states:  5 trial:  4
+accuracy of:new_BP_n_30_5_4:  0.3362573099415205
+data_set/BP_n_30
+states:  5 trial:  5
+accuracy of:new_BP_n_30_5_5:  0.853216374269006
+data_set/BP_n_30
+states:  5 trial:  6
+accuracy of:new_BP_n_30_5_6:  0.6704678362573099
+data_set/BP_n_30
+states:  5 trial:  7
+accuracy of:new_BP_n_30_5_7:  0.33654970760233915
+data_set/BP_n_30
+states:  5 trial:  8
+accuracy of:new_BP_n_30_5_8:  0.3365497076023392
+data_set/BP_n_30
+states:  5 trial:  9
+accuracy of:new_BP_n_30_5_9:  0.6891812865497076
+Create FSA in the expected format
+Traceback (most recent call last):
+  File "makeFSA.py", line 90, in <module>
+    fsa = FSAConstants(delta, omega)
+NameError: name 'delta' is not defined
+running agent
+--------------------
+--------------------
+--------------------
+Start learning FSA
+120
+data_set/BP_n_40
+states:  5 trial:  0
+done
+--- 260.6983950138092 seconds ---
+data_set/BP_n_40
+states:  5 trial:  1
+done
+--- 468.99204182624817 seconds ---
+data_set/BP_n_40
+states:  5 trial:  2
+done
+--- 31.389616012573242 seconds ---
+data_set/BP_n_40
+states:  5 trial:  3
+done
+--- 536.7988760471344 seconds ---
+data_set/BP_n_40
+states:  5 trial:  4
+done
+--- 56.21572208404541 seconds ---
+data_set/BP_n_40
+states:  5 trial:  5
+done
+--- 1066.536344051361 seconds ---
+data_set/BP_n_40
+states:  5 trial:  6
+done
+--- 334.5979447364807 seconds ---
+data_set/BP_n_40
+states:  5 trial:  7
+done
+--- 426.5609292984009 seconds ---
+data_set/BP_n_40
+states:  5 trial:  8
+done
+--- 703.4454071521759 seconds ---
+data_set/BP_n_40
+states:  5 trial:  9
+done
+--- 4.752721786499023 seconds ---
+--- 3889.9882957935333 seconds for all trials---
+========================================================
+Checking Accuracy of learned FSAs
+data_set/BP_n_40
+states:  5 trial:  0
+accuracy of:new_BP_n_40_5_0:  0.33216374269005844
+data_set/BP_n_40
+states:  5 trial:  1
+accuracy of:new_BP_n_40_5_1:  0.9046783625730995
+data_set/BP_n_40
+states:  5 trial:  2
+accuracy of:new_BP_n_40_5_2:  0.33684210526315794
+data_set/BP_n_40
+states:  5 trial:  3
+accuracy of:new_BP_n_40_5_3:  0.856140350877193
+data_set/BP_n_40
+states:  5 trial:  4
+accuracy of:new_BP_n_40_5_4:  0.34035087719298246
+data_set/BP_n_40
+states:  5 trial:  5
+accuracy of:new_BP_n_40_5_5:  0.6690058479532163
+data_set/BP_n_40
+states:  5 trial:  6
+accuracy of:new_BP_n_40_5_6:  0.8637426900584796
+data_set/BP_n_40
+states:  5 trial:  7
+accuracy of:new_BP_n_40_5_7:  0.8538011695906433
+data_set/BP_n_40
+states:  5 trial:  8
+accuracy of:new_BP_n_40_5_8:  0.37017543859649127
+data_set/BP_n_40
+states:  5 trial:  9
+accuracy of:new_BP_n_40_5_9:  0.32953216374269007
+Create FSA in the expected format
+Traceback (most recent call last):
+  File "makeFSA.py", line 90, in <module>
+    fsa = FSAConstants(delta, omega)
+NameError: name 'delta' is not defined
+running agent
