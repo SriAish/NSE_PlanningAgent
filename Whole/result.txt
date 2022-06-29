@@ -1,87 +1,88 @@
 ==========================================
-SLURM_JOB_ID = 705366
-SLURM_NODELIST = gnode041
+SLURM_JOB_ID = 707890
+SLURM_NODELIST = gnode026
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job705366/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job707890/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Start learning FSA
 30
 data_set/BP_n_10
 states:  5 trial:  0
 done
---- 33.9439172744751 seconds ---
+--- 87.91121530532837 seconds ---
 data_set/BP_n_10
 states:  5 trial:  1
 done
---- 1.3912076950073242 seconds ---
+--- 45.038891077041626 seconds ---
 data_set/BP_n_10
 states:  5 trial:  2
 done
---- 7.254370927810669 seconds ---
+--- 77.48521375656128 seconds ---
 data_set/BP_n_10
 states:  5 trial:  3
 done
---- 1.7583503723144531 seconds ---
+--- 94.52475500106812 seconds ---
 data_set/BP_n_10
 states:  5 trial:  4
 done
---- 6.903954029083252 seconds ---
+--- 189.43612837791443 seconds ---
 data_set/BP_n_10
 states:  5 trial:  5
 done
---- 2.46818208694458 seconds ---
+--- 1.3053131103515625 seconds ---
 data_set/BP_n_10
 states:  5 trial:  6
 done
---- 1.7187459468841553 seconds ---
+--- 157.42626070976257 seconds ---
 data_set/BP_n_10
 states:  5 trial:  7
 done
---- 11.706764936447144 seconds ---
+--- 1.305290699005127 seconds ---
 data_set/BP_n_10
 states:  5 trial:  8
 done
---- 125.68587923049927 seconds ---
+--- 25.365915298461914 seconds ---
 data_set/BP_n_10
 states:  5 trial:  9
 done
---- 76.34212303161621 seconds ---
---- 269.1736783981323 seconds for all trials---
+--- 317.3655309677124 seconds ---
+--- 997.164674282074 seconds for all trials---
 ========================================================
 Checking Accuracy of learned FSAs
 data_set/BP_n_10
 states:  5 trial:  0
-accuracy of:new_BP_n_10_5_0:  0.33771929824561403
+accuracy of:new_BP_n_10_5_0:  0.9859649122807017
 data_set/BP_n_10
 states:  5 trial:  1
-accuracy of:new_BP_n_10_5_1:  0.3269005847953216
+accuracy of:new_BP_n_10_5_1:  0.8546783625730996
 data_set/BP_n_10
 states:  5 trial:  2
-accuracy of:new_BP_n_10_5_2:  0.33128654970760235
+accuracy of:new_BP_n_10_5_2:  0.671345029239766
 data_set/BP_n_10
 states:  5 trial:  3
-accuracy of:new_BP_n_10_5_3:  0.33157894736842103
+accuracy of:new_BP_n_10_5_3:  0.9751461988304093
 data_set/BP_n_10
 states:  5 trial:  4
-accuracy of:new_BP_n_10_5_4:  0.33596491228070174
+accuracy of:new_BP_n_10_5_4:  0.9894736842105262
 data_set/BP_n_10
 states:  5 trial:  5
-accuracy of:new_BP_n_10_5_5:  0.3400584795321637
+accuracy of:new_BP_n_10_5_5:  0.3274853801169591
 data_set/BP_n_10
 states:  5 trial:  6
-accuracy of:new_BP_n_10_5_6:  0.3429824561403509
+accuracy of:new_BP_n_10_5_6:  0.6640350877192982
 data_set/BP_n_10
 states:  5 trial:  7
-accuracy of:new_BP_n_10_5_7:  0.33538011695906433
+accuracy of:new_BP_n_10_5_7:  0.337719298245614
 data_set/BP_n_10
 states:  5 trial:  8
-accuracy of:new_BP_n_10_5_8:  0.85
+accuracy of:new_BP_n_10_5_8:  0.3353801169590643
 data_set/BP_n_10
 states:  5 trial:  9
-accuracy of:new_BP_n_10_5_9:  0.6570175438596492
+accuracy of:new_BP_n_10_5_9:  0.6672514619883041
 running agent
+-1656527584
 --------------------
 --------------------
 --------------------
@@ -90,163 +91,6 @@ Start learning FSA
 data_set/BP_n_30
 states:  5 trial:  0
 done
---- 29.148953199386597 seconds ---
+--- 10.382012844085693 seconds ---
 data_set/BP_n_30
 states:  5 trial:  1
-done
---- 4.452868700027466 seconds ---
-data_set/BP_n_30
-states:  5 trial:  2
-done
---- 3941.5216705799103 seconds ---
-data_set/BP_n_30
-states:  5 trial:  3
-done
---- 209.54441857337952 seconds ---
-data_set/BP_n_30
-states:  5 trial:  4
-done
---- 4.513103485107422 seconds ---
-data_set/BP_n_30
-states:  5 trial:  5
-done
---- 742.0066394805908 seconds ---
-data_set/BP_n_30
-states:  5 trial:  6
-done
---- 197.49939227104187 seconds ---
-data_set/BP_n_30
-states:  5 trial:  7
-done
---- 1005.7648644447327 seconds ---
-data_set/BP_n_30
-states:  5 trial:  8
-done
---- 4.4863362312316895 seconds ---
-data_set/BP_n_30
-states:  5 trial:  9
-done
---- 697.3582437038422 seconds ---
---- 6836.296693563461 seconds for all trials---
-========================================================
-Checking Accuracy of learned FSAs
-data_set/BP_n_30
-states:  5 trial:  0
-accuracy of:new_BP_n_30_5_0:  0.34093567251461987
-data_set/BP_n_30
-states:  5 trial:  1
-accuracy of:new_BP_n_30_5_1:  0.3312865497076023
-data_set/BP_n_30
-states:  5 trial:  2
-accuracy of:new_BP_n_30_5_2:  1.0
-data_set/BP_n_30
-states:  5 trial:  3
-accuracy of:new_BP_n_30_5_3:  0.857017543859649
-data_set/BP_n_30
-states:  5 trial:  4
-accuracy of:new_BP_n_30_5_4:  0.3362573099415205
-data_set/BP_n_30
-states:  5 trial:  5
-accuracy of:new_BP_n_30_5_5:  0.853216374269006
-data_set/BP_n_30
-states:  5 trial:  6
-accuracy of:new_BP_n_30_5_6:  0.6704678362573099
-data_set/BP_n_30
-states:  5 trial:  7
-accuracy of:new_BP_n_30_5_7:  0.33654970760233915
-data_set/BP_n_30
-states:  5 trial:  8
-accuracy of:new_BP_n_30_5_8:  0.3365497076023392
-data_set/BP_n_30
-states:  5 trial:  9
-accuracy of:new_BP_n_30_5_9:  0.6891812865497076
-Create FSA in the expected format
-Traceback (most recent call last):
-  File "makeFSA.py", line 90, in <module>
-    fsa = FSAConstants(delta, omega)
-NameError: name 'delta' is not defined
-running agent
---------------------
---------------------
---------------------
-Start learning FSA
-120
-data_set/BP_n_40
-states:  5 trial:  0
-done
---- 260.6983950138092 seconds ---
-data_set/BP_n_40
-states:  5 trial:  1
-done
---- 468.99204182624817 seconds ---
-data_set/BP_n_40
-states:  5 trial:  2
-done
---- 31.389616012573242 seconds ---
-data_set/BP_n_40
-states:  5 trial:  3
-done
---- 536.7988760471344 seconds ---
-data_set/BP_n_40
-states:  5 trial:  4
-done
---- 56.21572208404541 seconds ---
-data_set/BP_n_40
-states:  5 trial:  5
-done
---- 1066.536344051361 seconds ---
-data_set/BP_n_40
-states:  5 trial:  6
-done
---- 334.5979447364807 seconds ---
-data_set/BP_n_40
-states:  5 trial:  7
-done
---- 426.5609292984009 seconds ---
-data_set/BP_n_40
-states:  5 trial:  8
-done
---- 703.4454071521759 seconds ---
-data_set/BP_n_40
-states:  5 trial:  9
-done
---- 4.752721786499023 seconds ---
---- 3889.9882957935333 seconds for all trials---
-========================================================
-Checking Accuracy of learned FSAs
-data_set/BP_n_40
-states:  5 trial:  0
-accuracy of:new_BP_n_40_5_0:  0.33216374269005844
-data_set/BP_n_40
-states:  5 trial:  1
-accuracy of:new_BP_n_40_5_1:  0.9046783625730995
-data_set/BP_n_40
-states:  5 trial:  2
-accuracy of:new_BP_n_40_5_2:  0.33684210526315794
-data_set/BP_n_40
-states:  5 trial:  3
-accuracy of:new_BP_n_40_5_3:  0.856140350877193
-data_set/BP_n_40
-states:  5 trial:  4
-accuracy of:new_BP_n_40_5_4:  0.34035087719298246
-data_set/BP_n_40
-states:  5 trial:  5
-accuracy of:new_BP_n_40_5_5:  0.6690058479532163
-data_set/BP_n_40
-states:  5 trial:  6
-accuracy of:new_BP_n_40_5_6:  0.8637426900584796
-data_set/BP_n_40
-states:  5 trial:  7
-accuracy of:new_BP_n_40_5_7:  0.8538011695906433
-data_set/BP_n_40
-states:  5 trial:  8
-accuracy of:new_BP_n_40_5_8:  0.37017543859649127
-data_set/BP_n_40
-states:  5 trial:  9
-accuracy of:new_BP_n_40_5_9:  0.32953216374269007
-Create FSA in the expected format
-Traceback (most recent call last):
-  File "makeFSA.py", line 90, in <module>
-    fsa = FSAConstants(delta, omega)
-NameError: name 'delta' is not defined
-running agent
