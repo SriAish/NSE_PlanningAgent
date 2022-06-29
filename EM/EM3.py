@@ -236,7 +236,7 @@ for i_try in range(10):
     objective_val.append(o_obj)
     # fsa = FSA(o_delta, o_omega)
     # acc = run_test(R_val, fsa)
-    while diff > 0.005 and itr < 1000:
+    while diff > 0.003 and itr < 1000:
         n_delta = cal_delta(fb, states, in_sym)
         n_omega = cal_omega(fb, states, in_sym, out_sym)
 
@@ -261,7 +261,7 @@ for i_try in range(10):
         diff = abs(n_obj - o_obj)
         # fsa = FSA(o_delta, o_omega)
         # acc = run_test(R_val, fsa)
-        print(itr, diff)
+        # print(itr, diff)
         sys.stdout.flush()
         o_obj = n_obj
         objective_val.append(o_obj)
