@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A research
+#SBATCH -A MLL
 #SBATCH --cpus-per-gpu=2
 #SBATCH --gres=gpu:1
 #SBATCH --mem-per-cpu=80G
