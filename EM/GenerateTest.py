@@ -6,8 +6,8 @@ def get_sym(t = 0, b = False):
 
     if t==1:
         if v <= 0.5:
-            return 'a'
-        return 'b'
+            return 1
+        return 0
 
     # if b:
         # if v <= 0.5:
@@ -15,29 +15,29 @@ def get_sym(t = 0, b = False):
         # return 'e'
 
     if v <= 0.4:
-        return 'a'
+        return 1
     if v <= 0.8:
-        return 'b'
-    return 'e'
+        return 0
+    return 2
 
 def get_traj():
     b = 0
     s = get_sym(1)
     traj = []
 
-    while s != 'e':
-        traj += s
+    while s != 2:
+        traj += [s]
 
-        if s == 'b':
+        if s == 0:
             b += 1
         s = get_sym()
-    traj += s
-    if b > 0 and b <= 2:
-        traj += [1]
-    elif b > 2:
-        traj += [2]
+    traj += [s]
+    if b > 0 and b <= 5:
+        traj += ['M']
+    elif b > 5:
+        traj += ['S']
     else:
-        traj += [0]
+        traj += ['N']
 
     return traj
 
@@ -48,10 +48,11 @@ def generate_trajectories(n):
     lr = 0
     while n:
         r = get_traj()
-        if r[-1] == 0:
+        print(r)
+        if r[-1] == 'N':
             r0 += [tuple(r)]
             # r0.add(tuple(r))
-        elif r[-1] == 1:
+        elif r[-1] == 'M':
             r1 += [tuple(r)]
             # r1.add(tuple(r))
         else:
@@ -81,7 +82,7 @@ def save(name, t):
     file_to_write = open(name, "wb")
     pickle.dump(t, file_to_write)
 
-R = generate_trajectories(500)
+R = generate_trajectories(400)
 print(random.sample(list(R), 10), len(R))
 random.shuffle(R)
 n = round(0.8*len(R))
@@ -100,8 +101,8 @@ for r in R_test:
         c1+=1
 
 
-save("BP_train", R_train)
-save("BP_test", R_test)
+save("BP_train_15_g", R_train)
+save("BP_test_15_g", R_test)
 
 print(len(R_train), len(R_test))
 print(c0, c1, c2)

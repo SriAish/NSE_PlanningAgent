@@ -5,7 +5,7 @@ import sys
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("BP_test_15_15_40_set")
+R = load("BP_test_15_g")
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
