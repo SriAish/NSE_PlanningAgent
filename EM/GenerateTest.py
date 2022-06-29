@@ -93,9 +93,9 @@ c0 = 0
 c1 = 0
 c2 = 0
 for r in R_test:
-    if r[-1] == 0:
+    if r[-1] == 'N':
         c0+=1
-    elif r[-1] == 2:
+    elif r[-1] == 'S':
         c2+=1
     else:
         c1+=1
