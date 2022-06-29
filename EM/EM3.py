@@ -261,7 +261,7 @@ for i_try in range(10):
         diff = abs(n_obj - o_obj)
         # fsa = FSA(o_delta, o_omega)
         # acc = run_test(R_val, fsa)
-        # print(itr, diff)
+        print(itr, diff)
         sys.stdout.flush()
         o_obj = n_obj
         objective_val.append(o_obj)
