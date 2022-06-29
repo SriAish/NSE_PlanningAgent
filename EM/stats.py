@@ -69,6 +69,7 @@ def F1_score(R, out_sym, o):
     
     prec = float(tp)/float(tp + fp)
     rec = float(tp)/float(tp + fn)
+    print(tp, tn, fp, fn)
     return (2*prec*rec)/(prec + rec)
 
 def run_test(R, fsa):
