@@ -1,16 +1,11 @@
 from FB import FB
 import sys
-# import pickle
 import random
 from misc import load, save
 from math import log
 import time
-# from test import run_test, FSA
 
 R = load(sys.argv[1])
-# R_val = load("Valid_Data_15_15")
-# print(R)
-# R = random.sample(list(R_), 30)
 
 print(len(R))
 def init_delta(states, in_sym):

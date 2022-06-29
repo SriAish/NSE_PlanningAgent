@@ -30,24 +30,25 @@ def init_delta(states, in_sym):
     for i in in_sym:
         sum_del = 0
         for s in states:
-            delta['0'][i][s] = random.random()
+            delta['0'][i][s] = random.randrange(0, 1 - sum_del)
             sum_del += delta['0'][i][s]
             delta['#'][i][s] = 0
-        for s in states:
-            delta['0'][i][s] = (delta['0'][i][s]/sum_del)
+        delta['0'][i][states[-1]] += 1 - sum_del
+        # for s in states:
+        #     delta['0'][i][s] = (delta['0'][i][s]/sum_del)
         delta['#'][i]['#'] = 1
 
     for s in states:
         for i in in_sym:
             sum_del = 0
             for s_ in states:
-                delta[s][i][s_] = random.random()
+                delta[s][i][s_] = random.randrange(0, 1 - sum_del)
                 sum_del += delta[s][i][s_]
-            delta[s][i]['#'] = random.random()
-            sum_del += delta[s][i]['#']
-            delta[s][i]['#'] = delta[s][i]['#']/sum_del
-            for s_ in states:
-                delta[s][i][s_] = delta[s][i][s_]/sum_del
+            delta[s][i]['#'] = 1 - sum_del
+            # sum_del += delta[s][i]['#']
+            # delta[s][i]['#'] = delta[s][i]['#']/sum_del
+            # for s_ in states:
+            #     delta[s][i][s_] = delta[s][i][s_]/sum_del
 
     return delta
 
@@ -60,10 +61,11 @@ def init_omega(states, in_sym, out_sym):
             omega[s][i] = {}
             sum_omega = 0
             for o in out_sym:
-                omega[s][i][o] = random.random()
-                sum_omega += omega[s][i][o]
-            for o in out_sym:
-                omega[s][i][o] = omega[s][i][o]/sum_omega
+                omega[s][i][o] = random.randrange(0, 1 - sum_omega)
+                # sum_omega += omega[s][i][o]
+            omega[s][i][out_sym[-1]] += 1 - sum_omega
+            # for o in out_sym:
+            #     omega[s][i][o] = omega[s][i][o]/sum_omega
     for i in in_sym:
         omega['#'][i] = {}
         for o in out_sym:
