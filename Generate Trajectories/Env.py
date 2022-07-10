@@ -29,7 +29,7 @@ class BPEnv:
         self.prob = 0.05
 
         # Hash table to maintain transition probabilities 
-        self.agent_location = (0, 0)
+        self.agent_location = (2, 0)
         self.box_location = init_box_loc
         self.picked = False
         self.wrapped = False

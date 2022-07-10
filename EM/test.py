@@ -3,7 +3,6 @@ import numpy as np
 import sys
 from misc import load, save
 
-R = load("Test_Data")
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
@@ -102,6 +101,7 @@ def run_test(R, fsa):
 b = 0
 b_try = 0
 if __name__ == '__main__':
+    R = load("Test_Data")
     file_name = sys.argv[1][sys.argv[1].index("/")+1:]
     for i_try in range(10):
         print(sys.argv[1])
