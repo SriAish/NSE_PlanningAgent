@@ -8,7 +8,6 @@ import time
 from test import run_test, FSA
 
 R = load(sys.argv[1])
-R_val = load("Valid_Data")
 # print(R)
 # R = random.sample(list(R_), 30)
 
@@ -235,8 +234,7 @@ for i_try in range(10):
     objective_val = []
     objective_val.append(o_obj)
     fsa = FSA(o_delta, o_omega)
-    acc = run_test(R_val, fsa)
-    while diff > 0.005 and acc < 0.85:
+    while diff > 0.005:
         n_delta = cal_delta(fb, states, in_sym)
         n_omega = cal_omega(fb, states, in_sym, out_sym)
 
@@ -260,7 +258,6 @@ for i_try in range(10):
         n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
         diff = abs(n_obj - o_obj)
         fsa = FSA(o_delta, o_omega)
-        acc = run_test(R_val, fsa)
         # print(itr, diff)
         sys.stdout.flush()
         o_obj = n_obj
