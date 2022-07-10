@@ -22,7 +22,7 @@ def checkDamage(t, st=[6, 4]):
     return (ind/9)*100
 
 def generate_trajectory(agent, end_loc = (3, 6), box_loc = (3, 3)):
-    env = BPEnv(7, 3, 3, (2, 2), end_loc, box_loc)
+    env = BPEnv(15, 7, 3, (6, 4), end_loc, box_loc)
     done = False
 
     t = []
@@ -62,9 +62,9 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
         mild = set()
         no_nse = set()
     else:
-        severe = set(load("s_7_7_35"))
-        mild = set(load("m_7_7_35"))
-        no_nse = set(load("nn_7_7_35"))
+        severe = set(load("s_15_15_35"))
+        mild = set(load("m_15_15_35"))
+        no_nse = set(load("nn_15_15_35"))
     print(len(severe), len(mild), len(no_nse))
     i = 0
     while i < n:
@@ -77,7 +77,7 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
             t += ['N']
             no_nse.add(tuple(t))
             # print("No Nse")
-        elif rug_c < 3:
+        elif rug_c < 5:
             t += ['M']
             # print("mild")
             mild.add(tuple(t))
@@ -87,9 +87,9 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
             severe.add(tuple(t))
     print(t)
     print(len(severe), len(mild), len(no_nse))
-    save("s_7_7_35", list(severe))
-    save("m_7_7_35", list(mild))
-    save("nn_7_7_35", list(no_nse))
+    save("s_15_15_35", list(severe))
+    save("m_15_15_35", list(mild))
+    save("nn_15_15_35", list(no_nse))
 
 class Agent:
     def __init__(self, name):
@@ -124,7 +124,7 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/p_7_7_" + sys.argv[5] + ".pkl"
+    pol = "policy/p_15_15_" + sys.argv[5] + ".pkl"
     agent = Agent(pol)
     print(pol)
     generate_mean_std(10000, agent, False, (int(sys.argv[1]), int(sys.argv[2])), (int(sys.argv[3]), int(sys.argv[4])))

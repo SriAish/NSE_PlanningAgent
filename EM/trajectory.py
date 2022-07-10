@@ -1,9 +1,9 @@
 import random
 from misc import load, save
 
-severe = load("s_train_7_7_35")
-mild = load("m_train_7_7_35")
-no_nse = load("nn_train_7_7_35")
+severe = load("s_train_15_15_35")
+mild = load("m_train_15_15_35")
+no_nse = load("nn_train_15_15_35")
 s = []
 m = []
 n = []
@@ -35,23 +35,23 @@ print(len(s), len(m), len(n))
 # s_test = s[int(len(s)*0.8):]
 # m_test = m[int(len(m)*0.8):]
 # n_test = n[int(len(n)*0.8):]
-# save("s_train_7_7_35", s_train)
-# save("s_test_7_7_35", s_test)
-# save("m_train_7_7_35", m_train)
-# save("m_test_7_7_35", m_test)
-# save("nn_train_7_7_35", n_train)
-# save("nn_test_7_7_35", n_test)
+# save("s_train_15_15_35", s_train)
+# save("s_test_15_15_35", s_test)
+# save("m_train_15_15_35", m_train)
+# save("m_test_15_15_35", m_test)
+# save("nn_train_15_15_35", n_train)
+# save("nn_test_15_15_35", n_test)
 
 # R_train = s_train + m_train + n_train
 # R_test = s_test + m_test + n_test
-# save("BP_train_7_7_35_set", R_train)
-# save("BP_test_7_7_35_set", R_test)
+# save("BP_train_15_15_35_set", R_train)
+# save("BP_test_15_15_35_set", R_test)
 # R = random.sample(list(s), 14) +  random.sample(list(m), 14) + random.sample(list(n), 14)
 # save("Valid_Data_15_15", R)
 # print(len(s), len(m), len(n))
 for i in range(15, 26, 5):
     R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
-    save("BP_7_7_35_"+str(i), R)
+    save("BP_15_15_35_"+str(i), R)
 
 # i = 28
 # R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
