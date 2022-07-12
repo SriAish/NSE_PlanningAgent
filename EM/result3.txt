@@ -1,67 +1,545 @@
 ==========================================
-SLURM_JOB_ID = 705367
-SLURM_NODELIST = gnode042
-SLURM_JOB_GPUS = 1
+SLURM_JOB_ID = 715098
+SLURM_NODELIST = gnode023
+SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job705367/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
---------------------
---------------------
---------------------
-84
-data_set/BP_15_15_28
+/var/spool/slurmd/job715098/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+45
+data_set/BP_15_15_35_15
 states:  7 trial:  0
 done
---- 31.848967790603638 seconds ---
-data_set/BP_15_15_28
+--- 20.937344074249268 seconds ---
+data_set/BP_15_15_35_15
 states:  7 trial:  1
 done
---- 6006.475523948669 seconds ---
-data_set/BP_15_15_28
+--- 21.441320180892944 seconds ---
+data_set/BP_15_15_35_15
 states:  7 trial:  2
 done
---- 50.00280475616455 seconds ---
-data_set/BP_15_15_28
+--- 65.36339569091797 seconds ---
+data_set/BP_15_15_35_15
 states:  7 trial:  3
 done
---- 5698.563372135162 seconds ---
-data_set/BP_15_15_28
+--- 6.9189677238464355 seconds ---
+data_set/BP_15_15_35_15
 states:  7 trial:  4
 done
---- 30296.945697307587 seconds ---
-data_set/BP_15_15_28
+--- 357.5642924308777 seconds ---
+data_set/BP_15_15_35_15
 states:  7 trial:  5
 done
---- 37.428465604782104 seconds ---
-data_set/BP_15_15_28
+--- 8.650275230407715 seconds ---
+data_set/BP_15_15_35_15
 states:  7 trial:  6
 done
---- 36.9678168296814 seconds ---
-data_set/BP_15_15_28
+--- 608.8557608127594 seconds ---
+data_set/BP_15_15_35_15
 states:  7 trial:  7
 done
---- 43.55679774284363 seconds ---
-data_set/BP_15_15_28
+--- 399.8623104095459 seconds ---
+data_set/BP_15_15_35_15
 states:  7 trial:  8
 done
---- 24.855283498764038 seconds ---
-data_set/BP_15_15_28
+--- 43.522583961486816 seconds ---
+data_set/BP_15_15_35_15
 states:  7 trial:  9
 done
---- 37.03353834152222 seconds ---
-data_set/BP_15_15_28
-states:  7 trial:  10
+--- 763.4982805252075 seconds ---
+--- 2296.6147887706757 seconds for all trials---
+========================================================
+data_set/BP_15_15_35_15
+states:  7 trial:  0
+accuracy of:new_BP_15_15_35_15_7_0:  0.32132701421800947
+data_set/BP_15_15_35_15
+states:  7 trial:  1
+accuracy of:new_BP_15_15_35_15_7_1:  0.34549763033175357
+data_set/BP_15_15_35_15
+states:  7 trial:  2
+accuracy of:new_BP_15_15_35_15_7_2:  0.3350710900473933
+data_set/BP_15_15_35_15
+states:  7 trial:  3
+accuracy of:new_BP_15_15_35_15_7_3:  0.34312796208530805
+data_set/BP_15_15_35_15
+states:  7 trial:  4
+accuracy of:new_BP_15_15_35_15_7_4:  0.5454976303317536
+data_set/BP_15_15_35_15
+states:  7 trial:  5
+accuracy of:new_BP_15_15_35_15_7_5:  0.3345971563981043
+data_set/BP_15_15_35_15
+states:  7 trial:  6
+accuracy of:new_BP_15_15_35_15_7_6:  0.6578199052132702
+data_set/BP_15_15_35_15
+states:  7 trial:  7
+accuracy of:new_BP_15_15_35_15_7_7:  0.567298578199052
+data_set/BP_15_15_35_15
+states:  7 trial:  8
+accuracy of:new_BP_15_15_35_15_7_8:  0.3364928909952607
+data_set/BP_15_15_35_15
+states:  7 trial:  9
+accuracy of:new_BP_15_15_35_15_7_9:  0.7971563981042654
+--------------------
+45
+data_set/BP_15_15_35_15
+states:  8 trial:  0
 done
---- 56.296796560287476 seconds ---
-data_set/BP_15_15_28
-states:  7 trial:  11
+--- 790.028740644455 seconds ---
+data_set/BP_15_15_35_15
+states:  8 trial:  1
 done
---- 12308.9787607193 seconds ---
-data_set/BP_15_15_28
-states:  7 trial:  12
+--- 500.1691291332245 seconds ---
+data_set/BP_15_15_35_15
+states:  8 trial:  2
 done
---- 4521.849885702133 seconds ---
-data_set/BP_15_15_28
-states:  7 trial:  13
-slurmstepd: error: *** JOB 705367 ON gnode042 CANCELLED AT 2022-06-28T22:24:23 DUE TO TIME LIMIT ***
+--- 901.1233804225922 seconds ---
+data_set/BP_15_15_35_15
+states:  8 trial:  3
+done
+--- 842.6670899391174 seconds ---
+data_set/BP_15_15_35_15
+states:  8 trial:  4
+done
+--- 1636.649049282074 seconds ---
+data_set/BP_15_15_35_15
+states:  8 trial:  5
+done
+--- 63.625701904296875 seconds ---
+data_set/BP_15_15_35_15
+states:  8 trial:  6
+done
+--- 26.037649154663086 seconds ---
+data_set/BP_15_15_35_15
+states:  8 trial:  7
+done
+--- 832.4050550460815 seconds ---
+data_set/BP_15_15_35_15
+states:  8 trial:  8
+done
+--- 1074.5471551418304 seconds ---
+data_set/BP_15_15_35_15
+states:  8 trial:  9
+done
+--- 988.822197675705 seconds ---
+--- 7656.07532954216 seconds for all trials---
+========================================================
+data_set/BP_15_15_35_15
+states:  8 trial:  0
+accuracy of:new_BP_15_15_35_15_8_0:  0.54739336492891
+data_set/BP_15_15_35_15
+states:  8 trial:  1
+accuracy of:new_BP_15_15_35_15_8_1:  0.5677725118483413
+data_set/BP_15_15_35_15
+states:  8 trial:  2
+accuracy of:new_BP_15_15_35_15_8_2:  0.6094786729857821
+data_set/BP_15_15_35_15
+states:  8 trial:  3
+accuracy of:new_BP_15_15_35_15_8_3:  0.5639810426540285
+data_set/BP_15_15_35_15
+states:  8 trial:  4
+accuracy of:new_BP_15_15_35_15_8_4:  0.8616113744075828
+data_set/BP_15_15_35_15
+states:  8 trial:  5
+accuracy of:new_BP_15_15_35_15_8_5:  0.33886255924170616
+data_set/BP_15_15_35_15
+states:  8 trial:  6
+accuracy of:new_BP_15_15_35_15_8_6:  0.35023696682464445
+data_set/BP_15_15_35_15
+states:  8 trial:  7
+accuracy of:new_BP_15_15_35_15_8_7:  0.8227488151658768
+data_set/BP_15_15_35_15
+states:  8 trial:  8
+accuracy of:new_BP_15_15_35_15_8_8:  0.8644549763033174
+data_set/BP_15_15_35_15
+states:  8 trial:  9
+accuracy of:new_BP_15_15_35_15_8_9:  0.8222748815165876
+--------------------
+45
+data_set/BP_15_15_35_15
+states:  9 trial:  0
+done
+--- 2080.151346921921 seconds ---
+data_set/BP_15_15_35_15
+states:  9 trial:  1
+done
+--- 18.609145641326904 seconds ---
+data_set/BP_15_15_35_15
+states:  9 trial:  2
+done
+--- 42.093045473098755 seconds ---
+data_set/BP_15_15_35_15
+states:  9 trial:  3
+done
+--- 999.5762255191803 seconds ---
+data_set/BP_15_15_35_15
+states:  9 trial:  4
+done
+--- 984.1822466850281 seconds ---
+data_set/BP_15_15_35_15
+states:  9 trial:  5
+done
+--- 1466.8086442947388 seconds ---
+data_set/BP_15_15_35_15
+states:  9 trial:  6
+done
+--- 2146.797238111496 seconds ---
+data_set/BP_15_15_35_15
+states:  9 trial:  7
+done
+--- 32.65891361236572 seconds ---
+data_set/BP_15_15_35_15
+states:  9 trial:  8
+done
+--- 42.0346577167511 seconds ---
+data_set/BP_15_15_35_15
+states:  9 trial:  9
+done
+--- 2871.578578710556 seconds ---
+--- 10684.490292549133 seconds for all trials---
+========================================================
+data_set/BP_15_15_35_15
+states:  9 trial:  0
+accuracy of:new_BP_15_15_35_15_9_0:  0.7033175355450237
+data_set/BP_15_15_35_15
+states:  9 trial:  1
+accuracy of:new_BP_15_15_35_15_9_1:  0.32132701421800947
+data_set/BP_15_15_35_15
+states:  9 trial:  2
+accuracy of:new_BP_15_15_35_15_9_2:  0.3407582938388626
+data_set/BP_15_15_35_15
+states:  9 trial:  3
+accuracy of:new_BP_15_15_35_15_9_3:  0.5393364928909953
+data_set/BP_15_15_35_15
+states:  9 trial:  4
+accuracy of:new_BP_15_15_35_15_9_4:  0.5445497630331754
+data_set/BP_15_15_35_15
+states:  9 trial:  5
+accuracy of:new_BP_15_15_35_15_9_5:  0.872037914691943
+data_set/BP_15_15_35_15
+states:  9 trial:  6
+accuracy of:new_BP_15_15_35_15_9_6:  0.5165876777251184
+data_set/BP_15_15_35_15
+states:  9 trial:  7
+accuracy of:new_BP_15_15_35_15_9_7:  0.32464454976303314
+data_set/BP_15_15_35_15
+states:  9 trial:  8
+accuracy of:new_BP_15_15_35_15_9_8:  0.33317535545023697
+data_set/BP_15_15_35_15
+states:  9 trial:  9
+accuracy of:new_BP_15_15_35_15_9_9:  0.5279620853080569
+--------------------
+--------------------
+--------------------
+60
+data_set/BP_15_15_35_20
+states:  7 trial:  0
+done
+--- 1069.2421896457672 seconds ---
+data_set/BP_15_15_35_20
+states:  7 trial:  1
+done
+--- 4233.471797466278 seconds ---
+data_set/BP_15_15_35_20
+states:  7 trial:  2
+done
+--- 1717.3982889652252 seconds ---
+data_set/BP_15_15_35_20
+states:  7 trial:  3
+done
+--- 657.5361819267273 seconds ---
+data_set/BP_15_15_35_20
+states:  7 trial:  4
+done
+--- 15.226204872131348 seconds ---
+data_set/BP_15_15_35_20
+states:  7 trial:  5
+done
+--- 41.275840759277344 seconds ---
+data_set/BP_15_15_35_20
+states:  7 trial:  6
+done
+--- 1239.7495963573456 seconds ---
+data_set/BP_15_15_35_20
+states:  7 trial:  7
+done
+--- 635.8361020088196 seconds ---
+data_set/BP_15_15_35_20
+states:  7 trial:  8
+done
+--- 407.7869002819061 seconds ---
+data_set/BP_15_15_35_20
+states:  7 trial:  9
+done
+--- 2310.5319571495056 seconds ---
+--- 12328.055291175842 seconds for all trials---
+========================================================
+data_set/BP_15_15_35_20
+states:  7 trial:  0
+accuracy of:new_BP_15_15_35_20_7_0:  0.5208530805687204
+data_set/BP_15_15_35_20
+states:  7 trial:  1
+accuracy of:new_BP_15_15_35_20_7_1:  0.5374407582938389
+data_set/BP_15_15_35_20
+states:  7 trial:  2
+accuracy of:new_BP_15_15_35_20_7_2:  0.5236966824644549
+data_set/BP_15_15_35_20
+states:  7 trial:  3
+accuracy of:new_BP_15_15_35_20_7_3:  0.5402843601895734
+data_set/BP_15_15_35_20
+states:  7 trial:  4
+accuracy of:new_BP_15_15_35_20_7_4:  0.3345971563981043
+data_set/BP_15_15_35_20
+states:  7 trial:  5
+accuracy of:new_BP_15_15_35_20_7_5:  0.35355450236966823
+data_set/BP_15_15_35_20
+states:  7 trial:  6
+accuracy of:new_BP_15_15_35_20_7_6:  0.4066350710900474
+data_set/BP_15_15_35_20
+states:  7 trial:  7
+accuracy of:new_BP_15_15_35_20_7_7:  0.5649289099526066
+data_set/BP_15_15_35_20
+states:  7 trial:  8
+accuracy of:new_BP_15_15_35_20_7_8:  0.5630331753554503
+data_set/BP_15_15_35_20
+states:  7 trial:  9
+accuracy of:new_BP_15_15_35_20_7_9:  0.8625592417061612
+--------------------
+60
+data_set/BP_15_15_35_20
+states:  8 trial:  0
+done
+--- 144.71551609039307 seconds ---
+data_set/BP_15_15_35_20
+states:  8 trial:  1
+done
+--- 65.3766553401947 seconds ---
+data_set/BP_15_15_35_20
+states:  8 trial:  2
+done
+--- 60.912635803222656 seconds ---
+data_set/BP_15_15_35_20
+states:  8 trial:  3
+done
+--- 3021.1579661369324 seconds ---
+data_set/BP_15_15_35_20
+states:  8 trial:  4
+done
+--- 1579.241159915924 seconds ---
+data_set/BP_15_15_35_20
+states:  8 trial:  5
+done
+--- 26.046281576156616 seconds ---
+data_set/BP_15_15_35_20
+states:  8 trial:  6
+done
+--- 47.70726037025452 seconds ---
+data_set/BP_15_15_35_20
+states:  8 trial:  7
+done
+--- 2597.2187452316284 seconds ---
+data_set/BP_15_15_35_20
+states:  8 trial:  8
+done
+--- 165.71745371818542 seconds ---
+data_set/BP_15_15_35_20
+states:  8 trial:  9
+done
+--- 1085.8187944889069 seconds ---
+--- 8793.912694215775 seconds for all trials---
+========================================================
+data_set/BP_15_15_35_20
+states:  8 trial:  0
+accuracy of:new_BP_15_15_35_20_8_0:  0.3393364928909953
+data_set/BP_15_15_35_20
+states:  8 trial:  1
+accuracy of:new_BP_15_15_35_20_8_1:  0.3488151658767772
+data_set/BP_15_15_35_20
+states:  8 trial:  2
+accuracy of:new_BP_15_15_35_20_8_2:  0.3322274881516588
+data_set/BP_15_15_35_20
+states:  8 trial:  3
+accuracy of:new_BP_15_15_35_20_8_3:  0.504739336492891
+data_set/BP_15_15_35_20
+states:  8 trial:  4
+accuracy of:new_BP_15_15_35_20_8_4:  0.5170616113744075
+data_set/BP_15_15_35_20
+states:  8 trial:  5
+accuracy of:new_BP_15_15_35_20_8_5:  0.35450236966824644
+data_set/BP_15_15_35_20
+states:  8 trial:  6
+accuracy of:new_BP_15_15_35_20_8_6:  0.3165876777251185
+data_set/BP_15_15_35_20
+states:  8 trial:  7
+accuracy of:new_BP_15_15_35_20_8_7:  0.5350710900473933
+data_set/BP_15_15_35_20
+states:  8 trial:  8
+accuracy of:new_BP_15_15_35_20_8_8:  0.3274881516587678
+data_set/BP_15_15_35_20
+states:  8 trial:  9
+accuracy of:new_BP_15_15_35_20_8_9:  0.5383886255924171
+--------------------
+60
+data_set/BP_15_15_35_20
+states:  9 trial:  0
+done
+--- 33654.09771347046 seconds ---
+data_set/BP_15_15_35_20
+states:  9 trial:  1
+done
+--- 4451.122444391251 seconds ---
+data_set/BP_15_15_35_20
+states:  9 trial:  2
+done
+--- 3101.7989263534546 seconds ---
+data_set/BP_15_15_35_20
+states:  9 trial:  3
+done
+--- 73.47336173057556 seconds ---
+data_set/BP_15_15_35_20
+states:  9 trial:  4
+done
+--- 32.752251625061035 seconds ---
+data_set/BP_15_15_35_20
+states:  9 trial:  5
+done
+--- 131.7748851776123 seconds ---
+data_set/BP_15_15_35_20
+states:  9 trial:  6
+done
+--- 3772.7691464424133 seconds ---
+data_set/BP_15_15_35_20
+states:  9 trial:  7
+done
+--- 2455.283222436905 seconds ---
+data_set/BP_15_15_35_20
+states:  9 trial:  8
+done
+--- 85.52746987342834 seconds ---
+data_set/BP_15_15_35_20
+states:  9 trial:  9
+done
+--- 32.847100496292114 seconds ---
+--- 47791.446793317795 seconds for all trials---
+========================================================
+data_set/BP_15_15_35_20
+states:  9 trial:  0
+accuracy of:new_BP_15_15_35_20_9_0:  0.5009478672985782
+data_set/BP_15_15_35_20
+states:  9 trial:  1
+accuracy of:new_BP_15_15_35_20_9_1:  0.5218009478672987
+data_set/BP_15_15_35_20
+states:  9 trial:  2
+accuracy of:new_BP_15_15_35_20_9_2:  0.4943127962085308
+data_set/BP_15_15_35_20
+states:  9 trial:  3
+accuracy of:new_BP_15_15_35_20_9_3:  0.34170616113744073
+data_set/BP_15_15_35_20
+states:  9 trial:  4
+accuracy of:new_BP_15_15_35_20_9_4:  0.35165876777251187
+data_set/BP_15_15_35_20
+states:  9 trial:  5
+accuracy of:new_BP_15_15_35_20_9_5:  0.3374407582938389
+data_set/BP_15_15_35_20
+states:  9 trial:  6
+accuracy of:new_BP_15_15_35_20_9_6:  0.5421800947867298
+data_set/BP_15_15_35_20
+states:  9 trial:  7
+accuracy of:new_BP_15_15_35_20_9_7:  0.5597156398104266
+data_set/BP_15_15_35_20
+states:  9 trial:  8
+accuracy of:new_BP_15_15_35_20_9_8:  0.3369668246445498
+data_set/BP_15_15_35_20
+states:  9 trial:  9
+accuracy of:new_BP_15_15_35_20_9_9:  0.3109004739336493
+--------------------
+--------------------
+--------------------
+75
+data_set/BP_15_15_35_25
+states:  7 trial:  0
+done
+--- 2057.1817758083344 seconds ---
+data_set/BP_15_15_35_25
+states:  7 trial:  1
+done
+--- 1729.1813051700592 seconds ---
+data_set/BP_15_15_35_25
+states:  7 trial:  2
+done
+--- 6158.788376331329 seconds ---
+data_set/BP_15_15_35_25
+states:  7 trial:  3
+done
+--- 33.65209078788757 seconds ---
+data_set/BP_15_15_35_25
+states:  7 trial:  4
+done
+--- 903.4692933559418 seconds ---
+data_set/BP_15_15_35_25
+states:  7 trial:  5
+done
+--- 58.470682859420776 seconds ---
+data_set/BP_15_15_35_25
+states:  7 trial:  6
+done
+--- 2384.1375563144684 seconds ---
+data_set/BP_15_15_35_25
+states:  7 trial:  7
+done
+--- 2464.482833623886 seconds ---
+data_set/BP_15_15_35_25
+states:  7 trial:  8
+done
+--- 3649.902319908142 seconds ---
+data_set/BP_15_15_35_25
+states:  7 trial:  9
+done
+--- 36.98953866958618 seconds ---
+--- 19476.25604057312 seconds for all trials---
+========================================================
+data_set/BP_15_15_35_25
+states:  7 trial:  0
+accuracy of:new_BP_15_15_35_25_7_0:  0.8654028436018958
+data_set/BP_15_15_35_25
+states:  7 trial:  1
+accuracy of:new_BP_15_15_35_25_7_1:  0.8682464454976303
+data_set/BP_15_15_35_25
+states:  7 trial:  2
+accuracy of:new_BP_15_15_35_25_7_2:  0.8194312796208532
+data_set/BP_15_15_35_25
+states:  7 trial:  3
+accuracy of:new_BP_15_15_35_25_7_3:  0.3393364928909952
+data_set/BP_15_15_35_25
+states:  7 trial:  4
+accuracy of:new_BP_15_15_35_25_7_4:  0.771563981042654
+data_set/BP_15_15_35_25
+states:  7 trial:  5
+accuracy of:new_BP_15_15_35_25_7_5:  0.3516587677725118
+data_set/BP_15_15_35_25
+states:  7 trial:  6
+accuracy of:new_BP_15_15_35_25_7_6:  0.5402843601895735
+data_set/BP_15_15_35_25
+states:  7 trial:  7
+accuracy of:new_BP_15_15_35_25_7_7:  0.5364928909952607
+data_set/BP_15_15_35_25
+states:  7 trial:  8
+accuracy of:new_BP_15_15_35_25_7_8:  0.8123222748815164
+data_set/BP_15_15_35_25
+states:  7 trial:  9
+accuracy of:new_BP_15_15_35_25_7_9:  0.34739336492890993
+--------------------
+75
+data_set/BP_15_15_35_25
+states:  8 trial:  0
+done
+--- 101.87424874305725 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  1
+done
+--- 196.4242227077484 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  2
+done
+--- 6700.7435784339905 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  3
