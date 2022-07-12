@@ -11,11 +11,11 @@ source ~/keras/bin/activate
 
 start=`date +%s`
 echo "Start learning FSA"
-python3 EM.py data_set/BP_n_10 5
+python3 EM.py data_set/BP_7_7_35_20 5
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_n_10 5
+python3.7 test.py data_set/BP_7_7_35_20 5
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0 0 data_set/BP_n_10 5 > LP_sm_1_7_0_10.txt
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0 0 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
@@ -23,22 +23,22 @@ echo "--------------------"
 echo "--------------------"
 start=`date +%s`
 echo "Start learning FSA"
-python3 EM.py data_set/BP_n_30 5
+python3 EM.py data_set/BP_7_7_35_25 5
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_n_30 5
+python3.7 test.py data_set/BP_7_7_35_25 5
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0 0 data_set/BP_n_30 5 > LP_sm_1_7_0_30.txt
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0 0 data_set/BP_7_7_35_25 5 > LP_sm_1_7_0_30.txt
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 echo "--------------------"
 echo "--------------------"
-start=`date +%s`
-echo "Start learning FSA"
-python3 EM.py data_set/BP_n_40 5
-echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_n_40 5
-echo "running agent"
-python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0 0 data_set/BP_n_40 5 > LP_sm_1_7_0_40.txt
-runtime=$((end-start))
+# start=`date +%s`
+# echo "Start learning FSA"
+# python3 EM.py data_set/BP_7_7_35_25 5
+# echo "Checking Accuracy of learned FSAs"
+# python3.7 test.py data_set/BP_7_7_35_25 5
+# echo "running agent"
+# python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0 0 data_set/BP_7_7_35_25 5 > LP_sm_1_7_0_40.txt
+# runtime=$((end-start))
 echo $runtime
