@@ -219,7 +219,7 @@ file_name = sys.argv[1][sys.argv[1].index("/")+1:]
 all_start_time = time.time()
 trial_seed = {}
 for i_try in range(10):
-    r_seed = random.randint(i_try, i_try*(1+i_try))
+    r_seed = random.randint(i_try, (1+i_try)*(2+i_try))
     random.seed(r_seed)
     trial_seed[i_try] = r_seed
     print(sys.argv[1])
