@@ -16,6 +16,56 @@ echo "Checking Accuracy of learned FSAs"
 python3.7 test.py data_set/BP_7_7_35_20 5
 echo "running agent"
 python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0 0 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0.1 0.1 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0.4 0.4 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 3 0.4 0.4 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0.5 0.5 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0.8 0.8 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 1 1 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 10 10 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
@@ -28,6 +78,48 @@ echo "Checking Accuracy of learned FSAs"
 python3.7 test.py data_set/BP_7_7_35_25 5
 echo "running agent"
 python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0 0 data_set/BP_7_7_35_25 5 > LP_sm_1_7_0_30.txt
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0.1 0.1 data_set/BP_7_7_35_20 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0.4 0.4 data_set/BP_7_7_35_25 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0.5 0.5 data_set/BP_7_7_35_25 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 0.8 0.8 data_set/BP_7_7_35_25 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 1 1 data_set/BP_7_7_35_25 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 7 3 3 2 2 3 6 7_7_0_3_0 1 10 10 data_set/BP_7_7_35_25 5 > LP_sm_1_7_0_10.txt
+end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
