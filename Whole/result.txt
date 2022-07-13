@@ -1,96 +1,208 @@
 ==========================================
-SLURM_JOB_ID = 707890
+SLURM_JOB_ID = 716543
 SLURM_NODELIST = gnode026
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job707890/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job716543/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Start learning FSA
-30
-data_set/BP_n_10
+60
+data_set/BP_7_7_35_20
 states:  5 trial:  0
 done
---- 87.91121530532837 seconds ---
-data_set/BP_n_10
+--- 3.0262603759765625 seconds ---
+data_set/BP_7_7_35_20
 states:  5 trial:  1
 done
---- 45.038891077041626 seconds ---
-data_set/BP_n_10
+--- 490.12314534187317 seconds ---
+data_set/BP_7_7_35_20
 states:  5 trial:  2
 done
---- 77.48521375656128 seconds ---
-data_set/BP_n_10
+--- 58.03302574157715 seconds ---
+data_set/BP_7_7_35_20
 states:  5 trial:  3
 done
---- 94.52475500106812 seconds ---
-data_set/BP_n_10
+--- 137.456880569458 seconds ---
+data_set/BP_7_7_35_20
 states:  5 trial:  4
 done
---- 189.43612837791443 seconds ---
-data_set/BP_n_10
+--- 27.367557764053345 seconds ---
+data_set/BP_7_7_35_20
 states:  5 trial:  5
 done
---- 1.3053131103515625 seconds ---
-data_set/BP_n_10
+--- 76.7082052230835 seconds ---
+data_set/BP_7_7_35_20
 states:  5 trial:  6
 done
---- 157.42626070976257 seconds ---
-data_set/BP_n_10
+--- 790.4835939407349 seconds ---
+data_set/BP_7_7_35_20
 states:  5 trial:  7
 done
---- 1.305290699005127 seconds ---
-data_set/BP_n_10
+--- 436.29169964790344 seconds ---
+data_set/BP_7_7_35_20
 states:  5 trial:  8
 done
---- 25.365915298461914 seconds ---
-data_set/BP_n_10
+--- 32.91707897186279 seconds ---
+data_set/BP_7_7_35_20
 states:  5 trial:  9
 done
---- 317.3655309677124 seconds ---
---- 997.164674282074 seconds for all trials---
+--- 81.68466186523438 seconds ---
+--- 2134.0923211574554 seconds for all trials---
 ========================================================
 Checking Accuracy of learned FSAs
-data_set/BP_n_10
+data_set/BP_7_7_35_20
 states:  5 trial:  0
-accuracy of:new_BP_n_10_5_0:  0.9859649122807017
-data_set/BP_n_10
+accuracy of:new_BP_7_7_35_20_5_0:  0.34124293785310733
+data_set/BP_7_7_35_20
 states:  5 trial:  1
-accuracy of:new_BP_n_10_5_1:  0.8546783625730996
-data_set/BP_n_10
+accuracy of:new_BP_7_7_35_20_5_1:  0.5112994350282486
+data_set/BP_7_7_35_20
 states:  5 trial:  2
-accuracy of:new_BP_n_10_5_2:  0.671345029239766
-data_set/BP_n_10
+accuracy of:new_BP_7_7_35_20_5_2:  0.3378531073446328
+data_set/BP_7_7_35_20
 states:  5 trial:  3
-accuracy of:new_BP_n_10_5_3:  0.9751461988304093
-data_set/BP_n_10
+accuracy of:new_BP_7_7_35_20_5_3:  0.7706214689265537
+data_set/BP_7_7_35_20
 states:  5 trial:  4
-accuracy of:new_BP_n_10_5_4:  0.9894736842105262
-data_set/BP_n_10
+accuracy of:new_BP_7_7_35_20_5_4:  0.33446327683615823
+data_set/BP_7_7_35_20
 states:  5 trial:  5
-accuracy of:new_BP_n_10_5_5:  0.3274853801169591
-data_set/BP_n_10
+accuracy of:new_BP_7_7_35_20_5_5:  0.32485875706214695
+data_set/BP_7_7_35_20
 states:  5 trial:  6
-accuracy of:new_BP_n_10_5_6:  0.6640350877192982
-data_set/BP_n_10
+accuracy of:new_BP_7_7_35_20_5_6:  0.5790960451977402
+data_set/BP_7_7_35_20
 states:  5 trial:  7
-accuracy of:new_BP_n_10_5_7:  0.337719298245614
-data_set/BP_n_10
+accuracy of:new_BP_7_7_35_20_5_7:  0.5175141242937853
+data_set/BP_7_7_35_20
 states:  5 trial:  8
-accuracy of:new_BP_n_10_5_8:  0.3353801169590643
-data_set/BP_n_10
+accuracy of:new_BP_7_7_35_20_5_8:  0.3587570621468927
+data_set/BP_7_7_35_20
 states:  5 trial:  9
-accuracy of:new_BP_n_10_5_9:  0.6672514619883041
+accuracy of:new_BP_7_7_35_20_5_9:  0.3231638418079096
 running agent
--1656527584
+2342
+--------------------
+running agent
+197
+--------------------
+running agent
+202
+--------------------
+running agent
+125
+--------------------
+running agent
+179
+--------------------
+running agent
+158
+--------------------
+running agent
+170
+--------------------
+running agent
+172
 --------------------
 --------------------
 --------------------
 Start learning FSA
-90
-data_set/BP_n_30
+75
+data_set/BP_7_7_35_25
 states:  5 trial:  0
 done
---- 10.382012844085693 seconds ---
-data_set/BP_n_30
+--- 486.8874170780182 seconds ---
+data_set/BP_7_7_35_25
 states:  5 trial:  1
+done
+--- 2870.513274669647 seconds ---
+data_set/BP_7_7_35_25
+states:  5 trial:  2
+done
+--- 86.21614861488342 seconds ---
+data_set/BP_7_7_35_25
+states:  5 trial:  3
+done
+--- 592.7639338970184 seconds ---
+data_set/BP_7_7_35_25
+states:  5 trial:  4
+done
+--- 3.8618266582489014 seconds ---
+data_set/BP_7_7_35_25
+states:  5 trial:  5
+done
+--- 2.3005011081695557 seconds ---
+data_set/BP_7_7_35_25
+states:  5 trial:  6
+done
+--- 21.853325843811035 seconds ---
+data_set/BP_7_7_35_25
+states:  5 trial:  7
+done
+--- 272.13595962524414 seconds ---
+data_set/BP_7_7_35_25
+states:  5 trial:  8
+done
+--- 597.6118035316467 seconds ---
+data_set/BP_7_7_35_25
+states:  5 trial:  9
+done
+--- 4284.486120462418 seconds ---
+--- 9218.630484104156 seconds for all trials---
+========================================================
+Checking Accuracy of learned FSAs
+data_set/BP_7_7_35_25
+states:  5 trial:  0
+accuracy of:new_BP_7_7_35_25_5_0:  0.9994350282485875
+data_set/BP_7_7_35_25
+states:  5 trial:  1
+accuracy of:new_BP_7_7_35_25_5_1:  0.9994350282485875
+data_set/BP_7_7_35_25
+states:  5 trial:  2
+accuracy of:new_BP_7_7_35_25_5_2:  0.3338983050847458
+data_set/BP_7_7_35_25
+states:  5 trial:  3
+accuracy of:new_BP_7_7_35_25_5_3:  0.9209039548022601
+data_set/BP_7_7_35_25
+states:  5 trial:  4
+accuracy of:new_BP_7_7_35_25_5_4:  0.32937853107344633
+data_set/BP_7_7_35_25
+states:  5 trial:  5
+accuracy of:new_BP_7_7_35_25_5_5:  0.3440677966101695
+data_set/BP_7_7_35_25
+states:  5 trial:  6
+accuracy of:new_BP_7_7_35_25_5_6:  0.30734463276836166
+data_set/BP_7_7_35_25
+states:  5 trial:  7
+accuracy of:new_BP_7_7_35_25_5_7:  0.49265536723163833
+data_set/BP_7_7_35_25
+states:  5 trial:  8
+accuracy of:new_BP_7_7_35_25_5_8:  0.40225988700564974
+data_set/BP_7_7_35_25
+states:  5 trial:  9
+accuracy of:new_BP_7_7_35_25_5_9:  0.3519774011299435
+running agent
+0
+--------------------
+running agent
+196
+--------------------
+running agent
+153
+--------------------
+running agent
+172
+--------------------
+running agent
+149
+--------------------
+running agent
+175
+--------------------
+running agent
+157
+--------------------
+--------------------
+--------------------
+157
