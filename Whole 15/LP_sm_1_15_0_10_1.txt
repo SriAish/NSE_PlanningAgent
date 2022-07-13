@@ -3,3 +3,54 @@ goal:  [((7, 14), (7, 14), True, False, 'p'), ((7, 14), (7, 14), True, True, 'p'
 initial belief setup
 variables setup
 objective setup
+eq1
+setting bound
+eq3
+eq4
+problem setup
+ ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :        36083
+   Intermediates:          180
+   Connections  :            0
+   Equations    :        45273
+   Residuals    :        45093
+ 
+ Number of state variables:          36083
+ Number of total equations: -         9013
+ Number of slack variables: -            3
+ ---------------------------------------
+ Degrees of freedom       :          27067
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  1.63649E-04  3.14184E+01
+    1  7.24326E-08  6.66392E-08
+    2  7.24326E-08  6.66392E-08
+ Successful solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :    176.638899999991      sec
+ Objective      :   7.243264675839226E-008
+ Successful solution
+ ---------------------------------------------------
+ 
+
+----------------------------------------
+Objective Value:  7.243264675856258e-08
+Severe Value:  2.2661077832744837e-24
+Mild Value:  3.8774091213e-26
+----------------------------------------
+Saving policies
