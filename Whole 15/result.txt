@@ -1,14 +1,9 @@
+==========================================
+SLURM_JOB_ID = 717585
+SLURM_NODELIST = gnode034
+SLURM_JOB_GPUS = 0
+==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job717550/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job717585/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Start learning FSA
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 241, in <module>
-    agent.calculate_pi()
-  File "FSA_Agent_combVar.py", line 191, in calculate_pi
-    self.x_[(u, s)] += self.x[(u, s, a)].value[0]
-  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
-    return self.value[key]
-TypeError: 'int' object is not subscriptable
-2127
---------------------
