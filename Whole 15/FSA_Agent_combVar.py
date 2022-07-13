@@ -168,17 +168,17 @@ class FSAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        self.set_bound()
-        print("setting bound")
-        sys.stdout.flush()
-        if float(sys.argv[10]) >= 0:
-            self.make_constraints_eqn3()
-            print("eq3")
-            sys.stdout.flush()
-        if float(sys.argv[11]) >= 0:
-            self.make_constraints_eqn4()
-            print("eq4")
-            sys.stdout.flush()
+        # self.set_bound()
+        # print("setting bound")
+        # sys.stdout.flush()
+        # if float(sys.argv[10]) >= 0:
+        #     self.make_constraints_eqn3()
+        #     print("eq3")
+        #     sys.stdout.flush()
+        # if float(sys.argv[11]) >= 0:
+        #     self.make_constraints_eqn4()
+        #     print("eq4")
+        #     sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
@@ -215,7 +215,7 @@ class FSAgent:
 
     def solve_prob(self):
         try:
-            self.m.solve(debug=0)
+            self.m.solve(disp=True)
         except Exception as e:
             print("Exception Occured")
             print(e)
