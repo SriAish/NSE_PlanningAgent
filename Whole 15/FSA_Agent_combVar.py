@@ -9,7 +9,7 @@ from misc import load
 
 class FSAgent:
     def __init__(self, BP, FSA, gamma = 0.999, locations = None):
-        self.m = GEKKO()
+        self.m = GEKKO(remote=False)
         self.m.options.MAX_ITER = 3000
         self.m.options.SOLVER = int(sys.argv[9])
         self.BP = BP
@@ -168,17 +168,17 @@ class FSAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        # self.set_bound()
-        # print("setting bound")
-        # sys.stdout.flush()
-        # if float(sys.argv[10]) >= 0:
-        #     self.make_constraints_eqn3()
-        #     print("eq3")
-        #     sys.stdout.flush()
-        # if float(sys.argv[11]) >= 0:
-        #     self.make_constraints_eqn4()
-        #     print("eq4")
-        #     sys.stdout.flush()
+        self.set_bound()
+        print("setting bound")
+        sys.stdout.flush()
+        if float(sys.argv[10]) >= 0:
+            self.make_constraints_eqn3()
+            print("eq3")
+            sys.stdout.flush()
+        if float(sys.argv[11]) >= 0:
+            self.make_constraints_eqn4()
+            print("eq4")
+            sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
