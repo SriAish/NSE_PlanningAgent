@@ -1,7 +1,9 @@
+from operator import le
 import random
 from misc import load, save
 
-severe = load("s_train_15_15_35")
+severe = load("BP_test_7_7_35_set")
+print(len(severe))
 mild = load("m_train_15_15_35")
 no_nse = load("nn_train_15_15_35")
 s = []
