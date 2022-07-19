@@ -7,10 +7,12 @@ import random
 
 
 class BPEnv:
-    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), end_location = (3, 6), init_box_loc=(3, 0)):
+    def __init__(self, grid_height = 7, grid_width = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), end_location = (3, 6), init_box_loc=(3, 0)):
         # Making the grrid
-        self.grid_size = grid_size
-        self.grid = np.full([grid_size, grid_size], 'p')
+        self.grid_width = grid_width
+        self.grid_height = grid_height
+
+        self.grid = np.full([grid_height, grid_width], 'p')
         
         # Making the rug
         self.rug_width = rug_width
@@ -29,7 +31,7 @@ class BPEnv:
         self.prob = 0.05
 
         # Hash table to maintain transition probabilities 
-        self.agent_location = (7, 3)
+        self.agent_location = (0, 2)
         self.box_location = init_box_loc
         self.picked = False
         self.wrapped = False
@@ -77,7 +79,7 @@ class BPEnv:
         return self.actions.getActionCost(action)
 
     def moveDown(self):
-        self.agent_location = (min(self.grid_size - 1, self.agent_location[0] + 1), self.agent_location[1])
+        self.agent_location = (min(self.grid_height - 1, self.agent_location[0] + 1), self.agent_location[1])
 
     def moveUp(self):
         self.agent_location = (max(0, self.agent_location[0] - 1), self.agent_location[1])
@@ -86,7 +88,7 @@ class BPEnv:
         self.agent_location = (self.agent_location[0], max(0, self.agent_location[1] - 1))
 
     def moveRight(self):
-        self.agent_location = (self.agent_location[0], min(self.grid_size - 1, self.agent_location[1] + 1))
+        self.agent_location = (self.agent_location[0], min(self.grid_width - 1, self.agent_location[1] + 1))
 
     def move(self, action):
         prob = random.random()

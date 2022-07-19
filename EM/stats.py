@@ -5,7 +5,7 @@ import sys
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("BP_test_7_7_35_set")
+R = load("BP_test_15_15_35_set")
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
@@ -70,6 +70,8 @@ def F1_score(R, out_sym, o):
     prec = float(tp)/float(tp + fp)
     rec = float(tp)/float(tp + fn)
     # print(tp, tn, fp, fn, prec, rec)
+    if prec + rec == 0:
+        return 0
     return (2*prec*rec)/(prec + rec)
 
 def run_test(R, fsa):

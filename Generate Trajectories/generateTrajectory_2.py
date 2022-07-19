@@ -22,7 +22,7 @@ def checkDamage(t, st=[6, 4]):
     return (ind/9)*100
 
 def generate_trajectory(agent, end_loc = (3, 6), box_loc = (3, 3)):
-    env = BPEnv(15, 7, 3, (6, 4), end_loc, box_loc)
+    env = BPEnv(15, 15, 7, 3, (6, 4), end_loc, box_loc)
     done = False
 
     t = []

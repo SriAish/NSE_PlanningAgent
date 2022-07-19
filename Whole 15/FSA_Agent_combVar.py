@@ -3,7 +3,7 @@ from makeFSA import FSAConstants
 import sys
 import pickle
 import itertools
-from gekko import GEKKO
+# from gekko import GEKKO
 from math import e
 from misc import load
 
@@ -77,7 +77,7 @@ class FSAgent:
                 obj += self.m.Intermediate(o)
                 o = 0
         obj += self.m.Intermediate(o)
-        self.m.Equation(o - 25.4184 <= 6)
+        self.m.Equation(o - 25.4184 <= ((int(sys.argv[14])/100)*25.4184))
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):

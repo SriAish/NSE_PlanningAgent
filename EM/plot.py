@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-y = load("obj_BP_new")
+y = load("results/objective/new_BP_15_15_35_15_8_8")
 # print(y)
 x = [*range(len(y))]
 
