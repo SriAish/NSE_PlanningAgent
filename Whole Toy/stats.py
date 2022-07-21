@@ -5,10 +5,7 @@ import sys
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-def save(name, t):
-    file_to_write = open(name, "wb")
-    pickle.dump(t, file_to_write)
-R = load("data_set/Toy_train_data_2_4")
+R = load("Test_Data")
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
@@ -53,87 +50,43 @@ class FSA:
         # print("out:", state, i, self.omega[state][i], self.omega_val[state][i])
         return np.random.choice(self.omega[state][i], p = self.omega_val[state][i])
 
+def F1_score(R, out_sym, o):
+    tp = 0
+    fp = 0
+    tn = 0
+    fn = 0
+    for i in range(len(out_sym)):
+        if R[i][-1] == out_sym[i]:
+            if out_sym[i] == o:
+                tp += 1
+            else:
+                tn += 1 
+        else:
+            if out_sym[i] == o:
+                fp += 1
+            else:
+                fn += 1
+    
+    prec = float(tp)/float(tp + fp)
+    rec = float(tp)/float(tp + fn)
+    return (2*prec*rec)/(prec + rec)
+
 def run_test(R, fsa):
-    cor = 0
-    in_cor = 0
-    tp = 0.0
-    tn = 0.0
-    fp = 0.0
-    fn = 0.0
+    out_sym = []
     for r in R:
         st = '0'
         for t in range(len(r)-2):
             st = fsa.getNextState(st, r[t])
-        out = fsa.getOutSym(st, r[len(r)-2])
-        if out == r[-1]:
-            if out == 0:
-                tn += 1
-            else:
-                tp += 1
-            cor += 1
-        else:
-            # print(out)
-            if out == 0:
-                fn += 1
-            else:
-                fp += 1
-            in_cor += 1
-            # print(r)
+        out_sym += [fsa.getOutSym(st, r[len(r)-2])]
+    print("f1 score: N, ", F1_score(R, out_sym, 'N'), "M, ", F1_score(R, out_sym, 'M'), "S, ", F1_score(R, out_sym, 'S'))
 
-    tot = cor + in_cor
-    # print(cor, tp, fp, fn)
-    # prec = tp/(tp+fp)
-    # rec = tp/(tp+fn)
-
-    return cor/tot
-# R = load("severe_test")
-# R = load("mild_test")
-# R = load("no_nse_test")
-# print(len(R))
-# print(R[0])
-# rn = 0
-# rs =0
-# rm =0
-# for r in R:
-#     if r[-1] == 'N':
-#         rn+=1
-#     if r[-1] == 'S':
-#         rs +=1
-#     if r[-1] == 'M':
-#         rm +=1
-
-# print(rs, rn, rm)
 file_name = sys.argv[1][sys.argv[1].index("/")+1:]
-b = 0
-b_try = 0
 for i_try in range(10):
     print(sys.argv[1])
     print("states: ", sys.argv[2], "trial: ", i_try)
     delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
     omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
 
-    # for s in delta:
-    #     for i in delta[s]:
-    #         print(s, i, delta[s][i])
-    # print()
-    # print(omega)
-
     fsa = FSA(delta, omega)
 
-    pr = 0
-
-    for r in range(10):
-        pr += run_test(R, fsa)
-    if b < pr:
-        b = pr
-        b_try = i_try
-    print("accuracy of:" + "new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try) + ": ", pr/10)
-
-delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(b_try))
-omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(b_try))
-save("results/delta/new_" + file_name + "_" + sys.argv[2] + "_best", delta)
-save("results/omega/new_" + file_name + "_" + sys.argv[2] + "_best", omega)
-
-
-print(delta)
-print(omega)
+    print("new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try) + ": ", run_test(R, fsa))

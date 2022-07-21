@@ -22,7 +22,7 @@ def checkDamage(t, st=[6, 4]):
     return (ind/9)*100
 
 def generate_trajectory(agent, end_loc = (3, 6), box_loc = (3, 3)):
-    env = BPEnv(1, 4, 1, 1, (0, 2), end_loc, box_loc)
+    env = BPEnv(2, 4, 1, 1, (0, 2), end_loc, box_loc)
     done = False
 
     t = []
@@ -61,8 +61,8 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
         nse = set()
         no_nse = set()
     else:
-        nse = set(load("n_1_4_8"))
-        no_nse = set(load("nn_1_4_8"))
+        nse = set(load("n_2_4_8"))
+        no_nse = set(load("nn_2_4_8"))
     print(len(nse), len(no_nse))
     i = 0
     while i < n:
@@ -82,8 +82,8 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
     print(nse)
     print(no_nse)
     print(len(nse), len(no_nse))
-    save("n_1_4_8", list(nse))
-    save("nn_1_4_8", list(no_nse))
+    save("n_2_4_8", list(nse))
+    save("nn_2_4_8", list(no_nse))
 
 class Agent:
     def __init__(self, name):
@@ -118,7 +118,7 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/VIp_1_4_" + sys.argv[5] + ".pkl"
+    pol = "policy/VIp_2_4_" + sys.argv[5] + ".pkl"
     agent = Agent(pol)
     print(pol)
     generate_mean_std(10000, agent, False, (int(sys.argv[1]), int(sys.argv[2])), (int(sys.argv[3]), int(sys.argv[4])))

@@ -3,7 +3,7 @@ from makeFSA import FSAConstants
 import sys
 import pickle
 import itertools
-from gekko import GEKKO
+# from gekko import GEKKO
 from math import e
 from misc import load
 
