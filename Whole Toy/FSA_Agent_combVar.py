@@ -203,7 +203,7 @@ class FSAgent:
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
         print("Severe Value: ", self.NSE_val())
-        print("Mild Value: ", self.NSE_val_mild())
+        # print("Mild Value: ", self.NSE_val_mild())
         print("----------------------------------------")
 
     def save_pi(self, file):
