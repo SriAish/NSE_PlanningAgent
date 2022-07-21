@@ -4,7 +4,7 @@ import numpy as np
 import sys
 
 class BoxPushingConstants:
-    def __init__(self, grid_height = 1, grid_width = 4, rug_width = 3, rug_height = 3, rug_start = (2, 2), goal_state = [], init_box_loc=(7, 0)):
+    def __init__(self, grid_height = 1, grid_width = 4, rug_width = 3, rug_height = 3, rug_start = (2, 2), goal_state = [], init_box_loc=(0, 1)):
         # Making the grrid
         self.grid_height = grid_height
         self.grid_width = grid_width
