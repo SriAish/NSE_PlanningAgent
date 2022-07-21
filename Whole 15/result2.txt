@@ -1,87 +1,65 @@
 ==========================================
-SLURM_JOB_ID = 721248
-SLURM_NODELIST = gnode012
+SLURM_JOB_ID = 721982
+SLURM_NODELIST = gnode021
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job721248/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-Start learning FSA
-75
-data_set/BP_15_15_35_25
-states:  7 trial:  0
-done
---- 92.81559491157532 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  1
-done
---- 1764.74196600914 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  2
-done
---- 3536.0720217227936 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  3
-done
---- 493.31786012649536 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  4
-done
---- 879.9819257259369 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  5
-done
---- 26.713246822357178 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  6
-done
---- 5059.064175367355 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  7
-done
---- 3475.0247254371643 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  8
-done
---- 768.4459745883942 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  9
-done
---- 11.891286611557007 seconds ---
---- 16108.069013118744 seconds for all trials---
-========================================================
+/var/spool/slurmd/job721982/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Checking Accuracy of learned FSAs
 data_set/BP_15_15_35_25
-states:  5 trial:  0
-Traceback (most recent call last):
-  File "test.py", line 108, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_5_0'
+states:  7 trial:  0
+accuracy of:new_BP_15_15_35_25_7_0:  0.3488151658767772
+data_set/BP_15_15_35_25
+states:  7 trial:  1
+accuracy of:new_BP_15_15_35_25_7_1:  0.8781990521327014
+data_set/BP_15_15_35_25
+states:  7 trial:  2
+accuracy of:new_BP_15_15_35_25_7_2:  0.5369668246445498
+data_set/BP_15_15_35_25
+states:  7 trial:  3
+accuracy of:new_BP_15_15_35_25_7_3:  0.5066350710900475
+data_set/BP_15_15_35_25
+states:  7 trial:  4
+accuracy of:new_BP_15_15_35_25_7_4:  0.5071090047393365
+data_set/BP_15_15_35_25
+states:  7 trial:  5
+accuracy of:new_BP_15_15_35_25_7_5:  0.3241706161137441
+data_set/BP_15_15_35_25
+states:  7 trial:  6
+accuracy of:new_BP_15_15_35_25_7_6:  0.5180094786729857
+data_set/BP_15_15_35_25
+states:  7 trial:  7
+accuracy of:new_BP_15_15_35_25_7_7:  0.5303317535545023
+data_set/BP_15_15_35_25
+states:  7 trial:  8
+accuracy of:new_BP_15_15_35_25_7_8:  0.5208530805687204
+data_set/BP_15_15_35_25
+states:  7 trial:  9
+accuracy of:new_BP_15_15_35_25_7_9:  0.32369668246445504
 running agent
 Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 229, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_7_best'
-16111
+  File "FSA_Agent_combVar.py", line 240, in <module>
+    agent = FSAgent(BP, FSA, locations=locations)
+  File "FSA_Agent_combVar.py", line 12, in __init__
+    self.m = GEKKO(remote=False)
+NameError: name 'GEKKO' is not defined
+11
 --------------------
 Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 229, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_7_best'
+  File "FSA_Agent_combVar.py", line 240, in <module>
+    agent = FSAgent(BP, FSA, locations=locations)
+  File "FSA_Agent_combVar.py", line 12, in __init__
+    self.m = GEKKO(remote=False)
+NameError: name 'GEKKO' is not defined
 0
 --------------------
 running agent
 Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 229, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_7_best'
+  File "FSA_Agent_combVar.py", line 240, in <module>
+    agent = FSAgent(BP, FSA, locations=locations)
+  File "FSA_Agent_combVar.py", line 12, in __init__
+    self.m = GEKKO(remote=False)
+NameError: name 'GEKKO' is not defined
 0
 --------------------
