@@ -1,65 +1,42 @@
 ==========================================
-SLURM_JOB_ID = 721982
-SLURM_NODELIST = gnode021
+SLURM_JOB_ID = 721999
+SLURM_NODELIST = gnode017
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job721982/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job721999/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Checking Accuracy of learned FSAs
 data_set/BP_15_15_35_25
 states:  7 trial:  0
-accuracy of:new_BP_15_15_35_25_7_0:  0.3488151658767772
+accuracy of:new_BP_15_15_35_25_7_0:  0.3127962085308057
 data_set/BP_15_15_35_25
 states:  7 trial:  1
-accuracy of:new_BP_15_15_35_25_7_1:  0.8781990521327014
+accuracy of:new_BP_15_15_35_25_7_1:  0.8710900473933648
 data_set/BP_15_15_35_25
 states:  7 trial:  2
-accuracy of:new_BP_15_15_35_25_7_2:  0.5369668246445498
+accuracy of:new_BP_15_15_35_25_7_2:  0.5341232227488152
 data_set/BP_15_15_35_25
 states:  7 trial:  3
-accuracy of:new_BP_15_15_35_25_7_3:  0.5066350710900475
+accuracy of:new_BP_15_15_35_25_7_3:  0.5118483412322276
 data_set/BP_15_15_35_25
 states:  7 trial:  4
-accuracy of:new_BP_15_15_35_25_7_4:  0.5071090047393365
+accuracy of:new_BP_15_15_35_25_7_4:  0.5042654028436019
 data_set/BP_15_15_35_25
 states:  7 trial:  5
-accuracy of:new_BP_15_15_35_25_7_5:  0.3241706161137441
+accuracy of:new_BP_15_15_35_25_7_5:  0.3345971563981043
 data_set/BP_15_15_35_25
 states:  7 trial:  6
-accuracy of:new_BP_15_15_35_25_7_6:  0.5180094786729857
+accuracy of:new_BP_15_15_35_25_7_6:  0.4990521327014218
 data_set/BP_15_15_35_25
 states:  7 trial:  7
-accuracy of:new_BP_15_15_35_25_7_7:  0.5303317535545023
+accuracy of:new_BP_15_15_35_25_7_7:  0.5127962085308057
 data_set/BP_15_15_35_25
 states:  7 trial:  8
-accuracy of:new_BP_15_15_35_25_7_8:  0.5208530805687204
+accuracy of:new_BP_15_15_35_25_7_8:  0.5028436018957346
 data_set/BP_15_15_35_25
 states:  7 trial:  9
-accuracy of:new_BP_15_15_35_25_7_9:  0.32369668246445504
+accuracy of:new_BP_15_15_35_25_7_9:  0.323696682464455
 running agent
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 240, in <module>
-    agent = FSAgent(BP, FSA, locations=locations)
-  File "FSA_Agent_combVar.py", line 12, in __init__
-    self.m = GEKKO(remote=False)
-NameError: name 'GEKKO' is not defined
-11
---------------------
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 240, in <module>
-    agent = FSAgent(BP, FSA, locations=locations)
-  File "FSA_Agent_combVar.py", line 12, in __init__
-    self.m = GEKKO(remote=False)
-NameError: name 'GEKKO' is not defined
-0
---------------------
-running agent
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 240, in <module>
-    agent = FSAgent(BP, FSA, locations=locations)
-  File "FSA_Agent_combVar.py", line 12, in __init__
-    self.m = GEKKO(remote=False)
-NameError: name 'GEKKO' is not defined
-0
+3455
 --------------------
