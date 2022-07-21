@@ -208,10 +208,10 @@ class FSAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'FSA_LP_p' + sys.argv[10] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'FSA_LP_p' + sys.argv[10] + '_' + file + '.pkl', 'w+b') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'FSA_LP_x' + sys.argv[10] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'FSA_LP_x' + sys.argv[10] + '_' + file + '.pkl', 'w+b') as f:
             pickle.dump(self.x_, f)
 
     def solve_prob(self):
