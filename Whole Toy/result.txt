@@ -1,54 +1,54 @@
 ==========================================
-SLURM_JOB_ID = 722330
+SLURM_JOB_ID = 722360
 SLURM_NODELIST = gnode075
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job722330/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job722360/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Start learning FSA
 30
 data_set/Toy_train_data
 states:  2 trial:  0
 done
---- 0.4106740951538086 seconds ---
+--- 0.5388374328613281 seconds ---
 data_set/Toy_train_data
 states:  2 trial:  1
 done
---- 0.031438350677490234 seconds ---
+--- 0.4437265396118164 seconds ---
 data_set/Toy_train_data
 states:  2 trial:  2
 done
---- 0.46707963943481445 seconds ---
+--- 1.598184585571289 seconds ---
 data_set/Toy_train_data
 states:  2 trial:  3
 done
---- 0.4051339626312256 seconds ---
+--- 0.533881425857544 seconds ---
 data_set/Toy_train_data
 states:  2 trial:  4
 done
---- 1.8653457164764404 seconds ---
+--- 0.6445276737213135 seconds ---
 data_set/Toy_train_data
 states:  2 trial:  5
 done
---- 0.5081896781921387 seconds ---
+--- 2.6858623027801514 seconds ---
 data_set/Toy_train_data
 states:  2 trial:  6
 done
---- 0.08696317672729492 seconds ---
+--- 0.02541661262512207 seconds ---
 data_set/Toy_train_data
 states:  2 trial:  7
 done
---- 0.6698317527770996 seconds ---
+--- 0.44362425804138184 seconds ---
 data_set/Toy_train_data
 states:  2 trial:  8
 done
---- 0.12056708335876465 seconds ---
+--- 0.1092679500579834 seconds ---
 data_set/Toy_train_data
 states:  2 trial:  9
 done
---- 0.051578521728515625 seconds ---
---- 4.616954565048218 seconds for all trials---
+--- 0.10777759552001953 seconds ---
+--- 7.131290674209595 seconds for all trials---
 ========================================================
 Checking Accuracy of learned FSAs
 data_set/Toy_train_data
@@ -56,45 +56,41 @@ states:  2 trial:  0
 accuracy of:new_Toy_train_data_2_0:  1.0
 data_set/Toy_train_data
 states:  2 trial:  1
-accuracy of:new_Toy_train_data_2_1:  0.7333333333333333
+accuracy of:new_Toy_train_data_2_1:  1.0
 data_set/Toy_train_data
 states:  2 trial:  2
-accuracy of:new_Toy_train_data_2_2:  0.9966666666666667
+accuracy of:new_Toy_train_data_2_2:  0.74
 data_set/Toy_train_data
 states:  2 trial:  3
 accuracy of:new_Toy_train_data_2_3:  1.0
 data_set/Toy_train_data
 states:  2 trial:  4
-accuracy of:new_Toy_train_data_2_4:  0.7366666666666666
+accuracy of:new_Toy_train_data_2_4:  1.0
 data_set/Toy_train_data
 states:  2 trial:  5
-accuracy of:new_Toy_train_data_2_5:  0.7200000000000001
+accuracy of:new_Toy_train_data_2_5:  0.7233333333333334
 data_set/Toy_train_data
 states:  2 trial:  6
-accuracy of:new_Toy_train_data_2_6:  0.6666666666666666
+accuracy of:new_Toy_train_data_2_6:  0.7066666666666666
 data_set/Toy_train_data
 states:  2 trial:  7
-accuracy of:new_Toy_train_data_2_7:  1.0
+accuracy of:new_Toy_train_data_2_7:  0.7533333333333333
 data_set/Toy_train_data
 states:  2 trial:  8
-accuracy of:new_Toy_train_data_2_8:  0.7233333333333333
+accuracy of:new_Toy_train_data_2_8:  0.73
 data_set/Toy_train_data
 states:  2 trial:  9
-accuracy of:new_Toy_train_data_2_9:  0.73
+accuracy of:new_Toy_train_data_2_9:  0.7433333333333334
 running agent
 Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 240, in <module>
-    agent = FSAgent(BP, FSA, locations=locations)
-  File "FSA_Agent_combVar.py", line 25, in __init__
-    self.make_prob()
-  File "FSA_Agent_combVar.py", line 180, in make_prob
-    self.make_constraints_eqn4()
-  File "FSA_Agent_combVar.py", line 129, in make_constraints_eqn4
-    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
-  File "/home/sriaish/NSE_PlanningAgent/Whole Toy/makeFSA.py", line 82, in symbolT
-    return self.symbol[u][sig][sym]
-KeyError: 'M'
-7
+  File "FSA_Agent_combVar.py", line 242, in <module>
+    agent.calculate_pi()
+  File "FSA_Agent_combVar.py", line 192, in calculate_pi
+    self.x_[(u, s)] += self.x[(u, s, a)].value[0]
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+9
 --------------------
 --------------------
 Start learning FSA
@@ -102,61 +98,61 @@ Start learning FSA
 data_set/Toy_train_data_2_4
 states:  2 trial:  0
 done
---- 0.8122994899749756 seconds ---
+--- 1.572195053100586 seconds ---
 data_set/Toy_train_data_2_4
 states:  2 trial:  1
 done
---- 2.254042863845825 seconds ---
+--- 2.2917354106903076 seconds ---
 data_set/Toy_train_data_2_4
 states:  2 trial:  2
 done
---- 0.40395116806030273 seconds ---
+--- 0.0848536491394043 seconds ---
 data_set/Toy_train_data_2_4
 states:  2 trial:  3
 done
---- 0.03413891792297363 seconds ---
+--- 1.9143803119659424 seconds ---
 data_set/Toy_train_data_2_4
 states:  2 trial:  4
 done
---- 0.6854681968688965 seconds ---
+--- 1.998274803161621 seconds ---
 data_set/Toy_train_data_2_4
 states:  2 trial:  5
 done
---- 0.7960214614868164 seconds ---
+--- 0.9118990898132324 seconds ---
 data_set/Toy_train_data_2_4
 states:  2 trial:  6
 done
---- 0.7892143726348877 seconds ---
+--- 2.0119681358337402 seconds ---
 data_set/Toy_train_data_2_4
 states:  2 trial:  7
 done
---- 0.4040796756744385 seconds ---
+--- 0.0697786808013916 seconds ---
 data_set/Toy_train_data_2_4
 states:  2 trial:  8
 done
---- 0.21130061149597168 seconds ---
+--- 0.648371696472168 seconds ---
 data_set/Toy_train_data_2_4
 states:  2 trial:  9
 done
---- 0.11497616767883301 seconds ---
---- 6.505735397338867 seconds for all trials---
+--- 0.7538197040557861 seconds ---
+--- 12.257430076599121 seconds for all trials---
 ========================================================
 Checking Accuracy of learned FSAs
 data_set/Toy_train_data_2_4
 states:  2 trial:  0
-accuracy of:new_Toy_train_data_2_4_2_0:  1.0
+accuracy of:new_Toy_train_data_2_4_2_0:  0.7806451612903227
 data_set/Toy_train_data_2_4
 states:  2 trial:  1
-accuracy of:new_Toy_train_data_2_4_2_1:  0.7774193548387098
+accuracy of:new_Toy_train_data_2_4_2_1:  0.767741935483871
 data_set/Toy_train_data_2_4
 states:  2 trial:  2
-accuracy of:new_Toy_train_data_2_4_2_2:  1.0
+accuracy of:new_Toy_train_data_2_4_2_2:  0.7064516129032259
 data_set/Toy_train_data_2_4
 states:  2 trial:  3
-accuracy of:new_Toy_train_data_2_4_2_3:  0.7225806451612904
+accuracy of:new_Toy_train_data_2_4_2_3:  0.7774193548387098
 data_set/Toy_train_data_2_4
 states:  2 trial:  4
-accuracy of:new_Toy_train_data_2_4_2_4:  1.0
+accuracy of:new_Toy_train_data_2_4_2_4:  0.7774193548387098
 data_set/Toy_train_data_2_4
 states:  2 trial:  5
 accuracy of:new_Toy_train_data_2_4_2_5:  1.0
@@ -165,25 +161,21 @@ states:  2 trial:  6
 accuracy of:new_Toy_train_data_2_4_2_6:  0.7870967741935485
 data_set/Toy_train_data_2_4
 states:  2 trial:  7
-accuracy of:new_Toy_train_data_2_4_2_7:  1.0
+accuracy of:new_Toy_train_data_2_4_2_7:  0.703225806451613
 data_set/Toy_train_data_2_4
 states:  2 trial:  8
-accuracy of:new_Toy_train_data_2_4_2_8:  0.7129032258064517
+accuracy of:new_Toy_train_data_2_4_2_8:  1.0
 data_set/Toy_train_data_2_4
 states:  2 trial:  9
-accuracy of:new_Toy_train_data_2_4_2_9:  0.7193548387096775
+accuracy of:new_Toy_train_data_2_4_2_9:  1.0
 running agent
 Traceback (most recent call last):
-  File "FSA_Agent_combVar2.py", line 240, in <module>
-    agent = FSAgent(BP, FSA, locations=locations)
-  File "FSA_Agent_combVar2.py", line 25, in __init__
-    self.make_prob()
-  File "FSA_Agent_combVar2.py", line 180, in make_prob
-    self.make_constraints_eqn4()
-  File "FSA_Agent_combVar2.py", line 129, in make_constraints_eqn4
-    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
-  File "/home/sriaish/NSE_PlanningAgent/Whole Toy/makeFSA.py", line 82, in symbolT
-    return self.symbol[u][sig][sym]
-KeyError: 'M'
-8
+  File "FSA_Agent_combVar2.py", line 242, in <module>
+    agent.calculate_pi()
+  File "FSA_Agent_combVar2.py", line 192, in calculate_pi
+    self.x_[(u, s)] += self.x[(u, s, a)].value[0]
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+14
 --------------------

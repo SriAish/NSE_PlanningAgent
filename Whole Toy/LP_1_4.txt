@@ -1,5 +1,5 @@
 goal:  [((0, 3), (0, 3), True, False, 'p'), ((0, 3), (0, 3), True, True, 'p')]
-{'#': {0: {'N': 0, 'S': 0, 3: 1}, 1: {'N': 0, 'S': 0, 3: 1}, 2: {'N': 0, 'S': 0, 3: 1}}, '1': {0: {'N': 0, 'S': 0, 3: 0}, 1: {'N': 0, 'S': 0, 3: 0}, 2: {'N': 2.6487499953019456e-132, 'S': 1.0, 3: 0}}, '2': {0: {'N': 0, 'S': 0, 3: 0}, 1: {'N': 0, 'S': 0, 3: 0}, 2: {'N': 1.0, 'S': 0, 3: 0}}, '0': {0: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 1: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 2: {'S': 0, 'M': 0, 'N': 0, 3: 0}}}
+{'#': {0: {'N': 0, 'S': 0, 3: 1}, 1: {'N': 0, 'S': 0, 3: 1}, 2: {'N': 0, 'S': 0, 3: 1}}, '1': {0: {'N': 0, 'S': 0, 3: 0}, 1: {'N': 0, 'S': 0, 3: 0}, 2: {'N': 4.725109705047745e-141, 'S': 1.0, 3: 0}}, '2': {0: {'N': 0, 'S': 0, 3: 0}, 1: {'N': 0, 'S': 0, 3: 0}, 2: {'N': 1.0, 'S': 0, 3: 0}}, '0': {0: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 1: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 2: {'S': 0, 'M': 0, 'N': 0, 3: 0}}}
 belief: [('2', ((0, 0), (7, 0), False, False, 'p'))]
 initial belief setup
 variables setup
@@ -7,3 +7,64 @@ objective setup
 eq1
 setting bound
 eq3
+problem setup
+ ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :          274
+   Intermediates:            2
+   Connections  :            0
+   Equations    :          344
+   Residuals    :          342
+ 
+ Number of state variables:            274
+ Number of total equations: -           70
+ Number of slack variables: -            2
+ ---------------------------------------
+ Degrees of freedom       :            202
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  2.21059E+01  9.32500E+00
+    1  9.99057E+03  1.00013E-09
+    2  1.37423E+05  5.24003E-01
+    3  5.81563E+06  9.90675E-01
+    4  2.78716E+06  9.90675E-01
+    5  2.32262E+06  9.90675E-01
+    6  2.32261E+07  9.90675E-01
+    7  9.32500E+00  9.90675E-01
+    8  4.87560E+06  4.95337E-01
+    9  4.87560E+06  4.95337E-01
+ 
+ Iter    Objective  Convergence
+   10  4.87560E+06  4.95337E-01
+   11  4.87560E+06  9.15769E-02
+   12  4.87560E+06  4.15016E-01
+   13  4.87559E+07  4.95337E-01
+   14  9.32500E+00  4.95337E-01
+ No feasible solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :   4.980000000796281E-002 sec
+ Objective      :    9.32499980000007     
+ Unsuccessful with error code            0
+ ---------------------------------------------------
+ 
+ Creating file: infeasibilities.txt
+ Use command apm_get(server,app,'infeasibilities.txt') to retrieve file
+ @error: Solution Not Found
+
+Exception Occured
+@error: Solution Not Found
+
