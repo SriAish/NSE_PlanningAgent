@@ -176,10 +176,10 @@ class FSAgent:
             self.make_constraints_eqn3()
             print("eq3")
             sys.stdout.flush()
-        if float(sys.argv[11]) >= 0:
-            self.make_constraints_eqn4()
-            print("eq4")
-            sys.stdout.flush()
+        # if float(sys.argv[11]) >= 0:
+        #     self.make_constraints_eqn4()
+        #     print("eq4")
+        #     sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
