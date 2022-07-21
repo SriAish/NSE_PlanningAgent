@@ -4,10 +4,11 @@ import numpy as np
 import sys
 
 class BoxPushingConstants:
-    def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), goal_state = [], init_box_loc=(7, 0)):
+    def __init__(self, grid_height = 1, grid_width = 4, rug_width = 3, rug_height = 3, rug_start = (2, 2), goal_state = [], init_box_loc=(7, 0)):
         # Making the grrid
-        self.grid_size = grid_size
-        self.grid = np.full([grid_size, grid_size], 'p')
+        self.grid_height = grid_height
+        self.grid_width = grid_width
+        self.grid = np.full([grid_height, grid_width], 'p')
         
         # Making the rug
         self.rug_width = rug_width
@@ -41,8 +42,8 @@ class BoxPushingConstants:
     def generateStates(self):
         # state = (agent_location, box_location, box_picked_up, agent_wrapped, number_of_times_stepped_on_rug)
         self.states = []
-        for i in range(self.grid_size):
-            for j in range(self.grid_size):
+        for i in range(self.grid_height):
+            for j in range(self.grid_width):
                 self.states.append(((i, j), self.init_box_loc, False, False, self.getType((i, j))))
                 self.states.append(((i, j), self.init_box_loc, False, True, self.getType((i, j))))
                 self.states.append(((i, j), (i, j), True, False, self.getType((i, j))))
@@ -77,7 +78,7 @@ class BoxPushingConstants:
         return self.actions.getActionCost(action)
 
     def moveDown(self, location):
-        return (min(self.grid_size - 1, location[0] + 1), location[1])
+        return (min(self.grid_height - 1, location[0] + 1), location[1])
 
     def moveUp(self, location):
         return (max(0, location[0] - 1), location[1])
@@ -86,7 +87,7 @@ class BoxPushingConstants:
         return (location[0], max(0, location[1] - 1))
 
     def moveRight(self, location):
-        return (location[0], min(self.grid_size - 1, location[1] + 1))
+        return (location[0], min(self.grid_width - 1, location[1] + 1))
 
     def move(self, state, action):
         agent_locations_prob = []

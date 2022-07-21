@@ -211,7 +211,7 @@ states = []
 for i in range(int(sys.argv[2])):
  states += [str(i+1)]
 in_sym = [0, 1, 2]
-out_sym = ['N', 'S', 'M', 3]
+out_sym = ['N', 'S', 3]
 
 file_name = sys.argv[1][sys.argv[1].index("/")+1:]
 
