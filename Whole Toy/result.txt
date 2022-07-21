@@ -1,87 +1,189 @@
 ==========================================
-SLURM_JOB_ID = 721248
-SLURM_NODELIST = gnode012
+SLURM_JOB_ID = 722330
+SLURM_NODELIST = gnode075
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job721248/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job722330/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Start learning FSA
-75
-data_set/BP_15_15_35_25
-states:  7 trial:  0
+30
+data_set/Toy_train_data
+states:  2 trial:  0
 done
---- 92.81559491157532 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  1
+--- 0.4106740951538086 seconds ---
+data_set/Toy_train_data
+states:  2 trial:  1
 done
---- 1764.74196600914 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  2
+--- 0.031438350677490234 seconds ---
+data_set/Toy_train_data
+states:  2 trial:  2
 done
---- 3536.0720217227936 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  3
+--- 0.46707963943481445 seconds ---
+data_set/Toy_train_data
+states:  2 trial:  3
 done
---- 493.31786012649536 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  4
+--- 0.4051339626312256 seconds ---
+data_set/Toy_train_data
+states:  2 trial:  4
 done
---- 879.9819257259369 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  5
+--- 1.8653457164764404 seconds ---
+data_set/Toy_train_data
+states:  2 trial:  5
 done
---- 26.713246822357178 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  6
+--- 0.5081896781921387 seconds ---
+data_set/Toy_train_data
+states:  2 trial:  6
 done
---- 5059.064175367355 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  7
+--- 0.08696317672729492 seconds ---
+data_set/Toy_train_data
+states:  2 trial:  7
 done
---- 3475.0247254371643 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  8
+--- 0.6698317527770996 seconds ---
+data_set/Toy_train_data
+states:  2 trial:  8
 done
---- 768.4459745883942 seconds ---
-data_set/BP_15_15_35_25
-states:  7 trial:  9
+--- 0.12056708335876465 seconds ---
+data_set/Toy_train_data
+states:  2 trial:  9
 done
---- 11.891286611557007 seconds ---
---- 16108.069013118744 seconds for all trials---
+--- 0.051578521728515625 seconds ---
+--- 4.616954565048218 seconds for all trials---
 ========================================================
 Checking Accuracy of learned FSAs
-data_set/BP_15_15_35_25
-states:  5 trial:  0
-Traceback (most recent call last):
-  File "test.py", line 108, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_5_0'
+data_set/Toy_train_data
+states:  2 trial:  0
+accuracy of:new_Toy_train_data_2_0:  1.0
+data_set/Toy_train_data
+states:  2 trial:  1
+accuracy of:new_Toy_train_data_2_1:  0.7333333333333333
+data_set/Toy_train_data
+states:  2 trial:  2
+accuracy of:new_Toy_train_data_2_2:  0.9966666666666667
+data_set/Toy_train_data
+states:  2 trial:  3
+accuracy of:new_Toy_train_data_2_3:  1.0
+data_set/Toy_train_data
+states:  2 trial:  4
+accuracy of:new_Toy_train_data_2_4:  0.7366666666666666
+data_set/Toy_train_data
+states:  2 trial:  5
+accuracy of:new_Toy_train_data_2_5:  0.7200000000000001
+data_set/Toy_train_data
+states:  2 trial:  6
+accuracy of:new_Toy_train_data_2_6:  0.6666666666666666
+data_set/Toy_train_data
+states:  2 trial:  7
+accuracy of:new_Toy_train_data_2_7:  1.0
+data_set/Toy_train_data
+states:  2 trial:  8
+accuracy of:new_Toy_train_data_2_8:  0.7233333333333333
+data_set/Toy_train_data
+states:  2 trial:  9
+accuracy of:new_Toy_train_data_2_9:  0.73
 running agent
 Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 229, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_7_best'
-16111
+  File "FSA_Agent_combVar.py", line 240, in <module>
+    agent = FSAgent(BP, FSA, locations=locations)
+  File "FSA_Agent_combVar.py", line 25, in __init__
+    self.make_prob()
+  File "FSA_Agent_combVar.py", line 180, in make_prob
+    self.make_constraints_eqn4()
+  File "FSA_Agent_combVar.py", line 129, in make_constraints_eqn4
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
+  File "/home/sriaish/NSE_PlanningAgent/Whole Toy/makeFSA.py", line 82, in symbolT
+    return self.symbol[u][sig][sym]
+KeyError: 'M'
+7
 --------------------
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 229, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_7_best'
-0
 --------------------
+Start learning FSA
+31
+data_set/Toy_train_data_2_4
+states:  2 trial:  0
+done
+--- 0.8122994899749756 seconds ---
+data_set/Toy_train_data_2_4
+states:  2 trial:  1
+done
+--- 2.254042863845825 seconds ---
+data_set/Toy_train_data_2_4
+states:  2 trial:  2
+done
+--- 0.40395116806030273 seconds ---
+data_set/Toy_train_data_2_4
+states:  2 trial:  3
+done
+--- 0.03413891792297363 seconds ---
+data_set/Toy_train_data_2_4
+states:  2 trial:  4
+done
+--- 0.6854681968688965 seconds ---
+data_set/Toy_train_data_2_4
+states:  2 trial:  5
+done
+--- 0.7960214614868164 seconds ---
+data_set/Toy_train_data_2_4
+states:  2 trial:  6
+done
+--- 0.7892143726348877 seconds ---
+data_set/Toy_train_data_2_4
+states:  2 trial:  7
+done
+--- 0.4040796756744385 seconds ---
+data_set/Toy_train_data_2_4
+states:  2 trial:  8
+done
+--- 0.21130061149597168 seconds ---
+data_set/Toy_train_data_2_4
+states:  2 trial:  9
+done
+--- 0.11497616767883301 seconds ---
+--- 6.505735397338867 seconds for all trials---
+========================================================
+Checking Accuracy of learned FSAs
+data_set/Toy_train_data_2_4
+states:  2 trial:  0
+accuracy of:new_Toy_train_data_2_4_2_0:  1.0
+data_set/Toy_train_data_2_4
+states:  2 trial:  1
+accuracy of:new_Toy_train_data_2_4_2_1:  0.7774193548387098
+data_set/Toy_train_data_2_4
+states:  2 trial:  2
+accuracy of:new_Toy_train_data_2_4_2_2:  1.0
+data_set/Toy_train_data_2_4
+states:  2 trial:  3
+accuracy of:new_Toy_train_data_2_4_2_3:  0.7225806451612904
+data_set/Toy_train_data_2_4
+states:  2 trial:  4
+accuracy of:new_Toy_train_data_2_4_2_4:  1.0
+data_set/Toy_train_data_2_4
+states:  2 trial:  5
+accuracy of:new_Toy_train_data_2_4_2_5:  1.0
+data_set/Toy_train_data_2_4
+states:  2 trial:  6
+accuracy of:new_Toy_train_data_2_4_2_6:  0.7870967741935485
+data_set/Toy_train_data_2_4
+states:  2 trial:  7
+accuracy of:new_Toy_train_data_2_4_2_7:  1.0
+data_set/Toy_train_data_2_4
+states:  2 trial:  8
+accuracy of:new_Toy_train_data_2_4_2_8:  0.7129032258064517
+data_set/Toy_train_data_2_4
+states:  2 trial:  9
+accuracy of:new_Toy_train_data_2_4_2_9:  0.7193548387096775
 running agent
 Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 229, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_7_best'
-0
+  File "FSA_Agent_combVar2.py", line 240, in <module>
+    agent = FSAgent(BP, FSA, locations=locations)
+  File "FSA_Agent_combVar2.py", line 25, in __init__
+    self.make_prob()
+  File "FSA_Agent_combVar2.py", line 180, in make_prob
+    self.make_constraints_eqn4()
+  File "FSA_Agent_combVar2.py", line 129, in make_constraints_eqn4
+    t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
+  File "/home/sriaish/NSE_PlanningAgent/Whole Toy/makeFSA.py", line 82, in symbolT
+    return self.symbol[u][sig][sym]
+KeyError: 'M'
+8
 --------------------
