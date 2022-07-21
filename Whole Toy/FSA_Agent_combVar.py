@@ -77,7 +77,7 @@ class FSAgent:
                 obj += self.m.Intermediate(o)
                 o = 0
         obj += self.m.Intermediate(o)
-        self.m.Equation(obj - 4.325 <= 100)
+        self.m.Equation(obj - 4.325 <= 5)
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
@@ -169,7 +169,7 @@ class FSAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        # self.set_bound()
+        self.set_bound()
         print("setting bound")
         sys.stdout.flush()
         if float(sys.argv[10]) >= 0:
@@ -231,10 +231,10 @@ if __name__ == '__main__':
     FSA = FSAConstants(delta, omega)
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
-    locations = [(7, 0)]
+    locations = [(0, 1)]
 
     if int(sys.argv[1]) == 3:
-        locations = [(7, 0)]
+        locations = [(0, 1)]
         # locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
     # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
     agent = FSAgent(BP, FSA, locations=locations)
