@@ -169,7 +169,7 @@ class FSAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        self.set_bound()
+        # self.set_bound()
         print("setting bound")
         sys.stdout.flush()
         if float(sys.argv[10]) >= 0:
