@@ -26,7 +26,7 @@ class BoxPushingConstants:
         self.actions = Actions()
 
         # Different action probability
-        self.prob = 0
+        self.prob = 0.05
 
         # Hash table to maintain transition probabilities 
         self.transition_probabilities = {}
