@@ -4,3 +4,39 @@ belief: [('6', ((0, 0), (7, 0), False, False, 'p'))]
 initial belief setup
 variables setup
 objective setup
+eq1
+setting bound
+eq3
+eq4
+problem setup
+ ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :        32475
+   Intermediates:          163
+   Connections  :            0
+   Equations    :        40747
+   Residuals    :        40584
+ 
+ @error: Insufficient Memory Allocated
+ Error: Not enough memory to compile model 1st derivatives
+ Current limit:        10000
+ Requested sparse elements:        10200
+ Increase MAX_MEMORY 10^(2-10), Currently: 10^           4
+ Stopping...
+
+Exception Occured
+@error: Insufficient Memory Allocated
+ Error: Not enough memory to compile model 1st derivatives
+ Current limit:        10000
+ Requested sparse elements:        10200
+ Increase MAX_MEMORY 10^(2-10), Currently: 10^           4
+ Stopping...
+

@@ -1,40 +1,55 @@
 ==========================================
-SLURM_JOB_ID = 722477
-SLURM_NODELIST = gnode037
+SLURM_JOB_ID = 722495
+SLURM_NODELIST = gnode021
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job722477/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job722495/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Checking Accuracy of learned FSAs
 data_set/BP_15_15_35_25
 states:  7 trial:  0
-accuracy of:new_BP_15_15_35_25_7_0:  0.328436018957346
+accuracy of:new_BP_15_15_35_25_7_0:  0.33175355450236965
 data_set/BP_15_15_35_25
 states:  7 trial:  1
-accuracy of:new_BP_15_15_35_25_7_1:  0.880568720379147
+accuracy of:new_BP_15_15_35_25_7_1:  0.8810426540284361
 data_set/BP_15_15_35_25
 states:  7 trial:  2
-accuracy of:new_BP_15_15_35_25_7_2:  0.524170616113744
+accuracy of:new_BP_15_15_35_25_7_2:  0.5312796208530804
 data_set/BP_15_15_35_25
 states:  7 trial:  3
-accuracy of:new_BP_15_15_35_25_7_3:  0.5137440758293839
+accuracy of:new_BP_15_15_35_25_7_3:  0.5165876777251185
 data_set/BP_15_15_35_25
 states:  7 trial:  4
-accuracy of:new_BP_15_15_35_25_7_4:  0.5199052132701423
+accuracy of:new_BP_15_15_35_25_7_4:  0.5180094786729856
 data_set/BP_15_15_35_25
 states:  7 trial:  5
-accuracy of:new_BP_15_15_35_25_7_5:  0.30995260663507107
+accuracy of:new_BP_15_15_35_25_7_5:  0.33649289099526064
 data_set/BP_15_15_35_25
 states:  7 trial:  6
-accuracy of:new_BP_15_15_35_25_7_6:  0.5118483412322276
+accuracy of:new_BP_15_15_35_25_7_6:  0.5018957345971564
 data_set/BP_15_15_35_25
 states:  7 trial:  7
-accuracy of:new_BP_15_15_35_25_7_7:  0.5246445497630331
+accuracy of:new_BP_15_15_35_25_7_7:  0.5222748815165877
 data_set/BP_15_15_35_25
 states:  7 trial:  8
-accuracy of:new_BP_15_15_35_25_7_8:  0.5151658767772511
+accuracy of:new_BP_15_15_35_25_7_8:  0.509952606635071
 data_set/BP_15_15_35_25
 states:  7 trial:  9
-accuracy of:new_BP_15_15_35_25_7_9:  0.34360189573459715
+accuracy of:new_BP_15_15_35_25_7_9:  0.31563981042654027
 running agent
+Traceback (most recent call last):
+  File "FSA_Agent_combVar.py", line 243, in <module>
+    agent.calculate_pi()
+  File "FSA_Agent_combVar.py", line 193, in calculate_pi
+    self.x_[(u, s)] += self.x[(u, s, a)].value[0]
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+2946
+--------------------
+2296
+--------------------
+running agent
+2572
+--------------------
