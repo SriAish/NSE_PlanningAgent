@@ -76,7 +76,7 @@ class VIAgent:
                     a = i
                 cost = min(cost, c)
             self.stateValues[state] = cost
-            # print(state, a, cost)
+            print(state, a, cost)
             policy[state][a] = 1
         print(self.stateValues[self.belief_state[0]])
         return policy
@@ -93,9 +93,9 @@ class VIPolicy:
         return self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])]
 
 if __name__ == '__main__':
-    ped = [(0, 1), (2, 3), (5, 6)]
-    pud = [(2, 3), (4, 5), (6, 3)]
-    g_pos = (3, 6)
+    ped = [(0, 1), (3, 5), (5, 6)]
+    pud = [(2, 3), (3, 5), (6, 3)]
+    g_pos = (int(sys.argv[2]), int(sys.argv[3]))
     e_state = []
     e_state.append((g_pos, 'fast', False, False))
     e_state.append((g_pos, 'slow', False, False))
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     agent = VIAgent(BP, delta=0.001)
     policy = agent.generatePolicy()
     # print(policy)
-    with open('policy_values/'+ sys.argv[2] + "_" + sys.argv[10] + sys.argv[11] + "_" + sys.argv[6] + sys.argv[7] + '.pkl', 'wb') as f:
+    with open('policy/'+ sys.argv[2] + "_" + sys.argv[3] + '.pkl', 'wb') as f:
         pickle.dump(policy, f)
     print("done")
     # # print(agent.stateValues)
