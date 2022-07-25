@@ -393,3 +393,90 @@ done
 --- 324.0757622718811 seconds ---
 data_set/BP_15_15_35_25
 states:  8 trial:  2
+done
+--- 766.9358150959015 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  3
+done
+--- 1801.306794643402 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  4
+done
+--- 62.30131983757019 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  5
+done
+--- 5687.434842824936 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  6
+done
+--- 30.969609022140503 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  7
+done
+--- 6128.75096988678 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  8
+done
+--- 4666.26851272583 seconds ---
+data_set/BP_15_15_35_25
+states:  8 trial:  9
+done
+--- 6180.60098361969 seconds ---
+--- 28670.02905344963 seconds for all trials---
+========================================================
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  8 trial:  0
+accuracy of:new_BP_15_15_35_25_8_0:  0.8687203791469196
+data_set/BP_15_15_35_25
+states:  8 trial:  1
+accuracy of:new_BP_15_15_35_25_8_1:  0.35639810426540286
+data_set/BP_15_15_35_25
+states:  8 trial:  2
+accuracy of:new_BP_15_15_35_25_8_2:  0.49857819905213263
+data_set/BP_15_15_35_25
+states:  8 trial:  3
+accuracy of:new_BP_15_15_35_25_8_3:  0.7113744075829384
+data_set/BP_15_15_35_25
+states:  8 trial:  4
+accuracy of:new_BP_15_15_35_25_8_4:  0.3355450236966825
+data_set/BP_15_15_35_25
+states:  8 trial:  5
+accuracy of:new_BP_15_15_35_25_8_5:  0.647867298578199
+data_set/BP_15_15_35_25
+states:  8 trial:  6
+accuracy of:new_BP_15_15_35_25_8_6:  0.3374407582938389
+data_set/BP_15_15_35_25
+states:  8 trial:  7
+accuracy of:new_BP_15_15_35_25_8_7:  0.5156398104265403
+data_set/BP_15_15_35_25
+states:  8 trial:  8
+accuracy of:new_BP_15_15_35_25_8_8:  0.824170616113744
+data_set/BP_15_15_35_25
+states:  8 trial:  9
+accuracy of:new_BP_15_15_35_25_8_9:  0.5213270142180095
+Start learning FSA
+75
+data_set/BP_15_15_35_25
+states:  9 trial:  0
+done
+--- 4830.340542078018 seconds ---
+data_set/BP_15_15_35_25
+states:  9 trial:  1
+done
+--- 7731.769424200058 seconds ---
+data_set/BP_15_15_35_25
+states:  9 trial:  2
+done
+--- 23.354098558425903 seconds ---
+data_set/BP_15_15_35_25
+states:  9 trial:  3
+done
+--- 7705.250973701477 seconds ---
+data_set/BP_15_15_35_25
+states:  9 trial:  4
+done
+--- 2372.6088190078735 seconds ---
+data_set/BP_15_15_35_25
+states:  9 trial:  5
