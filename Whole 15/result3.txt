@@ -480,3 +480,54 @@ done
 --- 2372.6088190078735 seconds ---
 data_set/BP_15_15_35_25
 states:  9 trial:  5
+done
+--- 18402.2032623291 seconds ---
+data_set/BP_15_15_35_25
+states:  9 trial:  6
+done
+--- 2232.495651245117 seconds ---
+data_set/BP_15_15_35_25
+states:  9 trial:  7
+done
+--- 4895.755751848221 seconds ---
+data_set/BP_15_15_35_25
+states:  9 trial:  8
+done
+--- 4409.071105480194 seconds ---
+data_set/BP_15_15_35_25
+states:  9 trial:  9
+done
+--- 87.14232754707336 seconds ---
+--- 52689.992618083954 seconds for all trials---
+========================================================
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  9 trial:  0
+accuracy of:new_BP_15_15_35_25_9_0:  0.9222748815165878
+data_set/BP_15_15_35_25
+states:  9 trial:  1
+accuracy of:new_BP_15_15_35_25_9_1:  0.5265402843601896
+data_set/BP_15_15_35_25
+states:  9 trial:  2
+accuracy of:new_BP_15_15_35_25_9_2:  0.3327014218009479
+data_set/BP_15_15_35_25
+states:  9 trial:  3
+accuracy of:new_BP_15_15_35_25_9_3:  0.5080568720379146
+data_set/BP_15_15_35_25
+states:  9 trial:  4
+accuracy of:new_BP_15_15_35_25_9_4:  0.5175355450236967
+data_set/BP_15_15_35_25
+states:  9 trial:  5
+accuracy of:new_BP_15_15_35_25_9_5:  0.5298578199052132
+data_set/BP_15_15_35_25
+states:  9 trial:  6
+accuracy of:new_BP_15_15_35_25_9_6:  0.5080568720379147
+data_set/BP_15_15_35_25
+states:  9 trial:  7
+accuracy of:new_BP_15_15_35_25_9_7:  0.5431279620853081
+data_set/BP_15_15_35_25
+states:  9 trial:  8
+accuracy of:new_BP_15_15_35_25_9_8:  0.8535545023696682
+data_set/BP_15_15_35_25
+states:  9 trial:  9
+accuracy of:new_BP_15_15_35_25_9_9:  0.3402843601895734
