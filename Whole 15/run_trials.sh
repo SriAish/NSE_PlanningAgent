@@ -11,49 +11,49 @@ source ~/keras/bin/activate
 
 start=`date +%s`
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_3_15 1 0 0 data_set/BP_15_15_35_25 3 15 >> LP_sm_1_15_0_10_3.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_3_15 1 0 0 data_set/BP_15_15_35_25 3 20 >>LP_sm_1_15_0_10_3.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_4_15 1 0 0 data_set/BP_15_15_35_25 4 15 >> LP_sm_1_15_0_10_4.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_4_15 1 0 0 data_set/BP_15_15_35_25 4 20 >> LP_sm_1_15_0_10_4.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_5_15 1 0 0 data_set/BP_15_15_35_25 5 15 >> LP_sm_1_15_0_10_5.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_5_15 1 0 0 data_set/BP_15_15_35_25 5 20 >> LP_sm_1_15_0_10_5.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_6_15 1 0 0 data_set/BP_15_15_35_25 6 15 >> LP_sm_1_15_0_10_6.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_6_15 1 0 0 data_set/BP_15_15_35_25 6 20 >> LP_sm_1_15_0_10_6.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_7_15 1 0 0 data_set/BP_15_15_35_25 7 15 >> LP_sm_1_15_0_10_7.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_7_15 1 0 0 data_set/BP_15_15_35_25 7 20 >> LP_sm_1_15_0_10_7.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_8_15 1 0 0 data_set/BP_15_15_35_25 8 15 >> LP_sm_1_15_0_10_8_trial.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_8_15 1 0 0 data_set/BP_15_15_35_25 8 20 >> LP_sm_1_15_0_10_8_trial.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_9_15 1 0 0 data_set/BP_15_15_35_25 9 15 >> LP_sm_1_15_0_10_9_trial.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_9_15 1 0 0 data_set/BP_15_15_35_25 9 20 >> LP_sm_1_15_0_10_9_trial.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
