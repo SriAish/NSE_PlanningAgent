@@ -98,6 +98,8 @@ def run_test(R, fsa):
 #         rm +=1
 
 # print(rs, rn, rm)
+b = 0
+b_try = 0
 if __name__ == '__main__':
     file_name = sys.argv[1][sys.argv[1].index("/")+1:]
     for i_try in range(10):
