@@ -210,10 +210,10 @@ class FSAgent:
 
     def save_pi(self, file):
         print("Saving policies")
-        with open('policy/'+ 'FSA_LP_p' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'FSA_LP_p' + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.pi_, f)
 
-        with open('policy/'+ 'FSA_LP_x' + sys.argv[9] + '_' + file + '.pkl', 'wb') as f:
+        with open('policy/'+ 'FSA_LP_x' + '_' + file + '.pkl', 'wb') as f:
             pickle.dump(self.x_, f)
 
     def solve_prob(self):
@@ -226,7 +226,7 @@ class FSAgent:
 if __name__ == '__main__':
     g_pos = (int(sys.argv[2]), int(sys.argv[3]))
     g_state = [(g_pos, 'fast', False, False), (g_pos, 'slow', False, False)]
-    BP = NavigationConstants(sys.argv[1], [], [], g_state)
+    BP = NavigationConstants(int(sys.argv[1]), [], [], g_state)
     file_name = sys.argv[4][sys.argv[4].index("/")+1:]
     # file_name = sys.argv[12][sys.argv[12].index("/")+1:]
     delta = load("results/delta/new_" + file_name + "_" + sys.argv[5] + "_best")
@@ -243,4 +243,4 @@ if __name__ == '__main__':
     agent = FSAgent(BP, FSA)
     agent.solve_prob()
     agent.calculate_pi()
-    # agent.save_pi(sys.argv[8])
+    agent.save_pi(sys.argv[9])
