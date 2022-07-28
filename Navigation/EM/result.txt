@@ -1,0 +1,64 @@
+==========================================
+SLURM_JOB_ID = 726799
+SLURM_NODELIST = gnode023
+SLURM_JOB_GPUS = 0
+==========================================
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
+/var/spool/slurmd/job726799/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+45
+data/Nav_15_15_25_15
+states:  4 trial:  0
+done
+--- 1.7045955657958984 seconds ---
+data/Nav_15_15_25_15
+states:  4 trial:  1
+done
+--- 1.6912016868591309 seconds ---
+data/Nav_15_15_25_15
+states:  4 trial:  2
+done
+--- 377.6655237674713 seconds ---
+data/Nav_15_15_25_15
+states:  4 trial:  3
+done
+--- 173.47996473312378 seconds ---
+data/Nav_15_15_25_15
+states:  4 trial:  4
+done
+--- 118.69490242004395 seconds ---
+data/Nav_15_15_25_15
+states:  4 trial:  5
+done
+--- 340.81477093696594 seconds ---
+data/Nav_15_15_25_15
+states:  4 trial:  6
+done
+--- 119.51926350593567 seconds ---
+data/Nav_15_15_25_15
+states:  4 trial:  7
+done
+--- 1.3361010551452637 seconds ---
+data/Nav_15_15_25_15
+states:  4 trial:  8
+done
+--- 1005.8608584403992 seconds ---
+data/Nav_15_15_25_15
+states:  4 trial:  9
+done
+--- 476.6366038322449 seconds ---
+--- 2617.404411315918 seconds for all trials---
+========================================================
+python3.7: can't open file 'test3.py': [Errno 2] No such file or directory
+--------------------
+45
+data/Nav_15_15_25_15
+states:  5 trial:  0
+done
+--- 1579.0726852416992 seconds ---
+data/Nav_15_15_25_15
+states:  5 trial:  1
+done
+--- 6.489156484603882 seconds ---
+data/Nav_15_15_25_15
+states:  5 trial:  2
