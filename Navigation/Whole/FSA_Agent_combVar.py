@@ -36,6 +36,7 @@ class FSAgent:
         self.belief_pr = []
         s = ((0, 0), 'slow', False, False)
         li = self.FSA.nextState('0', s, "emp")
+        print(li)
         for u, pr in li:
             self.belief_state.append((u, s))
             self.belief_pr[(u, s)] = pr
