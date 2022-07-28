@@ -224,14 +224,13 @@ class FSAgent:
             print(e)
 
 if __name__ == '__main__':
-    # g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    # g_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
-    g_state = [((2, 2), 'fast', False, False), ((2, 2), 'slow', False, False)]
-    BP = NavigationConstants(3, [], [], g_state)
+    g_pos = (int(sys.argv[2]), int(sys.argv[3]))
+    g_state = [(g_pos, 'fast', False, False), (g_pos, 'slow', False, False)]
+    BP = NavigationConstants(sys.argv[1], [], [], g_state)
     file_name = "random"
     # file_name = sys.argv[12][sys.argv[12].index("/")+1:]
-    # delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-    # omega = load("results/omega/new_" + file_name + "_" + sys.argv[13] + "_best")
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
+    omega = load("results/omega/new_" + file_name + "_" + sys.argv[13] + "_best")
     FSA = FSAConstants()
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]

@@ -8,21 +8,20 @@ class FSAConstants:
     def __init__(self):
         # Defining labels 
         self.label = {}
-        self.label[(False, False, False, False)] = 0
-        self.label[(True, False, False, False)] = 1
-        self.label[(False, False, True, False)] = 2
-        self.label[(True, False, True, False)] = 3
-        self.label[(False, True, True, False)] = 4
-        self.label[(True, True, True, False)] = 5
-        self.label[(False, False, False, True)] = 6
+        self.label[(False, False, False)] = 0
+        self.label[(False, True, False)] = 1
+        self.label[(True, True, False)] = 2
+        self.label[(False, False, True)] = 3
 
     def isEnd(self, state):
         return state[0] == (-1, -1)
 
     def getLabel(self, state, action):
         if self.isEnd(state):
-            return self.label[(False, False, False, True)]
+            return self.label[(False, False, True)]
         fast = True
+        ped = state[2]
+        pud = state[3]
         if state[1] == 'slow':
             fast = False
 
