@@ -103,7 +103,7 @@ class FSAgent:
 
             # Calculate right hand side
             if (u_, s_) in self.belief_state:
-                c += 1/len(self.belief_state)
+                c += self.belief_pr[(u_, s_)]
 
             # Adding constraint
             self.m.Equation(y == c)
