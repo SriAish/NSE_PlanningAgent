@@ -1,5 +1,5 @@
 from EnvConst import NavigationConstants
-from FSA import FSAConstants
+from makeFSA import FSAConstants
 import sys
 import pickle
 import itertools
