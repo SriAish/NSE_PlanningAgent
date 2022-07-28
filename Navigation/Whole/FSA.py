@@ -17,7 +17,7 @@ class FSAConstants:
         return '0'
 
     def nextState(self, u, s, a):
-        return ['0', 1]
+        return [('0', 1)]
 
     def symbolT(self, u, s, a, sym):
         return 1
