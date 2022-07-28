@@ -1,5 +1,5 @@
-from EnvConst import BoxPushingConstants
-from makeFSA import FSAConstants
+from EnvConst import NavigationConstants
+from FSA import FSAConstants
 import sys
 import pickle
 import itertools
@@ -8,11 +8,11 @@ from math import e
 from misc import load
 
 class FSAgent:
-    def __init__(self, BP, FSA, gamma = 0.999, locations = None):
+    def __init__(self, BP, FSA, gamma = 0.999):
         self.m = GEKKO(remote=False)
         self.m.options.MAX_MEMORY = 6
         self.m.options.MAX_ITER = 3000
-        self.m.options.SOLVER = int(sys.argv[9])
+        self.m.options.SOLVER = 1
         self.BP = BP
         self.FSA = FSA
         self.gamma = gamma
@@ -32,13 +32,13 @@ class FSAgent:
         return pickle.load(file_to_read)
 
     def init_belief(self):
-        if self.locations == None:
-            self.locations = [(1, 1)]
-        init_loc = (0, 0)
         self.belief_state = []
-        for i in self.locations:
-            s = (init_loc, i, False, False, 'p')
-            self.belief_state.append((self.FSA.nextState('0', s, "emp"), s))
+        self.belief_pr = []
+        s = ((0, 0), 'slow', False, False)
+        li = self.FSA.nextState('0', s, "emp")
+        for u, pr in li:
+            self.belief_state.append((u, s))
+            self.belief_pr[(u, s)] = pr
         print("belief:", self.belief_state)
 
     def init_var(self):
@@ -170,17 +170,17 @@ class FSAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        self.set_bound()
-        print("setting bound")
-        sys.stdout.flush()
-        if float(sys.argv[10]) >= 0:
-            self.make_constraints_eqn3()
-            print("eq3")
-            sys.stdout.flush()
-        if float(sys.argv[11]) >= 0:
-            self.make_constraints_eqn4()
-            print("eq4")
-            sys.stdout.flush()
+        # self.set_bound()
+        # print("setting bound")
+        # sys.stdout.flush()
+        # if float(sys.argv[10]) >= 0:
+        #     self.make_constraints_eqn3()
+        #     print("eq3")
+        #     sys.stdout.flush()
+        # if float(sys.argv[11]) >= 0:
+        #     self.make_constraints_eqn4()
+        #     print("eq4")
+        #     sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
@@ -225,20 +225,22 @@ class FSAgent:
 if __name__ == '__main__':
     g_pos = (int(sys.argv[6]), int(sys.argv[7]))
     g_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
-    BP = BoxPushingConstants(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), (int(sys.argv[4]), int(sys.argv[5])), g_state)
-    file_name = sys.argv[12][sys.argv[12].index("/")+1:]
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-    omega = load("results/omega/new_" + file_name + "_" + sys.argv[13] + "_best")
-    FSA = FSAConstants(delta, omega)
+    g_state = [((2, 2), 'fast', False, False), ((2, 2), 'slow', False, False)]
+    BP = NavigationConstants(3, [], [], g_state)
+    file_name = "random"
+    # file_name = sys.argv[12][sys.argv[12].index("/")+1:]
+    # delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
+    # omega = load("results/omega/new_" + file_name + "_" + sys.argv[13] + "_best")
+    FSA = FSAConstants()
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
-    locations = [(7, 0)]
+    locations = [(0, 0)]
 
-    if int(sys.argv[1]) == 3:
-        locations = [(7, 0)]
+    # if int(sys.argv[1]) == 3:
+    #     locations = [(0, 0)]
         # locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
     # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
     agent = FSAgent(BP, FSA, locations=locations)
     agent.solve_prob()
     agent.calculate_pi()
-    agent.save_pi(sys.argv[8])
+    # agent.save_pi(sys.argv[8])

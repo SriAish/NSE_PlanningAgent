@@ -39,9 +39,10 @@ class FSAgent:
         self.belief_pr = {}
         for i in self.locations:
             s = (init_loc, i, False, False, 'p')
-            u, pr = self.FSA.nextState('0', s, "emp")
-            self.belief_state.append((u, s))
-            self.belief_pr[(u, s)] = pr
+            li = self.FSA.nextState('0', s, "emp")
+            for u, pr in li:
+                self.belief_state.append((u, s))
+                self.belief_pr[(u, s)] = pr
         print("belief:", self.belief_state)
 
     def init_var(self):

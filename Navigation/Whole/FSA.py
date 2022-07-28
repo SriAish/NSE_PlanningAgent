@@ -10,29 +10,20 @@ class FSAConstants:
     def __init__(self):
         # Defining labels 
         self.label = {}
+        self.states = ['0']
+        self.symbols = ['0']
 
     def getLabel(self, state, action):
         return '0'
 
     def nextState(self, u, s, a):
-        sig = self.getLabel(s, a)
-
-        s = []
-        s_pro = []
-        for i in self.state_transitions[u][sig]:
-            s += [i]
-            s_pro += [self.state_transitions[u][sig][i]]
-
-        return np.random.choice(s, p = s_pro)
+        return ['0', 1]
 
     def symbolT(self, u, s, a, sym):
-        # print("get symbol:", s)
-        sig = self.getLabel(s, a)
-        return self.symbol[u][sig][sym]
+        return 1
 
     def T(self, u, s, a, u_):
-        sig = self.getLabel(s, a)
-        return self.state_transitions[u][sig][u_]
+        return 1
 
 
 if __name__ == '__main__':
