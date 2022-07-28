@@ -224,7 +224,7 @@ class FSAgent:
             print(e)
 
 if __name__ == '__main__':
-    print(b_obj_val((int(sys.argv[6])/100)*b_obj_val))
+    print(b_obj_val*((int(sys.argv[6])/100)*b_obj_val))
     g_pos = (int(sys.argv[2]), int(sys.argv[3]))
     g_state = [(g_pos, 'fast', False, False), (g_pos, 'slow', False, False)]
     BP = NavigationConstants(int(sys.argv[1]), [], [], g_state)
