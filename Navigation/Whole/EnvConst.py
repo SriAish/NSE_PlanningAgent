@@ -57,7 +57,7 @@ class NavigationConstants:
         self.end_state = ((-1, -1), '?', False, False)
         self.states.append(self.end_state)
 
-    def getValidActions(self):
+    def getValidActions(self, state):
         actions = copy.deepcopy(self.actions.all_actions)
         return actions
   
