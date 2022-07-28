@@ -5,7 +5,7 @@ import pickle
 import itertools
 from gekko import GEKKO
 from math import e
-from misc import load
+# from misc import load
 
 class FSAgent:
     def __init__(self, BP, FSA, gamma = 0.999):
