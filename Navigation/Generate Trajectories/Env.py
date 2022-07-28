@@ -16,9 +16,9 @@ class NavEnv:
         self.putPedestrian()
         self.puddle = puddle
         self.putPuddle()
+        # print(self.grid)
 
         # Fixing the end state, initial location of box and generating other states
-        self.generateStates()
         self.init_loc = init_loc
         self.end_location = end_loc
 
@@ -76,55 +76,57 @@ class NavEnv:
             return 0
         return self.actions.getActionCost(action)
 
-    def moveDown(self, location):
-        return (min(self.grid_size - 1, location[0] + 1), location[1])
+    def moveDown(self):
+        self.agent_location =  (min(self.grid_size - 1, self.agent_location[0] + 1), self.agent_location[1])
 
-    def moveUp(self, location):
-        return (max(0, location[0] - 1), location[1])
+    def moveUp(self):
+        self.agent_location =  (max(0, self.agent_location[0] - 1), self.agent_location[1]) 
 
-    def moveLeft(self, location):
-        return (location[0], max(0, location[1] - 1))
+    def moveLeft(self):
+        self.agent_location =  (self.agent_location[0], max(0, self.agent_location[1] - 1))
 
-    def moveRight(self, location):
-        return (location[0], min(self.grid_size - 1, location[1] + 1))
+    def moveRight(self):
+        self.agent_location = (self.agent_location[0], min(self.grid_size - 1, self.agent_location[1] + 1))
 
     def move(self, state, action):
-        agent_locations_prob = []
+        prob = random.random()
         if self.actions.isDown(action):
-            agent_locations_prob.append((self.moveDown(state[0]), 1 - self.prob))
-            agent_locations_prob.append((self.moveRight(state[0]), self.prob))
+            if prob > self.prob:
+                self.moveDown()
+            else:
+                self.moveRight()
 
         elif self.actions.isUp(action):
-            agent_locations_prob.append((self.moveUp(state[0]), 1 - self.prob))
-            agent_locations_prob.append((self.moveRight(state[0]), self.prob))
+            if prob > self.prob:
+                self.moveUp()
+            else:
+                self.moveRight()
 
         elif self.actions.isLeft(action):
-            agent_locations_prob.append((self.moveLeft(state[0]), 1 - self.prob))
-            agent_locations_prob.append((self.moveDown(state[0]), self.prob))
+            if prob > self.prob:
+                self.moveLeft()
+            else:
+                self.moveDown()
 
         elif self.actions.isRight(action):
-            agent_locations_prob.append((self.moveRight(state[0]), 1 - self.prob))
-            agent_locations_prob.append((self.moveDown(state[0]), self.prob))
-
-        states = []
-
-        for i in agent_locations_prob:
-            if self.getType((i[0][0], i[0][1])) == 'H':
-                states.append(((i[0], self.actions.getSpeed(action), True, True), i[1]))
-            if self.getType((i[0][0], i[0][1])) == '@':
-                states.append(((i[0], self.actions.getSpeed(action), False, True), i[1]))
+            if prob > self.prob:
+                self.moveRight()
             else:
-                states.append(((i[0], self.actions.getSpeed(action), False, False), i[1]))
+                self.moveDown()
+        # print(self.agent_location)
+        self.ped = self.isPedestrian(self.agent_location)
+        self.pud = self.isPuddle(self.agent_location)
+        self.speed = self.actions.getSpeed(action)
 
-        return states, self.getCost(state, action)
+        return self.state(), self.getCost(action), self.done
 
     def transition(self, state, action):
-        if self.checkEnd(state):
+        if self.checkEnd():
             self.agent_location = (-1, -1)
             self.speed = 'slow'
             self.ped = False
             self.pud = False
-            return [(state, 1)], self.getCost(state, action)
+            return self.state(), self.getCost(action), self.done
 
         return self.move(state, action)
 

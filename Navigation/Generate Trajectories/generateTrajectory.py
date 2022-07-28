@@ -10,15 +10,16 @@ A = Actions()
 import sys
 
 FSA = FSAConstants()
-ped = [(0, 12),(0, 13),(0, 14),(4, 0),(4, 1),(4, 5),(4, 6),(4, 7),(4, 8),(5, 9),(5, 10),(7, 0),(7, 1),(7, 10),(7, 11),(10, 0),(10, 1),(10, 2),(10, 3),(10, 9),(10, 10),(10, 11),(10, 12),(10, 13),(10, 14),(11, 0),(11, 1),(11, 2),(11, 3),(11, 5),(11, 6),(11, 7),(11, 8),(11, 9),(11, 10),(11, 11),(11, 12),(11, 13),(11, 14)]
-pud = [(0, 3),(0, 4),(0, 5),(0, 6),(4, 2),(4, 3),(4, 4),(4, 9),(5, 0),(5, 1),(5, 2),(7, 2),(7, 7),(7, 8),(7, 9),(11, 4)]
+# ped = [(0, 12),(0, 13),(0, 14),(4, 0),(4, 1),(4, 5),(4, 6),(4, 7),(4, 8),(5, 9),(5, 10),(7, 0),(7, 1),(7, 10),(7, 11),(10, 0),(10, 1),(10, 2),(10, 3),(10, 9),(10, 10),(10, 11),(10, 12),(10, 13),(10, 14),(11, 0),(11, 1),(11, 2),(11, 3),(11, 5),(11, 6),(11, 7),(11, 8),(11, 9),(11, 10),(11, 11),(11, 12),(11, 13),(11, 14)] + [(0, 3),(0, 4),(0, 5),(0, 6),(4, 2),(4, 3),(4, 4),(4, 9),(5, 0),(5, 1),(5, 2),(7, 2),(7, 7),(7, 8),(7, 9),(11, 4)]
+ped = []
+pud = [(0, 3),(0, 4),(0, 5),(0, 6),(4, 2),(4, 3),(4, 4),(4, 9),(5, 0),(5, 1),(5, 2),(7, 2),(7, 7),(7, 8),(7, 9),(11, 4)] + [(0, 12),(0, 13),(0, 14),(4, 0),(4, 1),(4, 5),(4, 6),(4, 7),(4, 8),(5, 9),(5, 10),(7, 0),(7, 1),(7, 10),(7, 11),(10, 0),(10, 1),(10, 2),(10, 3),(10, 9),(10, 10),(10, 11),(10, 12),(10, 13),(10, 14),(11, 0),(11, 1),(11, 2),(11, 3),(11, 5),(11, 6),(11, 7),(11, 8),(11, 9),(11, 10),(11, 11),(11, 12),(11, 13),(11, 14)]
 
 def checkDamage(t, st=[6, 4]):
     n = 0
     ind = 0
-    for a, s in t:
-        if A.isMoveAction(a) and s[2] and (not s[3]) and s[4] == 'r':
-            ind += 1
+    # for a, s in t:
+    #     if A.isMoveAction(a) and s[2] and (not s[3]) and s[4] == 'r':
+    #         ind += 1
 
     return (ind/9)*100
 
@@ -27,27 +28,31 @@ def generate_trajectory(agent, end_loc = (3, 6), init_loc = (3, 3)):
     done = False
 
     t = []
-    rug_c = 0
+    sp = False
+    pud_cnt = 0
     ac = 0
     s = env.state()
     a = "No Action"
     t += [FSA.getLabel(s, a)]
-    while not done and ac < 1000:
-        if A.isMoveAction(a) and env.picked and env.onRug() and not env.wrapped:
-            rug_c += 1
+    while not done and ac < 400:
+        # print(s)
+        ac+=1
+        if s[1] == 'fast' and s[3]:
+            pud_cnt += 1
+        if s[3] and s[2] and s[1] == 'fast':
+            sp = True
 
         a = agent.getAction(s)
 
         # t += [copy.deepcopy(s), a]
 
-        ac += 1
-        s, _, done = env.transition(a)
+        s, _, done = env.transition(s, a)
         # print(s, a)
         t += [FSA.getLabel(s, a)]
 
     # t += [copy.deepcopy(s)]
 
-    return rug_c, t
+    return ac, pud_cnt, sp, t
 
 def load(name):
         file_to_read = open(name, "rb")
@@ -63,34 +68,36 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
         mild = set()
         no_nse = set()
     else:
-        severe = set(load("nav_15_15"))
-        mild = set(load("nav_15_15"))
-        no_nse = set(load("nav_15_15"))
+        severe = set(load("nav_15_15_s"))
+        mild = set(load("nav_15_15_m"))
+        no_nse = set(load("nav_15_15_nn"))
     print(len(severe), len(mild), len(no_nse))
     i = 0
     while i < n:
         i += 1
-        rug_c, t = generate_trajectory(agent, end_loc, box_loc)
-        if len(t) > 35:
+        path, pud_cnt, sp, t = generate_trajectory(agent, end_loc, box_loc)
+        if len(t) > 25:
             i -= 1
             continue
-        if rug_c < 1:
-            t += ['N']
-            no_nse.add(tuple(t))
+        if sp:
+            t += ['S']
+            severe.add(tuple(t))
             # print("No Nse")
-        elif rug_c < 5:
+        elif pud_cnt/path > 0.25:
             t += ['M']
             # print("mild")
             mild.add(tuple(t))
         else:
-            t += ['S']
+            t += ['N']
+            no_nse.add(tuple(t))
             # print("severe")
-            severe.add(tuple(t))
+            
     print(t)
     print(len(severe), len(mild), len(no_nse))
-    save("nav_15_15", list(severe))
-    save("nav_15_15", list(mild))
-    save("nav_15_15", list(no_nse))
+    # print(severe)
+    save("nav_15_15_s", list(severe))
+    save("nav_15_15_m", list(mild))
+    save("nav_15_15_nn", list(no_nse))
 
 class Agent:
     def __init__(self, name):
@@ -105,6 +112,7 @@ class Agent:
         # print(policy)
         for s in policy:
             self.pi[s] = []
+            # print(self.pi)
             self.prob1[s] = []
             self.prob2[s] = []
             for a in policy[s]:
@@ -125,8 +133,8 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/3_6" + ".pkl"
+    pol = "policy/3_5only_pud" + ".pkl"
     agent = Agent(pol)
     print(pol)
-    generate_mean_std(10000, agent, True, (int(sys.argv[1]), int(sys.argv[2])), (int(sys.argv[3]), int(sys.argv[4])))
+    generate_mean_std(10000, agent, False, (int(sys.argv[1]), int(sys.argv[2])), (int(sys.argv[3]), int(sys.argv[4])))
     # generate_trajectory(agent)

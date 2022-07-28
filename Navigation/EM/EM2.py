@@ -210,7 +210,7 @@ def cal_omega(fb, states, in_sym, out_sym):
 states = []
 for i in range(int(sys.argv[2])):
  states += [str(i+1)]
-in_sym = [0, 1, 2]
+in_sym = [0, 1, 2, 3, 4, 5, 6]
 out_sym = ['N', 'S', 'M', 3]
 
 file_name = sys.argv[1][sys.argv[1].index("/")+1:]
