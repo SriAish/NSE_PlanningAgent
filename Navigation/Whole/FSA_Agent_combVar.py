@@ -223,8 +223,8 @@ class FSAgent:
             print(e)
 
 if __name__ == '__main__':
-    g_pos = (int(sys.argv[6]), int(sys.argv[7]))
-    g_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
+    # g_pos = (int(sys.argv[6]), int(sys.argv[7]))
+    # g_state = [(g_pos, g_pos, True, False, 'p'), (g_pos, g_pos, True, True, 'p')]
     g_state = [((2, 2), 'fast', False, False), ((2, 2), 'slow', False, False)]
     BP = NavigationConstants(3, [], [], g_state)
     file_name = "random"
