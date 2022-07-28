@@ -33,7 +33,7 @@ class FSAgent:
 
     def init_belief(self):
         self.belief_state = []
-        self.belief_pr = []
+        self.belief_pr = {}
         s = ((0, 0), 'slow', False, False)
         li = self.FSA.nextState('0', s, "emp")
         print(li)
