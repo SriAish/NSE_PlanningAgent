@@ -16,7 +16,7 @@ class FSAgent:
         self.BP = BP
         self.FSA = FSA
         self.gamma = gamma
-        self.locations = locations
+        # self.locations = locations
         self.init_belief()
         print("initial belief setup")
         sys.stdout.flush()
@@ -240,7 +240,7 @@ if __name__ == '__main__':
     #     locations = [(0, 0)]
         # locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
     # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
-    agent = FSAgent(BP, FSA, locations=locations)
+    agent = FSAgent(BP, FSA)
     agent.solve_prob()
     agent.calculate_pi()
     # agent.save_pi(sys.argv[8])
