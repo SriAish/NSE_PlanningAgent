@@ -1,10 +1,8 @@
 import pickle
 import numpy as np
 import sys
+from misc import load, save
 
-def load(name):
-        file_to_read = open(name, "rb")
-        return pickle.load(file_to_read)
 R = load("test_eq")
 class FSA:
     def __init__(self, delta, omega):
@@ -100,24 +98,32 @@ def run_test(R, fsa):
 #         rm +=1
 
 # print(rs, rn, rm)
-file_name = sys.argv[1][sys.argv[1].index("/")+1:]
-for i_try in range(10):
-    print(sys.argv[1])
-    print("states: ", sys.argv[2], "trial: ", i_try)
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-    omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
+if __name__ == '__main__':
+    file_name = sys.argv[1][sys.argv[1].index("/")+1:]
+    for i_try in range(10):
+        print(sys.argv[1])
+        print("states: ", sys.argv[2], "trial: ", i_try)
+        delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
+        omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
 
-    # for s in delta:
-    #     for i in delta[s]:
-    #         print(s, i, delta[s][i])
-    # print()
-    # print(omega)
+        # for s in delta:
+        #     for i in delta[s]:
+        #         print(s, i, delta[s][i])
+        # print()
+        # print(omega)
 
-    fsa = FSA(delta, omega)
+        fsa = FSA(delta, omega)
 
-    pr = 0
+        pr = 0
 
-    for r in range(10):
-        pr += run_test(R, fsa)
+        for r in range(10):
+            pr += run_test(R, fsa)
+        if b < pr:
+            b = pr
+            b_try = i_try
+        print("accuracy of:" + "new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try) + ": ", pr/10)
 
-    print("accuracy of:" + "new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try) + ": ", pr/10)
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(b_try))
+    omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(b_try))
+    save("results/delta/new_" + file_name + "_" + sys.argv[2] + "_best", delta)
+    save("results/omega/new_" + file_name + "_" + sys.argv[2] + "_best", omega)
