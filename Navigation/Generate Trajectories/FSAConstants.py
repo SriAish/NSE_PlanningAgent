@@ -20,9 +20,7 @@ class FSAConstants:
         if self.isEnd(state):
             return self.label[(False, False, True)]
         fast = True
-        ped = state[2]
-        pud = state[3]
         if state[1] == 'slow':
             fast = False
 
-        return self.label[(fast, state[2], state[3], False)]
+        return self.label[(state[2] and fast, state[3] and fast, False)]
