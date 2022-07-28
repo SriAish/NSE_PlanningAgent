@@ -10,7 +10,9 @@ module add cudnn/8.4.0-cuda-11.6
 source ~/keras/bin/activate
 
 # echo "running agent"
-python3.7 FSA_Agent_combVar.py >> LP_sm_1_15_0_10_8.txt
+echo "Checking Accuracy of learned FSAs"
+python3.7 test.py data/Nav_15_15_25_15 4 > LP_sm_1_15_0_10_9.txt
+python3.7 FSA_Agent_combVar.py 15 14 14>> LP_sm_1_15_0_10_8.txt
 # end=`date +%s`
 # runtime=$((end-start))
 # echo $runtime

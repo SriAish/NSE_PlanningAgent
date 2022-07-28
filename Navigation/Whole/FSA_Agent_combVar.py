@@ -5,8 +5,8 @@ import pickle
 import itertools
 from gekko import GEKKO
 from math import e
-# from misc import load
-
+from misc import load
+b_obj_val = 30.5131
 class FSAgent:
     def __init__(self, BP, FSA, gamma = 0.999):
         self.m = GEKKO(remote=False)
@@ -79,7 +79,7 @@ class FSAgent:
                 obj += self.m.Intermediate(o)
                 o = 0
         obj += self.m.Intermediate(o)
-        self.m.Equation(obj - 25.4184 <= ((int(sys.argv[14])/100)*25.4184))
+        self.m.Equation(obj - b_obj_val <= ((int(sys.argv[6])/100)*b_obj_val))
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
@@ -119,7 +119,7 @@ class FSAgent:
                         if t != 0:
                             lhs += self.x[(u, s, a)]*self.BP.T(s, a, s_)*t
         
-        self.m.Equation(lhs <= float(sys.argv[10]))
+        self.m.Equation(lhs <= float(sys.argv[7]))
 
     def make_constraints_eqn4(self):
         lhs = 0
@@ -132,7 +132,7 @@ class FSAgent:
                         if t != 0:
                             lhs += self.x[(u, s, a)]*self.BP.T(s, a, s_)*t
         
-        self.m.Equation(lhs <= float(sys.argv[11]))
+        self.m.Equation(lhs <= float(sys.argv[8]))
 
     def NSE_val(self):
         lhs = 0
@@ -171,17 +171,17 @@ class FSAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        # self.set_bound()
-        # print("setting bound")
-        # sys.stdout.flush()
-        # if float(sys.argv[10]) >= 0:
-        #     self.make_constraints_eqn3()
-        #     print("eq3")
-        #     sys.stdout.flush()
-        # if float(sys.argv[11]) >= 0:
-        #     self.make_constraints_eqn4()
-        #     print("eq4")
-        #     sys.stdout.flush()
+        self.set_bound()
+        print("setting bound")
+        sys.stdout.flush()
+        if float(sys.argv[6]) >= 0:
+            self.make_constraints_eqn3()
+            print("eq3")
+            sys.stdout.flush()
+        if float(sys.argv[7]) >= 0:
+            self.make_constraints_eqn4()
+            print("eq4")
+            sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
@@ -227,10 +227,10 @@ if __name__ == '__main__':
     g_pos = (int(sys.argv[2]), int(sys.argv[3]))
     g_state = [(g_pos, 'fast', False, False), (g_pos, 'slow', False, False)]
     BP = NavigationConstants(sys.argv[1], [], [], g_state)
-    file_name = "random"
+    file_name = sys.argv[4][sys.argv[4].index("/")+1:]
     # file_name = sys.argv[12][sys.argv[12].index("/")+1:]
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-    omega = load("results/omega/new_" + file_name + "_" + sys.argv[13] + "_best")
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[5] + "_best")
+    omega = load("results/omega/new_" + file_name + "_" + sys.argv[5] + "_best")
     FSA = FSAConstants()
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
