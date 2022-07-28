@@ -36,12 +36,9 @@ class FSAgent:
             self.locations = [(1, 1)]
         init_loc = (0, 0)
         self.belief_state = []
-        self.belief_pr = {}
         for i in self.locations:
             s = (init_loc, i, False, False, 'p')
-            u, pr = self.FSA.nextState('0', s, "emp")
-            self.belief_state.append((u, s))
-            self.belief_pr[(u, s)] = pr
+            self.belief_state.append((self.FSA.nextState('0', s, "emp"), s))
         print("belief:", self.belief_state)
 
     def init_var(self):
@@ -105,7 +102,7 @@ class FSAgent:
 
             # Calculate right hand side
             if (u_, s_) in self.belief_state:
-                c += self.belief_pr[(u_, s_)]
+                c += 1/len(self.belief_state)
 
             # Adding constraint
             self.m.Equation(y == c)
