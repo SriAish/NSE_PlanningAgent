@@ -93,7 +93,7 @@ class VIPolicy:
         return self.policy[(tuple(state[0]), tuple(state[1]), state[2], state[3])]
 
 if __name__ == '__main__':
-    ped = [(0, 1), (3, 5), (5, 6)]
+    ped = [(0, 1), (4, 5), (5, 6)]
     pud = [(2, 3), (3, 5), (6, 3)]
     g_pos = (int(sys.argv[2]), int(sys.argv[3]))
     e_state = []
