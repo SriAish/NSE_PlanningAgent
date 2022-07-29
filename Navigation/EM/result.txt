@@ -66,3 +66,219 @@ done
 --- 1188.8245804309845 seconds ---
 data/Nav_15_15_25_15
 states:  5 trial:  3
+done
+--- 1103.1590807437897 seconds ---
+data/Nav_15_15_25_15
+states:  5 trial:  4
+done
+--- 1188.8380177021027 seconds ---
+data/Nav_15_15_25_15
+states:  5 trial:  5
+done
+--- 791.0080945491791 seconds ---
+data/Nav_15_15_25_15
+states:  5 trial:  6
+done
+--- 903.9305820465088 seconds ---
+data/Nav_15_15_25_15
+states:  5 trial:  7
+done
+--- 2272.667490720749 seconds ---
+data/Nav_15_15_25_15
+states:  5 trial:  8
+done
+--- 480.2102565765381 seconds ---
+data/Nav_15_15_25_15
+states:  5 trial:  9
+done
+--- 7.257126808166504 seconds ---
+--- 9521.457632541656 seconds for all trials---
+========================================================
+data/Nav_15_15_25_15
+states:  5 trial:  0
+accuracy of:new_Nav_15_15_25_15_5_0:  0.5114942528735632
+data/Nav_15_15_25_15
+states:  5 trial:  1
+accuracy of:new_Nav_15_15_25_15_5_1:  0.34291187739463597
+data/Nav_15_15_25_15
+states:  5 trial:  2
+accuracy of:new_Nav_15_15_25_15_5_2:  0.32567049808429116
+data/Nav_15_15_25_15
+states:  5 trial:  3
+accuracy of:new_Nav_15_15_25_15_5_3:  0.5157088122605364
+data/Nav_15_15_25_15
+states:  5 trial:  4
+accuracy of:new_Nav_15_15_25_15_5_4:  0.5168582375478927
+data/Nav_15_15_25_15
+states:  5 trial:  5
+accuracy of:new_Nav_15_15_25_15_5_5:  0.346360153256705
+data/Nav_15_15_25_15
+states:  5 trial:  6
+accuracy of:new_Nav_15_15_25_15_5_6:  0.3911877394636015
+data/Nav_15_15_25_15
+states:  5 trial:  7
+Traceback (most recent call last):
+  File "test3.py", line 121, in <module>
+    pr += run_test(R, fsa)
+  File "test3.py", line 63, in run_test
+    st = fsa.getNextState(st, r[t])
+  File "test3.py", line 47, in getNextState
+    return np.random.choice(self.delta[state][i], p = self.delta_val[state][i])
+  File "mtrand.pyx", line 933, in numpy.random.mtrand.RandomState.choice
+ValueError: probabilities do not sum to 1
+--------------------
+45
+data/Nav_15_15_25_15
+states:  6 trial:  0
+done
+--- 499.18267846107483 seconds ---
+data/Nav_15_15_25_15
+states:  6 trial:  1
+done
+--- 933.5621571540833 seconds ---
+data/Nav_15_15_25_15
+states:  6 trial:  2
+done
+--- 1575.7069544792175 seconds ---
+data/Nav_15_15_25_15
+states:  6 trial:  3
+done
+--- 6.845025062561035 seconds ---
+data/Nav_15_15_25_15
+states:  6 trial:  4
+done
+--- 1575.5955276489258 seconds ---
+data/Nav_15_15_25_15
+states:  6 trial:  5
+done
+--- 950.4585678577423 seconds ---
+data/Nav_15_15_25_15
+states:  6 trial:  6
+done
+--- 1044.8559775352478 seconds ---
+data/Nav_15_15_25_15
+states:  6 trial:  7
+done
+--- 938.930184841156 seconds ---
+data/Nav_15_15_25_15
+states:  6 trial:  8
+Traceback (most recent call last):
+  File "EM2.py", line 260, in <module>
+    n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
+  File "EM2.py", line 94, in objective
+    v2 += fb.eta(r, t, s, s_)
+  File "/home/sriaish/NSE_PlanningAgent/Navigation/EM/FB.py", line 103, in eta
+    self.eta_val[r][t][(u, v)] = (val/den)
+ZeroDivisionError: float division by zero
+data/Nav_15_15_25_15
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_25_15_6_0:  0.47126436781609193
+data/Nav_15_15_25_15
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_25_15_6_1:  0.7643678160919539
+data/Nav_15_15_25_15
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_25_15_6_2:  0.4911877394636015
+data/Nav_15_15_25_15
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_25_15_6_3:  0.32950191570881227
+data/Nav_15_15_25_15
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_25_15_6_4:  0.4992337164750958
+data/Nav_15_15_25_15
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_25_15_6_5:  0.46551724137931033
+data/Nav_15_15_25_15
+states:  6 trial:  6
+accuracy of:new_Nav_15_15_25_15_6_6:  0.7452107279693486
+data/Nav_15_15_25_15
+states:  6 trial:  7
+accuracy of:new_Nav_15_15_25_15_6_7:  0.7731800766283525
+data/Nav_15_15_25_15
+states:  6 trial:  8
+Traceback (most recent call last):
+  File "test3.py", line 107, in <module>
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
+  File "test3.py", line 6, in load
+    file_to_read = open(name, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_Nav_15_15_25_15_6_8'
+--------------------
+--------------------
+--------------------
+60
+data/Nav_15_15_25_20
+states:  4 trial:  0
+done
+--- 306.67425298690796 seconds ---
+data/Nav_15_15_25_20
+states:  4 trial:  1
+done
+--- 1075.0479872226715 seconds ---
+data/Nav_15_15_25_20
+states:  4 trial:  2
+done
+--- 1046.4859845638275 seconds ---
+data/Nav_15_15_25_20
+states:  4 trial:  3
+done
+--- 146.2643060684204 seconds ---
+data/Nav_15_15_25_20
+states:  4 trial:  4
+done
+--- 3578.2619194984436 seconds ---
+data/Nav_15_15_25_20
+states:  4 trial:  5
+done
+--- 165.6086413860321 seconds ---
+data/Nav_15_15_25_20
+states:  4 trial:  6
+done
+--- 291.9657597541809 seconds ---
+data/Nav_15_15_25_20
+states:  4 trial:  7
+done
+--- 67.28593730926514 seconds ---
+data/Nav_15_15_25_20
+states:  4 trial:  8
+done
+--- 307.3219630718231 seconds ---
+data/Nav_15_15_25_20
+states:  4 trial:  9
+done
+--- 107.06537413597107 seconds ---
+--- 7091.982806444168 seconds for all trials---
+========================================================
+data/Nav_15_15_25_20
+states:  4 trial:  0
+accuracy of:new_Nav_15_15_25_20_4_0:  0.32337164750957853
+data/Nav_15_15_25_20
+states:  4 trial:  1
+accuracy of:new_Nav_15_15_25_20_4_1:  0.3329501915708812
+data/Nav_15_15_25_20
+states:  4 trial:  2
+accuracy of:new_Nav_15_15_25_20_4_2:  0.3459770114942529
+data/Nav_15_15_25_20
+states:  4 trial:  3
+accuracy of:new_Nav_15_15_25_20_4_3:  0.41455938697318
+data/Nav_15_15_25_20
+states:  4 trial:  4
+accuracy of:new_Nav_15_15_25_20_4_4:  0.646360153256705
+data/Nav_15_15_25_20
+states:  4 trial:  5
+accuracy of:new_Nav_15_15_25_20_4_5:  0.750191570881226
+data/Nav_15_15_25_20
+states:  4 trial:  6
+accuracy of:new_Nav_15_15_25_20_4_6:  0.3486590038314176
+data/Nav_15_15_25_20
+states:  4 trial:  7
+accuracy of:new_Nav_15_15_25_20_4_7:  0.6325670498084291
+data/Nav_15_15_25_20
+states:  4 trial:  8
+accuracy of:new_Nav_15_15_25_20_4_8:  0.6344827586206898
+data/Nav_15_15_25_20
+states:  4 trial:  9
+accuracy of:new_Nav_15_15_25_20_4_9:  0.33678160919540234
+--------------------
+60
+data/Nav_15_15_25_20
+states:  5 trial:  0
