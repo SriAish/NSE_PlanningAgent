@@ -234,7 +234,7 @@ if __name__ == '__main__':
     delta = load("results/delta/new_" + file_name + "_" + sys.argv[5] + "_best")
     omega = load("results/omega/new_" + file_name + "_" + sys.argv[5] + "_best")
     FSA = FSAConstants(delta, omega)
-    cat(delta)
+    print(delta)
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
     locations = [(0, 0)]
