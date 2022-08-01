@@ -11,12 +11,12 @@ best_acc = [b*100 for b in best_acc]
 
 # print(y)
 # plotting the points 
-plt.plot(states, time)
+plt.plot(states, best_acc)
   
 # naming the x axis
 plt.xlabel('Number of states')
 # naming the y axis
-plt.ylabel('Training time (in mins)')
+plt.ylabel('Accuracy in %')
   
 # function to show the plot
 plt.show()
