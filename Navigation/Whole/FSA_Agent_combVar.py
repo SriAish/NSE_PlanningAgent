@@ -19,13 +19,13 @@ class FSAgent:
         # self.locations = locations
         self.init_belief()
         print("initial belief setup")
-        sys.stdout.flush()
-        self.init_var()
-        print("variables setup")
-        sys.stdout.flush()
-        self.make_prob()
-        print("problem setup")
-        sys.stdout.flush()
+        # sys.stdout.flush()
+        # self.init_var()
+        # print("variables setup")
+        # sys.stdout.flush()
+        # self.make_prob()
+        # print("problem setup")
+        # sys.stdout.flush()
     
     def load(self, name):
         file_to_read = open(name, "rb")
@@ -41,6 +41,7 @@ class FSAgent:
             self.belief_state.append((u, s))
             self.belief_pr[(u, s)] = pr
         print("belief:", self.belief_state)
+        print(self.belief_pr)
 
     def init_var(self):
         self.x = {}
@@ -233,6 +234,7 @@ if __name__ == '__main__':
     delta = load("results/delta/new_" + file_name + "_" + sys.argv[5] + "_best")
     omega = load("results/omega/new_" + file_name + "_" + sys.argv[5] + "_best")
     FSA = FSAConstants(delta, omega)
+    cat(delta)
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
     # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
     locations = [(0, 0)]
