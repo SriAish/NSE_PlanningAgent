@@ -5,7 +5,7 @@ import sys
 def load(name):
         file_to_read = open(name, "rb")
         return pickle.load(file_to_read)
-R = load("Test_Data")
+R = load("BP_test_15_15_35_set")
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
@@ -81,12 +81,12 @@ def run_test(R, fsa):
     print("f1 score: N, ", F1_score(R, out_sym, 'N'), "M, ", F1_score(R, out_sym, 'M'), "S, ", F1_score(R, out_sym, 'S'))
 
 file_name = sys.argv[1][sys.argv[1].index("/")+1:]
-for i_try in range(10):
-    print(sys.argv[1])
-    print("states: ", sys.argv[2], "trial: ", i_try)
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-    omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
+# for i_try in range(10):
+print(sys.argv[1])
+# print("states: ", sys.argv[2], "trial: ", i_try)
+delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_best")
+omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_best")
 
-    fsa = FSA(delta, omega)
+fsa = FSA(delta, omega)
 
-    print("new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try) + ": ", run_test(R, fsa))
+print("new_" + file_name + "_" + sys.argv[2] + "_" + "best" + ": ", run_test(R, fsa))
