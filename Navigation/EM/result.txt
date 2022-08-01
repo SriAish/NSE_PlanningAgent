@@ -282,3 +282,354 @@ accuracy of:new_Nav_15_15_25_20_4_9:  0.33678160919540234
 60
 data/Nav_15_15_25_20
 states:  5 trial:  0
+done
+--- 2662.547756433487 seconds ---
+data/Nav_15_15_25_20
+states:  5 trial:  1
+done
+--- 630.9013330936432 seconds ---
+data/Nav_15_15_25_20
+states:  5 trial:  2
+done
+--- 467.3294360637665 seconds ---
+data/Nav_15_15_25_20
+states:  5 trial:  3
+done
+--- 341.5693452358246 seconds ---
+data/Nav_15_15_25_20
+states:  5 trial:  4
+done
+--- 5088.297777414322 seconds ---
+data/Nav_15_15_25_20
+states:  5 trial:  5
+Traceback (most recent call last):
+  File "EM2.py", line 260, in <module>
+    n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
+  File "EM2.py", line 94, in objective
+    v2 += fb.eta(r, t, s, s_)
+  File "/home/sriaish/NSE_PlanningAgent/Navigation/EM/FB.py", line 103, in eta
+    self.eta_val[r][t][(u, v)] = (val/den)
+ZeroDivisionError: float division by zero
+data/Nav_15_15_25_20
+states:  5 trial:  0
+accuracy of:new_Nav_15_15_25_20_5_0:  0.6268199233716474
+data/Nav_15_15_25_20
+states:  5 trial:  1
+accuracy of:new_Nav_15_15_25_20_5_1:  0.7471264367816091
+data/Nav_15_15_25_20
+states:  5 trial:  2
+accuracy of:new_Nav_15_15_25_20_5_2:  0.5195402298850574
+data/Nav_15_15_25_20
+states:  5 trial:  3
+accuracy of:new_Nav_15_15_25_20_5_3:  0.6333333333333333
+data/Nav_15_15_25_20
+states:  5 trial:  4
+Traceback (most recent call last):
+  File "test3.py", line 121, in <module>
+    pr += run_test(R, fsa)
+  File "test3.py", line 63, in run_test
+    st = fsa.getNextState(st, r[t])
+  File "test3.py", line 47, in getNextState
+    return np.random.choice(self.delta[state][i], p = self.delta_val[state][i])
+  File "mtrand.pyx", line 933, in numpy.random.mtrand.RandomState.choice
+ValueError: probabilities do not sum to 1
+--------------------
+60
+data/Nav_15_15_25_20
+states:  6 trial:  0
+done
+--- 666.4211821556091 seconds ---
+data/Nav_15_15_25_20
+states:  6 trial:  1
+done
+--- 653.4849593639374 seconds ---
+data/Nav_15_15_25_20
+states:  6 trial:  2
+done
+--- 1042.9141097068787 seconds ---
+data/Nav_15_15_25_20
+states:  6 trial:  3
+done
+--- 643.735312461853 seconds ---
+data/Nav_15_15_25_20
+states:  6 trial:  4
+done
+--- 612.051851272583 seconds ---
+data/Nav_15_15_25_20
+states:  6 trial:  5
+done
+--- 684.0099630355835 seconds ---
+data/Nav_15_15_25_20
+states:  6 trial:  6
+done
+--- 611.6508090496063 seconds ---
+data/Nav_15_15_25_20
+states:  6 trial:  7
+done
+--- 5982.015708446503 seconds ---
+data/Nav_15_15_25_20
+states:  6 trial:  8
+done
+--- 787.8268091678619 seconds ---
+data/Nav_15_15_25_20
+states:  6 trial:  9
+done
+--- 542.7896447181702 seconds ---
+--- 12226.901046991348 seconds for all trials---
+========================================================
+data/Nav_15_15_25_20
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_25_20_6_0:  0.5452107279693486
+data/Nav_15_15_25_20
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_25_20_6_1:  0.7839080459770116
+data/Nav_15_15_25_20
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_25_20_6_2:  0.5199233716475096
+data/Nav_15_15_25_20
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_25_20_6_3:  0.78544061302682
+data/Nav_15_15_25_20
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_25_20_6_4:  0.6720306513409963
+data/Nav_15_15_25_20
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_25_20_6_5:  0.5291187739463602
+data/Nav_15_15_25_20
+states:  6 trial:  6
+accuracy of:new_Nav_15_15_25_20_6_6:  0.6877394636015326
+data/Nav_15_15_25_20
+states:  6 trial:  7
+Traceback (most recent call last):
+  File "test3.py", line 121, in <module>
+    pr += run_test(R, fsa)
+  File "test3.py", line 63, in run_test
+    st = fsa.getNextState(st, r[t])
+  File "test3.py", line 47, in getNextState
+    return np.random.choice(self.delta[state][i], p = self.delta_val[state][i])
+  File "mtrand.pyx", line 933, in numpy.random.mtrand.RandomState.choice
+ValueError: probabilities do not sum to 1
+--------------------
+--------------------
+--------------------
+75
+data/Nav_15_15_25_25
+states:  4 trial:  0
+done
+--- 115.89018082618713 seconds ---
+data/Nav_15_15_25_25
+states:  4 trial:  1
+done
+--- 524.0614869594574 seconds ---
+data/Nav_15_15_25_25
+states:  4 trial:  2
+done
+--- 511.9121301174164 seconds ---
+data/Nav_15_15_25_25
+states:  4 trial:  3
+done
+--- 4.519196271896362 seconds ---
+data/Nav_15_15_25_25
+states:  4 trial:  4
+done
+--- 17.705236196517944 seconds ---
+data/Nav_15_15_25_25
+states:  4 trial:  5
+done
+--- 3.0029492378234863 seconds ---
+data/Nav_15_15_25_25
+states:  4 trial:  6
+done
+--- 234.98351550102234 seconds ---
+data/Nav_15_15_25_25
+states:  4 trial:  7
+done
+--- 287.76965069770813 seconds ---
+data/Nav_15_15_25_25
+states:  4 trial:  8
+done
+--- 20.203568935394287 seconds ---
+data/Nav_15_15_25_25
+states:  4 trial:  9
+done
+--- 357.04387378692627 seconds ---
+--- 2077.0923821926117 seconds for all trials---
+========================================================
+data/Nav_15_15_25_25
+states:  4 trial:  0
+accuracy of:new_Nav_15_15_25_25_4_0:  0.6954022988505747
+data/Nav_15_15_25_25
+states:  4 trial:  1
+accuracy of:new_Nav_15_15_25_25_4_1:  0.4022988505747126
+data/Nav_15_15_25_25
+states:  4 trial:  2
+accuracy of:new_Nav_15_15_25_25_4_2:  0.4111111111111111
+data/Nav_15_15_25_25
+states:  4 trial:  3
+accuracy of:new_Nav_15_15_25_25_4_3:  0.33754789272030655
+data/Nav_15_15_25_25
+states:  4 trial:  4
+accuracy of:new_Nav_15_15_25_25_4_4:  0.32950191570881227
+data/Nav_15_15_25_25
+states:  4 trial:  5
+accuracy of:new_Nav_15_15_25_25_4_5:  0.32950191570881227
+data/Nav_15_15_25_25
+states:  4 trial:  6
+accuracy of:new_Nav_15_15_25_25_4_6:  0.346743295019157
+data/Nav_15_15_25_25
+states:  4 trial:  7
+accuracy of:new_Nav_15_15_25_25_4_7:  0.6796934865900383
+data/Nav_15_15_25_25
+states:  4 trial:  8
+accuracy of:new_Nav_15_15_25_25_4_8:  0.3314176245210728
+data/Nav_15_15_25_25
+states:  4 trial:  9
+accuracy of:new_Nav_15_15_25_25_4_9:  0.6865900383141763
+--------------------
+75
+data/Nav_15_15_25_25
+states:  5 trial:  0
+done
+--- 688.2865633964539 seconds ---
+data/Nav_15_15_25_25
+states:  5 trial:  1
+done
+--- 393.7412428855896 seconds ---
+data/Nav_15_15_25_25
+states:  5 trial:  2
+done
+--- 16.79799509048462 seconds ---
+data/Nav_15_15_25_25
+states:  5 trial:  3
+done
+--- 3.2091994285583496 seconds ---
+data/Nav_15_15_25_25
+states:  5 trial:  4
+done
+--- 4.130797386169434 seconds ---
+data/Nav_15_15_25_25
+states:  5 trial:  5
+done
+--- 32.66168141365051 seconds ---
+data/Nav_15_15_25_25
+states:  5 trial:  6
+done
+--- 15.789877891540527 seconds ---
+data/Nav_15_15_25_25
+states:  5 trial:  7
+done
+--- 11.560337781906128 seconds ---
+data/Nav_15_15_25_25
+states:  5 trial:  8
+done
+--- 16.902939558029175 seconds ---
+data/Nav_15_15_25_25
+states:  5 trial:  9
+done
+--- 8.390353918075562 seconds ---
+--- 1191.4716081619263 seconds for all trials---
+========================================================
+data/Nav_15_15_25_25
+states:  5 trial:  0
+accuracy of:new_Nav_15_15_25_25_5_0:  0.6923371647509579
+data/Nav_15_15_25_25
+states:  5 trial:  1
+accuracy of:new_Nav_15_15_25_25_5_1:  0.7800766283524905
+data/Nav_15_15_25_25
+states:  5 trial:  2
+accuracy of:new_Nav_15_15_25_25_5_2:  0.3402298850574713
+data/Nav_15_15_25_25
+states:  5 trial:  3
+accuracy of:new_Nav_15_15_25_25_5_3:  0.3475095785440613
+data/Nav_15_15_25_25
+states:  5 trial:  4
+accuracy of:new_Nav_15_15_25_25_5_4:  0.3490421455938697
+data/Nav_15_15_25_25
+states:  5 trial:  5
+accuracy of:new_Nav_15_15_25_25_5_5:  0.3417624521072796
+data/Nav_15_15_25_25
+states:  5 trial:  6
+accuracy of:new_Nav_15_15_25_25_5_6:  0.3375478927203065
+data/Nav_15_15_25_25
+states:  5 trial:  7
+accuracy of:new_Nav_15_15_25_25_5_7:  0.32988505747126434
+data/Nav_15_15_25_25
+states:  5 trial:  8
+accuracy of:new_Nav_15_15_25_25_5_8:  0.32605363984674324
+data/Nav_15_15_25_25
+states:  5 trial:  9
+accuracy of:new_Nav_15_15_25_25_5_9:  0.3172413793103448
+--------------------
+75
+data/Nav_15_15_25_25
+states:  6 trial:  0
+done
+--- 60.831292152404785 seconds ---
+data/Nav_15_15_25_25
+states:  6 trial:  1
+done
+--- 29.33732295036316 seconds ---
+data/Nav_15_15_25_25
+states:  6 trial:  2
+done
+--- 1954.158640384674 seconds ---
+data/Nav_15_15_25_25
+states:  6 trial:  3
+done
+--- 23472.22746038437 seconds ---
+data/Nav_15_15_25_25
+states:  6 trial:  4
+done
+--- 28.350043773651123 seconds ---
+data/Nav_15_15_25_25
+states:  6 trial:  5
+done
+--- 714.4541976451874 seconds ---
+data/Nav_15_15_25_25
+states:  6 trial:  6
+done
+--- 229.8389630317688 seconds ---
+data/Nav_15_15_25_25
+states:  6 trial:  7
+done
+--- 2104.2427458763123 seconds ---
+data/Nav_15_15_25_25
+states:  6 trial:  8
+done
+--- 1108.0140941143036 seconds ---
+data/Nav_15_15_25_25
+states:  6 trial:  9
+done
+--- 231.05426049232483 seconds ---
+--- 29932.509652376175 seconds for all trials---
+========================================================
+data/Nav_15_15_25_25
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_25_25_6_0:  0.3191570881226054
+data/Nav_15_15_25_25
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_25_25_6_1:  0.33678160919540223
+data/Nav_15_15_25_25
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_25_25_6_2:  0.8310344827586208
+data/Nav_15_15_25_25
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_25_25_6_3:  0.671264367816092
+data/Nav_15_15_25_25
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_25_25_6_4:  0.34444444444444444
+data/Nav_15_15_25_25
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_25_25_6_5:  0.6620689655172415
+data/Nav_15_15_25_25
+states:  6 trial:  6
+accuracy of:new_Nav_15_15_25_25_6_6:  0.6731800766283524
+data/Nav_15_15_25_25
+states:  6 trial:  7
+accuracy of:new_Nav_15_15_25_25_6_7:  0.8195402298850576
+data/Nav_15_15_25_25
+states:  6 trial:  8
+accuracy of:new_Nav_15_15_25_25_6_8:  0.8111111111111111
+data/Nav_15_15_25_25
+states:  6 trial:  9
+accuracy of:new_Nav_15_15_25_25_6_9:  0.6666666666666667
