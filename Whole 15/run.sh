@@ -4,33 +4,33 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem-per-cpu=80G
 #SBATCH -t 2-00:00:00
-#SBATCH --output=result3.txt
+#SBATCH --output=result5.txt
 module add cuda/11.6
 module add cudnn/8.4.0-cuda-11.6
 source ~/keras/bin/activate
 
 start=`date +%s`
 echo "Start learning FSA"
-python3.7 EM.py data_set/BP_15_15_35_25 3
-echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 3
-echo "Start learning FSA"
-python3.7 EM.py data_set/BP_15_15_35_25 4
-echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 4
-echo "Start learning FSA"
-python3.7 EM.py data_set/BP_15_15_35_25 5
-echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 5
-echo "Start learning FSA"
-python3.7 EM.py data_set/BP_15_15_35_25 6
-echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 6
-echo "Start learning FSA"
-python3.7 EM.py data_set/BP_15_15_35_25 7
-echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 7
-echo "Start learning FSA"
+# python3.7 EM.py data_set/BP_15_15_35_25 3
+# echo "Checking Accuracy of learned FSAs"
+# python3.7 test.py data_set/BP_15_15_35_25 3
+# echo "Start learning FSA"
+# python3.7 EM.py data_set/BP_15_15_35_25 4
+# echo "Checking Accuracy of learned FSAs"
+# python3.7 test.py data_set/BP_15_15_35_25 4
+# echo "Start learning FSA"
+# python3.7 EM.py data_set/BP_15_15_35_25 5
+# echo "Checking Accuracy of learned FSAs"
+# python3.7 test.py data_set/BP_15_15_35_25 5
+# echo "Start learning FSA"
+# python3.7 EM.py data_set/BP_15_15_35_25 6
+# echo "Checking Accuracy of learned FSAs"
+# python3.7 test.py data_set/BP_15_15_35_25 6
+# echo "Start learning FSA"
+# python3.7 EM.py data_set/BP_15_15_35_25 7
+# echo "Checking Accuracy of learned FSAs"
+# python3.7 test.py data_set/BP_15_15_35_25 7
+# echo "Start learning FSA"
 python3.7 EM.py data_set/BP_15_15_35_25 8
 echo "Checking Accuracy of learned FSAs"
 python3.7 test.py data_set/BP_15_15_35_25 8
