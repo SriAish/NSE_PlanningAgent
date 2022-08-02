@@ -1,4 +1,4 @@
-from EnvConst import BoxPushingConstants
+from Env import BPEnv
 from makeFSA import FSAConstants
 import copy
 import numpy as np
@@ -7,10 +7,10 @@ import sys
 from misc import load
 
 def generate_trajectory(agent):
-    env = BoxPushingConstants(7, 3, 3, (2, 2), (3, 6), (3, 0))
+    env = BPEnv(15, 15, 7, 3, (6, 4), (7, 14), (7, 0))
     file_name = sys.argv[1][sys.argv[1].index("/")+1:]
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-    omega = load("results/omega/new_" + file_name + "_" + sys.argv[13] + "_best")
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_best")
+    omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_best")
     fsa = FSAConstants(delta, omega)
     done = False
 
@@ -18,19 +18,28 @@ def generate_trajectory(agent):
     ac = 0
     s = env.state()
     a = "No action"
-    u, sym = fsa.transition(a, s)
-
-    while not done and ac < 1000:
+    u = "0"
+    u, sym = fsa.transition(u, a, s)
+    nse = "N"
+    count = 0
+    while not done and ac < 100:
         if env.picked and env.onRug() and not env.wrapped:
             rug_c += 1
         # print(u, s)
         a = agent.getAction((u, s))
-
+        # print(u, s, a)
+        if s[2] and not s[3] and s[4] == 'r':
+            count += 1
+            if count < 6:
+                nse = 'M'
+            else:
+                nse = 'S'
         ac += 1
         s, _, done = env.transition(a)
-        u, sym = fsa.transition(a, s)
+        u, sym = fsa.transition(u, a, s)
     # print(u, s, sym)
-    return sym
+    # print(ac)
+    return nse
 
 def generate_mean_std(n, agent):
     severe = []
@@ -87,8 +96,8 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_LP_p3_7_7_1_3_0.pkl"
+    pol = "policy/FSA_LP_p1_15_15_0_1_8_15_corr8.pkl"
     agent = Agent(pol)
-    print(pol)
+    # print(pol)
     generate_mean_std(1000, agent)
     # generate_trajectory(agent)

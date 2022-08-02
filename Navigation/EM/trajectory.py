@@ -2,24 +2,24 @@ from operator import le
 import random
 from misc import load, save
 
-severe = load("s_test_15_15_25")
-mild = load("m_test_15_15_25")
-no_nse = load("nn_test_15_15_25")
+severe = load("s_train_15_15_25")
+mild = load("m_train_15_15_25")
+no_nse = load("nn_train_15_15_25")
 s = []
 m = []
 n = []
 
 for r in severe:
-    if len(r) < 27:
+    if len(r) < 14:
         s += [r]
 
 for r in mild:
-    if len(r) < 27:
+    if len(r) < 14:
         m += [r]
 
 siz = []
 for r in no_nse:
-    if len(r) < 27:
+    if len(r) < 14:
         n += [r]
 
 print(len(s), len(m), len(n))
@@ -36,9 +36,10 @@ random.shuffle(n)
 # s_test = s[int(len(s)*0.8):]
 # m_test = m[int(len(m)*0.8):]
 # n_test = n[int(len(n)*0.8):]
-save("test_wh", n+s+m)
-save("test_eq", random.sample(list(s), 87) + m + random.sample(list(n), 87))
+# save("test_wh", n+s+m)
+# save("test_eq", random.sample(list(s), 253) + m + random.sample(list(n), 253))
 # save("s_test_15_15_25", s_test)
+# save("s_train_15_15_25", s_train)
 # save("m_train_15_15_25", m_train)
 # save("m_test_15_15_25", m_test)
 # save("nn_train_15_15_25", n_train)
@@ -51,9 +52,9 @@ save("test_eq", random.sample(list(s), 87) + m + random.sample(list(n), 87))
 # R = random.sample(list(s), 14) +  random.sample(list(m), 14) + random.sample(list(n), 14)
 # save("Valid_Data_15_15", R)
 # print(len(s), len(m), len(n))
-# for i in range(15, 30, 5):
-#     R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
-#     save("Nav_15_15_25_"+str(i), R)
+for i in range(15, 40, 5):
+    R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
+    save("Nav_15_15_25_"+str(i), R)
 
 # i = 28
 # R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
