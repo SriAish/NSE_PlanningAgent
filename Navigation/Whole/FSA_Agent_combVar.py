@@ -6,7 +6,7 @@ import itertools
 from gekko import GEKKO
 from math import e
 from misc import load
-b_obj_val = 30.5131
+b_obj_val = 4.756
 class FSAgent:
     def __init__(self, BP, FSA, gamma = 0.999):
         self.m = GEKKO(remote=False)
@@ -228,6 +228,8 @@ if __name__ == '__main__':
     print(b_obj_val+((int(sys.argv[6])/100)*b_obj_val))
     g_pos = (int(sys.argv[2]), int(sys.argv[3]))
     g_state = [(g_pos, 'fast', False, False), (g_pos, 'slow', False, False)]
+    # ped = [(0, 1), (1, 1)]
+    # pud = [(0, 2), (1, 2), (2, 1)]
     BP = NavigationConstants(int(sys.argv[1]), [], [], g_state)
     file_name = sys.argv[4][sys.argv[4].index("/")+1:]
     # file_name = sys.argv[12][sys.argv[12].index("/")+1:]
