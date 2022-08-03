@@ -95,7 +95,7 @@ class FB:
         den = 0
         for s in self.states:
             for s_ in self.states:
-                den += self.alpha(r, t, s)*self.delta[s][self.R[r][t+1]][s_]*self.beta(r, t, s_)
+                den += self.alpha(r, t, s)*self.delta[s][self.R[r][t+1]][s_]*self.beta(r, t+1, s_)
         
         if val == 0:
             self.eta_val[r][t][(u, v)] = 0

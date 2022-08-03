@@ -1,0 +1,1062 @@
+[((14, 14), 'fast', False, False), ((14, 14), 'slow', False, False)]
+goal:  [((14, 14), 'fast', False, False), ((14, 14), 'slow', False, False)]
+belief
+[((0, 0), 'slow', False, False)]
+((0, 0), 'fast', False, False)
+cost: rf 30.513
+((0, 0), 'slow', False, False)
+cost: rf 30.513
+((0, 1), 'fast', False, False)
+cost: df 29.54
+((0, 1), 'slow', False, False)
+cost: df 29.54
+((0, 2), 'fast', False, False)
+cost: df 28.638
+((0, 2), 'slow', False, False)
+cost: df 28.638
+((0, 3), 'fast', False, True)
+cost: df 28.467
+((0, 3), 'slow', False, True)
+cost: df 28.467
+((0, 4), 'fast', False, True)
+cost: lf 29.415
+((0, 4), 'slow', False, True)
+cost: lf 29.415
+((0, 5), 'fast', False, True)
+cost: lf 30.364
+((0, 5), 'slow', False, True)
+cost: lf 30.364
+((0, 6), 'fast', False, True)
+cost: lf 31.317
+((0, 6), 'slow', False, True)
+cost: lf 31.317
+((0, 7), 'fast', False, False)
+cost: lf 32.275
+((0, 7), 'slow', False, False)
+cost: lf 32.275
+((0, 8), 'fast', False, False)
+cost: lf 33.24
+((0, 8), 'slow', False, False)
+cost: lf 33.24
+((0, 9), 'fast', False, False)
+cost: lf 34.205
+((0, 9), 'slow', False, False)
+cost: lf 34.205
+((0, 10), 'fast', False, False)
+cost: df 33.43
+((0, 10), 'slow', False, False)
+cost: df 33.43
+((0, 11), 'fast', False, False)
+cost: lf 34.184
+((0, 11), 'slow', False, False)
+cost: lf 34.184
+((0, 12), 'fast', True, True)
+cost: lf 34.767
+((0, 12), 'slow', True, True)
+cost: lf 34.767
+((0, 12), 'fast', False, False)
+cost: lf 34.767
+((0, 12), 'slow', False, False)
+cost: lf 34.767
+((0, 13), 'fast', True, True)
+cost: df 34.359
+((0, 13), 'slow', True, True)
+cost: df 34.359
+((0, 13), 'fast', False, False)
+cost: df 34.359
+((0, 13), 'slow', False, False)
+cost: df 34.359
+((0, 14), 'fast', True, True)
+cost: df 33.938
+((0, 14), 'slow', True, True)
+cost: df 33.938
+((0, 14), 'fast', False, False)
+cost: df 33.938
+((0, 14), 'slow', False, False)
+cost: df 33.938
+((1, 0), 'fast', False, False)
+cost: rf 29.564
+((1, 0), 'slow', False, False)
+cost: rf 29.564
+((1, 1), 'fast', False, False)
+cost: rf 28.561
+((1, 1), 'slow', False, False)
+cost: rf 28.561
+((1, 2), 'fast', False, False)
+cost: df 27.577
+((1, 2), 'slow', False, False)
+cost: df 27.577
+((1, 3), 'fast', False, False)
+cost: df 27.281
+((1, 3), 'slow', False, False)
+cost: df 27.281
+((1, 4), 'fast', False, False)
+cost: lf 28.23
+((1, 4), 'slow', False, False)
+cost: lf 28.23
+((1, 5), 'fast', False, False)
+cost: lf 29.202
+((1, 5), 'slow', False, False)
+cost: lf 29.202
+((1, 6), 'fast', False, False)
+cost: lf 30.198
+((1, 6), 'slow', False, False)
+cost: lf 30.198
+((1, 7), 'fast', False, False)
+cost: lf 31.215
+((1, 7), 'slow', False, False)
+cost: lf 31.215
+((1, 8), 'fast', False, False)
+cost: lf 32.247
+((1, 8), 'slow', False, False)
+cost: lf 32.247
+((1, 9), 'fast', False, False)
+cost: lf 33.222
+((1, 9), 'slow', False, False)
+cost: lf 33.222
+((1, 10), 'fast', False, False)
+cost: rf 32.271
+((1, 10), 'slow', False, False)
+cost: rf 32.271
+((1, 11), 'fast', False, False)
+cost: df 31.301
+((1, 11), 'slow', False, False)
+cost: df 31.301
+((1, 12), 'fast', False, False)
+cost: df 30.36
+((1, 12), 'slow', False, False)
+cost: df 30.36
+((1, 13), 'fast', False, False)
+cost: df 29.561
+((1, 13), 'slow', False, False)
+cost: df 29.561
+((1, 14), 'fast', False, False)
+cost: df 29.093
+((1, 14), 'slow', False, False)
+cost: df 29.093
+((2, 0), 'fast', False, False)
+cost: rf 28.877
+((2, 0), 'slow', False, False)
+cost: rf 28.877
+((2, 1), 'fast', False, False)
+cost: rf 27.694
+((2, 1), 'slow', False, False)
+cost: rf 27.694
+((2, 2), 'fast', False, False)
+cost: df 26.528
+((2, 2), 'slow', False, False)
+cost: df 26.528
+((2, 3), 'fast', False, False)
+cost: df 26.093
+((2, 3), 'slow', False, False)
+cost: df 26.093
+((2, 4), 'fast', False, False)
+cost: lf 27.042
+((2, 4), 'slow', False, False)
+cost: lf 27.042
+((2, 5), 'fast', False, False)
+cost: lf 28.24
+((2, 5), 'slow', False, False)
+cost: lf 28.24
+((2, 6), 'fast', False, False)
+cost: lf 29.454
+((2, 6), 'slow', False, False)
+cost: lf 29.454
+((2, 7), 'fast', False, False)
+cost: lf 30.664
+((2, 7), 'slow', False, False)
+cost: lf 30.664
+((2, 8), 'fast', False, False)
+cost: lf 31.846
+((2, 8), 'slow', False, False)
+cost: lf 31.846
+((2, 9), 'fast', False, False)
+cost: rf 32.323
+((2, 9), 'slow', False, False)
+cost: rf 32.323
+((2, 10), 'fast', False, False)
+cost: rf 31.316
+((2, 10), 'slow', False, False)
+cost: rf 31.316
+((2, 11), 'fast', False, False)
+cost: df 30.328
+((2, 11), 'slow', False, False)
+cost: df 30.328
+((2, 12), 'fast', False, False)
+cost: df 29.37
+((2, 12), 'slow', False, False)
+cost: df 29.37
+((2, 13), 'fast', False, False)
+cost: df 28.533
+((2, 13), 'slow', False, False)
+cost: df 28.533
+((2, 14), 'fast', False, False)
+cost: df 28.013
+((2, 14), 'slow', False, False)
+cost: df 28.013
+((3, 0), 'fast', False, False)
+cost: uf 29.805
+((3, 0), 'slow', False, False)
+cost: uf 29.805
+((3, 1), 'fast', False, False)
+cost: uf 28.446
+((3, 1), 'slow', False, False)
+cost: uf 28.446
+((3, 2), 'fast', False, False)
+cost: df 25.494
+((3, 2), 'slow', False, False)
+cost: df 25.494
+((3, 3), 'fast', False, False)
+cost: df 24.905
+((3, 3), 'slow', False, False)
+cost: df 24.905
+((3, 4), 'fast', False, False)
+cost: lf 25.841
+((3, 4), 'slow', False, False)
+cost: lf 25.841
+((3, 5), 'fast', False, False)
+cost: lf 29.295
+((3, 5), 'slow', False, False)
+cost: lf 29.295
+((3, 6), 'fast', False, False)
+cost: uf 30.664
+((3, 6), 'slow', False, False)
+cost: uf 30.664
+((3, 7), 'fast', False, False)
+cost: uf 31.846
+((3, 7), 'slow', False, False)
+cost: uf 31.846
+((3, 8), 'fast', False, False)
+cost: uf 32.8
+((3, 8), 'slow', False, False)
+cost: uf 32.8
+((3, 9), 'fast', False, False)
+cost: rf 31.698
+((3, 9), 'slow', False, False)
+cost: rf 31.698
+((3, 10), 'fast', False, False)
+cost: rf 30.518
+((3, 10), 'slow', False, False)
+cost: rf 30.518
+((3, 11), 'fast', False, False)
+cost: rf 29.356
+((3, 11), 'slow', False, False)
+cost: rf 29.356
+((3, 12), 'fast', False, False)
+cost: df 28.383
+((3, 12), 'slow', False, False)
+cost: df 28.383
+((3, 13), 'fast', False, False)
+cost: df 27.511
+((3, 13), 'slow', False, False)
+cost: df 27.511
+((3, 14), 'fast', False, False)
+cost: df 26.932
+((3, 14), 'slow', False, False)
+cost: df 26.932
+((4, 0), 'fast', True, True)
+cost: df 29.314
+((4, 0), 'slow', True, True)
+cost: df 29.314
+((4, 0), 'fast', False, False)
+cost: df 29.314
+((4, 0), 'slow', False, False)
+cost: df 29.314
+((4, 1), 'fast', True, True)
+cost: rf 25.468
+((4, 1), 'slow', True, True)
+cost: rf 25.468
+((4, 1), 'fast', False, False)
+cost: rf 25.468
+((4, 1), 'slow', False, False)
+cost: rf 25.468
+((4, 2), 'fast', False, True)
+cost: df 24.476
+((4, 2), 'slow', False, True)
+cost: df 24.476
+((4, 3), 'fast', False, True)
+cost: df 23.716
+((4, 3), 'slow', False, True)
+cost: df 23.716
+((4, 4), 'fast', False, True)
+cost: lf 24.517
+((4, 4), 'slow', False, True)
+cost: lf 24.517
+((4, 5), 'fast', True, True)
+cost: lf 25.333
+((4, 5), 'slow', True, True)
+cost: lf 25.333
+((4, 5), 'fast', False, False)
+cost: lf 25.333
+((4, 5), 'slow', False, False)
+cost: lf 25.333
+((4, 6), 'fast', True, True)
+cost: df 28.216
+((4, 6), 'slow', True, True)
+cost: df 28.216
+((4, 6), 'fast', False, False)
+cost: df 28.216
+((4, 6), 'slow', False, False)
+cost: df 28.216
+((4, 7), 'fast', True, True)
+cost: df 28.799
+((4, 7), 'slow', True, True)
+cost: df 28.799
+((4, 7), 'fast', False, False)
+cost: df 28.799
+((4, 7), 'slow', False, False)
+cost: df 28.799
+((4, 8), 'fast', True, True)
+cost: df 27.433
+((4, 8), 'slow', True, True)
+cost: df 27.433
+((4, 8), 'fast', False, False)
+cost: df 27.433
+((4, 8), 'slow', False, False)
+cost: df 27.433
+((4, 9), 'fast', False, True)
+cost: uf 32.624
+((4, 9), 'slow', False, True)
+cost: uf 32.624
+((4, 10), 'fast', False, False)
+cost: uf 31.275
+((4, 10), 'slow', False, False)
+cost: uf 31.275
+((4, 11), 'fast', False, False)
+cost: rf 28.391
+((4, 11), 'slow', False, False)
+cost: rf 28.391
+((4, 12), 'fast', False, False)
+cost: df 27.4
+((4, 12), 'slow', False, False)
+cost: df 27.4
+((4, 13), 'fast', False, False)
+cost: df 26.493
+((4, 13), 'slow', False, False)
+cost: df 26.493
+((4, 14), 'fast', False, False)
+cost: df 25.849
+((4, 14), 'slow', False, False)
+cost: df 25.849
+((5, 0), 'fast', False, True)
+cost: rf 25.831
+((5, 0), 'slow', False, True)
+cost: rf 25.831
+((5, 1), 'fast', False, True)
+cost: rf 24.644
+((5, 1), 'slow', False, True)
+cost: rf 24.644
+((5, 2), 'fast', False, True)
+cost: df 23.475
+((5, 2), 'slow', False, True)
+cost: df 23.475
+((5, 3), 'fast', False, False)
+cost: df 22.541
+((5, 3), 'slow', False, False)
+cost: df 22.541
+((5, 4), 'fast', False, False)
+cost: df 21.963
+((5, 4), 'slow', False, False)
+cost: df 21.963
+((5, 5), 'fast', False, False)
+cost: lf 22.917
+((5, 5), 'slow', False, False)
+cost: lf 22.917
+((5, 6), 'fast', False, False)
+cost: lf 23.87
+((5, 6), 'slow', False, False)
+cost: lf 23.87
+((5, 7), 'fast', False, False)
+cost: lf 24.823
+((5, 7), 'slow', False, False)
+cost: lf 24.823
+((5, 8), 'fast', False, False)
+cost: lf 25.774
+((5, 8), 'slow', False, False)
+cost: lf 25.774
+((5, 9), 'fast', True, True)
+cost: lf 26.726
+((5, 9), 'slow', True, True)
+cost: lf 26.726
+((5, 9), 'fast', False, False)
+cost: lf 26.726
+((5, 9), 'slow', False, False)
+cost: lf 26.726
+((5, 10), 'fast', True, True)
+cost: rf 28.703
+((5, 10), 'slow', True, True)
+cost: rf 28.703
+((5, 10), 'fast', False, False)
+cost: rf 28.703
+((5, 10), 'slow', False, False)
+cost: rf 28.703
+((5, 11), 'fast', False, False)
+cost: rf 27.584
+((5, 11), 'slow', False, False)
+cost: rf 27.584
+((5, 12), 'fast', False, False)
+cost: df 26.419
+((5, 12), 'slow', False, False)
+cost: df 26.419
+((5, 13), 'fast', False, False)
+cost: df 25.482
+((5, 13), 'slow', False, False)
+cost: df 25.482
+((5, 14), 'fast', False, False)
+cost: df 24.766
+((5, 14), 'slow', False, False)
+cost: df 24.766
+((6, 0), 'fast', False, False)
+cost: uf 26.763
+((6, 0), 'slow', False, False)
+cost: uf 26.763
+((6, 1), 'fast', False, False)
+cost: uf 25.405
+((6, 1), 'slow', False, False)
+cost: uf 25.405
+((6, 2), 'fast', False, False)
+cost: df 22.493
+((6, 2), 'slow', False, False)
+cost: df 22.493
+((6, 3), 'fast', False, False)
+cost: df 21.519
+((6, 3), 'slow', False, False)
+cost: df 21.519
+((6, 4), 'fast', False, False)
+cost: df 20.769
+((6, 4), 'slow', False, False)
+cost: df 20.769
+((6, 5), 'fast', False, False)
+cost: lf 21.724
+((6, 5), 'slow', False, False)
+cost: lf 21.724
+((6, 6), 'fast', False, False)
+cost: lf 22.679
+((6, 6), 'slow', False, False)
+cost: lf 22.679
+((6, 7), 'fast', False, False)
+cost: lf 23.634
+((6, 7), 'slow', False, False)
+cost: lf 23.634
+((6, 8), 'fast', False, False)
+cost: lf 24.589
+((6, 8), 'slow', False, False)
+cost: lf 24.589
+((6, 9), 'fast', False, False)
+cost: lf 25.546
+((6, 9), 'slow', False, False)
+cost: lf 25.546
+((6, 10), 'fast', False, False)
+cost: lf 29.046
+((6, 10), 'slow', False, False)
+cost: lf 29.046
+((6, 11), 'fast', False, False)
+cost: uf 28.343
+((6, 11), 'slow', False, False)
+cost: uf 28.343
+((6, 12), 'fast', False, False)
+cost: df 25.44
+((6, 12), 'slow', False, False)
+cost: df 25.44
+((6, 13), 'fast', False, False)
+cost: df 24.478
+((6, 13), 'slow', False, False)
+cost: df 24.478
+((6, 14), 'fast', False, False)
+cost: df 23.681
+((6, 14), 'slow', False, False)
+cost: df 23.681
+((7, 0), 'fast', True, True)
+cost: df 26.276
+((7, 0), 'slow', True, True)
+cost: df 26.276
+((7, 0), 'fast', False, False)
+cost: df 26.276
+((7, 0), 'slow', False, False)
+cost: df 26.276
+((7, 1), 'fast', True, True)
+cost: rf 22.532
+((7, 1), 'slow', True, True)
+cost: rf 22.532
+((7, 1), 'fast', False, False)
+cost: rf 22.532
+((7, 1), 'slow', False, False)
+cost: rf 22.532
+((7, 2), 'fast', False, True)
+cost: rf 21.514
+((7, 2), 'slow', False, True)
+cost: rf 21.514
+((7, 3), 'fast', False, False)
+cost: df 20.514
+((7, 3), 'slow', False, False)
+cost: df 20.514
+((7, 4), 'fast', False, False)
+cost: df 19.573
+((7, 4), 'slow', False, False)
+cost: df 19.573
+((7, 5), 'fast', False, False)
+cost: lf 20.531
+((7, 5), 'slow', False, False)
+cost: lf 20.531
+((7, 6), 'fast', False, False)
+cost: lf 21.49
+((7, 6), 'slow', False, False)
+cost: lf 21.49
+((7, 7), 'fast', False, True)
+cost: lf 22.452
+((7, 7), 'slow', False, True)
+cost: lf 22.452
+((7, 8), 'fast', False, True)
+cost: lf 23.418
+((7, 8), 'slow', False, True)
+cost: lf 23.418
+((7, 9), 'fast', False, True)
+cost: lf 24.407
+((7, 9), 'slow', False, True)
+cost: lf 24.407
+((7, 10), 'fast', True, True)
+cost: lf 25.415
+((7, 10), 'slow', True, True)
+cost: lf 25.415
+((7, 10), 'fast', False, False)
+cost: lf 25.415
+((7, 10), 'slow', False, False)
+cost: lf 25.415
+((7, 11), 'fast', True, True)
+cost: rf 25.456
+((7, 11), 'slow', True, True)
+cost: rf 25.456
+((7, 11), 'fast', False, False)
+cost: rf 25.456
+((7, 11), 'slow', False, False)
+cost: rf 25.456
+((7, 12), 'fast', False, False)
+cost: rf 24.463
+((7, 12), 'slow', False, False)
+cost: rf 24.463
+((7, 13), 'fast', False, False)
+cost: df 23.482
+((7, 13), 'slow', False, False)
+cost: df 23.482
+((7, 14), 'fast', False, False)
+cost: df 22.595
+((7, 14), 'slow', False, False)
+cost: df 22.595
+((8, 0), 'fast', False, False)
+cost: rf 23.105
+((8, 0), 'slow', False, False)
+cost: rf 23.105
+((8, 1), 'fast', False, False)
+cost: rf 21.913
+((8, 1), 'slow', False, False)
+cost: rf 21.913
+((8, 2), 'fast', False, False)
+cost: rf 20.72
+((8, 2), 'slow', False, False)
+cost: rf 20.72
+((8, 3), 'fast', False, False)
+cost: rf 19.529
+((8, 3), 'slow', False, False)
+cost: rf 19.529
+((8, 4), 'fast', False, False)
+cost: df 18.377
+((8, 4), 'slow', False, False)
+cost: df 18.377
+((8, 5), 'fast', False, False)
+cost: lf 19.345
+((8, 5), 'slow', False, False)
+cost: lf 19.345
+((8, 6), 'fast', False, False)
+cost: lf 20.329
+((8, 6), 'slow', False, False)
+cost: lf 20.329
+((8, 7), 'fast', False, False)
+cost: lf 21.327
+((8, 7), 'slow', False, False)
+cost: lf 21.327
+((8, 8), 'fast', False, False)
+cost: lf 22.335
+((8, 8), 'slow', False, False)
+cost: lf 22.335
+((8, 9), 'fast', False, False)
+cost: lf 23.539
+((8, 9), 'slow', False, False)
+cost: lf 23.539
+((8, 10), 'fast', False, False)
+cost: lf 24.733
+((8, 10), 'slow', False, False)
+cost: lf 24.733
+((8, 11), 'fast', False, False)
+cost: rf 24.64
+((8, 11), 'slow', False, False)
+cost: rf 24.64
+((8, 12), 'fast', False, False)
+cost: rf 23.528
+((8, 12), 'slow', False, False)
+cost: rf 23.528
+((8, 13), 'fast', False, False)
+cost: rf 22.494
+((8, 13), 'slow', False, False)
+cost: rf 22.494
+((8, 14), 'fast', False, False)
+cost: df 21.508
+((8, 14), 'slow', False, False)
+cost: df 21.508
+((9, 0), 'fast', False, False)
+cost: uf 24.058
+((9, 0), 'slow', False, False)
+cost: uf 24.058
+((9, 1), 'fast', False, False)
+cost: uf 22.863
+((9, 1), 'slow', False, False)
+cost: uf 22.863
+((9, 2), 'fast', False, False)
+cost: uf 21.635
+((9, 2), 'slow', False, False)
+cost: uf 21.635
+((9, 3), 'fast', False, False)
+cost: rf 20.083
+((9, 3), 'slow', False, False)
+cost: rf 20.083
+((9, 4), 'fast', False, False)
+cost: df 17.177
+((9, 4), 'slow', False, False)
+cost: df 17.177
+((9, 5), 'fast', False, False)
+cost: lf 18.247
+((9, 5), 'slow', False, False)
+cost: lf 18.247
+((9, 6), 'fast', False, False)
+cost: lf 19.374
+((9, 6), 'slow', False, False)
+cost: lf 19.374
+((9, 7), 'fast', False, False)
+cost: lf 20.512
+((9, 7), 'slow', False, False)
+cost: lf 20.512
+((9, 8), 'fast', False, False)
+cost: lf 21.626
+((9, 8), 'slow', False, False)
+cost: lf 21.626
+((9, 9), 'fast', False, False)
+cost: lf 24.593
+((9, 9), 'slow', False, False)
+cost: lf 24.593
+((9, 10), 'fast', False, False)
+cost: uf 25.723
+((9, 10), 'slow', False, False)
+cost: uf 25.723
+((9, 11), 'fast', False, False)
+cost: rf 24.88
+((9, 11), 'slow', False, False)
+cost: rf 24.88
+((9, 12), 'fast', False, False)
+cost: rf 23.062
+((9, 12), 'slow', False, False)
+cost: rf 23.062
+((9, 13), 'fast', False, False)
+cost: rf 21.581
+((9, 13), 'slow', False, False)
+cost: rf 21.581
+((9, 14), 'fast', False, False)
+cost: df 20.42
+((9, 14), 'slow', False, False)
+cost: df 20.42
+((10, 0), 'fast', True, True)
+cost: uf 27.899
+((10, 0), 'slow', True, True)
+cost: uf 27.899
+((10, 0), 'fast', False, False)
+cost: uf 27.899
+((10, 0), 'slow', False, False)
+cost: uf 27.899
+((10, 1), 'fast', True, True)
+cost: uf 26.37
+((10, 1), 'slow', True, True)
+cost: uf 26.37
+((10, 1), 'fast', False, False)
+cost: uf 26.37
+((10, 1), 'slow', False, False)
+cost: uf 26.37
+((10, 2), 'fast', True, True)
+cost: uf 24.092
+((10, 2), 'slow', True, True)
+cost: uf 24.092
+((10, 2), 'fast', False, False)
+cost: uf 24.092
+((10, 2), 'slow', False, False)
+cost: uf 24.092
+((10, 3), 'fast', True, True)
+cost: rf 18.216
+((10, 3), 'slow', True, True)
+cost: rf 18.216
+((10, 3), 'fast', False, False)
+cost: rf 18.216
+((10, 3), 'slow', False, False)
+cost: rf 18.216
+((10, 4), 'fast', False, False)
+cost: df 15.965
+((10, 4), 'slow', False, False)
+cost: df 15.965
+((10, 5), 'fast', False, False)
+cost: lf 18.051
+((10, 5), 'slow', False, False)
+cost: lf 18.051
+((10, 6), 'fast', False, False)
+cost: lf 19.699
+((10, 6), 'slow', False, False)
+cost: lf 19.699
+((10, 7), 'fast', False, False)
+cost: lf 20.954
+((10, 7), 'slow', False, False)
+cost: lf 20.954
+((10, 8), 'fast', False, False)
+cost: lf 21.856
+((10, 8), 'slow', False, False)
+cost: lf 21.856
+((10, 9), 'fast', True, True)
+cost: df 20.763
+((10, 9), 'slow', True, True)
+cost: df 20.763
+((10, 9), 'fast', False, False)
+cost: df 20.763
+((10, 9), 'slow', False, False)
+cost: df 20.763
+((10, 10), 'fast', True, True)
+cost: df 18.241
+((10, 10), 'slow', True, True)
+cost: df 18.241
+((10, 10), 'fast', False, False)
+cost: df 18.241
+((10, 10), 'slow', False, False)
+cost: df 18.241
+((10, 11), 'fast', True, True)
+cost: df 15.741
+((10, 11), 'slow', True, True)
+cost: df 15.741
+((10, 11), 'fast', False, False)
+cost: df 15.741
+((10, 11), 'slow', False, False)
+cost: df 15.741
+((10, 12), 'fast', True, True)
+cost: df 13.309
+((10, 12), 'slow', True, True)
+cost: df 13.309
+((10, 12), 'fast', False, False)
+cost: df 13.309
+((10, 12), 'slow', False, False)
+cost: df 13.309
+((10, 13), 'fast', True, True)
+cost: df 11.117
+((10, 13), 'slow', True, True)
+cost: df 11.117
+((10, 13), 'fast', False, False)
+cost: df 11.117
+((10, 13), 'slow', False, False)
+cost: df 11.117
+((10, 14), 'fast', True, True)
+cost: df 9.665
+((10, 14), 'slow', True, True)
+cost: df 9.665
+((10, 14), 'fast', False, False)
+cost: df 9.665
+((10, 14), 'slow', False, False)
+cost: df 9.665
+((11, 0), 'fast', True, True)
+cost: df 19.232
+((11, 0), 'slow', True, True)
+cost: df 19.232
+((11, 0), 'fast', False, False)
+cost: df 19.232
+((11, 0), 'slow', False, False)
+cost: df 19.232
+((11, 1), 'fast', True, True)
+cost: df 18.029
+((11, 1), 'slow', True, True)
+cost: df 18.029
+((11, 1), 'fast', False, False)
+cost: df 18.029
+((11, 1), 'slow', False, False)
+cost: df 18.029
+((11, 2), 'fast', True, True)
+cost: df 16.642
+((11, 2), 'slow', True, True)
+cost: df 16.642
+((11, 2), 'fast', False, False)
+cost: df 16.642
+((11, 2), 'slow', False, False)
+cost: df 16.642
+((11, 3), 'fast', True, True)
+cost: df 14.322
+((11, 3), 'slow', True, True)
+cost: df 14.322
+((11, 3), 'fast', False, False)
+cost: df 14.322
+((11, 3), 'slow', False, False)
+cost: df 14.322
+((11, 4), 'fast', False, True)
+cost: df 14.639
+((11, 4), 'slow', False, True)
+cost: df 14.639
+((11, 5), 'fast', True, True)
+cost: df 13.497
+((11, 5), 'slow', True, True)
+cost: df 13.497
+((11, 5), 'fast', False, False)
+cost: df 13.497
+((11, 5), 'slow', False, False)
+cost: df 13.497
+((11, 6), 'fast', True, True)
+cost: df 12.358
+((11, 6), 'slow', True, True)
+cost: df 12.358
+((11, 6), 'fast', False, False)
+cost: df 12.358
+((11, 6), 'slow', False, False)
+cost: df 12.358
+((11, 7), 'fast', True, True)
+cost: df 11.223
+((11, 7), 'slow', True, True)
+cost: df 11.223
+((11, 7), 'fast', False, False)
+cost: df 11.223
+((11, 7), 'slow', False, False)
+cost: df 11.223
+((11, 8), 'fast', True, True)
+cost: df 10.092
+((11, 8), 'slow', True, True)
+cost: df 10.092
+((11, 8), 'fast', False, False)
+cost: df 10.092
+((11, 8), 'slow', False, False)
+cost: df 10.092
+((11, 9), 'fast', True, True)
+cost: df 8.964
+((11, 9), 'slow', True, True)
+cost: df 8.964
+((11, 9), 'fast', False, False)
+cost: df 8.964
+((11, 9), 'slow', False, False)
+cost: df 8.964
+((11, 10), 'fast', True, True)
+cost: df 7.839
+((11, 10), 'slow', True, True)
+cost: df 7.839
+((11, 10), 'fast', False, False)
+cost: df 7.839
+((11, 10), 'slow', False, False)
+cost: df 7.839
+((11, 11), 'fast', True, True)
+cost: df 6.719
+((11, 11), 'slow', True, True)
+cost: df 6.719
+((11, 11), 'fast', False, False)
+cost: df 6.719
+((11, 11), 'slow', False, False)
+cost: df 6.719
+((11, 12), 'fast', True, True)
+cost: df 5.61
+((11, 12), 'slow', True, True)
+cost: df 5.61
+((11, 12), 'fast', False, False)
+cost: df 5.61
+((11, 12), 'slow', False, False)
+cost: df 5.61
+((11, 13), 'fast', True, True)
+cost: df 4.552
+((11, 13), 'slow', True, True)
+cost: df 4.552
+((11, 13), 'fast', False, False)
+cost: df 4.552
+((11, 13), 'slow', False, False)
+cost: df 4.552
+((11, 14), 'fast', True, True)
+cost: df 3.745
+((11, 14), 'slow', True, True)
+cost: df 3.745
+((11, 14), 'fast', False, False)
+cost: df 3.745
+((11, 14), 'slow', False, False)
+cost: df 3.745
+((12, 0), 'fast', False, False)
+cost: rf 16.271
+((12, 0), 'slow', False, False)
+cost: rf 16.271
+((12, 1), 'fast', False, False)
+cost: rf 15.241
+((12, 1), 'slow', False, False)
+cost: rf 15.241
+((12, 2), 'fast', False, False)
+cost: rf 14.215
+((12, 2), 'slow', False, False)
+cost: rf 14.215
+((12, 3), 'fast', False, False)
+cost: rf 13.191
+((12, 3), 'slow', False, False)
+cost: rf 13.191
+((12, 4), 'fast', False, False)
+cost: rf 12.17
+((12, 4), 'slow', False, False)
+cost: rf 12.17
+((12, 5), 'fast', False, False)
+cost: rf 11.153
+((12, 5), 'slow', False, False)
+cost: rf 11.153
+((12, 6), 'fast', False, False)
+cost: rf 10.139
+((12, 6), 'slow', False, False)
+cost: rf 10.139
+((12, 7), 'fast', False, False)
+cost: rf 9.128
+((12, 7), 'slow', False, False)
+cost: rf 9.128
+((12, 8), 'fast', False, False)
+cost: rf 8.12
+((12, 8), 'slow', False, False)
+cost: rf 8.12
+((12, 9), 'fast', False, False)
+cost: rf 7.116
+((12, 9), 'slow', False, False)
+cost: rf 7.116
+((12, 10), 'fast', False, False)
+cost: rf 6.113
+((12, 10), 'slow', False, False)
+cost: rf 6.113
+((12, 11), 'fast', False, False)
+cost: rf 5.114
+((12, 11), 'slow', False, False)
+cost: rf 5.114
+((12, 12), 'fast', False, False)
+cost: rf 4.116
+((12, 12), 'slow', False, False)
+cost: rf 4.116
+((12, 13), 'fast', False, False)
+cost: df 3.119
+((12, 13), 'slow', False, False)
+cost: df 3.119
+((12, 14), 'fast', False, False)
+cost: df 2.221
+((12, 14), 'slow', False, False)
+cost: df 2.221
+((13, 0), 'fast', False, False)
+cost: rf 15.693
+((13, 0), 'slow', False, False)
+cost: rf 15.693
+((13, 1), 'fast', False, False)
+cost: rf 14.626
+((13, 1), 'slow', False, False)
+cost: rf 14.626
+((13, 2), 'fast', False, False)
+cost: rf 13.561
+((13, 2), 'slow', False, False)
+cost: rf 13.561
+((13, 3), 'fast', False, False)
+cost: rf 12.498
+((13, 3), 'slow', False, False)
+cost: rf 12.498
+((13, 4), 'fast', False, False)
+cost: rf 11.438
+((13, 4), 'slow', False, False)
+cost: rf 11.438
+((13, 5), 'fast', False, False)
+cost: rf 10.381
+((13, 5), 'slow', False, False)
+cost: rf 10.381
+((13, 6), 'fast', False, False)
+cost: rf 9.328
+((13, 6), 'slow', False, False)
+cost: rf 9.328
+((13, 7), 'fast', False, False)
+cost: rf 8.279
+((13, 7), 'slow', False, False)
+cost: rf 8.279
+((13, 8), 'fast', False, False)
+cost: rf 7.234
+((13, 8), 'slow', False, False)
+cost: rf 7.234
+((13, 9), 'fast', False, False)
+cost: rf 6.195
+((13, 9), 'slow', False, False)
+cost: rf 6.195
+((13, 10), 'fast', False, False)
+cost: rf 5.163
+((13, 10), 'slow', False, False)
+cost: rf 5.163
+((13, 11), 'fast', False, False)
+cost: rf 4.137
+((13, 11), 'slow', False, False)
+cost: rf 4.137
+((13, 12), 'fast', False, False)
+cost: rf 3.119
+((13, 12), 'slow', False, False)
+cost: rf 3.119
+((13, 13), 'fast', False, False)
+cost: rf 2.11
+((13, 13), 'slow', False, False)
+cost: rf 2.11
+((13, 14), 'fast', False, False)
+cost: df 1.111
+((13, 14), 'slow', False, False)
+cost: df 1.111
+((14, 0), 'fast', False, False)
+cost: rf 15.442
+((14, 0), 'slow', False, False)
+cost: rf 15.442
+((14, 1), 'fast', False, False)
+cost: rf 14.347
+((14, 1), 'slow', False, False)
+cost: rf 14.347
+((14, 2), 'fast', False, False)
+cost: rf 13.251
+((14, 2), 'slow', False, False)
+cost: rf 13.251
+((14, 3), 'fast', False, False)
+cost: rf 12.153
+((14, 3), 'slow', False, False)
+cost: rf 12.153
+((14, 4), 'fast', False, False)
+cost: rf 11.054
+((14, 4), 'slow', False, False)
+cost: rf 11.054
+((14, 5), 'fast', False, False)
+cost: rf 9.955
+((14, 5), 'slow', False, False)
+cost: rf 9.955
+((14, 6), 'fast', False, False)
+cost: rf 8.853
+((14, 6), 'slow', False, False)
+cost: rf 8.853
+((14, 7), 'fast', False, False)
+cost: rf 7.751
+((14, 7), 'slow', False, False)
+cost: rf 7.751
+((14, 8), 'fast', False, False)
+cost: rf 6.647
+((14, 8), 'slow', False, False)
+cost: rf 6.647
+((14, 9), 'fast', False, False)
+cost: rf 5.543
+((14, 9), 'slow', False, False)
+cost: rf 5.543
+((14, 10), 'fast', False, False)
+cost: rf 4.437
+((14, 10), 'slow', False, False)
+cost: rf 4.437
+((14, 11), 'fast', False, False)
+cost: rf 3.329
+((14, 11), 'slow', False, False)
+cost: rf 3.329
+((14, 12), 'fast', False, False)
+cost: rf 2.221
+((14, 12), 'slow', False, False)
+cost: rf 2.221
+((14, 13), 'fast', False, False)
+cost: rf 1.111
+((14, 13), 'slow', False, False)
+cost: rf 1.111
+((14, 14), 'fast', False, False)
+cost: ls 0.0
+((14, 14), 'slow', False, False)
+cost: ls 0.0
+30.51316097256386
+done

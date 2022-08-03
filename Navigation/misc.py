@@ -48,7 +48,7 @@ class NavigationConstants:
                 if self.getType((i, j)) == 'H':
                     self.states.append(((i, j), 'fast', True, True))
                     self.states.append(((i, j), 'slow', True, True))
-                if self.getType((i, j)) == '@':
+                elif self.getType((i, j)) == '@':
                     self.states.append(((i, j), 'fast', False, True))
                     self.states.append(((i, j), 'slow', False, True))
                 else:
@@ -107,7 +107,7 @@ class NavigationConstants:
         for i in agent_locations_prob:
             if self.getType((i[0][0], i[0][1])) == 'H':
                 states.append(((i[0], self.actions.getSpeed(action), True, True), i[1]))
-            if self.getType((i[0][0], i[0][1])) == '@':
+            elif self.getType((i[0][0], i[0][1])) == '@':
                 states.append(((i[0], self.actions.getSpeed(action), False, True), i[1]))
             else:
                 states.append(((i[0], self.actions.getSpeed(action), False, False), i[1]))
