@@ -1,0 +1,94 @@
+==========================================
+SLURM_JOB_ID = 730132
+SLURM_NODELIST = gnode042
+SLURM_JOB_GPUS = 0
+==========================================
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
+/var/spool/slurmd/job730132/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+90
+data/Nav_15_15_25_30
+states:  4 trial:  0
+done
+--- 14.614174127578735 seconds ---
+data/Nav_15_15_25_30
+states:  4 trial:  1
+done
+--- 1.7814717292785645 seconds ---
+data/Nav_15_15_25_30
+states:  4 trial:  2
+done
+--- 14.477999210357666 seconds ---
+data/Nav_15_15_25_30
+states:  4 trial:  3
+done
+--- 2.4283556938171387 seconds ---
+data/Nav_15_15_25_30
+states:  4 trial:  4
+done
+--- 11.202895879745483 seconds ---
+data/Nav_15_15_25_30
+states:  4 trial:  5
+Traceback (most recent call last):
+  File "EM2.py", line 260, in <module>
+    n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
+  File "EM2.py", line 94, in objective
+    v2 += fb.eta(r, t, s, s_)
+  File "/home/sriaish/NSE_PlanningAgent/Navigation/EM/FB.py", line 103, in eta
+    self.eta_val[r][t][(u, v)] = (val/den)
+ZeroDivisionError: float division by zero
+data/Nav_15_15_25_30
+states:  4 trial:  0
+accuracy of:new_Nav_15_15_25_30_4_0:  0.3345191040843215
+data/Nav_15_15_25_30
+states:  4 trial:  1
+accuracy of:new_Nav_15_15_25_30_4_1:  0.33003952569169964
+data/Nav_15_15_25_30
+states:  4 trial:  2
+accuracy of:new_Nav_15_15_25_30_4_2:  0.3314888010540184
+data/Nav_15_15_25_30
+states:  4 trial:  3
+accuracy of:new_Nav_15_15_25_30_4_3:  0.32885375494071145
+data/Nav_15_15_25_30
+states:  4 trial:  4
+accuracy of:new_Nav_15_15_25_30_4_4:  0.338866930171278
+data/Nav_15_15_25_30
+states:  4 trial:  5
+Traceback (most recent call last):
+  File "test3.py", line 107, in <module>
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
+  File "test3.py", line 6, in load
+    file_to_read = open(name, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_Nav_15_15_25_30_4_5'
+--------------------
+90
+data/Nav_15_15_25_30
+states:  5 trial:  0
+done
+--- 195.26519322395325 seconds ---
+data/Nav_15_15_25_30
+states:  5 trial:  1
+done
+--- 1.8909473419189453 seconds ---
+data/Nav_15_15_25_30
+states:  5 trial:  2
+done
+--- 16.83553147315979 seconds ---
+data/Nav_15_15_25_30
+states:  5 trial:  3
+done
+--- 173.9796621799469 seconds ---
+data/Nav_15_15_25_30
+states:  5 trial:  4
+done
+--- 23.424121856689453 seconds ---
+data/Nav_15_15_25_30
+states:  5 trial:  5
+done
+--- 228.19262886047363 seconds ---
+data/Nav_15_15_25_30
+states:  5 trial:  6
+done
+--- 20.537502765655518 seconds ---
+data/Nav_15_15_25_30
+states:  5 trial:  7
