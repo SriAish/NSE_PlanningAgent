@@ -24,6 +24,7 @@ class VIAgent:
         init_loc = (0, 0)
         self.belief_state = []
         self.belief_state.append((init_loc, 'slow', False, False))
+        print("belief")
         print(self.belief_state)
 
     def initializeStateValues(self):

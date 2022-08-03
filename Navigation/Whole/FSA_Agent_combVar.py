@@ -64,6 +64,8 @@ class FSAgent:
         for u, s in itertools.product(self.FSA.states, self.BP.states):
             actions = self.BP.getValidActions(s)
             for a in actions:
+                if self.x_[(u, s)]*self.pi_[(u, s)][a]*self.BP.getCost(s, a) > 0.001:
+                    print(u, s, a, self.x_[(u, s)], self.pi_[(u, s)][a], self.BP.getCost(s, a), ":", self.x_[(u, s)]*self.pi_[(u, s)][a]*self.BP.getCost(s, a))
                 obj += self.x_[(u, s)]*self.pi_[(u, s)][a]*self.BP.getCost(s, a)
         return obj
 
