@@ -11,11 +11,11 @@ source ~/keras/bin/activate
 
 
 echo "Start learning FSA"
-python3.7 EM.py data_set/BP_15_15_35_25 6
+python3.7 EM.py data_set/BP_15_15_35_25 7
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 6
+python3.7 test.py data_set/BP_15_15_35_25 7
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_6_15_corr 1 0 0 data_set/BP_15_15_35_25 6 20 > LP_sm_1_15_0_10_6.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_7_15_corr 1 0 0 data_set/BP_15_15_35_25 7 20 > LP_sm_1_15_0_10_7.txt
 # echo "running agent"
 # python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_8_15 1 0 0 data_set/BP_15_15_35_25 8 15 >> LP_sm_1_15_0_10_8.txt
 # end=`date +%s`
