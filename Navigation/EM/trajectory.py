@@ -2,24 +2,24 @@ from operator import le
 import random
 from misc import load, save
 
-severe = load("s_train_15_15_25")
-mild = load("m_train_15_15_25")
-no_nse = load("nn_train_15_15_25")
+severe = load("s_train_15_15_25_imp")
+mild = load("m_train_15_15_25_imp")
+no_nse = load("nn_train_15_15_25_imp")
 s = []
 m = []
 n = []
 
 for r in severe:
-    if len(r) < 25:
+    if len(r) > 11 and len(r) < 25:
         s += [r]
 
 for r in mild:
-    if len(r) < 25:
+    if len(r) > 14 and len(r) < 25:
         m += [r]
 
 siz = []
 for r in no_nse:
-    if len(r) < 25:
+    if len(r) > 10 and len(r) < 13:
         n += [r]
 
 print(len(s), len(m), len(n))
@@ -37,13 +37,13 @@ random.shuffle(n)
 # m_test = m[int(len(m)*0.8):]
 # n_test = n[int(len(n)*0.8):]
 # save("test_wh", n+s+m)
-# save("test_eq", random.sample(list(s), 253) + m + random.sample(list(n), 253))
-# save("s_test_15_15_25", s_test)
-# save("s_train_15_15_25", s_train)
-# save("m_train_15_15_25", m_train)
-# save("m_test_15_15_25", m_test)
-# save("nn_train_15_15_25", n_train)
-# save("nn_test_15_15_25", n_test)
+# save("test_eq", random.sample(list(s), 348) + random.sample(list(n), 348) + random.sample(list(n), 348))
+# save("s_test_15_15_25_imp", s_test)
+# save("s_train_15_15_25_imp", s_train)
+# save("m_train_15_15_25_imp", m_train)
+# save("m_test_15_15_25_imp", m_test)
+# save("nn_train_15_15_25_imp", n_train)
+# save("nn_test_15_15_25_imp", n_test)
 
 # R_train = s_train + m_train + n_train
 # R_test = s_test + m_test + n_test
@@ -52,9 +52,9 @@ random.shuffle(n)
 # R = random.sample(list(s), 14) +  random.sample(list(m), 14) + random.sample(list(n), 14)
 # save("Valid_Data_15_15", R)
 # print(len(s), len(m), len(n))
-for i in range(20, 40, 5):
+for i in range(25, 51, 5):
     R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
-    save("Nav_15_15_25_alt_"+str(i), R)
+    save("Nav_15_15_25_imp_"+str(i), R)
 
 # i = 28
 # R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
