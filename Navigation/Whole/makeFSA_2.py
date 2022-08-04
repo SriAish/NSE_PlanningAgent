@@ -52,12 +52,12 @@ class FSAConstants:
 
     def getLabel(self, state, action):
         if self.isEnd(state):
-            return self.label[(False, False, False, True)]
+            return self.label[(False, False, True)]
         fast = True
         if state[1] == 'slow':
             fast = False
 
-        return self.label[(fast, state[2], state[3], False)]
+        return self.label[(state[2] and fast, state[3] and fast, False)]
 
     def nextState(self, u, s, a):
         sig = self.getLabel(s, a)
