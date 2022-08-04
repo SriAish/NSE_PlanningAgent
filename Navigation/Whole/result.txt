@@ -1,21 +1,9 @@
 ==========================================
-SLURM_JOB_ID = 731449
-SLURM_NODELIST = gnode017
+SLURM_JOB_ID = 731468
+SLURM_NODELIST = gnode029
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job731449/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job731468/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Checking Accuracy of learned FSAs
-Traceback (most recent call last):
-  File "test.py", line 108, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-  File "/home/sriaish/NSE_PlanningAgent/Navigation/Whole/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_Nav_15_15_25_45_6_6'
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 240, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[5] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Navigation/Whole/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_Nav_15_15_25_45_6_best'
