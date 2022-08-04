@@ -1,0 +1,30 @@
+data/Nav_15_15_25_40
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_25_40_6_0:  0.5743083003952569
+data/Nav_15_15_25_40
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_25_40_6_1:  0.6503293807641635
+data/Nav_15_15_25_40
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_25_40_6_2:  0.9129117259552043
+data/Nav_15_15_25_40
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_25_40_6_3:  0.7324110671936758
+data/Nav_15_15_25_40
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_25_40_6_4:  0.9121212121212123
+data/Nav_15_15_25_40
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_25_40_6_5:  0.3343873517786561
+data/Nav_15_15_25_40
+states:  6 trial:  6
+accuracy of:new_Nav_15_15_25_40_6_6:  0.9154150197628459
+data/Nav_15_15_25_40
+states:  6 trial:  7
+accuracy of:new_Nav_15_15_25_40_6_7:  0.5619235836627141
+data/Nav_15_15_25_40
+states:  6 trial:  8
+accuracy of:new_Nav_15_15_25_40_6_8:  0.5073781291172595
+data/Nav_15_15_25_40
+states:  6 trial:  9
+accuracy of:new_Nav_15_15_25_40_6_9:  0.6039525691699604
