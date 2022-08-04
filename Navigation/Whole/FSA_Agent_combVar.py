@@ -6,7 +6,7 @@ import itertools
 from gekko import GEKKO
 from math import e
 from misc import load
-b_obj_val = 4.756
+b_obj_val = 27.746
 class FSAgent:
     def __init__(self, BP, FSA, gamma = 0.999):
         self.m = GEKKO(remote=False)
@@ -174,9 +174,9 @@ class FSAgent:
         self.make_constraints_eqn1()
         print("eq1")
         sys.stdout.flush()
-        # self.set_bound()
-        # print("setting bound")
-        # sys.stdout.flush()
+        self.set_bound()
+        print("setting bound")
+        sys.stdout.flush()
         if float(sys.argv[6]) >= 0:
             self.make_constraints_eqn3()
             print("eq3")
