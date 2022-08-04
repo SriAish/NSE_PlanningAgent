@@ -1,94 +1,271 @@
 ==========================================
-SLURM_JOB_ID = 730132
-SLURM_NODELIST = gnode042
+SLURM_JOB_ID = 730875
+SLURM_NODELIST = gnode052
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job730132/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job730875/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 90
 data/Nav_15_15_25_30
 states:  4 trial:  0
 done
---- 14.614174127578735 seconds ---
+--- 3.8188607692718506 seconds ---
 data/Nav_15_15_25_30
 states:  4 trial:  1
 done
---- 1.7814717292785645 seconds ---
+--- 3.759761095046997 seconds ---
 data/Nav_15_15_25_30
 states:  4 trial:  2
 done
---- 14.477999210357666 seconds ---
+--- 13.276124954223633 seconds ---
 data/Nav_15_15_25_30
 states:  4 trial:  3
 done
---- 2.4283556938171387 seconds ---
+--- 3.4865081310272217 seconds ---
 data/Nav_15_15_25_30
 states:  4 trial:  4
 done
---- 11.202895879745483 seconds ---
+--- 11.714867115020752 seconds ---
 data/Nav_15_15_25_30
 states:  4 trial:  5
-Traceback (most recent call last):
-  File "EM2.py", line 260, in <module>
-    n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
-  File "EM2.py", line 94, in objective
-    v2 += fb.eta(r, t, s, s_)
-  File "/home/sriaish/NSE_PlanningAgent/Navigation/EM/FB.py", line 103, in eta
-    self.eta_val[r][t][(u, v)] = (val/den)
-ZeroDivisionError: float division by zero
+done
+--- 235.73817801475525 seconds ---
+data/Nav_15_15_25_30
+states:  4 trial:  6
+done
+--- 11.759692907333374 seconds ---
+data/Nav_15_15_25_30
+states:  4 trial:  7
+done
+--- 158.84096145629883 seconds ---
+data/Nav_15_15_25_30
+states:  4 trial:  8
+done
+--- 4.750838041305542 seconds ---
+data/Nav_15_15_25_30
+states:  4 trial:  9
+done
+--- 205.5239782333374 seconds ---
+--- 652.6705260276794 seconds for all trials---
+========================================================
 data/Nav_15_15_25_30
 states:  4 trial:  0
-accuracy of:new_Nav_15_15_25_30_4_0:  0.3345191040843215
+accuracy of:new_Nav_15_15_25_30_4_0:  0.3230566534914361
 data/Nav_15_15_25_30
 states:  4 trial:  1
-accuracy of:new_Nav_15_15_25_30_4_1:  0.33003952569169964
+accuracy of:new_Nav_15_15_25_30_4_1:  0.3289855072463769
 data/Nav_15_15_25_30
 states:  4 trial:  2
-accuracy of:new_Nav_15_15_25_30_4_2:  0.3314888010540184
+accuracy of:new_Nav_15_15_25_30_4_2:  0.34057971014492755
 data/Nav_15_15_25_30
 states:  4 trial:  3
-accuracy of:new_Nav_15_15_25_30_4_3:  0.32885375494071145
+accuracy of:new_Nav_15_15_25_30_4_3:  0.3382081686429513
 data/Nav_15_15_25_30
 states:  4 trial:  4
-accuracy of:new_Nav_15_15_25_30_4_4:  0.338866930171278
+accuracy of:new_Nav_15_15_25_30_4_4:  0.33478260869565213
 data/Nav_15_15_25_30
 states:  4 trial:  5
-Traceback (most recent call last):
-  File "test3.py", line 107, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-  File "test3.py", line 6, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_Nav_15_15_25_30_4_5'
+accuracy of:new_Nav_15_15_25_30_4_5:  0.347167325428195
+data/Nav_15_15_25_30
+states:  4 trial:  6
+accuracy of:new_Nav_15_15_25_30_4_6:  0.3387351778656126
+data/Nav_15_15_25_30
+states:  4 trial:  7
+accuracy of:new_Nav_15_15_25_30_4_7:  0.35573122529644274
+data/Nav_15_15_25_30
+states:  4 trial:  8
+accuracy of:new_Nav_15_15_25_30_4_8:  0.33715415019762845
+data/Nav_15_15_25_30
+states:  4 trial:  9
+accuracy of:new_Nav_15_15_25_30_4_9:  0.6671936758893281
 --------------------
 90
 data/Nav_15_15_25_30
 states:  5 trial:  0
 done
---- 195.26519322395325 seconds ---
+--- 10.990028381347656 seconds ---
 data/Nav_15_15_25_30
 states:  5 trial:  1
 done
---- 1.8909473419189453 seconds ---
+--- 1.882321834564209 seconds ---
 data/Nav_15_15_25_30
 states:  5 trial:  2
 done
---- 16.83553147315979 seconds ---
+--- 22.05400037765503 seconds ---
 data/Nav_15_15_25_30
 states:  5 trial:  3
 done
---- 173.9796621799469 seconds ---
+--- 268.1901092529297 seconds ---
 data/Nav_15_15_25_30
 states:  5 trial:  4
 done
---- 23.424121856689453 seconds ---
+--- 23.41041660308838 seconds ---
 data/Nav_15_15_25_30
 states:  5 trial:  5
 done
---- 228.19262886047363 seconds ---
+--- 13.415889263153076 seconds ---
 data/Nav_15_15_25_30
 states:  5 trial:  6
 done
---- 20.537502765655518 seconds ---
+--- 20.64086127281189 seconds ---
 data/Nav_15_15_25_30
 states:  5 trial:  7
+done
+--- 732.0434544086456 seconds ---
+data/Nav_15_15_25_30
+states:  5 trial:  8
+done
+--- 6.429489612579346 seconds ---
+data/Nav_15_15_25_30
+states:  5 trial:  9
+done
+--- 22.00471258163452 seconds ---
+--- 1121.0619921684265 seconds for all trials---
+========================================================
+data/Nav_15_15_25_30
+states:  5 trial:  0
+accuracy of:new_Nav_15_15_25_30_5_0:  0.325296442687747
+data/Nav_15_15_25_30
+states:  5 trial:  1
+accuracy of:new_Nav_15_15_25_30_5_1:  0.3368906455862978
+data/Nav_15_15_25_30
+states:  5 trial:  2
+accuracy of:new_Nav_15_15_25_30_5_2:  0.32529644268774704
+data/Nav_15_15_25_30
+states:  5 trial:  3
+accuracy of:new_Nav_15_15_25_30_5_3:  0.43596837944664035
+data/Nav_15_15_25_30
+states:  5 trial:  4
+accuracy of:new_Nav_15_15_25_30_5_4:  0.3241106719367589
+data/Nav_15_15_25_30
+states:  5 trial:  5
+accuracy of:new_Nav_15_15_25_30_5_5:  0.3285902503293808
+data/Nav_15_15_25_30
+states:  5 trial:  6
+accuracy of:new_Nav_15_15_25_30_5_6:  0.33754940711462444
+data/Nav_15_15_25_30
+states:  5 trial:  7
+accuracy of:new_Nav_15_15_25_30_5_7:  0.33043478260869563
+data/Nav_15_15_25_30
+states:  5 trial:  8
+accuracy of:new_Nav_15_15_25_30_5_8:  0.33056653491436105
+data/Nav_15_15_25_30
+states:  5 trial:  9
+accuracy of:new_Nav_15_15_25_30_5_9:  0.3359683794466404
+--------------------
+90
+data/Nav_15_15_25_30
+states:  6 trial:  0
+done
+--- 35.38805937767029 seconds ---
+data/Nav_15_15_25_30
+states:  6 trial:  1
+done
+--- 863.3999783992767 seconds ---
+data/Nav_15_15_25_30
+states:  6 trial:  2
+done
+--- 1883.5514197349548 seconds ---
+data/Nav_15_15_25_30
+states:  6 trial:  3
+done
+--- 1006.4451291561127 seconds ---
+data/Nav_15_15_25_30
+states:  6 trial:  4
+done
+--- 871.5518469810486 seconds ---
+data/Nav_15_15_25_30
+states:  6 trial:  5
+done
+--- 486.54449677467346 seconds ---
+data/Nav_15_15_25_30
+states:  6 trial:  6
+done
+--- 591.0065257549286 seconds ---
+data/Nav_15_15_25_30
+states:  6 trial:  7
+done
+--- 4.940302848815918 seconds ---
+data/Nav_15_15_25_30
+states:  6 trial:  8
+done
+--- 12.561102867126465 seconds ---
+data/Nav_15_15_25_30
+states:  6 trial:  9
+done
+--- 588.5288553237915 seconds ---
+--- 6343.918215513229 seconds for all trials---
+========================================================
+data/Nav_15_15_25_30
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_25_30_6_0:  0.3343873517786561
+data/Nav_15_15_25_30
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_25_30_6_1:  0.43675889328063244
+data/Nav_15_15_25_30
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_25_30_6_2:  0.33267457180500654
+data/Nav_15_15_25_30
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_25_30_6_3:  0.3428194993412385
+data/Nav_15_15_25_30
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_25_30_6_4:  0.43517786561264815
+data/Nav_15_15_25_30
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_25_30_6_5:  0.6623188405797101
+data/Nav_15_15_25_30
+states:  6 trial:  6
+accuracy of:new_Nav_15_15_25_30_6_6:  0.4566534914361002
+data/Nav_15_15_25_30
+states:  6 trial:  7
+accuracy of:new_Nav_15_15_25_30_6_7:  0.327536231884058
+data/Nav_15_15_25_30
+states:  6 trial:  8
+accuracy of:new_Nav_15_15_25_30_6_8:  0.3368906455862978
+data/Nav_15_15_25_30
+states:  6 trial:  9
+accuracy of:new_Nav_15_15_25_30_6_9:  0.4545454545454545
+--------------------
+--------------------
+--------------------
+105
+data/Nav_15_15_25_35
+states:  4 trial:  0
+done
+--- 9.805405378341675 seconds ---
+data/Nav_15_15_25_35
+states:  4 trial:  1
+done
+--- 3.6176741123199463 seconds ---
+data/Nav_15_15_25_35
+states:  4 trial:  2
+done
+--- 3.5844531059265137 seconds ---
+data/Nav_15_15_25_35
+states:  4 trial:  3
+done
+--- 1423.3413400650024 seconds ---
+data/Nav_15_15_25_35
+states:  4 trial:  4
+done
+--- 741.5586566925049 seconds ---
+data/Nav_15_15_25_35
+states:  4 trial:  5
+done
+--- 426.53824496269226 seconds ---
+data/Nav_15_15_25_35
+states:  4 trial:  6
+done
+--- 916.75834441185 seconds ---
+data/Nav_15_15_25_35
+states:  4 trial:  7
+done
+--- 481.3809950351715 seconds ---
+data/Nav_15_15_25_35
+states:  4 trial:  8
+done
+--- 575.1616349220276 seconds ---
+data/Nav_15_15_25_35
+states:  4 trial:  9
