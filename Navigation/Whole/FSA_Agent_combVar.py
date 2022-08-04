@@ -182,14 +182,14 @@ class FSAgent:
         # self.set_bound()
         # print("setting bound")
         # sys.stdout.flush()
-        # if float(sys.argv[6]) >= 0:
-        #     self.make_constraints_eqn3()
-        #     print("eq3")
-        #     sys.stdout.flush()
-        # if float(sys.argv[7]) >= 0:
-        #     self.make_constraints_eqn4()
-        #     print("eq4")
-        #     sys.stdout.flush()
+        if float(sys.argv[6]) >= 0:
+            self.make_constraints_eqn3()
+            print("eq3")
+            sys.stdout.flush()
+        if float(sys.argv[7]) >= 0:
+            self.make_constraints_eqn4()
+            print("eq4")
+            sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
