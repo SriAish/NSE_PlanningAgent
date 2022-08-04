@@ -1,4 +1,6 @@
 import numpy as np
+import sys
+from misc import load
 
 # LABELS
 # 0 : b, r, -g
@@ -71,9 +73,11 @@ class FSAConstants:
             li += [(i, self.state_transitions[u][sig][i])]
         return li
 
-    def symbolT(self, u, s, a, sym):
+    def symbolT(self, u, s, a, sym, pr = False):
         # print("get symbol:", s)
         sig = self.getLabel(s, a)
+        if pr:
+            print(u, sig, sym)
         return self.symbol[u][sig][sym]
 
     def T(self, u, s, a, u_):
@@ -82,6 +86,7 @@ class FSAConstants:
 
 
 if __name__ == '__main__':
+    file_name = sys.argv[4][sys.argv[4].index("/")+1:]
     delta = load("results/delta/new_" + file_name + "_" + sys.argv[5] + "_best")
     omega = load("results/omega/new_" + file_name + "_" + sys.argv[5] + "_best")
     fsa = FSAConstants(delta, omega)
