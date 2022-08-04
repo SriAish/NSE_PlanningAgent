@@ -1,0 +1,22 @@
+data/Nav_15_15_25_45
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_25_45_6_0:  0.9351778656126483
+data/Nav_15_15_25_45
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_25_45_6_1:  0.9961791831357049
+data/Nav_15_15_25_45
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_25_45_6_2:  0.6762845849802372
+data/Nav_15_15_25_45
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_25_45_6_3:  0.8980237154150199
+data/Nav_15_15_25_45
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_25_45_6_4:  0.6736495388669301
+data/Nav_15_15_25_45
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_25_45_6_5:  0.6109354413702239
+data/Nav_15_15_25_45
+states:  6 trial:  6
+33.2952
+goal:  [((14, 14), 'fast', False, False), ((14, 14), 'slow', False, False)]
