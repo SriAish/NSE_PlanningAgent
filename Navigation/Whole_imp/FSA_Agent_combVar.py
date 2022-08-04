@@ -3,7 +3,7 @@ from makeFSA import FSAConstants
 import sys
 import pickle
 import itertools
-# from gekko import GEKKO
+from gekko import GEKKO
 from math import e
 from misc import load
 b_obj_val = 27.746
@@ -241,15 +241,15 @@ if __name__ == '__main__':
     omega = load("results/omega/new_" + file_name + "_" + sys.argv[5] + "_best")
     FSA = FSAConstants(delta, omega)
     # print(delta)
-    # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
-    # # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
-    # locations = [(0, 0)]
+    locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
+    # locations = [(3, 0), (1, 2), (0, 3), (6, 3), (5, 4)]
+    locations = [(0, 0)]
 
-    # # if int(sys.argv[1]) == 3:
-    # #     locations = [(0, 0)]
-    #     # locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
-    # # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
-    # agent = FSAgent(BP, FSA)
-    # agent.solve_prob()
-    # agent.calculate_pi()
-    # agent.save_pi(sys.argv[9])
+    # if int(sys.argv[1]) == 3:
+    #     locations = [(0, 0)]
+        # locations=[(3, 0), (6, 3), (0, 3), (1, 2), (5, 4)]
+    # BP = BoxPushingConstants(7, 3, 3, (2, 2), ((3, 6), (3, 6), False, 'p'))
+    agent = FSAgent(BP, FSA)
+    agent.solve_prob()
+    agent.calculate_pi()
+    agent.save_pi(sys.argv[9])

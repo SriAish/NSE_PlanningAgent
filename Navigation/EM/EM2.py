@@ -9,7 +9,7 @@ import time
 R = load(sys.argv[1])
 
 for r in R:
-    if r[-1] == 'N':
+    if r[-1] == 'M':
         print(r)
 # print(R)
 # R = random.sample(list(R_), 30)
