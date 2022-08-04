@@ -19,8 +19,8 @@ echo "Checking Accuracy of learned FSAs"
 # python3.7 test.py data/Nav_15_15_25_45 5 > Nav_45_5.txt
 # python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_45 5 20 0 0 Nav_pol >> Nav_45_5.txt
 # # echo "--------------------"
-python3.7 test.py data/Nav_15_15_25_45 6 > Nav_45_6.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_45 6 20 0 0 Nav_pol >> Nav_45_6.txt
+# python3.7 test.py data/Nav_15_15_25_45 6 > Nav_45_6.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_45 6 20 0 0 Nav_pol_45_6 >> Nav_45_6_pol.txt
 
 # end=`date +%s`
 # runtime=$((end-start))
