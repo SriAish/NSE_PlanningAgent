@@ -1,9 +1,16 @@
 ==========================================
-SLURM_JOB_ID = 731578
-SLURM_NODELIST = gnode046
+SLURM_JOB_ID = 731588
+SLURM_NODELIST = gnode016
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job731578/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job731588/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Checking Accuracy of learned FSAs
+Traceback (most recent call last):
+  File "FSA_Agent_combVar.py", line 240, in <module>
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[5] + "_best")
+  File "/home/sriaish/NSE_PlanningAgent/Navigation/Whole_imp/misc.py", line 4, in load
+    file_to_read = open(name, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_Nav_15_15_25_40_6_best'
+--------------------
