@@ -405,3 +405,88 @@ done
 --- 692.8649134635925 seconds ---
 data/Nav_15_15_25_45
 states:  6 trial:  6
+done
+--- 2356.8122930526733 seconds ---
+data/Nav_15_15_25_45
+states:  6 trial:  7
+done
+--- 20.363747596740723 seconds ---
+data/Nav_15_15_25_45
+states:  6 trial:  8
+done
+--- 1543.0288438796997 seconds ---
+data/Nav_15_15_25_45
+states:  6 trial:  9
+done
+--- 1864.3180730342865 seconds ---
+--- 15563.236324071884 seconds for all trials---
+========================================================
+data/Nav_15_15_25_45
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_25_45_6_0:  0.9354413702239789
+data/Nav_15_15_25_45
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_25_45_6_1:  0.9961791831357049
+data/Nav_15_15_25_45
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_25_45_6_2:  0.6656126482213438
+data/Nav_15_15_25_45
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_25_45_6_3:  0.8961791831357047
+data/Nav_15_15_25_45
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_25_45_6_4:  0.6752305665349143
+data/Nav_15_15_25_45
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_25_45_6_5:  0.6019762845849802
+data/Nav_15_15_25_45
+states:  6 trial:  6
+accuracy of:new_Nav_15_15_25_45_6_6:  0.6437417654808959
+data/Nav_15_15_25_45
+states:  6 trial:  7
+accuracy of:new_Nav_15_15_25_45_6_7:  0.3320158102766798
+data/Nav_15_15_25_45
+states:  6 trial:  8
+accuracy of:new_Nav_15_15_25_45_6_8:  0.9729907773386035
+data/Nav_15_15_25_45
+states:  6 trial:  9
+accuracy of:new_Nav_15_15_25_45_6_9:  0.98300395256917
+--------------------
+--------------------
+--------------------
+150
+data/Nav_15_15_25_50
+states:  4 trial:  0
+done
+--- 704.0700860023499 seconds ---
+data/Nav_15_15_25_50
+states:  4 trial:  1
+done
+--- 703.8806688785553 seconds ---
+data/Nav_15_15_25_50
+states:  4 trial:  2
+done
+--- 5.494811296463013 seconds ---
+data/Nav_15_15_25_50
+states:  4 trial:  3
+done
+--- 388.1766858100891 seconds ---
+data/Nav_15_15_25_50
+states:  4 trial:  4
+done
+--- 340.9835305213928 seconds ---
+data/Nav_15_15_25_50
+states:  4 trial:  5
+done
+--- 2.1567583084106445 seconds ---
+data/Nav_15_15_25_50
+states:  4 trial:  6
+done
+--- 340.90632939338684 seconds ---
+data/Nav_15_15_25_50
+states:  4 trial:  7
+done
+--- 171.97368168830872 seconds ---
+data/Nav_15_15_25_50
+states:  4 trial:  8
+slurmstepd: error: *** JOB 730878 ON gnode072 CANCELLED AT 2022-08-04T23:35:47 ***
