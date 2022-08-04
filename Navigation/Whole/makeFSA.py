@@ -10,10 +10,13 @@ class FSAConstants:
     def __init__(self, delta, omega):
         # Defining labels 
         self.label = {}
-        self.label[(False, False, False)] = 0
-        self.label[(False, True, False)] = 1
-        self.label[(True, True, False)] = 2
-        self.label[(False, False, True)] = 3
+        self.label[(False, False, False, False)] = 0
+        self.label[(True, False, False, False)] = 1
+        self.label[(False, False, True, False)] = 2
+        self.label[(True, False, True, False)] = 3
+        self.label[(False, True, True, False)] = 4
+        self.label[(True, True, True, False)] = 5
+        self.label[(False, False, False, True)] = 6
 
         # Defining states
         self.states = []
