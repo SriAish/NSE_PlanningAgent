@@ -10,16 +10,16 @@ m = []
 n = []
 
 for r in severe:
-    if len(r) < 14:
+    if len(r) < 25:
         s += [r]
 
 for r in mild:
-    if len(r) < 14:
+    if len(r) < 25:
         m += [r]
 
 siz = []
 for r in no_nse:
-    if len(r) < 14:
+    if len(r) < 25:
         n += [r]
 
 print(len(s), len(m), len(n))
@@ -52,9 +52,9 @@ random.shuffle(n)
 # R = random.sample(list(s), 14) +  random.sample(list(m), 14) + random.sample(list(n), 14)
 # save("Valid_Data_15_15", R)
 # print(len(s), len(m), len(n))
-for i in range(15, 40, 5):
+for i in range(20, 40, 5):
     R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
-    save("Nav_15_15_25_"+str(i), R)
+    save("Nav_15_15_25_alt_"+str(i), R)
 
 # i = 28
 # R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
