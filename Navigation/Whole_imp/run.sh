@@ -14,11 +14,11 @@ echo "Checking Accuracy of learned FSAs"
 
 # python3.7 EM.py data/Nav_15_15_25_imp_45 5 > Nav_res2.txt
 # python3.7 test.py data/Nav_15_15_25_imp_45 5 >> Nav_res2.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_imp_45 6 20 0 0 Nav_pol_45_5 >> Nav_res2.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_imp_45 5 20 0 0 Nav_pol_45_5 >> Nav_res2.txt
 echo "--------------------"
 python3.7 EM.py data/Nav_15_15_25_imp_50 5 > Nav_res50_5.txt
 python3.7 test.py data/Nav_15_15_25_imp_50 5 >> Nav_res50_5.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_50 6 20 0 0 Nav_pol_50_5 >> Nav_res50_5.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_imp_50 5 20 0 0 Nav_pol_50_5 >> Nav_res50_5.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_25_45 4 > Nav_45_4.txt
 # python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_45 4 20 0 0 Nav_pol >> Nav_45_4.txt
