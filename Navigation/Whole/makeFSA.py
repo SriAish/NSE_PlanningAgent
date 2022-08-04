@@ -32,6 +32,7 @@ class FSAConstants:
             self.state_transitions['0'][self.label[i]]['#'] = 0
             for s in self.states:
                 self.state_transitions[s][self.label[i]]['0'] = 0
+        print(self.state_transitions)
 
         # Symbol Definition
         self.symbols = {}
