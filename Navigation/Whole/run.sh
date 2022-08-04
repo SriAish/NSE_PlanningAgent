@@ -11,8 +11,8 @@ source ~/keras/bin/activate
 
 # echo "running agent"
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data/Nav_15_15_25_15 4 > LP_sm_1_15_0_10_9.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_15 4 20 0 0 Nav_pol >> LP_sm_1_15_0_10_8.txt
+python3.7 test.py data/Nav_15_15_25_40 6 > LP_sm_1_15_0_10_9.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_25_40 6 20 0 0 Nav_pol > Nav_res.txt
 # end=`date +%s`
 # runtime=$((end-start))
 # echo $runtime
