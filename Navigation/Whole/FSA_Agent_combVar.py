@@ -109,8 +109,6 @@ class FSAgent:
                 c += self.belief_pr[(u_, s_)]
 
             # Adding constraint
-            print(y)
-            print(c)
             self.m.Equation(y == c)
 
     def make_constraints_eqn3(self):
@@ -123,7 +121,7 @@ class FSAgent:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
                         if t != 0:
                             lhs += self.x[(u, s, a)]*self.BP.T(s, a, s_)*t
-        print(lhs)
+
         self.m.Equation(lhs <= float(sys.argv[7]))
 
     def make_constraints_eqn4(self):
@@ -136,7 +134,7 @@ class FSAgent:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
                         if t != 0:
                             lhs += self.x[(u, s, a)]*self.BP.T(s, a, s_)*t
-        print(lhs)
+
         self.m.Equation(lhs <= float(sys.argv[8]))
 
     def NSE_val(self):
