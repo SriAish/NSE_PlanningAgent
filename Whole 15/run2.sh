@@ -15,20 +15,20 @@ start=`date +%s`
 # echo "Checking Accuracy of learned FSAs"
 # python3.7 test.py data_set/BP_15_15_35_25 9 > LP_sm_1_15_0_10_9.txt
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_9_15 1 0 0 data_set/BP_15_15_35_25 9 15 >> LP_sm_1_15_0_10_9.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_9_15 1 0.1 0.2 data_set/BP_15_15_35_25 7 15 > LP_sm_1_15_1_2_7.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 start=`date +%s`
 echo "--------------------"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_9_20 1 0 0 data_set/BP_15_15_35_25 9 20 >> LP_sm_1_15_0_10_9.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_9_20 1 0.1 0.2 data_set/BP_15_15_35_25 8 15 > LP_sm_1_15_1_2_8.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
 echo "--------------------"
 start=`date +%s`
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_9_25 1 0 0 data_set/BP_15_15_35_25 9 25 >> LP_sm_1_15_0_10_9.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_9_25 1 0.1 0.2 data_set/BP_15_15_35_25 9 15 > LP_sm_1_15_1_2_9.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime

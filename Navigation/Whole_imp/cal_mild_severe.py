@@ -8,7 +8,7 @@ from misc import load
 
 class Agent:
     def __init__(self, pi, x):
-        
+        self.pi_ = load()
     def NSE_val(self):
         lhs = 0
         for s_ in self.BP.states:
