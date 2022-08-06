@@ -121,7 +121,7 @@ class FSAgent:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["severe"])
                         if t != 0:
                             lhs += self.x[(u, s, a)]*self.BP.T(s, a, s_)*t
-
+        print("severe limit: ", float(sys.argv[7]))
         self.m.Equation(lhs <= float(sys.argv[7]))
 
     def make_constraints_eqn4(self):
@@ -134,7 +134,7 @@ class FSAgent:
                         t = self.FSA.symbolT(u, s_, a, self.FSA.symbols["mild"])
                         if t != 0:
                             lhs += self.x[(u, s, a)]*self.BP.T(s, a, s_)*t
-
+        print("mild limit: ", float(sys.argv[8]))
         self.m.Equation(lhs <= float(sys.argv[8]))
 
     def NSE_val(self):
@@ -177,14 +177,14 @@ class FSAgent:
         self.set_bound()
         print("setting bound")
         sys.stdout.flush()
-        # if float(sys.argv[6]) >= 0:
-        #     self.make_constraints_eqn3()
-        #     print("eq3")
-        #     sys.stdout.flush()
-        # if float(sys.argv[7]) >= 0:
-        #     self.make_constraints_eqn4()
-        #     print("eq4")
-        #     sys.stdout.flush()
+        if float(sys.argv[6]) >= 0:
+            self.make_constraints_eqn3()
+            print("eq3")
+            sys.stdout.flush()
+        if float(sys.argv[7]) >= 0:
+            self.make_constraints_eqn4()
+            print("eq4")
+            sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
