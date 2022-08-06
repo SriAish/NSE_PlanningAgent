@@ -118,7 +118,9 @@ source ~/keras/bin/activate
 # runtime=$((end-start))
 # echo $runtime
 # echo "--------------------"
-
+python3.7 EM.py data_set/BP_15_15_35_25 2
+python3.7 test.py data_set/BP_15_15_35_25 2
+python3.7 test.py data_set/BP_15_15_35_25 4
 start=`date +%s`
 echo "running agent"
 python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_2_15_00 1 0 0 data_set/BP_15_15_35_25 2 15 > LP_sm_1_15_1_2_2_0_0.txt
