@@ -1,11 +1,47 @@
 ==========================================
-SLURM_JOB_ID = 732493
-SLURM_NODELIST = gnode028
+SLURM_JOB_ID = 732839
+SLURM_NODELIST = gnode023
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job732493/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job732839/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+running agent
+Traceback (most recent call last):
+  File "FSA_Agent_combVar.py", line 234, in <module>
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
+  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
+    file_to_read = open(name, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_2_best'
+1
+--------------------
+running agent
+Traceback (most recent call last):
+  File "FSA_Agent_combVar.py", line 234, in <module>
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
+  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
+    file_to_read = open(name, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_2_best'
+0
+--------------------
+running agent
+Traceback (most recent call last):
+  File "FSA_Agent_combVar.py", line 234, in <module>
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
+  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
+    file_to_read = open(name, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_2_best'
+0
+--------------------
+running agent
+Traceback (most recent call last):
+  File "FSA_Agent_combVar.py", line 234, in <module>
+    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
+  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
+    file_to_read = open(name, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_2_best'
+1
+--------------------
 running agent
 Traceback (most recent call last):
   File "FSA_Agent_combVar.py", line 247, in <module>
@@ -15,14 +51,14 @@ Traceback (most recent call last):
   File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
     return self.value[key]
 TypeError: 'int' object is not subscriptable
-659
+928
 --------------------
 running agent
-846
+1216
 --------------------
 running agent
-756
+1143
 --------------------
 running agent
-893
+1059
 --------------------

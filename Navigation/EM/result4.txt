@@ -1,12 +1,101 @@
 ==========================================
-SLURM_JOB_ID = 730896
-SLURM_NODELIST = gnode022
-SLURM_JOB_GPUS = 1
+SLURM_JOB_ID = 732840
+SLURM_NODELIST = gnode031
+SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job730896/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-60
-data/Nav_15_15_25_alt_20
+/var/spool/slurmd/job732840/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+120
+data/Nav_15_15_30_120
 states:  4 trial:  0
-slurmstepd: error: *** JOB 730896 ON gnode022 CANCELLED AT 2022-08-04T18:50:46 ***
+done
+--- 501.0092842578888 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  1
+done
+--- 504.9005069732666 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  2
+done
+--- 176.6357023715973 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  3
+done
+--- 188.0424177646637 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  4
+done
+--- 110.4688491821289 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  5
+done
+--- 115.24933743476868 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  6
+done
+--- 116.09419465065002 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  7
+done
+--- 612.4657292366028 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  8
+done
+--- 431.7064256668091 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  9
+done
+--- 371.8916938304901 seconds ---
+--- 3128.464659690857 seconds for all trials---
+========================================================
+data/Nav_15_15_30_120
+states:  4 trial:  0
+accuracy of:new_Nav_15_15_30_120_4_0:  0.6335064935064935
+data/Nav_15_15_30_120
+states:  4 trial:  1
+accuracy of:new_Nav_15_15_30_120_4_1:  0.6322077922077922
+data/Nav_15_15_30_120
+states:  4 trial:  2
+accuracy of:new_Nav_15_15_30_120_4_2:  0.835930735930736
+data/Nav_15_15_30_120
+states:  4 trial:  3
+accuracy of:new_Nav_15_15_30_120_4_3:  0.9564502164502166
+data/Nav_15_15_30_120
+states:  4 trial:  4
+accuracy of:new_Nav_15_15_30_120_4_4:  0.6390476190476191
+data/Nav_15_15_30_120
+states:  4 trial:  5
+accuracy of:new_Nav_15_15_30_120_4_5:  0.6305627705627705
+data/Nav_15_15_30_120
+states:  4 trial:  6
+accuracy of:new_Nav_15_15_30_120_4_6:  0.6357575757575757
+data/Nav_15_15_30_120
+states:  4 trial:  7
+accuracy of:new_Nav_15_15_30_120_4_7:  0.6778354978354978
+data/Nav_15_15_30_120
+states:  4 trial:  8
+accuracy of:new_Nav_15_15_30_120_4_8:  0.9754978354978355
+data/Nav_15_15_30_120
+states:  4 trial:  9
+accuracy of:new_Nav_15_15_30_120_4_9:  0.7099567099567099
+--------------------
+120
+data/Nav_15_15_30_120
+states:  5 trial:  0
+done
+--- 435.46153807640076 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  1
+done
+--- 1062.893914937973 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  2
+done
+--- 598.8648307323456 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  3
+done
+--- 3.392402172088623 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  4
