@@ -127,5 +127,5 @@ if __name__ == '__main__':
 
     delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(b_try))
     omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(b_try))
-    save("results/delta/new_" + file_name + "_" + sys.argv[2] + "_best", delta)
-    save("results/omega/new_" + file_name + "_" + sys.argv[2] + "_best", omega)
+    # save("results/delta/new_" + file_name + "_" + sys.argv[2] + "_best", delta)
+    # save("results/omega/new_" + file_name + "_" + sys.argv[2] + "_best", omega)
