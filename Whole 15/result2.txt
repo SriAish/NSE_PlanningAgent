@@ -1,47 +1,84 @@
 ==========================================
-SLURM_JOB_ID = 732839
+SLURM_JOB_ID = 732917
 SLURM_NODELIST = gnode023
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job732839/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-running agent
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 234, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_2_best'
-1
---------------------
-running agent
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 234, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_2_best'
-0
---------------------
-running agent
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 234, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_2_best'
-0
---------------------
-running agent
-Traceback (most recent call last):
-  File "FSA_Agent_combVar.py", line 234, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[13] + "_best")
-  File "/home/sriaish/NSE_PlanningAgent/Whole 15/misc.py", line 4, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_BP_15_15_35_25_2_best'
-1
---------------------
+/var/spool/slurmd/job732917/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+75
+data_set/BP_15_15_35_25
+states:  2 trial:  0
+done
+--- 0.29625964164733887 seconds ---
+data_set/BP_15_15_35_25
+states:  2 trial:  1
+done
+--- 14.934204339981079 seconds ---
+data_set/BP_15_15_35_25
+states:  2 trial:  2
+done
+--- 0.23985624313354492 seconds ---
+data_set/BP_15_15_35_25
+states:  2 trial:  3
+done
+--- 7.56270170211792 seconds ---
+data_set/BP_15_15_35_25
+states:  2 trial:  4
+done
+--- 10.504206657409668 seconds ---
+data_set/BP_15_15_35_25
+states:  2 trial:  5
+done
+--- 4.9675328731536865 seconds ---
+data_set/BP_15_15_35_25
+states:  2 trial:  6
+done
+--- 3.187547445297241 seconds ---
+data_set/BP_15_15_35_25
+states:  2 trial:  7
+done
+--- 7.222904682159424 seconds ---
+data_set/BP_15_15_35_25
+states:  2 trial:  8
+done
+--- 6.926975965499878 seconds ---
+data_set/BP_15_15_35_25
+states:  2 trial:  9
+done
+--- 11.361359357833862 seconds ---
+--- 67.203932762146 seconds for all trials---
+========================================================
+data_set/BP_15_15_35_25
+states:  2 trial:  0
+accuracy of:new_BP_15_15_35_25_2_0:  0.33981042654028437
+data_set/BP_15_15_35_25
+states:  2 trial:  1
+accuracy of:new_BP_15_15_35_25_2_1:  0.3971563981042654
+data_set/BP_15_15_35_25
+states:  2 trial:  2
+accuracy of:new_BP_15_15_35_25_2_2:  0.3270142180094787
+data_set/BP_15_15_35_25
+states:  2 trial:  3
+accuracy of:new_BP_15_15_35_25_2_3:  0.5345971563981042
+data_set/BP_15_15_35_25
+states:  2 trial:  4
+accuracy of:new_BP_15_15_35_25_2_4:  0.5137440758293839
+data_set/BP_15_15_35_25
+states:  2 trial:  5
+accuracy of:new_BP_15_15_35_25_2_5:  0.5151658767772511
+data_set/BP_15_15_35_25
+states:  2 trial:  6
+accuracy of:new_BP_15_15_35_25_2_6:  0.3317535545023697
+data_set/BP_15_15_35_25
+states:  2 trial:  7
+accuracy of:new_BP_15_15_35_25_2_7:  0.5279620853080569
+data_set/BP_15_15_35_25
+states:  2 trial:  8
+accuracy of:new_BP_15_15_35_25_2_8:  0.34834123222748814
+data_set/BP_15_15_35_25
+states:  2 trial:  9
+accuracy of:new_BP_15_15_35_25_2_9:  0.524170616113744
 running agent
 Traceback (most recent call last):
   File "FSA_Agent_combVar.py", line 247, in <module>
@@ -51,14 +88,13 @@ Traceback (most recent call last):
   File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
     return self.value[key]
 TypeError: 'int' object is not subscriptable
-928
+225
 --------------------
 running agent
-1216
+275
 --------------------
 running agent
-1143
+274
 --------------------
 running agent
-1059
---------------------
+295
