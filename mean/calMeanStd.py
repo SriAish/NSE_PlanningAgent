@@ -5,13 +5,13 @@ import numpy as np
 import pickle
 
 def generate_trajectory(agent):
-    env = BPEnv(7, 3, 3, (2, 2), (3, 6), (3, 0))
+    env = BPEnv(15, 15, 7, 3, (6, 4), (7, 14), (7, 0))
     done = False
 
     rug_c = 0
     ac = 0
 
-    while not done and ac < 1000:
+    while not done and ac < 100:
         s = env.state()
         if env.picked and env.onRug() and not env.wrapped:
             rug_c += 1
@@ -42,7 +42,7 @@ def generate_mean_std(n, agent):
 
     print(len(severe), len(mild))
     print("severe : ", np.mean(severe), np.std(severe))
-    print("milde : ", np.mean(mild), np.std(mild))
+    print("mild : ", np.mean(mild), np.std(mild))
 
 class Agent:
     def __init__(self, name):
@@ -78,7 +78,7 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_LP_p3_7_7_10_3_0.pkl"
+    pol = "Sandhya_learned_pol_15_15_opt.pkl"
     agent = Agent(pol)
     print(pol)
     generate_mean_std(1000, agent)
