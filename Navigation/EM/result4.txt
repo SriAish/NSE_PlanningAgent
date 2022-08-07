@@ -17,3 +17,81 @@ done
 --- 256.33406710624695 seconds ---
 data/Nav_15_15_30_150
 states:  4 trial:  2
+done
+--- 1378.1024541854858 seconds ---
+data/Nav_15_15_30_150
+states:  4 trial:  3
+done
+--- 173.79735398292542 seconds ---
+data/Nav_15_15_30_150
+states:  4 trial:  4
+done
+--- 276.7868983745575 seconds ---
+data/Nav_15_15_30_150
+states:  4 trial:  5
+done
+--- 631.5185506343842 seconds ---
+data/Nav_15_15_30_150
+states:  4 trial:  6
+done
+--- 276.5655925273895 seconds ---
+data/Nav_15_15_30_150
+states:  4 trial:  7
+done
+--- 576.4947783946991 seconds ---
+data/Nav_15_15_30_150
+states:  4 trial:  8
+done
+--- 436.38718724250793 seconds ---
+data/Nav_15_15_30_150
+states:  4 trial:  9
+done
+--- 275.5295135974884 seconds ---
+--- 4538.757731676102 seconds for all trials---
+========================================================
+data/Nav_15_15_30_150
+states:  4 trial:  0
+accuracy of:new_Nav_15_15_30_150_4_0:  0.6733333333333333
+data/Nav_15_15_30_150
+states:  4 trial:  1
+accuracy of:new_Nav_15_15_30_150_4_1:  0.6771428571428572
+data/Nav_15_15_30_150
+states:  4 trial:  2
+accuracy of:new_Nav_15_15_30_150_4_2:  0.657922077922078
+data/Nav_15_15_30_150
+states:  4 trial:  3
+accuracy of:new_Nav_15_15_30_150_4_3:  0.9777489177489176
+data/Nav_15_15_30_150
+states:  4 trial:  4
+accuracy of:new_Nav_15_15_30_150_4_4:  0.9786147186147186
+data/Nav_15_15_30_150
+states:  4 trial:  5
+accuracy of:new_Nav_15_15_30_150_4_5:  0.9266666666666667
+data/Nav_15_15_30_150
+states:  4 trial:  6
+accuracy of:new_Nav_15_15_30_150_4_6:  0.9779220779220779
+data/Nav_15_15_30_150
+states:  4 trial:  7
+accuracy of:new_Nav_15_15_30_150_4_7:  0.5819913419913421
+data/Nav_15_15_30_150
+states:  4 trial:  8
+accuracy of:new_Nav_15_15_30_150_4_8:  0.7428571428571429
+data/Nav_15_15_30_150
+states:  4 trial:  9
+accuracy of:new_Nav_15_15_30_150_4_9:  0.7187012987012986
+--------------------
+150
+data/Nav_15_15_30_150
+states:  5 trial:  0
+done
+--- 416.29872131347656 seconds ---
+data/Nav_15_15_30_150
+states:  5 trial:  1
+done
+--- 15.929084539413452 seconds ---
+data/Nav_15_15_30_150
+states:  5 trial:  2
+done
+--- 1324.1235461235046 seconds ---
+data/Nav_15_15_30_150
+states:  5 trial:  3
