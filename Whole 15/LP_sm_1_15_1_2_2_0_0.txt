@@ -1,0 +1,62 @@
+goal:  [((7, 14), (7, 14), True, False, 'p'), ((7, 14), (7, 14), True, True, 'p')]
+{'#': {0: {'N': 0, 'S': 0, 'M': 0, 3: 1}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 1}, 2: {'N': 0, 'S': 0, 'M': 0, 3: 1}}, '1': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 0, 'S': 0.5, 'M': 0.5, 3: 0}}, '2': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 1.0, 'S': 0, 'M': 0, 3: 0}}, '0': {0: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 1: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 2: {'S': 0, 'M': 0, 'N': 0, 3: 0}}}
+belief: [('1', ((0, 0), (7, 0), False, False, 'p')), ('2', ((0, 0), (7, 0), False, False, 'p')), ('#', ((0, 0), (7, 0), False, False, 'p')), ('0', ((0, 0), (7, 0), False, False, 'p'))]
+initial belief setup
+variables setup
+objective setup
+eq1
+setting bound
+eq3
+eq4
+problem setup
+ ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :        14435
+   Intermediates:           73
+   Connections  :            0
+   Equations    :        18112
+   Residuals    :        18039
+ 
+ Number of state variables:          14435
+ Number of total equations: -         3607
+ Number of slack variables: -            3
+ ---------------------------------------
+ Degrees of freedom       :          10825
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  1.34240E+03  7.30779E+00
+    1  2.92312E+01  1.56678E-06
+    2  2.93879E+01  3.49909E-02
+    3  2.92312E+01  1.12783E-08
+    4  2.92312E+01  3.49909E-02
+    5  2.92312E+01  5.86507E-09
+    6  2.92312E+01  3.49909E-02
+    7  2.92312E+01  3.22596E-09
+ No feasible solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :    16.1252999999997      sec
+ Objective      :    29.2311599674365     
+ Unsuccessful with error code            0
+ ---------------------------------------------------
+ 
+ Creating file: infeasibilities.txt
+ Use command apm_get(server,app,'infeasibilities.txt') to retrieve file
+ @error: Solution Not Found
+
+Exception Occured
+@error: Solution Not Found
+

@@ -1,0 +1,59 @@
+goal:  [((7, 14), (7, 14), True, False, 'p'), ((7, 14), (7, 14), True, True, 'p')]
+{'#': {0: {'N': 0, 'S': 0, 'M': 0, 3: 1}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 1}, 2: {'N': 0, 'S': 0, 'M': 0, 3: 1}}, '1': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 0, 'S': 1.0, 'M': 1.4522510699946285e-149, 3: 0}}, '2': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 0, 'S': 9.622684278234436e-129, 'M': 1.0, 3: 0}}, '3': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 0, 'S': 1.5736909443336686e-142, 'M': 1.0, 3: 0}}, '4': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 1.0, 'S': 0, 'M': 0, 3: 0}}, '5': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 1.0, 'S': 0, 'M': 0, 3: 0}}, '6': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 0, 'S': 1.0, 'M': 7.196097474475142e-183, 3: 0}}, '7': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 1.0, 'S': 0, 'M': 0, 3: 0}}, '8': {0: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 1: {'N': 0, 'S': 0, 'M': 0, 3: 0}, 2: {'N': 1.0, 'S': 0, 'M': 0, 3: 0}}, '0': {0: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 1: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 2: {'S': 0, 'M': 0, 'N': 0, 3: 0}}}
+belief: [('1', ((0, 0), (7, 0), False, False, 'p')), ('2', ((0, 0), (7, 0), False, False, 'p')), ('3', ((0, 0), (7, 0), False, False, 'p')), ('4', ((0, 0), (7, 0), False, False, 'p')), ('5', ((0, 0), (7, 0), False, False, 'p')), ('6', ((0, 0), (7, 0), False, False, 'p')), ('7', ((0, 0), (7, 0), False, False, 'p')), ('8', ((0, 0), (7, 0), False, False, 'p')), ('#', ((0, 0), (7, 0), False, False, 'p')), ('0', ((0, 0), (7, 0), False, False, 'p'))]
+initial belief setup
+variables setup
+objective setup
+eq1
+setting bound
+eq3
+eq4
+problem setup
+ ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :        36083
+   Intermediates:          181
+   Connections  :            0
+   Equations    :        45274
+   Residuals    :        45093
+ 
+ Number of state variables:          36083
+ Number of total equations: -         9013
+ Number of slack variables: -            3
+ ---------------------------------------
+ Degrees of freedom       :          27067
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  4.45983E+02  7.30779E+00
+    1  1.35566E+03  7.23313E+00
+    2  2.92312E+01  1.50503E-05
+    3  2.92312E+01  5.55895E-06
+    4  2.92312E+01  9.63212E-07
+ No feasible solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :    1886.56940000001      sec
+ Objective      :    29.2311572669638     
+ Unsuccessful with error code            0
+ ---------------------------------------------------
+ 
+ Creating file: infeasibilities.txt
+ Use command apm_get(server,app,'infeasibilities.txt') to retrieve file
+ @error: Solution Not Found
+
+Exception Occured
+@error: Solution Not Found
+
