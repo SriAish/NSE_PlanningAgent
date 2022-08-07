@@ -95,3 +95,11 @@ done
 --- 1324.1235461235046 seconds ---
 data/Nav_15_15_30_150
 states:  5 trial:  3
+done
+--- 1320.7778751850128 seconds ---
+data/Nav_15_15_30_150
+states:  5 trial:  4
+done
+--- 997.015540599823 seconds ---
+data/Nav_15_15_30_150
+states:  5 trial:  5
