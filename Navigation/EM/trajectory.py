@@ -58,7 +58,7 @@ random.shuffle(n)
 # R = random.sample(list(s), 14) +  random.sample(list(m), 14) + random.sample(list(n), 14)
 # save("Valid_Data_15_15", R)
 # print(len(s), len(m), len(n))
-for i in range(60, 65, 5):
+for i in range(65, 70, 5):
     R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
     save("Nav_15_15_30_"+str(i*3), R)
 
