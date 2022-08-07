@@ -417,3 +417,43 @@ done
 --- 1858.5574181079865 seconds ---
 data/Nav_15_15_30_135
 states:  6 trial:  9
+done
+--- 2996.10621881485 seconds ---
+--- 17860.376140356064 seconds for all trials---
+========================================================
+data/Nav_15_15_30_135
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_30_135_6_0:  0.6925541125541126
+data/Nav_15_15_30_135
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_30_135_6_1:  0.8394805194805194
+data/Nav_15_15_30_135
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_30_135_6_2:  0.9100432900432901
+data/Nav_15_15_30_135
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_30_135_6_3:  0.7182683982683982
+data/Nav_15_15_30_135
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_30_135_6_4:  0.9103896103896105
+data/Nav_15_15_30_135
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_30_135_6_5:  0.8956709956709957
+data/Nav_15_15_30_135
+states:  6 trial:  6
+accuracy of:new_Nav_15_15_30_135_6_6:  0.8845021645021646
+data/Nav_15_15_30_135
+states:  6 trial:  7
+accuracy of:new_Nav_15_15_30_135_6_7:  0.798961038961039
+data/Nav_15_15_30_135
+states:  6 trial:  8
+accuracy of:new_Nav_15_15_30_135_6_8:  0.9179220779220779
+data/Nav_15_15_30_135
+states:  6 trial:  9
+accuracy of:new_Nav_15_15_30_135_6_9:  0.9175757575757577
+--------------------
+--------------------
+--------------------
+150
+data/Nav_15_15_30_150
+states:  4 trial:  0
