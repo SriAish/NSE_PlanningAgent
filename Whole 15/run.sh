@@ -10,36 +10,36 @@ module add cudnn/8.4.0-cuda-11.6
 source ~/keras/bin/activate
 
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 2
+python3.7 test.py data_set/BP_15_15_35_25 2 > FSA_acc
 # start=`date +%s`
 # echo "Start learning FSA"
 # python3.7 EM.py data_set/BP_15_15_35_25 3
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 3
+python3.7 test.py data_set/BP_15_15_35_25 3 >> FSA_acc
 # echo "Start learning FSA"
 # python3.7 EM.py data_set/BP_15_15_35_25 4
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 4
+python3.7 test.py data_set/BP_15_15_35_25 4 >> FSA_acc
 # echo "Start learning FSA"
 # python3.7 EM.py data_set/BP_15_15_35_25 5
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 5
+python3.7 test.py data_set/BP_15_15_35_25 5 >> FSA_acc
 # echo "Start learning FSA"
 # python3.7 EM.py data_set/BP_15_15_35_25 6
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 6
+python3.7 test.py data_set/BP_15_15_35_25 6 >> FSA_acc
 # echo "Start learning FSA"
 # python3.7 EM.py data_set/BP_15_15_35_25 7
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 7
+python3.7 test.py data_set/BP_15_15_35_25 7 >> FSA_acc
 # echo "Start learning FSA"
 # python3.7 EM.py data_set/BP_15_15_35_25 8
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 8
+python3.7 test.py data_set/BP_15_15_35_25 8 >> FSA_acc
 # echo "Start learning FSA"
 # python3.7 EM.py data_set/BP_15_15_35_25 9
 echo "Checking Accuracy of learned FSAs"
-python3.7 test.py data_set/BP_15_15_35_25 9
+python3.7 test.py data_set/BP_15_15_35_25 9 >> FSA_acc
 # echo "running agent"
 # python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_8_15 1 0 0 data_set/BP_15_15_35_25 8 15 >> LP_sm_1_15_0_10_8.txt
 # end=`date +%s`
