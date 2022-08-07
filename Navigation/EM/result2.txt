@@ -1,182 +1,459 @@
 ==========================================
-SLURM_JOB_ID = 731507
-SLURM_NODELIST = gnode072
+SLURM_JOB_ID = 732840
+SLURM_NODELIST = gnode031
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job731507/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job732840/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 120
-data/Nav_15_15_25_40
-states:  7 trial:  0
+data/Nav_15_15_30_120
+states:  4 trial:  0
 done
---- 3396.952022790909 seconds ---
-data/Nav_15_15_25_40
-states:  7 trial:  1
+--- 501.0092842578888 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  1
 done
---- 1941.0459671020508 seconds ---
-data/Nav_15_15_25_40
-states:  7 trial:  2
+--- 504.9005069732666 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  2
 done
---- 1530.2293705940247 seconds ---
-data/Nav_15_15_25_40
-states:  7 trial:  3
+--- 176.6357023715973 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  3
 done
---- 1035.350933790207 seconds ---
-data/Nav_15_15_25_40
-states:  7 trial:  4
+--- 188.0424177646637 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  4
 done
---- 2273.915675878525 seconds ---
-data/Nav_15_15_25_40
-states:  7 trial:  5
+--- 110.4688491821289 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  5
 done
---- 3632.00239443779 seconds ---
-data/Nav_15_15_25_40
-states:  7 trial:  6
+--- 115.24933743476868 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  6
 done
---- 2044.4558572769165 seconds ---
-data/Nav_15_15_25_40
-states:  7 trial:  7
+--- 116.09419465065002 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  7
 done
---- 2536.6548233032227 seconds ---
-data/Nav_15_15_25_40
-states:  7 trial:  8
+--- 612.4657292366028 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  8
 done
---- 18.53714156150818 seconds ---
-data/Nav_15_15_25_40
-states:  7 trial:  9
+--- 431.7064256668091 seconds ---
+data/Nav_15_15_30_120
+states:  4 trial:  9
 done
---- 1519.7358741760254 seconds ---
---- 19928.880591869354 seconds for all trials---
+--- 371.8916938304901 seconds ---
+--- 3128.464659690857 seconds for all trials---
 ========================================================
-data/Nav_15_15_25_40
-states:  7 trial:  0
-accuracy of:new_Nav_15_15_25_40_7_0:  0.9790229885057471
-data/Nav_15_15_25_40
-states:  7 trial:  1
-accuracy of:new_Nav_15_15_25_40_7_1:  0.7207854406130269
-data/Nav_15_15_25_40
-states:  7 trial:  2
-accuracy of:new_Nav_15_15_25_40_7_2:  0.945977011494253
-data/Nav_15_15_25_40
-states:  7 trial:  3
-accuracy of:new_Nav_15_15_25_40_7_3:  0.4295019157088123
-data/Nav_15_15_25_40
-states:  7 trial:  4
-accuracy of:new_Nav_15_15_25_40_7_4:  0.5182950191570882
-data/Nav_15_15_25_40
-states:  7 trial:  5
-accuracy of:new_Nav_15_15_25_40_7_5:  0.4702107279693486
-data/Nav_15_15_25_40
-states:  7 trial:  6
-accuracy of:new_Nav_15_15_25_40_7_6:  0.9830459770114942
-data/Nav_15_15_25_40
-states:  7 trial:  7
-accuracy of:new_Nav_15_15_25_40_7_7:  0.7545977011494254
-data/Nav_15_15_25_40
-states:  7 trial:  8
-accuracy of:new_Nav_15_15_25_40_7_8:  0.32959770114942527
-data/Nav_15_15_25_40
-states:  7 trial:  9
-accuracy of:new_Nav_15_15_25_40_7_9:  0.38620689655172413
+data/Nav_15_15_30_120
+states:  4 trial:  0
+accuracy of:new_Nav_15_15_30_120_4_0:  0.6335064935064935
+data/Nav_15_15_30_120
+states:  4 trial:  1
+accuracy of:new_Nav_15_15_30_120_4_1:  0.6322077922077922
+data/Nav_15_15_30_120
+states:  4 trial:  2
+accuracy of:new_Nav_15_15_30_120_4_2:  0.835930735930736
+data/Nav_15_15_30_120
+states:  4 trial:  3
+accuracy of:new_Nav_15_15_30_120_4_3:  0.9564502164502166
+data/Nav_15_15_30_120
+states:  4 trial:  4
+accuracy of:new_Nav_15_15_30_120_4_4:  0.6390476190476191
+data/Nav_15_15_30_120
+states:  4 trial:  5
+accuracy of:new_Nav_15_15_30_120_4_5:  0.6305627705627705
+data/Nav_15_15_30_120
+states:  4 trial:  6
+accuracy of:new_Nav_15_15_30_120_4_6:  0.6357575757575757
+data/Nav_15_15_30_120
+states:  4 trial:  7
+accuracy of:new_Nav_15_15_30_120_4_7:  0.6778354978354978
+data/Nav_15_15_30_120
+states:  4 trial:  8
+accuracy of:new_Nav_15_15_30_120_4_8:  0.9754978354978355
+data/Nav_15_15_30_120
+states:  4 trial:  9
+accuracy of:new_Nav_15_15_30_120_4_9:  0.7099567099567099
 --------------------
-(2, 3, 3, 3, 0, 1, 1, 3, 2, 1, 1, 0, 6, 'M')
-(2, 2, 3, 3, 3, 1, 0, 3, 2, 1, 0, 1, 6, 'M')
-(2, 3, 3, 2, 0, 1, 3, 3, 2, 1, 1, 0, 6, 'M')
-(2, 2, 3, 3, 3, 3, 1, 1, 0, 0, 1, 1, 6, 'M')
-(2, 3, 3, 3, 0, 1, 1, 1, 3, 1, 1, 0, 6, 'M')
-(2, 3, 3, 3, 3, 3, 1, 0, 0, 1, 1, 1, 6, 'M')
-(0, 3, 3, 3, 0, 1, 0, 0, 0, 0, 0, 6, 'M')
-(2, 2, 3, 3, 0, 0, 3, 2, 3, 1, 1, 1, 6, 'M')
-(2, 3, 3, 2, 3, 0, 1, 3, 2, 0, 1, 0, 6, 'M')
-(2, 3, 3, 2, 1, 1, 0, 3, 3, 0, 1, 0, 6, 'M')
-(2, 3, 2, 2, 0, 0, 3, 3, 3, 1, 0, 1, 6, 'M')
-(2, 3, 3, 3, 0, 1, 0, 3, 3, 0, 0, 1, 6, 'M')
-(2, 3, 3, 2, 3, 1, 1, 3, 3, 1, 1, 1, 6, 'M')
-(2, 3, 3, 3, 0, 0, 2, 3, 2, 1, 0, 0, 6, 'M')
-(2, 3, 2, 2, 0, 0, 3, 3, 3, 1, 1, 1, 6, 'M')
-(2, 2, 3, 3, 1, 1, 3, 3, 3, 1, 0, 0, 6, 'M')
-(2, 3, 3, 2, 3, 1, 1, 3, 3, 1, 1, 0, 6, 'M')
-(2, 3, 2, 3, 1, 1, 3, 3, 2, 0, 0, 0, 6, 'M')
-(2, 2, 3, 3, 1, 1, 3, 3, 2, 1, 1, 1, 6, 'M')
-(2, 3, 2, 3, 1, 0, 3, 3, 2, 1, 0, 1, 6, 'M')
-(2, 2, 3, 3, 3, 0, 1, 3, 2, 1, 1, 0, 6, 'M')
-(2, 3, 3, 2, 3, 0, 0, 3, 2, 0, 1, 1, 6, 'M')
-(2, 2, 3, 3, 1, 0, 3, 2, 3, 1, 0, 0, 6, 'M')
-(2, 3, 2, 3, 1, 0, 2, 3, 3, 0, 0, 0, 6, 'M')
-(2, 3, 3, 3, 1, 1, 3, 2, 2, 1, 0, 0, 6, 'M')
-(2, 3, 3, 3, 1, 1, 3, 3, 2, 0, 1, 0, 6, 'M')
-(2, 3, 3, 3, 0, 1, 3, 2, 2, 1, 0, 0, 6, 'M')
-(2, 3, 3, 2, 1, 0, 2, 3, 3, 1, 1, 1, 6, 'M')
-(2, 2, 3, 3, 0, 1, 3, 2, 3, 1, 0, 0, 6, 'M')
-(2, 3, 3, 3, 1, 0, 2, 2, 3, 1, 1, 1, 6, 'M')
-(2, 2, 3, 3, 3, 2, 3, 0, 0, 0, 0, 0, 6, 'M')
-(2, 2, 3, 3, 1, 0, 2, 3, 3, 1, 0, 1, 6, 'M')
-(2, 3, 3, 3, 3, 0, 0, 3, 3, 0, 0, 1, 6, 'M')
-(2, 3, 3, 3, 1, 0, 2, 2, 3, 1, 0, 0, 6, 'M')
-(2, 3, 3, 3, 2, 1, 1, 3, 2, 0, 1, 0, 6, 'M')
-(2, 3, 2, 3, 1, 1, 3, 3, 3, 0, 1, 0, 6, 'M')
-(2, 3, 3, 3, 0, 1, 1, 2, 3, 1, 1, 0, 6, 'M')
-(2, 2, 3, 2, 3, 0, 1, 3, 3, 1, 0, 1, 6, 'M')
-(2, 3, 3, 2, 0, 0, 3, 3, 3, 1, 1, 0, 6, 'M')
-(2, 3, 3, 3, 0, 0, 2, 3, 2, 1, 1, 1, 6, 'M')
-data/Nav_15_15_25_40
-states:  8 trial:  0
-Traceback (most recent call last):
-  File "test3.py", line 107, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-  File "test3.py", line 6, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_Nav_15_15_25_40_8_0'
+120
+data/Nav_15_15_30_120
+states:  5 trial:  0
+done
+--- 435.46153807640076 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  1
+done
+--- 1062.893914937973 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  2
+done
+--- 598.8648307323456 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  3
+done
+--- 3.392402172088623 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  4
+done
+--- 830.1350367069244 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  5
+done
+--- 3820.792589187622 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  6
+done
+--- 947.8551495075226 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  7
+done
+--- 446.0920524597168 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  8
+done
+--- 850.5330281257629 seconds ---
+data/Nav_15_15_30_120
+states:  5 trial:  9
+done
+--- 2091.829245567322 seconds ---
+--- 11087.850353002548 seconds for all trials---
+========================================================
+data/Nav_15_15_30_120
+states:  5 trial:  0
+accuracy of:new_Nav_15_15_30_120_5_0:  0.6262337662337661
+data/Nav_15_15_30_120
+states:  5 trial:  1
+accuracy of:new_Nav_15_15_30_120_5_1:  0.8908225108225108
+data/Nav_15_15_30_120
+states:  5 trial:  2
+accuracy of:new_Nav_15_15_30_120_5_2:  0.7076190476190477
+data/Nav_15_15_30_120
+states:  5 trial:  3
+accuracy of:new_Nav_15_15_30_120_5_3:  0.3358441558441559
+data/Nav_15_15_30_120
+states:  5 trial:  4
+accuracy of:new_Nav_15_15_30_120_5_4:  0.7032900432900433
+data/Nav_15_15_30_120
+states:  5 trial:  5
+accuracy of:new_Nav_15_15_30_120_5_5:  0.9845021645021645
+data/Nav_15_15_30_120
+states:  5 trial:  6
+accuracy of:new_Nav_15_15_30_120_5_6:  0.8935064935064936
+data/Nav_15_15_30_120
+states:  5 trial:  7
+accuracy of:new_Nav_15_15_30_120_5_7:  0.9818181818181818
+data/Nav_15_15_30_120
+states:  5 trial:  8
+accuracy of:new_Nav_15_15_30_120_5_8:  0.8627705627705629
+data/Nav_15_15_30_120
+states:  5 trial:  9
+accuracy of:new_Nav_15_15_30_120_5_9:  0.6626839826839827
 --------------------
-(2, 3, 3, 3, 0, 1, 1, 3, 2, 1, 1, 0, 6, 'M')
-(2, 2, 3, 3, 3, 1, 0, 3, 2, 1, 0, 1, 6, 'M')
-(2, 3, 3, 2, 0, 1, 3, 3, 2, 1, 1, 0, 6, 'M')
-(2, 2, 3, 3, 3, 3, 1, 1, 0, 0, 1, 1, 6, 'M')
-(2, 3, 3, 3, 0, 1, 1, 1, 3, 1, 1, 0, 6, 'M')
-(2, 3, 3, 3, 3, 3, 1, 0, 0, 1, 1, 1, 6, 'M')
-(0, 3, 3, 3, 0, 1, 0, 0, 0, 0, 0, 6, 'M')
-(2, 2, 3, 3, 0, 0, 3, 2, 3, 1, 1, 1, 6, 'M')
-(2, 3, 3, 2, 3, 0, 1, 3, 2, 0, 1, 0, 6, 'M')
-(2, 3, 3, 2, 1, 1, 0, 3, 3, 0, 1, 0, 6, 'M')
-(2, 3, 2, 2, 0, 0, 3, 3, 3, 1, 0, 1, 6, 'M')
-(2, 3, 3, 3, 0, 1, 0, 3, 3, 0, 0, 1, 6, 'M')
-(2, 3, 3, 2, 3, 1, 1, 3, 3, 1, 1, 1, 6, 'M')
-(2, 3, 3, 3, 0, 0, 2, 3, 2, 1, 0, 0, 6, 'M')
-(2, 3, 2, 2, 0, 0, 3, 3, 3, 1, 1, 1, 6, 'M')
-(2, 2, 3, 3, 1, 1, 3, 3, 3, 1, 0, 0, 6, 'M')
-(2, 3, 3, 2, 3, 1, 1, 3, 3, 1, 1, 0, 6, 'M')
-(2, 3, 2, 3, 1, 1, 3, 3, 2, 0, 0, 0, 6, 'M')
-(2, 2, 3, 3, 1, 1, 3, 3, 2, 1, 1, 1, 6, 'M')
-(2, 3, 2, 3, 1, 0, 3, 3, 2, 1, 0, 1, 6, 'M')
-(2, 2, 3, 3, 3, 0, 1, 3, 2, 1, 1, 0, 6, 'M')
-(2, 3, 3, 2, 3, 0, 0, 3, 2, 0, 1, 1, 6, 'M')
-(2, 2, 3, 3, 1, 0, 3, 2, 3, 1, 0, 0, 6, 'M')
-(2, 3, 2, 3, 1, 0, 2, 3, 3, 0, 0, 0, 6, 'M')
-(2, 3, 3, 3, 1, 1, 3, 2, 2, 1, 0, 0, 6, 'M')
-(2, 3, 3, 3, 1, 1, 3, 3, 2, 0, 1, 0, 6, 'M')
-(2, 3, 3, 3, 0, 1, 3, 2, 2, 1, 0, 0, 6, 'M')
-(2, 3, 3, 2, 1, 0, 2, 3, 3, 1, 1, 1, 6, 'M')
-(2, 2, 3, 3, 0, 1, 3, 2, 3, 1, 0, 0, 6, 'M')
-(2, 3, 3, 3, 1, 0, 2, 2, 3, 1, 1, 1, 6, 'M')
-(2, 2, 3, 3, 3, 2, 3, 0, 0, 0, 0, 0, 6, 'M')
-(2, 2, 3, 3, 1, 0, 2, 3, 3, 1, 0, 1, 6, 'M')
-(2, 3, 3, 3, 3, 0, 0, 3, 3, 0, 0, 1, 6, 'M')
-(2, 3, 3, 3, 1, 0, 2, 2, 3, 1, 0, 0, 6, 'M')
-(2, 3, 3, 3, 2, 1, 1, 3, 2, 0, 1, 0, 6, 'M')
-(2, 3, 2, 3, 1, 1, 3, 3, 3, 0, 1, 0, 6, 'M')
-(2, 3, 3, 3, 0, 1, 1, 2, 3, 1, 1, 0, 6, 'M')
-(2, 2, 3, 2, 3, 0, 1, 3, 3, 1, 0, 1, 6, 'M')
-(2, 3, 3, 2, 0, 0, 3, 3, 3, 1, 1, 0, 6, 'M')
-(2, 3, 3, 3, 0, 0, 2, 3, 2, 1, 1, 1, 6, 'M')
-data/Nav_15_15_25_40
-states:  9 trial:  0
-Traceback (most recent call last):
-  File "test3.py", line 107, in <module>
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-  File "test3.py", line 6, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_Nav_15_15_25_40_9_0'
+120
+data/Nav_15_15_30_120
+states:  6 trial:  0
+done
+--- 9057.194583892822 seconds ---
+data/Nav_15_15_30_120
+states:  6 trial:  1
+done
+--- 827.3269331455231 seconds ---
+data/Nav_15_15_30_120
+states:  6 trial:  2
+done
+--- 1137.9703459739685 seconds ---
+data/Nav_15_15_30_120
+states:  6 trial:  3
+done
+--- 14093.241672039032 seconds ---
+data/Nav_15_15_30_120
+states:  6 trial:  4
+done
+--- 1136.6915941238403 seconds ---
+data/Nav_15_15_30_120
+states:  6 trial:  5
+done
+--- 767.4180324077606 seconds ---
+data/Nav_15_15_30_120
+states:  6 trial:  6
+done
+--- 4800.764862775803 seconds ---
+data/Nav_15_15_30_120
+states:  6 trial:  7
+done
+--- 1868.9570326805115 seconds ---
+data/Nav_15_15_30_120
+states:  6 trial:  8
+done
+--- 1085.7379975318909 seconds ---
+data/Nav_15_15_30_120
+states:  6 trial:  9
+done
+--- 2991.8297946453094 seconds ---
+--- 37767.133484601974 seconds for all trials---
+========================================================
+data/Nav_15_15_30_120
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_30_120_6_0:  0.9232034632034629
+data/Nav_15_15_30_120
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_30_120_6_1:  0.9572294372294372
+data/Nav_15_15_30_120
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_30_120_6_2:  0.8986147186147185
+data/Nav_15_15_30_120
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_30_120_6_3:  0.8759307359307359
+data/Nav_15_15_30_120
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_30_120_6_4:  0.8987878787878788
+data/Nav_15_15_30_120
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_30_120_6_5:  0.9622510822510824
+data/Nav_15_15_30_120
+states:  6 trial:  6
+accuracy of:new_Nav_15_15_30_120_6_6:  0.9327272727272728
+data/Nav_15_15_30_120
+states:  6 trial:  7
+accuracy of:new_Nav_15_15_30_120_6_7:  0.9672727272727272
+data/Nav_15_15_30_120
+states:  6 trial:  8
+accuracy of:new_Nav_15_15_30_120_6_8:  0.914025974025974
+data/Nav_15_15_30_120
+states:  6 trial:  9
+accuracy of:new_Nav_15_15_30_120_6_9:  0.876017316017316
 --------------------
 --------------------
 --------------------
+135
+data/Nav_15_15_30_135
+states:  4 trial:  0
+done
+--- 717.0284323692322 seconds ---
+data/Nav_15_15_30_135
+states:  4 trial:  1
+done
+--- 581.5223183631897 seconds ---
+data/Nav_15_15_30_135
+states:  4 trial:  2
+done
+--- 582.5626015663147 seconds ---
+data/Nav_15_15_30_135
+states:  4 trial:  3
+done
+--- 283.9205799102783 seconds ---
+data/Nav_15_15_30_135
+states:  4 trial:  4
+done
+--- 123.81072688102722 seconds ---
+data/Nav_15_15_30_135
+states:  4 trial:  5
+done
+--- 222.39457035064697 seconds ---
+data/Nav_15_15_30_135
+states:  4 trial:  6
+done
+--- 405.59522914886475 seconds ---
+data/Nav_15_15_30_135
+states:  4 trial:  7
+done
+--- 4.117046594619751 seconds ---
+data/Nav_15_15_30_135
+states:  4 trial:  8
+done
+--- 371.5353569984436 seconds ---
+data/Nav_15_15_30_135
+states:  4 trial:  9
+done
+--- 172.00846123695374 seconds ---
+--- 3464.49582362175 seconds for all trials---
+========================================================
+data/Nav_15_15_30_135
+states:  4 trial:  0
+accuracy of:new_Nav_15_15_30_135_4_0:  0.6766233766233766
+data/Nav_15_15_30_135
+states:  4 trial:  1
+accuracy of:new_Nav_15_15_30_135_4_1:  0.642077922077922
+data/Nav_15_15_30_135
+states:  4 trial:  2
+accuracy of:new_Nav_15_15_30_135_4_2:  0.6499567099567098
+data/Nav_15_15_30_135
+states:  4 trial:  3
+accuracy of:new_Nav_15_15_30_135_4_3:  0.7631168831168831
+data/Nav_15_15_30_135
+states:  4 trial:  4
+accuracy of:new_Nav_15_15_30_135_4_4:  0.8179220779220779
+data/Nav_15_15_30_135
+states:  4 trial:  5
+accuracy of:new_Nav_15_15_30_135_4_5:  0.6452813852813852
+data/Nav_15_15_30_135
+states:  4 trial:  6
+accuracy of:new_Nav_15_15_30_135_4_6:  0.6799999999999999
+data/Nav_15_15_30_135
+states:  4 trial:  7
+accuracy of:new_Nav_15_15_30_135_4_7:  0.33186147186147186
+data/Nav_15_15_30_135
+states:  4 trial:  8
+accuracy of:new_Nav_15_15_30_135_4_8:  0.9326406926406927
+data/Nav_15_15_30_135
+states:  4 trial:  9
+accuracy of:new_Nav_15_15_30_135_4_9:  0.6317748917748919
+--------------------
+135
+data/Nav_15_15_30_135
+states:  5 trial:  0
+done
+--- 1132.5772659778595 seconds ---
+data/Nav_15_15_30_135
+states:  5 trial:  1
+done
+--- 551.3298733234406 seconds ---
+data/Nav_15_15_30_135
+states:  5 trial:  2
+done
+--- 606.0574517250061 seconds ---
+data/Nav_15_15_30_135
+states:  5 trial:  3
+done
+--- 807.868492603302 seconds ---
+data/Nav_15_15_30_135
+states:  5 trial:  4
+done
+--- 1385.0790476799011 seconds ---
+data/Nav_15_15_30_135
+states:  5 trial:  5
+done
+--- 416.9143671989441 seconds ---
+data/Nav_15_15_30_135
+states:  5 trial:  6
+done
+--- 953.4812188148499 seconds ---
+data/Nav_15_15_30_135
+states:  5 trial:  7
+done
+--- 1522.4289605617523 seconds ---
+data/Nav_15_15_30_135
+states:  5 trial:  8
+done
+--- 1338.807540655136 seconds ---
+data/Nav_15_15_30_135
+states:  5 trial:  9
+done
+--- 1291.6214208602905 seconds ---
+--- 10006.166114807129 seconds for all trials---
+========================================================
+data/Nav_15_15_30_135
+states:  5 trial:  0
+accuracy of:new_Nav_15_15_30_135_5_0:  0.7398268398268397
+data/Nav_15_15_30_135
+states:  5 trial:  1
+accuracy of:new_Nav_15_15_30_135_5_1:  0.6846753246753248
+data/Nav_15_15_30_135
+states:  5 trial:  2
+accuracy of:new_Nav_15_15_30_135_5_2:  0.7036363636363637
+data/Nav_15_15_30_135
+states:  5 trial:  3
+accuracy of:new_Nav_15_15_30_135_5_3:  0.7102164502164503
+data/Nav_15_15_30_135
+states:  5 trial:  4
+accuracy of:new_Nav_15_15_30_135_5_4:  0.6810389610389611
+data/Nav_15_15_30_135
+states:  5 trial:  5
+accuracy of:new_Nav_15_15_30_135_5_5:  0.7252813852813853
+data/Nav_15_15_30_135
+states:  5 trial:  6
+accuracy of:new_Nav_15_15_30_135_5_6:  0.6865800865800866
+data/Nav_15_15_30_135
+states:  5 trial:  7
+accuracy of:new_Nav_15_15_30_135_5_7:  0.9228571428571429
+data/Nav_15_15_30_135
+states:  5 trial:  8
+accuracy of:new_Nav_15_15_30_135_5_8:  0.6318614718614718
+data/Nav_15_15_30_135
+states:  5 trial:  9
+accuracy of:new_Nav_15_15_30_135_5_9:  0.6596536796536795
+--------------------
+135
+data/Nav_15_15_30_135
+states:  6 trial:  0
+done
+--- 2685.7253262996674 seconds ---
+data/Nav_15_15_30_135
+states:  6 trial:  1
+done
+--- 905.9092381000519 seconds ---
+data/Nav_15_15_30_135
+states:  6 trial:  2
+done
+--- 971.7723202705383 seconds ---
+data/Nav_15_15_30_135
+states:  6 trial:  3
+done
+--- 1646.0045146942139 seconds ---
+data/Nav_15_15_30_135
+states:  6 trial:  4
+done
+--- 966.3533062934875 seconds ---
+data/Nav_15_15_30_135
+states:  6 trial:  5
+done
+--- 2624.7071318626404 seconds ---
+data/Nav_15_15_30_135
+states:  6 trial:  6
+done
+--- 1695.3419892787933 seconds ---
+data/Nav_15_15_30_135
+states:  6 trial:  7
+done
+--- 1509.8981068134308 seconds ---
+data/Nav_15_15_30_135
+states:  6 trial:  8
+done
+--- 1858.5574181079865 seconds ---
+data/Nav_15_15_30_135
+states:  6 trial:  9
+done
+--- 2996.10621881485 seconds ---
+--- 17860.376140356064 seconds for all trials---
+========================================================
+data/Nav_15_15_30_135
+states:  6 trial:  0
+accuracy of:new_Nav_15_15_30_135_6_0:  0.6925541125541126
+data/Nav_15_15_30_135
+states:  6 trial:  1
+accuracy of:new_Nav_15_15_30_135_6_1:  0.8394805194805194
+data/Nav_15_15_30_135
+states:  6 trial:  2
+accuracy of:new_Nav_15_15_30_135_6_2:  0.9100432900432901
+data/Nav_15_15_30_135
+states:  6 trial:  3
+accuracy of:new_Nav_15_15_30_135_6_3:  0.7182683982683982
+data/Nav_15_15_30_135
+states:  6 trial:  4
+accuracy of:new_Nav_15_15_30_135_6_4:  0.9103896103896105
+data/Nav_15_15_30_135
+states:  6 trial:  5
+accuracy of:new_Nav_15_15_30_135_6_5:  0.8956709956709957
+data/Nav_15_15_30_135
+states:  6 trial:  6
+accuracy of:new_Nav_15_15_30_135_6_6:  0.8845021645021646
+data/Nav_15_15_30_135
+states:  6 trial:  7
+accuracy of:new_Nav_15_15_30_135_6_7:  0.798961038961039
+data/Nav_15_15_30_135
+states:  6 trial:  8
+accuracy of:new_Nav_15_15_30_135_6_8:  0.9179220779220779
+data/Nav_15_15_30_135
+states:  6 trial:  9
+accuracy of:new_Nav_15_15_30_135_6_9:  0.9175757575757577
+--------------------
+--------------------
+--------------------
+150
+data/Nav_15_15_30_150
+states:  4 trial:  0
