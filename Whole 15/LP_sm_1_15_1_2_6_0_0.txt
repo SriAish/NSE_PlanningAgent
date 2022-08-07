@@ -4,3 +4,28 @@ belief: [('1', ((0, 0), (7, 0), False, False, 'p')), ('2', ((0, 0), (7, 0), Fals
 initial belief setup
 variables setup
 objective setup
+eq1
+setting bound
+eq3
+eq4
+problem setup
+ ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :        28867
+   Intermediates:          145
+   Connections  :            0
+   Equations    :        36220
+   Residuals    :        36075
+ 
+
+Error: 'results.json' not found. Check above for additional error details
+Exception Occured
+[Errno 2] No such file or directory: '/tmp/tmp7chta4e5gk_model0/options.json'
