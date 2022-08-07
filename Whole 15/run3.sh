@@ -9,13 +9,13 @@ module add cuda/11.6
 module add cudnn/8.4.0-cuda-11.6
 source ~/keras/bin/activate
 
-# start=`date +%s`
-# echo "running agent"
-# python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_6_15_00 1 0 0 data_set/BP_15_15_35_25 6 15 > LP_sm_1_15_1_2_6_0_0.txt
-# end=`date +%s`
-# runtime=$((end-start))
-# echo $runtime
-# echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_6_15_00 1 0 0 data_set/BP_15_15_35_25 6 15 > LP_sm_1_15_1_2_6_0_0.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
 python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_8_15_00 1 0 0 data_set/BP_15_15_35_25 8 15 > LP_sm_1_15_1_2_8_0_0.txt
 end=`date +%s`
 runtime=$((end-start))
