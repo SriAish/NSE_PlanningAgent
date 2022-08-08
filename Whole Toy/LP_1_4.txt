@@ -30,45 +30,32 @@ problem setup
  ---------------------------------------
  Degrees of freedom       :            218
  
- solver            3  not supported
- using default solver: APOPT
  ----------------------------------------------
  Steady State Optimization with APOPT Solver
  ----------------------------------------------
  
  Iter    Objective  Convergence
-    0  9.32626E+00  2.33125E+00
-    1  9.31317E+00  1.76098E-09
-    2  9.31317E+00  2.07095E-09
-    3  9.31317E+00  1.02249E-09
-    4  9.31317E+00  1.68357E-09
-    5  9.31317E+00  1.68357E-09
- Successful solution
+    0  6.91184E+02  2.31495E+00
+    1  9.25980E+00  3.27186E-10
+    2  9.47391E+00  5.73025E-03
+    3  9.47391E+00  3.27186E-10
+    4  9.25980E+00  5.73025E-03
+    5  9.36952E+00  3.27186E-10
+    6  1.03570E+01  5.73025E-03
+    7  9.25980E+00  3.65079E-11
+ No feasible solution
  
  ---------------------------------------------------
- Solver         :  IPOPT (v3.12)
- Solution time  :   4.519999999320135E-002 sec
- Objective      :    9.31316679477734     
- Successful solution
+ Solver         :  APOPT (v1.0)
+ Solution time  :   5.499999999301508E-002 sec
+ Objective      :    9.25979999749518     
+ Unsuccessful with error code            0
  ---------------------------------------------------
  
+ Creating file: infeasibilities.txt
+ Use command apm_get(server,app,'infeasibilities.txt') to retrieve file
+ @error: Solution Not Found
 
-('#', ((-1, -1), (-1, -1), False, False, 'r')) 993.6837144000001
-{'down': 0.25000820115081074, 'up': 0.24999726628306304, 'right': 0.24999726628306304, 'left': 0.24999726628306304}
-('2', ((0, 0), (0, 1), False, False, 'p')) 1.110987668
-{'down': 0.0, 'up': 0.0, 'right': 1.0, 'left': 0.0}
-('2', ((0, 1), (0, 1), False, False, 'p')) 0.99888901196
-{'down': 0.0, 'up': 0.0, 'right': 0.0, 'left': 0.0, 'wrap': 0.0, 'pick_up': 1.0}
-('2', ((0, 1), (0, 1), True, False, 'p')) 0.99789012349
-{'down': 0.0, 'up': 0.0, 'right': 0.0, 'left': 0.0, 'wrap': 1.0}
-('2', ((0, 1), (0, 1), True, True, 'p')) 1.1075349772
-{'down': 0.0, 'up': 0.0, 'right': 1.0, 'left': 1.4966626706369629e-34}
-('2', ((0, 2), (0, 2), True, True, 'r')) 1.1063045191
-{'down': 0.0, 'up': 0.0, 'right': 1.0, 'left': 0.0}
-('2', ((0, 3), (0, 3), True, True, 'p')) 0.99467839282
-{'down': 0.25000820114828964, 'up': 0.24999726627720112, 'right': 0.24999726628725463, 'left': 0.24999726628725463}
-----------------------------------------
-Objective Value:  9.313166794747003
-Severe Value:  1e-10
-----------------------------------------
-Saving policies
+Exception Occured
+@error: Solution Not Found
+
