@@ -94,3 +94,4 @@ done
 --- 2900.2118289470673 seconds ---
 data/Nav_15_15_30_165
 states:  5 trial:  2
+slurmstepd: error: *** JOB 733361 ON gnode024 CANCELLED AT 2022-08-08T00:36:32 ***
