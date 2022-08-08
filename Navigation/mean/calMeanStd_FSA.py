@@ -95,7 +95,7 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_LP_p_Nav_pol_135_4.pkl"
+    pol = "policy/FSA_LP_p_Nav_pol_150_4.pkl"
     agent = Agent(pol)
     # print(pol)
     generate_mean_std(10000, agent)
