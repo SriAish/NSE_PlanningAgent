@@ -3,7 +3,7 @@ import sys
 import pickle
 
 class VIAgent:
-    def __init__(self, BP, gamma = 0.999, delta = 0.1):
+    def __init__(self, BP, gamma = 0.99, delta = 0.1):
         self.BP = BP
         g_pos = (3, 6)
         e_state = []

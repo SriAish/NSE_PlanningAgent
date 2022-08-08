@@ -6,7 +6,7 @@ import itertools
 from gekko import GEKKO
 from math import e
 from misc import load
-b_obj_val = 27.746
+b_obj_val = 24.6223
 class FSAgent:
     def __init__(self, BP, FSA, gamma = 0.99):
         self.m = GEKKO(remote=False)
