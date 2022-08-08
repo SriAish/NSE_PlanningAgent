@@ -13,7 +13,7 @@ def generate_trajectory(agent):
 
     while not done and ac < 100:
         s = env.state()
-        print(s)
+        # print(s)
         if env.picked and env.onRug() and not env.wrapped:
             rug_c += 1
 
@@ -78,5 +78,5 @@ if __name__ == '__main__':
     pol = "grid-4-1_Policy_Opt.pkl"
     agent = Agent(pol)
     print(pol)
-    generate_mean_std(10000, agent)
+    generate_mean_std(100, agent)
     # generate_trajectory(agent)

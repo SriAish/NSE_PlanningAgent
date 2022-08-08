@@ -99,7 +99,7 @@ class FSAConstants:
             sy_pr += [self.symbol[u][sig][sy_]]
         # print(pr)
         if sum(sy_pr) == 0:
-            sy_pr[3] = 1
+            sy_pr[2] = 1
         # print(u, sig, sy, sy_pr)
         return np.random.choice(s, p=pr), np.random.choice(sy, p=sy_pr)
 
