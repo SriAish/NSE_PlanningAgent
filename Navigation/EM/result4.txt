@@ -323,3 +323,77 @@ done
 --- 1795.3788352012634 seconds ---
 data/Nav_15_15_30_195
 states:  5 trial:  4
+done
+--- 1786.1433424949646 seconds ---
+data/Nav_15_15_30_195
+states:  5 trial:  5
+done
+--- 4436.551887512207 seconds ---
+data/Nav_15_15_30_195
+states:  5 trial:  6
+done
+--- 742.0198378562927 seconds ---
+data/Nav_15_15_30_195
+states:  5 trial:  7
+done
+--- 812.9021415710449 seconds ---
+data/Nav_15_15_30_195
+states:  5 trial:  8
+done
+--- 14.961875677108765 seconds ---
+data/Nav_15_15_30_195
+states:  5 trial:  9
+done
+--- 2221.3165509700775 seconds ---
+--- 16325.46830868721 seconds for all trials---
+========================================================
+data/Nav_15_15_30_195
+states:  5 trial:  0
+accuracy of:new_Nav_15_15_30_195_5_0:  0.6536796536796536
+data/Nav_15_15_30_195
+states:  5 trial:  1
+accuracy of:new_Nav_15_15_30_195_5_1:  0.6854545454545455
+data/Nav_15_15_30_195
+states:  5 trial:  2
+accuracy of:new_Nav_15_15_30_195_5_2:  0.6741991341991342
+data/Nav_15_15_30_195
+states:  5 trial:  3
+accuracy of:new_Nav_15_15_30_195_5_3:  0.8161038961038962
+data/Nav_15_15_30_195
+states:  5 trial:  4
+accuracy of:new_Nav_15_15_30_195_5_4:  0.7191341991341992
+data/Nav_15_15_30_195
+states:  5 trial:  5
+accuracy of:new_Nav_15_15_30_195_5_5:  0.8387878787878786
+data/Nav_15_15_30_195
+states:  5 trial:  6
+accuracy of:new_Nav_15_15_30_195_5_6:  0.6658008658008658
+data/Nav_15_15_30_195
+states:  5 trial:  7
+accuracy of:new_Nav_15_15_30_195_5_7:  0.6856277056277056
+data/Nav_15_15_30_195
+states:  5 trial:  8
+accuracy of:new_Nav_15_15_30_195_5_8:  0.32562770562770565
+data/Nav_15_15_30_195
+states:  5 trial:  9
+accuracy of:new_Nav_15_15_30_195_5_9:  0.8051082251082251
+--------------------
+195
+data/Nav_15_15_30_195
+states:  6 trial:  0
+done
+--- 3385.0616731643677 seconds ---
+data/Nav_15_15_30_195
+states:  6 trial:  1
+done
+--- 1993.7858650684357 seconds ---
+data/Nav_15_15_30_195
+states:  6 trial:  2
+done
+--- 6537.820496797562 seconds ---
+data/Nav_15_15_30_195
+states:  6 trial:  3
+done
+--- 1968.4835987091064 seconds ---
+data/Nav_15_15_30_195
+states:  6 trial:  4
