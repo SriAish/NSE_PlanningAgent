@@ -8,7 +8,7 @@ from math import e
 from misc import load
 b_obj_val = 27.746
 class FSAgent:
-    def __init__(self, BP, FSA, gamma = 0.999):
+    def __init__(self, BP, FSA, gamma = 0.99):
         self.m = GEKKO(remote=False)
         self.m.options.MAX_MEMORY = 6
         self.m.options.MAX_ITER = 3000
