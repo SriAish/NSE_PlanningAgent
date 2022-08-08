@@ -14,6 +14,7 @@ echo "Checking Accuracy of learned FSAs"
 # python3.7 test.py data/Nav_15_15_30_120 4 > Nav_45_4.txt
 # python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_120 4 20 0 0 Nav_pol >> Nav_45_4.txt
 # python3.7 test.py data/Nav_15_15_30_120 5 > Nav_120_5.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_120 5 20 0 0 Nav_pol_120_4 >> Nav_120_4.txt
 # python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_120 5 20 0 0 Nav_pol_120_5 >> Nav_120_5.txt
 # echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_120 6 > Nav_120_6.txt
@@ -28,22 +29,22 @@ echo "Checking Accuracy of learned FSAs"
 # python3.7 test.py data/Nav_15_15_30_135 6 > Nav_135_6.txt
 # python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_135 6 20 0 0 Nav_pol_135_6 >> Nav_135_6.txt
 # echo "--------------------"
-python3.7 test.py data/Nav_15_15_30_150 4 > Nav_150_4.txt
+# python3.7 test.py data/Nav_15_15_30_150 4 > Nav_150_4.txt
 python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_150 4 20 0 0 Nav_pol_135_4 >> Nav_150_4.txt
 echo "--------------------"
-python3.7 test.py data/Nav_15_15_30_150 5 > Nav_150_5.txt
+# python3.7 test.py data/Nav_15_15_30_150 5 > Nav_150_5.txt
 python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_150 5 20 0 0 Nav_pol_135_5 >> Nav_150_5.txt
 echo "--------------------"
-python3.7 test.py data/Nav_15_15_30_150 6 > Nav_150_6.txt
+# python3.7 test.py data/Nav_15_15_30_150 6 > Nav_150_6.txt
 python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_150 6 20 0 0 Nav_pol_135_6 >> Nav_150_6.txt
 echo "--------------------"
-python3.7 test.py data/Nav_15_15_30_195 4 > Nav_195_4.txt
+# python3.7 test.py data/Nav_15_15_30_195 4 > Nav_195_4.txt
 python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_195 4 20 0 0 Nav_pol_135_4 >> Nav_195_4.txt
 echo "--------------------"
-python3.7 test.py data/Nav_15_15_30_195 5 > Nav_195_5.txt
+# python3.7 test.py data/Nav_15_15_30_195 5 > Nav_195_5.txt
 python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_195 5 20 0 0 Nav_pol_135_5 >> Nav_195_5.txt
 echo "--------------------"
-python3.7 test.py data/Nav_15_15_30_195 6 > Nav_195_6.txt
+# python3.7 test.py data/Nav_15_15_30_195 6 > Nav_195_6.txt
 python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_195 6 20 0 0 Nav_pol_135_6 >> Nav_195_6.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_25_45 5 > Nav_45_5.txt
