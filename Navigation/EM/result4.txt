@@ -231,3 +231,7 @@ accuracy of:new_Nav_15_15_30_300_5_9:  0.6262337662337663
 300
 data/Nav_15_15_30_300
 states:  6 trial:  0
+done
+--- 5277.514470815659 seconds ---
+data/Nav_15_15_30_300
+states:  6 trial:  1
