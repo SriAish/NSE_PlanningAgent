@@ -64,15 +64,15 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
     else:
         severe = set(load("s_15_15_35"))
         mild = set(load("m_15_15_35"))
-        no_nse = set(load("nn_15_15_35"))
+        no_nse = set(load("new_nn"))
     print(len(severe), len(mild), len(no_nse))
     i = 0
     while i < n:
         i += 1
         rug_c, t = generate_trajectory(agent, end_loc, box_loc)
-        if len(t) > 35:
-            i -= 1
-            continue
+        # if len(t) > 35:
+        #     i -= 1
+        #     continue
         if rug_c < 1:
             t += ['N']
             no_nse.add(tuple(t))
@@ -87,9 +87,9 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
             severe.add(tuple(t))
     print(t)
     print(len(severe), len(mild), len(no_nse))
-    save("s_15_15_35", list(severe))
-    save("m_15_15_35", list(mild))
-    save("nn_15_15_35", list(no_nse))
+    # save("s_15_15_35", list(severe))
+    # save("m_15_15_35", list(mild))
+    save("new_nn", list(no_nse))
 
 class Agent:
     def __init__(self, name):

@@ -20,7 +20,7 @@ for ti in time:
         t_mean += [np.mean(ti)]
         t_std += [np.std(ti)]
 
-best_acc = [0.670, 0.680, 0.690, 0.860, 0.914, 0.913, 0.860, 0.945]
+best_acc = [0.534, 0.521, 0.551, 0.784, 0.872, 0.878, 0.868, 0.922]
 best_acc = [b*100 for b in best_acc]
 
 # print(y)
