@@ -7,7 +7,7 @@ import sys
 from misc import load
 
 def generate_trajectory(agent):
-    env = BPEnv(1, 4, 1, 1, (0, 2), (0, 3), (0, 1))
+    env = BPEnv(2, 4, 1, 1, (0, 2), (0, 3), (0, 1))
     file_name = sys.argv[1][sys.argv[1].index("/")+1:]
     delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_best")
     omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_best")
@@ -53,7 +53,7 @@ def generate_mean_std(n, agent):
 
     print(len(severe), len(mild))
     print("severe : ", np.mean(severe), np.std(severe))
-    print("mild : ", np.mean(mild), np.std(mild))
+    # print("mild : ", np.mean(mild), np.std(mild))
 
 class Agent:
     def __init__(self, name):
@@ -89,7 +89,7 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_LP_p1_1_4.pkl"
+    pol = "policy/FSA_LP_p1_2_4.pkl"
     agent = Agent(pol)
     # print(pol)
     generate_mean_std(10000, agent)

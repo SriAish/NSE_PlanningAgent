@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 
 def generate_trajectory(agent):
-    env = BPEnv(1, 4, 1, 1, (0, 2), (0, 4), (0, 1))
+    env = BPEnv(2, 4, 1, 1, (0, 2), (0, 3), (0, 1))
     done = False
 
     rug_c = 0
@@ -75,7 +75,7 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "grid-4-1_Policy_Opt.pkl"
+    pol = "grid-4-2_Policy_Opt.pkl"
     agent = Agent(pol)
     print(pol)
     generate_mean_std(100, agent)
