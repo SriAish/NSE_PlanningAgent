@@ -1,12 +1,89 @@
 ==========================================
-SLURM_JOB_ID = 733525
-SLURM_NODELIST = gnode014
-SLURM_JOB_GPUS = 0
+SLURM_JOB_ID = 734125
+SLURM_NODELIST = gnode015
+SLURM_JOB_GPUS = 1
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job733525/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job734125/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+300
+data/Nav_15_15_30_300
+states:  4 trial:  0
+done
+--- 1348.2916107177734 seconds ---
+data/Nav_15_15_30_300
+states:  4 trial:  1
+done
+--- 1722.9058818817139 seconds ---
+data/Nav_15_15_30_300
+states:  4 trial:  2
+done
+--- 1345.9528982639313 seconds ---
+data/Nav_15_15_30_300
+states:  4 trial:  3
+done
+--- 4626.718415021896 seconds ---
+data/Nav_15_15_30_300
+states:  4 trial:  4
+done
+--- 1537.0337755680084 seconds ---
+data/Nav_15_15_30_300
+states:  4 trial:  5
+done
+--- 904.6618802547455 seconds ---
+data/Nav_15_15_30_300
+states:  4 trial:  6
+done
+--- 1530.8267731666565 seconds ---
+data/Nav_15_15_30_300
+states:  4 trial:  7
+done
+--- 586.6346342563629 seconds ---
+data/Nav_15_15_30_300
+states:  4 trial:  8
+done
+--- 1451.7803702354431 seconds ---
+data/Nav_15_15_30_300
+states:  4 trial:  9
+done
+--- 7473.199048757553 seconds ---
+--- 22528.005744695663 seconds for all trials---
+========================================================
+data/Nav_15_15_30_300
+states:  4 trial:  0
+accuracy of:new_Nav_15_15_30_300_4_0:  0.5885714285714285
+data/Nav_15_15_30_300
+states:  4 trial:  1
+accuracy of:new_Nav_15_15_30_300_4_1:  0.6682251082251082
+data/Nav_15_15_30_300
+states:  4 trial:  2
+accuracy of:new_Nav_15_15_30_300_4_2:  0.5948917748917749
+data/Nav_15_15_30_300
+states:  4 trial:  3
+accuracy of:new_Nav_15_15_30_300_4_3:  0.6251948051948052
+data/Nav_15_15_30_300
+states:  4 trial:  4
+accuracy of:new_Nav_15_15_30_300_4_4:  0.5877056277056276
+data/Nav_15_15_30_300
+states:  4 trial:  5
+accuracy of:new_Nav_15_15_30_300_4_5:  0.6235497835497836
+data/Nav_15_15_30_300
+states:  4 trial:  6
+accuracy of:new_Nav_15_15_30_300_4_6:  0.5935064935064935
+data/Nav_15_15_30_300
+states:  4 trial:  7
+accuracy of:new_Nav_15_15_30_300_4_7:  0.6065800865800866
+data/Nav_15_15_30_300
+states:  4 trial:  8
+accuracy of:new_Nav_15_15_30_300_4_8:  0.6689177489177489
+data/Nav_15_15_30_300
+states:  4 trial:  9
+accuracy of:new_Nav_15_15_30_300_4_9:  0.6238961038961038
 --------------------
---------------------
---------------------
-slurmstepd: error: *** JOB 733525 ON gnode014 CANCELLED AT 2022-08-08T23:12:53 ***
+300
+data/Nav_15_15_30_300
+states:  7 trial:  0
+done
+--- 15146.91599035263 seconds ---
+data/Nav_15_15_30_300
+states:  7 trial:  1
