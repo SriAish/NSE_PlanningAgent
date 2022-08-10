@@ -91,3 +91,31 @@ done
 --- 16560.623078107834 seconds ---
 data/Nav_15_15_30_300
 states:  7 trial:  2
+done
+--- 14976.481580734253 seconds ---
+data/Nav_15_15_30_300
+states:  7 trial:  3
+done
+--- 21164.666293621063 seconds ---
+data/Nav_15_15_30_300
+states:  7 trial:  4
+done
+--- 10637.283696889877 seconds ---
+data/Nav_15_15_30_300
+states:  7 trial:  5
+done
+--- 15097.183603525162 seconds ---
+data/Nav_15_15_30_300
+states:  7 trial:  6
+done
+--- 4438.435832738876 seconds ---
+data/Nav_15_15_30_300
+states:  7 trial:  7
+done
+--- 6797.788530349731 seconds ---
+data/Nav_15_15_30_300
+states:  7 trial:  8
+done
+--- 13187.74209690094 seconds ---
+data/Nav_15_15_30_300
+states:  7 trial:  9
