@@ -28,7 +28,7 @@ with open(sys.argv[1]) as file:
         for a in act.all_actions:
             pol[st][a] = 0
         pol[st][action_map[line[-4]]] = 1
-    end_st = [((0, 3), (0, 3), True, False, 'p'), ((0, 3), (0, 3), True, True, 'p')]
+    end_st = [((7, 14), (7, 14), True, False, 'p'), ((7, 14), (7, 14), True, True, 'p')]
     for e in end_st:
         pol[e] = {}
         for a in act.all_actions:
@@ -37,4 +37,4 @@ with open(sys.argv[1]) as file:
 for s in pol:
     print(s)
     print(pol[s])
-save("grid-4-2_Policy_Opt.pkl", pol)
+save("grid-15-0-learned.pkl", pol)

@@ -20,14 +20,14 @@ for ti in time:
         t_mean += [np.mean(ti)]
         t_std += [np.std(ti)]
 
-best_acc = [0.670, 0.680, 0.690, 0.860, 0.914, 0.913, 0.860, 0.945]
-best_acc = [b*100 for b in best_acc]
+# best_acc = [0.670, 0.680, 0.690, 0.860, 0.914, 0.913, 0.860, 0.945]
+# best_acc = [b*100 for b in best_acc]
 
 # print(y)
 # plotting the points 
-plt.plot(states, best_acc, '-b')
+plt.plot(states, t_mean, '-b')
 # print(t_std)
-# plt.fill_between(states, np.array(t_mean)-np.array(t_std), np.array(t_mean)+np.array(t_std))
+plt.fill_between(states, np.array(t_mean)-np.array(t_std), np.array(t_mean)+np.array(t_std), color='lightblue')
 # naming the x axis
 plt.xlabel('Number of states')
 # naming the y axis
