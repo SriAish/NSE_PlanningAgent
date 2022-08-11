@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH -A MLL
+#SBATCH -A Research
 #SBATCH --cpus-per-gpu=2
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:2
 #SBATCH --mem-per-cpu=80G
 #SBATCH -t 2-00:00:00
 #SBATCH --output=result.txt
