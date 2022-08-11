@@ -2,7 +2,7 @@ from cProfile import label
 import pickle
 import matplotlib.pyplot as plt
 import numpy as np
-
+plt.rcParams.update({'font.size': 12})
 x =  ['Configuration 1 Severe', 'Configuration 1 Mild', 'Configuration 2 Severe', 'Configuration 2 Mild', 'Configuration 3 Severe', 'Configuration 3 Mild']
 
 labels = ['Set NSE Threshold', 'CMDP (4 nodes)', 'CMDP (6 nodes)', 'CMDP (8 nodes)', 'CMDP (10 nodes)']

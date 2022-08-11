@@ -3,6 +3,7 @@ import pickle
 import matplotlib.pyplot as plt
 import numpy as np
 
+plt.rcParams.update({'font.size': 12})
 labels = ['Original Solution', 'LMDP learnt - 20% slack', 'LMDP learnt - 25% slack', 'LMDP optimal - 20% slack', 'LMDP optimal - 25% slack', 'CMDP - 20% slack', 'CMDP - 25% slack']
 
 x = ['severe', 'mild']
