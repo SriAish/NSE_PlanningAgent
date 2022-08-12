@@ -56,6 +56,7 @@ class Agent:
             self.pi[s] = []
             self.prob1[s] = []
             self.prob2[s] = []
+            print(s)
             for a in policy[s]:
                 self.pi[s].append(a)
                 self.prob2[s].append(policy[s][a])
@@ -75,8 +76,8 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "grid-4-1-t_Policy-ler.pkl"
+    pol = "VIp_1_01_03.pkl"
     agent = Agent(pol)
     print(pol)
-    generate_mean_std(100, agent)
+    generate_mean_std(10000, agent)
     # generate_trajectory(agent)

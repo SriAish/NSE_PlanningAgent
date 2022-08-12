@@ -13,7 +13,7 @@ class BPEnv:
         self.grid_height = grid_height
 
         self.grid = np.full([grid_height, grid_width], 'p')
-        
+        # print(self.grid)
         # Making the rug
         self.rug_width = rug_width
         self.rug_height = rug_height

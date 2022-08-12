@@ -10,7 +10,7 @@ labels = ['Initial', 'LMDP learnt - 20% slack', 'LMDP learnt - 25% slack', 'LMDP
 
 x = ['severe', 'mild']
 
-y = [[0.9451, 0.0254],
+y = [[1, 0],
         [0.9452, 0.0266],
         [0.9419, 0.0288],
         [0.9479, 0.0255],

@@ -30,56 +30,56 @@ echo "Checking Accuracy of learned FSAs"
 # python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_195 6 20 0 0 Nav_pol_195_6 >> Nav_195_6.txt
 # echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 7 > Nav_300_7.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 7 25 1 1 Nav_pol_300_7_25 > Nav_300_7_25_1_1.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 7 20 1 1 Nav_pol_300_7_20 > Nav_300_7_20_1_1.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 6 > Nav_300_6.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 6 25 1 1 Nav_pol_300_6_25 > Nav_300_6_25_1_1.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 6 20 1 1 Nav_pol_300_6_20 > Nav_300_6_20_1_1.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 5 > Nav_300_5.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 5 25 1 1 Nav_pol_300_5_25 > Nav_300_5_25_1_1.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 5 20 1 1 Nav_pol_300_5_20 > Nav_300_5_20_1_1.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 4 > Nav_300_4.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 4 25 1 1 Nav_pol_300_4_25 > Nav_300_4_25_1_1.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 4 20 1 1 Nav_pol_300_4_20 > Nav_300_4_20_1_1.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 3 > Nav_300_3.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 3 25 1 1 Nav_pol_300_3_25 > Nav_300_3_25_1_1.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 3 20 1 1 Nav_pol_300_3_20 > Nav_300_3_20_1_1.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 2 > Nav_300_2.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 2 25 1 1 Nav_pol_300_2_25 > Nav_300_2_25_1_1.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 2 20 1 1 Nav_pol_300_2_20 > Nav_300_2_20_1_1.txt
 echo "--------------------"
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 7 25 1 2 Nav_pol_300_7_25 > Nav_300_7_25_1_2.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 7 20 1 2 Nav_pol_300_7_20 > Nav_300_7_20_1_2.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 6 > Nav_300_6.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 6 25 1 2 Nav_pol_300_6_25 > Nav_300_6_25_1_2.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 6 20 1 2 Nav_pol_300_6_20 > Nav_300_6_20_1_2.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 5 > Nav_300_5.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 5 25 1 2 Nav_pol_300_5_25 > Nav_300_5_25_1_2.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 5 20 1 2 Nav_pol_300_5_20 > Nav_300_5_20_1_2.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 4 > Nav_300_4.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 4 25 1 2 Nav_pol_300_4_25 > Nav_300_4_25_1_2.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 4 20 1 2 Nav_pol_300_4_20 > Nav_300_4_20_1_2.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 3 > Nav_300_3.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 3 25 1 2 Nav_pol_300_3_25 > Nav_300_3_25_1_2.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 3 20 1 2 Nav_pol_300_3_20 > Nav_300_3_20_1_2.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 2 > Nav_300_2.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 2 25 1 2 Nav_pol_300_2_25 > Nav_300_2_25_1_2.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 2 20 1 2 Nav_pol_300_2_20 > Nav_300_2_20_1_2.txt
 echo "--------------------"
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 7 25 2 3 Nav_pol_300_7_25 > Nav_300_7_25_2_3.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 7 20 2 3 Nav_pol_300_7_20 > Nav_300_7_20_2_3.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 6 > Nav_300_6.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 6 25 2 3 Nav_pol_300_6_25 > Nav_300_6_25_2_3.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 6 20 2 3 Nav_pol_300_6_20 > Nav_300_6_20_2_3.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 5 > Nav_300_5.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 5 25 2 3 Nav_pol_300_5_25 > Nav_300_5_25_2_3.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 5 20 2 3 Nav_pol_300_5_20 > Nav_300_5_20_2_3.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 4 > Nav_300_4.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 4 25 2 3 Nav_pol_300_4_25 > Nav_300_4_25_2_3.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 4 20 2 3 Nav_pol_300_4_20 > Nav_300_4_20_2_3.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 3 > Nav_300_3.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 3 25 2 3 Nav_pol_300_3_25 > Nav_300_3_25_2_3.txt
+# python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 3 20 2 3 Nav_pol_300_3_20 > Nav_300_3_20_2_3.txt
 echo "--------------------"
 # python3.7 test.py data/Nav_15_15_30_300 2 > Nav_300_2.txt
-python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 2 25 2 3 Nav_pol_300_2_25 > Nav_300_2_25_2_3.txt
+python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 2 20 2 3 Nav_pol_300_2_20 > Nav_300_2_20_2_3.txt
 echo "--------------------"
 # # python3.7 test.py data/Nav_15_15_30_300 7 > Nav_300_7.txt
 # python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 7 15 0 0 Nav_pol_300_7_15 > Nav_300_7_15.txt

@@ -7,7 +7,7 @@ class BoxPushingConstants:
     def __init__(self, grid_size = 7, rug_width = 3, rug_height = 3, rug_start = (2, 2), goal_state = [], init_box_loc=(3, 3)):
         # Making the grrid
         self.grid_width = grid_size
-        self.grid_height = grid_size
+        self.grid_height = 1
 
         self.grid = np.full([self.grid_height, self.grid_width], 'p')
         
