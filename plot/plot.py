@@ -11,29 +11,30 @@ time = [[0.2962, 14.9342, 0.2398, 7.5627, 10.5042, 4.9675, 3.1875, 7.2229, 6.926
         [3021.3838, 324.0757, 766.9358, 1801.3067, 62.3013, 5687.4348, 30.9696, 6128.7509, 4666.2685, 6180.6009], [4830.3405, 7731.7694, 23.3540, 7705.2509, 2372.6088, 18402.2032, 2232.4956, 4895.7557, 4409.0711, 87.1423]]
 # time = [545.37, 765.48, 3865.61, 3248.19, 6312.34, 28670.02, 52689.99]
 # time = [t/60 for t in time]
-# for ti in range(len(time)):
-#         for t in range(len(time[ti])):
-#                 time[ti][t] = time[ti][t]/60
-# t_mean = []
-# t_std = []
+for ti in range(len(time)):
+        for t in range(len(time[ti])):
+                time[ti][t] = time[ti][t]/60
+t_mean = []
+t_std = []
 
-# for ti in time:
-#         t_mean += [np.mean(ti)]
-#         t_std += [np.std(ti)]
+for ti in time:
+        t_mean += [np.mean(ti)]
+        t_std += [np.std(ti)]
 
 best_acc = [0.670, 0.680, 0.690, 0.860, 0.914, 0.913, 0.860, 0.945]
 best_acc = [b*100 for b in best_acc]
 
 # print(y)
-plt.plot(states, best_acc, '-b')
+# plt.plot(states, best_acc, '-b')
 # plotting the points 
-# plt.plot(states, t_mean, '-b')
+# plt.scatter(states, t_mean, c='blue')
 # print(t_std)
-# plt.fill_between(states, np.array(t_mean)-np.array(t_std), np.array(t_mean)+np.array(t_std), color='lightblue')
-# naming the x axis
+plt.fill_between(states, np.array(t_mean)-np.array(t_std), np.array(t_mean)+np.array(t_std), color='lightblue')
+plt.scatter(states, t_mean, c='blue', s = 15)
+# # naming the x axis
 plt.xlabel('Number of states')
 # naming the y axis
-plt.ylabel('Accuracy')
+plt.ylabel('Time (in Minutes)')
   
 # function to show the plot
 plt.show()
