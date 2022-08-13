@@ -52,7 +52,7 @@ problem setup
  
  ---------------------------------------------------
  Solver         :  APOPT (v1.0)
- Solution time  :    19.1906000000017      sec
+ Solution time  :    19.5504999999830      sec
  Objective      :    24.6222934118549     
  Successful solution
  ---------------------------------------------------
