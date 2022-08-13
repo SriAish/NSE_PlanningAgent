@@ -1,24 +1,83 @@
 ==========================================
-SLURM_JOB_ID = 736818
+SLURM_JOB_ID = 736866
 SLURM_NODELIST = gnode016
 SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job736818/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-230
-data/Nav_15_15_30_300_2
+/var/spool/slurmd/job736866/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+977
+data/Nav_15_15_30_300_3
 states:  5 trial:  0
-102
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+21
 done
---- 316.4380407333374 seconds ---
---- 316.4381070137024 seconds for all trials---
+--- 446.51266384124756 seconds ---
+--- 446.5127627849579 seconds for all trials---
 ========================================================
-data/Nav_15_15_30_300_2
+data/Nav_15_15_30_300_3
 states:  5 trial:  0
-Traceback (most recent call last):
-  File "test1.py", line 107, in <module>
-    delta = load("results/delta/new_ch_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-  File "test1.py", line 6, in load
-    file_to_read = open(name, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'results/delta/new_ch_Nav_15_15_30_300_2_5_0'
+accuracy of:new_Nav_15_15_30_300_3_5_0:  0.8725541125541125
