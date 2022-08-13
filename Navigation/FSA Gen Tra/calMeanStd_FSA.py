@@ -53,9 +53,9 @@ def generate_mean_std(n, agent, new):
         mild = set()
         no_nse = set()
     else:
-        severe = set(load("nav_s"))
-        mild = set(load("nav_m"))
-        no_nse = set(load("nav_n"))
+        severe = set(load("nav_s_3"))
+        mild = set(load("nav_m_3"))
+        no_nse = set(load("nav_n_3"))
     print(len(severe), len(mild), len(no_nse))
     i = 0
     while i < n:
@@ -74,9 +74,9 @@ def generate_mean_std(n, agent, new):
 
     print(t)
     print(len(no_nse), len(severe), len(mild))
-    save("nav_s_2", list(severe))
-    save("nav_m_2", list(mild))
-    save("nav_n_2", list(no_nse))
+    save("nav_s_3", list(severe))
+    save("nav_m_3", list(mild))
+    save("nav_n_3", list(no_nse))
 
 class Agent:
     def __init__(self, name):
@@ -112,7 +112,7 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_LP_p_Nav_pol_195_5.pkl"
+    pol = "policy/FSA_LP_p_Nav_pol_300_5_15_1_1.pkl"
     agent = Agent(pol)
     # print(pol)
     generate_mean_std(10000, agent, True)

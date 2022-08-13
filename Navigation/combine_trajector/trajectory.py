@@ -7,13 +7,52 @@ wh = load("Nav_15_15_30_195")
 # sev = load("nav_s_2")
 # nn = load("nav_n_2")
 
-severe = load("s_tr")
-mild = load("m_tr")
-no_nse = load("n_tr")
-s = []
+severe1 = load("s_tr")
+severe2 = load("nav_s_3")
+severe3 = []
+mild = []
+no_nse = []
+s = set()
 m = []
 n = []
 
+for i in wh:
+    if i[-1] == 'S':
+        severe3 += [i]
+    if i[-1] == 'M':
+        mild += [i]
+    if i[-1] == 'N':
+        no_nse += [i]
+random.shuffle(severe1)
+random.shuffle(severe2)
+random.shuffle(severe3)
+
+in_s = 0
+for i in severe1:
+    sz = len(s)
+    s.add(i)
+    if (len(s) > sz):
+        in_s += 1
+    if in_s > 32:
+        break
+in_s = 0
+for i in severe2:
+    sz = len(s)
+    s.add(i)
+    if (len(s) > sz):
+        in_s += 1
+    if in_s > 33:
+        break
+in_s = 0
+for i in severe3:
+    sz = len(s)
+    s.add(i)
+    if (len(s) > sz):
+        in_s += 1
+    if in_s > 32:
+        break
+
+print(len(s))
 # i = 0
 # for s_t in sev:
 #     if i < 35:
@@ -69,12 +108,12 @@ n = []
 #         else:
 #             break
 
-print(len(s), len(m), len(wh+severe+mild+no_nse))
-random.shuffle(s)
-random.shuffle(m)
-random.shuffle(n)
+# print(len(s), len(m), len(wh+severe+mild+no_nse))
+# random.shuffle(s)
+# random.shuffle(m)
+# random.shuffle(n)
 
-save("Nav_15_15_30_300", wh+severe+mild+no_nse)
+save("Nav_15_15_30_300_2", list(s)+mild+no_nse)
 
 # save("s_tr", s)
 # save("m_tr", m)

@@ -10,8 +10,8 @@ labels = ['Initial', 'LMDP Learned', 'LMDP Optimal', 'CMDP']
 
 y = [[1, 0.9529],
         [1, 0.98],
-        [1, 0.95],
-        [0, 0.0969]]
+        [1, 0.9522],
+        [0, 0]]
 # print(y)
 
 type = ['#a52a2a', 'm', 'y', 'b']
