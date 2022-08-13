@@ -1,0 +1,110 @@
+==========================================
+SLURM_JOB_ID = 733438
+SLURM_NODELIST = gnode014
+SLURM_JOB_GPUS = 0
+==========================================
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
+/var/spool/slurmd/job733438/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+running agent
+3395
+--------------------
+9611
+--------------------
+running agent
+3604
+--------------------
+--------------------
+7936
+--------------------
+running agent
+3609
+--------------------
+--------------------
+7926
+--------------------
+running agent
+3194
+--------------------
+--------------------
+8730
+--------------------
+running agent
+284
+--------------------
+running agent
+289
+--------------------
+running agent
+303
+--------------------
+running agent
+280
+--------------------
+running agent
+1016
+--------------------
+running agent
+1206
+--------------------
+running agent
+1040
+--------------------
+running agent
+1031
+--------------------
+--------------------
+--------------------
+--------------------
+--------------------
+running agent
+Traceback (most recent call last):
+  File "FSA_Agent_combVar.py", line 247, in <module>
+    agent.calculate_pi()
+  File "FSA_Agent_combVar.py", line 197, in calculate_pi
+    self.x_[(u, s)] += self.x[(u, s, a)].value[0]
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+2062
+--------------------
+running agent
+Traceback (most recent call last):
+  File "FSA_Agent_combVar.py", line 247, in <module>
+    agent.calculate_pi()
+  File "FSA_Agent_combVar.py", line 197, in calculate_pi
+    self.x_[(u, s)] += self.x[(u, s, a)].value[0]
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+4335
+--------------------
+Traceback (most recent call last):
+  File "FSA_Agent_combVar.py", line 247, in <module>
+    agent.calculate_pi()
+  File "FSA_Agent_combVar.py", line 197, in calculate_pi
+    self.x_[(u, s)] += self.x[(u, s, a)].value[0]
+  File "/home/sriaish/.local/lib/python3.7/site-packages/gekko/gk_operators.py", line 147, in __getitem__
+    return self.value[key]
+TypeError: 'int' object is not subscriptable
+4762
+--------------------
+running agent
+3188
+--------------------
+running agent
+3365
+--------------------
+running agent
+3031
+--------------------
+4618
+--------------------
+running agent
+3183
+--------------------
+running agent
+3761
+--------------------
+3892
+--------------------

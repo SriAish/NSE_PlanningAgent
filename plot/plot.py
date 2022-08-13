@@ -2,8 +2,9 @@ import pickle
 import matplotlib.pyplot as plt
 import numpy as np
 
+plt.figure(figsize=(4, 3))
 plt.rcParams.update({'font.size': 12})
-states = [4, 5, 6, 7, 8, 9, 10, 11]
+states = ['4', '5', '6', '7', '8', '9', '10', '11']
 # print(y)
 time = [[0.2962, 14.9342, 0.2398, 7.5627, 10.5042, 4.9675, 3.1875, 7.2229, 6.9269, 11.3613], [40.6810, 51.9597, 66.2073, 3.3110, 45.8716, 3.3106, 67.8158, 10.7605, 71.7549, 183.7033],
         [318.1072, 138.5736, 8.0303, 64.9962, 65.1126, 5.9483, 11.5353, 128.8136, 7.9299, 16.4319], [8.8114, 310.8167, 1226.8434, 974.3876, 304.5833, 23.8720, 312.2107, 214.1299, 484.6599, 5.2961],
@@ -37,6 +38,8 @@ plt.xlabel('Number of states')
 plt.ylabel('Time (in Minutes)')
   
 # function to show the plot
-plt.show()
+
+plt.savefig('plots/nodesvstime.png',bbox_inches='tight')
+# plt.show()
 
 

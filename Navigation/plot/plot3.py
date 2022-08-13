@@ -2,15 +2,17 @@ from cProfile import label
 import pickle
 import matplotlib.pyplot as plt
 import numpy as np
+plt.figure(figsize=(4, 4))
 plt.rcParams.update({'font.size': 12})
-labels =  ['Configuration 1 Severe', 'Configuration 1 Mild', 'Configuration 2 Severe', 'Configuration 2 Mild', 'Configuration 3 Severe', 'Configuration 3 Mild']
+labels =  ['Config 1 Severe', 'Config 1 Mild', 'Config 2 Severe', 'Config 2 Mild', 'Config 3 Severe', 'Config 3 Mild']
 
-x = ['Set NSE Threshold', 'CMDP (5 nodes)', 'CMDP (7 nodes)', 'CMDP (9 nodes)']
+y_line = [0.1, 0.2, 0.3]
 
-y = [[0.1, 0.1, 0.1, 0.2, 0.2, 0.3],
-        [1, 0, 1, 0, 0.3984, 0.1251],
+x = ['5 nodes', '7 nodes', '9 nodes']
+
+y = [[1, 0, 1, 0, 0.2649, 0],
         [0.1329, 0.0, 0.1372, 0, 0.2675, 0],
-        [0.1125, 0.1507, 0.1339, 0.2612, 0.2794, 0.2698]]
+        [0.3959, 0.0, 0.3908, 0.0, 0.3902, 0.0]]
 y = result = [[y[j][i] for j in range(len(y))] for i in range(len(y[0]))]
 # print(y)
 
@@ -26,10 +28,19 @@ for i in range(len(y)):
         plt.bar(br[i], y[i], color =type[i], width = barWidth,
                 edgecolor ='grey', label=labels[i])
 
+for i in y_line:
+        y_ma = np.full(len(x)+1,i)
+        x_ma = []
+        # k = 0
+        for j in range(len(x)):
+                x_ma.append(j-0.25)
+        x_ma.append(len(x)-0.25)
+        plt.plot(x_ma, y_ma, '-k')
+
 barWidth = 0.25
 plt.xticks([r + barWidth for r in range(len(y[0]))], x)
 
-legend = plt.legend(loc='upper right', shadow=True, fontsize='x-small')
+legend = plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 # legend = ax.legend(loc='upper center', shadow=True, fontsize='x-small')
 # print(t_std)
 # plt.fill_between(states, np.array(t_mean)-np.array(t_std), np.array(t_mean)+np.array(t_std))
@@ -39,6 +50,7 @@ legend = plt.legend(loc='upper right', shadow=True, fontsize='x-small')
 plt.ylabel('Mean NSE encountered')
   
 # function to show the plot
-plt.show()
+# plt.show()
+plt.savefig('plots/FSAsizevsThrehold_Nav.png',bbox_inches='tight')
 
 

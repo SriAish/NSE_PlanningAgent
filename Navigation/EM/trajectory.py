@@ -2,9 +2,9 @@ from operator import le
 import random
 from misc import load, save
 
-severe = load("s_nav_15_15_25")
-mild = load("m_nav_15_15_25")
-no_nse = load("n_nav_15_15_25")
+severe = load("s_nav_test_15_15_25")
+mild = load("m_nav_test_15_15_25")
+no_nse = load("n_nav_test_15_15_25")
 s = []
 m = []
 n = []
@@ -43,7 +43,7 @@ random.shuffle(n)
 # m_test = m[int(len(m)*0.8):]
 # n_test = n[int(len(n)*0.8):]
 # save("test_wh", n+s+m)
-# save("test_eq", random.sample(list(s), 385) + random.sample(list(n), 385) + random.sample(list(n), 385))
+save("test_eq", random.sample(list(s), 385) + random.sample(list(m), 385) + random.sample(list(n), 385))
 # save("s_nav_15_15_25", s_train)
 # save("s_nav_test_15_15_25", s_test)
 # save("m_nav_15_15_25", m_train)
@@ -58,9 +58,9 @@ random.shuffle(n)
 # R = random.sample(list(s), 14) +  random.sample(list(m), 14) + random.sample(list(n), 14)
 # save("Valid_Data_15_15", R)
 # print(len(s), len(m), len(n))
-for i in range(45, 50, 5):
-    R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
-    save("Nav_15_15_30_"+str(i*3), R)
+# for i in range(45, 50, 5):
+#     R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)
+#     save("Nav_15_15_30_"+str(i*3), R)
 
 # i = 28
 # R = random.sample(list(s), i) +  random.sample(list(m), i) + random.sample(list(n), i)

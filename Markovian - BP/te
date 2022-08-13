@@ -1,0 +1,29 @@
+Start learning FSA
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+f1 score: N,  0.1238938053097345 M,  0.5074626865671642 S,  0.5217391304347825
+new_BP_15_15_35_25_3_best:  None
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+f1 score: N,  0.11864406779661016 M,  0.48 S,  0.5
+new_BP_15_15_35_25_4_best:  None
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+f1 score: N,  0.2745098039215686 M,  0.8229665071770336 S,  0.8140703517587939
+new_BP_15_15_35_25_5_best:  None
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+f1 score: N,  0.4117647058823529 M,  0.9019607843137256 S,  0.9019607843137256
+new_BP_15_15_35_25_6_best:  None
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+f1 score: N,  0.3111111111111111 M,  0.858447488584475 S,  0.835978835978836
+new_BP_15_15_35_25_7_best:  None
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+f1 score: N,  0.2857142857142857 M,  0.8372093023255814 S,  0.8186528497409326
+new_BP_15_15_35_25_8_best:  None
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+f1 score: N,  0.45161290322580644 M,  0.9223744292237444 S,  0.91005291005291
+new_BP_15_15_35_25_9_best:  None

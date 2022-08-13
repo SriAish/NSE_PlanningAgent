@@ -1,0 +1,235 @@
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  2 trial:  0
+accuracy of:new_BP_15_15_35_25_2_0:  0.333175355450237
+data_set/BP_15_15_35_25
+states:  2 trial:  1
+accuracy of:new_BP_15_15_35_25_2_1:  0.38672985781990526
+data_set/BP_15_15_35_25
+states:  2 trial:  2
+accuracy of:new_BP_15_15_35_25_2_2:  0.34170616113744073
+data_set/BP_15_15_35_25
+states:  2 trial:  3
+accuracy of:new_BP_15_15_35_25_2_3:  0.5151658767772511
+data_set/BP_15_15_35_25
+states:  2 trial:  4
+accuracy of:new_BP_15_15_35_25_2_4:  0.5042654028436019
+data_set/BP_15_15_35_25
+states:  2 trial:  5
+accuracy of:new_BP_15_15_35_25_2_5:  0.5255924170616113
+data_set/BP_15_15_35_25
+states:  2 trial:  6
+accuracy of:new_BP_15_15_35_25_2_6:  0.35165876777251187
+data_set/BP_15_15_35_25
+states:  2 trial:  7
+accuracy of:new_BP_15_15_35_25_2_7:  0.5047393364928909
+data_set/BP_15_15_35_25
+states:  2 trial:  8
+accuracy of:new_BP_15_15_35_25_2_8:  0.34834123222748803
+data_set/BP_15_15_35_25
+states:  2 trial:  9
+accuracy of:new_BP_15_15_35_25_2_9:  0.509952606635071
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  3 trial:  0
+accuracy of:new_BP_15_15_35_25_3_0:  0.5151658767772511
+data_set/BP_15_15_35_25
+states:  3 trial:  1
+accuracy of:new_BP_15_15_35_25_3_1:  0.3469194312796209
+data_set/BP_15_15_35_25
+states:  3 trial:  2
+accuracy of:new_BP_15_15_35_25_3_2:  0.5436018957345972
+data_set/BP_15_15_35_25
+states:  3 trial:  3
+accuracy of:new_BP_15_15_35_25_3_3:  0.3421800947867299
+data_set/BP_15_15_35_25
+states:  3 trial:  4
+accuracy of:new_BP_15_15_35_25_3_4:  0.5061611374407583
+data_set/BP_15_15_35_25
+states:  3 trial:  5
+accuracy of:new_BP_15_15_35_25_3_5:  0.32843601895734603
+data_set/BP_15_15_35_25
+states:  3 trial:  6
+accuracy of:new_BP_15_15_35_25_3_6:  0.43791469194312793
+data_set/BP_15_15_35_25
+states:  3 trial:  7
+accuracy of:new_BP_15_15_35_25_3_7:  0.3407582938388626
+data_set/BP_15_15_35_25
+states:  3 trial:  8
+accuracy of:new_BP_15_15_35_25_3_8:  0.5203791469194312
+data_set/BP_15_15_35_25
+states:  3 trial:  9
+accuracy of:new_BP_15_15_35_25_3_9:  0.5061611374407583
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  4 trial:  0
+accuracy of:new_BP_15_15_35_25_4_0:  0.5417061611374409
+data_set/BP_15_15_35_25
+states:  4 trial:  1
+accuracy of:new_BP_15_15_35_25_4_1:  0.5165876777251185
+data_set/BP_15_15_35_25
+states:  4 trial:  2
+accuracy of:new_BP_15_15_35_25_4_2:  0.32606635071090045
+data_set/BP_15_15_35_25
+states:  4 trial:  3
+accuracy of:new_BP_15_15_35_25_4_3:  0.5360189573459715
+data_set/BP_15_15_35_25
+states:  4 trial:  4
+accuracy of:new_BP_15_15_35_25_4_4:  0.5350710900473934
+data_set/BP_15_15_35_25
+states:  4 trial:  5
+accuracy of:new_BP_15_15_35_25_4_5:  0.333649289099526
+data_set/BP_15_15_35_25
+states:  4 trial:  6
+accuracy of:new_BP_15_15_35_25_4_6:  0.3502369668246445
+data_set/BP_15_15_35_25
+states:  4 trial:  7
+accuracy of:new_BP_15_15_35_25_4_7:  0.5165876777251184
+data_set/BP_15_15_35_25
+states:  4 trial:  8
+accuracy of:new_BP_15_15_35_25_4_8:  0.30995260663507107
+data_set/BP_15_15_35_25
+states:  4 trial:  9
+accuracy of:new_BP_15_15_35_25_4_9:  0.3274881516587678
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  5 trial:  0
+accuracy of:new_BP_15_15_35_25_5_0:  0.3222748815165877
+data_set/BP_15_15_35_25
+states:  5 trial:  1
+accuracy of:new_BP_15_15_35_25_5_1:  0.5170616113744075
+data_set/BP_15_15_35_25
+states:  5 trial:  2
+accuracy of:new_BP_15_15_35_25_5_2:  0.7829383886255924
+data_set/BP_15_15_35_25
+states:  5 trial:  3
+accuracy of:new_BP_15_15_35_25_5_3:  0.5066350710900474
+data_set/BP_15_15_35_25
+states:  5 trial:  4
+accuracy of:new_BP_15_15_35_25_5_4:  0.514218009478673
+data_set/BP_15_15_35_25
+states:  5 trial:  5
+accuracy of:new_BP_15_15_35_25_5_5:  0.352132701421801
+data_set/BP_15_15_35_25
+states:  5 trial:  6
+accuracy of:new_BP_15_15_35_25_5_6:  0.5208530805687204
+data_set/BP_15_15_35_25
+states:  5 trial:  7
+accuracy of:new_BP_15_15_35_25_5_7:  0.5180094786729857
+data_set/BP_15_15_35_25
+states:  5 trial:  8
+accuracy of:new_BP_15_15_35_25_5_8:  0.7587677725118483
+data_set/BP_15_15_35_25
+states:  5 trial:  9
+accuracy of:new_BP_15_15_35_25_5_9:  0.3298578199052133
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  6 trial:  0
+accuracy of:new_BP_15_15_35_25_6_0:  0.3345971563981042
+data_set/BP_15_15_35_25
+states:  6 trial:  1
+accuracy of:new_BP_15_15_35_25_6_1:  0.5208530805687204
+data_set/BP_15_15_35_25
+states:  6 trial:  2
+accuracy of:new_BP_15_15_35_25_6_2:  0.3345971563981042
+data_set/BP_15_15_35_25
+states:  6 trial:  3
+accuracy of:new_BP_15_15_35_25_6_3:  0.33744075829383885
+data_set/BP_15_15_35_25
+states:  6 trial:  4
+accuracy of:new_BP_15_15_35_25_6_4:  0.5369668246445498
+data_set/BP_15_15_35_25
+states:  6 trial:  5
+accuracy of:new_BP_15_15_35_25_6_5:  0.862085308056872
+data_set/BP_15_15_35_25
+states:  6 trial:  6
+accuracy of:new_BP_15_15_35_25_6_6:  0.32938388625592413
+data_set/BP_15_15_35_25
+states:  6 trial:  7
+accuracy of:new_BP_15_15_35_25_6_7:  0.6800947867298579
+data_set/BP_15_15_35_25
+states:  6 trial:  8
+accuracy of:new_BP_15_15_35_25_6_8:  0.34881516587677724
+data_set/BP_15_15_35_25
+states:  6 trial:  9
+accuracy of:new_BP_15_15_35_25_6_9:  0.5213270142180095
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  7 trial:  0
+accuracy of:new_BP_15_15_35_25_7_0:  0.33791469194312795
+data_set/BP_15_15_35_25
+states:  7 trial:  1
+accuracy of:new_BP_15_15_35_25_7_1:  0.5023696682464455
+data_set/BP_15_15_35_25
+states:  7 trial:  2
+accuracy of:new_BP_15_15_35_25_7_2:  0.5379146919431279
+data_set/BP_15_15_35_25
+states:  7 trial:  3
+accuracy of:new_BP_15_15_35_25_7_3:  0.32938388625592424
+data_set/BP_15_15_35_25
+states:  7 trial:  4
+accuracy of:new_BP_15_15_35_25_7_4:  0.32701421800947866
+data_set/BP_15_15_35_25
+states:  7 trial:  5
+accuracy of:new_BP_15_15_35_25_7_5:  0.8725118483412324
+data_set/BP_15_15_35_25
+states:  7 trial:  6
+accuracy of:new_BP_15_15_35_25_7_6:  0.333175355450237
+data_set/BP_15_15_35_25
+states:  7 trial:  7
+accuracy of:new_BP_15_15_35_25_7_7:  0.33364928909952607
+data_set/BP_15_15_35_25
+states:  7 trial:  8
+accuracy of:new_BP_15_15_35_25_7_8:  0.3279620853080568
+data_set/BP_15_15_35_25
+states:  7 trial:  9
+accuracy of:new_BP_15_15_35_25_7_9:  0.7085308056872037
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  8 trial:  0
+accuracy of:new_BP_15_15_35_25_8_0:  0.34360189573459715
+data_set/BP_15_15_35_25
+states:  8 trial:  1
+accuracy of:new_BP_15_15_35_25_8_1:  0.4554502369668246
+data_set/BP_15_15_35_25
+states:  8 trial:  2
+accuracy of:new_BP_15_15_35_25_8_2:  0.33838862559241706
+data_set/BP_15_15_35_25
+states:  8 trial:  3
+accuracy of:new_BP_15_15_35_25_8_3:  0.771563981042654
+data_set/BP_15_15_35_25
+states:  8 trial:  4
+accuracy of:new_BP_15_15_35_25_8_4:  0.7796208530805687
+data_set/BP_15_15_35_25
+states:  8 trial:  5
+accuracy of:new_BP_15_15_35_25_8_5:  0.5464454976303318
+data_set/BP_15_15_35_25
+states:  8 trial:  6
+accuracy of:new_BP_15_15_35_25_8_6:  0.5161137440758294
+data_set/BP_15_15_35_25
+states:  8 trial:  7
+accuracy of:new_BP_15_15_35_25_8_7:  0.514691943127962
+data_set/BP_15_15_35_25
+states:  8 trial:  8
+accuracy of:new_BP_15_15_35_25_8_8:  0.8109004739336493
+data_set/BP_15_15_35_25
+states:  8 trial:  9
+accuracy of:new_BP_15_15_35_25_8_9:  0.5080568720379147
+Checking Accuracy of learned FSAs
+data_set/BP_15_15_35_25
+states:  9 trial:  0
+accuracy of:new_BP_15_15_35_25_9_0:  0.9218009478672984
+data_set/BP_15_15_35_25
+states:  9 trial:  1
+accuracy of:new_BP_15_15_35_25_9_1:  0.524170616113744
+data_set/BP_15_15_35_25
+states:  9 trial:  2
+accuracy of:new_BP_15_15_35_25_9_2:  0.3341232227488152
+data_set/BP_15_15_35_25
+states:  9 trial:  3
+accuracy of:new_BP_15_15_35_25_9_3:  0.5421800947867299
+data_set/BP_15_15_35_25
+states:  9 trial:  4
+accuracy of:new_BP_15_15_35_25_9_4:  0.5289099526066351
+data_set/BP_15_15_35_25
+states:  9 trial:  5
