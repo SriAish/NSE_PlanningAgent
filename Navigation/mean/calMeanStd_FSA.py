@@ -58,7 +58,7 @@ def generate_mean_std(n, agent):
             mild.append(0)
 
     print(len(severe), len(mild))
-    print(severe)
+    # print(severe)
     print("severe : ", np.mean(severe), np.std(severe))
     print("mild : ", np.mean(mild), np.std(mild))
 
@@ -96,7 +96,7 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_LP_p_Nav_pol_300_2_15.pkl"
+    pol = "policy/FSA_LP_p_Nav_pol_300_5_15.pkl"
     agent = Agent(pol)
     # print(pol)
     generate_mean_std(10000, agent)
