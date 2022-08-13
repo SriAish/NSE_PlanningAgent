@@ -226,9 +226,9 @@ for i_try in range(1):
     random.seed(r_seed)
     trial_seed[i_try] = r_seed
     print(sys.argv[1])
-    print("states: ", sys.argv[2], "trial: ", i_try)
+    print("states: ", sys.argv[3], "trial: ", i_try)
     start_time = time.time()
-    file_name = sys.argv[2][sys.argv[2].index("/")+1:]
+    file_name = sys.argv[3][sys.argv[4].index("/")+1:]
     o_delta = load("results/delta/new_" + file_name + "_" + sys.argv[3] + "_best")
     o_omega = load("results/omega/new_" + file_name + "_" + sys.argv[3] + "_best")
     # o_delta = init_delta(states, in_sym)
