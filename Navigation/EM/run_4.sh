@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem-per-cpu=80G
 #SBATCH -t 4-00:00:00
-#SBATCH --output=result4.txt
+#SBATCH --output=result2.txt
 module add cuda/11.6
 module add cudnn/8.4.0-cuda-11.6
 source ~/keras/bin/activate
