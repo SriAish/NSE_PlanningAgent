@@ -11,11 +11,25 @@ source ~/keras/bin/activate
 
 start=`date +%s`
 echo "running agent"
-python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_Mark 1 0 0 data_set/Toy_train_data 2 0 > Markovian.txt
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_Mark_20 1 0 0 data_set/Toy_train_data 2 20 > Markovian.txt
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
-# echo "--------------------"
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_Mark_25 1 0 0 data_set/Toy_train_data 2 25 > Markovian.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
+start=`date +%s`
+echo "running agent"
+python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_Mark_15 1 0 0 data_set/Toy_train_data 2 15 > Markovian.txt
+end=`date +%s`
+runtime=$((end-start))
+echo $runtime
+echo "--------------------"
 # start=`date +%s`
 # echo "running agent"
 # python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_0_1_7_15_00 1 0 0 data_set/BP_15_15_35_25 7 0 > LP_sm_1_0_1_2_7_0_0.txt
