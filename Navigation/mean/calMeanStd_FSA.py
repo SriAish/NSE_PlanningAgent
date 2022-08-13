@@ -11,8 +11,8 @@ def generate_trajectory(agent):
     pud = [(0, 3),(0, 4),(0, 5),(0, 6),(4, 2),(4, 3),(4, 4),(4, 9),(5, 0),(5, 1),(5, 2),(7, 2),(7, 7),(7, 8),(7, 9),(11, 4)]
     env = NavEnv(15, ped, pud)
     file_name = sys.argv[1][sys.argv[1].index("/")+1:]
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_best")
-    omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_best")
+    delta = load("results/delta/new_ch_" + file_name + "_" + sys.argv[2] + "_0")
+    omega = load("results/omega/new_ch_" + file_name + "_" + sys.argv[2] + "_0")
     fsa = FSAConstants(delta, omega)
     done = False
 
@@ -96,7 +96,7 @@ class Agent:
 
 if __name__ == '__main__':
     # agent = RandomAgent([7, 14])
-    pol = "policy/FSA_LP_p_Nav_pol_300_6_15_1_1.pkl"
+    pol = "policy/FSA_LP_p_Nav_pol_300_2_5_15_1_1.pkl"
     agent = Agent(pol)
     # print(pol)
     generate_mean_std(10000, agent)

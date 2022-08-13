@@ -43,7 +43,8 @@ plt.xticks([r + barWidth for r in range(len(y[0]))], x)
 # naming the y axis
 plt.ylabel('Mean NSE encountered')
 # plt.xlabel('Toy Problem Configuration')
-plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol=4)
+box = plt.get_position()
+plt.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 # legend = plt.legend(loc='upper right', shadow=True, fontsize='x-small')
 # function to show the plot
 # plt.show()

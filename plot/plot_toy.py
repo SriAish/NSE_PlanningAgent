@@ -1,25 +1,29 @@
 import pickle
 import matplotlib.pyplot as plt
 import numpy as np
-plt.figure(figsize=(6, 3))
+plt.figure(figsize=(3, 3))
 plt.rcParams.update({'font.size': 12})
 
 x =  ['4X1', '4X2']
 
-labels = ['Initial', 'LMDP Learned', 'LMDP Optimal', 'CMDP']
+labels = ['Initial - Average', 'Initial - Std', 'LMDP Learned - Average', 'LMDP Learned Std', 'LMDP Optimal - Average', 'LMDP Optimal - Std', 'CMDP - Average', 'CMDP - Std']
 
-y = [[1, 0.9529],
-        [1, 0.98],
+y = [[1, 0.9506],
+        [0, 0.2167],
+        [1, 0.9537],
+        [0, 0.210],
         [1, 0.9522],
+        [0, 0.2148],
+        [0, 0],
         [0, 0]]
 # print(y)
 
-type = ['#a52a2a', 'm', 'y', 'b']
+type = ['#a52a2a', '#cc6600', '#ff3333', '#f07474', '#cccc00', '#ffb266', '#3399ff', '#9999ff']
 
 # print(y)
 # plotting the points 
 # set width of bar
-barWidth = 0.2
+barWidth = 0.1
 
 br = []
 
@@ -33,7 +37,7 @@ for i in range(len(y)):
         plt.bar(br[i], y[i], color =type[i], width = barWidth,
                 edgecolor ='grey', label =labels[i])
 
-barWidth = 0.3
+barWidth = 0.35
 plt.xticks([r + barWidth for r in range(len(y[0]))], x)
 
 # print(t_std)

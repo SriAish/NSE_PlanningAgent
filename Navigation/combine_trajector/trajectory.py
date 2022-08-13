@@ -2,57 +2,57 @@ from calendar import leapdays
 import random
 from misc import load, save
 
-wh = load("Nav_15_15_30_195")
+wh = set(load("Nav_15_15_30_195"))
 
 # sev = load("nav_s_2")
 # nn = load("nav_n_2")
 
-severe1 = load("s_tr")
-severe2 = load("nav_s_3")
-severe3 = []
-mild = []
-no_nse = []
-s = set()
-m = []
-n = []
+# severe1 = load("s_tr")
+severe2 = load("nav_s_4")
+# severe3 = []
+# mild = []
+# no_nse = []
+# s = set()
+# m = []
+# n = []
 
-for i in wh:
-    if i[-1] == 'S':
-        severe3 += [i]
-    if i[-1] == 'M':
-        mild += [i]
-    if i[-1] == 'N':
-        no_nse += [i]
-random.shuffle(severe1)
-random.shuffle(severe2)
-random.shuffle(severe3)
+# for i in wh:
+#     if i[-1] == 'S':
+#         severe3 += [i]
+#     if i[-1] == 'M':
+#         mild += [i]
+#     if i[-1] == 'N':
+#         no_nse += [i]
+# random.shuffle(severe1)
+# random.shuffle(severe2)
+# random.shuffle(severe3)
 
-in_s = 0
-for i in severe1:
-    sz = len(s)
-    s.add(i)
-    if (len(s) > sz):
-        in_s += 1
-    if in_s > 32:
-        break
-in_s = 0
-for i in severe2:
-    sz = len(s)
-    s.add(i)
-    if (len(s) > sz):
-        in_s += 1
-    if in_s > 33:
-        break
-in_s = 0
-for i in severe3:
-    sz = len(s)
-    s.add(i)
-    if (len(s) > sz):
-        in_s += 1
-    if in_s > 32:
-        break
+# in_s = 0
+# for i in severe1:
+#     sz = len(s)
+#     s.add(i)
+#     if (len(s) > sz):
+#         in_s += 1
+#     if in_s > 32:
+#         break
+# in_s = 0
+# for i in severe2:
+#     sz = len(s)
+#     s.add(i)
+#     if (len(s) > sz):
+#         in_s += 1
+#     if in_s > 33:
+#         break
+# in_s = 0
+# for i in severe3:
+#     sz = len(s)
+#     s.add(i)
+#     if (len(s) > sz):
+#         in_s += 1
+#     if in_s > 32:
+#         break
 
-print(len(s))
+# print(lena(s))
 # i = 0
 # for s_t in sev:
 #     if i < 35:
@@ -113,7 +113,10 @@ print(len(s))
 # random.shuffle(m)
 # random.shuffle(n)
 
-save("Nav_15_15_30_300_2", list(s)+mild+no_nse)
+for s in severe2:
+    wh.add(s)
+
+save("Nav_15_15_30_300_3", list(wh))
 
 # save("s_tr", s)
 # save("m_tr", m)
