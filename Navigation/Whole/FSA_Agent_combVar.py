@@ -237,8 +237,10 @@ if __name__ == '__main__':
     BP = NavigationConstants(int(sys.argv[1]), ped, pud, g_state)
     file_name = sys.argv[4][sys.argv[4].index("/")+1:]
     # file_name = sys.argv[12][sys.argv[12].index("/")+1:]
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[5] + "_best")
-    omega = load("results/omega/new_" + file_name + "_" + sys.argv[5] + "_best")
+    # delta = load("results/delta/new_ch_" + file_name + "_" + sys.argv[5] + "_best")
+    # omega = load("results/omega/new_ch_" + file_name + "_" + sys.argv[5] + "_best")
+    delta = load("results/delta/new_ch_" + file_name + "_" + sys.argv[5])
+    omega = load("results/omega/new_ch_" + file_name + "_" + sys.argv[5])
     FSA = FSAConstants(delta, omega)
     # print(delta)
     # locations = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 5), (3, 1), (3, 5), (4, 1), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)]
