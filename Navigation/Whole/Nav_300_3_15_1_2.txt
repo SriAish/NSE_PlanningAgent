@@ -15,3 +15,50 @@ eq3
 mild limit:  0.2
 eq4
 problem setup
+ ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :        18043
+   Intermediates:           91
+   Connections  :            0
+   Equations    :        20389
+   Residuals    :        20298
+ 
+ Number of state variables:          18043
+ Number of total equations: -         2258
+ Number of slack variables: -            3
+ ---------------------------------------
+ Degrees of freedom       :          15782
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  4.09466E+01  1.41578E+01
+    1  4.14565E+02  2.33754E-07
+    2  2.83156E+01  1.05898E-01
+    3  2.83156E+01  4.06375E-11
+ No feasible solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :    56.0908000000054      sec
+ Objective      :    28.3156449802892     
+ Unsuccessful with error code            0
+ ---------------------------------------------------
+ 
+ Creating file: infeasibilities.txt
+ Use command apm_get(server,app,'infeasibilities.txt') to retrieve file
+ @error: Solution Not Found
+
+Exception Occured
+@error: Solution Not Found
+
