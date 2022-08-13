@@ -243,9 +243,11 @@ for i_try in range(1):
     save("results/omega/init_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_omega)
     objective_val = []
     objective_val.append(o_obj)
+    print(1)
     while diff > 0.005:
         n_delta = cal_delta(fb, states, in_sym)
         n_omega = cal_omega(fb, states, in_sym, out_sym)
+        print(1)
 
         diff = 0
         # for i in n_delta:
@@ -264,11 +266,15 @@ for i_try in range(1):
         o_omega = n_omega
         del n_delta
         del n_omega
+        print(1)
+    
         n_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
         diff = abs(n_obj - o_obj)
         # print(itr, diff)
         sys.stdout.flush()
         o_obj = n_obj
+        print(1)
+
         objective_val.append(o_obj)
         itr += 1
     print(itr)

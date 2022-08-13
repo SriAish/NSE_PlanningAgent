@@ -4,7 +4,7 @@ import numpy as np
 plt.figure(figsize=(6, 3))
 plt.rcParams.update({'font.size': 12})
 
-x =  ['4X1 - NSE Encountered', '4X2 - NSE Encountered']
+x =  ['4X1', '4X2']
 
 labels = ['Initial', 'LMDP Learned', 'LMDP Optimal', 'CMDP']
 
@@ -41,9 +41,9 @@ plt.xticks([r + barWidth for r in range(len(y[0]))], x)
 # naming the x axis
 # plt.xlabel('NSE')
 # naming the y axis
-plt.ylabel('Mean NSE encountered')
+plt.ylabel('Average NSE encountered')
 # plt.xlabel('Toy Problem Configuration')
-plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol=4)
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 # legend = plt.legend(loc='upper right', shadow=True, fontsize='x-small')
 # function to show the plot
 # plt.show()
