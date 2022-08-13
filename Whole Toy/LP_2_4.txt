@@ -44,7 +44,7 @@ problem setup
  
  ---------------------------------------------------
  Solver         :  APOPT (v1.0)
- Solution time  :   6.609999999636784E-002 sec
+ Solution time  :   6.360000002314337E-002 sec
  Objective      :    9.28999468743529     
  Successful solution
  ---------------------------------------------------
