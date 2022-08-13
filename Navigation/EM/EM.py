@@ -271,7 +271,7 @@ for i_try in range(1):
         o_obj = n_obj
         objective_val.append(o_obj)
         itr += 1
-        
+    print(itr)
     print("done")
 
     save("results/objective/new_ch_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), objective_val)
