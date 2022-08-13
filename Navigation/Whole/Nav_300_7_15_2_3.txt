@@ -8,3 +8,10 @@ belief: [('1', ((0, 0), 'slow', False, False)), ('2', ((0, 0), 'slow', False, Fa
 initial belief setup
 variables setup
 objective setup
+eq1
+setting bound
+severe limit:  0.2
+eq3
+mild limit:  0.3
+eq4
+problem setup
