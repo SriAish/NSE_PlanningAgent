@@ -279,7 +279,7 @@ for i_try in range(1):
         itr += 1
     print(itr)
     print("done")
-
+    file_name = sys.argv[1][sys.argv[1].index("/")+1:]
     save("results/objective/new_ch_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), objective_val)
     save("results/seed/seed_ch_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), trial_seed)
     save("results/delta/new_ch_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_delta)
