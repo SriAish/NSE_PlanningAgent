@@ -274,10 +274,10 @@ for i_try in range(1):
         
     print("done")
 
-    save("results/objective/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), objective_val)
-    save("results/seed/seed_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), trial_seed)
-    save("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_delta)
-    save("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_omega)
+    save("results/objective/new_ch_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), objective_val)
+    save("results/seed/seed_ch_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), trial_seed)
+    save("results/delta/new_ch_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_delta)
+    save("results/omega/new_ch_" + file_name + "_" + sys.argv[2] + "_" + str(i_try), o_omega)
 
     print("--- %s seconds ---" % (time.time() - start_time))
 
