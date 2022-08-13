@@ -1,16 +1,10 @@
 ==========================================
-SLURM_JOB_ID = 736714
-SLURM_NODELIST = gnode014
-SLURM_JOB_GPUS = 0,1
+SLURM_JOB_ID = 736839
+SLURM_NODELIST = gnode016
+SLURM_JOB_GPUS = 0,2
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job736714/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+/var/spool/slurmd/job736839/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
 Checking Accuracy of learned FSAs
 --------------------
---------------------
---------------------
---------------------
---------------------
---------------------
-slurmstepd: error: *** JOB 736714 ON gnode014 CANCELLED AT 2022-08-13T11:23:31 ***

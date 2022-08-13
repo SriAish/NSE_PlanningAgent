@@ -9,3 +9,7 @@ ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-
 230
 data/Nav_15_15_30_300_2
 states:  5 trial:  0
+done
+--- 2570.70201253891 seconds ---
+data/Nav_15_15_30_300_2
+states:  5 trial:  1
