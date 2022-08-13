@@ -1,176 +1,45 @@
 ==========================================
-SLURM_JOB_ID = 734125
-SLURM_NODELIST = gnode015
-SLURM_JOB_GPUS = 1
+SLURM_JOB_ID = 736795
+SLURM_NODELIST = gnode016
+SLURM_JOB_GPUS = 0
 ==========================================
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cuda/11.6'
 ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'cudnn/8.4.0-cuda-11.6'
-/var/spool/slurmd/job734125/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
-300
+/var/spool/slurmd/job736795/slurm_script: line 10: /home/sriaish/keras/bin/activate: No such file or directory
+230
+data/Nav_15_15_30_300_2
+states:  5 trial:  0
+Traceback (most recent call last):
+  File "EM.py", line 231, in <module>
+    file_name = sys.argv[2][sys.argv[2].index("/")+1:]
+ValueError: substring not found
 data/Nav_15_15_30_300
-states:  4 trial:  0
-done
---- 1348.2916107177734 seconds ---
+states:  5 trial:  0
+accuracy of:new_Nav_15_15_30_300_5_0:  0.7594805194805194
 data/Nav_15_15_30_300
-states:  4 trial:  1
-done
---- 1722.9058818817139 seconds ---
+states:  5 trial:  1
+accuracy of:new_Nav_15_15_30_300_5_1:  0.832900432900433
 data/Nav_15_15_30_300
-states:  4 trial:  2
-done
---- 1345.9528982639313 seconds ---
+states:  5 trial:  2
+accuracy of:new_Nav_15_15_30_300_5_2:  0.665887445887446
 data/Nav_15_15_30_300
-states:  4 trial:  3
-done
---- 4626.718415021896 seconds ---
+states:  5 trial:  3
+accuracy of:new_Nav_15_15_30_300_5_3:  0.6801731601731602
 data/Nav_15_15_30_300
-states:  4 trial:  4
-done
---- 1537.0337755680084 seconds ---
+states:  5 trial:  4
+accuracy of:new_Nav_15_15_30_300_5_4:  0.7058874458874459
 data/Nav_15_15_30_300
-states:  4 trial:  5
-done
---- 904.6618802547455 seconds ---
+states:  5 trial:  5
+accuracy of:new_Nav_15_15_30_300_5_5:  0.8837229437229437
 data/Nav_15_15_30_300
-states:  4 trial:  6
-done
---- 1530.8267731666565 seconds ---
+states:  5 trial:  6
+accuracy of:new_Nav_15_15_30_300_5_6:  0.6473593073593074
 data/Nav_15_15_30_300
-states:  4 trial:  7
-done
---- 586.6346342563629 seconds ---
+states:  5 trial:  7
+accuracy of:new_Nav_15_15_30_300_5_7:  0.6621645021645021
 data/Nav_15_15_30_300
-states:  4 trial:  8
-done
---- 1451.7803702354431 seconds ---
+states:  5 trial:  8
+accuracy of:new_Nav_15_15_30_300_5_8:  0.8425108225108225
 data/Nav_15_15_30_300
-states:  4 trial:  9
-done
---- 7473.199048757553 seconds ---
---- 22528.005744695663 seconds for all trials---
-========================================================
-data/Nav_15_15_30_300
-states:  4 trial:  0
-accuracy of:new_Nav_15_15_30_300_4_0:  0.5885714285714285
-data/Nav_15_15_30_300
-states:  4 trial:  1
-accuracy of:new_Nav_15_15_30_300_4_1:  0.6682251082251082
-data/Nav_15_15_30_300
-states:  4 trial:  2
-accuracy of:new_Nav_15_15_30_300_4_2:  0.5948917748917749
-data/Nav_15_15_30_300
-states:  4 trial:  3
-accuracy of:new_Nav_15_15_30_300_4_3:  0.6251948051948052
-data/Nav_15_15_30_300
-states:  4 trial:  4
-accuracy of:new_Nav_15_15_30_300_4_4:  0.5877056277056276
-data/Nav_15_15_30_300
-states:  4 trial:  5
-accuracy of:new_Nav_15_15_30_300_4_5:  0.6235497835497836
-data/Nav_15_15_30_300
-states:  4 trial:  6
-accuracy of:new_Nav_15_15_30_300_4_6:  0.5935064935064935
-data/Nav_15_15_30_300
-states:  4 trial:  7
-accuracy of:new_Nav_15_15_30_300_4_7:  0.6065800865800866
-data/Nav_15_15_30_300
-states:  4 trial:  8
-accuracy of:new_Nav_15_15_30_300_4_8:  0.6689177489177489
-data/Nav_15_15_30_300
-states:  4 trial:  9
-accuracy of:new_Nav_15_15_30_300_4_9:  0.6238961038961038
---------------------
-300
-data/Nav_15_15_30_300
-states:  7 trial:  0
-done
---- 15146.91599035263 seconds ---
-data/Nav_15_15_30_300
-states:  7 trial:  1
-done
---- 16560.623078107834 seconds ---
-data/Nav_15_15_30_300
-states:  7 trial:  2
-done
---- 14976.481580734253 seconds ---
-data/Nav_15_15_30_300
-states:  7 trial:  3
-done
---- 21164.666293621063 seconds ---
-data/Nav_15_15_30_300
-states:  7 trial:  4
-done
---- 10637.283696889877 seconds ---
-data/Nav_15_15_30_300
-states:  7 trial:  5
-done
---- 15097.183603525162 seconds ---
-data/Nav_15_15_30_300
-states:  7 trial:  6
-done
---- 4438.435832738876 seconds ---
-data/Nav_15_15_30_300
-states:  7 trial:  7
-done
---- 6797.788530349731 seconds ---
-data/Nav_15_15_30_300
-states:  7 trial:  8
-done
---- 13187.74209690094 seconds ---
-data/Nav_15_15_30_300
-states:  7 trial:  9
-done
---- 18605.561028003693 seconds ---
---- 136612.68233180046 seconds for all trials---
-========================================================
-data/Nav_15_15_30_300
-states:  7 trial:  0
-accuracy of:new_Nav_15_15_30_300_7_0:  0.6258874458874459
-data/Nav_15_15_30_300
-states:  7 trial:  1
-accuracy of:new_Nav_15_15_30_300_7_1:  0.8066666666666669
-data/Nav_15_15_30_300
-states:  7 trial:  2
-accuracy of:new_Nav_15_15_30_300_7_2:  0.7822510822510822
-data/Nav_15_15_30_300
-states:  7 trial:  3
-accuracy of:new_Nav_15_15_30_300_7_3:  0.5968831168831169
-data/Nav_15_15_30_300
-states:  7 trial:  4
-accuracy of:new_Nav_15_15_30_300_7_4:  0.9655411255411256
-data/Nav_15_15_30_300
-states:  7 trial:  5
-accuracy of:new_Nav_15_15_30_300_7_5:  0.8135064935064935
-data/Nav_15_15_30_300
-states:  7 trial:  6
-accuracy of:new_Nav_15_15_30_300_7_6:  0.9083116883116883
-data/Nav_15_15_30_300
-states:  7 trial:  7
-accuracy of:new_Nav_15_15_30_300_7_7:  0.8205194805194805
-data/Nav_15_15_30_300
-states:  7 trial:  8
-accuracy of:new_Nav_15_15_30_300_7_8:  0.7250216450216451
-data/Nav_15_15_30_300
-states:  7 trial:  9
-accuracy of:new_Nav_15_15_30_300_7_9:  0.6365367965367964
---------------------
-300
-data/Nav_15_15_30_300
-states:  8 trial:  0
-done
---- 10843.53112077713 seconds ---
-data/Nav_15_15_30_300
-states:  8 trial:  1
-done
---- 10840.50323343277 seconds ---
-data/Nav_15_15_30_300
-states:  8 trial:  2
-done
---- 21387.806645154953 seconds ---
-data/Nav_15_15_30_300
-states:  8 trial:  3
-done
---- 52202.31078910828 seconds ---
-data/Nav_15_15_30_300
-states:  8 trial:  4
-slurmstepd: error: *** JOB 734125 ON gnode015 CANCELLED AT 2022-08-12T15:11:07 ***
+states:  5 trial:  9
+accuracy of:new_Nav_15_15_30_300_5_9:  0.6242424242424243
