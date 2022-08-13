@@ -104,8 +104,8 @@ file_name = sys.argv[1][sys.argv[1].index("/")+1:]
 for i_try in range(10):
     print(sys.argv[1])
     print("states: ", sys.argv[2], "trial: ", i_try)
-    delta = load("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
-    omega = load("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + str(i_try))
+    delta = load("results/delta/new_" + file_name + "_" + "001" + sys.argv[2] + "_" + str(i_try))
+    omega = load("results/omega/new_" + file_name + "_" + "001" + sys.argv[2] + "_" + str(i_try))
 
     # for s in delta:
     #     for i in delta[s]:
