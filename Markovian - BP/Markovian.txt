@@ -1,0 +1,57 @@
+goal:  [((7, 14), (7, 14), True, False, 'p'), ((7, 14), (7, 14), True, True, 'p')]
+{'#': {0: {'N': 0, 'S': 0, 3: 1}, 1: {'N': 0, 'S': 0, 3: 1}, 2: {'N': 0, 'S': 0, 3: 1}}, '1': {0: {'N': 0, 'S': 0, 3: 0}, 1: {'N': 0, 'S': 0, 3: 0}, 2: {'N': 4.725109705047745e-141, 'S': 1.0, 3: 0}}, '2': {0: {'N': 0, 'S': 0, 3: 0}, 1: {'N': 0, 'S': 0, 3: 0}, 2: {'N': 1.0, 'S': 0, 3: 0}}, '0': {0: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 1: {'S': 0, 'M': 0, 'N': 0, 3: 0}, 2: {'S': 0, 'M': 0, 'N': 0, 3: 0}}}
+belief: [('1', ((0, 0), (7, 0), False, False, 'p')), ('2', ((0, 0), (7, 0), False, False, 'p')), ('#', ((0, 0), (7, 0), False, False, 'p')), ('0', ((0, 0), (7, 0), False, False, 'p'))]
+initial belief setup
+variables setup
+objective setup
+eq1
+setting bound
+eq3
+problem setup
+ ----------------------------------------------------------------
+ APMonitor, Version 1.0.1
+ APMonitor Optimization Suite
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :        14434
+   Intermediates:           73
+   Connections  :            0
+   Equations    :        18111
+   Residuals    :        18038
+ 
+ Number of state variables:          14434
+ Number of total equations: -         3606
+ Number of slack variables: -            2
+ ---------------------------------------
+ Degrees of freedom       :          10826
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  5.91750E+01  5.69150E+00
+    1  2.27660E+01  9.65253E-06
+    2  2.31754E+01  1.12883E-01
+    3  2.27660E+01  2.21891E-07
+ No feasible solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :    47.5175999999919      sec
+ Objective      :    22.7660002113651     
+ Unsuccessful with error code            0
+ ---------------------------------------------------
+ 
+ Creating file: infeasibilities.txt
+ Use command apm_get(server,app,'infeasibilities.txt') to retrieve file
+ @error: Solution Not Found
+
+Exception Occured
+@error: Solution Not Found
+
