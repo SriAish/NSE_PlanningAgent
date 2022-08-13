@@ -8,7 +8,7 @@ from math import e
 from misc import load
 
 class FSAgent:
-    def __init__(self, BP, FSA, gamma = 0.999, locations = None):
+    def __init__(self, BP, FSA, gamma = 0.99, locations = None):
         self.m = GEKKO(remote=False)
         self.m.options.MAX_ITER = 3000
         self.m.options.SOLVER = int(sys.argv[10])
@@ -77,7 +77,7 @@ class FSAgent:
                 obj += self.m.Intermediate(o)
                 o = 0
         obj += self.m.Intermediate(o)
-        self.m.Equation(obj - 4.494 <= 3)
+        self.m.Equation(obj - 4.494 <= 5)
 
     def make_constraints_eqn1(self):
         for u_, s_ in itertools.product(self.FSA.states, self.BP.states):
