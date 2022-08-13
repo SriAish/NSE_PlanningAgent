@@ -232,7 +232,8 @@ for i_try in range(10):
     o_omega = init_omega(states, in_sym, out_sym)
 
     fb = FB(o_delta, o_omega, states, R)
-
+    fl2 = True
+    fl1 = True
     diff = 1
     itr = 0
     o_obj = objective(fb, states, in_sym, out_sym, o_delta, o_omega)
@@ -268,6 +269,20 @@ for i_try in range(10):
         o_obj = n_obj
         objective_val.append(o_obj)
         itr += 1
+
+        if diff < 0.01 and fl2:
+            save("results/objective/new_" + file_name + "_" + sys.argv[2] + "_" + "01" + "_" + str(i_try), objective_val)
+            save("results/seed/seed_" + file_name + "_" + sys.argv[2] + "_" + "01" + "_"  + str(i_try), trial_seed)
+            save("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + "01" + "_"  + str(i_try), o_delta)
+            save("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + "01" + "_"  + str(i_try), o_omega)
+            fl2 = False
+        if diff < 0.1 and fl1:
+            save("results/objective/new_" + file_name + "_" + sys.argv[2] + "_" + "1" + "_" + str(i_try), objective_val)
+            save("results/seed/seed_" + file_name + "_" + sys.argv[2] + "_" + "1" + "_"  + str(i_try), trial_seed)
+            save("results/delta/new_" + file_name + "_" + sys.argv[2] + "_" + "1" + "_"  + str(i_try), o_delta)
+            save("results/omega/new_" + file_name + "_" + sys.argv[2] + "_" + "1" + "_"  + str(i_try), o_omega)
+            fl1 = False
+
         
     print("done")
 
