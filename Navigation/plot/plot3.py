@@ -5,13 +5,12 @@ import numpy as np
 plt.rcParams.update({'font.size': 12})
 labels =  ['Configuration 1 Severe', 'Configuration 1 Mild', 'Configuration 2 Severe', 'Configuration 2 Mild', 'Configuration 3 Severe', 'Configuration 3 Mild']
 
-x = ['Set NSE Threshold', 'CMDP (4 nodes)', 'CMDP (6 nodes)', 'CMDP (8 nodes)']
+x = ['Set NSE Threshold', 'CMDP (5 nodes)', 'CMDP (7 nodes)', 'CMDP (9 nodes)']
 
 y = [[0.1, 0.1, 0.1, 0.2, 0.2, 0.3],
-        [0.1009, 0.1686, 0.0987, 0.1633, 0.3984, 0.1251],
-        [0.1029, 0.1621, 0.2768, 0.1180, 0.5786, 0.0783],
-        [0.1125, 0.1507, 0.1339, 0.2612, 0.2794, 0.2698],
-        [0.1062, 0.1062, 0.1355, 0.2584, 0.2939, 0.2526]]
+        [1, 0, 1, 0, 0.3984, 0.1251],
+        [0.1329, 0.0, 0.1372, 0, 0, 0],
+        [0.1125, 0.1507, 0.1339, 0.2612, 0.2794, 0.2698]]
 y = result = [[y[j][i] for j in range(len(y))] for i in range(len(y[0]))]
 # print(y)
 
