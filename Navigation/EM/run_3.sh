@@ -18,5 +18,5 @@ source ~/keras/bin/activate
 # python3.7 EM2.py data/Nav_15_15_30_300 8
 # python3.7 test3.py data/Nav_15_15_30_300 8
 # echo "--------------------"
-python3.7 EM.py data/Nav_15_15_30_300_3 5 data/Nav_15_15_30_300 5
+python3.7 EM.py data/Nav_15_15_30_300_3 5 data/Nav_15_15_30_300_2 5
 python3.7 test1.py data/Nav_15_15_30_300_3 5

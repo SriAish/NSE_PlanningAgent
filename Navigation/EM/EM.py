@@ -229,8 +229,8 @@ for i_try in range(1):
     print("states: ", sys.argv[2], "trial: ", i_try)
     start_time = time.time()
     file_name = sys.argv[3][sys.argv[3].index("/")+1:]
-    o_delta = load("results/delta/new_" + file_name + "_" + sys.argv[4] + "_best")
-    o_omega = load("results/omega/new_" + file_name + "_" + sys.argv[4] + "_best")
+    o_delta = load("results/delta/new_ch_" + file_name + "_" + sys.argv[4] + "_best")
+    o_omega = load("results/omega/new_ch_" + file_name + "_" + sys.argv[4] + "_best")
     # o_delta = init_delta(states, in_sym)
     # o_omega = init_omega(states, in_sym, out_sym)
 
