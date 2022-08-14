@@ -35,7 +35,7 @@ legend = plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 # plt.xlabel('NSE')
 # plt.xlabel("NSE", labelpad=2)
 # naming the y axis
-plt.ylabel('Mean NSE encountered')
+plt.ylabel('Average NSE encountered')
 # xtick_loc = [0.20, 0.40]
 # ax.set_xticks(xtick_loc)
 # function to show the plot

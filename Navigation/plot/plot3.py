@@ -47,10 +47,10 @@ legend = plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 # naming the x axis
 # plt.xlabel('NSE')
 # naming the y axis
-plt.ylabel('Mean NSE encountered')
+plt.ylabel('Average NSE encountered')
   
 # function to show the plot
 # plt.show()
-plt.savefig('plots/FSAsizevsThrehold_Nav.png',bbox_inches='tight')
+plt.savefig('plots/new.png',bbox_inches='tight')
 
 
