@@ -1,30 +1,30 @@
 data/Nav_15_15_30_30
-states:  3 trial:  0
-accuracy of:new_Nav_15_15_30_30_3_0:  0.5411111111111111
+states:  2 trial:  0
+accuracy of:new_Nav_15_15_30_30_2_0:  0.8783783783783783
 data/Nav_15_15_30_30
-states:  3 trial:  1
-accuracy of:new_Nav_15_15_30_30_3_1:  0.5733333333333331
+states:  2 trial:  1
+accuracy of:new_Nav_15_15_30_30_2_1:  0.883108108108108
 data/Nav_15_15_30_30
-states:  3 trial:  2
-accuracy of:new_Nav_15_15_30_30_3_2:  0.6644444444444446
+states:  2 trial:  2
+accuracy of:new_Nav_15_15_30_30_2_2:  0.9222972972972971
 data/Nav_15_15_30_30
-states:  3 trial:  3
-accuracy of:new_Nav_15_15_30_30_3_3:  0.5911111111111111
+states:  2 trial:  3
+accuracy of:new_Nav_15_15_30_30_2_3:  0.9054054054054055
 data/Nav_15_15_30_30
-states:  3 trial:  4
-accuracy of:new_Nav_15_15_30_30_3_4:  0.8333333333333333
+states:  2 trial:  4
+accuracy of:new_Nav_15_15_30_30_2_4:  0.8788288288288288
 data/Nav_15_15_30_30
-states:  3 trial:  5
-accuracy of:new_Nav_15_15_30_30_3_5:  0.8711111111111112
+states:  2 trial:  5
+accuracy of:new_Nav_15_15_30_30_2_5:  0.4977477477477478
 data/Nav_15_15_30_30
-states:  3 trial:  6
-accuracy of:new_Nav_15_15_30_30_3_6:  0.8299999999999998
+states:  2 trial:  6
+accuracy of:new_Nav_15_15_30_30_2_6:  1.0
 data/Nav_15_15_30_30
-states:  3 trial:  7
-accuracy of:new_Nav_15_15_30_30_3_7:  0.8188888888888888
+states:  2 trial:  7
+accuracy of:new_Nav_15_15_30_30_2_7:  0.9002252252252253
 data/Nav_15_15_30_30
-states:  3 trial:  8
-accuracy of:new_Nav_15_15_30_30_3_8:  0.8144444444444444
+states:  2 trial:  8
+accuracy of:new_Nav_15_15_30_30_2_8:  0.9997747747747748
 data/Nav_15_15_30_30
-states:  3 trial:  9
-accuracy of:new_Nav_15_15_30_30_3_9:  0.5844444444444445
+states:  2 trial:  9
+accuracy of:new_Nav_15_15_30_30_2_9:  1.0
