@@ -181,10 +181,10 @@ class FSAgent:
             self.make_constraints_eqn3()
             print("eq3")
             sys.stdout.flush()
-        if float(sys.argv[7]) >= 0:
-            self.make_constraints_eqn4()
-            print("eq4")
-            sys.stdout.flush()
+        # if float(sys.argv[7]) >= 0:
+        #     self.make_constraints_eqn4()
+        #     print("eq4")
+        #     sys.stdout.flush()
 
     def calculate_pi(self):
         self.pi_ = {}
@@ -208,7 +208,7 @@ class FSAgent:
         print("----------------------------------------")
         print("Objective Value: ", self.pr_obj())
         print("Severe Value: ", self.NSE_val())
-        print("Mild Value: ", self.NSE_val_mild())
+        # print("Mild Value: ", self.NSE_val_mild())
         print("----------------------------------------")
 
     def save_pi(self, file):
