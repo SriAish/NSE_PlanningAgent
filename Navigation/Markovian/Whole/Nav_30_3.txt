@@ -1,0 +1,30 @@
+data/Nav_15_15_30_30
+states:  3 trial:  0
+accuracy of:new_Nav_15_15_30_30_3_0:  0.5411111111111111
+data/Nav_15_15_30_30
+states:  3 trial:  1
+accuracy of:new_Nav_15_15_30_30_3_1:  0.5733333333333331
+data/Nav_15_15_30_30
+states:  3 trial:  2
+accuracy of:new_Nav_15_15_30_30_3_2:  0.6644444444444446
+data/Nav_15_15_30_30
+states:  3 trial:  3
+accuracy of:new_Nav_15_15_30_30_3_3:  0.5911111111111111
+data/Nav_15_15_30_30
+states:  3 trial:  4
+accuracy of:new_Nav_15_15_30_30_3_4:  0.8333333333333333
+data/Nav_15_15_30_30
+states:  3 trial:  5
+accuracy of:new_Nav_15_15_30_30_3_5:  0.8711111111111112
+data/Nav_15_15_30_30
+states:  3 trial:  6
+accuracy of:new_Nav_15_15_30_30_3_6:  0.8299999999999998
+data/Nav_15_15_30_30
+states:  3 trial:  7
+accuracy of:new_Nav_15_15_30_30_3_7:  0.8188888888888888
+data/Nav_15_15_30_30
+states:  3 trial:  8
+accuracy of:new_Nav_15_15_30_30_3_8:  0.8144444444444444
+data/Nav_15_15_30_30
+states:  3 trial:  9
+accuracy of:new_Nav_15_15_30_30_3_9:  0.5844444444444445
