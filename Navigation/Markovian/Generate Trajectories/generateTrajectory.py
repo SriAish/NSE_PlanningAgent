@@ -78,7 +78,7 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
     while i < n:
         i += 1
         path, pud_cnt, sp, t = generate_trajectory(agent, end_loc, box_loc)
-        if len(t) > 9:
+        if len(t) > 15:
             i -= 1
             continue
         if sp:
@@ -86,7 +86,7 @@ def generate_mean_std(n, agent, new, end_loc, box_loc):
             severe.add(tuple(t))
             # print("No Nse")
         elif pud_cnt > 0:
-            t += ['M']
+            t += ['S']
             # print("mild")
             mild.add(tuple(t))
         else:
