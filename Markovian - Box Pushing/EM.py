@@ -7,6 +7,7 @@ from math import log
 import time
 
 R = load(sys.argv[1])
+print(R)
 # print(R)
 # R = random.sample(list(R_), 30)
 

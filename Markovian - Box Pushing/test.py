@@ -3,6 +3,7 @@ import sys
 from misc import load, save
 
 R = load("new_test")
+print(R)
 class FSA:
     def __init__(self, delta, omega):
         self.loadDelta(delta)
