@@ -31,9 +31,9 @@ best_acc = [b*100 for b in best_acc]
 # plt.scatter(states, t_mean, c='blue')
 # print(t_std)
 plt.fill_between(states, np.array(t_mean)-np.array(t_std), np.array(t_mean)+np.array(t_std), color='lightblue')
-plt.scatter(states, t_mean, c='blue', s = 15)
+plt.scatter(states, t_mean, c='blue', s = 20)
 # # naming the x axis
-plt.xlabel('Number of states')
+plt.xlabel('Number of Nodes')
 # naming the y axis
 plt.ylabel('Time (in Minutes)')
   

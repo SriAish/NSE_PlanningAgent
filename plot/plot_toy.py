@@ -6,24 +6,29 @@ plt.rcParams.update({'font.size': 12})
 
 x =  ['4X1', '4X2']
 
-labels = ['Initial - Average', 'Initial - Std', 'LMDP Learned - Average', 'LMDP Learned Std', 'LMDP Optimal - Average', 'LMDP Optimal - Std', 'CMDP - Average', 'CMDP - Std']
+labels = ['Initial', 'LMDP Learned', 'LMDP Optimal', 'CASP']
 
 y = [[1, 0.9506],
-        [0, 0.2167],
         [1, 0.9537],
-        [0, 0.210],
         [1, 0.9522],
-        [0, 0.2148],
-        [0, 0],
         [0, 0]]
+
+y_error = [[0, 0.2167],
+                [0, 0.210],
+                [0, 0.2148],
+                [0, 0]]
+
+# for i in range(len(y_error)):
+#         for j in range(len(y_error[i])):
+#                 y_error[i][j] = y_error[i][j]/100
 # print(y)
 
-type = ['#a52a2a', '#cc6600', '#ff3333', '#f07474', '#cccc00', '#ffb266', '#3399ff', '#9999ff']
+type = ['#d30b0b', '#009900', '#a64da6', '#05aeef']
 
 # print(y)
 # plotting the points 
 # set width of bar
-barWidth = 0.1
+barWidth = 0.2
 
 br = []
 
@@ -34,10 +39,10 @@ for i in range(1, len(y)):
 print(br)
 
 for i in range(len(y)):
-        plt.bar(br[i], y[i], color =type[i], width = barWidth,
+        plt.bar(br[i], y[i], yerr=y_error[i], align='center', alpha=0.5, ecolor='black', capsize=3, color =type[i], width = barWidth,
                 edgecolor ='grey', label =labels[i])
 
-barWidth = 0.35
+barWidth = 0.3
 plt.xticks([r + barWidth for r in range(len(y[0]))], x)
 
 # print(t_std)

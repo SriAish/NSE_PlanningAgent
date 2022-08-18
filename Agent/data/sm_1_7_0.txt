@@ -1,4 +1,0 @@
-goal:  [((3, 6), (3, 6), True, False, 'p'), ((3, 6), (3, 6), True, True, 'p')]
-initial belief setup
-variables setup
-objective setup

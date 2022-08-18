@@ -6,7 +6,7 @@ import sys
 
 plt.figure(figsize=(3, 3))
 plt.rcParams.update({'font.size': 12})
-labels = ['Initial', 'LMDP learnt - 20% slack', 'LMDP learnt - 25% slack', 'LMDP optimal - 20% slack', 'LMDP optimal - 25% slack', 'CMDP - 20% slack', 'CMDP - 25% slack']
+labels = ['Initial', 'LMDP learnt - 20% slack', 'LMDP learnt - 25% slack', 'LMDP optimal - 20% slack', 'LMDP optimal - 25% slack', 'CASP - 20% slack', 'CASP - 25% slack']
 
 x = ['severe', 'mild']
 
@@ -19,7 +19,7 @@ y = [[0.9451, 0.0254],
         [0, 0]]
 # print(y)
 
-type = ['#d2691e', '#f07474', '#33ff33', '#cccc00', '#ffb266', '#3399ff', '#9999ff']
+type = ['#d30b0b', '#009900', '#33ff33', '#a64da6', '#dbb7db', '#05aeef', '#9999ff']
 mark = ['o', 'o', '^', 'o', '^', 'o', '^']
 # print(y)
 # plotting the points 
