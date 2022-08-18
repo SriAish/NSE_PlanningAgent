@@ -132,6 +132,9 @@ class Agent:
         if x < 0.6:
             return a
         else:
+            x = random.random()
+            if x < 0.5:
+                return a[0] + 'f'
             return a[0] + 's'
         
 

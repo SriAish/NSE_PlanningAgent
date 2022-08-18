@@ -26,4 +26,4 @@
     - python3.7 FSA_Agent_combVar.py 15 7 3 6 4 7 14 15_15_pol 1 0 0 data_set/BP_15_15_35_25 6 20
 - Navigation/Markovian Navigation
     - python3.7 FSA_Agent_combVar.py grid_size end_location_y end_location_x data_set/data_file_used no_of_states slack nse_limit_severe nse_limit_mild generated_policy_name
-    - python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_300 2 15 1 1 Nav_pol_300_2_15_1_1
+    - python3.7 FSA_Agent_combVar.py 15 14 14 data/Nav_15_15_30_30 2 15 0 0 Nav_pol_300_2_15_1_1
