@@ -2,7 +2,7 @@ import numpy as np
 import sys
 from misc import load, save
 
-R = load("new_test")
+R = load("Test_Data")
 print(R)
 class FSA:
     def __init__(self, delta, omega):
