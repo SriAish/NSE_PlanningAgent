@@ -7,13 +7,15 @@
     - gekko==1.0.2
     - numpy==1.20.0
 
-
 ## Steps to learn the FSC
 - Enter the directory for the experiment setup you want to run (Eg: cd Toy\ Problem/)
 - Run the EM algorithm: python3.7 EM.py data_set/data_file_used no_of_states (python3.7 EM.py data_set/Toy_train_data 2)
+    - Runs and stores 10 runs of FSC learning. Stored in results folder.
 - Run test to find the best run:  python3.7 test.py data_set/data_file_used no_of_states (Eg: python3.7 test.py data_set/Toy_train_data 2) (For Toy Problem 4x2 run: python3.7 test2.py data_set/Toy_train_data_2_4 2)
+    - Chooses the best run out of the 10 runs based on accuracy
 
 ## Steps to learn the planning agent
+- Learn and store policy in the policy folder.
 - Toy Problem
     - 4x1
         - python3.7 FSA_Agent_combVar.py height width rug_height rug_width starting_y_location_rug starting_x_location_rug end_location_y end_location_x generated_policy_name gekko_solver_number nse_limit nse_limit data_set/data_file_used no_of_states
